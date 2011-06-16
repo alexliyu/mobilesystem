@@ -1,0 +1,2577 @@
+# French translation of blog.
+# Copyright (C) 2008 THE blog'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the blog package.
+# Fantomas42 <fantomas42@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: django-blog-blog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-12 23:56-0600\n"
+"PO-Revision-Date: 2011-02-01 09:16+0000\n"
+"Last-Translator: Fantomas42 <fantomas42@gmail.com>\n"
+"Language-Team: French <fantomas42@gmail.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: FRANCE\n"
+
+#: dashboard.py:26
+msgid "Group: Administration & Applications"
+msgstr ""
+
+#: dashboard.py:31 menu.py:29 grappelli/dashboard/dashboards.py:157
+msgid "Administration"
+msgstr ""
+
+#: dashboard.py:37 menu.py:25 grappelli/dashboard/dashboards.py:151
+#: grappelli/dashboard/modules.py:215
+#, fuzzy
+msgid "Applications"
+msgstr "Publicação"
+
+#: dashboard.py:47
+#, fuzzy
+msgid "AppList: Applications"
+msgstr "Publicação"
+
+#: dashboard.py:56
+msgid "ModelList: Administration"
+msgstr ""
+
+#: dashboard.py:64
+msgid "Media Management"
+msgstr ""
+
+#: dashboard.py:68
+msgid "FileBrowser"
+msgstr ""
+
+#: dashboard.py:77 grappelli/dashboard/dashboards.py:173
+msgid "Support"
+msgstr ""
+
+#: dashboard.py:81
+#, fuzzy
+msgid "Django Documentation"
+msgstr "Comentários sobre"
+
+#: dashboard.py:86
+#, fuzzy
+msgid "Grappelli Documentation"
+msgstr "Comentários sobre"
+
+#: dashboard.py:91
+msgid "Grappelli Google-Code"
+msgstr ""
+
+#: dashboard.py:100 grappelli/dashboard/dashboards.py:166
+#, fuzzy
+msgid "Latest Django News"
+msgstr "Últimos artigos"
+
+#: dashboard.py:108 grappelli/dashboard/dashboards.py:162
+#: grappelli/dashboard/modules.py:291 grappelli/templates/admin/index.html:44
+#, fuzzy
+msgid "Recent Actions"
+msgstr "Comentários recentes"
+
+#: menu.py:22 app/blog/templates/blog/base.html:76
+#: app/blog/templates/blog/base.html:77 grappelli/dashboard/dashboards.py:92
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: settings.py:50
+msgid "English"
+msgstr ""
+
+#: settings.py:51
+msgid "French"
+msgstr ""
+
+#: settings.py:52
+msgid "German"
+msgstr ""
+
+#: settings.py:53
+msgid "Spanish"
+msgstr ""
+
+#: settings.py:54
+msgid "Italian"
+msgstr ""
+
+#: settings.py:55
+msgid "Dutch"
+msgstr ""
+
+#: settings.py:56
+msgid "Hungarian"
+msgstr ""
+
+#: settings.py:57
+msgid "Russian"
+msgstr ""
+
+#: settings.py:58
+#, fuzzy
+msgid "Polish"
+msgstr "Publicar"
+
+#: settings.py:59
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: settings.py:60
+msgid "Simplified Chinese"
+msgstr ""
+
+#: app/blog/feeds.py:102 app/blog/plugins/cms_plugins.py:23
+#: app/blog/templates/blog/entry_archive.html:23
+#: app/blog/templates/blog/entry_list.html:17
+msgid "Latest entries"
+msgstr "Últimos artigos"
+
+#: app/blog/feeds.py:114
+#, python-format
+msgid "The latest entries for the site %s"
+msgstr "Últimos artigos neste site %s"
+
+#: app/blog/feeds.py:134
+#, python-format
+msgid "Entries for the category %s"
+msgstr "Artigos para esta categoria %s"
+
+#: app/blog/feeds.py:138
+#, python-format
+msgid "The latest entries for the category %s"
+msgstr "Últimos artigos para esta categoria %s"
+
+#: app/blog/feeds.py:158
+#, python-format
+msgid "Entries for author %s"
+msgstr "Artigos por autor %s"
+
+#: app/blog/feeds.py:162
+#, python-format
+msgid "The latest entries by %s"
+msgstr "Últimos artigos por %s"
+
+#: app/blog/feeds.py:183
+#, python-format
+msgid "Entries for the tag %s"
+msgstr "Artigos com a tag %s"
+
+#: app/blog/feeds.py:187
+#, python-format
+msgid "The latest entries for the tag %s"
+msgstr "Últimos artigos com a tag %s"
+
+#: app/blog/feeds.py:207
+#, python-format
+msgid "Results of the search for %s"
+msgstr "Resultados da pesquisa para %s"
+
+#: app/blog/feeds.py:211
+#, python-format
+msgid "The entries containing the pattern %s"
+msgstr "Artigos que contenham as palavras %s"
+
+#: app/blog/feeds.py:254
+#, python-format
+msgid "Discussions on %s"
+msgstr "Discussões sobre %s"
+
+#: app/blog/feeds.py:258
+#, python-format
+msgid "The latest discussions for the entry %s"
+msgstr "Últimas discussões sobre o artigo %s"
+
+#: app/blog/feeds.py:276
+#, python-format
+msgid "Comments on %s"
+msgstr "Comentários sobre %s"
+
+#: app/blog/feeds.py:280
+#, python-format
+msgid "The latest comments for the entry %s"
+msgstr "Os comentários mais recentes para o artigo  %s"
+
+#: app/blog/feeds.py:298
+#, python-format
+msgid "Pingbacks on %s"
+msgstr "Pingbacks sobre %s"
+
+#: app/blog/feeds.py:302
+#, python-format
+msgid "The latest pingbacks for the entry %s"
+msgstr "Os últimos pingbacks sobre  o artigo %s"
+
+#: app/blog/feeds.py:320
+#, python-format
+msgid "Trackbacks on %s"
+msgstr "Trackbacks sobre %s"
+
+#: app/blog/feeds.py:324
+#, python-format
+msgid "The latest trackbacks for the entry %s"
+msgstr "Os últimos trackbacks sobre o artigo %s"
+
+#: app/blog/models.py:57 app/blog/models.py:98 app/blog/admin/entry.py:73
+#: app/planet/models.py:34
+msgid "title"
+msgstr "título"
+
+#: app/blog/models.py:58 app/blog/models.py:112
+msgid "used for publication"
+msgstr "utilizados para publicação"
+
+#: app/blog/models.py:60
+msgid "description"
+msgstr "descrição"
+
+#: app/blog/models.py:63 app/blog/admin/forms.py:18
+msgid "parent category"
+msgstr "categoria pai"
+
+#: app/blog/models.py:88
+msgid "category"
+msgstr "categoria"
+
+#: app/blog/models.py:89 app/blog/models.py:107 app/blog/admin/forms.py:47
+#: app/blog/plugins/models.py:24
+msgid "categories"
+msgstr "categorias"
+
+#: app/blog/models.py:94
+msgid "draft"
+msgstr "projeto"
+
+#: app/blog/models.py:95
+msgid "hidden"
+msgstr "oculto"
+
+#: app/blog/models.py:96 app/planet/templates/planet/posts/full_details.html:5
+msgid "published"
+msgstr "publicado"
+
+#: app/blog/models.py:100
+msgid "image"
+msgstr "imagem"
+
+#: app/blog/models.py:101
+msgid "used for illustration"
+msgstr "utilizados para ilustração"
+
+#: app/blog/models.py:102
+msgid "content"
+msgstr "conteúdo"
+
+#: app/blog/models.py:103
+msgid "excerpt"
+msgstr "resumo"
+
+#: app/blog/models.py:104
+msgid "optional element"
+msgstr "elemento opcional"
+
+#: app/blog/models.py:106 app/blog/plugins/models.py:30
+#: app/planet/templates/planet/posts/details.html:14
+#: app/planet/templates/planet/posts/full_details.html:26
+msgid "tags"
+msgstr "tags"
+
+#: app/blog/models.py:109
+msgid "related entries"
+msgstr "artigos relacionados"
+
+#: app/blog/models.py:116 app/blog/plugins/models.py:28
+msgid "authors"
+msgstr "autores"
+
+#: app/blog/models.py:119
+msgid "featured"
+msgstr ""
+
+#: app/blog/models.py:120
+msgid "comment enabled"
+msgstr "comentário habilitado"
+
+#: app/blog/models.py:121
+msgid "linkback enabled"
+msgstr "linkback habilitado"
+
+#: app/blog/models.py:123
+msgid "creation date"
+msgstr "data de criação"
+
+#: app/blog/models.py:124
+msgid "last update"
+msgstr "última atualização"
+
+#: app/blog/models.py:125
+msgid "start publication"
+msgstr "início da publicação"
+
+#: app/blog/models.py:126
+msgid "date start publish"
+msgstr "data de início da publicação"
+
+#: app/blog/models.py:128
+msgid "end publication"
+msgstr "publicação final"
+
+#: app/blog/models.py:129
+msgid "date end publish"
+msgstr "data de término da publicação"
+
+#: app/blog/models.py:132
+msgid "sites publication"
+msgstr "publicação sites"
+
+#: app/blog/models.py:134
+msgid "login required"
+msgstr "é necessário fazer login"
+
+#: app/blog/models.py:135
+msgid "only authenticated users can view the entry"
+msgstr "somente os usuários autenticados podem ver este artigo"
+
+#: app/blog/models.py:136
+msgid "password"
+msgstr "senha"
+
+#: app/blog/models.py:137
+msgid "protect the entry with a password"
+msgstr "proteger o artigo com uma senha"
+
+#: app/blog/models.py:139 app/blog/plugins/models.py:34
+#: app/blog/plugins/models.py:58 app/blog/plugins/models.py:80
+msgid "template"
+msgstr "modelo"
+
+#: app/blog/models.py:142
+msgid "Default template"
+msgstr "modelo padrão"
+
+#: app/blog/models.py:144
+msgid "template used to display the entry"
+msgstr "modelo usado para exibir o artigo"
+
+#: app/blog/models.py:264
+msgid "entry"
+msgstr "artigo"
+
+#: app/blog/models.py:265 app/blog/plugins/cms_plugins.py:21
+#: app/blog/plugins/cms_plugins.py:92 app/blog/plugins/cms_plugins.py:114
+#: app/blog/plugins/models.py:57 app/blog/templates/blog/base.html:39
+msgid "entries"
+msgstr "artigos"
+
+#: app/blog/moderator.py:54
+#, python-format
+msgid "[%(site)s] New comment posted on \"%(title)s\""
+msgstr "[ %(site)s ] Novo comentário postado em \" %(title)s \""
+
+#: app/blog/admin/category.py:30
+msgid "tree path"
+msgstr "caminho de árvore"
+
+#: app/blog/admin/entry.py:27 app/blog/plugins/admin.py:17
+#: app/blog/templates/admin/blog/widgets/quickpost.html:17
+#: app/planet/models.py:204
+msgid "Content"
+msgstr "Conteúdo"
+
+#: app/blog/admin/entry.py:29 app/blog/plugins/admin.py:19
+msgid "Options"
+msgstr "Opções"
+
+#: app/blog/admin/entry.py:34 app/blog/plugins/admin.py:24
+msgid "Privacy"
+msgstr "Privacidade"
+
+#: app/blog/admin/entry.py:36 app/blog/plugins/admin.py:26
+msgid "Discussion"
+msgstr "Discussão"
+
+#: app/blog/admin/entry.py:38 app/blog/plugins/admin.py:28
+msgid "Publication"
+msgstr "Publicação"
+
+#: app/blog/admin/entry.py:66
+#, python-format
+msgid "%(title)s (%(word_count)i words)"
+msgstr "%(title)s (%(word_count)i palavras)"
+
+#: app/blog/admin/entry.py:70
+#, python-format
+msgid "%(title)s (%(comments)i comments)"
+msgstr "%(title)s (%(comments)i comentários)"
+
+#: app/blog/admin/entry.py:86
+msgid "author(s)"
+msgstr "autor (es)"
+
+#: app/blog/admin/entry.py:99
+msgid "category(s)"
+msgstr "categoria (s)"
+
+#: app/blog/admin/entry.py:111
+msgid "tag(s)"
+msgstr "tag (s)"
+
+#: app/blog/admin/entry.py:118
+msgid "site(s)"
+msgstr "site (s)"
+
+#: app/blog/admin/entry.py:124
+msgid "is actual"
+msgstr "é atual"
+
+#: app/blog/admin/entry.py:130
+msgid "is visible"
+msgstr "é visível"
+
+#: app/blog/admin/entry.py:134
+#, python-format
+msgid "<a href=\"%s\" target=\"blank\">View</a>"
+msgstr "<a href=\"%s\" target=\"blank\">Ver</a>"
+
+#: app/blog/admin/entry.py:137 grappelli/templates/admin/change_form.html:76
+msgid "View on site"
+msgstr "Ver no site"
+
+#: app/blog/admin/entry.py:143 app/blog/templates/blog/_entry_detail.html:70
+msgid "Unavailable"
+msgstr "Indisponível"
+
+#: app/blog/admin/entry.py:147
+msgid "short url"
+msgstr "url curta"
+
+#: app/blog/admin/entry.py:201
+msgid "Set the entries to the user"
+msgstr "Definir os artigos para o usuário"
+
+#: app/blog/admin/entry.py:206
+msgid "Set entries selected as published"
+msgstr "Definir artigos selecionados conforme publicado"
+
+#: app/blog/admin/entry.py:211
+msgid "Set entries selected as hidden"
+msgstr "Definir artigos selecionados como oculto"
+
+#: app/blog/admin/entry.py:224
+msgid "Tweet entries selected"
+msgstr "Tweet artigos selecionados"
+
+#: app/blog/admin/entry.py:229
+msgid "Close the comments for selected entries"
+msgstr "Feche os comentários para os artigos selecionados"
+
+#: app/blog/admin/entry.py:235
+msgid "Close the linkbacks for selected entries"
+msgstr "Feche os linkbacks para os artigos selecionados"
+
+#: app/blog/admin/entry.py:240
+msgid "Put the selected entries on top at the current date"
+msgstr ""
+
+#: app/blog/admin/entry.py:256
+#, python-format
+msgid "%(directory)s directory succesfully pinged %(success)d entries."
+msgstr "%(directory)s diretório pingado com sucesso %(success)d artigos."
+
+#: app/blog/admin/entry.py:259
+msgid "Ping Directories for selected entries"
+msgstr "Pingar diretórios para os artigos selecionados"
+
+#: app/blog/admin/forms.py:20
+msgid "No parent category"
+msgstr "Nenhuma categoria pai"
+
+#: app/blog/admin/forms.py:35
+msgid "A category cannot be parent of itself."
+msgstr "A categoria não pode ser pai de si mesmo."
+
+#: app/blog/admin/forms.py:46 app/blog/plugins/menu.py:70
+#: app/blog/templates/blog/base.html:22
+#: app/blog/templates/blog/category_list.html:4
+#: app/blog/templates/blog/sitemap.html:50
+#: app/blog/templatetags/zbreadcrumbs.py:49
+msgid "Categories"
+msgstr "Categorias"
+
+#: app/blog/plugins/cms_app.py:12
+msgid "blog App Hook"
+msgstr "blog App Hook"
+
+#: app/blog/plugins/cms_plugins.py:33
+msgid "Sorting"
+msgstr "Seleção"
+
+#: app/blog/plugins/cms_plugins.py:43
+msgid "Advanced"
+msgstr "Avançado"
+
+#: app/blog/plugins/cms_plugins.py:94
+msgid "Selected entries"
+msgstr "Artigos selecionados"
+
+#: app/blog/plugins/cms_plugins.py:116 app/blog/templates/blog/base.html:59
+msgid "Random entries"
+msgstr "Artigos aleatórios"
+
+#: app/blog/plugins/menu.py:19
+msgid "blog Entry Menu"
+msgstr "blog Menu de Artigo"
+
+#: app/blog/plugins/menu.py:65
+msgid "blog Category Menu"
+msgstr "blog Menu de Categoria"
+
+#: app/blog/plugins/menu.py:82
+msgid "blog Author Menu"
+msgstr "blog Menu de Autor"
+
+#: app/blog/plugins/menu.py:87 app/blog/templates/blog/author_list.html:4
+#: app/blog/templates/blog/base.html:26
+#: app/blog/templatetags/zbreadcrumbs.py:46 app/planet/forms.py:12
+#: app/planet/models.py:250 app/planet/templates/planet/base.html:20
+#: app/planet/templates/planet/authors/list.html:11
+msgid "Authors"
+msgstr "Autores"
+
+#: app/blog/plugins/menu.py:100
+msgid "blog Tag Menu"
+msgstr "blog Menu de Tag"
+
+#: app/blog/plugins/menu.py:105
+#: app/blog/templates/admin/blog/widgets/quickpost.html:25
+#: app/blog/templates/blog/_entry_detail.html:52
+#: app/blog/templates/blog/base.html:34
+#: app/blog/templates/blog/tag_list.html:4
+#: app/blog/templatetags/zbreadcrumbs.py:43 app/planet/forms.py:10
+#: app/planet/templates/planet/tags/list.html:11
+msgid "Tags"
+msgstr "Tags"
+
+#: app/blog/plugins/models.py:16
+msgid "Entry list (default)"
+msgstr "Lista de artigos (padrão)"
+
+#: app/blog/plugins/models.py:17
+msgid "Entry detailed"
+msgstr "Artigo detalhado"
+
+#: app/blog/plugins/models.py:27
+msgid "include subcategories"
+msgstr "Incluir subcategorias"
+
+#: app/blog/plugins/models.py:33 app/blog/plugins/models.py:79
+msgid "number of entries"
+msgstr "número de artigos"
+
+#: app/blog/plugins/models.py:36 app/blog/plugins/models.py:60
+#: app/blog/plugins/models.py:82
+msgid "Template used to display the plugin"
+msgstr "Modelo usado para exibir o plugin"
+
+#: app/blog/plugins/models.py:51 app/blog/plugins/models.py:73
+#: app/blog/plugins/models.py:85
+#, python-format
+msgid "%s entries"
+msgstr "%s  artigos"
+
+#: app/blog/templates/404.html:5
+msgid "Error 404"
+msgstr "Erro 404"
+
+#: app/blog/templates/404.html:8 app/blog/templates/404.html.py:11
+#: grappelli/templates/admin/404.html:7 grappelli/templates/admin/404.html:11
+msgid "Page not found"
+msgstr "Página não encontrada"
+
+#: app/blog/templates/404.html:13
+msgid "Sorry, but the requested page could not be found."
+msgstr "Desculpe, mas a página solicitada não pode ser encontrada."
+
+#: app/blog/templates/404.html:15 app/blog/templates/500.html:20
+msgid "Useful links"
+msgstr "Links úteis"
+
+#: app/blog/templates/404.html:19 app/blog/templates/404.html.py:20
+#: app/blog/templates/500.html:24 app/blog/templates/500.html.py:25
+msgid "Blog index"
+msgstr "Índice do Blog"
+
+#: app/blog/templates/404.html:24 app/blog/templates/404.html.py:25
+#: app/blog/templates/500.html:29 app/blog/templates/500.html.py:30
+#: app/blog/templates/blog/sitemap.html:4
+#: app/blog/templates/blog/sitemap.html:7
+#: app/blog/templates/blog/skeleton.html:38
+#: app/blog/templates/blog/skeleton.html:39
+msgid "Sitemap"
+msgstr "Mapa do Site"
+
+#: app/blog/templates/404.html:31 app/blog/templates/500.html:36
+#: app/blog/templates/blog/base.html:47
+msgid "Recent entries"
+msgstr "Artigos recentes"
+
+#: app/blog/templates/404.html:36 app/blog/templates/500.html:41
+#: app/blog/templates/blog/base.html:10
+msgid "Search"
+msgstr "Pesquisa"
+
+#: app/blog/templates/404.html:40 app/blog/templates/500.html:45
+#: app/blog/templates/blog/base.html:13
+msgid "Keywords..."
+msgstr "Palavras-chave ..."
+
+#: app/blog/templates/500.html:10
+msgid "Error 500"
+msgstr "Erro 500"
+
+#: app/blog/templates/500.html:13 app/blog/templates/500.html.py:16
+#: grappelli/templates/admin/500.html:7
+msgid "Server error"
+msgstr "Erro de servidor"
+
+#: app/blog/templates/500.html:18 grappelli/templates/admin/500.html:15
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+"Houve um erro. Foi relatado aos administradores do site via e-mail e deve "
+"ser corrigido em breve. Obrigado pela sua paciência."
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:4
+msgid "Contents"
+msgstr "Conteúdos"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:5
+#: app/blog/templates/blog/_entry_detail.html:75
+msgid "Discussions"
+msgstr "Discussões"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:10
+#, python-format
+msgid "%(entries)s entries"
+msgstr " %(entries)s  artigos"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:15
+#, python-format
+msgid "%(comments)s comments"
+msgstr "%(comments)s comentários"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:22
+#, python-format
+msgid "%(categories)s categories"
+msgstr "%(categories)s categorias"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:25
+#, python-format
+msgid "%(pingbacks)s pingbacks"
+msgstr "%(pingbacks)s pingbacks"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:30
+#, python-format
+msgid "%(tags)s tags"
+msgstr "%(tags)s tags"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:33
+#, python-format
+msgid "%(trackbacks)s trackbacks"
+msgstr "%(trackbacks)s trackbacks"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:38
+#, python-format
+msgid "%(authors)s authors"
+msgstr "%(authors)s autores"
+
+#: app/blog/templates/admin/blog/widgets/_content_stats.html:43
+#, python-format
+msgid "%(rejects)s rejected"
+msgstr "%(rejects)s rejeitados"
+
+#: app/blog/templates/admin/blog/widgets/_draft_entries.html:7
+#: app/blog/templates/blog/entry_detail.html:186
+#: app/blog/templates/blog/entry_detail.html:187
+msgid "Edit the entry"
+msgstr "Editar o artigo"
+
+#: app/blog/templates/admin/blog/widgets/_draft_entries.html:10
+#: app/blog/templates/blog/_entry_detail.html:19
+#: app/blog/templates/blog/entry_detail.html:91
+#: app/blog/templates/blog/entry_detail.html:126
+#: app/blog/templates/blog/entry_detail.html:157
+#: app/blog/templates/comments/blog_entry_preview.html:25
+#: app/blog/templates/feeds/comment_title.html:2
+#: app/blog/templates/feeds/discussion_title.html:2
+#: app/blog/templates/feeds/pingback_title.html:2
+#: app/blog/templates/feeds/trackback_title.html:2
+msgid "on"
+msgstr "em"
+
+#: app/blog/templates/admin/blog/widgets/_draft_entries.html:16
+#: app/blog/templates/comments/blog/entry/form.html:19
+msgid "Preview"
+msgstr "Visualizar"
+
+#: app/blog/templates/admin/blog/widgets/_draft_entries.html:23
+msgid "No draft entries."
+msgstr "Não há entradas de rascunho."
+
+#: app/blog/templates/admin/blog/widgets/_draft_entries.html:32
+#: app/blog/templates/admin/blog/widgets/_draft_entries.html:33
+msgid "View all draft entries"
+msgstr "Ver todas as entradas de rascunho"
+
+#: app/blog/templates/admin/blog/widgets/_recent_comments.html:11
+#: app/blog/templates/blog/_entry_detail.html:24
+#: app/blog/templates/blog/tags/recent_comments.html:7
+#: app/blog/templates/blog/tags/recent_linkbacks.html:8
+#: app/planet/templates/planet/authors/detail.html:11
+#: app/planet/templates/planet/posts/details.html:22
+#: app/planet/templates/planet/posts/full_details.html:12
+#: app/planet/templates/planet/tags/detail.html:11
+msgid "in"
+msgstr "em"
+
+#: app/blog/templates/admin/blog/widgets/_recent_comments.html:14
+#: app/blog/templates/blog/tags/recent_comments.html:9
+msgid "Comment on"
+msgstr "Comentários sobre"
+
+#: app/blog/templates/admin/blog/widgets/_recent_comments.html:23
+msgid "Edit the comment"
+msgstr "Editar o comentário"
+
+#: app/blog/templates/admin/blog/widgets/_recent_comments.html:24
+#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:19
+msgid "Edit"
+msgstr "Editar"
+
+#: app/blog/templates/admin/blog/widgets/_recent_comments.html:31
+#: app/blog/templates/blog/_entry_detail.html:83
+#: app/blog/templates/blog/entry_detail.html:107
+#: app/blog/templates/blog/tags/recent_comments.html:16
+msgid "No comments yet."
+msgstr "Ainda não há comentários."
+
+#: app/blog/templates/admin/blog/widgets/_recent_comments.html:40
+#: app/blog/templates/admin/blog/widgets/_recent_comments.html:41
+msgid "Manage the comments"
+msgstr "Gerenciar os comentários"
+
+#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:8
+msgid "made a linkback on"
+msgstr "fez um linkback em"
+
+#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:18
+msgid "Edit the linkback"
+msgstr "Editar o linkback"
+
+#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:26
+#: app/blog/templates/blog/tags/recent_linkbacks.html:17
+msgid "No linkbacks yet."
+msgstr "Não linkbacks ainda."
+
+#: app/blog/templates/admin/blog/widgets/content_stats.html:6
+#: app/blog/templates/admin/blog/widgets/content_stats.html:7
+msgid "Today"
+msgstr "Hoje"
+
+#: app/blog/templates/admin/blog/widgets/draft_entries.html:6
+#: app/blog/templates/admin/blog/widgets/draft_entries.html:7
+msgid "Draft entries"
+msgstr "Rascunho de artigos"
+
+#: app/blog/templates/admin/blog/widgets/quickpost.html:5
+#: app/blog/templates/admin/blog/widgets/quickpost.html:6
+msgid "Quick publishing"
+msgstr "Publicação rápida"
+
+#: app/blog/templates/admin/blog/widgets/quickpost.html:9
+#: app/planet/models.py:85 app/planet/models.py:200 app/planet/models.py:291
+msgid "Title"
+msgstr "Título"
+
+#: app/blog/templates/admin/blog/widgets/quickpost.html:33
+msgid "Save as draft"
+msgstr "Salvar como rascunho"
+
+#: app/blog/templates/admin/blog/widgets/quickpost.html:34
+msgid "Reset"
+msgstr "Reset"
+
+#: app/blog/templates/admin/blog/widgets/quickpost.html:35
+msgid "Publish"
+msgstr "Publicar"
+
+#: app/blog/templates/admin/blog/widgets/recent_comments.html:6
+#: app/blog/templates/admin/blog/widgets/recent_comments.html:7
+#: app/blog/templates/blog/base.html:51
+msgid "Recent comments"
+msgstr "Comentários recentes"
+
+#: app/blog/templates/admin/blog/widgets/recent_linkbacks.html:6
+#: app/blog/templates/admin/blog/widgets/recent_linkbacks.html:7
+#: app/blog/templates/blog/base.html:55
+msgid "Recent linkbacks"
+msgstr "Linkbacks recentes"
+
+#: app/blog/templates/blog/_entry_detail.html:10
+msgid "Written by"
+msgstr "Escrito por"
+
+#: app/blog/templates/blog/_entry_detail.html:14
+#, python-format
+msgid "Show %(author)s entries"
+msgstr "Mostrar artigos do %(author)s "
+
+#: app/blog/templates/blog/_entry_detail.html:59
+msgid "No tags"
+msgstr "Não há tags"
+
+#: app/blog/templates/blog/_entry_detail.html:64
+msgid "Short url"
+msgstr "url curta"
+
+#: app/blog/templates/blog/_entry_detail.html:79
+#, python-format
+msgid "%(comment_count)s comment"
+msgid_plural "%(comment_count)s comments"
+msgstr[0] "%(comment_count)s comentário"
+msgstr[1] "%(comment_count)s comentários"
+
+#: app/blog/templates/blog/_entry_detail.html:85
+msgid "Be first to comment!"
+msgstr "Seja o primeiro a comentar!"
+
+#: app/blog/templates/blog/_entry_detail.html:88
+#: app/blog/templates/blog/entry_detail.html:103
+#: app/blog/templates/blog/entry_detail.html:109
+msgid "Comments are closed."
+msgstr "Comentários estão fechados."
+
+#: app/blog/templates/blog/_entry_detail.html:95
+#, python-format
+msgid "%(pingback_count)s pingback"
+msgid_plural "%(pingback_count)s pingbacks"
+msgstr[0] "%(pingback_count)s pingbacks"
+msgstr[1] "%(pingback_count)s pingbacks"
+
+#: app/blog/templates/blog/_entry_detail.html:102
+#, python-format
+msgid "%(trackback_count)s trackback"
+msgid_plural "%(trackback_count)s trackbacks"
+msgstr[0] "%(trackback_count)s trackbacks"
+msgstr[1] "%(trackback_count)s trackbacks"
+
+#: app/blog/templates/blog/author_list.html:7
+msgid "Author list"
+msgstr "Lista de autores"
+
+#: app/blog/templates/blog/author_list.html:16
+#: app/blog/templates/blog/category_list.html:12
+#: app/blog/templates/blog/sitemap.html:55
+#: app/blog/templates/blog/tag_list.html:14
+#: app/blog/templates/blog/tags/authors.html:10
+#: app/blog/templates/blog/tags/categories.html:6
+#, python-format
+msgid "%(entry_count)s entry"
+msgid_plural "%(entry_count)s entries"
+msgstr[0] "%(entry_count)s artigo"
+msgstr[1] "%(entry_count)s artigos"
+
+#: app/blog/templates/blog/base.html:15
+msgid ""
+"You can use - to exclude words or phrases, &quot;double quotes&quot; for "
+"exact phrases and the AND/OR boolean operators combined with parenthesis for "
+"complex searchs."
+msgstr ""
+"Você pode usar - para excluir palavras ou frases, \"aspas duplas\" para "
+"frases exatas e os operadores AND/OR  combinados com parênteses para uma "
+"busca mais complexa."
+
+#: app/blog/templates/blog/base.html:30
+msgid "Calendar"
+msgstr "Calendário"
+
+#: app/blog/templates/blog/base.html:63
+msgid "Popular entries"
+msgstr "Artigos mais populares"
+
+#: app/blog/templates/blog/base.html:67
+#: app/blog/templates/blog/entry_archive_day.html:4
+#: app/blog/templates/blog/entry_archive_month.html:4
+#: app/blog/templates/blog/entry_archive_year.html:4
+#: app/blog/templates/blog/tags/archives_entries.html:5
+#: app/blog/templates/blog/tags/archives_entries_link.html:2
+#: app/blog/templates/blog/tags/archives_entries_tree.html:7
+#: app/blog/templates/blog/tags/archives_entries_tree.html:14
+#: app/blog/templates/blog/tags/archives_entries_tree.html:24
+msgid "Archives"
+msgstr "Arquivos"
+
+#: app/blog/templates/blog/base.html:72
+msgid "Tools"
+msgstr "Ferramentas"
+
+#: app/blog/templates/blog/base.html:83 app/blog/templates/blog/base.html:84
+msgid "Post an entry"
+msgstr "Enviar um comentário"
+
+#: app/blog/templates/blog/base.html:91 app/blog/templates/blog/base.html:92
+#: grappelli/dashboard/dashboards.py:145
+#: grappelli/templates/admin/auth/user/change_password.html:14
+#: grappelli/templates/admin/includes_grappelli/header.html:28
+#: grappelli/templates/registration/password_change_done.html:14
+#: grappelli/templates/registration/password_change_form.html:13
+msgid "Log out"
+msgstr "Sair da sessão"
+
+#: app/blog/templates/blog/category_list.html:7
+msgid "Category list"
+msgstr "Lista de categorias"
+
+#: app/blog/templates/blog/entry_archive_month.html:8
+#, fuzzy
+msgid "Daily archives"
+msgstr "Arquivos mensais"
+
+#: app/blog/templates/blog/entry_archive_year.html:8
+#: app/blog/templates/blog/sitemap.html:67
+msgid "Monthly archives"
+msgstr "Arquivos mensais"
+
+#: app/blog/templates/blog/entry_detail.html:10
+msgid "RSS Feed of discussions on"
+msgstr "RSS Feed das discussões"
+
+#: app/blog/templates/blog/entry_detail.html:11
+msgid "RSS Feed of comments on"
+msgstr "RSS Feed dos comentários"
+
+#: app/blog/templates/blog/entry_detail.html:12
+msgid "RSS Feed of pingbacks on"
+msgstr "RSS Feed das pingbacks"
+
+#: app/blog/templates/blog/entry_detail.html:13
+msgid "RSS Feed of trackbacks on"
+msgstr "RSS Feed dos trackbacks"
+
+#: app/blog/templates/blog/entry_detail.html:29
+msgid "Next entry"
+msgstr "Próximo artigo"
+
+#: app/blog/templates/blog/entry_detail.html:43
+msgid "Previous entry"
+msgstr "Artigo anterior"
+
+#: app/blog/templates/blog/entry_detail.html:56
+msgid "Related entries"
+msgstr "Artigos relacionados"
+
+#: app/blog/templates/blog/entry_detail.html:67
+msgid "Similar entries"
+msgstr "Artigos semelhantes"
+
+#: app/blog/templates/blog/entry_detail.html:75
+msgid "Comments"
+msgstr "Comentários"
+
+#: app/blog/templates/blog/entry_detail.html:117
+msgid "Pingbacks"
+msgstr "Pingbacks"
+
+#: app/blog/templates/blog/entry_detail.html:139
+msgid "Pingbacks are open."
+msgstr "Pingbacks estão abertas."
+
+#: app/blog/templates/blog/entry_detail.html:141
+msgid "Pingbacks are closed."
+msgstr "Pingbacks estão fechados."
+
+#: app/blog/templates/blog/entry_detail.html:148
+msgid "Trackbacks"
+msgstr "Trackbacks"
+
+#: app/blog/templates/blog/entry_detail.html:170
+msgid "Trackback URL"
+msgstr "Trackback URL"
+
+#: app/blog/templates/blog/entry_list.html:7
+#: app/blog/templates/blog/entry_list.html:10
+#: app/blog/templates/blog/entry_list.html:13
+#: app/blog/templates/blog/skeleton.html:43 grappelli/dashboard/modules.py:353
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: app/blog/templates/blog/entry_list.html:17
+msgid "Category"
+msgstr "Categoria"
+
+#: app/blog/templates/blog/entry_list.html:17
+#: app/blog/templates/blog/entry_list.html:28
+#: app/planet/templates/planet/tags/detail.html:22
+msgid "Tag"
+msgstr "Tag"
+
+#: app/blog/templates/blog/entry_list.html:17 app/planet/models.py:249
+msgid "Author"
+msgstr "Autor"
+
+#: app/blog/templates/blog/entry_list.html:17
+msgid "Page"
+msgstr "Página"
+
+#: app/blog/templates/blog/entry_list.html:32
+#, python-format
+msgid "Entries by %(author)s"
+msgstr "Artigos por %(author)s"
+
+#: app/blog/templates/blog/entry_list.html:43
+#: app/blog/templates/blog/sitemap.html:23
+#: app/blog/templates/blog/sitemap.html:43
+#: app/blog/templates/blog/cms/entry_detail.html:12
+#: app/blog/templates/blog/cms/entry_list.html:9
+#: app/blog/templates/blog/tags/featured_entries.html:9
+#: app/blog/templates/blog/tags/popular_entries.html:13
+#: app/blog/templates/blog/tags/random_entries.html:9
+#: app/blog/templates/blog/tags/recent_entries.html:9
+msgid "No entries yet."
+msgstr "Não há artigos ainda."
+
+#: app/blog/templates/blog/entry_list.html:49
+#, python-format
+msgid "Page %(current_page)s of %(total_page)s"
+msgstr "Página %(current_page)s de %(total_page)s"
+
+#: app/blog/templates/blog/entry_list.html:54
+msgid "More recent entries"
+msgstr "Artigos mais recentes"
+
+#: app/blog/templates/blog/entry_list.html:63
+msgid "Entries page"
+msgstr "Página de artigos"
+
+#: app/blog/templates/blog/entry_list.html:70
+msgid "More old entries"
+msgstr "Artigos mais antigos"
+
+#: app/blog/templates/blog/entry_list.html:80
+#: app/blog/templates/blog/entry_list.html:81
+msgid "Edit the category"
+msgstr "Editar a categoria"
+
+#: app/blog/templates/blog/entry_list.html:87
+#: app/blog/templates/blog/entry_list.html:88
+msgid "Edit the tag"
+msgstr "Editar o tag"
+
+#: app/blog/templates/blog/entry_list.html:94
+#: app/blog/templates/blog/entry_list.html:95
+msgid "Edit the author"
+msgstr "Editar o autor"
+
+#: app/blog/templates/blog/entry_search.html:4
+#: app/blog/templates/blog/entry_search.html:12
+msgid "Search results"
+msgstr "Resultados da pesquisa"
+
+#: app/blog/templates/blog/entry_search.html:8
+msgid "RSS Feed of search result of"
+msgstr "RSS Feed do resultado da pesquisa de"
+
+#: app/blog/templates/blog/entry_search.html:20
+#, python-format
+msgid "%(entry_count)s entry found"
+msgid_plural "%(entry_count)s entries found"
+msgstr[0] "%(entry_count)s artigo encontrado"
+msgstr[1] "%(entry_count)s artigos encontrados"
+
+#: app/blog/templates/blog/entry_search.html:32
+msgid "Nothing found."
+msgstr "Nada foi encontrado."
+
+#: app/blog/templates/blog/login.html:4 app/blog/templates/blog/login.html:7
+msgid "Login required"
+msgstr "Login necessário"
+
+#: app/blog/templates/blog/login.html:12
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+"Seu nome de usuário e a senha não correspondem. Por favor, tente novamente."
+
+#: app/blog/templates/blog/login.html:16
+msgid "You need to be connected to view this entry."
+msgstr "Você precisa estar conectado para visualizar este comentário."
+
+#: app/blog/templates/blog/login.html:33
+msgid "Login"
+msgstr "Login"
+
+#: app/blog/templates/blog/password.html:4
+#: app/blog/templates/blog/password.html:7
+msgid "Password required"
+msgstr "Senha necessária"
+
+#: app/blog/templates/blog/password.html:12
+msgid "The password provided is not valid. Please try again."
+msgstr "A senha fornecida não é válida. Por favor, tente novamente."
+
+#: app/blog/templates/blog/password.html:16
+msgid "You need to provide a password to view this entry."
+msgstr "É preciso fornecer uma senha para visualizar este artigo."
+
+#: app/blog/templates/blog/password.html:23
+msgid "Password"
+msgstr "Senha"
+
+#: app/blog/templates/blog/password.html:28
+msgid "Valid"
+msgstr "Válido"
+
+#: app/blog/templates/blog/sitemap.html:10
+msgid "Entries per categories"
+msgstr "Artigos por categorias"
+
+#: app/blog/templates/blog/sitemap.html:18
+#: app/blog/templates/blog/sitemap.html:38
+#: app/blog/templates/blog/tags/popular_entries.html:8
+msgid "comment"
+msgstr "comentário"
+
+#: app/blog/templates/blog/sitemap.html:31
+msgid "All the entries"
+msgstr "Todas os artigos"
+
+#: app/blog/templates/blog/sitemap.html:60
+#: app/blog/templates/blog/tags/categories.html:11
+msgid "No categories yet."
+msgstr "Não há categorias ainda."
+
+#: app/blog/templates/blog/skeleton.html:26
+#: app/blog/templates/blog/skeleton.html:42
+msgid "RSS Feed of latest entries"
+msgstr "RSS Feed dos últimos artigos"
+
+#: app/blog/templates/blog/skeleton.html:35
+#: app/blog/templates/blog/skeleton.html:36
+msgid "Share"
+msgstr ""
+
+#: app/blog/templates/blog/tag_list.html:7
+msgid "Tag list"
+msgstr "Lista de tags"
+
+#: app/blog/templates/blog/tags/archives_entries.html:12
+#: app/blog/templates/blog/tags/archives_entries_tree.html:38
+msgid "No archives yet."
+msgstr "Não há arquivos ainda."
+
+#: app/blog/templates/blog/tags/authors.html:14
+msgid "No authors yet."
+msgstr "Nenhum autor ainda."
+
+#: app/blog/templates/blog/tags/recent_linkbacks.html:10
+msgid "Linkback on"
+msgstr "Linkback em"
+
+#: app/blog/templates/blog/tags/similar_entries.html:9
+msgid "No similar entries."
+msgstr "Não há artigos semelhantes."
+
+#: app/blog/templates/comments/blog_entry_preview.html:4
+msgid "Comment preview"
+msgstr "Visualizar comentário"
+
+#: app/blog/templates/comments/blog_entry_preview.html:9
+msgid "Please correct following error."
+msgid_plural "Please correct following errors."
+msgstr[0] "Corrija o seguinte erro."
+msgstr[1] "Corrija os seguintes erros."
+
+#: app/blog/templates/comments/blog_entry_preview.html:12
+msgid "Preview of the comment"
+msgstr "Visualização do comentário"
+
+#: app/blog/templates/comments/blog/entry/form.html:7
+msgid "Post your comment"
+msgstr "Envie seu comentário"
+
+#: app/blog/templates/comments/blog/entry/form.html:18
+#: app/planet/models.py:215
+msgid "Post"
+msgstr "Enviar"
+
+#: app/blog/templates/comments/blog/entry/posted.html:4
+#: app/blog/templates/comments/blog/entry/posted.html:7
+msgid "Thanks for your comment"
+msgstr "Obrigado pelo seu comentário"
+
+#: app/blog/templates/comments/blog/entry/posted.html:9
+#: app/blog/templates/comments/blog/entry/posted.html:10
+msgid "Return to entry list"
+msgstr "Voltar à lista de artigos"
+
+#: app/blog/tests/views.py:161 app/blog/views/search.py:17
+msgid "The pattern is too short"
+msgstr "O padrão é muito curto"
+
+#: app/blog/tests/views.py:164 app/blog/views/search.py:21
+msgid "No pattern to search found"
+msgstr "Nenhum padrão encontrado"
+
+#: app/blog/xmlrpc/metaweblog.py:35
+msgid "Username is incorrect."
+msgstr "Nome de usuário está incorreto."
+
+#: app/blog/xmlrpc/metaweblog.py:37
+msgid "Password is invalid."
+msgstr "A senha é inválida."
+
+#: app/blog/xmlrpc/metaweblog.py:39
+msgid "User account unavailable."
+msgstr "Conta de usuário não disponível."
+
+#: app/blog/xmlrpc/metaweblog.py:42
+#, python-format
+msgid "User cannot %s."
+msgstr "Usuário não pode %s."
+
+#: app/blog/xmlrpc/pingback.py:93
+msgid "No title"
+msgstr "Sem título"
+
+#: app/django_future/admin.py:33
+msgid "Schedule"
+msgstr ""
+
+#: app/django_future/admin.py:36
+msgid "Job"
+msgstr ""
+
+#: app/django_future/models.py:23
+msgid "Scheduled"
+msgstr ""
+
+#: app/django_future/models.py:24
+msgid "Running"
+msgstr ""
+
+#: app/django_future/models.py:25
+msgid "Failed"
+msgstr ""
+
+#: app/django_future/models.py:26
+msgid "Complete"
+msgstr ""
+
+#: app/django_future/models.py:27
+msgid "Expired"
+msgstr ""
+
+#: app/django_future/models.py:30
+msgid "time slot start"
+msgstr ""
+
+#: app/django_future/models.py:31
+msgid "time slot end"
+msgstr ""
+
+#: app/django_future/models.py:32
+msgid "execution start"
+msgstr ""
+
+#: app/django_future/models.py:33
+msgid "status"
+msgstr ""
+
+#: app/django_future/models.py:36
+#, fuzzy
+msgid "content type"
+msgstr "conteúdo"
+
+#: app/django_future/models.py:37
+msgid "object ID"
+msgstr ""
+
+#: app/django_future/models.py:40
+#, fuzzy
+msgid "callable name"
+msgstr "nome do modelo"
+
+#: app/django_future/models.py:41
+msgid ""
+"The callable to be executed may be specified in two ways: Set the callable "
+"name to an identifier (mypackage.myapp.some_function). Or specify an "
+"instance of a model as the content object and set the callable name to a "
+"method name (do_job)."
+msgstr ""
+
+#: app/django_future/models.py:45
+msgid "args"
+msgstr ""
+
+#: app/django_future/models.py:46
+msgid "kwargs"
+msgstr ""
+
+#: app/django_future/models.py:47
+msgid "error"
+msgstr ""
+
+#: app/django_future/models.py:48
+msgid "return value"
+msgstr ""
+
+#: app/django_future/models.py:51
+msgid "scheduled job"
+msgstr ""
+
+#: app/django_future/models.py:52
+msgid "scheduled jobs"
+msgstr ""
+
+#: app/feedblog/feedblog.py:99
+msgid "collect"
+msgstr ""
+
+#: app/planet/feeds.py:67
+#, python-format
+msgid "Posts by %(author_name)s - %(site_name)s"
+msgstr ""
+
+#: app/planet/feeds.py:84
+#, python-format
+msgid "Posts under %(tag)s tag - %(site_name)s"
+msgstr ""
+
+#: app/planet/feeds.py:103
+#, python-format
+msgid "Posts by %(author_name)s under %(tag)s tag - %(site_name)s"
+msgstr ""
+
+#: app/planet/forms.py:9 app/planet/models.py:216
+#: app/planet/templates/planet/base.html:17
+#, fuzzy
+msgid "Posts"
+msgstr "Enviar"
+
+#: app/planet/forms.py:11 app/planet/models.py:43
+#: app/planet/templates/planet/base.html:23
+#: app/planet/templates/planet/blogs/list.html:11
+msgid "Blogs"
+msgstr ""
+
+#: app/planet/forms.py:13 app/planet/models.py:121
+#: app/planet/templates/planet/base.html:26
+#: app/planet/templates/planet/feeds/list.html:11
+#, fuzzy
+msgid "Feeds"
+msgstr "RSS Feed"
+
+#: app/planet/models.py:35 app/planet/models.py:58 app/planet/models.py:83
+#: app/planet/models.py:202 app/planet/models.py:268 app/planet/models.py:290
+#: app/planet/models.py:313
+msgid "Url"
+msgstr ""
+
+#: app/planet/models.py:36 app/planet/models.py:182 app/planet/models.py:209
+msgid "Date created"
+msgstr ""
+
+#: app/planet/models.py:42 app/planet/templates/planet/blogs/detail.html:4
+#: app/planet/templates/planet/blogs/detail.html:6
+#: app/planet/templates/planet/blogs/detail.html:7
+#: app/planet/templates/planet/blogs/detail.html:11
+msgid "Blog"
+msgstr ""
+
+#: app/planet/models.py:57 app/planet/models.py:240
+msgid "Name"
+msgstr ""
+
+#: app/planet/models.py:59
+msgid "Version"
+msgstr ""
+
+#: app/planet/models.py:65
+msgid "Generator"
+msgstr ""
+
+#: app/planet/models.py:66
+msgid "Generators"
+msgstr ""
+
+#: app/planet/models.py:87
+#, fuzzy
+msgid "Subtitle"
+msgstr "título"
+
+#: app/planet/models.py:89
+msgid "Rights"
+msgstr ""
+
+#: app/planet/models.py:93
+msgid "Infos"
+msgstr ""
+
+#: app/planet/models.py:95
+msgid "Language"
+msgstr ""
+
+#: app/planet/models.py:97
+msgid "Global Unique Identifier"
+msgstr ""
+
+#: app/planet/models.py:100
+msgid "Icon URL"
+msgstr ""
+
+#: app/planet/models.py:102
+msgid "Image URL"
+msgstr ""
+
+#: app/planet/models.py:105
+msgid "Etag"
+msgstr ""
+
+#: app/planet/models.py:108
+msgid "Last modified"
+msgstr ""
+
+#: app/planet/models.py:111
+msgid "Last checked"
+msgstr ""
+
+#: app/planet/models.py:113
+msgid "Is active"
+msgstr ""
+
+#: app/planet/models.py:114
+msgid "If disabled, this feed will not be further updated."
+msgstr ""
+
+#: app/planet/models.py:120 app/planet/templates/planet/feeds/detail.html:4
+#: app/planet/templates/planet/feeds/detail.html:6
+#: app/planet/templates/planet/feeds/detail.html:7
+#: app/planet/templates/planet/feeds/detail.html:29
+#, fuzzy
+msgid "Feed"
+msgstr "RSS Feed"
+
+#: app/planet/models.py:181
+msgid "Is Contributor?"
+msgstr ""
+
+#: app/planet/models.py:185 app/planet/models.py:186
+msgid "Post Author Data"
+msgstr ""
+
+#: app/planet/models.py:203
+msgid "Guid"
+msgstr ""
+
+#: app/planet/models.py:205
+#, fuzzy
+msgid "Comments URL"
+msgstr "Comentários"
+
+#: app/planet/models.py:207
+msgid "Date modified"
+msgstr ""
+
+#: app/planet/models.py:242
+#, fuzzy
+msgid "Author email"
+msgstr "Lista de autores"
+
+#: app/planet/models.py:243
+msgid "Profile URL"
+msgstr ""
+
+#: app/planet/models.py:266 app/planet/models.py:288
+#, fuzzy
+msgid "Relation"
+msgstr "Publicação"
+
+#: app/planet/models.py:267 app/planet/models.py:289 app/planet/models.py:312
+msgid "MIME type"
+msgstr ""
+
+#: app/planet/models.py:274
+msgid "Feed Link"
+msgstr ""
+
+#: app/planet/models.py:275
+msgid "Feed Links"
+msgstr ""
+
+#: app/planet/models.py:297
+#, fuzzy
+msgid "Post Link"
+msgstr "Enviar"
+
+#: app/planet/models.py:298
+msgid "Post Links"
+msgstr ""
+
+#: app/planet/models.py:311
+msgid "Length"
+msgstr ""
+
+#: app/planet/models.py:319
+msgid "Post Enclosure"
+msgstr ""
+
+#: app/planet/models.py:320
+msgid "Post Enclosures"
+msgstr ""
+
+#: app/planet/templates/site_base.html:55
+#, fuzzy
+msgid "admin site"
+msgstr "Ver no site"
+
+#: app/planet/templates/site_base.html:70
+msgid ""
+"Theme heavly based on the minimal and beautiful <a href=\"http://blog."
+"montylounge.com/\" title=\"Visit Mounty Lounge Industries blog\">Mounty "
+"Lounge Industries blog's</a> design"
+msgstr ""
+
+#: app/planet/templates/planet/base.html:14
+msgid "Browse"
+msgstr ""
+
+#: app/planet/templates/planet/base.html:29
+msgid "Tag Cloud"
+msgstr ""
+
+#: app/planet/templates/planet/base.html:38
+#, fuzzy
+msgid "Search in"
+msgstr "Pesquisa"
+
+#: app/planet/templates/planet/base.html:40
+msgid "ok"
+msgstr ""
+
+#: app/planet/templates/planet/base.html:52
+msgid "Suscribe to RSS feed"
+msgstr ""
+
+#: app/planet/templates/planet/base.html:72
+msgid "This is a django powered site!"
+msgstr ""
+
+#: app/planet/templates/planet/base.html:81
+msgid ""
+"A <a href=\"https://github.com/alexliyu/lincdm\" title=\"LinCDM Powered"
+"\">LinCDM</a> powered site"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:4
+#: app/planet/templates/planet/authors/detail.html:6
+#: app/planet/templates/planet/authors/detail.html:7
+#: app/planet/templates/planet/authors/detail.html:36
+msgid "has written the following posts"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:11
+#: app/planet/templates/planet/posts/details.html:22
+msgid "blog"
+msgstr "blog"
+
+#: app/planet/templates/planet/authors/detail.html:15
+msgid "Suscribe to RSS feed for blog"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:23
+#: app/planet/templates/planet/feeds/detail.html:13
+#: app/planet/templates/planet/tags/detail.html:35
+msgid "See the list of authors talking about this tag"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:24
+#: app/planet/templates/planet/feeds/detail.html:14
+#: app/planet/templates/planet/tags/detail.html:36
+msgid "People talking about this"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:28
+#: app/planet/templates/planet/blogs/detail.html:38
+#: app/planet/templates/planet/feeds/detail.html:18
+msgid "See the list of blogs talking about this tag"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:29
+#: app/planet/templates/planet/feeds/detail.html:19
+#: app/planet/templates/planet/tags/detail.html:41
+msgid "Feeds talking about this"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:40
+#: app/planet/templates/planet/blogs/detail.html:26
+#: app/planet/templates/planet/feeds/detail.html:51
+msgid "Posts under tag"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:41
+msgid "See all posts by"
+msgstr ""
+
+#: app/planet/templates/planet/authors/detail.html:42
+msgid "See the complete list of posts by this author"
+msgstr ""
+
+#: app/planet/templates/planet/authors/list.html:4
+#: app/planet/templates/planet/authors/list.html:6
+#: app/planet/templates/planet/authors/list.html:7
+#, fuzzy
+msgid "Authors list"
+msgstr "Lista de autores"
+
+#: app/planet/templates/planet/authors/list.html:17
+#, fuzzy
+msgid "Author:"
+msgstr "Autor"
+
+#: app/planet/templates/planet/authors/list.html:21
+msgid "writes for"
+msgstr ""
+
+#: app/planet/templates/planet/authors/list_for_tag.html:5
+#: app/planet/templates/planet/authors/blocks/list_for_tag.html:3
+#, fuzzy
+msgid "Authors talking about"
+msgstr "Lista de autores"
+
+#: app/planet/templates/planet/authors/blocks/list.html:3
+#, fuzzy
+msgid "Authrs"
+msgstr "Autores"
+
+#: app/planet/templates/planet/authors/blocks/list.html:7
+#: app/planet/templates/planet/authors/blocks/list_for_tag.html:7
+#, fuzzy
+msgid "Author of"
+msgstr "Autor"
+
+#: app/planet/templates/planet/authors/blocks/list_for_feed.html:2
+msgid "Authors for this feed"
+msgstr ""
+
+#: app/planet/templates/planet/blogs/detail.html:4
+#: app/planet/templates/planet/blogs/detail.html:6
+#: app/planet/templates/planet/blogs/detail.html:7
+#: app/planet/templates/planet/feeds/detail.html:4
+#: app/planet/templates/planet/feeds/detail.html:6
+#: app/planet/templates/planet/feeds/detail.html:7
+#: app/planet/templates/planet/tags/detail.html:4
+#: app/planet/templates/planet/tags/detail.html:7
+#: app/planet/templates/planet/tags/detail.html:12
+#, fuzzy
+msgid "Posts in"
+msgstr "Enviar"
+
+#: app/planet/templates/planet/blogs/detail.html:14
+#: app/planet/templates/planet/blogs/list.html:22
+#: app/planet/templates/planet/feeds/detail.html:46
+#: app/planet/templates/planet/feeds/list.html:28
+msgid "web"
+msgstr ""
+
+#: app/planet/templates/planet/blogs/detail.html:14
+#: app/planet/templates/planet/blogs/list.html:22
+#: app/planet/templates/planet/feeds/detail.html:46
+#: app/planet/templates/planet/feeds/list.html:28
+msgid "Go to the original blog"
+msgstr ""
+
+#: app/planet/templates/planet/blogs/detail.html:18
+#: app/planet/templates/planet/blogs/list.html:30
+#: app/planet/templates/planet/feeds/detail.html:35
+#: app/planet/templates/planet/feeds/detail.html:38
+msgid "Subscribe to "
+msgstr ""
+
+#: app/planet/templates/planet/blogs/detail.html:19
+#: app/planet/templates/planet/blogs/list.html:31
+#: app/planet/templates/planet/feeds/detail.html:36
+#, fuzzy
+msgid "RSS 2.0 Feed"
+msgstr "RSS Feed"
+
+#: app/planet/templates/planet/blogs/detail.html:21
+#: app/planet/templates/planet/blogs/list.html:29
+#: app/planet/templates/planet/feeds/detail.html:38
+#: app/planet/templates/planet/feeds/list.html:25
+msgid "feed"
+msgstr ""
+
+#: app/planet/templates/planet/blogs/detail.html:21
+#: app/planet/templates/planet/blogs/list.html:29
+#: app/planet/templates/planet/feeds/list.html:18
+msgid "See the full list of post from this feed"
+msgstr ""
+
+#: app/planet/templates/planet/blogs/detail.html:39
+msgid "Other blogs talking about "
+msgstr ""
+
+#: app/planet/templates/planet/blogs/list.html:4
+#: app/planet/templates/planet/blogs/list.html:6
+#: app/planet/templates/planet/blogs/list.html:7
+#, fuzzy
+msgid "Blogs list"
+msgstr "Lista de tags"
+
+#: app/planet/templates/planet/blogs/list.html:18
+#: app/planet/templates/planet/blogs/list.html:25
+msgid "See the full list of posts from this blog"
+msgstr ""
+
+#: app/planet/templates/planet/blogs/list.html:25
+#: app/planet/templates/planet/feeds/list.html:31
+msgid "browse"
+msgstr ""
+
+#: app/planet/templates/planet/blogs/list.html:25
+#: app/planet/templates/planet/feeds/list.html:31
+#, fuzzy
+msgid "latest posts"
+msgstr "Últimos artigos"
+
+#: app/planet/templates/planet/feeds/detail.html:27
+msgid "Feed icon"
+msgstr ""
+
+#: app/planet/templates/planet/feeds/detail.html:42
+msgid "generator"
+msgstr ""
+
+#: app/planet/templates/planet/feeds/list.html:4
+#: app/planet/templates/planet/feeds/list.html:6
+#: app/planet/templates/planet/feeds/list.html:7
+msgid "Feeds list"
+msgstr ""
+
+#: app/planet/templates/planet/feeds/list.html:22
+#: app/planet/templates/planet/feeds/list_for_tag.html:10
+msgid "Subscribe to feed of"
+msgstr ""
+
+#: app/planet/templates/planet/feeds/list.html:25
+msgid "Subscribe to this feed"
+msgstr ""
+
+#: app/planet/templates/planet/feeds/list.html:31
+msgid "See the full list of posts from this feed"
+msgstr ""
+
+#: app/planet/templates/planet/feeds/list_for_tag.html:5
+#: app/planet/templates/planet/feeds/blocks/list_for_tag.html:3
+msgid "Feeds talking about"
+msgstr ""
+
+#: app/planet/templates/planet/posts/details.html:3
+msgid "Read "
+msgstr ""
+
+#: app/planet/templates/planet/posts/details.html:8
+#, fuzzy
+msgid "published in"
+msgstr "publicado"
+
+#: app/planet/templates/planet/posts/details.html:8
+#: app/planet/templates/planet/posts/full_details.html:12
+msgid "See all posts for this feed"
+msgstr ""
+
+#: app/planet/templates/planet/posts/details.html:19
+msgid "Read more"
+msgstr ""
+
+#: app/planet/templates/planet/posts/details.html:22
+msgid "Read original post"
+msgstr ""
+
+#: app/planet/templates/planet/posts/details.html:22
+msgid "read original post"
+msgstr ""
+
+#: app/planet/templates/planet/posts/full_details.html:7
+msgid "by"
+msgstr ""
+
+#: app/planet/templates/planet/posts/full_details.html:8
+msgid "See all posts for this author"
+msgstr ""
+
+#: app/planet/templates/planet/posts/full_details.html:18
+#, fuzzy
+msgid "original entry"
+msgstr "elemento opcional"
+
+#: app/planet/templates/planet/posts/full_details.html:21
+#, fuzzy
+msgid "in blog"
+msgstr "blog"
+
+#: app/planet/templates/planet/posts/list.html:4
+#: app/planet/templates/planet/posts/list.html:6
+#: app/planet/templates/planet/posts/list.html:7
+msgid "Posts list"
+msgstr ""
+
+#: app/planet/templates/planet/posts/list.html:11
+#, fuzzy
+msgid "Latest posts"
+msgstr "Últimos artigos"
+
+#: app/planet/templates/planet/tags/cloud.html:4
+#: app/planet/templates/planet/tags/cloud.html:6
+#: app/planet/templates/planet/tags/cloud.html:7
+#: app/planet/templates/planet/tags/cloud.html:11
+#: app/planet/templates/planet/tags/blocks/cloud.html:2
+msgid "Tags cloud"
+msgstr ""
+
+#: app/planet/templates/planet/tags/detail.html:6
+msgid "tag in"
+msgstr ""
+
+#: app/planet/templates/planet/tags/detail.html:11
+#, fuzzy
+msgid "tag"
+msgstr "tags"
+
+#: app/planet/templates/planet/tags/detail.html:16
+msgid "Suscribe to RSS feed for tag"
+msgstr ""
+
+#: app/planet/templates/planet/tags/detail.html:40
+msgid "See the list of feeds talking about this tag"
+msgstr ""
+
+#: app/planet/templates/planet/tags/list.html:4
+#: app/planet/templates/planet/tags/list.html:6
+#: app/planet/templates/planet/tags/list.html:7
+#, fuzzy
+msgid "Tags list"
+msgstr "Lista de tags"
+
+#: app/planet/templates/planet/tags/blocks/authors_cloud.html:3
+msgid "Tags cloud for author"
+msgstr ""
+
+#: app/planet/templates/planet/tags/blocks/blogs_cloud.html:3
+msgid "Tags cloud for blog"
+msgstr ""
+
+#: app/planet/templates/planet/tags/blocks/feeds_cloud.html:3
+msgid "Tags cloud for feed"
+msgstr ""
+
+#: app/planet/templates/planet/tags/blocks/related_list.html:3
+#, fuzzy
+msgid "Related tags"
+msgstr "Artigos relacionados"
+
+#: app/pushblog/pushblog.py:82
+msgid "Push"
+msgstr ""
+
+#: grappelli/dashboard/dashboards.py:136
+#, fuzzy
+msgid "Quick links"
+msgstr "Publicação rápida"
+
+#: grappelli/dashboard/dashboards.py:142
+#, fuzzy
+msgid "Return to site"
+msgstr "Voltar à lista de artigos"
+
+#: grappelli/dashboard/dashboards.py:143
+#: grappelli/templates/admin/auth/user/change_password.html:11
+#: grappelli/templates/admin/auth/user/change_password.html:23
+#: grappelli/templates/admin/auth/user/change_password.html:62
+#: grappelli/templates/admin/includes_grappelli/header.html:20
+#: grappelli/templates/registration/password_change_done.html:11
+#: grappelli/templates/registration/password_change_form.html:10
+#, fuzzy
+msgid "Change password"
+msgstr "senha"
+
+#: grappelli/dashboard/dashboards.py:176
+msgid "Django documentation"
+msgstr ""
+
+#: grappelli/dashboard/dashboards.py:181
+msgid "Django \"django-users\" mailing list"
+msgstr ""
+
+#: grappelli/dashboard/dashboards.py:186
+msgid "Django irc channel"
+msgstr ""
+
+#: grappelli/dashboard/modules.py:189
+msgid "Links"
+msgstr ""
+
+#: grappelli/dashboard/modules.py:344
+#, fuzzy
+msgid "No recent actions."
+msgstr "Artigos mais recentes"
+
+#: grappelli/dashboard/templates/admin/index.html:23
+#: grappelli/templates/admin/500.html:7
+#: grappelli/templates/admin/app_index.html:11
+#: grappelli/templates/admin/base.html:57
+#: grappelli/templates/admin/change_form.html:62
+#: grappelli/templates/admin/change_list.html:82
+#: grappelli/templates/admin/csv_export_selected_confirmation.html:9
+#: grappelli/templates/admin/delete_confirmation.html:9
+#: grappelli/templates/admin/delete_selected_confirmation.html:9
+#: grappelli/templates/admin/index.html:16
+#: grappelli/templates/admin/invalid_setup.html:7
+#: grappelli/templates/admin/object_history.html:9
+#: grappelli/templates/admin/auth/user/change_password.html:20
+#: grappelli/templates/admin_doc/bookmarklets.html:6
+#: grappelli/templates/registration/password_change_done.html:18
+#: grappelli/templates/registration/password_change_form.html:16
+#: grappelli/templates/registration/password_reset_complete.html:4
+#: grappelli/templates/registration/password_reset_confirm.html:4
+#: grappelli/templates/registration/password_reset_done.html:4
+#: grappelli/templates/registration/password_reset_form.html:4
+msgid "Home"
+msgstr ""
+
+#: grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:19
+#: grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:9
+#: grappelli/templates/admin/app_index.html:30
+#: grappelli/templates/admin/change_form.html:65
+#: grappelli/templates/admin/index.html:31
+msgid "Add"
+msgstr ""
+
+#: grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:24
+#: grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:10
+#: grappelli/templates/admin/app_index.html:31
+#: grappelli/templates/admin/index.html:32
+msgid "Change"
+msgstr ""
+
+#: grappelli/dashboard/templates/grappelli/dashboard/modules/recent_actions.html:12
+#, fuzzy
+msgid "None Available"
+msgstr "Indisponível"
+
+#: grappelli/templates/admin/404.html:12
+#, fuzzy
+msgid "We're sorry, but the requested page could not be found."
+msgstr "Desculpe, mas a página solicitada não pode ser encontrada."
+
+#: grappelli/templates/admin/500.html:10
+#, fuzzy
+msgid "Server error (500)"
+msgstr "Erro de servidor"
+
+#: grappelli/templates/admin/500.html:14
+msgid "Server Error <em>(500)</em>"
+msgstr ""
+
+#: grappelli/templates/admin/actions.html:10
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: grappelli/templates/admin/actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: grappelli/templates/admin/actions.html:11
+msgid "Clear selection"
+msgstr ""
+
+#: grappelli/templates/admin/app_index.html:13
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: grappelli/templates/admin/base_site.html:4
+msgid "Django site admin"
+msgstr ""
+
+#: grappelli/templates/admin/base_site.html:7
+msgid "Django administration"
+msgstr ""
+
+#: grappelli/templates/admin/change_form.html:75
+#: grappelli/templates/admin/object_history.html:13
+msgid "History"
+msgstr ""
+
+#: grappelli/templates/admin/change_form.html:96
+#: grappelli/templates/admin/change_list.html:146
+#: grappelli/templates/admin/auth/user/change_password.html:38
+#, fuzzy
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Corrija o seguinte erro."
+msgstr[1] "Corrija os seguintes erros."
+
+#: grappelli/templates/admin/change_list.html:100
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: grappelli/templates/admin/change_list.html:118
+msgid "Filter"
+msgstr ""
+
+#: grappelli/templates/admin/csv_export_selected_confirmation.html:12
+msgid "Export selection as CSV"
+msgstr ""
+
+#: grappelli/templates/admin/csv_export_selected_confirmation.html:31
+msgid "Export following fields:"
+msgstr ""
+
+#: grappelli/templates/admin/csv_export_selected_confirmation.html:34
+msgid "Select all"
+msgstr ""
+
+#: grappelli/templates/admin/csv_export_selected_confirmation.html:54
+msgid "Back"
+msgstr ""
+
+#: grappelli/templates/admin/csv_export_selected_confirmation.html:55
+msgid "Export"
+msgstr ""
+
+#: grappelli/templates/admin/delete_confirmation.html:13
+msgid "Delete"
+msgstr ""
+
+#: grappelli/templates/admin/delete_confirmation.html:22
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: grappelli/templates/admin/delete_confirmation.html:33
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: grappelli/templates/admin/delete_confirmation.html:41
+#: grappelli/templates/admin/delete_selected_confirmation.html:47
+msgid "Cancel"
+msgstr ""
+
+#: grappelli/templates/admin/delete_confirmation.html:42
+#: grappelli/templates/admin/delete_selected_confirmation.html:48
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: grappelli/templates/admin/delete_selected_confirmation.html:12
+msgid "Delete multiple objects"
+msgstr ""
+
+#: grappelli/templates/admin/delete_selected_confirmation.html:21
+#, python-format
+msgid ""
+"Deleting the %(objects_name)s would result in deleting related objects, but "
+"your account doesn't have permission to delete the following types of "
+"objects:"
+msgstr ""
+
+#: grappelli/templates/admin/delete_selected_confirmation.html:32
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s objects? All "
+"of the following objects and their related items will be deleted:"
+msgstr ""
+
+#: grappelli/templates/admin/filter.html:3
+#, python-format
+msgid "%(filter_title)s"
+msgstr ""
+
+#: grappelli/templates/admin/index.html:39
+msgid "You don´t have permission to edit anything."
+msgstr ""
+
+#: grappelli/templates/admin/index.html:46
+#, fuzzy
+msgid "My Actions"
+msgstr "Comentários recentes"
+
+#: grappelli/templates/admin/index.html:49
+#, fuzzy
+msgid "None available"
+msgstr "Indisponível"
+
+#: grappelli/templates/admin/invalid_setup.html:11
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+#: grappelli/templates/admin/login.html:31
+msgid "Username:"
+msgstr ""
+
+#: grappelli/templates/admin/login.html:35
+#, fuzzy
+msgid "Password:"
+msgstr "Senha"
+
+#: grappelli/templates/admin/login.html:45
+#: grappelli/templates/registration/password_reset_complete.html:11
+#, fuzzy
+msgid "Log in"
+msgstr "Índice do Blog"
+
+#: grappelli/templates/admin/object_history.html:25
+msgid "Date/time"
+msgstr ""
+
+#: grappelli/templates/admin/object_history.html:26
+msgid "User"
+msgstr ""
+
+#: grappelli/templates/admin/object_history.html:27
+#, fuzzy
+msgid "Action"
+msgstr "Publicação"
+
+#: grappelli/templates/admin/object_history.html:33
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: grappelli/templates/admin/object_history.html:37
+#, fuzzy
+msgid "Created object"
+msgstr "artigos relacionados"
+
+#: grappelli/templates/admin/object_history.html:47
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: grappelli/templates/admin/pagination.html:8
+#, fuzzy, python-format
+msgid "1 result"
+msgid_plural "%(counter)s results"
+msgstr[0] "Resultados da pesquisa"
+msgstr[1] "Resultados da pesquisa"
+
+#: grappelli/templates/admin/pagination.html:13
+#: grappelli/templates/admin/pagination.html:15
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: grappelli/templates/admin/pagination.html:27
+msgid "Show all"
+msgstr ""
+
+#: grappelli/templates/admin/submit_line.html:6
+msgid "Save"
+msgstr ""
+
+#: grappelli/templates/admin/submit_line.html:7
+#, fuzzy
+msgid "Save as new"
+msgstr "Salvar como rascunho"
+
+#: grappelli/templates/admin/submit_line.html:8
+#, fuzzy
+msgid "Save and add another"
+msgstr "Salvar como rascunho"
+
+#: grappelli/templates/admin/submit_line.html:9
+msgid "Save and continue editing"
+msgstr ""
+
+#: grappelli/templates/admin/auth/user/change_password.html:7
+#: grappelli/templates/admin/includes_grappelli/header.html:41
+#: grappelli/templates/admin_doc/bookmarklets.html:6
+#: grappelli/templates/registration/password_change_done.html:7
+#: grappelli/templates/registration/password_change_form.html:6
+#, fuzzy
+msgid "Documentation"
+msgstr "Comentários sobre"
+
+#: grappelli/templates/admin/auth/user/change_password.html:27
+#: grappelli/templates/registration/password_change_done.html:18
+#: grappelli/templates/registration/password_change_form.html:16
+#: grappelli/templates/registration/password_change_form.html:17
+#: grappelli/templates/registration/password_change_form.html:22
+#, fuzzy
+msgid "Password change"
+msgstr "Senha"
+
+#: grappelli/templates/admin/auth/user/change_password.html:35
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: grappelli/templates/admin/auth/user/change_password.html:45
+#: grappelli/templates/registration/password_change_form.html:37
+#: grappelli/templates/registration/password_reset_confirm.html:14
+#, fuzzy
+msgid "New password:"
+msgstr "senha"
+
+#: grappelli/templates/admin/auth/user/change_password.html:52
+#, fuzzy
+msgid "Password (again)"
+msgstr "Senha"
+
+#: grappelli/templates/admin/auth/user/change_password.html:56
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/stacked.html:8
+msgid "Open All Items"
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/stacked.html:9
+msgid "Close All Items"
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/stacked.html:10
+#: grappelli/templates/admin/edit_inline/stacked.html:53
+#: grappelli/templates/admin/edit_inline/tabular.html:86
+msgid "Add Item"
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/stacked.html:23
+#: grappelli/templates/admin/edit_inline/tabular.html:60
+#, fuzzy
+msgid "View on Site"
+msgstr "Ver no site"
+
+#: grappelli/templates/admin/edit_inline/stacked.html:25
+#: grappelli/templates/admin/edit_inline/tabular.html:62
+msgid "Move Item"
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/stacked.html:29
+#: grappelli/templates/admin/edit_inline/stacked.html:31
+msgid "Delete Item"
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/stacked.html:51
+#: grappelli/templates/admin/edit_inline/tabular.html:84
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/tabular.html:8
+msgid "Add Another"
+msgstr ""
+
+#: grappelli/templates/admin/edit_inline/tabular.html:65
+#: grappelli/templates/admin/edit_inline/tabular.html:70
+msgid "Remove"
+msgstr ""
+
+#: grappelli/templates/admin/includes_grappelli/header.html:36
+msgid "Tests"
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:6
+#: grappelli/templates/admin_doc/bookmarklets.html:10
+msgid "Bookmarklets"
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:7
+#, fuzzy
+msgid "Documentation bookmarklets"
+msgstr "Comentários sobre"
+
+#: grappelli/templates/admin_doc/bookmarklets.html:12
+msgid ""
+"\n"
+"            <p>To install bookmarklets, drag the link to your bookmarks\n"
+"    toolbar, or right-click the link and add it to your bookmarks. Now you "
+"can\n"
+"    select the bookmarklet from any page in the site.  Note that some of "
+"these\n"
+"    bookmarklets require you to be viewing the site from a computer "
+"designated\n"
+"    as \"internal\" (talk to your system administrator if you aren't sure "
+"if\n"
+"    your computer is \"internal\").</p>\n"
+"        "
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:21
+#, fuzzy
+msgid "Documentation for this page"
+msgstr "Comentários sobre"
+
+#: grappelli/templates/admin_doc/bookmarklets.html:22
+msgid ""
+"Jumps you from any page to the documentation for the view that generates "
+"that page."
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:25
+msgid "Show object ID"
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:26
+msgid ""
+"Shows the content-type and unique ID for pages that represent a single "
+"object."
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:29
+msgid "Edit this object (current window)"
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:30
+msgid "Jumps to the admin page for pages that represent a single object."
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:33
+msgid "Edit this object (new window)"
+msgstr ""
+
+#: grappelli/templates/admin_doc/bookmarklets.html:34
+msgid "As above, but opens the admin page in a new window."
+msgstr ""
+
+#: grappelli/templates/registration/logged_out.html:11
+msgid "Log in again"
+msgstr ""
+
+#: grappelli/templates/registration/password_change_done.html:20
+#: grappelli/templates/registration/password_change_done.html:22
+msgid "Password change successful"
+msgstr ""
+
+#: grappelli/templates/registration/password_change_done.html:23
+msgid "Your password was changed."
+msgstr ""
+
+#: grappelli/templates/registration/password_change_form.html:26
+msgid ""
+"Please enter your old password, for securitys sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: grappelli/templates/registration/password_change_form.html:30
+#, fuzzy
+msgid "Old password:"
+msgstr "senha"
+
+#: grappelli/templates/registration/password_change_form.html:44
+#: grappelli/templates/registration/password_reset_confirm.html:16
+#, fuzzy
+msgid "Confirm password:"
+msgstr "senha"
+
+#: grappelli/templates/registration/password_change_form.html:53
+#: grappelli/templates/registration/password_reset_confirm.html:17
+#, fuzzy
+msgid "Change my password"
+msgstr "senha"
+
+#: grappelli/templates/registration/password_reset_complete.html:4
+#: grappelli/templates/registration/password_reset_confirm.html:6
+#: grappelli/templates/registration/password_reset_done.html:4
+#: grappelli/templates/registration/password_reset_form.html:4
+#: grappelli/templates/registration/password_reset_form.html:6
+#: grappelli/templates/registration/password_reset_form.html:9
+#, fuzzy
+msgid "Password reset"
+msgstr "Senha necessária"
+
+#: grappelli/templates/registration/password_reset_complete.html:6
+#: grappelli/templates/registration/password_reset_complete.html:9
+#, fuzzy
+msgid "Password reset complete"
+msgstr "Senha necessária"
+
+#: grappelli/templates/registration/password_reset_complete.html:10
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_confirm.html:4
+msgid "Password reset confirmation"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_confirm.html:10
+#, fuzzy
+msgid "Enter new password"
+msgstr "senha"
+
+#: grappelli/templates/registration/password_reset_confirm.html:11
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_confirm.html:20
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_confirm.html:21
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_done.html:6
+#: grappelli/templates/registration/password_reset_done.html:9
+#, fuzzy
+msgid "Password reset successful"
+msgstr "Senha necessária"
+
+#: grappelli/templates/registration/password_reset_done.html:10
+msgid ""
+"We've e-mailed a new password to the e-mail address you submitted. You "
+"should be receiving it shortly."
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_email.html:11
+#, fuzzy
+msgid "Thanks for using our site!"
+msgstr "Obrigado pelo seu comentário"
+
+#: grappelli/templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_form.html:10
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll reset "
+"your password and e-mail the new one to you."
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_form.html:13
+msgid "E-mail address:"
+msgstr ""
+
+#: grappelli/templates/registration/password_reset_form.html:13
+#, fuzzy
+msgid "Reset my password"
+msgstr "senha"
+
+#: grappelli/views/related.py:24 grappelli/views/related.py:51
+#, fuzzy
+msgid "Not Found"
+msgstr "Nada foi encontrado."
+
+#: grappelli/views/related.py:28 grappelli/views/related.py:30
+#: grappelli/views/related.py:53 grappelli/views/related.py:55
+#, fuzzy
+msgid "Error"
+msgstr "Erro 404"
+
+#~ msgid "on date"
+#~ msgstr "na data"
+
+#~ msgid "Your contents"
+#~ msgstr "Seu conteúdo"
+
+#~ msgid "Email"
+#~ msgstr "E-mail"
+
+#~ msgid "IP"
+#~ msgstr "IP"
+
+#~ msgid "Comment"
+#~ msgstr "Comentário"
+
+#~ msgid "Not yet comments !"
+#~ msgstr "Ainda sem comentários!"
+
+#~ msgid "Allow PingBacks and TrackBacks on the entry"
+#~ msgstr "Permitir PingBacks e TrackBacks para o artigo"
+
+#~ msgid "%s - News"
+#~ msgstr "%s - Notícias"
+
+#~ msgid "author"
+#~ msgstr "autor"
+
+#~ msgid ""
+#~ "\n"
+#~ "        %(entry_count)s entry\n"
+#~ "      "
+#~ msgid_plural ""
+#~ "\n"
+#~ "        %(entry_count)s entries\n"
+#~ "      "
+#~ msgstr[0] ""
+#~ "\n"
+#~ "        %(entry_count)s artigo\n"
+#~ "      "
+#~ msgstr[1] ""
+#~ "\n"
+#~ "        %(entry_count)s artigos\n"
+#~ "      "
+
+#~ msgid ""
+#~ "\n"
+#~ "      %(entry_count)s entry\n"
+#~ "    "
+#~ msgid_plural ""
+#~ "\n"
+#~ "      %(entry_count)s entries\n"
+#~ "    "
+#~ msgstr[0] ""
+#~ "\n"
+#~ "      %(entry_count)s artigo\n"
+#~ "    "
+#~ msgstr[1] ""
+#~ "\n"
+#~ "      %(entry_count)s artigos\n"
+#~ "    "
+
+#~ msgid "Can view all"
+#~ msgstr "Pode ver todos"
+
+#~ msgid "<a href=\"%(url)s\" target=\"blank\">%(url)s</a>"
+#~ msgstr "<a href=\"%(url)s\" target=\"blank\">%(url)s</a>"

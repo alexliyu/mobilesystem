@@ -1,0 +1,25 @@
+{% extends "places/base.html" %}{% load molly_utils %}
+
+{% block extrahead %}{{ block.super }}{% if entity %}
+<meta name="robots" content="noindex" />{% endif %}{% endblock %}
+
+{% block content %}
+
+{% if not entity %}{% include "geolocation/update_location_embed.html" %}{% endif %}
+
+{% for name, types in entity_types.items %}
+<div class="section">
+<div class="header">
+  <h2>{{ name }}</h2>
+</div>
+	<ul class="link-list">
+	{% for entity_type in types %}{% if entity %}
+	    <li><a href="{% url places:entity-nearby-detail entity.identifier_scheme,entity.identifier_value,entity_type.slug %}">
+	{% else %}
+	    <li><a href="{% url places:nearby-detail entity_type.slug %}">
+	{% endif %} {{ entity_type.verbose_name_plural|capfirst }} <small>({{ entity_type.entities_found }} within {{ entity_type.max_distance|round_up_10 }}m)</small></a></li>{% endfor %}
+	</ul>
+</div>
+{% endfor %}
+
+{% endblock %}

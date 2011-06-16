@@ -1,0 +1,1552 @@
+# French translation of blog.
+# Copyright (C) 2008 THE blog'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the blog package.
+# Fantomas42 <fantomas42@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: django-blog-blog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-15 12:03-0500\n"
+"PO-Revision-Date: 2011-06-16 01:04+0800\n"
+"Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
+"Language-Team: French <fantomas42@gmail.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: FRANCE\n"
+
+#: settings.py:38
+msgid "Chinese"
+msgstr "中文"
+
+#: molly/apps/sakai/templates/sakai/announcement/detail.html:16
+#, python-format
+msgid "This announcement has %(attachments)s attachment."
+msgid_plural "This announcement has %(attachments)s attachments."
+msgstr[0] ""
+
+#: molly/apps/sakai/templates/sakai/announcement/detail.html:22
+msgid "Please use WebLearn on a desktop PC to retrieve them."
+msgstr "请在桌面电脑使用WebLearn"
+
+#: molly/templates/registration/logged_out.html:4
+#: molly/templates/registration/password_change_done.html:4
+#: molly/templates/registration/password_change_form.html:4
+#: molly/templates/registration/password_reset_complete.html:4
+#: molly/templates/registration/password_reset_confirm.html:4
+#: molly/templates/registration/password_reset_done.html:4
+#: molly/templates/registration/password_reset_form.html:4
+msgid "Home"
+msgstr "主页"
+
+#: molly/templates/registration/logged_out.html:8
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr "感谢您今天花了宝贵的时间在这个网站"
+
+#: molly/templates/registration/logged_out.html:10
+msgid "Log in again"
+msgstr "重新登录"
+
+#: molly/templates/registration/password_change_done.html:3
+#: molly/templates/registration/password_change_form.html:3
+msgid "Documentation"
+msgstr "文档"
+
+#: molly/templates/registration/password_change_done.html:3
+#: molly/templates/registration/password_change_form.html:3
+msgid "Change password"
+msgstr "修改密码"
+
+#: molly/templates/registration/password_change_done.html:3
+#: molly/templates/registration/password_change_form.html:3
+msgid "Log out"
+msgstr "注销"
+
+#: molly/templates/registration/password_change_done.html:4
+#: molly/templates/registration/password_change_form.html:4
+#: molly/templates/registration/password_change_form.html:6
+#: molly/templates/registration/password_change_form.html:10
+msgid "Password change"
+msgstr "修改密码"
+
+#: molly/templates/registration/password_change_done.html:6
+#: molly/templates/registration/password_change_done.html:10
+msgid "Password change successful"
+msgstr "密码已成功修改"
+
+#: molly/templates/registration/password_change_done.html:12
+msgid "Your password was changed."
+msgstr "您的密码已修改."
+
+#: molly/templates/registration/password_change_form.html:12
+#, fuzzy
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确。"
+
+#: molly/templates/registration/password_change_form.html:17
+msgid "Old password:"
+msgstr "旧密码："
+
+#: molly/templates/registration/password_change_form.html:19
+#: molly/templates/registration/password_reset_confirm.html:19
+msgid "New password:"
+msgstr "新密码："
+
+#: molly/templates/registration/password_change_form.html:21
+#: molly/templates/registration/password_reset_confirm.html:21
+msgid "Confirm password:"
+msgstr "确认密码："
+
+#: molly/templates/registration/password_change_form.html:23
+#: molly/templates/registration/password_reset_confirm.html:22
+msgid "Change my password"
+msgstr "修改我的密码"
+
+#: molly/templates/registration/password_reset_complete.html:4
+#: molly/templates/registration/password_reset_confirm.html:6
+#: molly/templates/registration/password_reset_done.html:4
+#: molly/templates/registration/password_reset_form.html:4
+#: molly/templates/registration/password_reset_form.html:6
+#: molly/templates/registration/password_reset_form.html:10
+msgid "Password reset"
+msgstr "重设密码"
+
+#: molly/templates/registration/password_reset_complete.html:6
+#: molly/templates/registration/password_reset_complete.html:10
+msgid "Password reset complete"
+msgstr "密码重设完成"
+
+#: molly/templates/registration/password_reset_complete.html:12
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "您的密码已设置，您现在可以登录了."
+
+#: molly/templates/registration/password_reset_complete.html:14
+msgid "Log in"
+msgstr "登录"
+
+#: molly/templates/registration/password_reset_confirm.html:4
+msgid "Password reset confirmation"
+msgstr "密码重设确认"
+
+#: molly/templates/registration/password_reset_confirm.html:12
+msgid "Enter new password"
+msgstr "输入新密码"
+
+#: molly/templates/registration/password_reset_confirm.html:14
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确。"
+
+#: molly/templates/registration/password_reset_confirm.html:27
+msgid "Password reset unsuccessful"
+msgstr "密码重设失败"
+
+#: molly/templates/registration/password_reset_confirm.html:29
+#, fuzzy
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr "密码重设地址错误，这有可能是因为此地址已被使用过，请重新申请密码重设."
+
+#: molly/templates/registration/password_reset_done.html:6
+#: molly/templates/registration/password_reset_done.html:10
+msgid "Password reset successful"
+msgstr "重设密码成功"
+
+#: molly/templates/registration/password_reset_done.html:12
+#, fuzzy
+msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
+msgstr "我们已发送一封包含新密码的邮件到您的信箱，您很快就能收到它."
+
+#: molly/templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr "您将会收到一封电子邮件，因为您请求了密码重设"
+
+#: molly/templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "您在 %(site_name)s的用户账户"
+
+#: molly/templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "请继续下个页面，然后选择一个新密码："
+
+#: molly/templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "您的用户名："
+
+#: molly/templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr "感谢您使用我们的系统！"
+
+#: molly/templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "%(site_name)s 团队"
+
+#: molly/templates/registration/password_reset_form.html:12
+#, fuzzy
+msgid "Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
+msgstr "忘记您的密码了？请输入您的Email地址，我们将会重设您的密码并用邮件通知您."
+
+#: molly/templates/registration/password_reset_form.html:17
+msgid "E-mail address:"
+msgstr "Email地址："
+
+#: molly/templates/registration/password_reset_form.html:17
+msgid "Reset my password"
+msgstr "重设我的密码"
+
+#~ msgid "Group: Administration & Applications"
+#~ msgstr "组：系统管理&应用程序"
+
+#~ msgid "Administration"
+#~ msgstr "系统管理"
+
+#~ msgid "Applications"
+#~ msgstr "程序"
+
+#~ msgid "AppList: Applications"
+#~ msgstr "程序列表：应用程序"
+
+#~ msgid "ModelList: Administration"
+#~ msgstr "模块列表：系统管理"
+
+#~ msgid "Media Management"
+#~ msgstr "媒体管理"
+
+#~ msgid "FileBrowser"
+#~ msgstr "文件浏览器"
+
+#~ msgid "Support"
+#~ msgstr "提供"
+
+#~ msgid "Django Documentation"
+#~ msgstr "Django文档"
+
+#~ msgid "Grappelli Documentation"
+#~ msgstr "文档"
+
+#~ msgid "Latest Django News"
+#~ msgstr "最新Django新闻"
+
+#~ msgid "Recent Actions"
+#~ msgstr "最近动作"
+
+#~ msgid "Dashboard"
+#~ msgstr "仪表盘"
+
+#~ msgid "English"
+#~ msgstr "英语"
+
+#~ msgid "French"
+#~ msgstr "法语"
+
+#~ msgid "German"
+#~ msgstr "德语"
+
+#~ msgid "Spanish"
+#~ msgstr "西班牙语"
+
+#~ msgid "Italian"
+#~ msgstr "印度语"
+
+#~ msgid "Dutch"
+#~ msgstr "荷兰"
+
+#~ msgid "Hungarian"
+#~ msgstr " 匈牙利"
+
+#~ msgid "Russian"
+#~ msgstr "俄语"
+
+#~ msgid "Polish"
+#~ msgstr "波兰"
+
+#~ msgid "Brazilian Portuguese"
+#~ msgstr "葡萄牙语"
+
+#~ msgid "Simplified Chinese"
+#~ msgstr "简体中文"
+
+#~ msgid "Latest entries"
+#~ msgstr "最新日志"
+
+#~ msgid "The latest entries for the site %s"
+#~ msgstr " %s 网站的最新内容"
+
+#~ msgid "Entries for the category %s"
+#~ msgstr "类别 %s 的日志"
+
+#~ msgid "The latest entries for the category %s"
+#~ msgstr " %s 分类的最新内容"
+
+#~ msgid "Entries for author %s"
+#~ msgstr "作者 %s 的日志"
+
+#~ msgid "The latest entries by %s"
+#~ msgstr " %s 的的最新内容"
+
+#~ msgid "Entries for the tag %s"
+#~ msgstr "标签含 %s 的日志"
+
+#~ msgid "The latest entries for the tag %s"
+#~ msgstr " %s 标签的最新内容"
+
+#~ msgid "Results of the search for %s"
+#~ msgstr "搜索 %s 的结果"
+
+#~ msgid "The entries containing the pattern %s"
+#~ msgstr " %s 的的最新内容"
+
+#~ msgid "Discussions on %s"
+#~ msgstr " %s 的相关评论"
+
+#~ msgid "The latest discussions for the entry %s"
+#~ msgstr " %s 的最新评论"
+
+#~ msgid "Comments on %s"
+#~ msgstr "对于 %s 的评论"
+
+#~ msgid "The latest comments for the entry %s"
+#~ msgstr "%s 的最新评论"
+
+#~ msgid "Pingbacks on %s"
+#~ msgstr " %s 的Pingbacks"
+
+#~ msgid "The latest pingbacks for the entry %s"
+#~ msgstr "%s 的最新pingbacks"
+
+#~ msgid "Trackbacks on %s"
+#~ msgstr "引用于 %s"
+
+#~ msgid "The latest trackbacks for the entry %s"
+#~ msgstr " %s 的最新pingbacks"
+
+#~ msgid "title"
+#~ msgstr "标题"
+
+#~ msgid "used for publication"
+#~ msgstr "用于发布"
+
+#~ msgid "description"
+#~ msgstr "描述"
+
+#~ msgid "parent category"
+#~ msgstr "上级分类"
+
+#~ msgid "category"
+#~ msgstr "类别"
+
+#~ msgid "categories"
+#~ msgstr "类别"
+
+#~ msgid "draft"
+#~ msgstr "草稿"
+
+#~ msgid "hidden"
+#~ msgstr "隐藏"
+
+#~ msgid "published"
+#~ msgstr "发布"
+
+#~ msgid "image"
+#~ msgstr "图片"
+
+#~ msgid "used for illustration"
+#~ msgstr "用于插图"
+
+#~ msgid "content"
+#~ msgstr "内容"
+
+#~ msgid "excerpt"
+#~ msgstr "摘要"
+
+#~ msgid "optional element"
+#~ msgstr "可选项"
+
+#~ msgid "tags"
+#~ msgstr "标签"
+
+#~ msgid "related entries"
+#~ msgstr "相关日志"
+
+#~ msgid "authors"
+#~ msgstr "作者"
+
+#~ msgid "featured"
+#~ msgstr "推荐的"
+
+#~ msgid "comment enabled"
+#~ msgstr "允许评论"
+
+#~ msgid "linkback enabled"
+#~ msgstr "已允许linkback"
+
+#~ msgid "creation date"
+#~ msgstr "创建日期"
+
+#~ msgid "last update"
+#~ msgstr "最后更新"
+
+#~ msgid "start publication"
+#~ msgstr "开始发布"
+
+#~ msgid "date start publish"
+#~ msgstr "开始发布日期"
+
+#~ msgid "end publication"
+#~ msgstr "结束发布"
+
+#~ msgid "date end publish"
+#~ msgstr "结束发布日期"
+
+#~ msgid "sites publication"
+#~ msgstr "发布网站"
+
+#~ msgid "login required"
+#~ msgstr "需要登录"
+
+#~ msgid "only authenticated users can view the entry"
+#~ msgstr "只有认证的用户才能查看"
+
+#~ msgid "password"
+#~ msgstr "密码"
+
+#~ msgid "protect the entry with a password"
+#~ msgstr "增加密码保护"
+
+#~ msgid "template"
+#~ msgstr "模板"
+
+#~ msgid "Default template"
+#~ msgstr "默认模板"
+
+#~ msgid "template used to display the entry"
+#~ msgstr "已被使用的模板"
+
+#~ msgid "entry"
+#~ msgstr "日志"
+
+#~ msgid "entries"
+#~ msgstr "日志"
+
+#~ msgid "[%(site)s] New comment posted on \"%(title)s\""
+#~ msgstr "[%(site)s] New comment posted on \"%(title)s\""
+
+#~ msgid "tree path"
+#~ msgstr "树形路径"
+
+#~ msgid "Content"
+#~ msgstr "内容"
+
+#~ msgid "Options"
+#~ msgstr "选项"
+
+#~ msgid "Privacy"
+#~ msgstr "隐私权"
+
+#~ msgid "Discussion"
+#~ msgstr "评论"
+
+#~ msgid "Publication"
+#~ msgstr "发布"
+
+#~ msgid "%(title)s (%(word_count)i words)"
+#~ msgstr "%(title)s (%(word_count)i 个字符)"
+
+#~ msgid "%(title)s (%(comments)i comments)"
+#~ msgstr "%(title)s (%(comments)i 条评论)"
+
+#~ msgid "author(s)"
+#~ msgstr "作者"
+
+#~ msgid "category(s)"
+#~ msgstr "类别"
+
+#~ msgid "tag(s)"
+#~ msgstr "标签"
+
+#~ msgid "site(s)"
+#~ msgstr "网站"
+
+#~ msgid "is actual"
+#~ msgstr "发布期间"
+
+#~ msgid "is visible"
+#~ msgstr "是否可见"
+
+#~ msgid "<a href=\"%s\" target=\"blank\">View</a>"
+#~ msgstr "<a href=\"%s\" target=\"blank\">浏览</a>"
+
+#~ msgid "View on site"
+#~ msgstr "浏览站点"
+
+#~ msgid "Unavailable"
+#~ msgstr "不存在"
+
+#~ msgid "short url"
+#~ msgstr "缩略URL"
+
+#~ msgid "Set the entries to the user"
+#~ msgstr "设置自己为所选日志的作者"
+
+#~ msgid "Set entries selected as published"
+#~ msgstr "发布所选日志"
+
+#~ msgid "Set entries selected as hidden"
+#~ msgstr "隐藏所选日志"
+
+#~ msgid "Tweet entries selected"
+#~ msgstr "推特所选日志"
+
+#~ msgid "Close the comments for selected entries"
+#~ msgstr "关闭所选日志的评论功能"
+
+#~ msgid "Close the linkbacks for selected entries"
+#~ msgstr "关闭所选记录的Linbacks"
+
+#~ msgid "Put the selected entries on top at the current date"
+#~ msgstr "将选定条目置顶"
+
+#~ msgid "%(directory)s directory succesfully pinged %(success)d entries."
+#~ msgstr "%(directory)s 目录成功的 ping了 %(success)d 条目."
+
+#~ msgid "Ping Directories for selected entries"
+#~ msgstr "提交所选日志到搜索引擎"
+
+#~ msgid "No parent category"
+#~ msgstr "没有上级分类"
+
+#~ msgid "A category cannot be parent of itself."
+#~ msgstr "不能成为自己的上级分类"
+
+#~ msgid "Categories"
+#~ msgstr "类别"
+
+#~ msgid "blog App Hook"
+#~ msgstr "博客应用程序钩子"
+
+#~ msgid "Sorting"
+#~ msgstr "分类"
+
+#~ msgid "Advanced"
+#~ msgstr "高级"
+
+#~ msgid "Selected entries"
+#~ msgstr "所选日志"
+
+#~ msgid "Random entries"
+#~ msgstr "随机日志"
+
+#~ msgid "blog Entry Menu"
+#~ msgstr "Blog内容菜单"
+
+#~ msgid "blog Category Menu"
+#~ msgstr "Blog分类菜单"
+
+#~ msgid "blog Author Menu"
+#~ msgstr "Blog作者菜单"
+
+#~ msgid "Authors"
+#~ msgstr "作者"
+
+#~ msgid "blog Tag Menu"
+#~ msgstr "Blog标签菜单"
+
+#~ msgid "Tags"
+#~ msgstr "标签"
+
+#~ msgid "Entry list (default)"
+#~ msgstr "内容列表（默认）"
+
+#~ msgid "Entry detailed"
+#~ msgstr "条目详细内容"
+
+#~ msgid "include subcategories"
+#~ msgstr "包含子类"
+
+#~ msgid "number of entries"
+#~ msgstr "日志数量"
+
+#~ msgid "Template used to display the plugin"
+#~ msgstr "用于显示插件的模板"
+
+#~ msgid "%s entries"
+#~ msgstr "%s 日志"
+
+#~ msgid "Error 404"
+#~ msgstr "错误 404"
+
+#~ msgid "Page not found"
+#~ msgstr "找不到页面"
+
+#~ msgid "Sorry, but the requested page could not be found."
+#~ msgstr "对不起，找不到请求的页面"
+
+#~ msgid "Useful links"
+#~ msgstr "有用的连接"
+
+#~ msgid "Blog index"
+#~ msgstr "Blog索引"
+
+#~ msgid "Sitemap"
+#~ msgstr "Sitemap"
+
+#~ msgid "Recent entries"
+#~ msgstr "最近日志"
+
+#~ msgid "Search"
+#~ msgstr "搜索"
+
+#~ msgid "Keywords..."
+#~ msgstr "关键词..."
+
+#~ msgid "Error 500"
+#~ msgstr "错误 500"
+
+#~ msgid "Server error"
+#~ msgstr "服务器错误"
+
+#~ msgid ""
+#~ "There's been an error. It's been reported to the site administrators via "
+#~ "e-mail and should be fixed shortly. Thanks for your patience."
+#~ msgstr "出现了错误，已经发送邮件通知了管理员进行修复，感谢您的耐心."
+
+#~ msgid "Contents"
+#~ msgstr "内容"
+
+#~ msgid "Discussions"
+#~ msgstr "评论"
+
+#~ msgid "%(entries)s entries"
+#~ msgstr "%(entries)s 条目"
+
+#~ msgid "%(comments)s comments"
+#~ msgstr "%(comments)s 评论"
+
+#~ msgid "%(categories)s categories"
+#~ msgstr "%(categories)s 分类"
+
+#~ msgid "%(pingbacks)s pingbacks"
+#~ msgstr "%(pingbacks)s pingbacks"
+
+#~ msgid "%(tags)s tags"
+#~ msgstr "%(tags)s 标签"
+
+#~ msgid "%(trackbacks)s trackbacks"
+#~ msgstr "%(trackbacks)s 引用"
+
+#~ msgid "%(authors)s authors"
+#~ msgstr "%(authors)s 作者"
+
+#~ msgid "%(rejects)s rejected"
+#~ msgstr "%(rejects)s rejected"
+
+#~ msgid "Edit the entry"
+#~ msgstr "编辑内容"
+
+#~ msgid "on"
+#~ msgstr "在"
+
+#~ msgid "Preview"
+#~ msgstr "预览"
+
+#~ msgid "No draft entries."
+#~ msgstr "没有草稿"
+
+#~ msgid "View all draft entries"
+#~ msgstr "查看所有草稿"
+
+#~ msgid "in"
+#~ msgstr "在"
+
+#~ msgid "Comment on"
+#~ msgstr "评论于"
+
+#~ msgid "Edit the comment"
+#~ msgstr "编辑评论"
+
+#~ msgid "Edit"
+#~ msgstr "编辑"
+
+#~ msgid "No comments yet."
+#~ msgstr "还没有任何评论"
+
+#~ msgid "Manage the comments"
+#~ msgstr "管理评论"
+
+#~ msgid "made a linkback on"
+#~ msgstr "创建Linback于"
+
+#~ msgid "Edit the linkback"
+#~ msgstr "编辑Linback"
+
+#~ msgid "No linkbacks yet."
+#~ msgstr "还没有任何Linbacks"
+
+#~ msgid "Today"
+#~ msgstr "今天"
+
+#~ msgid "Draft entries"
+#~ msgstr "草稿"
+
+#~ msgid "Quick publishing"
+#~ msgstr "快速发布"
+
+#~ msgid "Title"
+#~ msgstr "标题"
+
+#~ msgid "Save as draft"
+#~ msgstr "保存为草稿"
+
+#~ msgid "Reset"
+#~ msgstr "重设"
+
+#~ msgid "Publish"
+#~ msgstr "发布"
+
+#~ msgid "Recent comments"
+#~ msgstr "最近评论"
+
+#~ msgid "Recent linkbacks"
+#~ msgstr "最近Linbacks"
+
+#~ msgid "Written by"
+#~ msgstr "作者是"
+
+#~ msgid "Show %(author)s entries"
+#~ msgstr "显示 %(author)s 的日志"
+
+#~ msgid "No tags"
+#~ msgstr "没有标签"
+
+#~ msgid "Short url"
+#~ msgstr "缩略URL"
+
+#~ msgid "%(comment_count)s comment"
+
+#~ msgid_plural "%(comment_count)s comments"
+#~ msgstr[0] "%(comment_count)s 条评论"
+
+#~ msgid "Be first to comment!"
+#~ msgstr "第一个评论"
+
+#~ msgid "Comments are closed."
+#~ msgstr "评论已关闭"
+
+#~ msgid "%(pingback_count)s pingback"
+
+#~ msgid_plural "%(pingback_count)s pingbacks"
+#~ msgstr[0] "%(pingback_count)s 条pingbacks"
+
+#~ msgid "%(trackback_count)s trackback"
+
+#~ msgid_plural "%(trackback_count)s trackbacks"
+#~ msgstr[0] "%(trackback_count)s 引用"
+
+#~ msgid "Author list"
+#~ msgstr "作者列表"
+
+#~ msgid "%(entry_count)s entry"
+
+#~ msgid_plural "%(entry_count)s entries"
+#~ msgstr[0] "%(entry_count)s 记录"
+
+#~ msgid ""
+#~ "You can use - to exclude words or phrases, &quot;double quotes&quot; for "
+#~ "exact phrases and the AND/OR boolean operators combined with parenthesis "
+#~ "for complex searchs."
+#~ msgstr "你可以使用词或短语,以及ADN/OR等逻辑符号进行复杂的搜索."
+
+#~ msgid "Calendar"
+#~ msgstr "日历"
+
+#~ msgid "Popular entries"
+#~ msgstr "热门日志"
+
+#~ msgid "Archives"
+#~ msgstr "归档"
+
+#~ msgid "Tools"
+#~ msgstr "工具"
+
+#~ msgid "Post an entry"
+#~ msgstr "发布"
+
+#~ msgid "Category list"
+#~ msgstr "类别列表"
+
+#~ msgid "Daily archives"
+#~ msgstr "每日归档"
+
+#~ msgid "Monthly archives"
+#~ msgstr "每月归档"
+
+#~ msgid "RSS Feed of comments on"
+#~ msgstr "RSS 订阅（基于评论）"
+
+#~ msgid "Next entry"
+#~ msgstr "下一篇"
+
+#~ msgid "Previous entry"
+#~ msgstr "上一篇"
+
+#~ msgid "Related entries"
+#~ msgstr "相关日志"
+
+#~ msgid "Similar entries"
+#~ msgstr "类似日志"
+
+#~ msgid "Comments"
+#~ msgstr "评论"
+
+#~ msgid "Pingbacks"
+#~ msgstr "Pingbacks"
+
+#~ msgid "Pingbacks are open."
+#~ msgstr "Pingbacks已开放."
+
+#~ msgid "Pingbacks are closed."
+#~ msgstr "Pingbacks已关闭."
+
+#~ msgid "Trackbacks"
+#~ msgstr "引用"
+
+#~ msgid "Trackback URL"
+#~ msgstr "引用地址"
+
+#~ msgid "RSS Feed"
+#~ msgstr "RSS 订阅"
+
+#~ msgid "Category"
+#~ msgstr "类别"
+
+#~ msgid "Tag"
+#~ msgstr "标签"
+
+#~ msgid "Author"
+#~ msgstr "作者"
+
+#~ msgid "Page"
+#~ msgstr "页码"
+
+#~ msgid "Entries by %(author)s"
+#~ msgstr "作者 %(author)s 的日志"
+
+#~ msgid "No entries yet."
+#~ msgstr "还没有任何内容"
+
+#~ msgid "Page %(current_page)s of %(total_page)s"
+#~ msgstr " %(current_page)s / %(total_page)s"
+
+#~ msgid "More recent entries"
+#~ msgstr "更多最近日志"
+
+#~ msgid "Entries page"
+#~ msgstr "内容页面"
+
+#~ msgid "More old entries"
+#~ msgstr "更多以前日志"
+
+#~ msgid "Edit the category"
+#~ msgstr "编辑分类"
+
+#~ msgid "Edit the tag"
+#~ msgstr "编辑标签"
+
+#~ msgid "Edit the author"
+#~ msgstr "编辑作者"
+
+#~ msgid "Search results"
+#~ msgstr "搜索结果"
+
+#~ msgid "RSS Feed of search result of"
+#~ msgstr "RSS 订阅（基于搜索）"
+
+#~ msgid "%(entry_count)s entry found"
+
+#~ msgid_plural "%(entry_count)s entries found"
+#~ msgstr[0] "找到 %(entry_count)s 条记录"
+
+#~ msgid "Nothing found."
+#~ msgstr "没有找到"
+
+#~ msgid "Login required"
+#~ msgstr "需要登录"
+
+#~ msgid "Your username and password didn't match. Please try again."
+#~ msgstr "您的用户名与密码不符，请重试"
+
+#~ msgid "Login"
+#~ msgstr "登录"
+
+#~ msgid "Password required"
+#~ msgstr "需要密码"
+
+#~ msgid "The password provided is not valid. Please try again."
+#~ msgstr "您输入的密码有误，请重试"
+
+#~ msgid "You need to provide a password to view this entry."
+#~ msgstr "您需要提供密码来查看这个内容"
+
+#~ msgid "Password"
+#~ msgstr "密码"
+
+#~ msgid "Valid"
+#~ msgstr "有效的"
+
+#~ msgid "Entries per categories"
+#~ msgstr "每个分类的记录"
+
+#~ msgid "comment"
+#~ msgstr "评论"
+
+#~ msgid "All the entries"
+#~ msgstr "所有的内容"
+
+#~ msgid "No categories yet."
+#~ msgstr "还没有任何分类"
+
+#~ msgid "RSS Feed of latest entries"
+#~ msgstr "最新记录的RSS订阅"
+
+#~ msgid "Share"
+#~ msgstr "分享"
+
+#~ msgid "Tag list"
+#~ msgstr "标签列表"
+
+#~ msgid "No archives yet."
+#~ msgstr "还没有任何归档"
+
+#~ msgid "No authors yet."
+#~ msgstr "还没有任何作者"
+
+#~ msgid "Linkback on"
+#~ msgstr "Linkback于"
+
+#~ msgid "No similar entries."
+#~ msgstr "没有类似日志"
+
+#~ msgid "Comment preview"
+#~ msgstr "评论预览"
+
+#~ msgid "Please correct following error."
+
+#~ msgid_plural "Please correct following errors."
+#~ msgstr[0] "请检查错误."
+
+#~ msgid "Preview of the comment"
+#~ msgstr "预览评论"
+
+#~ msgid "Post your comment"
+#~ msgstr "发表评论"
+
+#~ msgid "Post"
+#~ msgstr "发表"
+
+#~ msgid "Thanks for your comment"
+#~ msgstr "感谢你的评论"
+
+#~ msgid "Return to entry list"
+#~ msgstr "返回日志列表"
+
+#~ msgid "The pattern is too short"
+#~ msgstr "模式长度不够"
+
+#~ msgid "No pattern to search found"
+#~ msgstr "没有搜索到相关模式"
+
+#~ msgid "Username is incorrect."
+#~ msgstr "无效用户名"
+
+#~ msgid "Password is invalid."
+#~ msgstr "无效密码"
+
+#~ msgid "User account unavailable."
+#~ msgstr "用户账户不可用"
+
+#~ msgid "User cannot %s."
+#~ msgstr "用户不能 %s."
+
+#~ msgid "No title"
+#~ msgstr "没有标题"
+
+#~ msgid "Schedule"
+#~ msgstr "计划"
+
+#~ msgid "Job"
+#~ msgstr "作业"
+
+#~ msgid "Scheduled"
+#~ msgstr "计划的"
+
+#~ msgid "Running"
+#~ msgstr "正在运行"
+
+#~ msgid "Failed"
+#~ msgstr "已失败"
+
+#~ msgid "Complete"
+#~ msgstr "完成"
+
+#~ msgid "Expired"
+#~ msgstr "过期的"
+
+#~ msgid "time slot start"
+#~ msgstr "开始时间段"
+
+#~ msgid "time slot end"
+#~ msgstr "结束时间段"
+
+#~ msgid "status"
+#~ msgstr "状态"
+
+#~ msgid "content type"
+#~ msgstr "内容类型"
+
+#~ msgid "object ID"
+#~ msgstr "object ID"
+
+#~ msgid "callable name"
+#~ msgstr "callable name"
+
+#~ msgid "args"
+#~ msgstr "args"
+
+#~ msgid "kwargs"
+#~ msgstr "kwargs"
+
+#~ msgid "error"
+#~ msgstr "错误"
+
+#~ msgid "return value"
+#~ msgstr "返回值"
+
+#~ msgid "scheduled job"
+#~ msgstr "计划任务"
+
+#~ msgid "scheduled jobs"
+#~ msgstr "计划任务"
+
+#~ msgid "collect"
+#~ msgstr "收集"
+
+#~ msgid "Posts by %(author_name)s - %(site_name)s"
+#~ msgstr "%(author_name)s 发布于- %(site_name)s"
+
+#~ msgid "Posts under %(tag)s tag - %(site_name)s"
+#~ msgstr "%(tag)s 标签下的- %(site_name)s"
+
+#~ msgid "Posts by %(author_name)s under %(tag)s tag - %(site_name)s"
+#~ msgstr "%(author_name)s 发布于%(tag)s标签下的- %(site_name)s"
+
+#~ msgid "Posts"
+#~ msgstr "发布"
+
+#~ msgid "Blogs"
+#~ msgstr "博客"
+
+#~ msgid "Feeds"
+#~ msgstr "订阅"
+
+#~ msgid "Url"
+#~ msgstr "Url"
+
+#~ msgid "Date created"
+#~ msgstr "创建日期"
+
+#~ msgid "Blog"
+#~ msgstr "博客"
+
+#~ msgid "Name"
+#~ msgstr "名字"
+
+#~ msgid "Version"
+#~ msgstr "版本"
+
+#~ msgid "Generator"
+#~ msgstr "生成器"
+
+#~ msgid "Generators"
+#~ msgstr "生成器"
+
+#~ msgid "Subtitle"
+#~ msgstr "标题"
+
+#~ msgid "Rights"
+#~ msgstr "权限"
+
+#~ msgid "Infos"
+#~ msgstr "信息"
+
+#~ msgid "Language"
+#~ msgstr "语言"
+
+#~ msgid "Global Unique Identifier"
+#~ msgstr "全局唯一标识符"
+
+#~ msgid "Icon URL"
+#~ msgstr "图标地址"
+
+#~ msgid "Image URL"
+#~ msgstr "图片地址"
+
+#~ msgid "Etag"
+#~ msgstr "Etag"
+
+#~ msgid "Last modified"
+#~ msgstr "最后修改"
+
+#~ msgid "Last checked"
+#~ msgstr "最后审核"
+
+#~ msgid "Is active"
+#~ msgstr "激活的"
+
+#~ msgid "If disabled, this feed will not be further updated."
+#~ msgstr "如果禁止，订阅将不会被更新"
+
+#~ msgid "Feed"
+#~ msgstr "订阅"
+
+#~ msgid "Is Contributor?"
+#~ msgstr "贡献者？"
+
+#~ msgid "Comments URL"
+#~ msgstr "评论地址"
+
+#~ msgid "Date modified"
+#~ msgstr "日期已修改"
+
+#~ msgid "Author email"
+#~ msgstr "作者邮件"
+
+#~ msgid "Profile URL"
+#~ msgstr "配置文件地址"
+
+#~ msgid "Relation"
+#~ msgstr "关系"
+
+#~ msgid "MIME type"
+#~ msgstr "MIME类型"
+
+#~ msgid "Feed Link"
+#~ msgstr "订阅地址"
+
+#~ msgid "Feed Links"
+#~ msgstr "订阅地址"
+
+#~ msgid "Post Link"
+#~ msgstr "发布地址"
+
+#~ msgid "Post Links"
+#~ msgstr "发布地址"
+
+#~ msgid "Length"
+#~ msgstr "长度"
+
+#~ msgid "admin site"
+#~ msgstr "管理站点"
+
+#~ msgid ""
+#~ "Theme heavly based on the minimal and beautiful <a href=\"http://blog."
+#~ "montylounge.com/\" title=\"Visit Mounty Lounge Industries blog\">Mounty "
+#~ "Lounge Industries blog's</a> design"
+#~ msgstr ""
+#~ "使用基于<a href=\"http://blog.montylounge.com/\" title=\"Visit Mounty "
+#~ "Lounge Industries blog\">Mounty Lounge Industries blog's</a> 设计的皮肤"
+
+#~ msgid "Browse"
+#~ msgstr "浏览"
+
+#~ msgid "Tag Cloud"
+#~ msgstr "标签云"
+
+#~ msgid "Search in"
+#~ msgstr "搜索于"
+
+#~ msgid "This is a django powered site!"
+#~ msgstr "这是一个基于django的网站！"
+
+#~ msgid ""
+#~ "A <a href=\"https://github.com/alexliyu/lincdm\" title=\"LinCDM Powered"
+#~ "\">LinCDM</a> powered site"
+#~ msgstr ""
+#~ "基于 <a href=\"https://github.com/alexliyu/lincdm\" title=\"LinCDM Powered"
+#~ "\">LinCDM</a> 系统的网站"
+
+#~ msgid "blog"
+#~ msgstr "博客"
+
+#~ msgid "See the list of authors talking about this tag"
+#~ msgstr "查看这个标签的相关作者列表"
+
+#~ msgid "People talking about this"
+#~ msgstr "相关人们"
+
+#~ msgid "See the list of blogs talking about this tag"
+#~ msgstr "查看这个标签的相关博客列表"
+
+#~ msgid "Feeds talking about this"
+#~ msgstr "相关订阅"
+
+#~ msgid "See the complete list of posts by this author"
+#~ msgstr "查看这个作者的所有发布列表"
+
+#~ msgid "Authors list"
+#~ msgstr "作者列表"
+
+#~ msgid "Author:"
+#~ msgstr "作者："
+
+#~ msgid "Authors talking about"
+#~ msgstr "作者们谈论"
+
+#~ msgid "Authrs"
+#~ msgstr "作者"
+
+#~ msgid "Author of"
+#~ msgstr "的作者"
+
+#~ msgid "Posts in"
+#~ msgstr "发布于"
+
+#~ msgid "Go to the original blog"
+#~ msgstr "转到原博客"
+
+#~ msgid "RSS 2.0 Feed"
+#~ msgstr "RSS2.0 订阅"
+
+#~ msgid "feed"
+#~ msgstr "订阅"
+
+#~ msgid "See the full list of post from this feed"
+#~ msgstr "查看这个订阅的所有内容"
+
+#~ msgid "Blogs list"
+#~ msgstr "博客列表"
+
+#~ msgid "See the full list of posts from this blog"
+#~ msgstr "查看这个博客的所有内容"
+
+#~ msgid "browse"
+#~ msgstr "浏览"
+
+#~ msgid "latest posts"
+#~ msgstr "最新发布"
+
+#~ msgid "Feed icon"
+#~ msgstr "订阅图标"
+
+#~ msgid "Feeds list"
+#~ msgstr "订阅列表"
+
+#~ msgid "See the full list of posts from this feed"
+#~ msgstr "查看这个订阅的所有内容"
+
+#~ msgid "Feeds talking about"
+#~ msgstr "相关订阅"
+
+#~ msgid "Read "
+#~ msgstr "阅读"
+
+#~ msgid "published in"
+#~ msgstr "发布于"
+
+#~ msgid "See all posts for this feed"
+#~ msgstr "查看这个订阅发布的"
+
+#~ msgid "Read more"
+#~ msgstr "阅读全文"
+
+#~ msgid "Read original post"
+#~ msgstr "阅读原文"
+
+#~ msgid "read original post"
+#~ msgstr "阅读原文"
+
+#~ msgid "See all posts for this author"
+#~ msgstr "查看这个作者发布的"
+
+#~ msgid "original entry"
+#~ msgstr "原文"
+
+#~ msgid "in blog"
+#~ msgstr "于博客"
+
+#~ msgid "Posts list"
+#~ msgstr "发布列表"
+
+#~ msgid "Latest posts"
+#~ msgstr "最新发布"
+
+#~ msgid "Tags cloud"
+#~ msgstr "标签云"
+
+#~ msgid "tag"
+#~ msgstr "标签"
+
+#~ msgid "See the list of feeds talking about this tag"
+#~ msgstr "查看这个标签的相关订阅列表"
+
+#~ msgid "Tags list"
+#~ msgstr "标签列表"
+
+#~ msgid "Tags cloud for author"
+#~ msgstr "作者的标签云"
+
+#~ msgid "Tags cloud for blog"
+#~ msgstr "博客的标签云"
+
+#~ msgid "Tags cloud for feed"
+#~ msgstr "订阅的标签云"
+
+#~ msgid "Related tags"
+#~ msgstr "相关标签"
+
+#~ msgid "Quick links"
+#~ msgstr "快捷连接"
+
+#~ msgid "Return to site"
+#~ msgstr "返回网站"
+
+#~ msgid "Django documentation"
+#~ msgstr "Django文档"
+
+#~ msgid "Django \"django-users\" mailing list"
+#~ msgstr "Django \"django-users\" 邮件列表"
+
+#~ msgid "Django irc channel"
+#~ msgstr "Django irc 频道"
+
+#~ msgid "Links"
+#~ msgstr "连接"
+
+#~ msgid "No recent actions."
+#~ msgstr "没有最近动作"
+
+#~ msgid "Add"
+#~ msgstr "新增"
+
+#~ msgid "Change"
+#~ msgstr "修改"
+
+#~ msgid "None Available"
+#~ msgstr "不可用"
+
+#~ msgid "We're sorry, but the requested page could not be found."
+#~ msgstr "对不起，找不到请求的页面！"
+
+#~ msgid "Server error (500)"
+#~ msgstr "服务器错误（500）"
+
+#~ msgid "Server Error <em>(500)</em>"
+#~ msgstr "服务器错误 <em>(500)</em>"
+
+#~ msgid "Select all %(total_count)s %(module_name)s"
+#~ msgstr "选择全部%(total_count)s 个 %(module_name)s"
+
+#~ msgid "Clear selection"
+#~ msgstr "清除选择"
+
+#~ msgid "%(name)s"
+#~ msgstr "%(name)s"
+
+#~ msgid "Django site admin"
+#~ msgstr "网站管理"
+
+#~ msgid "Django administration"
+#~ msgstr "网站管理"
+
+#~ msgid "History"
+#~ msgstr "历史记录"
+
+#~ msgid "Please correct the error below."
+
+#~ msgid_plural "Please correct the errors below."
+#~ msgstr[0] "请检查下方错误."
+
+#~ msgid "Add %(name)s"
+#~ msgstr "新增 %(name)s"
+
+#~ msgid "Filter"
+#~ msgstr "筛选"
+
+#~ msgid "Export selection as CSV"
+#~ msgstr "导出所选为CSV"
+
+#~ msgid "Export following fields:"
+#~ msgstr "导出以下："
+
+#~ msgid "Select all"
+#~ msgstr "全选"
+
+#~ msgid "Back"
+#~ msgstr "后退"
+
+#~ msgid "Export"
+#~ msgstr "导出"
+
+#~ msgid "Delete"
+#~ msgstr "删除"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
+
+#~ msgid "Yes, I'm sure"
+#~ msgstr "是，我却定"
+
+#~ msgid "Delete multiple objects"
+#~ msgstr "删除多个对象"
+
+#~ msgid ""
+#~ "Are you sure you want to delete the selected %(objects_name)s objects? "
+#~ "All of the following objects and their related items will be deleted:"
+#~ msgstr ""
+#~ "您确定想要删除已选的%(objects_name)s 对象？所有的对象及其相关的项目都会被"
+#~ "删除："
+
+#~ msgid "%(filter_title)s"
+#~ msgstr "%(filter_title)s"
+
+#~ msgid "You don´t have permission to edit anything."
+#~ msgstr "您没有编辑权限"
+
+#~ msgid "My Actions"
+#~ msgstr "我的动作"
+
+#~ msgid "None available"
+#~ msgstr "不可用"
+
+#~ msgid ""
+#~ "Something's wrong with your database installation. Make sure the "
+#~ "appropriate database tables have been created, and make sure the database "
+#~ "is readable by the appropriate user."
+#~ msgstr ""
+#~ "您的数据库出现了一些问题，请确认您的数据库表格已全部建立，同时确认数据库可"
+#~ "以被读取."
+
+#~ msgid "Username:"
+#~ msgstr "用户名："
+
+#~ msgid "Password:"
+#~ msgstr "密码："
+
+#~ msgid "Date/time"
+#~ msgstr "Date/time"
+
+#~ msgid "User"
+#~ msgstr "用户"
+
+#~ msgid "Action"
+#~ msgstr "动作"
+
+#~ msgid "Created object"
+#~ msgstr "已创建对象"
+
+#~ msgid "1 result"
+
+#~ msgid_plural "%(counter)s results"
+#~ msgstr[0] "%(counter)s 个结果"
+
+#~ msgid "%(full_result_count)s total"
+#~ msgstr "共%(full_result_count)s 条"
+
+#~ msgid "Show all"
+#~ msgstr "全部显示"
+
+#~ msgid "Save"
+#~ msgstr "保存"
+
+#~ msgid "Save as new"
+#~ msgstr "另存为"
+
+#~ msgid "Save and add another"
+#~ msgstr "保存并继续"
+
+#~ msgid "Save and continue editing"
+#~ msgstr "保存并继续编辑"
+
+#~ msgid "Password (again)"
+#~ msgstr "密码（再次）"
+
+#~ msgid "Enter the same password as above, for verification."
+#~ msgstr "请输入相同相同的密码，以用来验证."
+
+#~ msgid "Open All Items"
+#~ msgstr "打开所有项目"
+
+#~ msgid "Close All Items"
+#~ msgstr "关闭所有项目"
+
+#~ msgid "Add Item"
+#~ msgstr "新增项目"
+
+#~ msgid "View on Site"
+#~ msgstr "浏览站点"
+
+#~ msgid "Move Item"
+#~ msgstr "移动项目"
+
+#~ msgid "Delete Item"
+#~ msgstr "删除项目"
+
+#~ msgid "Remove"
+#~ msgstr "移除"
+
+#~ msgid "Tests"
+#~ msgstr "测试"
+
+#~ msgid "Bookmarklets"
+#~ msgstr "书签 "
+
+#~ msgid "Documentation bookmarklets"
+#~ msgstr "文档书签"
+
+#~ msgid "Documentation for this page"
+#~ msgstr "本页的文档"
+
+#~ msgid "Show object ID"
+#~ msgstr "显示对象ID"
+
+#~ msgid "Edit this object (current window)"
+#~ msgstr "编辑这个对象（当前窗口）"
+
+#~ msgid "Jumps to the admin page for pages that represent a single object."
+#~ msgstr "跳转到管理页面"
+
+#~ msgid "Edit this object (new window)"
+#~ msgstr "编辑这个对象（新窗口）"
+
+#~ msgid "Not Found"
+#~ msgstr "没有找到!"
+
+#~ msgid "Error"
+#~ msgstr "错误"
+
+#~ msgid "Modules"
+#~ msgstr "模块"
+
+#~ msgid "Please enter a name for the bookmark"
+#~ msgstr "请输入书签的名称"
+
+#~ msgid "Welcome,"
+#~ msgstr "欢迎，"
+
+#~ msgid "on date"
+#~ msgstr "日期"
+
+#~ msgid "Not yet comments !"
+#~ msgstr "尚未有评论"
+
+#~ msgid "%s - News"
+#~ msgstr "%s - 新闻"
+
+#~ msgid "author"
+#~ msgstr "作者"
+
+#~ msgid "Can view all"
+#~ msgstr "可以查看所有作者日志"

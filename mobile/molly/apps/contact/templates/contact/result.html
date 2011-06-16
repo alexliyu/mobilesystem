@@ -1,0 +1,33 @@
+{# Subset of result_list.html #}
+
+{% load molly_utils %}
+
+{% if person.id %}
+    <a href="{% url contact:result_detail person.id %}">{{ person.cn }}</a>
+  {% else %}
+    {{ person.cn }}
+{% endif %}
+
+<div class="contact-details">
+  {% for title in person.title %}
+    <p>
+      {{ title }}
+    </p>
+  {% endfor %}
+  {% for ou in person.ou %}
+    <p>
+      {{ ou }}
+    </p>
+  {% endfor %}
+  {% for mail in person.mail %}
+    <p>
+      <a class="email" href="mailto:{{ mail }}">{{ mail }}</a>
+    </p>
+  {% endfor %}
+  {% for telephoneNumber in person.telephoneNumber %}
+    <p>
+      {{ telephoneNumber|telephone }}</a>
+    </p>
+  {% endfor %}
+</div>
+
