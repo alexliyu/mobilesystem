@@ -1,1 +1,0 @@
-from molly.maps.osm.models import GeneratedMap, OSMTile, OSMUpdate
