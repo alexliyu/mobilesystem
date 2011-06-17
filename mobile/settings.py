@@ -54,8 +54,8 @@ DATABASES = {
         'HOST': 'localhost',
         'NAME': 'molly',
         'USER': 'molly',
-#        'PASSWORD': 'FSNICgM3wDvNU29XmR',
-	'PASSWORD':'6b6RyKNvOnEvbrynYK',
+        'PASSWORD': 'FSNICgM3wDvNU29XmR',
+#	'PASSWORD':'6b6RyKNvOnEvbrynYK',
     }
 }
 
