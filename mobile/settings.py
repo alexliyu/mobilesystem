@@ -53,7 +53,7 @@ ROOT_URLCONF = 'mobile.urls'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '192.168.1.119',
+        'HOST': '127.0.0.1',
         'NAME': 'molly',
         'USER': 'molly',
 #        'PASSWORD': 'FSNICgM3wDvNU29XmR',
@@ -73,34 +73,34 @@ API_KEYS = {
 # The meat of Molly - application configuration
 APPLICATIONS = [
 
-    Application('mobile.molly.apps.home', 'home', 'Home',
+    Application('mobile.molly.apps.home', 'home', '主页',
         display_to_user=True,
     ),
     
-    Application('mobile.molly.apps.desktop', 'desktop', '桌面',
-        display_to_user=True,
-        twitter_username='alexliyu',
-        blog_rss_url='http://feeds.feedburner.com/mobileoxford',
-    ),
+#    Application('mobile.molly.apps.desktop', 'desktop', '桌面',
+#        display_to_user=True,
+#        twitter_username='alexliyu',
+#        blog_rss_url='http://feeds.feedburner.com/mobileoxford',
+#    ),
     
-    Application('mobile.molly.apps.podcasts', 'podcasts', 'Podcasts',
+    Application('mobile.molly.apps.podcasts', 'podcasts', '视频点播',
         providers=[        ]
         ),
     
-    Application('mobile.molly.apps.webcams', 'webcams', 'Webcams'),
+#   Application('mobile.molly.apps.webcams', 'webcams', 'Webcams'),
     
-    Application('molly.apps.weather', 'weather', 'Weather',
-        location_id='bbc/123',
+    Application('molly.apps.weather', 'weather', '天气',
+        location_id='bbc/1832',
         provider=Provider('molly.apps.weather.providers.BBCWeatherProvider',
-            location_id=123,
+            location_id=1832,
         ),
     ),
     
-    Application('mobile.molly.apps.service_status', 'service_status', 'Service status',
+    Application('mobile.molly.apps.service_status', 'service_status', '服务状态',
         providers=[        ],
         ),
     
-    Application('mobile.molly.apps.search', 'search', 'Search',
+    Application('mobile.molly.apps.search', 'search', '搜索',
         providers=[
             Provider('mobile.molly.apps.search.providers.ApplicationSearchProvider'),
         ],
@@ -109,19 +109,19 @@ APPLICATIONS = [
         display_to_user=False,
     ),
     
-    Application('mobile.molly.apps.feeds', 'feeds', 'Feeds',
-        providers=[
-            Provider('mobile.molly.apps.feeds.providers.RSSFeedsProvider'),
-        ],
-        display_to_user=True,
-    ),
+#    Application('mobile.molly.apps.feeds', 'feeds', 'Feeds',
+#        providers=[
+#            Provider('mobile.molly.apps.feeds.providers.RSSFeedsProvider'),
+#        ],
+#        display_to_user=True,
+#    ),
     
-    Application('mobile.molly.apps.feeds.news', 'news', 'News'),
+    Application('mobile.molly.apps.feeds.news', 'news', '新闻'),
     
-    Application('mobile.molly.apps.feeds.events', 'events', 'Events'),
+    Application('mobile.molly.apps.feeds.events', 'events', '事件'),
     
-    Application('molly.maps', 'maps', 'Maps',
-        display_to_user=True,
+    Application('molly.maps', 'maps', '地图',
+        display_to_user=False,
     ),
     
     Application('molly.geolocation', 'geolocation', 'Geolocation',
@@ -130,56 +130,56 @@ APPLICATIONS = [
         providers=[
             Provider('molly.geolocation.providers.PlacesGeolocationProvider'),
         ],
-        display_to_user=True,
+        display_to_user=False,
     ),
     
     Application('mobile.molly.apps.feedback', 'feedback', '建议',
-        display_to_user=True,
+        display_to_user=False,
     ),
+#    
+#    Application('mobile.molly.apps.feature_vote', 'feature_vote', '活动建议',
+#        display_to_user=True,
+#    ),
     
-    Application('mobile.molly.apps.feature_vote', 'feature_vote', '活动建议',
-        display_to_user=True,
-    ),
-    
-    Application('molly.external_media', 'external_media', 'External Media',
-        display_to_user=True,
-    ),
-    
-    Application('molly.wurfl', 'device_detection', 'Device detection',
+#    Application('molly.external_media', 'external_media', 'External Media',
+#        display_to_user=True,
+#    ),
+#    
+    Application('molly.wurfl', 'device_detection', '终端信息',
         display_to_user=True,
         expose_view=True,
     ),
-    
-    Application('mobile.molly.apps.stats', 'stats', 'Statistics',
-         display_to_user=True,
-     ),
-    
+#    
+#    Application('mobile.molly.apps.stats', 'stats', 'Statistics',
+#         display_to_user=True,
+#     ),
+#    
     Application('molly.url_shortener', 'url_shortener', 'URL Shortener',
-        display_to_user=True,
+        display_to_user=False,
     ),
     
     Application('molly.utils', 'utils', 'Molly utility services',
         display_to_user=True,
     ),
+#    
+#    Application('molly.auth', 'auth', '授权',
+#        display_to_user=True,
+#        secure=True,
+#        unify_identifiers=('weblearn:id',),
+#    ),
     
-    Application('molly.auth', 'auth', '授权',
-        display_to_user=True,
-        secure=True,
-        unify_identifiers=('weblearn:id',),
-    ),
+#    Application('mobile.molly.apps.places', 'places', 'Places',
+#        providers=[
+#            'mobile.molly.apps.places.providers.ACISLiveMapsProvider',
+#            Provider('mobile.molly.apps.places.providers.OSMMapsProvider',
+#                     lat_north=24.671363, lat_south=24.271363,
+#                     lon_west=117.915749, lon_east=118.315749
+#            ),
+#        ],
+#
+#    ),
     
-    Application('mobile.molly.apps.places', 'places', 'Places',
-        providers=[
-            'mobile.molly.apps.places.providers.ACISLiveMapsProvider',
-            Provider('mobile.molly.apps.places.providers.OSMMapsProvider',
-                     lat_north=24.671363, lat_south=24.271363,
-                     lon_west=117.915749, lon_east=118.315749
-            ),
-        ],
-
-    ),
-    
-    Application('mobile.molly.apps.transport', 'transport', 'Transport',
+    Application('mobile.molly.apps.transport', 'transport', '交通',
             train_station='crs:AYW',
         nearby={
             'bus_stops': ('bus-stop', 5),
@@ -189,7 +189,7 @@ APPLICATIONS = [
         ),
     
     Application('molly.favourites', 'favourites', 'Favourite pages',
-        display_to_user=True,
+        display_to_user=False,
     ),
     
 ]

@@ -38,6 +38,7 @@ class BBCWeatherProvider(object):
             return None
 
     _OBSERVATIONS_URL = 'http://newsrss.bbc.co.uk/weather/forecast/%d/ObservationsRSS.xml'
+    #_OBSERVATIONS_URL='http://newsrss.bbc.co.uk/weather/forecast/1832/ObservationsRSS.xml'
     _OBSERVATIONS_RE = re.compile(
         r'Temperature: (?P<temperature>-?\d+|N\/A).+Wind Direction: '
       + r'(?P<wind_direction>[NESW]{0,2}|N\/A), Wind Speed: (?P<wind_speed>\d+|N\/A).+Re'

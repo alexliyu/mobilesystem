@@ -15,7 +15,7 @@
 		{% if is_christmas %}
             <img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px-christmas.png" alt="{{ site_name }}"/>
 		{% else %}
-	    <img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"/>
+	    <a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"/></a>
 		{% endif %}
         {% endifequal %}
     </div>
@@ -77,6 +77,10 @@
         </table>
     </div>
     
+    <div class="bubble pad-5">
+        手机号:<input type="text" id="txtUser" /><input type="submit" id="submit" value="登陆" /> 还没有注册手机号？亲，注册只要1分钟！第一次有效注册前100名有奖品拿哦! <a href="#">马上加入我们吧！</a>
+    </div>
+    
     {% if favourites %}
     <div class="section">
       <div class="header">
@@ -94,12 +98,11 @@
 
     <ul class="stand-alone link-list round-top">
 	<li><a href="{% url home:static_about %}">关于我们</a></li>
-    <li><a href="#">登陆</a> 还没有娱讯号？亲，注册只要几秒钟！<a href="#">马上加入我们吧！</a></li>
 	{% if has_user_messages %}
             <li><a href="{% url home:messages %}">Read messages from the developers</a></li>
 	{% endif %}
     </ul>
-
+    
 	{% block below-about %} {% endblock %} 
 
 {% if user.is_superuser %}
@@ -165,5 +168,5 @@
 	    </div>
         </div>        
 {% endif %}
-
+<div class="bubble pad-5"><p style="text-align:center;font-size:14px">Copyright (c) 2010 <a href="http://www.eiimedia.cn">www.eiimedia.cn</a>. All rights reserved. Design by Eiimedia. 联系电话:0592-5166918 地址:厦门市禾祥东路138号</p></div>
 {% endblock %}
