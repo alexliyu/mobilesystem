@@ -93,14 +93,11 @@
     {% endif %}
 
     <ul class="stand-alone link-list round-top">
-	{% if "feature_vote"|app_is_loaded or "feature-suggestions"|app_is_loaded %}
-            <li class="round-top"><a href="{% url feature_vote:index %}">Suggest a feature</a></li>
-	{% endif %}
-	<li><a href="{% url home:static_about %}">About this site</a></li>
+	<li><a href="{% url home:static_about %}">关于我们</a></li>
+    <li><a href="#">登陆</a> 还没有娱讯号？亲，注册只要几秒钟！<a href="#">马上加入我们吧！</a></li>
 	{% if has_user_messages %}
             <li><a href="{% url home:messages %}">Read messages from the developers</a></li>
 	{% endif %}
-        <li class="round-bottom"><a href="{% url feedback:index %}?referer={% url home:index %}">Provide feedback</a></li>
     </ul>
 
 	{% block below-about %} {% endblock %} 
