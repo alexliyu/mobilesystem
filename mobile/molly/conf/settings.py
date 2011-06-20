@@ -3,6 +3,7 @@ import imp
 from django.utils.importlib import import_module
 from django.conf.urls.defaults import include as urlconf_include
 from django.core.urlresolvers import RegexURLResolver, RegexURLPattern
+from django.contrib.auth.decorators import login_required
 
 """
 Provides a framework for Molly application objects.
@@ -41,7 +42,7 @@ class Application(object):
                 self.providers += (kwargs.pop(key),)
             elif key.endswith('provider'):
                 self.providers += (kwargs[key],)
-
+    
     def get(self):
         if self.conf:
             return self.conf

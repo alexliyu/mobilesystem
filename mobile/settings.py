@@ -158,6 +158,10 @@ APPLICATIONS = [
         display_to_user=False,
     ),
     
+    Application('mobile.molly.apps.links', 'links', '友情连接',
+        display_to_user=True,
+    ),
+    
     Application('molly.utils', 'utils', 'Molly utility services',
         display_to_user=True,
     ),
@@ -191,6 +195,7 @@ APPLICATIONS = [
     Application('molly.favourites', 'favourites', 'Favourite pages',
         display_to_user=False,
     ),
+    
     
 ]
 
