@@ -1,0 +1,28 @@
+{% extends "promotions/base.html" %}
+
+{% block content %}
+<div class="bubble pad-10">
+	<table style="width:100%">
+		<tr style="width:100%">
+			<td style="width:10%">活动标题:</td>
+			<td style="width:50%">{{ promotions.title  }}</td>
+		</tr>
+		<tr style="width:100%">
+			<td style="width:10%">活动内容:</td>
+			<td style="width:90%"><textarea style='border: 1px solid #94BBE2;width:100%;' rows=15 onpropertychange='this.style.posHeight=this.scrollHeight' id=textarea onfocus='textarea.style.posHeight=this.scrollHeight'>{{ promotions.content  }}</textarea></td>
+		</tr>
+		<tr style="width:100%">
+			<td style="width:10%">开始时间:</td>
+			<td style="width:90%">{{ promotions.beginTime|date:" Y-m-j f" }}</td>
+		</tr>
+		<tr style="width:100%">
+			<td style="width:10%">结束时间:</td>
+			<td style="width:90%">{{ promotions.endTime|date:" Y-m-j f" }}</td>
+		</tr>
+		<tr style="width:100%">
+			<td style="width:10%">所属商家:</td>
+			<td style="width:90%"><a href="{{ promotions.business.businessUrl  }}">{{ promotions.business.businessName  }}</a></td>
+		</tr>
+	</table>
+</div>
+{% endblock %}

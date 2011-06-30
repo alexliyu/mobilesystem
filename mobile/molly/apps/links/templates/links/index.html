@@ -1,0 +1,13 @@
+{% extends "links/base.html" %}
+
+{% block content %}
+<div class="bubble pad-10">
+<ul style="list-style:none;padding:0px">
+{% for links in linkslist %}
+    <li style="float:left;margin-left:20px;"><a href="{{ links.link_url  }}">{{ links.link_title  }}</a></li>
+{% endfor %}
+<li style="clear:left"></li>
+</ul>
+</div>
+
+{% endblock %}

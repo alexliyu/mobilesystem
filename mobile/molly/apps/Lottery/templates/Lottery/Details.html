@@ -1,0 +1,12 @@
+{% extends "links/base.html" %}
+
+{% block content %}
+<div class="bubble pad-10">
+<ul>
+{% for item in blacklist %}
+    <li>{{ item.get_profile.mobile }}</li>
+{% endfor %}
+</ul>
+</div>
+
+{% endblock %}

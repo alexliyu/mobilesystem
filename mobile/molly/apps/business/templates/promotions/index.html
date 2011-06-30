@@ -1,0 +1,15 @@
+{% extends "promotions/base.html" %}
+
+{% block content %}
+<div class="bubble pad-10">
+<ul style="list-style:none;padding:0px">
+{% for promotions in promotionsList %}
+    <li style="float:left;margin-left:20px;">
+    	<a href="/business/{{promotions.id}}">{{ promotions.title  }}</a>
+    	</li><br/>
+{% endfor %}
+<li style="clear:left"></li>
+</ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "links/base.html" %}
+
+{% block content %}
+<div class="bubble pad-10">
+<ul>
+{% for item in lotterylist %}
+    <li><a href="{{ item.getidUrl }}">{{ item.Lottery_title }}获奖名单</a></li>
+{% endfor%}
+</ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "business/base.html" %}
+
+{% block content %}
+<div class="bubble pad-10">
+<ul style="list-style:none;padding:0px">
+{% for business in businessList %}
+    <li style="float:left;margin-left:20px;">
+    	<a href="{{ business.businessUrl  }}">{{ business.businessName  }}</a>
+    	的<a href="{{ business.get_bidUrl}}">优惠活动</a></li><br/>
+{% endfor %}
+<li style="clear:left"></li>
+</ul>
+</div>
+
+{% endblock %}
