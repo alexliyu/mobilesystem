@@ -10,8 +10,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^adm/', include(admin.site.urls)), # Admin site
     (r'^comments/', include('django.contrib.comments.urls')), # Django comments
-    (r'', applications.home.urls),
-    (r'^links/$',views.list_links),) # Home default
+    (r'^accounts/', include('userena.urls')),
+    (r'^messages/', include('userena.contrib.umessages.urls')),
+    (r'', applications.home.urls)) # Home default
 
 # Dynamically add apps
 for app in (app for app in all_apps() if app.has_urlconf and app.local_name != 'home'):

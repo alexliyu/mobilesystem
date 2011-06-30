@@ -19,4 +19,5 @@ python-memcached
 South
 django-slimmer
 BeautifulSoup
+django-ipyfield
 

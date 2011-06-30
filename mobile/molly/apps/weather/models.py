@@ -15,7 +15,7 @@ PRESSURE_STATE_CHOICES = (
 
 VISIBILITY_CHOICES = (
     ('vp', 'very poor visibility'),
-    ('p',  'poor visibility '),
+    ('p', 'poor visibility '),
     ('vg', 'very good visibility'),
     ('g', 'good visibility'),
     ('df', 'dense fog'),
@@ -95,7 +95,7 @@ class Weather(models.Model):
     pressure_state = models.CharField(null=True, max_length=1, choices=PRESSURE_STATE_CHOICES)
     visibility = models.CharField(null=True, max_length=2, choices=VISIBILITY_CHOICES)
 
-    location = models.PointField(srid=4326, null=True)
+    location = models.PointField(srid=4326, blank=True, null=True)
 
     min_temperature = models.IntegerField(null=True)
     max_temperature = models.IntegerField(null=True)

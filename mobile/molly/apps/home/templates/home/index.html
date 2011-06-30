@@ -10,15 +10,17 @@
 <div id="index-header">
     <div id="index-title">
 		{% ifequal style_group "dumb" %}
-		    <img width="90" height="55" src="{{ STATIC_URL }}site/images/logos/logo-90x55.jpg" alt="{{ site_name }}">
+		<a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"></a>
 		{% else %}
 		{% if is_christmas %}
-            <img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px-christmas.png" alt="{{ site_name }}"/>
+        <a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px-christmas.png" alt="{{ site_name }}"/></a>
 		{% else %}
 	    <a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"/></a>
 		{% endif %}
         {% endifequal %}
     </div>
+    
+    <!--  
     <div id="index-search">
         {% search_form %}
 	     <form method="get" action="{% url search:index %}">
@@ -31,7 +33,7 @@
 		{% endifequal %}
 		 </p>
 		 </form>
-	</div>
+	</div>-->
 </div>
 {% endblock %}
 
@@ -60,6 +62,18 @@
     </div>
 
     <div class="bubble pad-5">
+        {% block reg %}
+<form action="/accounts/signup/" method="post"> 
+  {% csrf_token %}
+   还没有注册手机号？亲，注册只要1分钟！第一次有效注册前100名有奖品拿哦!
+  <label for="id_mobile">请输入手机号：</label> 
+    <input id="id_mobile" type="text" class="required" name="mobile" maxlength="30" /> 
+  <input type="submit" value="注册" />
+</form>
+{% endblock %}
+    </div>
+ 
+    <div class="bubble pad-5">
         <table style="width:100%; text-align:center;">
             <tbody>
                 <tr>
@@ -76,11 +90,7 @@
             </tbody>
         </table>
     </div>
-    
-    <div class="bubble pad-5">
-        手机号:<input type="text" id="txtUser" /><input type="submit" id="submit" value="登陆" /> 还没有注册手机号？亲，注册只要1分钟！第一次有效注册前100名有奖品拿哦! <a href="#">马上加入我们吧！</a>
-    </div>
-    
+       
     {% if favourites %}
     <div class="section">
       <div class="header">
@@ -104,69 +114,5 @@
     </ul>
     
 	{% block below-about %} {% endblock %} 
-
-{% if user.is_superuser %}
-        <hr/>
-        <div class="section">
-	    <div class="header">
-		<h2>Session</h2>
-	    </div>
-	    <div class="section-content">
-		<div class="bubble pad-10">
-		    <p>{{ session }}</p>
-		</div>
-	    </div>
-        </div>
-        <hr/>
-        <div class="section">
-	    <div class="header">
-		<h2>Device</h2>
-	    </div>
-	    <div class="section-content no-round-bottom">
-		<div class="bubble pad-10">
-		    <p>{{ device.brand_name }} {{ device.model_name }} ({{ device.devid }})</p>
-	            <p>{{ device.devua }}</p>
-	            <p>{{ ua }}</p>
-		    <p>{{ parents }}</p>
-		</div>
-	    </div>
-	    <div class="header">
-	        <h2>Browser</h2>
-	    </div>
-	    <div class="section-content">
-		<div class="bubble pad-10">
-		    <p>{{ browser.brand_name }} {{ browser.model_name }} ({{ browser.devid }})</p>
-	            <p>{{ browser.devua }}</p>
-		</div>
-	    </div>
-        </div>
-        <hr/>
-	<div class="section">
-	    <div class="header">
-	        <h2>Meta</h2>
-	    </div>
-	    <div class="section-content">
-		<div class="bubble pad-10">
-		<dl>
-		    {% for a,b in meta.items %}
-			<dt>{{ a }}</dt>
-	                <dd>{{ b }}</dd>
-		    {% endfor %}
-		</dl>
-		</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="header">
-                <h2>Preferences</h2>
-            </div>
-	    <div class="section-content">
-		<div class="bubble pad-10">
-		    <p>{{ preferences }}</p>
-		</div>
-	    </div>
-        </div>        
-{% endif %}
-<div class="bubble pad-5"><p style="text-align:center;font-size:14px">Copyright (c) 2010 <a href="http://www.eiimedia.cn">www.eiimedia.cn</a>. All rights reserved. Design by Eiimedia. 联系电话:0592-5166918 地址:厦门市禾祥东路138号</p></div>
+<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="http://www.eiimedia.cn">娱讯传媒</a> 联系电话:0592-5166918</div>
 {% endblock %}

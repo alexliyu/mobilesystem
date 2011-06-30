@@ -12,7 +12,6 @@ from mobile.molly.utils.breadcrumbs import *
 from mobile.molly.favourites import get_favourites
 from mobile.molly.wurfl import device_parents
 from mobile.molly import conf
-
 from models import UserMessage
 from forms import UserMessageFormSet
 
@@ -27,7 +26,6 @@ class IndexView(BaseView):
                           None,
                           'Home',
                           lazy_reverse('index'))
-
     def handle_GET(self, request, context):
         # Check whether the referer header is from the same host as the server
         # is responding as
@@ -91,9 +89,9 @@ class IndexView(BaseView):
 
     def handle_POST(self, request, context):
         no_desktop_about = request.POST.get('no_desktop_about')
-        if no_desktop_about  == 'true':
+        if no_desktop_about == 'true':
             request.session['home:desktop_about_shown'] = True
-        elif no_desktop_about  == 'false':
+        elif no_desktop_about == 'false':
             request.session['home:desktop_about_shown'] = False
 
         return self.redirect(reverse('home:index'), request)

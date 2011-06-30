@@ -36,7 +36,7 @@
       <ol id="bc">
       {% block site-small-logo %}
         <li><a href="{% url home:index %}">
-          <img src="{{ STATIC_URL }}site/images/logo.png" width="42" height="30" alt="Home"/>
+          <img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"/>
         </a></li>
       {% endblock %}
     {% if breadcrumbs.2 %}
@@ -89,7 +89,7 @@
 {% if not hide_feedback_link %}
 <div style="margin-top:0.9em">
 {% block bottom_links %}
-
+<!--
 {% if device.brand_name == "RIM" %}
 <!-- Blackberry specific -->
   <div style="width:49%; float:left; margin-top:0.1em; margin-bottom:0.2em;">
@@ -111,7 +111,8 @@
   </div>
 
 {% endif %}  
-
+-->
+<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="http://www.eiimedia.cn">娱讯传媒</a> 联系电话:0592-5166918</div>
 {% if "feature_vote"|app_is_loaded or "feature-suggestions"|app_is_loaded %}
   <div style="width:100%; float:left; margin-top: 0.1em; margin-bottom:0.4em;">
     <a style="margin:0 0.2em 0 0.2em; background-color:white; padding:0.6em; -webkit-border-radius:0.4em; -moz-border-radius:0.4em; text-align:center; display:block"
