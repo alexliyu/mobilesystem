@@ -16,7 +16,7 @@ SHA1_RE = re.compile('^[a-f0-9]{40}$')
 ASSIGNED_PERMISSIONS = {
     'profile':
         (('view_profile', 'Can view profile'),
-         ('change_profile', 'Can change profile')),
+         ('change_userprofile', 'Can change profile')),
     'user':
         (('change_user', 'Can change user'),
          ('delete_user', 'Can delete user'))

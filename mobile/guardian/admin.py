@@ -11,12 +11,12 @@ from django.template import RequestContext
 from django.utils.datastructures import SortedDict
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from guardian.forms import UserObjectPermissionsForm
-from guardian.forms import GroupObjectPermissionsForm
-from guardian.shortcuts import get_perms
-from guardian.shortcuts import get_users_with_perms
-from guardian.shortcuts import get_groups_with_perms
-from guardian.shortcuts import get_perms_for_model
+from mobile.guardian.forms import UserObjectPermissionsForm
+from mobile.guardian.forms import GroupObjectPermissionsForm
+from mobile.guardian.shortcuts import get_perms
+from mobile.guardian.shortcuts import get_users_with_perms
+from mobile.guardian.shortcuts import get_groups_with_perms
+from mobile.guardian.shortcuts import get_perms_for_model
 
 
 class AdminUserObjectPermissionsForm(UserObjectPermissionsForm):
@@ -346,7 +346,7 @@ class GuardedModelAdmin(admin.ModelAdmin):
 class UserManage(forms.Form):
     user = forms.RegexField(label=_("Username"), max_length=30,
         regex=r'^[\w.@+-]+$',
-        error_messages = {
+        error_messages={
             'invalid': _("This value may contain only letters, numbers and "
                          "@/./+/-/_ characters."),
             'does_not_exist': _("This user does not exist")})

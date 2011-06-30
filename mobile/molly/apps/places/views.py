@@ -69,7 +69,7 @@ class NearbyListView(LocationRequiredView):
             'places',
             lazy_parent('index'),
             'Things nearby',
-            url = lazy_reverse('nearby-list'),
+            url=lazy_reverse('nearby-list'),
         )
 
     def handle_GET(self, request, context, entity=None):
@@ -80,7 +80,7 @@ class NearbyListView(LocationRequiredView):
                                'places/entity_without_location')
         
         if entity:
-            return_url = reverse('places:entity-nearby-list',args=[entity.identifier_scheme, entity.identifier_value])
+            return_url = reverse('places:entity-nearby-list')
         else:
             return_url = reverse('places:nearby-list')
         
@@ -123,7 +123,7 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
         entity_types = tuple(get_object_or_404(EntityType, slug=t) for t in ptypes.split(';'))
 
         if point:
-            entities = Entity.objects.filter(location__isnull = False, is_sublocation = False)
+            entities = Entity.objects.filter(location__isnull=False, is_sublocation=False)
             if ptypes:
                 for et in entity_types:
                     entities = entities.filter(all_types_completion=et)
@@ -199,13 +199,13 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
             min_points = 0
 
         entity_map = Map(
-            centre_point = (point[0], point[1], 'green', ''),
-            points = [(e.location[0], e.location[1], 'red', e.title)
+            centre_point=(point[0], point[1], 'green', ''),
+            points=[(e.location[0], e.location[1], 'red', e.title)
                 for e in entities],
-            min_points = min_points,
-            zoom = context['zoom'],
-            width = request.map_width,
-            height = request.map_height,
+            min_points=min_points,
+            zoom=context['zoom'],
+            width=request.map_width,
+            height=request.map_height,
         )
 
         entities = [[entities[i] for i in b] for a, b in entity_map.points]
@@ -235,7 +235,7 @@ class EntityDetailView(ZoomableView, FavouritableView):
         distance, bearing = entity.get_distance_and_bearing_from(user_location)
         additional = '<strong>%s</strong>' % capfirst(entity.primary_type.verbose_name)
         if distance:
-            additional += ', about %dm %s' % (int(math.ceil(distance/10)*10), bearing)
+            additional += ', about %dm %s' % (int(math.ceil(distance / 10) * 10), bearing)
         return {
             'title': entity.title,
             'additional': additional,
@@ -303,7 +303,7 @@ class EntityDetailView(ZoomableView, FavouritableView):
             entities += association['entities']
 
         for provider in reversed(self.conf.providers):
-            provider.augment_metadata((entity, ), board=context['board'])
+            provider.augment_metadata((entity,), board=context['board'])
             provider.augment_metadata([e for atypes in context['associations'] for e in atypes['entities']], board=context['board'])
 
         return self.render(request, context, 'places/entity_detail')
@@ -361,16 +361,16 @@ class EntityUpdateView(ZoomableView):
                 elif form.cleaned_data[k]:
                     new_metadata['tags'][tag_name] = form.cleaned_data[k]
 
-            new_metadata['attrs']['version'] = str(int(new_metadata['attrs']['version'])+1)
+            new_metadata['attrs']['version'] = str(int(new_metadata['attrs']['version']) + 1)
 
             osm_update = OSMUpdate(
-                contributor_name = form.cleaned_data['contributor_name'],
-                contributor_email = form.cleaned_data['contributor_email'],
-                contributor_attribute = form.cleaned_data['contributor_attribute'],
-                entity = entity,
-                old = simplejson.dumps(entity.metadata),
-                new = simplejson.dumps(new_metadata),
-                notes = form.cleaned_data['notes'],
+                contributor_name=form.cleaned_data['contributor_name'],
+                contributor_email=form.cleaned_data['contributor_email'],
+                contributor_attribute=form.cleaned_data['contributor_attribute'],
+                entity=entity,
+                old=simplejson.dumps(entity.metadata),
+                new=simplejson.dumps(new_metadata),
+                notes=form.cleaned_data['notes'],
             )
             osm_update.save()
 
@@ -428,7 +428,7 @@ class NearbyEntityDetailView(NearbyDetailView):
             lazy_parent('entity-nearby-list', scheme=scheme, value=value),
             '%s near %s' % (
                 capfirst(entity_type.verbose_name_plural),
-                context['entity'].title, ),
+                context['entity'].title,),
             lazy_reverse('places:entity_nearby_detail', args=[scheme, value, ptype]))
 
     def get_metadata(self, request, scheme, value, ptype):
@@ -559,7 +559,7 @@ class ServiceDetailView(BaseView):
 
         # Add live information from the providers
         for provider in reversed(self.conf.providers):
-            provider.augment_metadata((entity, ))
+            provider.augment_metadata((entity,))
 
         # If we have no way of getting further journey details, 404
         if 'service_details' not in entity.metadata:
@@ -590,14 +590,14 @@ class ServiceDetailView(BaseView):
             })
         
         map = Map(
-            centre_point = (entity.location[0], entity.location[1],
+            centre_point=(entity.location[0], entity.location[1],
                             'green', entity.title),
-            points = [(e.location[0], e.location[1], 'red', e.title)
+            points=[(e.location[0], e.location[1], 'red', e.title)
                 for e in service['entities']],
-            min_points = len(service['entities']),
-            zoom = None,
-            width = request.map_width,
-            height = request.map_height,
+            min_points=len(service['entities']),
+            zoom=None,
+            width=request.map_width,
+            height=request.map_height,
         )
 
         context.update({
@@ -660,9 +660,9 @@ class APIView(BaseView):
         limit, offset = min(limit, 1000 if without_metadata else 200), max(offset, 0)
 
         if 'type' in request.GET:
-            entities = entities.filter(all_types_completion__slug = request.GET['type'])
+            entities = entities.filter(all_types_completion__slug=request.GET['type'])
         if 'source' in request.GET:
-            entities = entities.filter(source__module_name = request.GET['source'])
+            entities = entities.filter(source__module_name=request.GET['source'])
 
         if 'near' in request.GET:
             try:
@@ -685,7 +685,7 @@ class APIView(BaseView):
                     count = len(entities)
 
                     if 'limit' in request.GET:
-                        entities = islice(entities, offset, offset+limit)
+                        entities = islice(entities, offset, offset + limit)
                 else:
                     count = entities.count()
             except:
@@ -696,7 +696,7 @@ class APIView(BaseView):
         if not 'near' in request.GET:
             count = entities.count()
             try:
-                entities = entities[offset:offset+limit]
+                entities = entities[offset:offset + limit]
             except ValueError:
                 entities, count, error = [], 0, True
 

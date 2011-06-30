@@ -1,6 +1,6 @@
 from datetime import datetime, time
-from django.contrib.gis.db import models
-
+from django.db import models
+from mobile.molly.gmapsfield.fields import GoogleMapsField
 PTYPE_CHOICES = (
     ('o', 'observation'),
     ('f', 'forecast'),
@@ -95,7 +95,7 @@ class Weather(models.Model):
     pressure_state = models.CharField(null=True, max_length=1, choices=PRESSURE_STATE_CHOICES)
     visibility = models.CharField(null=True, max_length=2, choices=VISIBILITY_CHOICES)
 
-    location = models.PointField(srid=4326, blank=True, null=True)
+    location = GoogleMapsField()
 
     min_temperature = models.IntegerField(null=True)
     max_temperature = models.IntegerField(null=True)

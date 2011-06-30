@@ -59,9 +59,10 @@
         {# Only necessary if using floating icons #}
         {# <div class="clearhidden"> </div> #}
     </div>
-    </div>
-
+    </div>{{user.is_anonymous}}
+ {%if user.is_anonymous%}
     <div class="bubble pad-5">
+   
         {% block reg %}
 <form action="/accounts/signup/" method="post"> 
   {% csrf_token %}
@@ -71,8 +72,9 @@
   <input type="submit" value="注册" />
 </form>
 {% endblock %}
+
     </div>
- 
+ {%endif%}
     <div class="bubble pad-5">
         <table style="width:100%; text-align:center;">
             <tbody>

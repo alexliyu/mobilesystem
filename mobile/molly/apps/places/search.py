@@ -29,17 +29,14 @@ class ApplicationSearch(object):
     def entity_search(self, request, query, is_single_app_search):
         entities = Entity.objects.all()
         if hasattr(self.conf, 'search_identifiers'):
-            entities = entities.filter(
-                _identifiers__scheme__in = self.conf.search_identifiers,
-                _identifiers__value__iexact = query,
-            )
+            entities = entities.filter()
         else:
             entities = entities.filter(
-                _identifiers__value__iexact = query,
+                _identifiers__value__iexact=query,
             )
 
         entities = chain(
-            Entity.objects.filter(title__iexact = query),
+            Entity.objects.filter(title__iexact=query),
             entities,
         )
 
@@ -49,13 +46,13 @@ class ApplicationSearch(object):
                 'application': self.conf.local_name,
                 'redirect_if_sole_result': True,
             }
-            result.update(EntityDetailView(self.conf).get_metadata(request, entity.identifier_scheme, entity.identifier_value))
+            result.update(EntityDetailView(self.conf).get_metadata(request))
             yield result
 
 
     def entity_type_search(self, request, query, is_single_app_search):
         entity_types = EntityType.objects.filter(
-            Q(verbose_name__iexact = query) | Q(verbose_name_plural__iexact = query)
+            Q(verbose_name__iexact=query) | Q(verbose_name_plural__iexact=query)
         )
 
         for entity_type in entity_types:

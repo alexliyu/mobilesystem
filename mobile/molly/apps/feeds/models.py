@@ -3,12 +3,12 @@ from lxml import etree
 import simplejson
 
 from django.core.urlresolvers import reverse
-from django.contrib.gis.db import models
+from django.db import models
 from django.conf import settings
 
 from mobile.molly.external_media import resize_external_image
 from mobile.molly.apps.places.models import Entity
-
+from mobile.molly.gmapsfield.fields import GoogleMapsField
 FEED_TYPE_CHOICES = (
     ('n', 'news'),
     ('e', 'event'),
@@ -42,7 +42,7 @@ class Tag(models.Model):
 
 class Feed(models.Model):
     title = models.TextField()
-    unit = models.CharField(max_length=10,null=True,blank=True)
+    unit = models.CharField(max_length=10, null=True, blank=True)
     rss_url = models.URLField()
     slug = models.SlugField()
     last_modified = models.DateTimeField(null=True, blank=True) # this one is in UTC
@@ -80,7 +80,7 @@ class vCard(models.Model):
     name = models.TextField(blank=True)
     address = models.TextField(blank=True)
     telephone = models.TextField(blank=True)
-    location = models.PointField(null=True)
+    location = GoogleMapsField()
     entity = models.ForeignKey(Entity, null=True, blank=True)
     
 class Series(models.Model):
@@ -104,7 +104,7 @@ class Item(models.Model):
     organiser = models.ForeignKey(vCard, related_name='organising_set', null=True, blank=True)
     speaker = models.ForeignKey(vCard, related_name='speaking_set', null=True, blank=True)
     venue = models.ForeignKey(vCard, related_name='venue_set', null=True, blank=True)
-    contact = models.ForeignKey(vCard, related_name    ='contact_set', null=True, blank=True)
+    contact = models.ForeignKey(vCard, related_name='contact_set', null=True, blank=True)
     
     series = models.ForeignKey(Series, null=True, blank=True)
     ordinal = models.IntegerField(null=True)
@@ -141,7 +141,7 @@ class Item(models.Model):
     def get_description_display(self, device):
         html = etree.fromstring('<div>%s</div>' % self.description, parser=etree.HTMLParser())
         for img in html.findall('.//img'):
-            eis = resize_external_image(img.attrib['src'], device.max_image_width-40)
+            eis = resize_external_image(img.attrib['src'], device.max_image_width - 40)
             if eis != None:
                 img.attrib['src'] = eis.get_absolute_url()
                 img.attrib['width'] = '%d' % eis.width

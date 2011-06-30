@@ -3,8 +3,8 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 
-from userena.models import UserenaSignup
-from userena.utils import get_profile_model
+from mobile.userena.models import UserenaSignup
+from mobile.userena.utils import get_profile_model
 
 class UserenaSignupInline(admin.StackedInline):
     model = UserenaSignup

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 
-from guardian.exceptions import ObjectNotPersisted
+from mobile.guardian.exceptions import ObjectNotPersisted
 
 class UserObjectPermissionManager(models.Manager):
 
@@ -19,10 +19,10 @@ class UserObjectPermissionManager(models.Manager):
             content_type=ctype, codename=perm)
 
         obj_perm, created = self.get_or_create(
-            content_type = ctype,
-            permission = permission,
-            object_pk = obj.pk,
-            user = user)
+            content_type=ctype,
+            permission=permission,
+            object_pk=obj.pk,
+            user=user)
         return obj_perm
 
     def remove_perm(self, perm, user, obj):
@@ -45,8 +45,8 @@ class UserObjectPermissionManager(models.Manager):
                 % obj)
         ctype = ContentType.objects.get_for_model(obj)
         perms = self.filter(
-            content_type = ctype,
-            user = user,
+            content_type=ctype,
+            user=user,
         )
         return perms
 
@@ -65,10 +65,10 @@ class GroupObjectPermissionManager(models.Manager):
             content_type=ctype, codename=perm)
 
         obj_perm, created = self.get_or_create(
-            content_type = ctype,
-            permission = permission,
-            object_pk = obj.pk,
-            group = group)
+            content_type=ctype,
+            permission=permission,
+            object_pk=obj.pk,
+            group=group)
         return obj_perm
 
     def remove_perm(self, perm, group, obj):
@@ -91,8 +91,8 @@ class GroupObjectPermissionManager(models.Manager):
                 % obj)
         ctype = ContentType.objects.get_for_model(obj)
         perms = self.filter(
-            content_type = ctype,
-            group = group,
+            content_type=ctype,
+            group=group,
         )
         return perms
 

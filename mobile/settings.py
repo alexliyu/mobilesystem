@@ -49,19 +49,28 @@ SITE_NAME = 'eiimedia'
 # and may require a custom urls.py to be written
 ROOT_URLCONF = 'mobile.urls'
 
-# The connection to your database is configured below. We assume you're using
-# PostGIS
+# 
+# 在公司的数据库配置
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#        'HOST': '192.168.1.119',
+#        'NAME': 'molly',
+#        'USER': 'molly',
+#    	'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#    }
+#}
+# 在家里的数据库配置
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '192.168.1.119',
-        'NAME': 'molly',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'HOST': '127.0.0.1',
+        'NAME': os.path.join(project_root, 'mobile.db'),
         'USER': 'molly',
-#        'PASSWORD': 'FSNICgM3wDvNU29XmR',
-    	'PASSWORD':'6b6RyKNvOnEvbrynYK',
+        'PASSWORD': 'FSNICgM3wDvNU29XmR',
+#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
     }
 }
-
 
 
 # API keys are used to access particular services
@@ -115,29 +124,29 @@ APPLICATIONS = [
         display_to_user=False,
     ),
     
-#    Application('mobile.molly.apps.feeds', 'feeds', 'Feeds',
-#        providers=[
-#            Provider('mobile.molly.apps.feeds.providers.RSSFeedsProvider'),
-#        ],
-#        display_to_user=True,
-#    ),
+    Application('mobile.molly.apps.feeds', 'feeds', 'Feeds',
+        providers=[
+            Provider('mobile.molly.apps.feeds.providers.RSSFeedsProvider'),
+        ],
+        display_to_user=False,
+    ),
     
     Application('mobile.molly.apps.feeds.news', 'news', '新闻'),
     
     Application('mobile.molly.apps.feeds.events', 'events', '公告'),
     
-    Application('molly.maps', 'maps', '地图',
-        display_to_user=False,
-    ),
+#    Application('molly.maps', 'maps', '地图',
+#        display_to_user=False,
+#    ),
     
-    Application('molly.geolocation', 'geolocation', 'Geolocation',
-    
-        prefer_results_near=(118.115749, 24.471363, 10000),
-        providers=[
-            Provider('molly.geolocation.providers.PlacesGeolocationProvider'),
-        ],
-        display_to_user=False,
-    ),
+#    Application('molly.geolocation', 'geolocation', 'Geolocation',
+#    
+#        prefer_results_near=(118.115749, 24.471363, 10000),
+#        providers=[
+#            Provider('molly.geolocation.providers.PlacesGeolocationProvider'),
+#        ],
+#        display_to_user=False,
+#    ),
     
     Application('mobile.molly.apps.feedback', 'feedback', '建议',
         display_to_user=False,
@@ -248,7 +257,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'mobile.molly.wurfl.context_processors.wurfl_device',
     'mobile.molly.wurfl.context_processors.device_specific_media',
-    'mobile.molly.geolocation.context_processors.geolocation',
     'mobile.molly.utils.context_processors.full_path',
     'mobile.molly.utils.context_processors.site_name',
     #'molly.utils.context_processors.google_analytics',
@@ -307,7 +315,6 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.gis',
     'django.contrib.comments',
     'django.contrib.staticfiles',
     'molly.batch_processing',
@@ -341,6 +348,9 @@ MARKER_DIR = os.path.join(CACHE_DIR, 'markers')
 # This shouldn't need changing
 SRID = 27700
 
+GMAP_JQUERY = 'http://code.jquery.com/jquery-1.4.2.min.js'
+GMAP_API = 'http: // maps.google.com / maps / api / js?sensor = false'
+GMAP_DEFAULT = [-34.397, 150.644]
 # Settings relating to staticfiles
 STATIC_ROOT = os.path.join(project_root, 'static') # the location on disk where media is stored
 STATIC_URL = '/static/' # The URL used to refer to media
