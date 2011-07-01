@@ -36,7 +36,7 @@
       <ol id="bc">
       {% block site-small-logo %}
         <li><a href="{% url home:index %}">
-          <img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"/>
+          <img width="66" height="40" src="{{ STATIC_URL }}site/images/logos/logo-66x40.jpg" alt="{{ site_name }}"/>
         </a></li>
       {% endblock %}
     {% if breadcrumbs.2 %}
@@ -112,7 +112,7 @@
 
 {% endif %}  
 -->
-<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="http://www.eiimedia.cn">娱讯传媒</a> 联系电话:0592-5166918</div>
+<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="{% url home:static_about %}">娱讯传媒</a> 联系电话:0592-5166918</div>
 {% if "feature_vote"|app_is_loaded or "feature-suggestions"|app_is_loaded %}
   <div style="width:100%; float:left; margin-top: 0.1em; margin-bottom:0.4em;">
     <a style="margin:0 0.2em 0 0.2em; background-color:white; padding:0.6em; -webkit-border-radius:0.4em; -moz-border-radius:0.4em; text-align:center; display:block"

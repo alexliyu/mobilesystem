@@ -10,8 +10,8 @@
                 clone = orig.clone(true).attr("type", "hidden"),
                 defaults = {
                     size: ["500px", "400px"],
-                    coordinates: [-34.397, 150.644],
-                    zoom: 8,
+                    coordinates: [24.471511, 118.114421],
+                    zoom: 12,
                     markers: [],
                     frozen: false
                 };

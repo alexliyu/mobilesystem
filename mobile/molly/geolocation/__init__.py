@@ -27,7 +27,7 @@ def _cached(getargsfunc):
             while i < len(results):
                 loc, name = Point(results[i]['location'], srid=4326).transform(settings.SRID, clone=True), results[i]['name']
                 if any((r['name'] == name and Point(r['location'], srid=4326).transform(settings.SRID, clone=True).distance(loc) < 100) for r in results[:i]):
-                    results[i:i+1] = []
+                    results[i:i + 1] = []
                 else:
                     i += 1
 
@@ -41,11 +41,11 @@ def _cached(getargsfunc):
                     results = filtered_results
 
             try:
-                geocode, _ = Geocode.objects.get_or_create(local_name = app.local_name,
+                geocode, _ = Geocode.objects.get_or_create(local_name=app.local_name,
                                                             **args)
             except Geocode.MultipleObjectsReturned:
-                Geocode.objects.filter(local_name = app.local_name, **args).delete()
-                geocode, _ = Geocode.objects.get_or_create(local_name = app.local_name,
+                Geocode.objects.filter(local_name=app.local_name, **args).delete()
+                geocode, _ = Geocode.objects.get_or_create(local_name=app.local_name,
                                                             **args)
             geocode.results = results
             geocode.save()
@@ -54,14 +54,14 @@ def _cached(getargsfunc):
         return h
     return g
 
-@_cached(lambda query,local_name=None:{'query':query, 'local_name':local_name})
+@_cached(lambda query, local_name=None:{'query':query, 'local_name':local_name})
 def geocode(query, providers):
     results = []
     for provider in providers:
         results += provider.geocode(query)
     return results
 
-@_cached(lambda lon,lat,local_name=None:{'lon': lon, 'lat':lat, 'local_name':local_name})
+@_cached(lambda lon, lat, local_name=None:{'lon': lon, 'lat':lat, 'local_name':local_name})
 def reverse_geocode(lon, lat, providers):
     results = []
     for provider in providers:

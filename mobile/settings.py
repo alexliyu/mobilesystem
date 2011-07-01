@@ -79,7 +79,7 @@ API_KEYS = {
     'google_analytics': 'None',
 }
 
-
+TIME_ZONE = 'Asia/Shanghai'
 # The meat of Molly - application configuration
 APPLICATIONS = [
 
@@ -131,7 +131,7 @@ APPLICATIONS = [
         display_to_user=False,
     ),
     
-    Application('mobile.molly.apps.feeds.news', 'news', '新闻'),
+    Application('mobile.molly.apps.feeds.news', 'news', '团购'),
     
     Application('mobile.molly.apps.feeds.events', 'events', '公告'),
     
@@ -161,7 +161,7 @@ APPLICATIONS = [
 #    ),
 #    
     Application('molly.wurfl', 'device_detection', '终端信息',
-        display_to_user=True,
+        display_to_user=False,
         expose_view=True,
     ),
 #    

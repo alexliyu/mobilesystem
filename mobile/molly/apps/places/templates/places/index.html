@@ -20,7 +20,7 @@
                 {% endifequal %}
         </td></tr>    
         <tr><td>
-                <p class="help-bubble top">Search by place name, bus stop number e.g. E7 or 69323498 or postcode</p>
+                <p class="help-bubble top">输入地名、店名、场所名称、电话号码或者提供服务类型</p>
         </td><td></td></tr></tbody>
 </table>
 </form>
@@ -31,12 +31,12 @@
 {# Points of Interest #}
 <div class="section" id="poi-category-selector">
 <div class="header">
-  <h2>Points of Interest</h2>
-  {% include "geolocation/update_location_embed.html" %}
+  <h2>关注点</h2>
+  
 </div>
   <ul class="link-list category-list">
-    <li class="nearby"><a href="{% url places:nearby-list %}">Nearby</a></li>
-    <li class="categories"><a href="{% url places:category-list %}">By Category</a></li>
+    <li class="nearby"><a href="{% url places:nearby-list %}">周边</a></li>
+    <li class="categories"><a href="{% url places:category-list %}">分类</a></li>
   </ul>
 </div>
 {# End Points of Interest #}

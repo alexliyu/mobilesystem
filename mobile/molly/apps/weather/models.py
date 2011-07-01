@@ -1,49 +1,52 @@
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 from datetime import datetime, time
 from django.db import models
 from mobile.molly.gmapsfield.fields import GoogleMapsField
-PTYPE_CHOICES = (
-    ('o', 'observation'),
-    ('f', 'forecast'),
-)
+
 
 PRESSURE_STATE_CHOICES = (
-    ('+', 'rising'),
-    ('-', 'falling'),
-    ('~', 'steady'),
-    ('c', 'no change'),
+    ('+', u'上升'),
+    ('-', u'下降'),
+    ('~', u'持续'),
+    ('c', u'无变化'),
 )
 
 VISIBILITY_CHOICES = (
-    ('vp', 'very poor visibility'),
-    ('p', 'poor visibility '),
-    ('vg', 'very good visibility'),
-    ('g', 'good visibility'),
-    ('df', 'dense fog'),
-    ('f', 'fog'),
-    ('e', 'excellent visibility'),
-    ('m', 'moderate visibility'),
+    ('vp', u'能见度很差'),
+    ('p', u'能见度差'),
+    ('vg', u'能见度很好'),
+    ('g', u'能见度好'),
+    ('df', u'浓雾'),
+    ('f', u'雾'),
+    ('e', u'能见度最好'),
+    ('m', u'能见度中等'),
 )
 
 OUTLOOK_CHOICES = (
-    ('si', 'sunny intervals'),
-    ('gc', 'grey cloud'),
-    ('hr', 'heavy rain'),
-    ('s', 'sunny'),
-    ('lr', 'light rain'),
-    ('pc', 'partly cloudy'),
-    ('f', 'fog'),
-    ('wc', 'white cloud'),
-    ('tst', 'thunder storm'),
-    ('m', 'mist'),
-    ('tsh', 'thundery shower'),
-    ('lrs', 'light rain shower'),
-    ('cs', 'clear sky'),
-    ('d', 'drizzle'),
-    ('h', 'hail'),
-    ('lsn', 'light snow'),
-    ('sn', 'snow'),
-    ('hsn', 'heavy snow'),
-    ('unk', 'n/a'),
+    ('si', u'晴有时多云'),
+    ('gc', u'多云'),
+    ('hr', u'大雨'),
+    ('s', u'晴'),
+    ('lr', u'小雨'),
+    ('pc', u'局部多云'),
+    ('f', u'雾'),
+    ('wc', u'白云'),
+    ('tst', u'暴风雨'),
+    ('m', u'薄雾'),
+    ('tsh', u'雷阵雨'),
+    ('lrs', u'小阵雨'),
+    ('cs', u'晴天'),
+    ('d', u'毛毛雨'),
+    ('h', u'冰雹'),
+    ('lsn', u'小雪'),
+    ('sn', u'雪'),
+    ('hsn', u'大雪'),
+    ('unk', u'n/a'),
 )
 
 OUTLOOK_TO_ICON = {
@@ -69,15 +72,13 @@ OUTLOOK_TO_ICON = {
 }
 
 SCALE_CHOICES = (
-    ('l', 'low'),
-    ('m', 'medium'),
-    ('h', 'high'),
+    ('l', u'低'),
+    ('m', u'中'),
+    ('h', u'高'),
 )
 
 class Weather(models.Model):
     location_id = models.CharField(max_length=16)
-
-    ptype = models.CharField(max_length=1, choices=PTYPE_CHOICES)
 
     name = models.TextField(null=True)
 

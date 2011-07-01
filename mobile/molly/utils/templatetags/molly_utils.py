@@ -17,9 +17,42 @@ from mobile.molly.wurfl import device_parents
 from mobile.molly.apps.places import get_entity
 from mobile.molly.apps.places.models import Entity
 from mobile.molly.conf.applications import has_app_by_local_name
-
+from mobile.molly.gmapsfield.conf import settings
 register = template.Library()
 
+@register.filter()
+def show(value):
+    t = template.loader.get_template("public.html")
+    return t.render(template.Context({
+        "obj": str(value),
+    }))
+
+# Include scripts
+@register.tag()
+def gmap_includes(parser, token):
+    return IncludesNode()
+
+class IncludesNode(template.Node):
+    def __init__(self):
+        pass
+
+    def render(self, context):
+        t = template.loader.get_template("includes.html")
+        return t.render(template.Context({
+            "settings": settings   
+        }))
+
+# Some point in the future it would be cool to show a map on demand with the config object
+@register.tag()
+def show_map(parser, token):
+    return MapNode()
+
+class MapNode(template.Node):
+    def __init__(self):
+        pass
+
+    def render(self, context):
+        pass
 @register.filter
 @stringfilter
 def app_is_loaded(app):
@@ -27,7 +60,7 @@ def app_is_loaded(app):
 
 @register.filter
 def sanitize_html(value, args=''):
-    document = etree.fromstring(u'<body>%s</body>' % value, parser = etree.HTMLParser())
+    document = etree.fromstring(u'<body>%s</body>' % value, parser=etree.HTMLParser())
 
     args = args.split(',') + [None, None]
     id_prefix, class_prefix = args[0] or 'sani', args[1] or 'sani'
@@ -61,7 +94,7 @@ def round_up_10(value):
     """
     Rounds a number up to the nearest 10
     """
-    return '%d' % int(math.ceil(int(value)/10)*10)
+    return '%d' % int(math.ceil(int(value) / 10) * 10)
 
 UNUSUAL_NUMBERS = {
     '+448454647': '0845 46 47', # NHS Direct
@@ -106,7 +139,7 @@ def telephone(value, arg=None):
             if value[2] == '1' or value[3] == '1':
                 # 4 digit area codes
                 area_code = value[:4]
-                local_part =  value[4:7] + " " + value[7:]
+                local_part = value[4:7] + " " + value[7:]
             elif value[:6] in (
                         '013873', # Langholm
                         '015242', # Hornby
@@ -164,7 +197,7 @@ def telephone(value, arg=None):
 
 @register.filter
 def telephone_uri(value):
-    value = value.replace(" ", "").replace('-','')
+    value = value.replace(" ", "").replace('-', '')
     if value.startswith("0"):
         value = "+44" + value[1:]
     value = "tel:" + value

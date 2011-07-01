@@ -3,12 +3,21 @@
 {% block content %}
 <div class="bubble pad-10">
 <ul style="list-style:none;padding:0px">
-{% for business in businessList %}
-    <li style="float:left;margin-left:20px;">
-    	<a href="{{ business.businessUrl  }}">{{ business.businessName  }}</a>
-    	的<a href="{{ business.get_bidUrl}}">优惠活动</a></li><br/>
-{% endfor %}
-<li style="clear:left"></li>
+	{% for business in businessList %}
+	    <p style="float:left;margin-left:20px; BACKGROUND－COLOR:＃ff0000">
+    	{% if  forloop.counter|divisibleby:"2" %}
+    		<p><font color="#ffa6ff">
+		    	<a href="{{ business.businessUrl  }}">{{ business.businessName  }}</a>
+		    	的<a href="{{ business.get_bidUrl}}">优惠活动</a></p><br/>
+    		</p>
+    	{% else%}
+    		<p><font color="#7B7B7B">
+		    	<a href="{{ business.businessUrl  }}">{{ business.businessName  }}</a>
+		    	的<a href="{{ business.get_bidUrl}}">优惠活动</a></p><br/>
+    		</p>
+    	{% endif %}
+		<li style="clear:left"></li>
+	{% endfor %}
 </ul>
 </div>
 

@@ -4,8 +4,8 @@ from django.contrib.gis.geos import Point
 
 from models import EntityType, Entity
 
-def get_entity(scheme, value):
-    return get_object_or_404(Entity)
+def get_entity(scheme):
+    return get_object_or_404(Entity, absolute_url=scheme)
 
 def get_point(request, entity):
     if entity and entity.location:

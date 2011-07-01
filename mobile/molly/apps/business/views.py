@@ -54,6 +54,22 @@ class PromotionsDetail(BaseView):
            'referer': request.GET.get('referer', ''),
         })
         return self.render(request, context, 'promotions/promotionsDetail')
+  
+class PromotionsList(BaseView):
     
+    @BreadcrumbFactory
+    def breadcrumb(self, request, context):
+        return Breadcrumb(
+            self.conf.local_name, None, 'promotions',
+            lazy_reverse('index'))
+        
+    def handle_GET(self, request, context):
+        promotionsList=PromotionsInfo.objects.filter(picSrc__gt= '')
+        context['promotionsList']=promotionsList
+        context.update({
+           'sent': request.GET.get('sent') == 'true',
+           'referer': request.GET.get('referer', ''),
+        })
+        return self.render(request, context, 'promotions/index')  
     
     

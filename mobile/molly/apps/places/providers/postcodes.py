@@ -11,7 +11,7 @@ import re
 from django.contrib.gis.geos import Point
 
 from mobile.molly.apps.places.providers import BaseMapsProvider
-from mobile.molly.apps.places.models import Entity, EntityType, Source, EntityTypeCategory
+from mobile.molly.apps.places.models import Entity, EntityType, EntityTypeCategory
 
 from mobile.molly.conf.settings import batch
 
@@ -98,13 +98,4 @@ class PostcodesMapsProvider(BaseMapsProvider):
         entity_type.save()
         return entity_type
 
-    def _get_source(self):
-        try:
-            source = Source.objects.get(module_name="molly.providers.apps.maps.postcodes")
-        except Source.DoesNotExist:
-            source = Source(module_name="molly.providers.apps.maps.postcodes")
-
-        source.name = "Postcodes"
-        source.save()
-
-        return source
+   

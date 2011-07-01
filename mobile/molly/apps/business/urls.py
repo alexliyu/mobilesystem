@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import patterns
 from mobile.molly.apps.business.views import PromotionsView,IndexView,\
-    PromotionsDetail
+    PromotionsDetail, PromotionsList
 
 #info = {
 #    'queryset': PromotionsInfo.objects.get(id),
@@ -10,5 +10,6 @@ from mobile.molly.apps.business.views import PromotionsView,IndexView,\
 urlpatterns = patterns('',
        (r'^(?P<slug>[\d+]+)/$', PromotionsDetail,{},'promotionsDetail'),
        (r'^pro/(?P<slug>[\d+]+)/$', PromotionsView, {},'promotionsView'),
+       (r'^proall/', PromotionsList, {},'promotionsView'),
        (r'^$', IndexView, {},'index'),
        )

@@ -229,8 +229,8 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
 class EntityDetailView(ZoomableView, FavouritableView):
     default_zoom = 16
 
-    def get_metadata(self, request, scheme, value):
-        entity = get_entity(scheme, value)
+    def get_metadata(self, request, scheme):
+        entity = get_entity(scheme)
         user_location = request.session.get('geolocation:location')
         distance, bearing = entity.get_distance_and_bearing_from(user_location)
         additional = '<strong>%s</strong>' % capfirst(entity.primary_type.verbose_name)
@@ -242,9 +242,9 @@ class EntityDetailView(ZoomableView, FavouritableView):
             'entity': entity,
         }
 
-    def initial_context(self, request, scheme, value):
+    def initial_context(self, request, scheme):
         context = super(EntityDetailView, self).initial_context(request)
-        entity = get_entity(scheme, value)
+        entity = get_entity(scheme)
         associations = []
         if hasattr(self.conf, 'associations'):
             for association in self.conf.associations:
@@ -279,32 +279,32 @@ class EntityDetailView(ZoomableView, FavouritableView):
         return context
 
     @BreadcrumbFactory
-    def breadcrumb(self, request, context, scheme, value):
+    def breadcrumb(self, request, context, scheme):
         if request.session.get('geolocation:location'):
             parent_view = 'nearby-detail'
         else:
             parent_view = 'category-detail'
-        entity = get_entity(scheme, value)
+        entity = get_entity(scheme)
         return Breadcrumb(
             'places',
             lazy_parent(parent_view, ptypes=entity.primary_type.slug),
             context['entity'].title,
-            lazy_reverse('entity', args=[scheme, value]),
+            lazy_reverse('entity', args=[scheme]),
         )
 
-    def handle_GET(self, request, context, scheme, value):
+    def handle_GET(self, request, context, scheme):
         entity = context['entity']
         
-        if entity.absolute_url != request.path:
-            return self.redirect(entity.absolute_url, request, 'perm')
+#        if entity.absolute_url != request.path:
+#            return self.redirect(entity.absolute_url, request, 'perm')
         
         entities = []
         for association in context['associations']:
             entities += association['entities']
 
-        for provider in reversed(self.conf.providers):
-            provider.augment_metadata((entity,), board=context['board'])
-            provider.augment_metadata([e for atypes in context['associations'] for e in atypes['entities']], board=context['board'])
+#        for provider in reversed(self.conf.providers):
+#            provider.augment_metadata((entity,), board=context['board'])
+#            provider.augment_metadata([e for atypes in context['associations'] for e in atypes['entities']], board=context['board'])
 
         return self.render(request, context, 'places/entity_detail')
 

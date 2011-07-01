@@ -2,7 +2,7 @@
 from django.contrib.gis.geos import Point, LineString, LinearRing
 from django.conf import settings
 
-from mobile.molly.apps.places.models import Entity, EntityType, Source, EntityTypeCategory
+from mobile.molly.apps.places.models import Entity, EntityType, EntityTypeCategory
 from mobile.molly.apps.places.providers import BaseMapsProvider
 from mobile.molly.utils.misc import AnyMethodRequest
 from mobile.molly.geolocation import reverse_geocode
@@ -33,8 +33,8 @@ class OSMHandler(handler.ContentHandler):
         self.tags = {}
         self.valid_node = True
 
-        self.create_count, self.modify_count = 0,0
-        self.delete_count, self.unchanged_count = 0,0
+        self.create_count, self.modify_count = 0, 0
+        self.delete_count, self.unchanged_count = 0, 0
         self.ignore_count = 0
 
         self.node_locations = {}
@@ -73,10 +73,10 @@ class OSMHandler(handler.ContentHandler):
             self.ids.add(id)
 
         elif name == 'nd':
-            self.nodes.append( node_id(attrs['ref']) )
+            self.nodes.append(node_id(attrs['ref']))
 
     def endElement(self, name):
-        if name in ('node','way') and self.valid:
+        if name in ('node', 'way') and self.valid:
             try:
                 types = self.find_types(self.tags)
             except ValueError:
@@ -119,7 +119,7 @@ class OSMHandler(handler.ContentHandler):
                     for lon, lat in [self.node_locations[n] for n in self.nodes]:
                         min_ = min(min_[0], lon), min(min_[1], lat) 
                         max_ = max(max_[0], lon), max(max_[1], lat)
-                    entity.location = Point( (min_[0]+max_[0])/2 , (min_[1]+max_[1])/2 , srid=4326)
+                    entity.location = Point((min_[0] + max_[0]) / 2 , (min_[1] + max_[1]) / 2 , srid=4326)
                 else:
                     raise AssertionError("There should be no other types of entity we're to deal with.")
 
@@ -232,62 +232,53 @@ class OSMMapsProvider(BaseMapsProvider):
             'etag': new_etag,
         }
 
-    def _get_source(self):
-        try:
-            source = Source.objects.get(module_name="molly.providers.apps.maps.osm")
-        except Source.DoesNotExist:
-            source = Source(module_name="molly.providers.apps.maps.osm")
-
-        source.name = "OpenStreetMap"
-        source.save()
-
-        return source
+   
 
     def _get_entity_types(self):
         ENTITY_TYPES = {
-            'atm':                 ('an', 'ATM',                      'ATMs',                      True,  False, (),                    'Amenities'),
-            'bank':                ('a',  'bank',                     'banks',                     True,  True,  (),                    'Amenities'),
-            'bench':               ('a',  'bench',                    'benches',                   True,  False, (),                    'Amenities'),
-            'bar':                 ('a',  'bar',                      'bars',                      True,  True,  (),                    'Amenities'),
-            'bicycle-parking':     ('a',  'bicycle rack',             'bicycle racks',             True,  False, (),                    'Transport'),
-            'cafe':                ('a',  'café',                     'cafés',                     False, False, ('food',),             'Amenities'),
-            'car-park':            ('a',  'car park',                 'car parks',                 False, False, (),                    'Transport'),
-            'cathedral':           ('a',  'cathedral',                'cathedrals',                False, False, ('place-of-worship',), 'Amenities'),
-            'chapel':              ('a',  'chapel',                   'chapels',                   False, False, ('place-of-worship',), 'Amenities'),
-            'church':              ('a',  'church',                   'churches',                  False, False, ('place-of-worship',), 'Amenities'),
-            'cinema':              ('a',  'cinema',                   'cinemas',                   True,  True,  (),                    'Leisure'),
-            'cycle-shop':          ('a',  'cycle shop',               'cycle shops',               False, False, ('shop',),             'Amenities'),
-            'dispensing-pharmacy': ('a',  'dispensing pharmacy',      'dispensing pharmacies',     False, False, ('pharmacy',),         'Amenities'),
-            'doctors':             ('a',  "doctor's surgery",         "doctors' surgeries",        False, False, ('medical',),          'Amenities'),
-            'fast-food':           ('a',  'fast food outlet',         'fast food outlets',         False, False, ('food',),             'Amenities'),
-            'food':                ('a',  'place to eat',             'places to eat',             True,  True,  (),                    'Amenities'),
-            'hospital':            ('a',  'hospital',                 'hospitals',                 False, False, ('medical',),          'Amenities'),
-            'ice-cream':           ('an', 'ice cream café',           'ice cream cafés',           False, False, ('cafe','food',),      'Amenities'),
-            'ice-rink':            ('an', 'ice rink',                 'ice rinks',                 False, False, ('sport',),            'Leisure'),
-            'library':             ('a',  'library',                  'libraries',                 True,  True,  (),                    'Amenities'),
-            'mandir':              ('a',  'mandir',                   'mandirs',                   False, False, ('place-of-worship',), 'Amenities'),
-            'medical':             ('a',  'place relating to health', 'places relating to health', True,  True,  (),                    'Amenities'),
-            'mosque':              ('a',  'mosque',                   'mosques',                   False, False, ('place-of-worship',), 'Amenities'),
-            'museum':              ('a',  'museum',                   'museums',                   False, False, (),                    'Leisure'),
-            'car-park':            ('a',  'car park',                 'car parks',                 True,  False, (),                    'Transport'),
-            'park':                ('a',  'park',                     'parks',                     False, False, (),                    'Leisure'),
-            'park-and-ride':       ('a',  'park and ride',            'park and rides',            False, False, ('car-park',),         'Transport'),
-            'pharmacy':            ('a',  'pharmacy',                 'pharmacies',                False, False, ('medical',),          'Amenities'),
-            'place-of-worship':    ('a',  'place of worship',         'places of worship',         False, False, (),                    'Amenities'),
-            'post-box':            ('a',  'post box',                 'post boxes',                True,  False, (),                    'Amenities'),
-            'post-office':         ('a',  'post office',              'post offices',              True,  False, (),                    'Amenities'),
-            'pub':                 ('a',  'pub',                      'pubs',                      True,  True,  (),                    'Amenities'),
-            'public-library':      ('a',  'public library',           'public libraries',          True,  True,  ('library',),          'Amenities'),
-            'punt-hire':           ('a',  'place to hire punts',      'places to hire punts',      False, False, (),                    'Leisure'),
-            'recycling':           ('a',  'recycling facility',       'recycling facilities',      True,  False, (),                    'Amenities'),
-            'restaurant':          ('a',  'restaurant',               'restaurants',               False, False, ('food',),             'Amenities'),
-            'shop':                ('a',  'shop',                     'shops',                     False, False, (),                    'Amenities'),
-            'sport':               ('a',  'place relating to sport',  'places relating to sport',  False, False, (),                    'Leisure'),
-            'sports-centre':       ('a',  'sports centre',            'sports centres',            False, False, ('sport',),            'Leisure'),
-            'swimming-pool':       ('a',  'swimming pool',            'swimming pools',            False, False, ('sport',),            'Leisure'),
-            'synagogue':           ('a',  'synagogue',                'synagogues',                False, False, ('place-of-worship',), 'Amenities'),
-            'taxi-rank':           ('a',  'taxi rank',                'taxi ranks',                False, False, (),                    'Transport'),
-            'theatre':             ('a',  'theatre',                  'theatres',                  True,  True,  (),                    'Leisure'),
+            'atm':                 ('an', 'ATM', 'ATMs', True, False, (), 'Amenities'),
+            'bank':                ('a', 'bank', 'banks', True, True, (), 'Amenities'),
+            'bench':               ('a', 'bench', 'benches', True, False, (), 'Amenities'),
+            'bar':                 ('a', 'bar', 'bars', True, True, (), 'Amenities'),
+            'bicycle-parking':     ('a', 'bicycle rack', 'bicycle racks', True, False, (), 'Transport'),
+            'cafe':                ('a', 'café', 'cafés', False, False, ('food',), 'Amenities'),
+            'car-park':            ('a', 'car park', 'car parks', False, False, (), 'Transport'),
+            'cathedral':           ('a', 'cathedral', 'cathedrals', False, False, ('place-of-worship',), 'Amenities'),
+            'chapel':              ('a', 'chapel', 'chapels', False, False, ('place-of-worship',), 'Amenities'),
+            'church':              ('a', 'church', 'churches', False, False, ('place-of-worship',), 'Amenities'),
+            'cinema':              ('a', 'cinema', 'cinemas', True, True, (), 'Leisure'),
+            'cycle-shop':          ('a', 'cycle shop', 'cycle shops', False, False, ('shop',), 'Amenities'),
+            'dispensing-pharmacy': ('a', 'dispensing pharmacy', 'dispensing pharmacies', False, False, ('pharmacy',), 'Amenities'),
+            'doctors':             ('a', "doctor's surgery", "doctors' surgeries", False, False, ('medical',), 'Amenities'),
+            'fast-food':           ('a', 'fast food outlet', 'fast food outlets', False, False, ('food',), 'Amenities'),
+            'food':                ('a', 'place to eat', 'places to eat', True, True, (), 'Amenities'),
+            'hospital':            ('a', 'hospital', 'hospitals', False, False, ('medical',), 'Amenities'),
+            'ice-cream':           ('an', 'ice cream café', 'ice cream cafés', False, False, ('cafe', 'food',), 'Amenities'),
+            'ice-rink':            ('an', 'ice rink', 'ice rinks', False, False, ('sport',), 'Leisure'),
+            'library':             ('a', 'library', 'libraries', True, True, (), 'Amenities'),
+            'mandir':              ('a', 'mandir', 'mandirs', False, False, ('place-of-worship',), 'Amenities'),
+            'medical':             ('a', 'place relating to health', 'places relating to health', True, True, (), 'Amenities'),
+            'mosque':              ('a', 'mosque', 'mosques', False, False, ('place-of-worship',), 'Amenities'),
+            'museum':              ('a', 'museum', 'museums', False, False, (), 'Leisure'),
+            'car-park':            ('a', 'car park', 'car parks', True, False, (), 'Transport'),
+            'park':                ('a', 'park', 'parks', False, False, (), 'Leisure'),
+            'park-and-ride':       ('a', 'park and ride', 'park and rides', False, False, ('car-park',), 'Transport'),
+            'pharmacy':            ('a', 'pharmacy', 'pharmacies', False, False, ('medical',), 'Amenities'),
+            'place-of-worship':    ('a', 'place of worship', 'places of worship', False, False, (), 'Amenities'),
+            'post-box':            ('a', 'post box', 'post boxes', True, False, (), 'Amenities'),
+            'post-office':         ('a', 'post office', 'post offices', True, False, (), 'Amenities'),
+            'pub':                 ('a', 'pub', 'pubs', True, True, (), 'Amenities'),
+            'public-library':      ('a', 'public library', 'public libraries', True, True, ('library',), 'Amenities'),
+            'punt-hire':           ('a', 'place to hire punts', 'places to hire punts', False, False, (), 'Leisure'),
+            'recycling':           ('a', 'recycling facility', 'recycling facilities', True, False, (), 'Amenities'),
+            'restaurant':          ('a', 'restaurant', 'restaurants', False, False, ('food',), 'Amenities'),
+            'shop':                ('a', 'shop', 'shops', False, False, (), 'Amenities'),
+            'sport':               ('a', 'place relating to sport', 'places relating to sport', False, False, (), 'Leisure'),
+            'sports-centre':       ('a', 'sports centre', 'sports centres', False, False, ('sport',), 'Leisure'),
+            'swimming-pool':       ('a', 'swimming pool', 'swimming pools', False, False, ('sport',), 'Leisure'),
+            'synagogue':           ('a', 'synagogue', 'synagogues', False, False, ('place-of-worship',), 'Amenities'),
+            'taxi-rank':           ('a', 'taxi rank', 'taxi ranks', False, False, (), 'Transport'),
+            'theatre':             ('a', 'theatre', 'theatres', True, True, (), 'Leisure'),
         }
 
         entity_types = {}
@@ -301,7 +292,7 @@ class OSMMapsProvider(BaseMapsProvider):
                 entity_type = EntityType(slug=slug)
                 created = True
             entity_type.slug = slug
-            entity_type.category=et_category
+            entity_type.category = et_category
             entity_type.verbose_name = verbose_name
             entity_type.verbose_name_plural = verbose_name_plural
             entity_type.article = 'a'

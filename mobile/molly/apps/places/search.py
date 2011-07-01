@@ -32,7 +32,7 @@ class ApplicationSearch(object):
             entities = entities.filter()
         else:
             entities = entities.filter(
-                _identifiers__value__iexact=query,
+                title__iexact=query,
             )
 
         entities = chain(
@@ -42,11 +42,11 @@ class ApplicationSearch(object):
 
         for entity in entities:
             result = {
-                'url': entity.get_absolute_url(),
+                'url': '/places/category/%s/%s' % (entity.primary_type, entity.get_absolute_url()),
                 'application': self.conf.local_name,
                 'redirect_if_sole_result': True,
             }
-            result.update(EntityDetailView(self.conf).get_metadata(request))
+#            result.update(EntityDetailView(self.conf).get_metadata(request,entity.get_absolute_url))
             yield result
 
 

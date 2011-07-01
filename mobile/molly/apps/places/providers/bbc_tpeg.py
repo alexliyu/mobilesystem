@@ -5,7 +5,7 @@ from django.contrib.gis.geos import Point, LineString
 from django.conf import settings
 
 from mobile.molly.apps.places.providers import BaseMapsProvider
-from mobile.molly.apps.places.models import Source, Entity, EntityType, EntityTypeCategory
+from mobile.molly.apps.places.models import  Entity, EntityType, EntityTypeCategory
 from mobile.molly.conf.settings import batch
 
 class BBCTPEGResolver(etree.Resolver):
@@ -82,8 +82,8 @@ class BBCTPEGPlacesProvider(BaseMapsProvider):
             else:
                 continue
             entity.location = Point(
-                sum(p.x for p in locs)/len(locs), 
-                sum(p.y for p in locs)/len(locs), 
+                sum(p.x for p in locs) / len(locs),
+                sum(p.y for p in locs) / len(locs),
                 srid=4326,
             )
             
@@ -107,16 +107,7 @@ class BBCTPEGPlacesProvider(BaseMapsProvider):
         attrib = elem.attrib
         return Point(float(attrib['longitude']), float(attrib['latitude']), srid=4326)
 
-    def _get_source(self):
-        try:
-            source = Source.objects.get(module_name="molly.providers.apps.maps.bbc_tpeg")
-        except Source.DoesNotExist:
-            source = Source(module_name="molly.providers.apps.maps.bbc_tpeg")
-
-        source.name = "BBC TPEG"
-        source.save()
-
-        return source
+   
     
     def _get_entity_type(self):
         entity_type, created = EntityType.objects.get_or_create(slug='travel-alert')

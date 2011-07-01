@@ -6,13 +6,7 @@ from django.conf import settings
 from django.db import models
 from django.core.urlresolvers import reverse, NoReverseMatch
 from mobile.molly.gmapsfield.fields import GoogleMapsField
-class Source(models.Model):
-    module_name = models.CharField(max_length=128)
-    name = models.CharField(max_length=128)
-    last_updated = models.DateTimeField(auto_now=True)
-    
-    def __unicode__(self):
-        return self.name
+
 
 
 
@@ -67,7 +61,6 @@ class EntityGroup(models.Model):
     """
     
     title = models.TextField(blank=True)
-    source = models.ForeignKey(Source)
     ref_code = models.CharField(max_length=256)
 
     def __unicode__(self):
@@ -75,7 +68,6 @@ class EntityGroup(models.Model):
 
 class Entity(models.Model):
     title = models.TextField(blank=True)
-    source = models.ForeignKey(Source)
     
     primary_type = models.ForeignKey(EntityType, null=True)
     all_types = models.ManyToManyField(EntityType, blank=True,

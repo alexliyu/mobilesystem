@@ -47,6 +47,14 @@ class PromotionsInfo(models.Model):
         
     def get_endTime(self):
         return "%d-%d-%d %d:%d:%d"% self.endTime[:6]
+    
+    def get_picSrc(self):
+        try:
+            a = self.businessLogo.__str__().split('/media/')
+            
+            return '/media/'+a[1]
+        except:
+            return '/media/111.jpg'
 
     def __unicode__(self):
         return self.title

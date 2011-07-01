@@ -17,11 +17,9 @@ from views import (
 )
 
 urlpatterns = patterns('',
-    (r'^$',
-        IndexView, {},
-        'index'),
+    
 
-    (r'^nearby/$', 
+    (r'^nearby/$',
         NearbyListView, {},
         'nearby-list'),
     (r'^nearby/(?P<ptypes>[^/;]+(\;[^/;]+)*)/$',
@@ -35,7 +33,7 @@ urlpatterns = patterns('',
         CategoryDetailView, {},
         'category-detail'),
 
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[\da-zA-Z]+)/$',
+    (r'^category/([^/;]+(\;[^/;]+)*)/(?P<scheme>[a-z_\-]+)$',
         EntityDetailView, {},
         'entity'),
     
@@ -62,4 +60,7 @@ urlpatterns = patterns('',
     (r'^api/$',
         APIView, {},
         'api'),
+    (r'^$',
+        IndexView, {},
+        'index'),
 )

@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}
 {% load molly_weather %}
-{% load molly_utils %}{% load molly_search %}
+{% load molly_utils %}
 
 {% block site_title %}{% endblock %}
 
@@ -10,7 +10,7 @@
 <div id="index-header">
     <div id="index-title">
 		{% ifequal style_group "dumb" %}
-		<a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"></a>
+		<a href="/"><img width="66" height="40" src="{{ STATIC_URL }}site/images/logos/logo-66x40.jpg" alt="{{ site_name }}"></a>
 		{% else %}
 		{% if is_christmas %}
         <a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px-christmas.png" alt="{{ site_name }}"/></a>
@@ -19,21 +19,7 @@
 		{% endif %}
         {% endifequal %}
     </div>
-    
-    <!--  
-    <div id="index-search">
-        {% search_form %}
-	     <form method="get" action="{% url search:index %}">
-		 <p>
-			{{ search_form.query }}
-		{% ifequal style_group "dumb" %}
-		    <input type="button" value="Search" />
-		{% else %}
-			<input type="image" src="{{ STATIC_URL }}site/images/buttons/search-button.png" title="Search" alt="Search"/>
-		{% endifequal %}
-		 </p>
-		 </form>
-	</div>-->
+
 </div>
 {% endblock %}
 
@@ -55,32 +41,42 @@
 	              <a {% if application.accesskey %} accesskey="{{ application.accesskey }}"{% endif %} href="{{ application.url }}">{{ application.title }}</a>
 	          </li>
 	      {% endif %}{% endfor %}
+          <li id="menu-proall">
+              <a href="/business/proall/">优惠活动</a>
+          </li>
 	    </ol>
         {# Only necessary if using floating icons #}
         {# <div class="clearhidden"> </div> #}
     </div>
-    </div>{{user.is_anonymous}}
- {%if user.is_anonymous%}
+    </div>
+ 
     <div class="bubble pad-5">
    
         {% block reg %}
+   {%if user.is_authenticated%}
+   <div style="text-align:center">
 <form action="/accounts/signup/" method="post"> 
   {% csrf_token %}
-   还没有注册手机号？亲，注册只要1分钟！第一次有效注册前100名有奖品拿哦!
-  <label for="id_mobile">请输入手机号：</label> 
-    <input id="id_mobile" type="text" class="required" name="mobile" maxlength="30" /> 
+   <p>还没有注册手机号？亲，注册只要5钞钟！</p><p>第一次有效注册前100名有奖品拿哦!</p>
+  <label for="id_mobile">请输手机:</label> 
+    <input id="id_mobile" type="text" class="required" name="mobile" maxlength="11" /> 
   <input type="submit" value="注册" />
 </form>
+</div>
+{%else%}
+尊敬的用户：{{user.username}}，感谢您再次访问娱讯移动互动平台！
+{%endif%}
 {% endblock %}
 
     </div>
- {%endif%}
+ 
     <div class="bubble pad-5">
         <table style="width:100%; text-align:center;">
             <tbody>
                 <tr>
                     <td style="width:50%">{% block date %}
-      {% now "l, jS F, Y" %}
+                    当前时间：
+      {% now "Y M d，l H:i" %}
                     {% endblock %}</td>
                     <td style="width:50%; font-size:1.2em">
 
@@ -107,14 +103,14 @@
       </ul>
     </div>
     {% endif %}
-
+<!--  
     <ul class="stand-alone link-list round-top">
 	<li><a href="{% url home:static_about %}">关于我们</a></li>
 	{% if has_user_messages %}
             <li><a href="{% url home:messages %}">Read messages from the developers</a></li>
 	{% endif %}
     </ul>
-    
+-->  
 	{% block below-about %} {% endblock %} 
-<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="http://www.eiimedia.cn">娱讯传媒</a> 联系电话:0592-5166918</div>
+<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="{% url home:static_about %}">娱讯传媒</a> 联系电话:0592-5166918</div>
 {% endblock %}

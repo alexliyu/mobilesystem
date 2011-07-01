@@ -8,7 +8,7 @@ from xml.sax import ContentHandler, make_parser
 from django.contrib.gis.geos import Point
 
 from mobile.molly.apps.places.providers import BaseMapsProvider
-from mobile.molly.apps.places.models import EntityType, Entity, EntityGroup, Source, EntityTypeCategory
+from mobile.molly.apps.places.models import EntityType, Entity, EntityGroup, EntityTypeCategory
 from mobile.molly.conf.settings import batch
 
 # TfL don't release a mapping between the station and line codes used for their
@@ -570,7 +570,7 @@ TUBE_REFERENCES = {
     '9400ZZLUPVL': ((TUBE_CENTRAL, 'PER'),),
     
     # Piccadilly Circus
-    '9400ZZLUPCC': ((TUBE_BAKERLOO, 'PIC'), (TUBE_PICCADILLY, 'PIC'), ),
+    '9400ZZLUPCC': ((TUBE_BAKERLOO, 'PIC'), (TUBE_PICCADILLY, 'PIC'),),
     
     # Pimlico
     '9400ZZLUPCO': ((TUBE_VICTORIA, 'PIM'),),
@@ -865,12 +865,12 @@ class NaptanContentHandler(ContentHandler):
         ('AtcoCode',): 'atco-code',
         ('NaptanCode',): 'naptan-code',
         ('PlateCode',): 'plate-code',
-        ('Descriptor','CommonName'): 'common-name',
-        ('Descriptor','Indicator'): 'indicator',
-        ('Descriptor','Street'): 'street',
-        ('Place','NptgLocalityRef'): 'locality-ref',
-        ('Place','Location','Translation','Longitude'): 'longitude',
-        ('Place','Location','Translation','Latitude'): 'latitude',
+        ('Descriptor', 'CommonName'): 'common-name',
+        ('Descriptor', 'Indicator'): 'indicator',
+        ('Descriptor', 'Street'): 'street',
+        ('Place', 'NptgLocalityRef'): 'locality-ref',
+        ('Place', 'Location', 'Translation', 'Longitude'): 'longitude',
+        ('Place', 'Location', 'Translation', 'Latitude'): 'latitude',
         ('AdministrativeAreaRef',): 'area',
         ('StopAreas', 'StopAreaRef'): 'stop-area',
         ('StopClassification', 'StopType'): 'stop-type',
@@ -887,9 +887,9 @@ class NaptanContentHandler(ContentHandler):
         """
         if c.isdigit():
             return c
-        return unicode(min(9, (ord(c)-91)//3))
+        return unicode(min(9, (ord(c) - 91) // 3))
 
-    def __init__(self, entity_types, source, nptg_localities = None, areas=None):
+    def __init__(self, entity_types, source, nptg_localities=None, areas=None):
         self.name_stack = []
         self.entity_types, self.source = entity_types, source
         self.entities = set()
@@ -987,7 +987,7 @@ class NaptanContentHandler(ContentHandler):
             # In the NaPTAN list, but indicates it's an unused stop
             return
         
-        if self.meta['stop-type'] in ('MET','GAT','FER', 'RLY'):
+        if self.meta['stop-type'] in ('MET', 'GAT', 'FER', 'RLY'):
             title = common_name
         else:
         
@@ -1008,7 +1008,7 @@ class NaptanContentHandler(ContentHandler):
             if indicator is None and self.meta['stop-type'] in ('FBT',):
                 indicator = 'Berth at'
             
-            if indicator is None and self.meta['stop-type'] in ('RPL','PLT'):
+            if indicator is None and self.meta['stop-type'] in ('RPL', 'PLT'):
                 indicator = 'Platform at'
             
             title = ''
@@ -1393,7 +1393,7 @@ class NaptanMapsProvider(BaseMapsProvider):
         files = {}
         
         # Get NPTG localities
-        f, filename =  tempfile.mkstemp()
+        f, filename = tempfile.mkstemp()
         ftp.cwd("/V2/NPTG/")
         ftp.retrbinary('RETR nptgcsv.zip', data_chomper(f))
         os.close(f)
@@ -1455,7 +1455,7 @@ class NaptanMapsProvider(BaseMapsProvider):
     def _import_from_http(self):
         
         # Get NPTG localities
-        f, filename =  tempfile.mkstemp()
+        f, filename = tempfile.mkstemp()
         os.close(f)
         urllib.urlretrieve(self.HTTP_NTPG_URL, filename)
         archive = zipfile.ZipFile(filename)
@@ -1526,16 +1526,7 @@ class NaptanMapsProvider(BaseMapsProvider):
         return entity_types
 
 
-    def _get_source(self):
-        try:
-            source = Source.objects.get(module_name="molly.providers.apps.maps.naptan")
-        except Source.DoesNotExist:
-            source = Source(module_name="molly.providers.apps.maps.naptan")
-
-        source.name = "National Public Transport Access Nodes (NaPTAN) database"
-        source.save()
-
-        return source
+    
 
 try:
     from secrets import SECRETS
