@@ -63,11 +63,11 @@ ROOT_URLCONF = 'mobile.urls'
 # 在家里的数据库配置
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': '127.0.0.1',
-        'NAME': os.path.join(project_root, 'mobile.db'),
-        'USER': 'molly',
-        'PASSWORD': 'FSNICgM3wDvNU29XmR',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '192.168.1.119',
+        'NAME': 'mobile',
+        'USER': 'mobile',
+        'PASSWORD': '123456',
 #        'PASSWORD':'6b6RyKNvOnEvbrynYK',
     }
 }
@@ -156,10 +156,10 @@ APPLICATIONS = [
 #        display_to_user=True,
 #    ),
     
-#    Application('molly.external_media', 'external_media', 'External Media',
-#        display_to_user=True,
-#    ),
-#    
+    Application('molly.external_media', 'external_media', 'External Media',
+        display_to_user=False,
+    ),
+    
     Application('molly.wurfl', 'device_detection', '终端信息',
         display_to_user=False,
         expose_view=True,
@@ -310,6 +310,8 @@ AUTHENTICATION_BACKENDS = (
 
 # Non-Molly apps get added here (plus, tell Django about Molly apps)
 INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
+    'grappelli',
+    'filebrowser',
     'django.contrib.auth',
     'django.contrib.admin',
     'django.contrib.contenttypes',
@@ -319,6 +321,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'django.contrib.staticfiles',
     'molly.batch_processing',
 #    'debug_toolbar',
+    'tinymce',
     'compress',
     'easy_thumbnails',
     'guardian',
@@ -361,9 +364,26 @@ STATICFILES_DIRS = (
     os.path.join(molly_root, 'media'), # Molly default media
     ('markers', MARKER_DIR), # Markers
 )
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+
+TINYMCE_JS_URL = 'http://debug.example.org/tiny_mce/tiny_mce_src.js'
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+}
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = False
+
+
 MEDIA_ROOT = os.path.join(project_root, 'media') # the location on disk where media is stored
 MEDIA_URL = '/media/' # The URL used to refer to media
+ADMIN_MEDIA_PREFIX = MEDIA_URL + "grappelli/"
+GRAPPELLI_ADMIN_TITLE = u"娱讯手机门户管理平台"
+
+
+
 # Settings relating to django-compress
 COMPRESS_SOURCE = MEDIA_URL
 COMPRESS_ROOT = MEDIA_URL

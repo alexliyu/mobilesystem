@@ -8,10 +8,14 @@ from mobile.molly.apps.links import views
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^adm/', include(admin.site.urls)), # Admin site
+    (r'^admin/', include(admin.site.urls)), # Admin site
     (r'^comments/', include('django.contrib.comments.urls')), # Django comments
     (r'^accounts/', include('userena.urls')),
     (r'^messages/', include('userena.contrib.umessages.urls')),
+    (r'^tinymce/', include('tinymce.urls')),
+    (r'^admin/filebrowser/', include('filebrowser.urls')),
+    (r'^grappelli/', include('grappelli.urls')),
+     
     (r'', applications.home.urls)) # Home default
 
 # Dynamically add apps

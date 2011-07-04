@@ -20,4 +20,6 @@ South
 django-slimmer
 BeautifulSoup
 django-ipyfield
-
+django-grappelli
+django-filebrowser
+django-tinymce

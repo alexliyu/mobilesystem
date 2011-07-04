@@ -1,3 +1,9 @@
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 from __future__ import division
 
 from collections import defaultdict
@@ -43,7 +49,7 @@ class IndexView(BaseView):
         return Breadcrumb(
             'places',
             None,
-            'Places',
+            u'消费导航',
             lazy_reverse('index'))
 
     def initial_context(self, request):
@@ -68,7 +74,7 @@ class NearbyListView(LocationRequiredView):
         return Breadcrumb(
             'places',
             lazy_parent('index'),
-            'Things nearby',
+            u'周边导航',
             url=lazy_reverse('nearby-list'),
         )
 
@@ -328,7 +334,7 @@ class EntityUpdateView(ZoomableView):
         return Breadcrumb(
             'places',
             lazy_parent('entity', scheme=scheme, value=value),
-            'Update place',
+            u'更新定位',
             lazy_reverse('entity-update', args=[scheme, value]))
 
     def handle_GET(self, request, context, scheme, value):
@@ -401,7 +407,7 @@ class NearbyEntityListView(NearbyListView):
         return Breadcrumb(
             'places',
             lazy_parent('entity', scheme=scheme, value=value),
-            'Things near %s' % context['entity'].title,
+            u'%s周边导航' % context['entity'].title,
             lazy_reverse('entity-nearby-list', args=[scheme, value]))
 
     def handle_GET(self, request, context, scheme, value):
@@ -457,7 +463,7 @@ class CategoryListView(BaseView):
         return Breadcrumb(
             'places',
             lazy_parent('index'),
-            'Categories',
+            u'分类',
             lazy_reverse('category-list'),
         )
 

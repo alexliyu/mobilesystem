@@ -36,7 +36,8 @@ function showRelatedObjectLookupPopup(triggeringLink) {
     } else {
         href = triggeringLink.href + '?pop=1';
     }
-    var win = window.open(href, name, 'height=500,width=800,resizable=yes,scrollbars=yes');
+    // GRAPPELLI CUSTOM: changed width
+    var win = window.open(href, name, 'height=500,width=980,resizable=yes,scrollbars=yes');
     win.focus();
     return false;
 }
@@ -49,19 +50,22 @@ function dismissRelatedLookupPopup(win, chosenId) {
     } else {
         document.getElementById(name).value = chosenId;
     }
+    // GRAPPELLI CUSTOM: element focus
+    elem.focus();
     win.close();
 }
 
 function showAddAnotherPopup(triggeringLink) {
     var name = triggeringLink.id.replace(/^add_/, '');
     name = id_to_windowname(name);
-    href = triggeringLink.href
+    href = triggeringLink.href;
     if (href.indexOf('?') == -1) {
         href += '?_popup=1';
     } else {
         href  += '&_popup=1';
     }
-    var win = window.open(href, name, 'height=500,width=800,resizable=yes,scrollbars=yes');
+    // GRAPPELLI CUSTOM: changed width
+    var win = window.open(href, name, 'height=500,width=980,resizable=yes,scrollbars=yes');
     win.focus();
     return false;
 }
@@ -84,6 +88,37 @@ function dismissAddAnotherPopup(win, newId, newRepr) {
             } else {
                 elem.value = newId;
             }
+        // GRAPPELLI CUSTOM
+        // NOTE: via http://code.djangoproject.com/ticket/10191
+        // check if the className contains radiolist - if it's HORIZONTAL, then it won't match if we compare explicitly
+        } else if (elem.className.indexOf('radiolist') > -1) {
+            var cnt = elem.getElementsByTagName('li').length;
+            var idName = elem.id+'_'+cnt;
+            var newLi = document.createElement('li');
+            var newLabel = document.createElement('label');
+            var newText = document.createTextNode(' '+newRepr);
+            try {
+                // IE doesn't support settings name, type, or class by setAttribute
+                var newInput = document.createElement('<input type=\'radio\' name=\''+name.slice(3)+'\' checked=\'checked\' class=\''+elem.className+'\' />');
+            } catch(err) {
+                var newInput = document.createElement('input');
+                newInput.setAttribute('class', elem.className);
+                newInput.setAttribute('type', 'radio');
+                newInput.setAttribute('name', name.slice(3));
+            }
+            newLabel.setAttribute('for', idName);
+            newInput.setAttribute('id', idName);
+            newInput.setAttribute('value', newId);
+            newInput.setAttribute('checked', 'checked');
+            newLabel.appendChild(newInput);
+            // check if the content being added is a tag - useful for image lists
+            if (newRepr.charAt(0) == '<' && newRepr.charAt(newRepr.length-1) == '>') {
+                newLabel.innerHTML += newRepr;
+            } else {
+                newLabel.appendChild(newText);
+            }
+            newLi.appendChild(newLabel);
+            elem.appendChild(newLi);
         }
     } else {
         var toId = name + "_to";

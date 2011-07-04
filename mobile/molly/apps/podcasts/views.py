@@ -1,3 +1,9 @@
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 import urllib
 from datetime import timedelta
 from xml.etree import ElementTree as ET
@@ -17,14 +23,14 @@ from mobile.molly.apps.podcasts.models import Podcast, PodcastCategory
 class IndexView(BaseView):
     def get_metadata(self, request):
         return {
-            'title': 'Podcasts',
-            'additional': 'Browse and listen to podcasts from around the University.'
+            'title': u'视频点播',
+            'additional': '浏览点播最新网络视频.'
         }
         
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(self.conf.local_name, None,
-                          'Podcasts', lazy_reverse('index'))
+                          u'视频点播' , lazy_reverse('index'))
         
     def handle_GET(self, request, context):
         show_itunesu_link = request.session.get('podcasts:use_itunesu') == None
@@ -46,7 +52,7 @@ class CategoryDetailView(BaseView):
         category = get_object_or_404(PodcastCategory, slug=category)
         return {
             'title': category.name,
-            'additional': '<strong>Podcast category</strong>'
+            'additional': u'<strong>视频分类</strong>'
         }
         
     def initial_context(self, request, category, medium=None):
@@ -64,7 +70,7 @@ class CategoryDetailView(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context, category, medium=None):
         if medium:
-            url = lazy_reverse('category-medium', args=[category,medium])
+            url = lazy_reverse('category-medium', args=[category, medium])
         else:
             url = lazy_reverse('category', args=[category])
         
@@ -127,7 +133,7 @@ class PodcastDetailView(BaseView):
         if 'response' in context:
             return context['response']        
         
-        items = context['podcast'].podcastitem_set.order_by('order','-published_date')
+        items = context['podcast'].podcastitem_set.order_by('order', '-published_date')
         
         context.update({
             'items': items,

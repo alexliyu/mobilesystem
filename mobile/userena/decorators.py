@@ -2,7 +2,7 @@ from django.conf import settings
 from django.http import HttpResponsePermanentRedirect
 from django.utils.decorators import available_attrs
 
-from userena import settings as userena_settings
+from mobile.userena import settings as userena_settings
 
 from django.utils.functional import wraps
 

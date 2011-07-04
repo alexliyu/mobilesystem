@@ -9,9 +9,11 @@ from mobile.userena.utils import get_profile_model
 class UserenaSignupInline(admin.StackedInline):
     model = UserenaSignup
     max_num = 1
-
+class UserprofileInline(admin.StackedInline):
+    model = get_profile_model()
+    max_num = 1
 class UserenaAdmin(UserAdmin):
-    inlines = [UserenaSignupInline, ]
+    inlines = [UserenaSignupInline, UserprofileInline ]
     list_display = ('username', 'email', 'first_name', 'last_name',
                     'is_staff', 'date_joined')
 
