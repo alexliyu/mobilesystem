@@ -1,5 +1,7 @@
 body {
-    background:#bbc4ce url('../../site/images/gradients/backdrop-iphone.png') repeat-x top;
+/*    background:#bbc4ce url('../../site/images/gradients/backdrop-iphone.png') repeat-x top;
+*/
+    background:#F79629;
     font-family: "Liberation Sans", Arial, sans-serif;
     font-size:9pt;
     -webkit-text-size-adjust: none;
@@ -154,6 +156,8 @@ div#bc-title h1.weblearn-header {  background-image:url('../../site/images/index
 div#bc-title h1.feature_vote-header {  background-image:url('../../site/images/index-icons/feature_vote-bc.png');}
 div#bc-title h1.auth-header {  background-image:url('../../site/images/index-icons/auth-bc.png');}
 div#bc-title h1.Lottery-header {  background-image:url('../../site/images/index-icons/auth-bc.png');}
+div#bc-title h1.links-header {  background-image:url('../../site/images/index-icons/auth-bc.png');}
+div#bc-title h1.business-header {  background-image:url('../../site/images/index-icons/auth-bc.png');}
 /* End Breadcrumb Trail Styles */
 
 
@@ -197,7 +201,7 @@ ul.content-list li:first-child, ul.link-list li:first-child, ol.search-results l
 
 /* Link-List */
 ul.link-list, ol.search-results {
-    background-color:#002B4C;
+    background-color:#f0f0f0;
     color:#ffffff;
 }
 ul.link-list li, ol.search-results li {
@@ -207,10 +211,9 @@ ul.link-list li, ol.search-results li {
     display:block;
 }
 ul.link-list li a, ol.search-results li a {
-    color:#ffffff;
+    color:#999;
     text-decoration:none;
     display:block;
-
     padding-right: 20px; /* Moves background image (ul li a) away from edge */
     text-align: left;
     background-position: right center;
@@ -222,8 +225,27 @@ ul.link-list li a.go-back, ol.search-results li a.go-back {
 }
 /* End Link-List */
 
+
+/* business_list */
+ul.business_list{padding:0px;margin:0px}
+ul.business_list li {
+	list-style:none; 
+	padding:10px; 
+	padding-left:20px;
+	background-image:url('../../site/images/icons/list-arrow.png');
+	background-repeat:no-repeat;
+	background-position: right center;
+	color:#666;
+	text-decoration:none;
+	display:block;
+	border-top:1px solid #000;
+}
+
+ul.business_list li a{font-size:12px; color:#000; text-decoration:none;}
+/* end business_list */
+
 ul li.page-break {
-    border-top:1px solid #9c0c0a;
+    border-top:1px solid #9c0c0a; 
 }
 
 ul.stand-alone {

@@ -2,10 +2,11 @@
 
 {% block content %}
 <div class="bubble pad-10">
-<ul>
+<ul style="list-style:none">
 {% for item in blacklist %}
-    <li>{{ item.get_profile.mobile }}</li>
+    <li style="float:left">{{ item.get_profile.mobile }}</li>
 {% endfor %}
+    <li style="clear:left"></li>
 </ul>
 </div>
 

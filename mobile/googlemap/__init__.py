@@ -1,5 +1,9 @@
-#!/usr/bin/env python
-# vim: set fileencoding=utf8 :
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 """Django Googlemap Library
 
 
@@ -19,9 +23,9 @@ License:
     See the License for the specific language governing permissions and
     limitations under the License.
 """
-__author__  = 'Alisue <lambdalisue@hashnote.net>'
+__author__ = 'Alisue <lambdalisue@hashnote.net>'
 __version__ = '1.0.0'
-__date__    = '2011/06/09'
+__date__ = '2011/06/09'
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 

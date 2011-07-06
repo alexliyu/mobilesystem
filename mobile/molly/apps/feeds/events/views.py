@@ -1,3 +1,4 @@
+#-*- coding:utf-8 -*-
 from datetime import timedelta
 from xml.sax.saxutils import escape
 
@@ -20,7 +21,7 @@ class IndexView(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, 'Events', lazy_reverse('events:index')
+            self.conf.local_name, None, '公告', lazy_reverse('events:index')
         )
 
     def handle_GET(self, request, context):

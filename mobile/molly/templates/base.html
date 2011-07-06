@@ -1,25 +1,25 @@
 {% load molly_utils %}{% load compressed %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
-    <title>{% block whole_title %}{% block site_title %}molly | {% endblock %}{% block title %}{{ breadcrumbs.4 }}{% endblock %}{% endblock %}</title>
+    <title>{% block whole_title %}{% block site_title %} {% endblock %}{% block title %}{{ breadcrumbs.4 }}{% endblock %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <meta name="format-detection" content="telephone=no" />
 
   {% compressed_css style_group %}
-  <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/favicon.png"/>{% if device|device_has_parent:"apple_iphone_ver4" or browser.svgt_1_1 %}
+  <link rel="icon" type="image/png" href="/media/images/favicon.png"/>{% if device|device_has_parent:"apple_iphone_ver4" or browser.svgt_1_1 %}
   {% compressed_css 'svg' %}
 {% endif %}
 
 {% if device|device_has_parent:"apple_generic" or device.device_os == "Android" %}
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="{{ STATIC_URL }}site/images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}site/images/apple-touch-icon-72px.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}site/images/apple-touch-icon-114px.png"/>
-    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}site/images/apple-touch-icon.png"/>
-    <link rel="apple-touch-startup-image" href="{{ STATIC_URL  }}site/images/apple-touch-startup-image.jpg">
+    <link rel="apple-touch-icon" href="/media/site/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/media/site/images/apple-touch-icon-72px.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/media/site/images/apple-touch-icon-114px.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/media/site/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-startup-image" href="/media/site/images/apple-touch-startup-image.jpg">
 {% endif %}
-    <link rel="icon" type="image/png" href="{{ STATIC_URL }}site/images/favicon.png"/>
+    <link rel="icon" type="image/png" href="/media/site/images/favicon.png"/>
     
    
     {% block extrahead %}{% endblock extrahead %}
@@ -36,12 +36,12 @@
       <ol id="bc">
       {% block site-small-logo %}
         <li><a href="{% url home:index %}">
-          <img width="66" height="40" src="{{ STATIC_URL }}site/images/logos/logo-66x40.jpg" alt="{{ site_name }}"/>
+          <img width="60" height="40" src="/media/site/images/logos/LOGO2.png" alt="{{ site_name }}"/>
         </a></li>
       {% endblock %}
     {% if breadcrumbs.2 %}
         <li><a href="{{ breadcrumbs.1.1 }}" title="{{ breadcrumbs.1.0 }}">
-          <img src="{{ STATIC_URL }}site/images/index-icons/{{ breadcrumbs.0 }}-bc.png" alt="{{ breadcrumb.1.0 }}"/>
+          <img src="/media/site/images/index-icons/{{ breadcrumbs.0 }}-bc.png" alt="{{ breadcrumb.1.0 }}"/>
         </a></li>
     {% if not breadcrumbs.3 %}
         <li><a href="{{ breadcrumbs.2.1 }}" title="{{ breadcrumbs.2.0 }}">
@@ -112,7 +112,7 @@
 
 {% endif %}  
 -->
-<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="{% url home:static_about %}">娱讯传媒</a> 联系电话:0592-5166918</div>
+<div class="bubble pad-5" style="text-align:center;"><a href="{% url home:static_about %}">娱讯传媒</a> 联系电话:0592-5166918</div>
 {% if "feature_vote"|app_is_loaded or "feature-suggestions"|app_is_loaded %}
   <div style="width:100%; float:left; margin-top: 0.1em; margin-bottom:0.4em;">
     <a style="margin:0 0.2em 0 0.2em; background-color:white; padding:0.6em; -webkit-border-radius:0.4em; -moz-border-radius:0.4em; text-align:center; display:block"

@@ -8,16 +8,8 @@
 
 {% block header %}
 <div id="index-header">
-    <div id="index-title">
-		{% ifequal style_group "dumb" %}
-		<a href="/"><img width="66" height="40" src="{{ STATIC_URL }}site/images/logos/logo-66x40.jpg" alt="{{ site_name }}"></a>
-		{% else %}
-		{% if is_christmas %}
-        <a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px-christmas.png" alt="{{ site_name }}"/></a>
-		{% else %}
-	    <a href="/"><img width="128" height="51" src="{{ STATIC_URL }}site/images/logos/logo-128x51-TRMargin-5px.png" alt="{{ site_name }}"/></a>
-		{% endif %}
-        {% endifequal %}
+    <div id="index-title" style="margin-left:10px">
+        <a href="{% url home:index %}"><img width="90" height="60" src="/media/site/images/logos/LOGO.png" alt="{{ site_name }}"/></a>
     </div>
 
 </div>
@@ -80,7 +72,7 @@
                     {% endblock %}</td>
                     <td style="width:50%; font-size:1.2em">
 
-      {% weather %}{% block weather-location %}{{ weather.name }}{% endblock %}: {{ weather.temperature }}&deg;C<img src="{{ STATIC_URL }}weather/images/{{ weather.icon }}_small.png" alt="{{ weather.get_outlook_display|capfirst }}" height="30" width="30" style="vertical-align:middle;"/>
+      {% weather %}{% block weather-location %}{{ weather.name }}{% endblock %}: {{ weather.temperature }}&deg;C<img src="/media/weather/images/{{ weather.icon }}_small.png" alt="{{ weather.get_outlook_display|capfirst }}" height="30" width="30" style="vertical-align:middle;"/>
 
                     </td>
                 </tr>
@@ -112,5 +104,5 @@
     </ul>
 -->  
 	{% block below-about %} {% endblock %} 
-<div class="bubble pad-5" style="width:100%; text-align:center;"><a href="{% url home:static_about %}">娱讯传媒</a> 联系电话:0592-5166918</div>
+<div class="bubble pad-5" style="text-align:center;"><a href="{% url home:static_about %}">娱讯传媒</a> 联系电话:0592-5166918</div>
 {% endblock %}

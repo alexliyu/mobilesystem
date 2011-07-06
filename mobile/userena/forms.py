@@ -1,3 +1,9 @@
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth import authenticate
@@ -8,6 +14,7 @@ from mobile.userena import settings as userena_settings
 from mobile.userena.models import UserenaSignup
 from mobile.userena.utils import get_profile_model
 
+from mobile.molly.apps.users.models import UserProfile
 import random
 
 attrs_dict = {'class': 'required'}
@@ -121,16 +128,23 @@ class SignupFormOnlyMobile(SignupForm):
     can than keep sign in by using their email.
 
     """
-    def __init__(self, request, *args, **kwargs):
-        super(SignupFormOnlyMobile, self).__init__(request, *args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        super(SignupFormOnlyMobile, self).__init__(*args, **kwargs)
         del self.fields['username']
         del self.fields['password1']
         del self.fields['password2']
         del self.fields['email']
-        self.ip = request.META['REMOTE_ADDR']
-    def save(self):
+        
+        
+    def clean_mobile(self):
+        """验证用户输入注册的手机号码是否已经被使用 """
+        if UserProfile.objects.filter(mobile__iexact=self.cleaned_data['mobile']):
+            raise forms.ValidationError(_(u'这个手机号码已经被注册了，请确认您输入的手机号码！'))
+        return self.cleaned_data['mobile']
+    
+    def save(self, request):
         from mobile.molly.utils.tcp import arping
-        """ Generate a random username before falling back to parent signup form """
+        """ 生成一个动态的用户名 """
         while True:
             username = sha_constructor(str(random.random())).hexdigest()[:5]
             try:
@@ -139,15 +153,22 @@ class SignupFormOnlyMobile(SignupForm):
 
         
         email = 'xxx@eiimedia.cn'
-        #password1 = arping(self.ip)
-        password = '6cf0498e39da'
-        mobile = self.data.POST['mobile']
+        ip = request.META['REMOTE_ADDR']
+        if ip == 'localhost':ip = request.META['HTTP_X_REAL_IP']
+        try:
+            password = arping(ip)[0][1]
+        except:
+            password = 123456
+        #password = '6cf0498e39da'
+        mobile = self.cleaned_data['mobile']
 
         new_user = UserenaSignup.objects.create_inactive_user(username, email, password)
+        new_user.is_active = True
         user_profile = new_user.get_profile()
         user_profile.mobile = mobile
         user_profile.mac = password
         user_profile.save()
+        new_user.save(force_update=True)
         return new_user
     
 class SignupFormTos(SignupForm):

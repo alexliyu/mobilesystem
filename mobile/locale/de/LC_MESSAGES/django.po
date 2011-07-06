@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-12 23:57-0600\n"
+"POT-Creation-Date: 2011-07-05 09:48+0800\n"
 "PO-Revision-Date: 2011-02-05 13:22+0000\n"
 "Last-Translator: madcad <mail@mad-cad.net>\n"
 "Language-Team: German <None>\n"
@@ -19,2507 +19,1903 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Country: FRANCE\n"
 
-#: dashboard.py:26
-msgid "Group: Administration & Applications"
-msgstr ""
-
-#: dashboard.py:31 menu.py:29 grappelli/dashboard/dashboards.py:157
-msgid "Administration"
-msgstr ""
-
-#: dashboard.py:37 menu.py:25 grappelli/dashboard/dashboards.py:151
-#: grappelli/dashboard/modules.py:215
-#, fuzzy
-msgid "Applications"
-msgstr "Veröffentlichung"
-
-#: dashboard.py:47
-#, fuzzy
-msgid "AppList: Applications"
-msgstr "Veröffentlichung"
-
-#: dashboard.py:56
-msgid "ModelList: Administration"
-msgstr ""
-
-#: dashboard.py:64
-msgid "Media Management"
-msgstr ""
-
-#: dashboard.py:68
+#: dashboard.py:61
 msgid "FileBrowser"
 msgstr ""
 
-#: dashboard.py:77 grappelli/dashboard/dashboards.py:173
-msgid "Support"
-msgstr ""
-
-#: dashboard.py:81
+#: dashboard.py:74
 #, fuzzy
 msgid "Django Documentation"
 msgstr "Ihre Meinung zu"
 
-#: dashboard.py:86
-#, fuzzy
-msgid "Grappelli Documentation"
-msgstr "Ihre Meinung zu"
-
-#: dashboard.py:91
-msgid "Grappelli Google-Code"
-msgstr ""
-
-#: dashboard.py:100 grappelli/dashboard/dashboards.py:166
+#: dashboard.py:93
 #, fuzzy
 msgid "Latest Django News"
 msgstr "Neuste Einträge"
 
-#: dashboard.py:108 grappelli/dashboard/dashboards.py:162
-#: grappelli/dashboard/modules.py:291 grappelli/templates/admin/index.html:44
+#: settings.py:41
+msgid "Chinese"
+msgstr ""
+
+#: googlemap/models.py:65
+msgid "open map"
+msgstr ""
+
+#: guardian/admin.py:29 guardian/admin.py:39 guardian/forms.py:53
 #, fuzzy
-msgid "Recent Actions"
-msgstr "Neueste Kommentare"
-
-#: menu.py:22 app/blog/templates/blog/base.html:76
-#: app/blog/templates/blog/base.html:77 grappelli/dashboard/dashboards.py:92
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: settings.py:50
-msgid "English"
-msgstr ""
-
-#: settings.py:51
-msgid "French"
-msgstr ""
-
-#: settings.py:52
-msgid "German"
-msgstr ""
-
-#: settings.py:53
-msgid "Spanish"
-msgstr ""
-
-#: settings.py:54
-msgid "Italian"
-msgstr ""
-
-#: settings.py:55
-msgid "Dutch"
-msgstr ""
-
-#: settings.py:56
-msgid "Hungarian"
-msgstr ""
-
-#: settings.py:57
-msgid "Russian"
-msgstr ""
-
-#: settings.py:58
-#, fuzzy
-msgid "Polish"
-msgstr "Veröffentlichen"
-
-#: settings.py:59
-msgid "Brazilian Portuguese"
-msgstr ""
-
-#: settings.py:60
-msgid "Simplified Chinese"
-msgstr ""
-
-#: app/blog/feeds.py:102 app/blog/plugins/cms_plugins.py:23
-#: app/blog/templates/blog/entry_archive.html:23
-#: app/blog/templates/blog/entry_list.html:17
-msgid "Latest entries"
-msgstr "Neuste Einträge"
-
-#: app/blog/feeds.py:114
-#, python-format
-msgid "The latest entries for the site %s"
-msgstr "Die neusten Einträge der Seite %s"
-
-#: app/blog/feeds.py:134
-#, python-format
-msgid "Entries for the category %s"
-msgstr "Einträge der Kategorie %s"
-
-#: app/blog/feeds.py:138
-#, python-format
-msgid "The latest entries for the category %s"
-msgstr "Die neusten Einträge in Kategorie %s"
-
-#: app/blog/feeds.py:158
-#, python-format
-msgid "Entries for author %s"
-msgstr "Einträge für Autor %s"
-
-#: app/blog/feeds.py:162
-#, python-format
-msgid "The latest entries by %s"
-msgstr "Die neuesten Einträge von %s"
-
-#: app/blog/feeds.py:183
-#, python-format
-msgid "Entries for the tag %s"
-msgstr "Einträge für den Tag %s"
-
-#: app/blog/feeds.py:187
-#, python-format
-msgid "The latest entries for the tag %s"
-msgstr "Die neuen Einträge für den Tag %s"
-
-#: app/blog/feeds.py:207
-#, python-format
-msgid "Results of the search for %s"
-msgstr "Suchergebnisse für %s"
-
-#: app/blog/feeds.py:211
-#, python-format
-msgid "The entries containing the pattern %s"
-msgstr "Die Einträge die '%s' enthalten"
-
-#: app/blog/feeds.py:254
-#, python-format
-msgid "Discussions on %s"
-msgstr "Kommentare auf %s"
-
-#: app/blog/feeds.py:258
-#, python-format
-msgid "The latest discussions for the entry %s"
-msgstr "Die neusten Kommentare für die Einträge %s"
-
-#: app/blog/feeds.py:276
-#, python-format
-msgid "Comments on %s"
-msgstr "Kommentar für %s"
-
-#: app/blog/feeds.py:280
-#, python-format
-msgid "The latest comments for the entry %s"
-msgstr "Die neusten Kommentare für die Einträge %s"
-
-#: app/blog/feeds.py:298
-#, python-format
-msgid "Pingbacks on %s"
-msgstr "Pingbacks für %s"
-
-#: app/blog/feeds.py:302
-#, python-format
-msgid "The latest pingbacks for the entry %s"
-msgstr "Die neusten Pingbacks für Eintrag %s"
-
-#: app/blog/feeds.py:320
-#, python-format
-msgid "Trackbacks on %s"
-msgstr "Trackbacks für %s"
-
-#: app/blog/feeds.py:324
-#, python-format
-msgid "The latest trackbacks for the entry %s"
-msgstr "Die neusten Trackbacks für Eintrag %s"
-
-#: app/blog/models.py:57 app/blog/models.py:98 app/blog/admin/entry.py:73
-#: app/planet/models.py:34
-msgid "title"
-msgstr "Titel"
-
-#: app/blog/models.py:58 app/blog/models.py:112
-msgid "used for publication"
-msgstr "Für die Veröffentlichung benutzt"
-
-#: app/blog/models.py:60
-msgid "description"
-msgstr "Beschreibung"
-
-#: app/blog/models.py:63 app/blog/admin/forms.py:18
-msgid "parent category"
-msgstr "Übergeordnete Kategorie"
-
-#: app/blog/models.py:88
-msgid "category"
-msgstr "Kategorie"
-
-#: app/blog/models.py:89 app/blog/models.py:107 app/blog/admin/forms.py:47
-#: app/blog/plugins/models.py:24
-msgid "categories"
-msgstr "Kategorien"
-
-#: app/blog/models.py:94
-msgid "draft"
-msgstr "Entwurf"
-
-#: app/blog/models.py:95
-msgid "hidden"
-msgstr "Versteckt"
-
-#: app/blog/models.py:96 app/planet/templates/planet/posts/full_details.html:5
-msgid "published"
-msgstr "Veröffentlicht"
-
-#: app/blog/models.py:100
-msgid "image"
-msgstr "Bild"
-
-#: app/blog/models.py:101
-msgid "used for illustration"
-msgstr "Als Abbildung benutzt"
-
-#: app/blog/models.py:102
-msgid "content"
-msgstr "Inhalt"
-
-#: app/blog/models.py:103
-msgid "excerpt"
-msgstr "Auszug"
-
-#: app/blog/models.py:104
-msgid "optional element"
-msgstr "Optionales Element"
-
-#: app/blog/models.py:106 app/blog/plugins/models.py:30
-#: app/planet/templates/planet/posts/details.html:14
-#: app/planet/templates/planet/posts/full_details.html:26
-msgid "tags"
-msgstr "Tags"
-
-#: app/blog/models.py:109
-msgid "related entries"
-msgstr "Verwandte Einträge"
-
-#: app/blog/models.py:116 app/blog/plugins/models.py:28
-msgid "authors"
-msgstr "Autoren"
-
-#: app/blog/models.py:119
-msgid "featured"
-msgstr "empfohlenen"
-
-#: app/blog/models.py:120
-msgid "comment enabled"
-msgstr "Kommentare aktiviert"
-
-#: app/blog/models.py:121
-msgid "linkback enabled"
-msgstr "Linkback aktiviert"
-
-#: app/blog/models.py:123
-msgid "creation date"
-msgstr "Erstellungsdatum"
-
-#: app/blog/models.py:124
-msgid "last update"
-msgstr "Letzte Änderung"
-
-#: app/blog/models.py:125
-msgid "start publication"
-msgstr "Veröffentlichungsbeginn"
-
-#: app/blog/models.py:126
-msgid "date start publish"
-msgstr "Datum der ersten Veröffentlichung"
-
-#: app/blog/models.py:128
-msgid "end publication"
-msgstr "Veröffentlichungsende"
-
-#: app/blog/models.py:129
-msgid "date end publish"
-msgstr "Datum des Veröffentlichungsende"
-
-#: app/blog/models.py:132
-msgid "sites publication"
-msgstr "Veröffentlich auf Seiten"
-
-#: app/blog/models.py:134
-msgid "login required"
-msgstr "Anmeldung erfolderlich"
-
-#: app/blog/models.py:135
-msgid "only authenticated users can view the entry"
-msgstr "Nur authentifizierte Benutzer können den Eintrag lesen "
-
-#: app/blog/models.py:136
-msgid "password"
-msgstr "Passwort"
-
-#: app/blog/models.py:137
-msgid "protect the entry with a password"
-msgstr "Eintrag mit Passwort schützen"
-
-#: app/blog/models.py:139 app/blog/plugins/models.py:34
-#: app/blog/plugins/models.py:58 app/blog/plugins/models.py:80
-msgid "template"
-msgstr "Template"
-
-#: app/blog/models.py:142
-msgid "Default template"
-msgstr "Standard-Template"
-
-#: app/blog/models.py:144
-msgid "template used to display the entry"
-msgstr "Template, mit dem dieser Eintrag dargestellt wird"
-
-#: app/blog/models.py:264
-msgid "entry"
-msgstr "Eintrag"
-
-#: app/blog/models.py:265 app/blog/plugins/cms_plugins.py:21
-#: app/blog/plugins/cms_plugins.py:92 app/blog/plugins/cms_plugins.py:114
-#: app/blog/plugins/models.py:57 app/blog/templates/blog/base.html:39
-msgid "entries"
-msgstr "Einträge"
-
-#: app/blog/moderator.py:54
-#, python-format
-msgid "[%(site)s] New comment posted on \"%(title)s\""
-msgstr "[%(site)s] Neuer Kommentar zu \"%(title)s\""
-
-#: app/blog/admin/category.py:30
-msgid "tree path"
-msgstr "Pfad"
-
-#: app/blog/admin/entry.py:27 app/blog/plugins/admin.py:17
-#: app/blog/templates/admin/blog/widgets/quickpost.html:17
-#: app/planet/models.py:204
-msgid "Content"
-msgstr "Inhalt"
-
-#: app/blog/admin/entry.py:29 app/blog/plugins/admin.py:19
-msgid "Options"
-msgstr "Optionen"
-
-#: app/blog/admin/entry.py:34 app/blog/plugins/admin.py:24
-msgid "Privacy"
-msgstr "Privatsphäre"
-
-#: app/blog/admin/entry.py:36 app/blog/plugins/admin.py:26
-msgid "Discussion"
-msgstr "Diskussion"
-
-#: app/blog/admin/entry.py:38 app/blog/plugins/admin.py:28
-msgid "Publication"
-msgstr "Veröffentlichung"
-
-#: app/blog/admin/entry.py:66
-#, python-format
-msgid "%(title)s (%(word_count)i words)"
-msgstr "%(title)s  (%(word_count)i Wörter)"
-
-#: app/blog/admin/entry.py:70
-#, python-format
-msgid "%(title)s (%(comments)i comments)"
-msgstr "%(title)s  (%(comments)i Kommentare)"
-
-#: app/blog/admin/entry.py:86
-msgid "author(s)"
-msgstr "Autor(en)"
-
-#: app/blog/admin/entry.py:99
-msgid "category(s)"
-msgstr "Kategorie(n)"
-
-#: app/blog/admin/entry.py:111
-msgid "tag(s)"
-msgstr "Tag(s)"
-
-#: app/blog/admin/entry.py:118
-msgid "site(s)"
-msgstr "Seite(n)"
-
-#: app/blog/admin/entry.py:124
-msgid "is actual"
-msgstr "Ist aktuell"
-
-#: app/blog/admin/entry.py:130
-msgid "is visible"
-msgstr "Ist sichtbar"
-
-#: app/blog/admin/entry.py:134
-#, python-format
-msgid "<a href=\"%s\" target=\"blank\">View</a>"
-msgstr "<a href=\"%s\" target=\"blank\">Öffnen</a>"
-
-#: app/blog/admin/entry.py:137 grappelli/templates/admin/change_form.html:76
-msgid "View on site"
-msgstr "Im Browser öffnen"
-
-#: app/blog/admin/entry.py:143 app/blog/templates/blog/_entry_detail.html:70
-msgid "Unavailable"
-msgstr "Nicht verfügbar"
-
-#: app/blog/admin/entry.py:147
-msgid "short url"
-msgstr "Kurze URL"
-
-#: app/blog/admin/entry.py:201
-msgid "Set the entries to the user"
-msgstr "Ausgewählte Einträge dem aktuellem Benutzer zuordnen"
-
-#: app/blog/admin/entry.py:206
-msgid "Set entries selected as published"
-msgstr "Ausgewählte Einträge als öffentlich markieren"
-
-#: app/blog/admin/entry.py:211
-msgid "Set entries selected as hidden"
-msgstr "Ausgewählte Einträge als unsichtbar markieren"
-
-#: app/blog/admin/entry.py:224
-msgid "Tweet entries selected"
-msgstr "Ausgewählte Einträge twittern"
-
-#: app/blog/admin/entry.py:229
-msgid "Close the comments for selected entries"
-msgstr "Kommentare für ausgewählte Einträge deaktivieren"
-
-#: app/blog/admin/entry.py:235
-msgid "Close the linkbacks for selected entries"
-msgstr "Schließen der Linkbacks für die ausgewählte Einträge"
-
-#: app/blog/admin/entry.py:240
-msgid "Put the selected entries on top at the current date"
-msgstr "Setzen Sie die ausgewählten Einträge auf das aktuelle Datum"
-
-#: app/blog/admin/entry.py:256
-#, python-format
-msgid "%(directory)s directory succesfully pinged %(success)d entries."
-msgstr "%(directory)s  Verzeichnis erfolgreich angepingt %(success)d Einträge."
-
-#: app/blog/admin/entry.py:259
-msgid "Ping Directories for selected entries"
-msgstr "Verzeichnisdienste mit ausgewählten Einträgen anpingen"
-
-#: app/blog/admin/forms.py:20
-msgid "No parent category"
-msgstr "Keine Hauptkategorie"
-
-#: app/blog/admin/forms.py:35
-msgid "A category cannot be parent of itself."
-msgstr "Eine Kategorie kann auf selbst sein referenzieren."
-
-#: app/blog/admin/forms.py:46 app/blog/plugins/menu.py:70
-#: app/blog/templates/blog/base.html:22
-#: app/blog/templates/blog/category_list.html:4
-#: app/blog/templates/blog/sitemap.html:50
-#: app/blog/templatetags/zbreadcrumbs.py:49
-msgid "Categories"
-msgstr "Kategorien"
-
-#: app/blog/plugins/cms_app.py:12
-msgid "blog App Hook"
-msgstr "blog App Hook"
-
-#: app/blog/plugins/cms_plugins.py:33
-msgid "Sorting"
-msgstr "Sortierung"
-
-#: app/blog/plugins/cms_plugins.py:43
-msgid "Advanced"
-msgstr "Fortgeschritten"
-
-#: app/blog/plugins/cms_plugins.py:94
-msgid "Selected entries"
-msgstr "Ausgewählte Einträge"
-
-#: app/blog/plugins/cms_plugins.py:116 app/blog/templates/blog/base.html:59
-msgid "Random entries"
-msgstr "Zufällige Einträge"
-
-#: app/blog/plugins/menu.py:19
-msgid "blog Entry Menu"
-msgstr "blog Eintragsmenü"
-
-#: app/blog/plugins/menu.py:65
-msgid "blog Category Menu"
-msgstr "blog Kategorie Menü"
-
-#: app/blog/plugins/menu.py:82
-msgid "blog Author Menu"
-msgstr "blog Autor Menü"
-
-#: app/blog/plugins/menu.py:87 app/blog/templates/blog/author_list.html:4
-#: app/blog/templates/blog/base.html:26
-#: app/blog/templatetags/zbreadcrumbs.py:46 app/planet/forms.py:12
-#: app/planet/models.py:250 app/planet/templates/planet/base.html:20
-#: app/planet/templates/planet/authors/list.html:11
-msgid "Authors"
-msgstr "Autoren"
-
-#: app/blog/plugins/menu.py:100
-msgid "blog Tag Menu"
-msgstr "blog Tag Menu"
-
-#: app/blog/plugins/menu.py:105
-#: app/blog/templates/admin/blog/widgets/quickpost.html:25
-#: app/blog/templates/blog/_entry_detail.html:52
-#: app/blog/templates/blog/base.html:34
-#: app/blog/templates/blog/tag_list.html:4
-#: app/blog/templatetags/zbreadcrumbs.py:43 app/planet/forms.py:10
-#: app/planet/templates/planet/tags/list.html:11
-msgid "Tags"
-msgstr "Tags"
-
-#: app/blog/plugins/models.py:16
-msgid "Entry list (default)"
-msgstr "Liste der Einträge (Standard)"
-
-#: app/blog/plugins/models.py:17
-msgid "Entry detailed"
-msgstr "Eintragsdetail"
-
-#: app/blog/plugins/models.py:27
-msgid "include subcategories"
-msgstr "Unterkategorien mit einbeziehen"
-
-#: app/blog/plugins/models.py:33 app/blog/plugins/models.py:79
-msgid "number of entries"
-msgstr "Anzahl der Einträge"
-
-#: app/blog/plugins/models.py:36 app/blog/plugins/models.py:60
-#: app/blog/plugins/models.py:82
-msgid "Template used to display the plugin"
-msgstr "Template zur Anzeige des Plugins"
-
-#: app/blog/plugins/models.py:51 app/blog/plugins/models.py:73
-#: app/blog/plugins/models.py:85
-#, python-format
-msgid "%s entries"
-msgstr "%s Einträge"
-
-#: app/blog/templates/404.html:5
-msgid "Error 404"
-msgstr "Fehler 404"
-
-#: app/blog/templates/404.html:8 app/blog/templates/404.html.py:11
-#: grappelli/templates/admin/404.html:7 grappelli/templates/admin/404.html:11
-msgid "Page not found"
-msgstr "Seite nicht gefunden"
-
-#: app/blog/templates/404.html:13
-msgid "Sorry, but the requested page could not be found."
-msgstr ""
-"Entschuldigung, aber die angeforderte Seite konnte nicht gefunden werden."
-
-#: app/blog/templates/404.html:15 app/blog/templates/500.html:20
-msgid "Useful links"
-msgstr "Nützliche Links"
-
-#: app/blog/templates/404.html:19 app/blog/templates/404.html.py:20
-#: app/blog/templates/500.html:24 app/blog/templates/500.html.py:25
-msgid "Blog index"
-msgstr "Blog Index"
-
-#: app/blog/templates/404.html:24 app/blog/templates/404.html.py:25
-#: app/blog/templates/500.html:29 app/blog/templates/500.html.py:30
-#: app/blog/templates/blog/sitemap.html:4
-#: app/blog/templates/blog/sitemap.html:7
-#: app/blog/templates/blog/skeleton.html:38
-#: app/blog/templates/blog/skeleton.html:39
-msgid "Sitemap"
-msgstr "Sitemap"
-
-#: app/blog/templates/404.html:31 app/blog/templates/500.html:36
-#: app/blog/templates/blog/base.html:47
-msgid "Recent entries"
-msgstr "Neuste Einträge"
-
-#: app/blog/templates/404.html:36 app/blog/templates/500.html:41
-#: app/blog/templates/blog/base.html:10
-msgid "Search"
-msgstr "Suche"
-
-#: app/blog/templates/404.html:40 app/blog/templates/500.html:45
-#: app/blog/templates/blog/base.html:13
-msgid "Keywords..."
-msgstr "Schlüsselwörter..."
-
-#: app/blog/templates/500.html:10
-msgid "Error 500"
-msgstr "Fehler 500"
-
-#: app/blog/templates/500.html:13 app/blog/templates/500.html.py:16
-#: grappelli/templates/admin/500.html:7
-msgid "Server error"
-msgstr "Server-Fehler"
-
-#: app/blog/templates/500.html:18 grappelli/templates/admin/500.html:15
-msgid ""
-"There's been an error. It's been reported to the site administrators via e-"
-"mail and should be fixed shortly. Thanks for your patience."
-msgstr ""
-"Es ist ein Fehler aufgetreten. Der Server-Admin wurde umgehend benachrichtig "
-"und wird sich in Kürze um den Fehler kümmern. Wir danken für Ihr Verständnis."
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:4
-msgid "Contents"
-msgstr "Inhalt"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:5
-#: app/blog/templates/blog/_entry_detail.html:75
-msgid "Discussions"
+msgid "Permissions"
 msgstr "Diskussionen"
 
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:10
-#, python-format
-msgid "%(entries)s entries"
-msgstr " %(entries)s Einträge"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:15
-#, python-format
-msgid "%(comments)s comments"
-msgstr "%(comments)s Kommentare"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:22
-#, python-format
-msgid "%(categories)s categories"
-msgstr " %(categories)s Kategorien"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:25
-#, python-format
-msgid "%(pingbacks)s pingbacks"
-msgstr " %(pingbacks)s Pingbacks"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:30
-#, python-format
-msgid "%(tags)s tags"
-msgstr " %(tags)s Tags"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:33
-#, python-format
-msgid "%(trackbacks)s trackbacks"
-msgstr " %(trackbacks)s Trackbacks"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:38
-#, python-format
-msgid "%(authors)s authors"
-msgstr " %(authors)s Autoren"
-
-#: app/blog/templates/admin/blog/widgets/_content_stats.html:43
-#, python-format
-msgid "%(rejects)s rejected"
-msgstr " %(rejects)s abgelehnt"
-
-#: app/blog/templates/admin/blog/widgets/_draft_entries.html:7
-#: app/blog/templates/blog/entry_detail.html:186
-#: app/blog/templates/blog/entry_detail.html:187
-msgid "Edit the entry"
-msgstr "Eintrag bearbeiten"
-
-#: app/blog/templates/admin/blog/widgets/_draft_entries.html:10
-#: app/blog/templates/blog/_entry_detail.html:19
-#: app/blog/templates/blog/entry_detail.html:91
-#: app/blog/templates/blog/entry_detail.html:126
-#: app/blog/templates/blog/entry_detail.html:157
-#: app/blog/templates/comments/blog_entry_preview.html:25
-#: app/blog/templates/feeds/comment_title.html:2
-#: app/blog/templates/feeds/discussion_title.html:2
-#: app/blog/templates/feeds/pingback_title.html:2
-#: app/blog/templates/feeds/trackback_title.html:2
-msgid "on"
-msgstr "am"
-
-#: app/blog/templates/admin/blog/widgets/_draft_entries.html:16
-#: app/blog/templates/comments/blog/entry/form.html:19
-msgid "Preview"
-msgstr "Vorschau"
-
-#: app/blog/templates/admin/blog/widgets/_draft_entries.html:23
-msgid "No draft entries."
-msgstr "Kein Entwurfs Einträge."
-
-#: app/blog/templates/admin/blog/widgets/_draft_entries.html:32
-#: app/blog/templates/admin/blog/widgets/_draft_entries.html:33
-msgid "View all draft entries"
-msgstr "Alle Eintragsentwürfe anziegen"
-
-#: app/blog/templates/admin/blog/widgets/_recent_comments.html:11
-#: app/blog/templates/blog/_entry_detail.html:24
-#: app/blog/templates/blog/tags/recent_comments.html:7
-#: app/blog/templates/blog/tags/recent_linkbacks.html:8
-#: app/planet/templates/planet/authors/detail.html:11
-#: app/planet/templates/planet/posts/details.html:22
-#: app/planet/templates/planet/posts/full_details.html:12
-#: app/planet/templates/planet/tags/detail.html:11
-msgid "in"
-msgstr "in"
-
-#: app/blog/templates/admin/blog/widgets/_recent_comments.html:14
-#: app/blog/templates/blog/tags/recent_comments.html:9
-msgid "Comment on"
-msgstr "Ihre Meinung zu"
-
-#: app/blog/templates/admin/blog/widgets/_recent_comments.html:23
-msgid "Edit the comment"
-msgstr "Kommentar bearbeiten"
-
-#: app/blog/templates/admin/blog/widgets/_recent_comments.html:24
-#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:19
-msgid "Edit"
-msgstr "Bearbeiten"
-
-#: app/blog/templates/admin/blog/widgets/_recent_comments.html:31
-#: app/blog/templates/blog/_entry_detail.html:83
-#: app/blog/templates/blog/entry_detail.html:107
-#: app/blog/templates/blog/tags/recent_comments.html:16
-msgid "No comments yet."
-msgstr "Keine Kommentare vorhanden."
-
-#: app/blog/templates/admin/blog/widgets/_recent_comments.html:40
-#: app/blog/templates/admin/blog/widgets/_recent_comments.html:41
-msgid "Manage the comments"
-msgstr "Verwalten Sie die Kommentare"
-
-#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:8
-msgid "made a linkback on"
-msgstr "mache eine LinkBack auf"
-
-#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:18
-msgid "Edit the linkback"
-msgstr "Bearbeiten Sie den LinkBack"
-
-#: app/blog/templates/admin/blog/widgets/_recent_linkbacks.html:26
-#: app/blog/templates/blog/tags/recent_linkbacks.html:17
-msgid "No linkbacks yet."
-msgstr "Keine Linkbacks."
-
-#: app/blog/templates/admin/blog/widgets/content_stats.html:6
-#: app/blog/templates/admin/blog/widgets/content_stats.html:7
-msgid "Today"
-msgstr "Heute"
-
-#: app/blog/templates/admin/blog/widgets/draft_entries.html:6
-#: app/blog/templates/admin/blog/widgets/draft_entries.html:7
-msgid "Draft entries"
-msgstr "Eintragsentwürfe"
-
-#: app/blog/templates/admin/blog/widgets/quickpost.html:5
-#: app/blog/templates/admin/blog/widgets/quickpost.html:6
-msgid "Quick publishing"
-msgstr "Schnelles Veröffentlichen"
-
-#: app/blog/templates/admin/blog/widgets/quickpost.html:9
-#: app/planet/models.py:85 app/planet/models.py:200 app/planet/models.py:291
-msgid "Title"
-msgstr "Titel"
-
-#: app/blog/templates/admin/blog/widgets/quickpost.html:33
-msgid "Save as draft"
-msgstr "Als Entwurf speichern"
-
-#: app/blog/templates/admin/blog/widgets/quickpost.html:34
-msgid "Reset"
-msgstr "Zurücksetzen"
-
-#: app/blog/templates/admin/blog/widgets/quickpost.html:35
-msgid "Publish"
-msgstr "Veröffentlichen"
-
-#: app/blog/templates/admin/blog/widgets/recent_comments.html:6
-#: app/blog/templates/admin/blog/widgets/recent_comments.html:7
-#: app/blog/templates/blog/base.html:51
-msgid "Recent comments"
-msgstr "Neueste Kommentare"
-
-#: app/blog/templates/admin/blog/widgets/recent_linkbacks.html:6
-#: app/blog/templates/admin/blog/widgets/recent_linkbacks.html:7
-#: app/blog/templates/blog/base.html:55
-msgid "Recent linkbacks"
-msgstr "Aktuelle Linkbacks"
-
-#: app/blog/templates/blog/_entry_detail.html:10
-msgid "Written by"
-msgstr "Geschrieben von"
-
-#: app/blog/templates/blog/_entry_detail.html:14
-#, python-format
-msgid "Show %(author)s entries"
-msgstr "Zeige Einträge von %(author)s"
-
-#: app/blog/templates/blog/_entry_detail.html:59
-msgid "No tags"
-msgstr "Keine Tags"
-
-#: app/blog/templates/blog/_entry_detail.html:64
-msgid "Short url"
-msgstr "Kurze URL"
-
-#: app/blog/templates/blog/_entry_detail.html:79
-#, python-format
-msgid "%(comment_count)s comment"
-msgid_plural "%(comment_count)s comments"
-msgstr[0] " %(comment_count)s Kommentar"
-msgstr[1] " %(comment_count)s Kommentare"
-
-#: app/blog/templates/blog/_entry_detail.html:85
-msgid "Be first to comment!"
-msgstr "Schreiben den ersten Kommentar!"
-
-#: app/blog/templates/blog/_entry_detail.html:88
-#: app/blog/templates/blog/entry_detail.html:103
-#: app/blog/templates/blog/entry_detail.html:109
-msgid "Comments are closed."
-msgstr "Kommentare deaktiviert."
-
-#: app/blog/templates/blog/_entry_detail.html:95
-#, python-format
-msgid "%(pingback_count)s pingback"
-msgid_plural "%(pingback_count)s pingbacks"
-msgstr[0] " %(pingback_count)s  Pingback"
-msgstr[1] " %(pingback_count)s  Pingbacks"
-
-#: app/blog/templates/blog/_entry_detail.html:102
-#, python-format
-msgid "%(trackback_count)s trackback"
-msgid_plural "%(trackback_count)s trackbacks"
-msgstr[0] " %(trackback_count)s  Trackback"
-msgstr[1] " %(trackback_count)s  Trackbacks"
-
-#: app/blog/templates/blog/author_list.html:7
-msgid "Author list"
-msgstr "Autorenliste"
-
-#: app/blog/templates/blog/author_list.html:16
-#: app/blog/templates/blog/category_list.html:12
-#: app/blog/templates/blog/sitemap.html:55
-#: app/blog/templates/blog/tag_list.html:14
-#: app/blog/templates/blog/tags/authors.html:10
-#: app/blog/templates/blog/tags/categories.html:6
-#, python-format
-msgid "%(entry_count)s entry"
-msgid_plural "%(entry_count)s entries"
-msgstr[0] " %(entry_count)s  Eintrag"
-msgstr[1] " %(entry_count)s  Einträge"
-
-#: app/blog/templates/blog/base.html:15
-msgid ""
-"You can use - to exclude words or phrases, &quot;double quotes&quot; for "
-"exact phrases and the AND/OR boolean operators combined with parenthesis for "
-"complex searchs."
-msgstr ""
-"Sie können, um Worte oder Sätze, \"Anführungszeichen\" für genaue Sätze und/"
-"oder die UND / ODER boolschen Operatoren mit Klammern für komplexe Suche "
-"kombiniert verwenden."
-
-#: app/blog/templates/blog/base.html:30
-msgid "Calendar"
-msgstr "Kalender"
-
-#: app/blog/templates/blog/base.html:63
-msgid "Popular entries"
-msgstr "Beliebte Einträge"
-
-#: app/blog/templates/blog/base.html:67
-#: app/blog/templates/blog/entry_archive_day.html:4
-#: app/blog/templates/blog/entry_archive_month.html:4
-#: app/blog/templates/blog/entry_archive_year.html:4
-#: app/blog/templates/blog/tags/archives_entries.html:5
-#: app/blog/templates/blog/tags/archives_entries_link.html:2
-#: app/blog/templates/blog/tags/archives_entries_tree.html:7
-#: app/blog/templates/blog/tags/archives_entries_tree.html:14
-#: app/blog/templates/blog/tags/archives_entries_tree.html:24
-msgid "Archives"
-msgstr "Archiv"
-
-#: app/blog/templates/blog/base.html:72
-msgid "Tools"
-msgstr "Werkzeuge"
-
-#: app/blog/templates/blog/base.html:83 app/blog/templates/blog/base.html:84
-msgid "Post an entry"
-msgstr "Schreibe einen Eintrag"
-
-#: app/blog/templates/blog/base.html:91 app/blog/templates/blog/base.html:92
-#: grappelli/dashboard/dashboards.py:145
-#: grappelli/templates/admin/auth/user/change_password.html:14
-#: grappelli/templates/admin/includes_grappelli/header.html:28
-#: grappelli/templates/registration/password_change_done.html:14
-#: grappelli/templates/registration/password_change_form.html:13
-msgid "Log out"
-msgstr "Abmelden"
-
-#: app/blog/templates/blog/category_list.html:7
-msgid "Category list"
-msgstr "Kategorieliste"
-
-#: app/blog/templates/blog/entry_archive_month.html:8
-#, fuzzy
-msgid "Daily archives"
-msgstr "Monatliche Archive"
-
-#: app/blog/templates/blog/entry_archive_year.html:8
-#: app/blog/templates/blog/sitemap.html:67
-msgid "Monthly archives"
-msgstr "Monatliche Archive"
-
-#: app/blog/templates/blog/entry_detail.html:10
-msgid "RSS Feed of discussions on"
-msgstr "RSS-Feed der Diskussionen auf"
-
-#: app/blog/templates/blog/entry_detail.html:11
-msgid "RSS Feed of comments on"
-msgstr "RSS-Feed mit Kommentaren zu"
-
-#: app/blog/templates/blog/entry_detail.html:12
-msgid "RSS Feed of pingbacks on"
-msgstr "RSS-Feed auf den Pingbacks"
-
-#: app/blog/templates/blog/entry_detail.html:13
-msgid "RSS Feed of trackbacks on"
-msgstr "RSS-Feed auf Trackbacks ist an."
-
-#: app/blog/templates/blog/entry_detail.html:29
-msgid "Next entry"
-msgstr "Nächster Eintrag"
-
-#: app/blog/templates/blog/entry_detail.html:43
-msgid "Previous entry"
-msgstr "Vorheriger Eintrag"
-
-#: app/blog/templates/blog/entry_detail.html:56
-msgid "Related entries"
-msgstr "Verwandte Einträge"
-
-#: app/blog/templates/blog/entry_detail.html:67
-msgid "Similar entries"
-msgstr "Ähnliche Einträge"
-
-#: app/blog/templates/blog/entry_detail.html:75
-msgid "Comments"
-msgstr "Kommentare"
-
-#: app/blog/templates/blog/entry_detail.html:117
-msgid "Pingbacks"
-msgstr "Pingbacks"
-
-#: app/blog/templates/blog/entry_detail.html:139
-msgid "Pingbacks are open."
-msgstr "Pingbacks sind aktiviert."
-
-#: app/blog/templates/blog/entry_detail.html:141
-msgid "Pingbacks are closed."
-msgstr "Pingbacks sind deaktiviert."
-
-#: app/blog/templates/blog/entry_detail.html:148
-msgid "Trackbacks"
-msgstr "Trackbacks"
-
-#: app/blog/templates/blog/entry_detail.html:170
-msgid "Trackback URL"
-msgstr "Trackback-URL"
-
-#: app/blog/templates/blog/entry_list.html:7
-#: app/blog/templates/blog/entry_list.html:10
-#: app/blog/templates/blog/entry_list.html:13
-#: app/blog/templates/blog/skeleton.html:43 grappelli/dashboard/modules.py:353
-msgid "RSS Feed"
-msgstr "RSS-Feed"
-
-#: app/blog/templates/blog/entry_list.html:17
-msgid "Category"
-msgstr "Kategorie"
-
-#: app/blog/templates/blog/entry_list.html:17
-#: app/blog/templates/blog/entry_list.html:28
-#: app/planet/templates/planet/tags/detail.html:22
-msgid "Tag"
-msgstr "Tag"
-
-#: app/blog/templates/blog/entry_list.html:17 app/planet/models.py:249
-msgid "Author"
-msgstr "Autor"
-
-#: app/blog/templates/blog/entry_list.html:17
-msgid "Page"
-msgstr "Seite"
-
-#: app/blog/templates/blog/entry_list.html:32
-#, python-format
-msgid "Entries by %(author)s"
-msgstr "Einträge von %(author)s"
-
-#: app/blog/templates/blog/entry_list.html:43
-#: app/blog/templates/blog/sitemap.html:23
-#: app/blog/templates/blog/sitemap.html:43
-#: app/blog/templates/blog/cms/entry_detail.html:12
-#: app/blog/templates/blog/cms/entry_list.html:9
-#: app/blog/templates/blog/tags/featured_entries.html:9
-#: app/blog/templates/blog/tags/popular_entries.html:13
-#: app/blog/templates/blog/tags/random_entries.html:9
-#: app/blog/templates/blog/tags/recent_entries.html:9
-msgid "No entries yet."
-msgstr "Keine Einträge vorhanden."
-
-#: app/blog/templates/blog/entry_list.html:49
-#, python-format
-msgid "Page %(current_page)s of %(total_page)s"
-msgstr "Seite %(current_page)s von %(total_page)s "
-
-#: app/blog/templates/blog/entry_list.html:54
-msgid "More recent entries"
-msgstr "Mehr neuste Einträge"
-
-#: app/blog/templates/blog/entry_list.html:63
-msgid "Entries page"
-msgstr "Einträge der Seite"
-
-#: app/blog/templates/blog/entry_list.html:70
-msgid "More old entries"
-msgstr "Mehr alte Einträge"
-
-#: app/blog/templates/blog/entry_list.html:80
-#: app/blog/templates/blog/entry_list.html:81
-msgid "Edit the category"
-msgstr "Kategorie bearbeiten"
-
-#: app/blog/templates/blog/entry_list.html:87
-#: app/blog/templates/blog/entry_list.html:88
-msgid "Edit the tag"
-msgstr "Tag bearbeiten"
-
-#: app/blog/templates/blog/entry_list.html:94
-#: app/blog/templates/blog/entry_list.html:95
-msgid "Edit the author"
-msgstr "Autor bearbeiten"
-
-#: app/blog/templates/blog/entry_search.html:4
-#: app/blog/templates/blog/entry_search.html:12
-msgid "Search results"
-msgstr "Suchergebnisse"
-
-#: app/blog/templates/blog/entry_search.html:8
-msgid "RSS Feed of search result of"
-msgstr "RSS-Feed mit Suchergebnissen zu"
-
-#: app/blog/templates/blog/entry_search.html:20
-#, python-format
-msgid "%(entry_count)s entry found"
-msgid_plural "%(entry_count)s entries found"
-msgstr[0] "%(entry_count)s Eintrag gefunden"
-msgstr[1] "%(entry_count)s Einträge gefunden"
-
-#: app/blog/templates/blog/entry_search.html:32
-msgid "Nothing found."
-msgstr "Nichts gefunden."
-
-#: app/blog/templates/blog/login.html:4 app/blog/templates/blog/login.html:7
-msgid "Login required"
-msgstr "Anmeldung erforderlich"
-
-#: app/blog/templates/blog/login.html:12
-msgid "Your username and password didn't match. Please try again."
-msgstr ""
-"Ihr Benutzername und Passwort stimmen nicht überein. Bitte versuchen Sie es "
-"erneut."
-
-#: app/blog/templates/blog/login.html:16
-msgid "You need to be connected to view this entry."
-msgstr "Sie müssen eingeloggt sein um diesen Eintrag zu sehen."
-
-#: app/blog/templates/blog/login.html:33
-msgid "Login"
-msgstr "Login"
-
-#: app/blog/templates/blog/password.html:4
-#: app/blog/templates/blog/password.html:7
-msgid "Password required"
-msgstr "Passwort erforderlich"
-
-#: app/blog/templates/blog/password.html:12
-msgid "The password provided is not valid. Please try again."
-msgstr "Das Kennwort ist ungültig. Bitte versuchen Sie es erneut."
-
-#: app/blog/templates/blog/password.html:16
-msgid "You need to provide a password to view this entry."
-msgstr "Sie benötigen ein Passwort um diesen Eintrag lesen zu können."
-
-#: app/blog/templates/blog/password.html:23
-msgid "Password"
-msgstr "Passwort"
-
-#: app/blog/templates/blog/password.html:28
-msgid "Valid"
-msgstr "Gültig"
-
-#: app/blog/templates/blog/sitemap.html:10
-msgid "Entries per categories"
-msgstr "Einträge pro Kategorien"
-
-#: app/blog/templates/blog/sitemap.html:18
-#: app/blog/templates/blog/sitemap.html:38
-#: app/blog/templates/blog/tags/popular_entries.html:8
-msgid "comment"
-msgstr "Kommentar"
-
-#: app/blog/templates/blog/sitemap.html:31
-msgid "All the entries"
-msgstr "Alle Einträge"
-
-#: app/blog/templates/blog/sitemap.html:60
-#: app/blog/templates/blog/tags/categories.html:11
-msgid "No categories yet."
-msgstr "Keine Kategorien vorhanden."
-
-#: app/blog/templates/blog/skeleton.html:26
-#: app/blog/templates/blog/skeleton.html:42
-msgid "RSS Feed of latest entries"
-msgstr "RSS-Feed der neuesten Einträge"
-
-#: app/blog/templates/blog/skeleton.html:35
-#: app/blog/templates/blog/skeleton.html:36
-msgid "Share"
+#: guardian/admin.py:161
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:21
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_group.html:14
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_group.html:25
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:14
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:25
+#: guardian/templates/admin/guardian/model/change_form.html:7
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:16
+#: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:14
+#: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:25
+#: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:14
+#: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:25
+msgid "Object permissions"
 msgstr ""
 
-#: app/blog/templates/blog/tag_list.html:7
-msgid "Tag list"
-msgstr "Tag-Liste"
-
-#: app/blog/templates/blog/tags/archives_entries.html:12
-#: app/blog/templates/blog/tags/archives_entries_tree.html:38
-msgid "No archives yet."
-msgstr "Kein Archiv vorhanden."
-
-#: app/blog/templates/blog/tags/authors.html:14
-msgid "No authors yet."
-msgstr "Keine Autoren vorhanden."
-
-#: app/blog/templates/blog/tags/recent_linkbacks.html:10
-msgid "Linkback on"
-msgstr "Linkback auf"
-
-#: app/blog/templates/blog/tags/similar_entries.html:9
-msgid "No similar entries."
-msgstr "Keine ähnlichen Einträge."
-
-#: app/blog/templates/comments/blog_entry_preview.html:4
-msgid "Comment preview"
-msgstr "Kommentarvorschau"
-
-#: app/blog/templates/comments/blog_entry_preview.html:9
-msgid "Please correct following error."
-msgid_plural "Please correct following errors."
-msgstr[0] "Bitte korrigieren Sie folgenden Fehler."
-msgstr[1] "Bitte korrigieren Sie folgende Fehler."
-
-#: app/blog/templates/comments/blog_entry_preview.html:12
-msgid "Preview of the comment"
-msgstr "Kommentarvorschau einblenden"
-
-#: app/blog/templates/comments/blog/entry/form.html:7
-msgid "Post your comment"
-msgstr "Kommentar schreiben"
-
-#: app/blog/templates/comments/blog/entry/form.html:18
-#: app/planet/models.py:215
-msgid "Post"
-msgstr "Abschicken"
-
-#: app/blog/templates/comments/blog/entry/posted.html:4
-#: app/blog/templates/comments/blog/entry/posted.html:7
-msgid "Thanks for your comment"
-msgstr "Danke für Ihren Kommentar"
-
-#: app/blog/templates/comments/blog/entry/posted.html:9
-#: app/blog/templates/comments/blog/entry/posted.html:10
-msgid "Return to entry list"
-msgstr "Zur Liste der Einträge zurückkehren"
-
-#: app/blog/tests/views.py:161 app/blog/views/search.py:17
-msgid "The pattern is too short"
-msgstr "Der Suchbegriff ist zu kurz"
-
-#: app/blog/tests/views.py:164 app/blog/views/search.py:21
-msgid "No pattern to search found"
-msgstr "Kein Suchbegriff gegeben"
-
-#: app/blog/xmlrpc/metaweblog.py:35
-msgid "Username is incorrect."
-msgstr "Benutzername ist falsch."
-
-#: app/blog/xmlrpc/metaweblog.py:37
-msgid "Password is invalid."
-msgstr "Kennwort ist ungültig."
-
-#: app/blog/xmlrpc/metaweblog.py:39
-msgid "User account unavailable."
-msgstr "Benutzerkonto nicht verfügbar."
-
-#: app/blog/xmlrpc/metaweblog.py:42
-#, python-format
-msgid "User cannot %s."
-msgstr "Benutzer kann nicht %s."
-
-#: app/blog/xmlrpc/pingback.py:93
-msgid "No title"
-msgstr "Kein Titel"
-
-#: app/django_future/admin.py:33
-msgid "Schedule"
+#: guardian/admin.py:250 guardian/admin.py:303
+msgid "Permissions saved."
 msgstr ""
 
-#: app/django_future/admin.py:36
-msgid "Job"
+#: guardian/admin.py:347 userena/forms.py:29
+msgid "Username"
 msgstr ""
 
-#: app/django_future/models.py:23
-msgid "Scheduled"
+#: guardian/admin.py:350
+msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
 msgstr ""
 
-#: app/django_future/models.py:24
-msgid "Running"
+#: guardian/admin.py:352
+msgid "This user does not exist"
 msgstr ""
 
-#: app/django_future/models.py:25
-msgid "Failed"
+#: guardian/admin.py:369
+msgid "This group does not exist"
 msgstr ""
 
-#: app/django_future/models.py:26
-msgid "Complete"
-msgstr ""
-
-#: app/django_future/models.py:27
-msgid "Expired"
-msgstr ""
-
-#: app/django_future/models.py:30
-msgid "time slot start"
-msgstr ""
-
-#: app/django_future/models.py:31
-msgid "time slot end"
-msgstr ""
-
-#: app/django_future/models.py:32
-msgid "execution start"
-msgstr ""
-
-#: app/django_future/models.py:33
-msgid "status"
-msgstr ""
-
-#: app/django_future/models.py:36
-#, fuzzy
-msgid "content type"
-msgstr "Inhalt"
-
-#: app/django_future/models.py:37
+#: guardian/models.py:19
 msgid "object ID"
 msgstr ""
 
-#: app/django_future/models.py:40
-#, fuzzy
-msgid "callable name"
-msgstr "Template-Name"
-
-#: app/django_future/models.py:41
-msgid ""
-"The callable to be executed may be specified in two ways: Set the callable "
-"name to an identifier (mypackage.myapp.some_function). Or specify an "
-"instance of a model as the content object and set the callable name to a "
-"method name (do_job)."
-msgstr ""
-
-#: app/django_future/models.py:45
-msgid "args"
-msgstr ""
-
-#: app/django_future/models.py:46
-msgid "kwargs"
-msgstr ""
-
-#: app/django_future/models.py:47
-msgid "error"
-msgstr ""
-
-#: app/django_future/models.py:48
-msgid "return value"
-msgstr ""
-
-#: app/django_future/models.py:51
-msgid "scheduled job"
-msgstr ""
-
-#: app/django_future/models.py:52
-msgid "scheduled jobs"
-msgstr ""
-
-#: app/feedblog/feedblog.py:99
-msgid "collect"
-msgstr ""
-
-#: app/planet/feeds.py:67
-#, python-format
-msgid "Posts by %(author_name)s - %(site_name)s"
-msgstr ""
-
-#: app/planet/feeds.py:84
-#, python-format
-msgid "Posts under %(tag)s tag - %(site_name)s"
-msgstr ""
-
-#: app/planet/feeds.py:103
-#, python-format
-msgid "Posts by %(author_name)s under %(tag)s tag - %(site_name)s"
-msgstr ""
-
-#: app/planet/forms.py:9 app/planet/models.py:216
-#: app/planet/templates/planet/base.html:17
-#, fuzzy
-msgid "Posts"
-msgstr "Abschicken"
-
-#: app/planet/forms.py:11 app/planet/models.py:43
-#: app/planet/templates/planet/base.html:23
-#: app/planet/templates/planet/blogs/list.html:11
-msgid "Blogs"
-msgstr ""
-
-#: app/planet/forms.py:13 app/planet/models.py:121
-#: app/planet/templates/planet/base.html:26
-#: app/planet/templates/planet/feeds/list.html:11
-#, fuzzy
-msgid "Feeds"
-msgstr "RSS-Feed"
-
-#: app/planet/models.py:35 app/planet/models.py:58 app/planet/models.py:83
-#: app/planet/models.py:202 app/planet/models.py:268 app/planet/models.py:290
-#: app/planet/models.py:313
-msgid "Url"
-msgstr ""
-
-#: app/planet/models.py:36 app/planet/models.py:182 app/planet/models.py:209
-msgid "Date created"
-msgstr ""
-
-#: app/planet/models.py:42 app/planet/templates/planet/blogs/detail.html:4
-#: app/planet/templates/planet/blogs/detail.html:6
-#: app/planet/templates/planet/blogs/detail.html:7
-#: app/planet/templates/planet/blogs/detail.html:11
-msgid "Blog"
-msgstr ""
-
-#: app/planet/models.py:57 app/planet/models.py:240
-msgid "Name"
-msgstr ""
-
-#: app/planet/models.py:59
-msgid "Version"
-msgstr ""
-
-#: app/planet/models.py:65
-msgid "Generator"
-msgstr ""
-
-#: app/planet/models.py:66
-msgid "Generators"
-msgstr ""
-
-#: app/planet/models.py:87
-#, fuzzy
-msgid "Subtitle"
-msgstr "Titel"
-
-#: app/planet/models.py:89
-msgid "Rights"
-msgstr ""
-
-#: app/planet/models.py:93
-msgid "Infos"
-msgstr ""
-
-#: app/planet/models.py:95
-msgid "Language"
-msgstr ""
-
-#: app/planet/models.py:97
-msgid "Global Unique Identifier"
-msgstr ""
-
-#: app/planet/models.py:100
-msgid "Icon URL"
-msgstr ""
-
-#: app/planet/models.py:102
-msgid "Image URL"
-msgstr ""
-
-#: app/planet/models.py:105
-msgid "Etag"
-msgstr ""
-
-#: app/planet/models.py:108
-msgid "Last modified"
-msgstr ""
-
-#: app/planet/models.py:111
-msgid "Last checked"
-msgstr ""
-
-#: app/planet/models.py:113
-msgid "Is active"
-msgstr ""
-
-#: app/planet/models.py:114
-msgid "If disabled, this feed will not be further updated."
-msgstr ""
-
-#: app/planet/models.py:120 app/planet/templates/planet/feeds/detail.html:4
-#: app/planet/templates/planet/feeds/detail.html:6
-#: app/planet/templates/planet/feeds/detail.html:7
-#: app/planet/templates/planet/feeds/detail.html:29
-#, fuzzy
-msgid "Feed"
-msgstr "RSS-Feed"
-
-#: app/planet/models.py:181
-msgid "Is Contributor?"
-msgstr ""
-
-#: app/planet/models.py:185 app/planet/models.py:186
-msgid "Post Author Data"
-msgstr ""
-
-#: app/planet/models.py:203
-msgid "Guid"
-msgstr ""
-
-#: app/planet/models.py:205
-#, fuzzy
-msgid "Comments URL"
-msgstr "Kommentare"
-
-#: app/planet/models.py:207
-msgid "Date modified"
-msgstr ""
-
-#: app/planet/models.py:242
-#, fuzzy
-msgid "Author email"
-msgstr "Autorenliste"
-
-#: app/planet/models.py:243
-msgid "Profile URL"
-msgstr ""
-
-#: app/planet/models.py:266 app/planet/models.py:288
-#, fuzzy
-msgid "Relation"
-msgstr "Veröffentlichung"
-
-#: app/planet/models.py:267 app/planet/models.py:289 app/planet/models.py:312
-msgid "MIME type"
-msgstr ""
-
-#: app/planet/models.py:274
-msgid "Feed Link"
-msgstr ""
-
-#: app/planet/models.py:275
-msgid "Feed Links"
-msgstr ""
-
-#: app/planet/models.py:297
-#, fuzzy
-msgid "Post Link"
-msgstr "Abschicken"
-
-#: app/planet/models.py:298
-msgid "Post Links"
-msgstr ""
-
-#: app/planet/models.py:311
-msgid "Length"
-msgstr ""
-
-#: app/planet/models.py:319
-msgid "Post Enclosure"
-msgstr ""
-
-#: app/planet/models.py:320
-msgid "Post Enclosures"
-msgstr ""
-
-#: app/planet/templates/site_base.html:55
-#, fuzzy
-msgid "admin site"
-msgstr "Im Browser öffnen"
-
-#: app/planet/templates/site_base.html:70
-msgid ""
-"Theme heavly based on the minimal and beautiful <a href=\"http://blog."
-"montylounge.com/\" title=\"Visit Mounty Lounge Industries blog\">Mounty "
-"Lounge Industries blog's</a> design"
-msgstr ""
-
-#: app/planet/templates/planet/base.html:14
-msgid "Browse"
-msgstr ""
-
-#: app/planet/templates/planet/base.html:29
-msgid "Tag Cloud"
-msgstr ""
-
-#: app/planet/templates/planet/base.html:38
-#, fuzzy
-msgid "Search in"
-msgstr "Suche"
-
-#: app/planet/templates/planet/base.html:40
-msgid "ok"
-msgstr ""
-
-#: app/planet/templates/planet/base.html:52
-msgid "Suscribe to RSS feed"
-msgstr ""
-
-#: app/planet/templates/planet/base.html:72
-msgid "This is a django powered site!"
-msgstr ""
-
-#: app/planet/templates/planet/base.html:81
-msgid ""
-"A <a href=\"https://github.com/alexliyu/lincdm\" title=\"LinCDM Powered"
-"\">LinCDM</a> powered site"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:4
-#: app/planet/templates/planet/authors/detail.html:6
-#: app/planet/templates/planet/authors/detail.html:7
-#: app/planet/templates/planet/authors/detail.html:36
-msgid "has written the following posts"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:11
-#: app/planet/templates/planet/posts/details.html:22
-msgid "blog"
-msgstr "blog"
-
-#: app/planet/templates/planet/authors/detail.html:15
-msgid "Suscribe to RSS feed for blog"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:23
-#: app/planet/templates/planet/feeds/detail.html:13
-#: app/planet/templates/planet/tags/detail.html:35
-msgid "See the list of authors talking about this tag"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:24
-#: app/planet/templates/planet/feeds/detail.html:14
-#: app/planet/templates/planet/tags/detail.html:36
-msgid "People talking about this"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:28
-#: app/planet/templates/planet/blogs/detail.html:38
-#: app/planet/templates/planet/feeds/detail.html:18
-msgid "See the list of blogs talking about this tag"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:29
-#: app/planet/templates/planet/feeds/detail.html:19
-#: app/planet/templates/planet/tags/detail.html:41
-msgid "Feeds talking about this"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:40
-#: app/planet/templates/planet/blogs/detail.html:26
-#: app/planet/templates/planet/feeds/detail.html:51
-msgid "Posts under tag"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:41
-msgid "See all posts by"
-msgstr ""
-
-#: app/planet/templates/planet/authors/detail.html:42
-msgid "See the complete list of posts by this author"
-msgstr ""
-
-#: app/planet/templates/planet/authors/list.html:4
-#: app/planet/templates/planet/authors/list.html:6
-#: app/planet/templates/planet/authors/list.html:7
-#, fuzzy
-msgid "Authors list"
-msgstr "Autorenliste"
-
-#: app/planet/templates/planet/authors/list.html:17
-#, fuzzy
-msgid "Author:"
-msgstr "Autor"
-
-#: app/planet/templates/planet/authors/list.html:21
-msgid "writes for"
-msgstr ""
-
-#: app/planet/templates/planet/authors/list_for_tag.html:5
-#: app/planet/templates/planet/authors/blocks/list_for_tag.html:3
-#, fuzzy
-msgid "Authors talking about"
-msgstr "Autorenliste"
-
-#: app/planet/templates/planet/authors/blocks/list.html:3
-#, fuzzy
-msgid "Authrs"
-msgstr "Autoren"
-
-#: app/planet/templates/planet/authors/blocks/list.html:7
-#: app/planet/templates/planet/authors/blocks/list_for_tag.html:7
-#, fuzzy
-msgid "Author of"
-msgstr "Autor"
-
-#: app/planet/templates/planet/authors/blocks/list_for_feed.html:2
-msgid "Authors for this feed"
-msgstr ""
-
-#: app/planet/templates/planet/blogs/detail.html:4
-#: app/planet/templates/planet/blogs/detail.html:6
-#: app/planet/templates/planet/blogs/detail.html:7
-#: app/planet/templates/planet/feeds/detail.html:4
-#: app/planet/templates/planet/feeds/detail.html:6
-#: app/planet/templates/planet/feeds/detail.html:7
-#: app/planet/templates/planet/tags/detail.html:4
-#: app/planet/templates/planet/tags/detail.html:7
-#: app/planet/templates/planet/tags/detail.html:12
-#, fuzzy
-msgid "Posts in"
-msgstr "Abschicken"
-
-#: app/planet/templates/planet/blogs/detail.html:14
-#: app/planet/templates/planet/blogs/list.html:22
-#: app/planet/templates/planet/feeds/detail.html:46
-#: app/planet/templates/planet/feeds/list.html:28
-msgid "web"
-msgstr ""
-
-#: app/planet/templates/planet/blogs/detail.html:14
-#: app/planet/templates/planet/blogs/list.html:22
-#: app/planet/templates/planet/feeds/detail.html:46
-#: app/planet/templates/planet/feeds/list.html:28
-msgid "Go to the original blog"
-msgstr ""
-
-#: app/planet/templates/planet/blogs/detail.html:18
-#: app/planet/templates/planet/blogs/list.html:30
-#: app/planet/templates/planet/feeds/detail.html:35
-#: app/planet/templates/planet/feeds/detail.html:38
-msgid "Subscribe to "
-msgstr ""
-
-#: app/planet/templates/planet/blogs/detail.html:19
-#: app/planet/templates/planet/blogs/list.html:31
-#: app/planet/templates/planet/feeds/detail.html:36
-#, fuzzy
-msgid "RSS 2.0 Feed"
-msgstr "RSS-Feed"
-
-#: app/planet/templates/planet/blogs/detail.html:21
-#: app/planet/templates/planet/blogs/list.html:29
-#: app/planet/templates/planet/feeds/detail.html:38
-#: app/planet/templates/planet/feeds/list.html:25
-msgid "feed"
-msgstr ""
-
-#: app/planet/templates/planet/blogs/detail.html:21
-#: app/planet/templates/planet/blogs/list.html:29
-#: app/planet/templates/planet/feeds/list.html:18
-msgid "See the full list of post from this feed"
-msgstr ""
-
-#: app/planet/templates/planet/blogs/detail.html:39
-msgid "Other blogs talking about "
-msgstr ""
-
-#: app/planet/templates/planet/blogs/list.html:4
-#: app/planet/templates/planet/blogs/list.html:6
-#: app/planet/templates/planet/blogs/list.html:7
-#, fuzzy
-msgid "Blogs list"
-msgstr "Tag-Liste"
-
-#: app/planet/templates/planet/blogs/list.html:18
-#: app/planet/templates/planet/blogs/list.html:25
-msgid "See the full list of posts from this blog"
-msgstr ""
-
-#: app/planet/templates/planet/blogs/list.html:25
-#: app/planet/templates/planet/feeds/list.html:31
-msgid "browse"
-msgstr ""
-
-#: app/planet/templates/planet/blogs/list.html:25
-#: app/planet/templates/planet/feeds/list.html:31
-#, fuzzy
-msgid "latest posts"
-msgstr "Neuste Einträge"
-
-#: app/planet/templates/planet/feeds/detail.html:27
-msgid "Feed icon"
-msgstr ""
-
-#: app/planet/templates/planet/feeds/detail.html:42
-msgid "generator"
-msgstr ""
-
-#: app/planet/templates/planet/feeds/list.html:4
-#: app/planet/templates/planet/feeds/list.html:6
-#: app/planet/templates/planet/feeds/list.html:7
-msgid "Feeds list"
-msgstr ""
-
-#: app/planet/templates/planet/feeds/list.html:22
-#: app/planet/templates/planet/feeds/list_for_tag.html:10
-msgid "Subscribe to feed of"
-msgstr ""
-
-#: app/planet/templates/planet/feeds/list.html:25
-msgid "Subscribe to this feed"
-msgstr ""
-
-#: app/planet/templates/planet/feeds/list.html:31
-msgid "See the full list of posts from this feed"
-msgstr ""
-
-#: app/planet/templates/planet/feeds/list_for_tag.html:5
-#: app/planet/templates/planet/feeds/blocks/list_for_tag.html:3
-msgid "Feeds talking about"
-msgstr ""
-
-#: app/planet/templates/planet/posts/details.html:3
-msgid "Read "
-msgstr ""
-
-#: app/planet/templates/planet/posts/details.html:8
-#, fuzzy
-msgid "published in"
-msgstr "Veröffentlicht"
-
-#: app/planet/templates/planet/posts/details.html:8
-#: app/planet/templates/planet/posts/full_details.html:12
-msgid "See all posts for this feed"
-msgstr ""
-
-#: app/planet/templates/planet/posts/details.html:19
-msgid "Read more"
-msgstr ""
-
-#: app/planet/templates/planet/posts/details.html:22
-msgid "Read original post"
-msgstr ""
-
-#: app/planet/templates/planet/posts/details.html:22
-msgid "read original post"
-msgstr ""
-
-#: app/planet/templates/planet/posts/full_details.html:7
-msgid "by"
-msgstr ""
-
-#: app/planet/templates/planet/posts/full_details.html:8
-msgid "See all posts for this author"
-msgstr ""
-
-#: app/planet/templates/planet/posts/full_details.html:18
-#, fuzzy
-msgid "original entry"
-msgstr "Optionales Element"
-
-#: app/planet/templates/planet/posts/full_details.html:21
-#, fuzzy
-msgid "in blog"
-msgstr "blog"
-
-#: app/planet/templates/planet/posts/list.html:4
-#: app/planet/templates/planet/posts/list.html:6
-#: app/planet/templates/planet/posts/list.html:7
-msgid "Posts list"
-msgstr ""
-
-#: app/planet/templates/planet/posts/list.html:11
-#, fuzzy
-msgid "Latest posts"
-msgstr "Neuste Einträge"
-
-#: app/planet/templates/planet/tags/cloud.html:4
-#: app/planet/templates/planet/tags/cloud.html:6
-#: app/planet/templates/planet/tags/cloud.html:7
-#: app/planet/templates/planet/tags/cloud.html:11
-#: app/planet/templates/planet/tags/blocks/cloud.html:2
-msgid "Tags cloud"
-msgstr ""
-
-#: app/planet/templates/planet/tags/detail.html:6
-msgid "tag in"
-msgstr ""
-
-#: app/planet/templates/planet/tags/detail.html:11
-#, fuzzy
-msgid "tag"
-msgstr "Tags"
-
-#: app/planet/templates/planet/tags/detail.html:16
-msgid "Suscribe to RSS feed for tag"
-msgstr ""
-
-#: app/planet/templates/planet/tags/detail.html:40
-msgid "See the list of feeds talking about this tag"
-msgstr ""
-
-#: app/planet/templates/planet/tags/list.html:4
-#: app/planet/templates/planet/tags/list.html:6
-#: app/planet/templates/planet/tags/list.html:7
-#, fuzzy
-msgid "Tags list"
-msgstr "Tag-Liste"
-
-#: app/planet/templates/planet/tags/blocks/authors_cloud.html:3
-msgid "Tags cloud for author"
-msgstr ""
-
-#: app/planet/templates/planet/tags/blocks/blogs_cloud.html:3
-msgid "Tags cloud for blog"
-msgstr ""
-
-#: app/planet/templates/planet/tags/blocks/feeds_cloud.html:3
-msgid "Tags cloud for feed"
-msgstr ""
-
-#: app/planet/templates/planet/tags/blocks/related_list.html:3
-#, fuzzy
-msgid "Related tags"
-msgstr "Verwandte Einträge"
-
-#: app/pushblog/pushblog.py:82
-msgid "Push"
-msgstr ""
-
-#: grappelli/dashboard/dashboards.py:136
-#, fuzzy
-msgid "Quick links"
-msgstr "Schnelles Veröffentlichen"
-
-#: grappelli/dashboard/dashboards.py:142
-#, fuzzy
-msgid "Return to site"
-msgstr "Zur Liste der Einträge zurückkehren"
-
-#: grappelli/dashboard/dashboards.py:143
-#: grappelli/templates/admin/auth/user/change_password.html:11
-#: grappelli/templates/admin/auth/user/change_password.html:23
-#: grappelli/templates/admin/auth/user/change_password.html:62
-#: grappelli/templates/admin/includes_grappelli/header.html:20
-#: grappelli/templates/registration/password_change_done.html:11
-#: grappelli/templates/registration/password_change_form.html:10
-#, fuzzy
-msgid "Change password"
-msgstr "Passwort"
-
-#: grappelli/dashboard/dashboards.py:176
-msgid "Django documentation"
-msgstr ""
-
-#: grappelli/dashboard/dashboards.py:181
-msgid "Django \"django-users\" mailing list"
-msgstr ""
-
-#: grappelli/dashboard/dashboards.py:186
-msgid "Django irc channel"
-msgstr ""
-
-#: grappelli/dashboard/modules.py:189
-msgid "Links"
-msgstr ""
-
-#: grappelli/dashboard/modules.py:344
-#, fuzzy
-msgid "No recent actions."
-msgstr "Mehr neuste Einträge"
-
-#: grappelli/dashboard/templates/admin/index.html:23
-#: grappelli/templates/admin/500.html:7
-#: grappelli/templates/admin/app_index.html:11
-#: grappelli/templates/admin/base.html:57
-#: grappelli/templates/admin/change_form.html:62
-#: grappelli/templates/admin/change_list.html:82
-#: grappelli/templates/admin/csv_export_selected_confirmation.html:9
-#: grappelli/templates/admin/delete_confirmation.html:9
-#: grappelli/templates/admin/delete_selected_confirmation.html:9
-#: grappelli/templates/admin/index.html:16
-#: grappelli/templates/admin/invalid_setup.html:7
-#: grappelli/templates/admin/object_history.html:9
-#: grappelli/templates/admin/auth/user/change_password.html:20
-#: grappelli/templates/admin_doc/bookmarklets.html:6
-#: grappelli/templates/registration/password_change_done.html:18
-#: grappelli/templates/registration/password_change_form.html:16
-#: grappelli/templates/registration/password_reset_complete.html:4
-#: grappelli/templates/registration/password_reset_confirm.html:4
-#: grappelli/templates/registration/password_reset_done.html:4
-#: grappelli/templates/registration/password_reset_form.html:4
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:17
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_group.html:10
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:10
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:12
+#: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:10
+#: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:10
+#: molly/apps/users/templates/lazysignup/convert.html:5
+#: molly/templates/registration/logged_out.html:4
+#: molly/templates/registration/password_change_done.html:4
+#: molly/templates/registration/password_change_form.html:4
+#: molly/templates/registration/password_reset_complete.html:4
+#: molly/templates/registration/password_reset_confirm.html:4
+#: molly/templates/registration/password_reset_done.html:4
+#: molly/templates/registration/password_reset_form.html:4
 msgid "Home"
 msgstr ""
 
-#: grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:19
-#: grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:9
-#: grappelli/templates/admin/app_index.html:30
-#: grappelli/templates/admin/change_form.html:65
-#: grappelli/templates/admin/index.html:31
-msgid "Add"
-msgstr ""
-
-#: grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:24
-#: grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:10
-#: grappelli/templates/admin/app_index.html:31
-#: grappelli/templates/admin/index.html:32
-msgid "Change"
-msgstr ""
-
-#: grappelli/dashboard/templates/grappelli/dashboard/modules/recent_actions.html:12
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:32
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:92
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:27
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:81
 #, fuzzy
-msgid "None Available"
-msgstr "Nicht verfügbar"
+msgid "Please correct the errors below."
+msgstr "Bitte korrigieren Sie folgenden Fehler."
 
-#: grappelli/templates/admin/404.html:12
-#, fuzzy
-msgid "We're sorry, but the requested page could not be found."
-msgstr ""
-"Entschuldigung, aber die angeforderte Seite konnte nicht gefunden werden."
-
-#: grappelli/templates/admin/500.html:10
-#, fuzzy
-msgid "Server error (500)"
-msgstr "Server-Fehler"
-
-#: grappelli/templates/admin/500.html:14
-msgid "Server Error <em>(500)</em>"
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:36
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:31
+msgid "Users"
 msgstr ""
 
-#: grappelli/templates/admin/actions.html:10
-msgid "Click here to select the objects across all pages"
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:42
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:37
+msgid "User permissions"
 msgstr ""
 
-#: grappelli/templates/admin/actions.html:10
-#, python-format
-msgid "Select all %(total_count)s %(module_name)s"
-msgstr ""
-
-#: grappelli/templates/admin/actions.html:11
-msgid "Clear selection"
-msgstr ""
-
-#: grappelli/templates/admin/app_index.html:13
-#, python-format
-msgid "%(name)s"
-msgstr ""
-
-#: grappelli/templates/admin/base_site.html:4
-msgid "Django site admin"
-msgstr ""
-
-#: grappelli/templates/admin/base_site.html:7
-msgid "Django administration"
-msgstr ""
-
-#: grappelli/templates/admin/change_form.html:75
-#: grappelli/templates/admin/object_history.html:13
-msgid "History"
-msgstr ""
-
-#: grappelli/templates/admin/change_form.html:96
-#: grappelli/templates/admin/change_list.html:146
-#: grappelli/templates/admin/auth/user/change_password.html:38
-#, fuzzy
-msgid "Please correct the error below."
-msgid_plural "Please correct the errors below."
-msgstr[0] "Bitte korrigieren Sie folgenden Fehler."
-msgstr[1] "Bitte korrigieren Sie folgende Fehler."
-
-#: grappelli/templates/admin/change_list.html:100
-#, python-format
-msgid "Add %(name)s"
-msgstr ""
-
-#: grappelli/templates/admin/change_list.html:118
-msgid "Filter"
-msgstr ""
-
-#: grappelli/templates/admin/csv_export_selected_confirmation.html:12
-msgid "Export selection as CSV"
-msgstr ""
-
-#: grappelli/templates/admin/csv_export_selected_confirmation.html:31
-msgid "Export following fields:"
-msgstr ""
-
-#: grappelli/templates/admin/csv_export_selected_confirmation.html:34
-msgid "Select all"
-msgstr ""
-
-#: grappelli/templates/admin/csv_export_selected_confirmation.html:54
-msgid "Back"
-msgstr ""
-
-#: grappelli/templates/admin/csv_export_selected_confirmation.html:55
-msgid "Export"
-msgstr ""
-
-#: grappelli/templates/admin/delete_confirmation.html:13
-msgid "Delete"
-msgstr ""
-
-#: grappelli/templates/admin/delete_confirmation.html:22
-#, python-format
-msgid ""
-"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
-"related objects, but your account doesn't have permission to delete the "
-"following types of objects:"
-msgstr ""
-
-#: grappelli/templates/admin/delete_confirmation.html:33
-#, python-format
-msgid ""
-"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
-"All of the following related items will be deleted:"
-msgstr ""
-
-#: grappelli/templates/admin/delete_confirmation.html:41
-#: grappelli/templates/admin/delete_selected_confirmation.html:47
-msgid "Cancel"
-msgstr ""
-
-#: grappelli/templates/admin/delete_confirmation.html:42
-#: grappelli/templates/admin/delete_selected_confirmation.html:48
-msgid "Yes, I'm sure"
-msgstr ""
-
-#: grappelli/templates/admin/delete_selected_confirmation.html:12
-msgid "Delete multiple objects"
-msgstr ""
-
-#: grappelli/templates/admin/delete_selected_confirmation.html:21
-#, python-format
-msgid ""
-"Deleting the %(objects_name)s would result in deleting related objects, but "
-"your account doesn't have permission to delete the following types of "
-"objects:"
-msgstr ""
-
-#: grappelli/templates/admin/delete_selected_confirmation.html:32
-#, python-format
-msgid ""
-"Are you sure you want to delete the selected %(objects_name)s objects? All "
-"of the following objects and their related items will be deleted:"
-msgstr ""
-
-#: grappelli/templates/admin/filter.html:3
-#, python-format
-msgid "%(filter_title)s"
-msgstr ""
-
-#: grappelli/templates/admin/index.html:39
-msgid "You don´t have permission to edit anything."
-msgstr ""
-
-#: grappelli/templates/admin/index.html:46
-#, fuzzy
-msgid "My Actions"
-msgstr "Neueste Kommentare"
-
-#: grappelli/templates/admin/index.html:49
-#, fuzzy
-msgid "None available"
-msgstr "Nicht verfügbar"
-
-#: grappelli/templates/admin/invalid_setup.html:11
-msgid ""
-"Something's wrong with your database installation. Make sure the appropriate "
-"database tables have been created, and make sure the database is readable by "
-"the appropriate user."
-msgstr ""
-
-#: grappelli/templates/admin/login.html:31
-msgid "Username:"
-msgstr ""
-
-#: grappelli/templates/admin/login.html:35
-#, fuzzy
-msgid "Password:"
-msgstr "Passwort"
-
-#: grappelli/templates/admin/login.html:45
-#: grappelli/templates/registration/password_reset_complete.html:11
-#, fuzzy
-msgid "Log in"
-msgstr "Blog Index"
-
-#: grappelli/templates/admin/object_history.html:25
-msgid "Date/time"
-msgstr ""
-
-#: grappelli/templates/admin/object_history.html:26
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:45
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:36
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:40
+#: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:30
 msgid "User"
 msgstr ""
 
-#: grappelli/templates/admin/object_history.html:27
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:49
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:109
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:44
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:98
 #, fuzzy
 msgid "Action"
 msgstr "Veröffentlichung"
 
-#: grappelli/templates/admin/object_history.html:33
-msgid "DATETIME_FORMAT"
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:66
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:126
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:61
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:115
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:79
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:15
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:72
+#: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:15
+msgid "Manage user"
 msgstr ""
 
-#: grappelli/templates/admin/object_history.html:37
-#, fuzzy
-msgid "Created object"
-msgstr "Verwandte Einträge"
-
-#: grappelli/templates/admin/object_history.html:47
-msgid ""
-"This object doesn't have a change history. It probably wasn't added via this "
-"admin site."
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:96
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:85
+msgid "Groups"
 msgstr ""
 
-#: grappelli/templates/admin/pagination.html:8
-#, fuzzy, python-format
-msgid "1 result"
-msgid_plural "%(counter)s results"
-msgstr[0] "Suchergebnisse"
-msgstr[1] "Suchergebnisse"
-
-#: grappelli/templates/admin/pagination.html:13
-#: grappelli/templates/admin/pagination.html:15
-#, python-format
-msgid "%(full_result_count)s total"
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:102
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:91
+msgid "Group permissions"
 msgstr ""
 
-#: grappelli/templates/admin/pagination.html:27
-msgid "Show all"
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:105
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_group.html:36
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:94
+#: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:30
+msgid "Group"
 msgstr ""
 
-#: grappelli/templates/admin/submit_line.html:6
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:139
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_group.html:15
+#: guardian/templates/admin/guardian/model/obj_perms_manage.html:126
+#: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:15
+msgid "Manage group"
+msgstr ""
+
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_group.html:28
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:28
+#: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:27
+#: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:27
+msgid "Object"
+msgstr ""
+
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_group.html:48
+#: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:48
+#: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:37
+#: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:37
 msgid "Save"
 msgstr ""
 
-#: grappelli/templates/admin/submit_line.html:7
-#, fuzzy
-msgid "Save as new"
-msgstr "Als Entwurf speichern"
-
-#: grappelli/templates/admin/submit_line.html:8
-#, fuzzy
-msgid "Save and add another"
-msgstr "Als Entwurf speichern"
-
-#: grappelli/templates/admin/submit_line.html:9
-msgid "Save and continue editing"
+#: guardian/templates/admin/guardian/model/change_form.html:8
+msgid "History"
 msgstr ""
 
-#: grappelli/templates/admin/auth/user/change_password.html:7
-#: grappelli/templates/admin/includes_grappelli/header.html:41
-#: grappelli/templates/admin_doc/bookmarklets.html:6
-#: grappelli/templates/registration/password_change_done.html:7
-#: grappelli/templates/registration/password_change_form.html:6
+#: guardian/templates/admin/guardian/model/change_form.html:9
+msgid "View on site"
+msgstr "Im Browser öffnen"
+
+#: molly/apps/users/templates/lazysignup/convert.html:7
+msgid "Account"
+msgstr ""
+
+#: molly/apps/users/templates/lazysignup/convert.html:8
+#: molly/templates/registration/password_change_done.html:3
+#: molly/templates/registration/password_change_form.html:3
+msgid "Log out"
+msgstr "Abmelden"
+
+#: molly/apps/users/templates/lazysignup/convert.html:10
+#, fuzzy
+msgid "Save your data"
+msgstr "Als Entwurf speichern"
+
+#: molly/apps/users/templates/lazysignup/convert.html:10
+msgid "by setting a username and password"
+msgstr ""
+
+#: molly/templates/registration/logged_out.html:8
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: molly/templates/registration/logged_out.html:10
+msgid "Log in again"
+msgstr ""
+
+#: molly/templates/registration/password_change_done.html:3
+#: molly/templates/registration/password_change_form.html:3
 #, fuzzy
 msgid "Documentation"
 msgstr "Ihre Meinung zu"
 
-#: grappelli/templates/admin/auth/user/change_password.html:27
-#: grappelli/templates/registration/password_change_done.html:18
-#: grappelli/templates/registration/password_change_form.html:16
-#: grappelli/templates/registration/password_change_form.html:17
-#: grappelli/templates/registration/password_change_form.html:22
+#: molly/templates/registration/password_change_done.html:3
+#: molly/templates/registration/password_change_form.html:3
+#: userena/templates/userena/email_form.html:11
+#: userena/templates/userena/password_form.html:4
+#: userena/templates/userena/password_form.html:13
+#: userena/templates/userena/password_form.html:21
+#: userena/templates/userena/profile_detail.html:16
+#: userena/templates/userena/profile_form.html:14
+#, fuzzy
+msgid "Change password"
+msgstr "Passwort"
+
+#: molly/templates/registration/password_change_done.html:4
+#: molly/templates/registration/password_change_form.html:4
+#: molly/templates/registration/password_change_form.html:6
+#: molly/templates/registration/password_change_form.html:10
 #, fuzzy
 msgid "Password change"
 msgstr "Passwort"
 
-#: grappelli/templates/admin/auth/user/change_password.html:35
-#, python-format
-msgid "Enter a new password for the user <strong>%(username)s</strong>."
-msgstr ""
-
-#: grappelli/templates/admin/auth/user/change_password.html:45
-#: grappelli/templates/registration/password_change_form.html:37
-#: grappelli/templates/registration/password_reset_confirm.html:14
-#, fuzzy
-msgid "New password:"
-msgstr "Passwort"
-
-#: grappelli/templates/admin/auth/user/change_password.html:52
-#, fuzzy
-msgid "Password (again)"
-msgstr "Passwort"
-
-#: grappelli/templates/admin/auth/user/change_password.html:56
-msgid "Enter the same password as above, for verification."
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/stacked.html:8
-msgid "Open All Items"
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/stacked.html:9
-msgid "Close All Items"
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/stacked.html:10
-#: grappelli/templates/admin/edit_inline/stacked.html:53
-#: grappelli/templates/admin/edit_inline/tabular.html:86
-msgid "Add Item"
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/stacked.html:23
-#: grappelli/templates/admin/edit_inline/tabular.html:60
-#, fuzzy
-msgid "View on Site"
-msgstr "Im Browser öffnen"
-
-#: grappelli/templates/admin/edit_inline/stacked.html:25
-#: grappelli/templates/admin/edit_inline/tabular.html:62
-msgid "Move Item"
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/stacked.html:29
-#: grappelli/templates/admin/edit_inline/stacked.html:31
-msgid "Delete Item"
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/stacked.html:51
-#: grappelli/templates/admin/edit_inline/tabular.html:84
-#, python-format
-msgid "Add another %(verbose_name)s"
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/tabular.html:8
-msgid "Add Another"
-msgstr ""
-
-#: grappelli/templates/admin/edit_inline/tabular.html:65
-#: grappelli/templates/admin/edit_inline/tabular.html:70
-msgid "Remove"
-msgstr ""
-
-#: grappelli/templates/admin/includes_grappelli/header.html:36
-msgid "Tests"
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:6
-#: grappelli/templates/admin_doc/bookmarklets.html:10
-msgid "Bookmarklets"
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:7
-#, fuzzy
-msgid "Documentation bookmarklets"
-msgstr "Ihre Meinung zu"
-
-#: grappelli/templates/admin_doc/bookmarklets.html:12
-msgid ""
-"\n"
-"            <p>To install bookmarklets, drag the link to your bookmarks\n"
-"    toolbar, or right-click the link and add it to your bookmarks. Now you "
-"can\n"
-"    select the bookmarklet from any page in the site.  Note that some of "
-"these\n"
-"    bookmarklets require you to be viewing the site from a computer "
-"designated\n"
-"    as \"internal\" (talk to your system administrator if you aren't sure "
-"if\n"
-"    your computer is \"internal\").</p>\n"
-"        "
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:21
-#, fuzzy
-msgid "Documentation for this page"
-msgstr "Ihre Meinung zu"
-
-#: grappelli/templates/admin_doc/bookmarklets.html:22
-msgid ""
-"Jumps you from any page to the documentation for the view that generates "
-"that page."
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:25
-msgid "Show object ID"
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:26
-msgid ""
-"Shows the content-type and unique ID for pages that represent a single "
-"object."
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:29
-msgid "Edit this object (current window)"
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:30
-msgid "Jumps to the admin page for pages that represent a single object."
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:33
-msgid "Edit this object (new window)"
-msgstr ""
-
-#: grappelli/templates/admin_doc/bookmarklets.html:34
-msgid "As above, but opens the admin page in a new window."
-msgstr ""
-
-#: grappelli/templates/registration/logged_out.html:11
-msgid "Log in again"
-msgstr ""
-
-#: grappelli/templates/registration/password_change_done.html:20
-#: grappelli/templates/registration/password_change_done.html:22
+#: molly/templates/registration/password_change_done.html:6
+#: molly/templates/registration/password_change_done.html:10
 msgid "Password change successful"
 msgstr ""
 
-#: grappelli/templates/registration/password_change_done.html:23
+#: molly/templates/registration/password_change_done.html:12
 msgid "Your password was changed."
 msgstr ""
 
-#: grappelli/templates/registration/password_change_form.html:26
+#: molly/templates/registration/password_change_form.html:12
 msgid ""
-"Please enter your old password, for securitys sake, and then enter your new "
+"Please enter your old password, for security's sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
 
-#: grappelli/templates/registration/password_change_form.html:30
+#: molly/templates/registration/password_change_form.html:17
 #, fuzzy
 msgid "Old password:"
 msgstr "Passwort"
 
-#: grappelli/templates/registration/password_change_form.html:44
-#: grappelli/templates/registration/password_reset_confirm.html:16
+#: molly/templates/registration/password_change_form.html:19
+#: molly/templates/registration/password_reset_confirm.html:19
+#, fuzzy
+msgid "New password:"
+msgstr "Passwort"
+
+#: molly/templates/registration/password_change_form.html:21
+#: molly/templates/registration/password_reset_confirm.html:21
 #, fuzzy
 msgid "Confirm password:"
 msgstr "Passwort"
 
-#: grappelli/templates/registration/password_change_form.html:53
-#: grappelli/templates/registration/password_reset_confirm.html:17
+#: molly/templates/registration/password_change_form.html:23
+#: molly/templates/registration/password_reset_confirm.html:22
 #, fuzzy
 msgid "Change my password"
 msgstr "Passwort"
 
-#: grappelli/templates/registration/password_reset_complete.html:4
-#: grappelli/templates/registration/password_reset_confirm.html:6
-#: grappelli/templates/registration/password_reset_done.html:4
-#: grappelli/templates/registration/password_reset_form.html:4
-#: grappelli/templates/registration/password_reset_form.html:6
-#: grappelli/templates/registration/password_reset_form.html:9
+#: molly/templates/registration/password_reset_complete.html:4
+#: molly/templates/registration/password_reset_confirm.html:6
+#: molly/templates/registration/password_reset_done.html:4
+#: molly/templates/registration/password_reset_form.html:4
+#: molly/templates/registration/password_reset_form.html:6
+#: molly/templates/registration/password_reset_form.html:10
+#: userena/templates/userena/password_reset_complete.html:4
 #, fuzzy
 msgid "Password reset"
 msgstr "Passwort erforderlich"
 
-#: grappelli/templates/registration/password_reset_complete.html:6
-#: grappelli/templates/registration/password_reset_complete.html:9
+#: molly/templates/registration/password_reset_complete.html:6
+#: molly/templates/registration/password_reset_complete.html:10
 #, fuzzy
 msgid "Password reset complete"
 msgstr "Passwort erforderlich"
 
-#: grappelli/templates/registration/password_reset_complete.html:10
+#: molly/templates/registration/password_reset_complete.html:12
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_confirm.html:4
+#: molly/templates/registration/password_reset_complete.html:14
+#, fuzzy
+msgid "Log in"
+msgstr "Blog Index"
+
+#: molly/templates/registration/password_reset_confirm.html:4
 msgid "Password reset confirmation"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_confirm.html:10
+#: molly/templates/registration/password_reset_confirm.html:12
 #, fuzzy
 msgid "Enter new password"
 msgstr "Passwort"
 
-#: grappelli/templates/registration/password_reset_confirm.html:11
+#: molly/templates/registration/password_reset_confirm.html:14
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_confirm.html:20
+#: molly/templates/registration/password_reset_confirm.html:27
 msgid "Password reset unsuccessful"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_confirm.html:21
+#: molly/templates/registration/password_reset_confirm.html:29
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used. Please request a new password reset."
+"used.  Please request a new password reset."
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_done.html:6
-#: grappelli/templates/registration/password_reset_done.html:9
+#: molly/templates/registration/password_reset_done.html:6
+#: molly/templates/registration/password_reset_done.html:10
 #, fuzzy
 msgid "Password reset successful"
 msgstr "Passwort erforderlich"
 
-#: grappelli/templates/registration/password_reset_done.html:10
+#: molly/templates/registration/password_reset_done.html:12
 msgid ""
-"We've e-mailed a new password to the e-mail address you submitted. You "
-"should be receiving it shortly."
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_email.html:2
+#: molly/templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_email.html:3
+#: molly/templates/registration/password_reset_email.html:3
 #, python-format
 msgid "for your user account at %(site_name)s"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_email.html:5
+#: molly/templates/registration/password_reset_email.html:5
 msgid "Please go to the following page and choose a new password:"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_email.html:9
+#: molly/templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_email.html:11
+#: molly/templates/registration/password_reset_email.html:11
 #, fuzzy
 msgid "Thanks for using our site!"
 msgstr "Danke für Ihren Kommentar"
 
-#: grappelli/templates/registration/password_reset_email.html:13
+#: molly/templates/registration/password_reset_email.html:13
 #, python-format
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_form.html:10
+#: molly/templates/registration/password_reset_form.html:12
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll reset "
-"your password and e-mail the new one to you."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_form.html:13
+#: molly/templates/registration/password_reset_form.html:17
 msgid "E-mail address:"
 msgstr ""
 
-#: grappelli/templates/registration/password_reset_form.html:13
+#: molly/templates/registration/password_reset_form.html:17
 #, fuzzy
 msgid "Reset my password"
 msgstr "Passwort"
 
-#: grappelli/views/related.py:24 grappelli/views/related.py:51
-#, fuzzy
-msgid "Not Found"
-msgstr "Nichts gefunden."
+#: userena/forms.py:30
+msgid "Username must contain only letters, numbers, dots and underscores."
+msgstr ""
 
-#: grappelli/views/related.py:28 grappelli/views/related.py:30
-#: grappelli/views/related.py:53 grappelli/views/related.py:55
+#: userena/forms.py:33 userena/forms.py:192
+#: userena/templates/userena/profile_detail.html:27
+msgid "Email"
+msgstr "E-Mail"
+
+#: userena/forms.py:36
 #, fuzzy
-msgid "Error"
-msgstr "Fehler 404"
+msgid "Create password"
+msgstr "Passwort"
+
+#: userena/forms.py:39
+#, fuzzy
+msgid "Repeat password"
+msgstr "Passwort"
+
+#: userena/forms.py:42
+msgid "Mobile"
+msgstr ""
+
+#: userena/forms.py:56
+msgid "This username is already taken."
+msgstr ""
+
+#: userena/forms.py:58
+msgid "This username is not allowed."
+msgstr ""
+
+#: userena/forms.py:64 userena/forms.py:234
+msgid "This email is already in use. Please supply a different email."
+msgstr ""
+
+#: userena/forms.py:76
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: userena/forms.py:156
+msgid "I have read and agree to the Terms of Service"
+msgstr ""
+
+#: userena/forms.py:157
+msgid "You must agree to the terms to register."
+msgstr ""
+
+#: userena/forms.py:170
+#, python-format
+msgid "%(label)s"
+msgstr ""
+
+#: userena/forms.py:173
+#, python-format
+msgid "%(error)s"
+msgstr ""
+
+#: userena/forms.py:180
+msgid "Email or username"
+msgstr ""
+
+#: userena/forms.py:181
+msgid "Either supply us with your email or username."
+msgstr ""
+
+#: userena/forms.py:182
+msgid "Password"
+msgstr "Passwort"
+
+#: userena/forms.py:186
+#, python-format
+msgid "Remember me for %(days)s"
+msgstr ""
+
+#: userena/forms.py:193
+msgid "Please supply your email."
+msgstr ""
+
+#: userena/forms.py:208
+msgid ""
+"Please enter a correct username or email and password. Note that both fields "
+"are case-sensitive."
+msgstr ""
+
+#: userena/forms.py:214
+#: userena/templates/userena/email_confirm_complete.html:6
+msgid "New email"
+msgstr ""
+
+#: userena/forms.py:232
+msgid "You're already known under this email."
+msgstr ""
+
+#: userena/forms.py:248
+msgid "First name"
+msgstr ""
+
+#: userena/forms.py:251
+#, fuzzy
+msgid "Last name"
+msgstr "Letzte Änderung"
+
+#: userena/models.py:46 userena/models.py:213
+msgid "user"
+msgstr ""
+
+#: userena/models.py:50
+#, fuzzy
+msgid "last active"
+msgstr "Letzte Änderung"
+
+#: userena/models.py:53
+msgid "The last date that the user was active."
+msgstr ""
+
+#: userena/models.py:55
+msgid "activation key"
+msgstr ""
+
+#: userena/models.py:59
+msgid "notification send"
+msgstr ""
+
+#: userena/models.py:61
+msgid ""
+"Designates whether this user has already got a notification about activating "
+"their account."
+msgstr ""
+
+#: userena/models.py:63
+msgid "unconfirmed email address"
+msgstr ""
+
+#: userena/models.py:65
+msgid "Temporary email address when the user requests an email change."
+msgstr ""
+
+#: userena/models.py:67
+msgid "unconfirmed email verification key"
+msgstr ""
+
+#: userena/models.py:71
+msgid "creation date of email confirmation key"
+msgstr ""
+
+#: userena/models.py:79
+#, fuzzy
+msgid "userena registration"
+msgstr "Als Abbildung benutzt"
+
+#: userena/models.py:80
+#, fuzzy
+msgid "userena registrations"
+msgstr "Als Abbildung benutzt"
+
+#: userena/models.py:202
+msgid "Open"
+msgstr ""
+
+#: userena/models.py:203
+msgid "Registered"
+msgstr ""
+
+#: userena/models.py:204
+msgid "Closed"
+msgstr ""
+
+#: userena/models.py:216
+msgid "mugshot"
+msgstr ""
+
+#: userena/models.py:220
+msgid "A personal image displayed in your profile."
+msgstr ""
+
+#: userena/models.py:222
+#, fuzzy
+msgid "privacy"
+msgstr "Privatsphäre"
+
+#: userena/models.py:226
+msgid "Designates who can view your profile."
+msgstr ""
+
+#: userena/models.py:305
+#, python-format
+msgid "%(first_name)s %(last_name)s"
+msgstr ""
+
+#: userena/models.py:367
+msgid "language"
+msgstr ""
+
+#: userena/settings.py:35
+msgid "a month"
+msgstr ""
+
+#: userena/views.py:134
+msgid "Your account has been activated and you have been signed in."
+msgstr ""
+
+#: userena/views.py:293
+msgid "You have been signed in."
+msgstr ""
+
+#: userena/views.py:505
+msgid "Your profile has been updated."
+msgstr ""
+
+#: userena/views.py:544
+#, fuzzy
+msgid "You don't have permission to view this profile."
+msgstr "Sie benötigen ein Passwort um diesen Eintrag lesen zu können."
+
+#: userena/contrib/umessages/admin.py:25
+msgid "Date/time"
+msgstr ""
+
+#: userena/contrib/umessages/fields.py:56
+#, python-format
+msgid "The following usernames are incorrect: %(users)s."
+msgstr ""
+
+#: userena/contrib/umessages/forms.py:10
+msgid "To"
+msgstr ""
+
+#: userena/contrib/umessages/forms.py:11
+msgid "Message"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:17
+msgid "from user"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:20
+msgid "to user"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:24
+#, fuzzy
+msgid "latest message"
+msgstr "Neuste Einträge"
+
+#: userena/contrib/umessages/models.py:31
+#, fuzzy
+msgid "contact"
+msgstr "Inhalt"
+
+#: userena/contrib/umessages/models.py:32
+#, fuzzy
+msgid "contacts"
+msgstr "Inhalt"
+
+#: userena/contrib/umessages/models.py:35
+#, python-format
+msgid "%(from_user)s and %(to_user)s"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:61
+#: userena/contrib/umessages/models.py:77
+msgid "recipient"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:64
+#: userena/contrib/umessages/models.py:112
+msgid "message"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:66
+msgid "read at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:70
+msgid "recipient deleted at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:78
+#: userena/contrib/umessages/models.py:99
+msgid "recipients"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:81
+#, python-format
+msgid "%(message)s"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:90
+msgid "body"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:94
+msgid "sender"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:101
+msgid "sent at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:104
+msgid "sender deleted at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:113
+msgid "messages"
+msgstr ""
+
+#: userena/contrib/umessages/views.py:179
+msgid "Message is sent."
+msgstr ""
+
+#: userena/contrib/umessages/views.py:263
+msgid "Message is succesfully restored."
+msgid_plural "Messages are succesfully restored."
+msgstr[0] ""
+msgstr[1] ""
+
+#: userena/contrib/umessages/views.py:267
+msgid "Message is successfully removed."
+msgid_plural "Messages are successfully removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: userena/templates/userena/activate_fail.html:4
+msgid "Account activation failed."
+msgstr ""
+
+#: userena/templates/userena/activate_fail.html:5
+msgid "Your account could not be activated.."
+msgstr ""
+
+#: userena/templates/userena/activate_fail.html:8
+msgid ""
+"Your account could not be activated. This could be because your activation "
+"link has aged."
+msgstr ""
+
+#: userena/templates/userena/activate_fail.html:9
+msgid ""
+"Please try signing up again or contact us if you think something went wrong."
+msgstr ""
+
+#: userena/templates/userena/disabled.html:4
+msgid "Disabled account"
+msgstr ""
+
+#: userena/templates/userena/disabled.html:5
+msgid "Your account has been disabled"
+msgstr ""
+
+#: userena/templates/userena/disabled.html:7
+msgid "It seems your account has been disabled."
+msgstr ""
+
+#: userena/templates/userena/disabled.html:8
+msgid ""
+"If you feel that injustice has been done to you, feel free to contact the "
+"administrators to find out why"
+msgstr ""
+
+#: userena/templates/userena/email_change_complete.html:4
+msgid "Email verification"
+msgstr ""
+
+#: userena/templates/userena/email_change_complete.html:5
+msgid "Confirm your new email"
+msgstr ""
+
+#: userena/templates/userena/email_change_complete.html:8
+#, python-format
+msgid "You have received an email at %(email)s."
+msgstr ""
+
+#: userena/templates/userena/email_change_complete.html:9
+#, python-format
+msgid ""
+"To associate this email address with your account (%(username)s) click on "
+"the link provided in this email."
+msgstr ""
+
+#: userena/templates/userena/email_confirm_complete.html:4
+msgid "Email changed!"
+msgstr ""
+
+#: userena/templates/userena/email_confirm_complete.html:8
+msgid ""
+"Your new email address is saved. You can continue using userena with this "
+"email."
+msgstr ""
+
+#: userena/templates/userena/email_confirm_fail.html:4
+msgid "Email verification failed."
+msgstr ""
+
+#: userena/templates/userena/email_confirm_fail.html:5
+msgid "Your email could not be verified.."
+msgstr ""
+
+#: userena/templates/userena/email_confirm_fail.html:8
+msgid "Your email could not be verified..."
+msgstr ""
+
+#: userena/templates/userena/email_confirm_fail.html:9
+msgid "You could try changing it again in your account settings."
+msgstr ""
+
+#: userena/templates/userena/email_form.html:4
+#: userena/templates/userena/password_form.html:6
+#: userena/templates/userena/profile_form.html:6
+#, python-format
+msgid "Account &raquo; %(username)s"
+msgstr ""
+
+#: userena/templates/userena/email_form.html:9
+#: userena/templates/userena/password_form.html:11
+#: userena/templates/userena/profile_detail.html:14
+#: userena/templates/userena/profile_form.html:12
+#, fuzzy
+msgid "View profile"
+msgstr "Im Browser öffnen"
+
+#: userena/templates/userena/email_form.html:10
+#: userena/templates/userena/password_form.html:12
+#: userena/templates/userena/profile_form.html:13
+msgid "Edit profile"
+msgstr ""
+
+#: userena/templates/userena/email_form.html:12
+#: userena/templates/userena/email_form.html:19
+#: userena/templates/userena/password_form.html:14
+#: userena/templates/userena/profile_detail.html:17
+#: userena/templates/userena/profile_form.html:15
+#, fuzzy
+msgid "Change email"
+msgstr "Passwort"
+
+#: userena/templates/userena/email_form.html:16
+#, fuzzy
+msgid "Change email address"
+msgstr "Passwort"
+
+#: userena/templates/userena/password_complete.html:4
+#, fuzzy
+msgid "Password changed"
+msgstr "Passwort"
+
+#: userena/templates/userena/password_complete.html:5
+#, fuzzy
+msgid "Your password has been changed"
+msgstr "Passwort"
+
+#: userena/templates/userena/password_complete.html:8
+msgid "From now on you can use your new password to signin"
+msgstr ""
+
+#: userena/templates/userena/password_form.html:17
+#, fuzzy
+msgid "Change Password"
+msgstr "Passwort"
+
+#: userena/templates/userena/password_reset_complete.html:5
+#, fuzzy
+msgid "Your password has been reset"
+msgstr "Passwort erforderlich"
+
+#: userena/templates/userena/password_reset_complete.html:7
+msgid "You can now "
+msgstr ""
+
+#: userena/templates/userena/password_reset_complete.html:7
+msgid "signin"
+msgstr ""
+
+#: userena/templates/userena/password_reset_complete.html:7
+#, fuzzy
+msgid "with your new password."
+msgstr "Passwort"
+
+#: userena/templates/userena/password_reset_confirm_form.html:4
+#: userena/templates/userena/password_reset_confirm_form.html:13
+#: userena/templates/userena/password_reset_form.html:4
+#, fuzzy
+msgid "Reset password"
+msgstr "Passwort"
+
+#: userena/templates/userena/password_reset_confirm_form.html:9
+#: userena/templates/userena/password_reset_form.html:9
+#, fuzzy
+msgid "Reset Password"
+msgstr "Passwort"
+
+#: userena/templates/userena/password_reset_done.html:4
+#: userena/templates/userena/password_reset_done.html:5
+#, fuzzy
+msgid "Reset password email is send"
+msgstr "Passwort"
+
+#: userena/templates/userena/password_reset_done.html:8
+msgid ""
+"An e-mail has been send to you which explains how to reset your password."
+msgstr ""
+
+#: userena/templates/userena/password_reset_form.html:13
+#, fuzzy
+msgid "Send password"
+msgstr "Passwort"
+
+#: userena/templates/userena/profile_detail.html:4
+#, python-format
+msgid "%(username)s's profile."
+msgstr ""
+
+#: userena/templates/userena/profile_detail.html:15
+#, fuzzy
+msgid "Edit details"
+msgstr "Eintragsdetail"
+
+#: userena/templates/userena/profile_detail.html:22
+msgid "Your mugshot"
+msgstr ""
+
+#: userena/templates/userena/profile_detail.html:24
+msgid "Name"
+msgstr ""
+
+#: userena/templates/userena/profile_detail.html:30
+msgid "Age"
+msgstr ""
+
+#: userena/templates/userena/profile_detail.html:33
+msgid "Website"
+msgstr ""
+
+#: userena/templates/userena/profile_detail.html:36
+#, fuzzy
+msgid "Location"
+msgstr "Veröffentlichung"
+
+#: userena/templates/userena/profile_detail.html:39
+msgid "About me"
+msgstr ""
+
+#: userena/templates/userena/profile_form.html:4
+msgid "Account setup"
+msgstr ""
+
+#: userena/templates/userena/profile_form.html:19
+msgid "Edit Profile"
+msgstr ""
+
+#: userena/templates/userena/profile_form.html:22
+#, fuzzy
+msgid "Save changes"
+msgstr "Als Entwurf speichern"
+
+#: userena/templates/userena/profile_list.html:4
+msgid "Profiles"
+msgstr ""
+
+#: userena/templates/userena/profile_list.html:21
+#, fuzzy
+msgid "previous"
+msgstr "Vorheriger Eintrag"
+
+#: userena/templates/userena/profile_list.html:25
+#, fuzzy, python-format
+msgid ""
+"\n"
+"      Page %(page)s of %(num_pages)s\n"
+"      "
+msgstr "Seite %(current_page)s von %(total_page)s "
+
+#: userena/templates/userena/profile_list.html:31
+msgid "next"
+msgstr ""
+
+#: userena/templates/userena/signin_form.html:4
+#: userena/templates/userena/signin_form.html:10
+#: userena/templates/userena/signin_form.html:28
+msgid "Signin"
+msgstr ""
+
+#: userena/templates/userena/signin_form.html:29
+#, fuzzy
+msgid "Forgot your password?"
+msgstr "Passwort"
+
+#: userena/templates/userena/signout.html:4
+msgid "Signed out"
+msgstr ""
+
+#: userena/templates/userena/signout.html:5
+msgid "You have been signed out"
+msgstr ""
+
+#: userena/templates/userena/signout.html:8
+msgid "You have been signed out. Till we meet again."
+msgstr ""
+
+#: userena/templates/userena/signup_complete.html:4
+msgid "Signup almost done!"
+msgstr ""
+
+#: userena/templates/userena/signup_complete.html:6
+#: userena/templates/userena/signup_form.html:4
+#: userena/templates/userena/signup_form.html:27
+msgid "Signup"
+msgstr ""
+
+#: userena/templates/userena/signup_complete.html:9
+#, fuzzy
+msgid "Thank you for signing up with us!"
+msgstr "Danke für Ihren Kommentar"
+
+#: userena/templates/userena/signup_complete.html:10
+msgid ""
+"You have been send an e-mail with an activation link to the supplied email."
+msgstr ""
+
+#: userena/templates/userena/signup_complete.html:11
+#, python-format
+msgid ""
+"We will store your signup information for %(userena_activation_days)s days "
+"on our server. "
+msgstr ""
+
+#, fuzzy
+#~ msgid "Applications"
+#~ msgstr "Veröffentlichung"
+
+#, fuzzy
+#~ msgid "AppList: Applications"
+#~ msgstr "Veröffentlichung"
+
+#, fuzzy
+#~ msgid "Grappelli Documentation"
+#~ msgstr "Ihre Meinung zu"
+
+#, fuzzy
+#~ msgid "Recent Actions"
+#~ msgstr "Neueste Kommentare"
+
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#, fuzzy
+#~ msgid "Polish"
+#~ msgstr "Veröffentlichen"
+
+#~ msgid "Latest entries"
+#~ msgstr "Neuste Einträge"
+
+#~ msgid "The latest entries for the site %s"
+#~ msgstr "Die neusten Einträge der Seite %s"
+
+#~ msgid "Entries for the category %s"
+#~ msgstr "Einträge der Kategorie %s"
+
+#~ msgid "The latest entries for the category %s"
+#~ msgstr "Die neusten Einträge in Kategorie %s"
+
+#~ msgid "Entries for author %s"
+#~ msgstr "Einträge für Autor %s"
+
+#~ msgid "The latest entries by %s"
+#~ msgstr "Die neuesten Einträge von %s"
+
+#~ msgid "Entries for the tag %s"
+#~ msgstr "Einträge für den Tag %s"
+
+#~ msgid "The latest entries for the tag %s"
+#~ msgstr "Die neuen Einträge für den Tag %s"
+
+#~ msgid "Results of the search for %s"
+#~ msgstr "Suchergebnisse für %s"
+
+#~ msgid "The entries containing the pattern %s"
+#~ msgstr "Die Einträge die '%s' enthalten"
+
+#~ msgid "Discussions on %s"
+#~ msgstr "Kommentare auf %s"
+
+#~ msgid "The latest discussions for the entry %s"
+#~ msgstr "Die neusten Kommentare für die Einträge %s"
+
+#~ msgid "Comments on %s"
+#~ msgstr "Kommentar für %s"
+
+#~ msgid "The latest comments for the entry %s"
+#~ msgstr "Die neusten Kommentare für die Einträge %s"
+
+#~ msgid "Pingbacks on %s"
+#~ msgstr "Pingbacks für %s"
+
+#~ msgid "The latest pingbacks for the entry %s"
+#~ msgstr "Die neusten Pingbacks für Eintrag %s"
+
+#~ msgid "Trackbacks on %s"
+#~ msgstr "Trackbacks für %s"
+
+#~ msgid "The latest trackbacks for the entry %s"
+#~ msgstr "Die neusten Trackbacks für Eintrag %s"
+
+#~ msgid "title"
+#~ msgstr "Titel"
+
+#~ msgid "used for publication"
+#~ msgstr "Für die Veröffentlichung benutzt"
+
+#~ msgid "description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "parent category"
+#~ msgstr "Übergeordnete Kategorie"
+
+#~ msgid "category"
+#~ msgstr "Kategorie"
+
+#~ msgid "categories"
+#~ msgstr "Kategorien"
+
+#~ msgid "draft"
+#~ msgstr "Entwurf"
+
+#~ msgid "hidden"
+#~ msgstr "Versteckt"
+
+#~ msgid "published"
+#~ msgstr "Veröffentlicht"
+
+#~ msgid "image"
+#~ msgstr "Bild"
+
+#~ msgid "excerpt"
+#~ msgstr "Auszug"
+
+#~ msgid "optional element"
+#~ msgstr "Optionales Element"
+
+#~ msgid "tags"
+#~ msgstr "Tags"
+
+#~ msgid "related entries"
+#~ msgstr "Verwandte Einträge"
+
+#~ msgid "authors"
+#~ msgstr "Autoren"
+
+#~ msgid "featured"
+#~ msgstr "empfohlenen"
+
+#~ msgid "comment enabled"
+#~ msgstr "Kommentare aktiviert"
+
+#~ msgid "linkback enabled"
+#~ msgstr "Linkback aktiviert"
+
+#~ msgid "creation date"
+#~ msgstr "Erstellungsdatum"
+
+#~ msgid "start publication"
+#~ msgstr "Veröffentlichungsbeginn"
+
+#~ msgid "date start publish"
+#~ msgstr "Datum der ersten Veröffentlichung"
+
+#~ msgid "end publication"
+#~ msgstr "Veröffentlichungsende"
+
+#~ msgid "date end publish"
+#~ msgstr "Datum des Veröffentlichungsende"
+
+#~ msgid "sites publication"
+#~ msgstr "Veröffentlich auf Seiten"
+
+#~ msgid "login required"
+#~ msgstr "Anmeldung erfolderlich"
+
+#~ msgid "only authenticated users can view the entry"
+#~ msgstr "Nur authentifizierte Benutzer können den Eintrag lesen "
+
+#~ msgid "password"
+#~ msgstr "Passwort"
+
+#~ msgid "protect the entry with a password"
+#~ msgstr "Eintrag mit Passwort schützen"
+
+#~ msgid "template"
+#~ msgstr "Template"
+
+#~ msgid "Default template"
+#~ msgstr "Standard-Template"
+
+#~ msgid "template used to display the entry"
+#~ msgstr "Template, mit dem dieser Eintrag dargestellt wird"
+
+#~ msgid "entry"
+#~ msgstr "Eintrag"
+
+#~ msgid "entries"
+#~ msgstr "Einträge"
+
+#~ msgid "[%(site)s] New comment posted on \"%(title)s\""
+#~ msgstr "[%(site)s] Neuer Kommentar zu \"%(title)s\""
+
+#~ msgid "tree path"
+#~ msgstr "Pfad"
+
+#~ msgid "Content"
+#~ msgstr "Inhalt"
+
+#~ msgid "Options"
+#~ msgstr "Optionen"
+
+#~ msgid "Discussion"
+#~ msgstr "Diskussion"
+
+#~ msgid "Publication"
+#~ msgstr "Veröffentlichung"
+
+#~ msgid "%(title)s (%(word_count)i words)"
+#~ msgstr "%(title)s  (%(word_count)i Wörter)"
+
+#~ msgid "%(title)s (%(comments)i comments)"
+#~ msgstr "%(title)s  (%(comments)i Kommentare)"
+
+#~ msgid "author(s)"
+#~ msgstr "Autor(en)"
+
+#~ msgid "category(s)"
+#~ msgstr "Kategorie(n)"
+
+#~ msgid "tag(s)"
+#~ msgstr "Tag(s)"
+
+#~ msgid "site(s)"
+#~ msgstr "Seite(n)"
+
+#~ msgid "is actual"
+#~ msgstr "Ist aktuell"
+
+#~ msgid "is visible"
+#~ msgstr "Ist sichtbar"
+
+#~ msgid "<a href=\"%s\" target=\"blank\">View</a>"
+#~ msgstr "<a href=\"%s\" target=\"blank\">Öffnen</a>"
+
+#~ msgid "Unavailable"
+#~ msgstr "Nicht verfügbar"
+
+#~ msgid "short url"
+#~ msgstr "Kurze URL"
+
+#~ msgid "Set the entries to the user"
+#~ msgstr "Ausgewählte Einträge dem aktuellem Benutzer zuordnen"
+
+#~ msgid "Set entries selected as published"
+#~ msgstr "Ausgewählte Einträge als öffentlich markieren"
+
+#~ msgid "Set entries selected as hidden"
+#~ msgstr "Ausgewählte Einträge als unsichtbar markieren"
+
+#~ msgid "Tweet entries selected"
+#~ msgstr "Ausgewählte Einträge twittern"
+
+#~ msgid "Close the comments for selected entries"
+#~ msgstr "Kommentare für ausgewählte Einträge deaktivieren"
+
+#~ msgid "Close the linkbacks for selected entries"
+#~ msgstr "Schließen der Linkbacks für die ausgewählte Einträge"
+
+#~ msgid "Put the selected entries on top at the current date"
+#~ msgstr "Setzen Sie die ausgewählten Einträge auf das aktuelle Datum"
+
+#~ msgid "%(directory)s directory succesfully pinged %(success)d entries."
+#~ msgstr ""
+#~ "%(directory)s  Verzeichnis erfolgreich angepingt %(success)d Einträge."
+
+#~ msgid "Ping Directories for selected entries"
+#~ msgstr "Verzeichnisdienste mit ausgewählten Einträgen anpingen"
+
+#~ msgid "No parent category"
+#~ msgstr "Keine Hauptkategorie"
+
+#~ msgid "A category cannot be parent of itself."
+#~ msgstr "Eine Kategorie kann auf selbst sein referenzieren."
+
+#~ msgid "Categories"
+#~ msgstr "Kategorien"
+
+#~ msgid "blog App Hook"
+#~ msgstr "blog App Hook"
+
+#~ msgid "Sorting"
+#~ msgstr "Sortierung"
+
+#~ msgid "Advanced"
+#~ msgstr "Fortgeschritten"
+
+#~ msgid "Selected entries"
+#~ msgstr "Ausgewählte Einträge"
+
+#~ msgid "Random entries"
+#~ msgstr "Zufällige Einträge"
+
+#~ msgid "blog Entry Menu"
+#~ msgstr "blog Eintragsmenü"
+
+#~ msgid "blog Category Menu"
+#~ msgstr "blog Kategorie Menü"
+
+#~ msgid "blog Author Menu"
+#~ msgstr "blog Autor Menü"
+
+#~ msgid "Authors"
+#~ msgstr "Autoren"
+
+#~ msgid "blog Tag Menu"
+#~ msgstr "blog Tag Menu"
+
+#~ msgid "Tags"
+#~ msgstr "Tags"
+
+#~ msgid "Entry list (default)"
+#~ msgstr "Liste der Einträge (Standard)"
+
+#~ msgid "include subcategories"
+#~ msgstr "Unterkategorien mit einbeziehen"
+
+#~ msgid "number of entries"
+#~ msgstr "Anzahl der Einträge"
+
+#~ msgid "Template used to display the plugin"
+#~ msgstr "Template zur Anzeige des Plugins"
+
+#~ msgid "%s entries"
+#~ msgstr "%s Einträge"
+
+#~ msgid "Error 404"
+#~ msgstr "Fehler 404"
+
+#~ msgid "Page not found"
+#~ msgstr "Seite nicht gefunden"
+
+#~ msgid "Sorry, but the requested page could not be found."
+#~ msgstr ""
+#~ "Entschuldigung, aber die angeforderte Seite konnte nicht gefunden werden."
+
+#~ msgid "Useful links"
+#~ msgstr "Nützliche Links"
+
+#~ msgid "Blog index"
+#~ msgstr "Blog Index"
+
+#~ msgid "Sitemap"
+#~ msgstr "Sitemap"
+
+#~ msgid "Recent entries"
+#~ msgstr "Neuste Einträge"
+
+#~ msgid "Search"
+#~ msgstr "Suche"
+
+#~ msgid "Keywords..."
+#~ msgstr "Schlüsselwörter..."
+
+#~ msgid "Error 500"
+#~ msgstr "Fehler 500"
+
+#~ msgid "Server error"
+#~ msgstr "Server-Fehler"
+
+#~ msgid ""
+#~ "There's been an error. It's been reported to the site administrators via "
+#~ "e-mail and should be fixed shortly. Thanks for your patience."
+#~ msgstr ""
+#~ "Es ist ein Fehler aufgetreten. Der Server-Admin wurde umgehend "
+#~ "benachrichtig und wird sich in Kürze um den Fehler kümmern. Wir danken "
+#~ "für Ihr Verständnis."
+
+#~ msgid "Contents"
+#~ msgstr "Inhalt"
+
+#~ msgid "%(entries)s entries"
+#~ msgstr " %(entries)s Einträge"
+
+#~ msgid "%(comments)s comments"
+#~ msgstr "%(comments)s Kommentare"
+
+#~ msgid "%(categories)s categories"
+#~ msgstr " %(categories)s Kategorien"
+
+#~ msgid "%(pingbacks)s pingbacks"
+#~ msgstr " %(pingbacks)s Pingbacks"
+
+#~ msgid "%(tags)s tags"
+#~ msgstr " %(tags)s Tags"
+
+#~ msgid "%(trackbacks)s trackbacks"
+#~ msgstr " %(trackbacks)s Trackbacks"
+
+#~ msgid "%(authors)s authors"
+#~ msgstr " %(authors)s Autoren"
+
+#~ msgid "%(rejects)s rejected"
+#~ msgstr " %(rejects)s abgelehnt"
+
+#~ msgid "Edit the entry"
+#~ msgstr "Eintrag bearbeiten"
+
+#~ msgid "on"
+#~ msgstr "am"
+
+#~ msgid "Preview"
+#~ msgstr "Vorschau"
+
+#~ msgid "No draft entries."
+#~ msgstr "Kein Entwurfs Einträge."
+
+#~ msgid "View all draft entries"
+#~ msgstr "Alle Eintragsentwürfe anziegen"
+
+#~ msgid "in"
+#~ msgstr "in"
+
+#~ msgid "Comment on"
+#~ msgstr "Ihre Meinung zu"
+
+#~ msgid "Edit the comment"
+#~ msgstr "Kommentar bearbeiten"
+
+#~ msgid "No comments yet."
+#~ msgstr "Keine Kommentare vorhanden."
+
+#~ msgid "Manage the comments"
+#~ msgstr "Verwalten Sie die Kommentare"
+
+#~ msgid "made a linkback on"
+#~ msgstr "mache eine LinkBack auf"
+
+#~ msgid "Edit the linkback"
+#~ msgstr "Bearbeiten Sie den LinkBack"
+
+#~ msgid "No linkbacks yet."
+#~ msgstr "Keine Linkbacks."
+
+#~ msgid "Today"
+#~ msgstr "Heute"
+
+#~ msgid "Draft entries"
+#~ msgstr "Eintragsentwürfe"
+
+#~ msgid "Quick publishing"
+#~ msgstr "Schnelles Veröffentlichen"
+
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgid "Reset"
+#~ msgstr "Zurücksetzen"
+
+#~ msgid "Publish"
+#~ msgstr "Veröffentlichen"
+
+#~ msgid "Recent comments"
+#~ msgstr "Neueste Kommentare"
+
+#~ msgid "Recent linkbacks"
+#~ msgstr "Aktuelle Linkbacks"
+
+#~ msgid "Written by"
+#~ msgstr "Geschrieben von"
+
+#~ msgid "Show %(author)s entries"
+#~ msgstr "Zeige Einträge von %(author)s"
+
+#~ msgid "No tags"
+#~ msgstr "Keine Tags"
+
+#~ msgid "Short url"
+#~ msgstr "Kurze URL"
+
+#~ msgid "%(comment_count)s comment"
+#~ msgid_plural "%(comment_count)s comments"
+#~ msgstr[0] " %(comment_count)s Kommentar"
+#~ msgstr[1] " %(comment_count)s Kommentare"
+
+#~ msgid "Be first to comment!"
+#~ msgstr "Schreiben den ersten Kommentar!"
+
+#~ msgid "Comments are closed."
+#~ msgstr "Kommentare deaktiviert."
+
+#~ msgid "%(pingback_count)s pingback"
+#~ msgid_plural "%(pingback_count)s pingbacks"
+#~ msgstr[0] " %(pingback_count)s  Pingback"
+#~ msgstr[1] " %(pingback_count)s  Pingbacks"
+
+#~ msgid "%(trackback_count)s trackback"
+#~ msgid_plural "%(trackback_count)s trackbacks"
+#~ msgstr[0] " %(trackback_count)s  Trackback"
+#~ msgstr[1] " %(trackback_count)s  Trackbacks"
+
+#~ msgid "Author list"
+#~ msgstr "Autorenliste"
+
+#~ msgid "%(entry_count)s entry"
+#~ msgid_plural "%(entry_count)s entries"
+#~ msgstr[0] " %(entry_count)s  Eintrag"
+#~ msgstr[1] " %(entry_count)s  Einträge"
+
+#~ msgid ""
+#~ "You can use - to exclude words or phrases, &quot;double quotes&quot; for "
+#~ "exact phrases and the AND/OR boolean operators combined with parenthesis "
+#~ "for complex searchs."
+#~ msgstr ""
+#~ "Sie können, um Worte oder Sätze, \"Anführungszeichen\" für genaue Sätze "
+#~ "und/oder die UND / ODER boolschen Operatoren mit Klammern für komplexe "
+#~ "Suche kombiniert verwenden."
+
+#~ msgid "Calendar"
+#~ msgstr "Kalender"
+
+#~ msgid "Popular entries"
+#~ msgstr "Beliebte Einträge"
+
+#~ msgid "Archives"
+#~ msgstr "Archiv"
+
+#~ msgid "Tools"
+#~ msgstr "Werkzeuge"
+
+#~ msgid "Post an entry"
+#~ msgstr "Schreibe einen Eintrag"
+
+#~ msgid "Category list"
+#~ msgstr "Kategorieliste"
+
+#, fuzzy
+#~ msgid "Daily archives"
+#~ msgstr "Monatliche Archive"
+
+#~ msgid "Monthly archives"
+#~ msgstr "Monatliche Archive"
+
+#~ msgid "RSS Feed of discussions on"
+#~ msgstr "RSS-Feed der Diskussionen auf"
+
+#~ msgid "RSS Feed of comments on"
+#~ msgstr "RSS-Feed mit Kommentaren zu"
+
+#~ msgid "RSS Feed of pingbacks on"
+#~ msgstr "RSS-Feed auf den Pingbacks"
+
+#~ msgid "RSS Feed of trackbacks on"
+#~ msgstr "RSS-Feed auf Trackbacks ist an."
+
+#~ msgid "Next entry"
+#~ msgstr "Nächster Eintrag"
+
+#~ msgid "Related entries"
+#~ msgstr "Verwandte Einträge"
+
+#~ msgid "Similar entries"
+#~ msgstr "Ähnliche Einträge"
+
+#~ msgid "Comments"
+#~ msgstr "Kommentare"
+
+#~ msgid "Pingbacks"
+#~ msgstr "Pingbacks"
+
+#~ msgid "Pingbacks are open."
+#~ msgstr "Pingbacks sind aktiviert."
+
+#~ msgid "Pingbacks are closed."
+#~ msgstr "Pingbacks sind deaktiviert."
+
+#~ msgid "Trackbacks"
+#~ msgstr "Trackbacks"
+
+#~ msgid "Trackback URL"
+#~ msgstr "Trackback-URL"
+
+#~ msgid "RSS Feed"
+#~ msgstr "RSS-Feed"
+
+#~ msgid "Category"
+#~ msgstr "Kategorie"
+
+#~ msgid "Tag"
+#~ msgstr "Tag"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Page"
+#~ msgstr "Seite"
+
+#~ msgid "Entries by %(author)s"
+#~ msgstr "Einträge von %(author)s"
+
+#~ msgid "No entries yet."
+#~ msgstr "Keine Einträge vorhanden."
+
+#~ msgid "More recent entries"
+#~ msgstr "Mehr neuste Einträge"
+
+#~ msgid "Entries page"
+#~ msgstr "Einträge der Seite"
+
+#~ msgid "More old entries"
+#~ msgstr "Mehr alte Einträge"
+
+#~ msgid "Edit the category"
+#~ msgstr "Kategorie bearbeiten"
+
+#~ msgid "Edit the tag"
+#~ msgstr "Tag bearbeiten"
+
+#~ msgid "Edit the author"
+#~ msgstr "Autor bearbeiten"
+
+#~ msgid "Search results"
+#~ msgstr "Suchergebnisse"
+
+#~ msgid "RSS Feed of search result of"
+#~ msgstr "RSS-Feed mit Suchergebnissen zu"
+
+#~ msgid "%(entry_count)s entry found"
+#~ msgid_plural "%(entry_count)s entries found"
+#~ msgstr[0] "%(entry_count)s Eintrag gefunden"
+#~ msgstr[1] "%(entry_count)s Einträge gefunden"
+
+#~ msgid "Nothing found."
+#~ msgstr "Nichts gefunden."
+
+#~ msgid "Login required"
+#~ msgstr "Anmeldung erforderlich"
+
+#~ msgid "Your username and password didn't match. Please try again."
+#~ msgstr ""
+#~ "Ihr Benutzername und Passwort stimmen nicht überein. Bitte versuchen Sie "
+#~ "es erneut."
+
+#~ msgid "You need to be connected to view this entry."
+#~ msgstr "Sie müssen eingeloggt sein um diesen Eintrag zu sehen."
+
+#~ msgid "Login"
+#~ msgstr "Login"
+
+#~ msgid "Password required"
+#~ msgstr "Passwort erforderlich"
+
+#~ msgid "The password provided is not valid. Please try again."
+#~ msgstr "Das Kennwort ist ungültig. Bitte versuchen Sie es erneut."
+
+#~ msgid "Valid"
+#~ msgstr "Gültig"
+
+#~ msgid "Entries per categories"
+#~ msgstr "Einträge pro Kategorien"
+
+#~ msgid "comment"
+#~ msgstr "Kommentar"
+
+#~ msgid "All the entries"
+#~ msgstr "Alle Einträge"
+
+#~ msgid "No categories yet."
+#~ msgstr "Keine Kategorien vorhanden."
+
+#~ msgid "RSS Feed of latest entries"
+#~ msgstr "RSS-Feed der neuesten Einträge"
+
+#~ msgid "Tag list"
+#~ msgstr "Tag-Liste"
+
+#~ msgid "No archives yet."
+#~ msgstr "Kein Archiv vorhanden."
+
+#~ msgid "No authors yet."
+#~ msgstr "Keine Autoren vorhanden."
+
+#~ msgid "Linkback on"
+#~ msgstr "Linkback auf"
+
+#~ msgid "No similar entries."
+#~ msgstr "Keine ähnlichen Einträge."
+
+#~ msgid "Comment preview"
+#~ msgstr "Kommentarvorschau"
+
+#~ msgid "Please correct following error."
+#~ msgid_plural "Please correct following errors."
+#~ msgstr[0] "Bitte korrigieren Sie folgenden Fehler."
+#~ msgstr[1] "Bitte korrigieren Sie folgende Fehler."
+
+#~ msgid "Preview of the comment"
+#~ msgstr "Kommentarvorschau einblenden"
+
+#~ msgid "Post your comment"
+#~ msgstr "Kommentar schreiben"
+
+#~ msgid "Post"
+#~ msgstr "Abschicken"
+
+#~ msgid "Thanks for your comment"
+#~ msgstr "Danke für Ihren Kommentar"
+
+#~ msgid "Return to entry list"
+#~ msgstr "Zur Liste der Einträge zurückkehren"
+
+#~ msgid "The pattern is too short"
+#~ msgstr "Der Suchbegriff ist zu kurz"
+
+#~ msgid "No pattern to search found"
+#~ msgstr "Kein Suchbegriff gegeben"
+
+#~ msgid "Username is incorrect."
+#~ msgstr "Benutzername ist falsch."
+
+#~ msgid "Password is invalid."
+#~ msgstr "Kennwort ist ungültig."
+
+#~ msgid "User account unavailable."
+#~ msgstr "Benutzerkonto nicht verfügbar."
+
+#~ msgid "User cannot %s."
+#~ msgstr "Benutzer kann nicht %s."
+
+#~ msgid "No title"
+#~ msgstr "Kein Titel"
+
+#, fuzzy
+#~ msgid "content type"
+#~ msgstr "Inhalt"
+
+#, fuzzy
+#~ msgid "callable name"
+#~ msgstr "Template-Name"
+
+#, fuzzy
+#~ msgid "Posts"
+#~ msgstr "Abschicken"
+
+#, fuzzy
+#~ msgid "Feeds"
+#~ msgstr "RSS-Feed"
+
+#, fuzzy
+#~ msgid "Subtitle"
+#~ msgstr "Titel"
+
+#, fuzzy
+#~ msgid "Feed"
+#~ msgstr "RSS-Feed"
+
+#, fuzzy
+#~ msgid "Comments URL"
+#~ msgstr "Kommentare"
+
+#, fuzzy
+#~ msgid "Author email"
+#~ msgstr "Autorenliste"
+
+#, fuzzy
+#~ msgid "Relation"
+#~ msgstr "Veröffentlichung"
+
+#, fuzzy
+#~ msgid "Post Link"
+#~ msgstr "Abschicken"
+
+#, fuzzy
+#~ msgid "admin site"
+#~ msgstr "Im Browser öffnen"
+
+#, fuzzy
+#~ msgid "Search in"
+#~ msgstr "Suche"
+
+#~ msgid "blog"
+#~ msgstr "blog"
+
+#, fuzzy
+#~ msgid "Authors list"
+#~ msgstr "Autorenliste"
+
+#, fuzzy
+#~ msgid "Author:"
+#~ msgstr "Autor"
+
+#, fuzzy
+#~ msgid "Authors talking about"
+#~ msgstr "Autorenliste"
+
+#, fuzzy
+#~ msgid "Authrs"
+#~ msgstr "Autoren"
+
+#, fuzzy
+#~ msgid "Author of"
+#~ msgstr "Autor"
+
+#, fuzzy
+#~ msgid "Posts in"
+#~ msgstr "Abschicken"
+
+#, fuzzy
+#~ msgid "RSS 2.0 Feed"
+#~ msgstr "RSS-Feed"
+
+#, fuzzy
+#~ msgid "Blogs list"
+#~ msgstr "Tag-Liste"
+
+#, fuzzy
+#~ msgid "published in"
+#~ msgstr "Veröffentlicht"
+
+#, fuzzy
+#~ msgid "original entry"
+#~ msgstr "Optionales Element"
+
+#, fuzzy
+#~ msgid "in blog"
+#~ msgstr "blog"
+
+#, fuzzy
+#~ msgid "Latest posts"
+#~ msgstr "Neuste Einträge"
+
+#, fuzzy
+#~ msgid "tag"
+#~ msgstr "Tags"
+
+#, fuzzy
+#~ msgid "Tags list"
+#~ msgstr "Tag-Liste"
+
+#, fuzzy
+#~ msgid "Related tags"
+#~ msgstr "Verwandte Einträge"
+
+#, fuzzy
+#~ msgid "Quick links"
+#~ msgstr "Schnelles Veröffentlichen"
+
+#, fuzzy
+#~ msgid "Return to site"
+#~ msgstr "Zur Liste der Einträge zurückkehren"
+
+#, fuzzy
+#~ msgid "No recent actions."
+#~ msgstr "Mehr neuste Einträge"
+
+#, fuzzy
+#~ msgid "None Available"
+#~ msgstr "Nicht verfügbar"
+
+#, fuzzy
+#~ msgid "We're sorry, but the requested page could not be found."
+#~ msgstr ""
+#~ "Entschuldigung, aber die angeforderte Seite konnte nicht gefunden werden."
+
+#, fuzzy
+#~ msgid "Server error (500)"
+#~ msgstr "Server-Fehler"
+
+#, fuzzy
+#~ msgid "My Actions"
+#~ msgstr "Neueste Kommentare"
+
+#, fuzzy
+#~ msgid "None available"
+#~ msgstr "Nicht verfügbar"
+
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "Passwort"
+
+#, fuzzy
+#~ msgid "Created object"
+#~ msgstr "Verwandte Einträge"
+
+#, fuzzy
+#~ msgid "1 result"
+#~ msgid_plural "%(counter)s results"
+#~ msgstr[0] "Suchergebnisse"
+#~ msgstr[1] "Suchergebnisse"
+
+#, fuzzy
+#~ msgid "Save and add another"
+#~ msgstr "Als Entwurf speichern"
+
+#, fuzzy
+#~ msgid "Password (again)"
+#~ msgstr "Passwort"
+
+#, fuzzy
+#~ msgid "View on Site"
+#~ msgstr "Im Browser öffnen"
+
+#, fuzzy
+#~ msgid "Documentation bookmarklets"
+#~ msgstr "Ihre Meinung zu"
+
+#, fuzzy
+#~ msgid "Documentation for this page"
+#~ msgstr "Ihre Meinung zu"
+
+#, fuzzy
+#~ msgid "Not Found"
+#~ msgstr "Nichts gefunden."
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Fehler 404"
 
 #~ msgid "on date"
 #~ msgstr "am"
 
 #~ msgid "Your contents"
 #~ msgstr "Ihre Inhalte"
-
-#~ msgid "Email"
-#~ msgstr "E-Mail"
 
 #~ msgid "IP"
 #~ msgstr "IP"

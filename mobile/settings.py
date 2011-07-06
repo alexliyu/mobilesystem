@@ -42,7 +42,7 @@ LANGUAGES = [
 ]
 DEFAULT_LANGUAGE = 0
 # Site name is used extensively in templates to name the site
-SITE_NAME = 'eiimedia'
+SITE_NAME = u'娱讯手机门户'
 
 # Molly can automatically generate the urlpatterns, so it's recommended by
 # default to use Molly's urls.py. This doesn't work if you have non-Molly apps
@@ -64,10 +64,10 @@ ROOT_URLCONF = 'mobile.urls'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '192.168.1.119',
+        'HOST': '192.168.1.34',
         'NAME': 'mobile',
         'USER': 'mobile',
-        'PASSWORD': '123456',
+        'PASSWORD': 'mobile',
 #        'PASSWORD':'6b6RyKNvOnEvbrynYK',
     }
 }
@@ -249,7 +249,7 @@ MIDDLEWARE_CLASSES = (
 # This setting defines which context processors are used - this can affect what
 # is available in the context of a view
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
@@ -274,8 +274,8 @@ TEMPLATE_DIRS = (
 # This setting changes how Django searches for templates when rendering. The
 # default is fine
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.load_template_source',
     'mobile.molly.utils.template_loaders.MollyDefaultLoader'
 )
@@ -310,6 +310,7 @@ AUTHENTICATION_BACKENDS = (
 
 # Non-Molly apps get added here (plus, tell Django about Molly apps)
 INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
+    'grappelli.dashboard',
     'grappelli',
     'filebrowser',
     'django.contrib.auth',
@@ -328,8 +329,64 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'south',
     'userena',
     'userena.contrib.umessages',
+     'sentry',
+    'sentry.client',
+    'sorl.thumbnail',
 )
 
+GRAPPELLI_INDEX_DASHBOARD = 'mobile.dashboard.CustomIndexDashboard'
+import logging
+from sentry.client.handlers import SentryHandler
+
+logger = logging.getLogger()
+# ensure we havent already registered the handler
+if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
+    logger.addHandler(SentryHandler())
+
+    # Add StreamHandler to sentry's default so you can catch missed exceptions
+    logger = logging.getLogger('sentry.errors')
+    logger.propagate = False
+    logger.addHandler(logging.StreamHandler())
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'null': {
+            'level':'DEBUG',
+            'class':'django.utils.log.NullHandler',
+        },
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+#            'filters': ['special']
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'INFO',
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    }
+}    
 # Userena settings
 LOGIN_REDIRECT_URL = '/accounts/%(username)s/'
 LOGIN_URL = '/accounts/signin/'

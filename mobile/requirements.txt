@@ -23,3 +23,7 @@ django-ipyfield
 django-grappelli
 django-filebrowser
 django-tinymce
+django-sentry
+sorl-thumbnail
+django-mediagenerator
+easy_thumbnails

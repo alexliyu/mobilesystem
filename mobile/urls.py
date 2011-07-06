@@ -13,8 +13,9 @@ urlpatterns = patterns('',
     (r'^accounts/', include('userena.urls')),
     (r'^messages/', include('userena.contrib.umessages.urls')),
     (r'^tinymce/', include('tinymce.urls')),
-    (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^grappelli/', include('grappelli.urls')),
+    (r'^admin/filebrowser/', include('filebrowser.urls')),
+    (r'^sentry/', include('sentry.web.urls')),
      
     (r'', applications.home.urls)) # Home default
 

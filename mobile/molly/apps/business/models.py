@@ -47,10 +47,14 @@ class PromotionsInfo(models.Model):
         
     def get_endTime(self):
         return "%d-%d-%d %d:%d:%d" % self.endTime[:6]
+
+    def get_content(self):
+        
+        return self.content.__str__().replace("^<[^\s]>","")
     
     def get_picSrc(self):
         try:
-            a = self.businessLogo.__str__().split('/media/')
+            a = self.picSrc.__str__().split('/media/')
             
             return '/media/' + a[1]
         except:

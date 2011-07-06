@@ -1,5 +1,9 @@
-#!/usr/bin/env python
-# vim: set fileencoding=utf8 :
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 """Django Googlemap Field
 
 
@@ -19,9 +23,9 @@ License:
     See the License for the specific language governing permissions and
     limitations under the License.
 """
-__author__  = 'Alisue <lambdalisue@hashnote.net>'
+__author__ = 'Alisue <lambdalisue@hashnote.net>'
 __version__ = '1.0.0'
-__date__    = '2011/06/09'
+__date__ = '2011/06/09'
 from django.forms import MultiValueField, fields
 
 from widgets import GoogleMapWidget, HiddenGoogleMapWidget
@@ -29,13 +33,13 @@ from types import Location
 
 class GoogleMapField(MultiValueField):
     """GoogleMap form field"""
-    widget          = GoogleMapWidget
-    hidden_widget   = HiddenGoogleMapWidget
+    widget = GoogleMapWidget
+    hidden_widget = HiddenGoogleMapWidget
     
     def __init__(self, *args, **kwargs):
         field_list = (
-            fields.DecimalField(max_value=90, min_value=-90, decimal_places=18, max_digits=25),
-            fields.DecimalField(max_value=180, min_value=-180, decimal_places=18, max_digits=25),
+            fields.DecimalField(max_value=90, min_value= -90, decimal_places=18, max_digits=25),
+            fields.DecimalField(max_value=180, min_value= -180, decimal_places=18, max_digits=25),
             fields.IntegerField(),
         )
         if 'query_field_id' in kwargs:

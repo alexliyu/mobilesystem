@@ -1,3 +1,4 @@
+#-*- coding:utf-8 -*-
 import urllib
 from datetime import timedelta
 
@@ -13,7 +14,7 @@ class IndexView(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, 'Links',
+            self.conf.local_name, None, u'网址导航',
             lazy_reverse('index'))
     
     def handle_GET(self, request, context):

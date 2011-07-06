@@ -65,12 +65,12 @@ def signup(request, signup_form=SignupForm,
     if userena_settings.USERENA_WITH_MOBILE and (signup_form == SignupForm):
         signup_form = SignupFormOnlyMobile
 
-    form = signup_form(request)
+    form = signup_form()
 
     if request.method == 'POST':
-        form = signup_form(request, request.POST, request.FILES)
+        form = signup_form(request.POST, request.FILES)
         if form.is_valid():
-            user = form.save()
+            user = form.save(request)
 
             if success_url: redirect_to = success_url
             else: redirect_to = reverse('userena_signup_complete',

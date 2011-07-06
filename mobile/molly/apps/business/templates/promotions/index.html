@@ -1,14 +1,17 @@
 {% extends "promotions/base.html" %}
 
 {% block content %}
-<div class="bubble pad-10">
-<ul style="list-style:none;padding:0px">
+<div class="section">
+    <div class="header">
+      <h2>优惠活动</h2>
+    </div>
+<ul class="business_list">
 {% for promotions in promotionsList %}
-    <li style="float:left;margin-left:20px;">
+    <li>
     	<a href="/business/{{promotions.id}}">{{ promotions.title  }}</a>
-    	</li><br/>
+    	</li>
 {% endfor %}
-<li style="clear:left"></li>
+
 </ul>
 </div>
 

@@ -20,7 +20,7 @@ class UserProfile(UserenaBaseProfile):
                                     )
     #user = models.ForeignKey(User, unique=True, verbose_name=u'用户')
     birthday = models.DateField(u'用户生日')
-    mac = models.CharField(u'用户mac地址', max_length=16, blank=True)
+    mac = models.CharField(u'用户mac地址', max_length=30, blank=True)
     mobile = models.CharField('移动电话', max_length=20, blank=True, null=True)
     address = models.CharField('家庭地址', max_length=100, blank=True, null=True)
     website = models.URLField('个人主页', blank=True, null=True)
