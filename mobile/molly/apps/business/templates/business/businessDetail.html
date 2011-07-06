@@ -1,0 +1,13 @@
+{% extends "business/base.html" %}
+
+{% block content %}
+<div class="bubble pad-10">
+    <p>商家名称:{{ business.businessName  }}</p>
+    <p>商家简介:</p>
+    <p>{{ business.introdution|safe  }}</p>
+    <p>商家网址:<a href="{{ business.businessUrl  }}">{{ business.businessUrl  }}</a></p>
+    <p>联系电话:{{ business.telephone }}</p>
+    <p>商家LOGO:</p>
+    <p><img src="{{ business.get_logoUrl }}" width="160" height="120"/></p>
+</div>
+{% endblock %}
