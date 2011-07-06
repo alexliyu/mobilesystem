@@ -53,19 +53,20 @@ ROOT_URLCONF = 'mobile.urls'
 # 在公司的数据库配置
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '192.168.1.119',
-#        'NAME': 'molly',
-#        'USER': 'molly',
-#    	'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#        'ENGINE': 'django.db.backends.mysql',
+#        'HOST': '192.168.1.34',
+#        'NAME': 'mobile',
+#        'USER': 'mobile',
+#        'PASSWORD': 'mobile',
+##        'PASSWORD':'6b6RyKNvOnEvbrynYK',
 #    }
 #}
 # 在家里的数据库配置
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'HOST': '192.168.1.34',
-        'NAME': 'mobile',
+        'NAME': os.path.join(project_root, 'mobile.db'),
         'USER': 'mobile',
         'PASSWORD': 'mobile',
 #        'PASSWORD':'6b6RyKNvOnEvbrynYK',
@@ -236,6 +237,8 @@ MIDDLEWARE_CLASSES = (
     'mobile.molly.apps.stats.middleware.StatisticsMiddleware',
     'mobile.molly.url_shortener.middleware.URLShortenerMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfResponseMiddleware',
+    'mobile.tracking.middleware.VisitorTrackingMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
@@ -332,6 +335,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
      'sentry',
     'sentry.client',
     'sorl.thumbnail',
+    'mobile.tracking',
 )
 
 GRAPPELLI_INDEX_DASHBOARD = 'mobile.dashboard.CustomIndexDashboard'
@@ -439,7 +443,7 @@ MEDIA_URL = '/media/' # The URL used to refer to media
 ADMIN_MEDIA_PREFIX = MEDIA_URL + "grappelli/"
 GRAPPELLI_ADMIN_TITLE = u"娱讯手机门户管理平台"
 
-
+TRACKING_USE_GEOIP = False
 
 # Settings relating to django-compress
 COMPRESS_SOURCE = MEDIA_URL

@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^sentry/', include('sentry.web.urls')),
+     (r'^tracking/', include('mobile.tracking.urls')),
      
     (r'', applications.home.urls)) # Home default
 

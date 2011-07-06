@@ -1,7 +1,6 @@
 sudo apt-get install python-sqlite
 sudo apt-get install python-gevent
 sudo apt-get install python-lxml
-sudo apt-get install python-ldap
 sudo apt-get install python-Levenshtein
 sudo apt-get install libgeos-dev
 sudo apt-get install python-gdal
