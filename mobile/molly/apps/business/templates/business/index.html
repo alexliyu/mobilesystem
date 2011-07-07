@@ -6,12 +6,33 @@
 	  <h2>优惠活动</h2>
 	</div>
 <ul class="business_list">
-	{% for business in businessList %}
+	{% for b in list.object_list %}
     	<li>
-		   <a href="{{ business.businessUrl  }}">{{ business.businessName  }}</a>的<a href="{{ business.get_bidUrl}}">优惠活动</a>
+		   <a href="/business/{{ b.id  }}">{{ b.businessName  }}</a>的<a href="{{ b.get_bidUrl}}">优惠活动</a>
     	</li>
 	{% endfor %}
 </ul>
+</div>
+
+<div align="center"><h2>
+{{ userList.paginator.num_pages }}
+<a href="?page=1" title="首页">首页</a>
+{% if list.has_previous %}
+<a href="?page={{ list.previous_page_number }}" title="下一页">上一页</a>&nbsp;
+{% endif %}
+{% for p in page_range %}
+{% ifequal p list.number %}
+<span>{{p}}</span>
+{% else %}
+<a href="?page={{p}}" title="第{{p}}页">{{p}}</a>
+{% endifequal %}
+{% endfor %}
+&nbsp;
+{% if list.has_next %}
+<a href="?page={{ list.next_page_number }}" title="下一页">下一页</a>&nbsp;
+{% endif %}
+<a href="?page={{ list.paginator.num_pages }}" title="末页">末页</a>
+</h2>
 </div>
 
 {% endblock %}

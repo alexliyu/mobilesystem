@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from dateutil.tz import tzutc, tzlocal
 from lxml import etree
 import simplejson
@@ -41,14 +42,14 @@ class Tag(models.Model):
     value = models.CharField(max_length=128)
 
 class Feed(models.Model):
-    title = models.TextField()
-    unit = models.CharField(max_length=10, null=True, blank=True)
-    rss_url = models.URLField()
+    title = models.TextField(u'订阅标题', default='', max_length=50)
+    unit = models.CharField(u'单位', max_length=10, null=True, blank=True)
+    rss_url = models.URLField(u"路径", blank=True)
     slug = models.SlugField()
-    last_modified = models.DateTimeField(null=True, blank=True) # this one is in UTC
+    last_modified = models.DateTimeField(u"最后修改日期", null=True, blank=True) # this one is in UTC
     
-    ptype = models.CharField(max_length=1, choices=FEED_TYPE_CHOICES)
-    provider = models.CharField(max_length=128, choices=PROVIDER_CHOICES)
+    ptype = models.CharField(u'类型', max_length=1, choices=FEED_TYPE_CHOICES)
+    provider = models.CharField(u'供应商', max_length=128, choices=PROVIDER_CHOICES)
     
     def _set_importer_params(self, value):
         self._importer_params = simplejson.dumps(value)
@@ -73,33 +74,43 @@ class Feed(models.Model):
         
     class Meta:
         ordering = ('title',)
+        verbose_name = u"订阅"
+        verbose_name_plural = u"订阅"
 
 class vCard(models.Model):
     uri = models.TextField()
 
-    name = models.TextField(blank=True)
-    address = models.TextField(blank=True)
-    telephone = models.TextField(blank=True)
-    location = GoogleMapsField()
-    entity = models.ForeignKey(Entity, null=True, blank=True)
+    name = models.TextField(u'名称', blank=True, max_length=50)
+    address = models.TextField(u'地址', blank=True)
+    telephone = models.TextField(u'联系电话', blank=True)
+    location = GoogleMapsField(u'位置')
+    entity = models.ForeignKey(Entity, null=True, blank=True, verbose_name=u'所属文章')
+    
+    class Meta:
+        verbose_name = u"电子名片"
+        verbose_name_plural = u"电子名片"
     
 class Series(models.Model):
     feed = models.ForeignKey(Feed)
-    guid = models.TextField()
-    title = models.TextField()
-    unit = models.ForeignKey(vCard, null=True, blank=True)
+    guid = models.TextField(u'编号', default='')
+    title = models.TextField(u'标题', default='', max_length=50)
+    unit = models.ForeignKey(vCard, null=True, blank=True, verbose_name=u'所属单位')
 
     tags = models.ManyToManyField(Tag, blank=True)
+    
+    class Meta:
+        verbose_name = u"系列"
+        verbose_name_plural = u"系列"
 
 class Item(models.Model):
     feed = models.ForeignKey(Feed)
-    title = models.TextField()
-    guid = models.TextField()
-    description = models.TextField()
-    link = models.URLField()
-    last_modified = models.DateTimeField() # this one is also in UTC
+    title = models.TextField(u'产品标题', default='', max_length=50)
+    guid = models.TextField(u'编号', default='')
+    description = models.TextField(u'产品描述', default='', max_length=500)
+    link = models.URLField(u'产品网址', blank=True)
+    last_modified = models.DateTimeField(u"最后修改日期", null=True, blank=True) # this one is also in UTC
     
-    ptype = models.CharField(max_length=16, choices=FEED_TYPE_CHOICES)
+    ptype = models.CharField(u'产品类型', max_length=16, choices=FEED_TYPE_CHOICES)
     
     organiser = models.ForeignKey(vCard, related_name='organising_set', null=True, blank=True)
     speaker = models.ForeignKey(vCard, related_name='speaking_set', null=True, blank=True)
@@ -107,8 +118,8 @@ class Item(models.Model):
     contact = models.ForeignKey(vCard, related_name='contact_set', null=True, blank=True)
     
     series = models.ForeignKey(Series, null=True, blank=True)
-    ordinal = models.IntegerField(null=True)
-    track = models.TextField(blank=True)
+    ordinal = models.IntegerField(u'序数', null=True)
+    track = models.TextField(u'路径', blank=True)
     
     tags = models.ManyToManyField(Tag, blank=True)
 
@@ -155,5 +166,8 @@ class Item(models.Model):
     
     class Meta:
         ordering = ('-last_modified',)
+
+        verbose_name = u"产品列表"
+        verbose_name_plural = u"产品列表"
 
     

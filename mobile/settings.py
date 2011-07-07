@@ -51,27 +51,28 @@ ROOT_URLCONF = 'mobile.urls'
 
 # 
 # 在公司的数据库配置
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'HOST': '192.168.1.34',
-#        'NAME': 'mobile',
-#        'USER': 'mobile',
-#        'PASSWORD': 'mobile',
-##        'PASSWORD':'6b6RyKNvOnEvbrynYK',
-#    }
-#}
-# 在家里的数据库配置
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'HOST': '192.168.1.34',
-        'NAME': os.path.join(project_root, 'mobile.db'),
+        'NAME': 'mobile',
         'USER': 'mobile',
         'PASSWORD': 'mobile',
-#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+##        'PASSWORD':'6b6RyKNvOnEvbrynYK',
     }
 }
+
+# 在家里的数据库配置
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'HOST': '192.168.1.34',
+#        'NAME': os.path.join(project_root, 'mobile.db'),
+#        'USER': 'mobile',
+#        'PASSWORD': 'mobile',
+#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#    }
+#}
 
 
 # API keys are used to access particular services

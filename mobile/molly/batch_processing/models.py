@@ -6,7 +6,7 @@ from django.db import models
 
 from mobile.molly.conf import all_apps, app_by_local_name
 
-logger = logging.getLogger("molly.batch_processing")
+logger = logging.getLogger("mobile.molly.batch_processing")
 
 class TeeStringIO(StringIO):
     def __init__(self, *args, **kwargs):

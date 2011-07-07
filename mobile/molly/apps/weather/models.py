@@ -78,32 +78,30 @@ SCALE_CHOICES = (
 )
 
 class Weather(models.Model):
-    location_id = models.CharField(max_length=16)
+    
+    location_id = models.CharField(u'记号', max_length=16)
+    name = models.TextField(u'名称',null=True)
+    outlook = models.CharField(u'天气情况',null=True, max_length=3, choices=OUTLOOK_CHOICES)
+    published_date = models.DateTimeField(u'发布时间',null=True)
+    observed_date = models.DateTimeField(u'天气日期',null=True)
+    modified_date = models.DateTimeField(u'修改时间',auto_now=True)
 
-    name = models.TextField(null=True)
+    temperature = models.IntegerField(u'气温',null=True)
+    wind_direction = models.CharField(u'风向',null=True, max_length=3)
+    wind_speed = models.IntegerField(u'风速',null=True)
+    humidity = models.IntegerField(u'温度',null=True)
+    pressure = models.PositiveIntegerField(u'气压',null=True)
+    pressure_state = models.CharField(u'气压变化',null=True, max_length=1, choices=PRESSURE_STATE_CHOICES)
+    visibility = models.CharField(u'能见度',null=True, max_length=2, choices=VISIBILITY_CHOICES)
 
-    outlook = models.CharField(null=True, max_length=3, choices=OUTLOOK_CHOICES)
+    location = GoogleMapsField(u'地理位置',)
 
-    published_date = models.DateTimeField(null=True)
-    observed_date = models.DateTimeField(null=True)
-    modified_date = models.DateTimeField(auto_now=True)
-
-    temperature = models.IntegerField(null=True)
-    wind_direction = models.CharField(null=True, max_length=3)
-    wind_speed = models.IntegerField(null=True)
-    humidity = models.IntegerField(null=True)
-    pressure = models.PositiveIntegerField(null=True)
-    pressure_state = models.CharField(null=True, max_length=1, choices=PRESSURE_STATE_CHOICES)
-    visibility = models.CharField(null=True, max_length=2, choices=VISIBILITY_CHOICES)
-
-    location = GoogleMapsField()
-
-    min_temperature = models.IntegerField(null=True)
-    max_temperature = models.IntegerField(null=True)
-    uv_risk = models.CharField(max_length=1, choices=SCALE_CHOICES, null=True)
-    pollution = models.CharField(max_length=1, choices=SCALE_CHOICES, null=True)
-    sunset = models.TimeField(null=True)
-    sunrise = models.TimeField(null=True)
+    min_temperature = models.IntegerField(u'最低温度',null=True)
+    max_temperature = models.IntegerField(u'最高温度',null=True)
+    uv_risk = models.CharField(u'紫外线强度',max_length=1, choices=SCALE_CHOICES, null=True)
+    pollution = models.CharField(u'污染指数',max_length=1, choices=SCALE_CHOICES, null=True)
+    sunset = models.TimeField(u'日落时间',null=True)
+    sunrise = models.TimeField(u'日出时间',null=True)
 
     def icon(self):
         now = datetime.now().time()
@@ -112,4 +110,10 @@ class Weather(models.Model):
         else:
             night = ''
         return OUTLOOK_TO_ICON.get(self.outlook, 'dunno') % {'night':night}
+    
+    objects = models.Manager()
+    
+    class Meta:
+        verbose_name = u"天气列表"
+        verbose_name_plural = u"天气列表"
 

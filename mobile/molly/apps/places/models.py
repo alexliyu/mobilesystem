@@ -1,29 +1,34 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import simplejson
-
 from math import atan2, degrees
-
-from django.conf import settings
 from django.db import models
-from django.core.urlresolvers import reverse, NoReverseMatch
 from mobile.molly.gmapsfield.fields import GoogleMapsField
 
 
 
 
 class EntityTypeCategory(models.Model):
+    
     name = models.TextField(blank=False)
     def __unicode__(self):
         return self.name
+    
+    objects = models.Manager()
+    
+    class Meta:
+        verbose_name = u"文章类别列表"
+        verbose_name_plural = u"文章类别列表"
 
-class EntityType(models.Model):
+class EntityType(models.Model):  
     slug = models.SlugField()
-    article = models.CharField(max_length=2)
-    verbose_name = models.TextField()
-    verbose_name_plural = models.TextField()
-    show_in_nearby_list = models.BooleanField()
-    show_in_category_list = models.BooleanField()
-    note = models.TextField(null=True)
-    category = models.ForeignKey(EntityTypeCategory)
+    article = models.CharField(u"文章类型名称",max_length=2)
+    verbose_name = models.TextField(u"文章类型名称")
+    verbose_name_plural = models.TextField(u"文章类型名称")
+    show_in_nearby_list = models.BooleanField(u"文章类型名称")
+    show_in_category_list = models.BooleanField(u"文章类型名称")
+    note = models.TextField(u"文章类型名称",null=True)
+    category = models.ForeignKey(EntityTypeCategory, verbose_name=u'文章类别')
 
     subtype_of = models.ManyToManyField('self', blank=True, symmetrical=False,
                                         related_name="subtypes")
@@ -49,41 +54,44 @@ class EntityType(models.Model):
         else:
             super(EntityType, self).save(*args, **kwargs)
             
-
+    objects = models.Manager()
+    
     class Meta:
+        verbose_name = u"文章类型列表"
+        verbose_name_plural = u"文章类型列表"
         ordering = ('verbose_name',)
-
-
 
 class EntityGroup(models.Model):
     """
     Used to express relationships between entities
     """
     
-    title = models.TextField(blank=True)
-    ref_code = models.CharField(max_length=256)
+    title = models.TextField(u"文章级别标题",blank=True)
+    ref_code = models.CharField(u"文章级别内容",max_length=256)
 
     def __unicode__(self):
         return self.title
+    
+    objects = models.Manager()
+    
+    class Meta:
+        verbose_name = u"文章级别列表"
+        verbose_name_plural = u"文章级别列表"
 
 class Entity(models.Model):
-    title = models.TextField(blank=True)
     
-    primary_type = models.ForeignKey(EntityType, null=True)
-    all_types = models.ManyToManyField(EntityType, blank=True,
-                                       related_name='entities')
+    title = models.TextField(u"文章标题",blank=True)
+    primary_type = models.ForeignKey(EntityType, null=True,verbose_name=u'文章类型')
+    all_types = models.ManyToManyField(EntityType, blank=True, related_name='entities')
     all_types_completion = models.ManyToManyField(EntityType, blank=True,
                                             related_name='entities_completion')
 
-    location = GoogleMapsField()
-    _metadata = models.TextField(default='{}')
+    location = GoogleMapsField(u"GOOGLE地图位置",)
+    _metadata = models.TextField(u"文章数据",default='{}')
 
-    absolute_url = models.TextField()
-    is_sublocation = models.BooleanField(default=False)
-    is_stack = models.BooleanField(default=False)
-    
-    
-    
+    absolute_url = models.TextField(u"绝对路径",)
+    is_sublocation = models.BooleanField(u"窒息状态",default=False)
+    is_stack = models.BooleanField(u"是否是栈",default=False)
     groups = models.ManyToManyField(EntityGroup)
     
     
@@ -147,6 +155,8 @@ class Entity(models.Model):
 
     class Meta:
         ordering = ('title',)
+        verbose_name = u"文章列表"
+        verbose_name_plural = u"文章列表"
 
 #    def _get_absolute_url(self, identifiers):
 #        for scheme in IDENTIFIER_SCHEME_PREFERENCE:

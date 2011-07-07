@@ -118,7 +118,7 @@
 
 {% endif %}  
 -->
-<div class="bubble pad-5" style="text-align:center;"><a href="{% url home:static_about %}">娱讯传媒</a> 联系电话:0592-5166918</div>
+
 {% if "feature_vote"|app_is_loaded or "feature-suggestions"|app_is_loaded %}
   <div style="width:100%; float:left; margin-top: 0.1em; margin-bottom:0.4em;">
     <a style="margin:0 0.2em 0 0.2em; background-color:white; padding:0.6em; -webkit-border-radius:0.4em; -moz-border-radius:0.4em; text-align:center; display:block"
@@ -148,6 +148,14 @@
  })();
 </script>
 {% endif %}
+<p />
+
+<div data-role="footer">
+	<!-- 页面底部 -->
+	<h1>
+		<a href="{% url home:static_about %}">娱讯传媒手机互动门户</a> 联系电话:0592-5166918
+	</h1>
+</div>
 </div>
 </body>
 </html>

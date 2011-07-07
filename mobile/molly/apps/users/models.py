@@ -4,10 +4,7 @@ Created on 2011-1-30
 
 @author: 李昱
 '''
-import re
 from django.db import models
-from django.contrib.auth.models import User
-from django.conf import settings
 from mobile.userena.models import UserenaBaseProfile
 
 
@@ -32,3 +29,13 @@ class UserProfile(UserenaBaseProfile):
     IM = models.CharField(max_length=50, blank=True, null=True)
     position = models.CharField('目前所在地', max_length=200, blank=True, null=True)
     
+    objects = models.Manager()
+    
+    class Meta:
+        verbose_name = u"用户信息列表"
+        verbose_name_plural = u"用户信息列表"
+    
+    def __unicode__(self):
+        return self.mobile
+    def replacestr(self):
+        return "%s****%s"% (self.mobile.__str__()[0:3],self.mobile.__str__()[7:11])

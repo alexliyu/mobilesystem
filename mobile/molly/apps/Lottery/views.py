@@ -9,6 +9,7 @@ from models import Lottery
 from django.contrib.auth.models import User
 from mobile.molly.utils.views import BaseView
 from mobile.molly.utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
+from mobile.molly.apps.users.models import UserProfile
 
 
 class IndexView(BaseView):
@@ -38,7 +39,8 @@ class DetailsView(BaseView):
     def handle_GET(self, request, context, slug):
         #blacklist=User.objects.select_related().filter(Lottery=int(slug))
         a = Lottery.objects.get(id=int(slug))
-        blacklist = a.User.all()
+        blacklist = a.UserProfile.all()
+
         context['blacklist'] = blacklist
         context.update({
            'sent': request.GET.get('sent') == 'true',

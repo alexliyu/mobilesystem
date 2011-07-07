@@ -11,6 +11,6 @@ urlpatterns = patterns('',
        (r'^(?P<slug>[\d+]+)/$', PromotionsDetail,{},'promotionsDetail'),
        (r'^pro/(?P<slug>[\d+]+)/$', PromotionsView, {},'promotionsView'),
        (r'^proall/', PromotionsList, {},'promotionsView'),
-       (r'^business/Detail(?P<slug>[\d+]+)/$', BusinessDetail,{},'businessDetail'),
+       (r'^/business/(?P<slug>[\d+]+)/$', BusinessDetail,{},'businessDetail'),
        (r'^$', BusinessList, {},'index'),
        )
