@@ -1,0 +1,108 @@
+{% extends "home/base.html" %} 
+{% load molly_weather %} 
+{% load molly_utils %} 
+{% block site_title %}{% endblock %} {% block title %}{{site_name }}{% endblock %} 
+{% block header %}
+<div data-role="header" data-position="inline">
+	<!--页面头部 -->
+	<h1><a href="{% url home:index %}"><img src="/media/site/images/logos/LOGO.png" alt="{{ site_name }}" /></a></h1>
+	
+</div>
+{% endblock %} 
+
+{% block content %} 
+{% if messages %}
+<!--页面信息区 -->
+<div class="section">
+	<ul class="content-list">
+		{% for message in messages %}
+		<li>{{ message|sanitize_html }}</li> {% endfor %}
+	</ul>
+</div>
+{% endif %}
+
+<!--首页上方导航栏 -->
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<div class="center">
+		<ol class="icon-menu">
+			{% for application in applications %}
+						{% if application.display_to_user %}
+								<li id="menu-{{ application.local_name }}">
+									<a {% if application.accesskey %} accesskey="{{ application.accesskey }}" {% endif %} href="{{ application.url }}">{{ application.title }}</a>
+								</li> 
+						{% endif %}
+			{% endfor %}
+			<li id="menu-proall"><a href="/business/proall/">优惠活动</a></li>
+		</ol>
+		{# Only necessary if using floating icons #} {# <div class="clearhidden"></div> #}
+	</div>
+</div>
+
+<p />
+<!--首页快速注册模块 -->
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+
+	{% block reg %} {%if user.is_authenticated%}
+
+	<form action="/accounts/signup/" method="post">
+		{% csrf_token %}
+		<h3>
+			还没有注册手机号？亲，注册只要5钞钟！
+			</p>
+			<p>第一次有效注册前100名有奖品拿哦!
+			</h1>
+			<label for="id_mobile">请输手机:</label> <input id="id_mobile"
+				type="text" class="required" name="mobile" maxlength="11" /> <input
+				type="submit" value="注册" />
+	</form>
+
+</div>
+{%else%}
+<h3>尊敬的用户：{{user.username}}，感谢您再次访问娱讯移动互动平台！</h3>
+{%endif%} {% endblock %}
+
+<p />
+
+<!--首页天气预报与时间显示 -->
+<div class="ui-grid-a ui-body-d ui-corner-all ui-shadow">
+	<div class="ui-block-a">
+		<h3>{% block date %} 当前时间：{% now "Y M d，l H:i" %} {% endblock %}
+		</h3>
+	</div>
+
+	<div class="ui-block-b">
+
+
+		{% weather %}{% block weather-location %}{{ weather.name }}{% endblock%}: {{ weather.temperature }}&deg;C<img src="/media/weather/images/{{ weather.icon }}_small.png" alt="{{ weather.get_outlook_display|capfirst }}" height="30" width="30" style="vertical-align: middle;" />
+	</div>
+	{% block below-weather %}{% endblock %}
+
+</div>
+
+{% if favourites %}
+<div class="section">
+	<div class="header">
+		<h2>Favourites</h2>
+	</div>
+	<ul class="link-list">
+		{% for favourite in favourites %}
+		<li class="favourite-link"><a href="{{ favourite.url }}">{{favourite.metadata.title|safe }} {% if favourite.metadata.additional%}<br />
+			<span class="additional">{{ favourite.metadata.additional|safe}}</span>{% endif %}</a>
+		</li> 
+		{% endfor %}
+		<li><a href="{% url favourites:index %}"><strong>ManageFavourites</strong></a></li>
+	</ul>
+</div>
+{% endif %}
+<!--  
+    <ul class="stand-alone link-list round-top">
+	<li><a href="{% url home:static_about %}">关于我们</a></li>
+	{% if has_user_messages %}
+            <li><a href="{% url home:messages %}">Read messages from the developers</a></li>
+	{% endif %}
+    </ul>
+-->
+{% block below-about %} {% endblock %}
+
+
+{% endblock %}
