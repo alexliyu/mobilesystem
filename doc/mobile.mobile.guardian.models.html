@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.guardian.models</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.guardian.models</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#BaseObjectPermission">BaseObjectPermission</a></td>
+<td>Abstract ObjectPermission class.</td>
+</tr><tr>
+<td><a href="#GroupObjectPermission">GroupObjectPermission</a></td>
+<td>**Manager**: :manager:`GroupObjectPermissionManager`</td>
+</tr><tr>
+<td><a href="#Meta">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_1">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_2">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#UserObjectPermission">UserObjectPermission</a></td>
+<td>**Manager**: :manager:`UserObjectPermissionManager`</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="BaseObjectPermission" ID="BaseObjectPermission"></a>
+<h2>BaseObjectPermission</h2>
+<p>
+    Abstract ObjectPermission class.
+</p>
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>content_object</td></tr><tr><td>content_type</td></tr><tr><td>object_pk</td></tr><tr><td>permission</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#BaseObjectPermission.__unicode__">__unicode__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BaseObjectPermission.save">save</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="BaseObjectPermission.__unicode__" ID="BaseObjectPermission.__unicode__"></a>
+<h4>BaseObjectPermission.__unicode__</h4>
+<b>__unicode__</b>(<i></i>)
+<a NAME="BaseObjectPermission.save" ID="BaseObjectPermission.save"></a>
+<h4>BaseObjectPermission.save</h4>
+<b>save</b>(<i>*args, **kwargs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="GroupObjectPermission" ID="GroupObjectPermission"></a>
+<h2>GroupObjectPermission</h2>
+<p>
+    **Manager**: :manager:`GroupObjectPermissionManager`
+</p>
+<h3>Derived from</h3>
+BaseObjectPermission
+<h3>Class Attributes</h3>
+<table>
+<tr><td>group</td></tr><tr><td>objects</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta" ID="Meta"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>abstract</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_1" ID="Meta_1"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>unique_together</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_2" ID="Meta_2"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>unique_together</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="UserObjectPermission" ID="UserObjectPermission"></a>
+<h2>UserObjectPermission</h2>
+<p>
+    **Manager**: :manager:`UserObjectPermissionManager`
+</p>
+<h3>Derived from</h3>
+BaseObjectPermission
+<h3>Class Attributes</h3>
+<table>
+<tr><td>objects</td></tr><tr><td>user</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

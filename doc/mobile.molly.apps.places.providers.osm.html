@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.molly.apps.places.providers.osm</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.molly.apps.places.providers.osm</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#OSMHandler">OSMHandler</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMMapsProvider">OSMMapsProvider</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#node_id">node_id</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#way_id">way_id</a></td>
+<td></td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="OSMHandler" ID="OSMHandler"></a>
+<h2>OSMHandler</h2>
+
+<h3>Derived from</h3>
+handler.ContentHandler
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#OSMHandler.__init__">OSMHandler</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMHandler.endDocument">endDocument</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMHandler.endElement">endElement</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMHandler.startDocument">startDocument</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMHandler.startElement">startElement</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="OSMHandler.__init__" ID="OSMHandler.__init__"></a>
+<h4>OSMHandler (Constructor)</h4>
+<b>OSMHandler</b>(<i>source, entity_types, find_types, output, lat_north=None, lat_south=None, lon_west=None, lon_east=None</i>)
+<a NAME="OSMHandler.endDocument" ID="OSMHandler.endDocument"></a>
+<h4>OSMHandler.endDocument</h4>
+<b>endDocument</b>(<i></i>)
+<a NAME="OSMHandler.endElement" ID="OSMHandler.endElement"></a>
+<h4>OSMHandler.endElement</h4>
+<b>endElement</b>(<i>name</i>)
+<a NAME="OSMHandler.startDocument" ID="OSMHandler.startDocument"></a>
+<h4>OSMHandler.startDocument</h4>
+<b>startDocument</b>(<i></i>)
+<a NAME="OSMHandler.startElement" ID="OSMHandler.startElement"></a>
+<h4>OSMHandler.startElement</h4>
+<b>startElement</b>(<i>name, attrs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OSMMapsProvider" ID="OSMMapsProvider"></a>
+<h2>OSMMapsProvider</h2>
+
+<h3>Derived from</h3>
+BaseMapsProvider
+<h3>Class Attributes</h3>
+<table>
+<tr><td>OSM_TYPES</td></tr><tr><td>SHELL_CMD</td></tr><tr><td>provider</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#OSMMapsProvider.__init__">OSMMapsProvider</a></td>
+<td>@param lat_north: A limit of the northern-most latitude to import points for @type lat_north: float @param lat_south: A limit of the southern-most latitude to import points for @type lat_south: float @param lon_west: A limit of the western-most longitude to import points for @type lon_west: float @param lon_east: A limit of the eastern-most longitude to import points for @type lon_east: float</td>
+</tr><tr>
+<td><a href="#OSMMapsProvider._find_types">_find_types</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMMapsProvider._get_entity_types">_get_entity_types</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMMapsProvider.disambiguate_titles">disambiguate_titles</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMMapsProvider.import_data">import_data</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="OSMMapsProvider._find_types" ID="OSMMapsProvider._find_types"></a>
+<h4>OSMMapsProvider._find_types</h4>
+<b>_find_types</b>(<i>tags, type_list=OSM_TYPES</i>)
+<a NAME="OSMMapsProvider._get_entity_types" ID="OSMMapsProvider._get_entity_types"></a>
+<h4>OSMMapsProvider._get_entity_types</h4>
+<b>_get_entity_types</b>(<i></i>)
+<a NAME="OSMMapsProvider.disambiguate_titles" ID="OSMMapsProvider.disambiguate_titles"></a>
+<h4>OSMMapsProvider.disambiguate_titles</h4>
+<b>disambiguate_titles</b>(<i>source</i>)
+<a NAME="OSMMapsProvider.import_data" ID="OSMMapsProvider.import_data"></a>
+<h4>OSMMapsProvider.import_data</h4>
+<b>import_data</b>(<i>metadata, output</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="node_id" ID="node_id"></a>
+<h2>node_id</h2>
+<b>node_id</b>(<i>id</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="way_id" ID="way_id"></a>
+<h2>way_id</h2>
+<b>way_id</b>(<i>id</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

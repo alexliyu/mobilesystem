@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.molly.auth.views</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.molly.auth.views</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#ClearSessionView">ClearSessionView</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView">IndexView</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#SecureView">SecureView</a></td>
+<td>An 'abstract' view for all secure pages.</td>
+</tr><tr>
+<td><a href="#TimedOutView">TimedOutView</a></td>
+<td>Handles the case where a user's secure session has been inactive for too long.</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="ClearSessionView" ID="ClearSessionView"></a>
+<h2>ClearSessionView</h2>
+
+<h3>Derived from</h3>
+SecureView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#ClearSessionView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ClearSessionView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ClearSessionView.handle_POST">handle_POST</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ClearSessionView.initial_context">initial_context</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="ClearSessionView.breadcrumb" ID="ClearSessionView.breadcrumb"></a>
+<h4>ClearSessionView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context</i>)
+<a NAME="ClearSessionView.handle_GET" ID="ClearSessionView.handle_GET"></a>
+<h4>ClearSessionView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context</i>)
+<a NAME="ClearSessionView.handle_POST" ID="ClearSessionView.handle_POST"></a>
+<h4>ClearSessionView.handle_POST</h4>
+<b>handle_POST</b>(<i>request, context</i>)
+<a NAME="ClearSessionView.initial_context" ID="ClearSessionView.initial_context"></a>
+<h4>ClearSessionView.initial_context</h4>
+<b>initial_context</b>(<i>request</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="IndexView" ID="IndexView"></a>
+<h2>IndexView</h2>
+
+<h3>Derived from</h3>
+SecureView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>app_name</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#IndexView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.handle_POST">handle_POST</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.initial_context">initial_context</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="IndexView.breadcrumb" ID="IndexView.breadcrumb"></a>
+<h4>IndexView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context</i>)
+<a NAME="IndexView.handle_GET" ID="IndexView.handle_GET"></a>
+<h4>IndexView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context</i>)
+<a NAME="IndexView.handle_POST" ID="IndexView.handle_POST"></a>
+<h4>IndexView.handle_POST</h4>
+<b>handle_POST</b>(<i>request, context</i>)
+<a NAME="IndexView.initial_context" ID="IndexView.initial_context"></a>
+<h4>IndexView.initial_context</h4>
+<b>initial_context</b>(<i>request</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="SecureView" ID="SecureView"></a>
+<h2>SecureView</h2>
+<p>
+    An 'abstract' view for all secure pages.
+</p><p>
+    Implements a timeout so that people will need to reauthenticate if a
+    secure page hasn't been accessed recently. The SecureMidddleware checks
+    for this class in a view's MRO in order to enforce an HTTPS connection.
+</p>
+<h3>Derived from</h3>
+BaseView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#SecureView.__call__">__call__</a></td>
+<td>Enforces timeouts for idle sessions.</td>
+</tr>
+</table>
+<a NAME="SecureView.__call__" ID="SecureView.__call__"></a>
+<h4>SecureView.__call__</h4>
+<b>__call__</b>(<i>request, *args, **kwargs</i>)
+<p>
+        Enforces timeouts for idle sessions.
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="TimedOutView" ID="TimedOutView"></a>
+<h2>TimedOutView</h2>
+<p>
+    Handles the case where a user's secure session has been inactive for too
+    long.
+</p><p>
+    This view should not be included in a urlconf as it is referenced only by
+    SecureView.
+</p>
+<h3>Derived from</h3>
+BaseView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#TimedOutView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#TimedOutView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#TimedOutView.handle_POST">handle_POST</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#TimedOutView.initial_context">initial_context</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="TimedOutView.breadcrumb" ID="TimedOutView.breadcrumb"></a>
+<h4>TimedOutView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context, view, *args, **kwargs</i>)
+<a NAME="TimedOutView.handle_GET" ID="TimedOutView.handle_GET"></a>
+<h4>TimedOutView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context, view, *args, **kwargs</i>)
+<a NAME="TimedOutView.handle_POST" ID="TimedOutView.handle_POST"></a>
+<h4>TimedOutView.handle_POST</h4>
+<b>handle_POST</b>(<i>request, context, view, *args, **kwargs</i>)
+<a NAME="TimedOutView.initial_context" ID="TimedOutView.initial_context"></a>
+<h4>TimedOutView.initial_context</h4>
+<b>initial_context</b>(<i>request, view, *args, **kwargs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

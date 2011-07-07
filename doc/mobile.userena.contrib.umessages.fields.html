@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.userena.contrib.umessages.fields</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.userena.contrib.umessages.fields</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#CommaSeparatedUserField">CommaSeparatedUserField</a></td>
+<td>A :class:`CharField` that exists of comma separated usernames.</td>
+</tr><tr>
+<td><a href="#CommaSeparatedUserInput">CommaSeparatedUserInput</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="CommaSeparatedUserField" ID="CommaSeparatedUserField"></a>
+<h2>CommaSeparatedUserField</h2>
+<p>
+    A :class:`CharField` that exists of comma separated usernames.
+</p><p>
+    :param recipient_filter:
+        Optional function which receives as :class:`User` as parameter. The
+        function should return ``True`` if the user is allowed or ``False`` if
+        the user is not allowed.
+</p><p>
+    :return:
+        A list of :class:`User`.
+</p><p>
+
+</p>
+<h3>Derived from</h3>
+forms.Field
+<h3>Class Attributes</h3>
+<table>
+<tr><td>widget</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#CommaSeparatedUserField.__init__">CommaSeparatedUserField</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#CommaSeparatedUserField.clean">clean</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="CommaSeparatedUserField.__init__" ID="CommaSeparatedUserField.__init__"></a>
+<h4>CommaSeparatedUserField (Constructor)</h4>
+<b>CommaSeparatedUserField</b>(<i>*args, **kwargs</i>)
+<a NAME="CommaSeparatedUserField.clean" ID="CommaSeparatedUserField.clean"></a>
+<h4>CommaSeparatedUserField.clean</h4>
+<b>clean</b>(<i>value</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="CommaSeparatedUserInput" ID="CommaSeparatedUserInput"></a>
+<h2>CommaSeparatedUserInput</h2>
+
+<h3>Derived from</h3>
+widgets.Input
+<h3>Class Attributes</h3>
+<table>
+<tr><td>input_type</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#CommaSeparatedUserInput.render">render</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="CommaSeparatedUserInput.render" ID="CommaSeparatedUserInput.render"></a>
+<h4>CommaSeparatedUserInput.render</h4>
+<b>render</b>(<i>name, value, attrs=None</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.molly.apps.places.providers.bbc_tpeg</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.molly.apps.places.providers.bbc_tpeg</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#BBCTPEGPlacesProvider">BBCTPEGPlacesProvider</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BBCTPEGResolver">BBCTPEGResolver</a></td>
+<td>Resolves the DTD references in a BBC TPEG feed.</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="BBCTPEGPlacesProvider" ID="BBCTPEGPlacesProvider"></a>
+<h2>BBCTPEGPlacesProvider</h2>
+
+<h3>Derived from</h3>
+BaseMapsProvider
+<h3>Class Attributes</h3>
+<table>
+<tr><td>_TPEG_URL</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#BBCTPEGPlacesProvider.__init__">BBCTPEGPlacesProvider</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BBCTPEGPlacesProvider._get_entity_type">_get_entity_type</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BBCTPEGPlacesProvider._wgs84_to_point">_wgs84_to_point</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BBCTPEGPlacesProvider.import_data">import_data</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="BBCTPEGPlacesProvider.__init__" ID="BBCTPEGPlacesProvider.__init__"></a>
+<h4>BBCTPEGPlacesProvider (Constructor)</h4>
+<b>BBCTPEGPlacesProvider</b>(<i>url=_TPEG_URL</i>)
+<a NAME="BBCTPEGPlacesProvider._get_entity_type" ID="BBCTPEGPlacesProvider._get_entity_type"></a>
+<h4>BBCTPEGPlacesProvider._get_entity_type</h4>
+<b>_get_entity_type</b>(<i></i>)
+<a NAME="BBCTPEGPlacesProvider._wgs84_to_point" ID="BBCTPEGPlacesProvider._wgs84_to_point"></a>
+<h4>BBCTPEGPlacesProvider._wgs84_to_point</h4>
+<b>_wgs84_to_point</b>(<i>elem</i>)
+<a NAME="BBCTPEGPlacesProvider.import_data" ID="BBCTPEGPlacesProvider.import_data"></a>
+<h4>BBCTPEGPlacesProvider.import_data</h4>
+<b>import_data</b>(<i>metadata, output</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="BBCTPEGResolver" ID="BBCTPEGResolver"></a>
+<h2>BBCTPEGResolver</h2>
+<p>
+    Resolves the DTD references in a BBC TPEG feed.
+</p><p>
+    Fetches and unzips the DTDs and entity references, storing them locally
+    in $CACHE_DIR/bbc_tpeg/.
+</p>
+<h3>Derived from</h3>
+etree.Resolver
+<h3>Class Attributes</h3>
+<table>
+<tr><td>_DTD_URLS</td></tr><tr><td>_RESOLVE_DIR</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#BBCTPEGResolver._fetch_dtds">_fetch_dtds</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BBCTPEGResolver.resolve">resolve</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="BBCTPEGResolver._fetch_dtds" ID="BBCTPEGResolver._fetch_dtds"></a>
+<h4>BBCTPEGResolver._fetch_dtds</h4>
+<b>_fetch_dtds</b>(<i></i>)
+<a NAME="BBCTPEGResolver.resolve" ID="BBCTPEGResolver.resolve"></a>
+<h4>BBCTPEGResolver.resolve</h4>
+<b>resolve</b>(<i>url, context, id</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

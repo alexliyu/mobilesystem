@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.molly.conf.settings</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.molly.conf.settings</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#Application">Application</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ApplicationConf">ApplicationConf</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Authentication">Authentication</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ExtraBase">ExtraBase</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Provider">Provider</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#batch">batch</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#extract_installed_apps">extract_installed_apps</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#g">g</a></td>
+<td></td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="Application" ID="Application"></a>
+<h2>Application</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#Application.__init__">Application</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Application._get_urls_property">_get_urls_property</a></td>
+<td>Returns a property object that will load and cache the urlconf for an app.</td>
+</tr><tr>
+<td><a href="#Application._module_exists">_module_exists</a></td>
+<td>Returns True iff module_name exists (but isn't necessarily importable).</td>
+</tr><tr>
+<td><a href="#Application.add_conf_to_pattern">add_conf_to_pattern</a></td>
+<td>Coalesces an Application's configuration with the views in its urlconf.</td>
+</tr><tr>
+<td><a href="#Application.get">get</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Application.urls">urls</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="Application.__init__" ID="Application.__init__"></a>
+<h4>Application (Constructor)</h4>
+<b>Application</b>(<i>application_name, local_name, title, **kwargs</i>)
+<a NAME="Application._get_urls_property" ID="Application._get_urls_property"></a>
+<h4>Application._get_urls_property</h4>
+<b>_get_urls_property</b>(<i>bases</i>)
+<p>
+        Returns a property object that will load and cache the urlconf for an app.
+</p><p>
+        This will add base classes to the views as necessary and pass the conf to
+        each view instance.
+</p><a NAME="Application._module_exists" ID="Application._module_exists"></a>
+<h4>Application._module_exists</h4>
+<b>_module_exists</b>(<i>module_name</i>)
+<p>
+        Returns True iff module_name exists (but isn't necessarily importable).
+</p><a NAME="Application.add_conf_to_pattern" ID="Application.add_conf_to_pattern"></a>
+<h4>Application.add_conf_to_pattern</h4>
+<b>add_conf_to_pattern</b>(<i>pattern, conf, bases</i>)
+<p>
+        Coalesces an Application's configuration with the views in its urlconf.
+</p><p>
+        Takes a RegexURLPattern or RegexURLResolver, a conf object and a tuple
+        of extra base classes to inherit from. Returns an object of the same
+        type as its first argument with callbacks replaced with new views using
+        conf and bases.
+</p><a NAME="Application.get" ID="Application.get"></a>
+<h4>Application.get</h4>
+<b>get</b>(<i></i>)
+<a NAME="Application.urls" ID="Application.urls"></a>
+<h4>Application.urls</h4>
+<b>urls</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="ApplicationConf" ID="ApplicationConf"></a>
+<h2>ApplicationConf</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Authentication" ID="Authentication"></a>
+<h2>Authentication</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#Authentication.__init__">Authentication</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="Authentication.__init__" ID="Authentication.__init__"></a>
+<h4>Authentication (Constructor)</h4>
+<b>Authentication</b>(<i>klass, **kwargs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="ExtraBase" ID="ExtraBase"></a>
+<h2>ExtraBase</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#ExtraBase.__init__">ExtraBase</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ExtraBase.__call__">__call__</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="ExtraBase.__init__" ID="ExtraBase.__init__"></a>
+<h4>ExtraBase (Constructor)</h4>
+<b>ExtraBase</b>(<i>klass, **kwargs</i>)
+<a NAME="ExtraBase.__call__" ID="ExtraBase.__call__"></a>
+<h4>ExtraBase.__call__</h4>
+<b>__call__</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Provider" ID="Provider"></a>
+<h2>Provider</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#Provider.__init__">Provider</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Provider.__call__">__call__</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="Provider.__init__" ID="Provider.__init__"></a>
+<h4>Provider (Constructor)</h4>
+<b>Provider</b>(<i>klass, **kwargs</i>)
+<a NAME="Provider.__call__" ID="Provider.__call__"></a>
+<h4>Provider.__call__</h4>
+<b>__call__</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="batch" ID="batch"></a>
+<h2>batch</h2>
+<b>batch</b>(<i>cron_stmt, initial_metadata={}</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="extract_installed_apps" ID="extract_installed_apps"></a>
+<h2>extract_installed_apps</h2>
+<b>extract_installed_apps</b>(<i>applications</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="g" ID="g"></a>
+<h2>g</h2>
+<b>g</b>(<i>f</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

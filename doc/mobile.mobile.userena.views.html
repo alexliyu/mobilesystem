@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.userena.views</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.userena.views</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#activate">activate</a></td>
+<td>Activate a user with an activation key.</td>
+</tr><tr>
+<td><a href="#direct_to_user_template">direct_to_user_template</a></td>
+<td>Simple wrapper for Django's :func:`direct_to_template` view.</td>
+</tr><tr>
+<td><a href="#email_change">email_change</a></td>
+<td>Change email address</td>
+</tr><tr>
+<td><a href="#email_confirm">email_confirm</a></td>
+<td>Confirms an email address with a confirmation key.</td>
+</tr><tr>
+<td><a href="#password_change">password_change</a></td>
+<td>Change password of user.</td>
+</tr><tr>
+<td><a href="#profile_detail">profile_detail</a></td>
+<td>Detailed view of an user.</td>
+</tr><tr>
+<td><a href="#profile_edit">profile_edit</a></td>
+<td>Edit profile.</td>
+</tr><tr>
+<td><a href="#profile_list">profile_list</a></td>
+<td>Returns a list of all profiles that are public.</td>
+</tr><tr>
+<td><a href="#signin">signin</a></td>
+<td>Signin using email or username with password.</td>
+</tr><tr>
+<td><a href="#signup">signup</a></td>
+<td>Signup of an account.</td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="activate" ID="activate"></a>
+<h2>activate</h2>
+<b>activate</b>(<i>request, username, activation_key, template_name='userena/activate_fail.html', success_url=None, extra_context=None</i>)
+<p>
+    Activate a user with an activation key.
+</p><p>
+    The key is a SHA1 string. When the SHA1 is found with an
+    :class:`UserenaSignup`, the :class:`User` of that account will be
+    activated.  After a successfull activation the view will redirect to
+    ``succes_url``.  If the SHA1 is not found, the user will be shown the
+    ``template_name`` template displaying a fail message.
+</p><p>
+    :param username:
+        String of the username that wants to be activated.
+</p><p>
+    :param activation_key:
+        String of a SHA1 string of 40 characters long. A SHA1 is always 160bit
+        long, with 4 bits per character this makes it --160/4-- 40 characters
+        long.
+</p><p>
+    :param template_name:
+        String containing the template name that is used when the
+        ``activation_key`` is invalid and the activation failes. Defaults to
+        ``userena/activation_fail.html``.
+</p><p>
+    :param success_url:
+        Named URL where the user should be redirected to after a succesfull
+        activation. If not specified, will direct to
+        ``userena_profile_detail`` view.
+</p><p>
+    :param extra_context:
+        Dictionary containing variables which could be added to the template
+        context. Default to an empty dictionary.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="direct_to_user_template" ID="direct_to_user_template"></a>
+<h2>direct_to_user_template</h2>
+<b>direct_to_user_template</b>(<i>request, username, template_name, extra_context=None</i>)
+<p>
+    Simple wrapper for Django's :func:`direct_to_template` view.
+</p><p>
+    This view is used when you want to show a template to a specific user. A
+    wrapper for :func:`direct_to_template` where the template also has access to
+    the user that is found with ``username``. For ex. used after signup,
+    activation and confirmation of a new e-mail.
+</p><p>
+    :param username:
+        String defining the username of the user that made the action.
+</p><p>
+    :param template_name:
+        String defining the name of the template to use. Defaults to
+        ``userena/signup_complete.html``.
+</p><p>
+    **Keyword arguments**
+</p><p>
+    ``extra_context``
+        A dictionary containing extra variables that should be passed to the
+        rendered template. The ``account`` key is always the ``User``
+        that completed the action.
+</p><p>
+    **Extra context**
+</p><p>
+    ``viewed_user``
+        The currently :class:`User` that is viewed.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="email_change" ID="email_change"></a>
+<h2>email_change</h2>
+<b>email_change</b>(<i>request, username, form=ChangeEmailForm, template_name='userena/email_form.html', success_url=None, extra_context=None</i>)
+<p>
+    Change email address
+</p><p>
+    :param username:
+        String of the username which specifies the current account.
+</p><p>
+    :param form:
+        Form that will be used to change the email address. Defaults to
+        :class:`ChangeEmailForm` supplied by userena.
+</p><p>
+    :param template_name:
+        String containing the template to be used to display the email form.
+        Defaults to ``userena/email_form.html``.
+</p><p>
+    :param success_url:
+        Named URL where the user will get redirected to when succesfully
+        changing their email address.  When not suplied will redirect to
+        ``userena_email_complete`` URL.
+</p><p>
+    :param extra_context:
+        Dictionary containing extra variables that can be used to render the
+        template. The ``form`` key is always the form supplied by the keyword
+        argument ``form`` and the ``user`` key by the user whose email address
+        is being changed.
+</p><p>
+    **Context**
+</p><p>
+    ``form``
+        Form that is used to change the email address supplied by ``form``.
+</p><p>
+    ``account``
+        Instance of the ``Account`` whose email address is about to be changed.
+</p><p>
+    **Todo**
+</p><p>
+    Need to have per-object permissions, which enables users with the correct
+    permissions to alter the email address of others.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="email_confirm" ID="email_confirm"></a>
+<h2>email_confirm</h2>
+<b>email_confirm</b>(<i>request, username, confirmation_key, template_name='userena/email_confirm_fail.html', success_url=None, extra_context=None</i>)
+<p>
+    Confirms an email address with a confirmation key.
+</p><p>
+    Confirms a new email address by running :func:`User.objects.confirm_email`
+    method. If the method returns an :class:`User` the user will have his new
+    e-mail address set and redirected to ``success_url``. If no ``User`` is
+    returned the user will be represented with a fail message from
+    ``template_name``.
+</p><p>
+    :param username:
+        String of the username whose email address needs to be confirmed.
+</p><p>
+    :param confirmation_key:
+        String with a SHA1 representing the confirmation key used to verify a
+        new email address.
+</p><p>
+    :param template_name:
+        String containing the template name which should be rendered when
+        confirmation fails. When confirmation is succesfull, no template is
+        needed because the user will be redirected to ``success_url``.
+</p><p>
+    :param success_url:
+        Named URL which is redirected to after a succesfull confirmation.
+        Supplied argument must be able to be rendered by ``reverse`` function.
+</p><p>
+    :param extra_context:
+        Dictionary of variables that are passed on to the template supplied by
+        ``template_name``.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="password_change" ID="password_change"></a>
+<h2>password_change</h2>
+<b>password_change</b>(<i>request, username, template_name='userena/password_form.html', pass_form=PasswordChangeForm, success_url=None, extra_context=None</i>)
+<p>
+ Change password of user.
+</p><p>
+    This view is almost a mirror of the view supplied in
+    :func:`contrib.auth.views.password_change`, with the minor change that in
+    this view we also use the username to change the password. This was needed
+    to keep our URLs logical (and REST) accross the entire application. And
+    that in a later stadium administrators can also change the users password
+    through the web application itself.
+</p><p>
+
+</p><p>
+    :param username:
+        String supplying the username of the user who's password is about to be
+        changed.
+</p><p>
+    :param template_name:
+        String of the name of the template that is used to display the password
+        change form. Defaults to ``userena/password_form.html``.
+</p><p>
+    :param pass_form:
+        Form used to change password. Default is the form supplied by Django
+        itself named ``PasswordChangeForm``.
+</p><p>
+    :param success_url:
+        Named URL that is passed onto a :func:`reverse` function with
+        ``username`` of the active user. Defaults to the
+        ``userena_password_complete`` URL.
+</p><p>
+    :param extra_context:
+        Dictionary of extra variables that are passed on the the template. The
+        ``form`` key is always used by the form supplied by ``pass_form``.
+</p><p>
+    **Context**
+</p><p>
+    ``form``
+        Form used to change the password.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="profile_detail" ID="profile_detail"></a>
+<h2>profile_detail</h2>
+<b>profile_detail</b>(<i>request, username, template_name='userena/profile_detail.html', extra_context=None</i>)
+<p>
+    Detailed view of an user.
+</p><p>
+    :param username:
+        String of the username of which the profile should be viewed.
+</p><p>
+    :param template_name:
+        String representing the template name that should be used to display
+        the profile.
+</p><p>
+    :param extra_context:
+        Dictionary of variables which should be supplied to the template. The
+        ``profile`` key is always the current profile.
+</p><p>
+    **Context**
+</p><p>
+    ``profile``
+        Instance of the currently viewed ``Profile``.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="profile_edit" ID="profile_edit"></a>
+<h2>profile_edit</h2>
+<b>profile_edit</b>(<i>request, username, edit_profile_form=EditProfileForm, template_name='userena/profile_form.html', success_url=None, extra_context=None</i>)
+<p>
+    Edit profile.
+</p><p>
+    Edits a profile selected by the supplied username. First checks
+    permissions if the user is allowed to edit this profile, if denied will
+    show a 404. When the profile is succesfully edited will redirect to
+    ``success_url``.
+</p><p>
+    :param username:
+        Username of the user which profile should be edited.
+</p><p>
+    :param edit_profile_form:
+</p><p>
+        Form that is used to edit the profile. The :func:`EditProfileForm.save`
+        method of this form will be called when the form
+        :func:`EditProfileForm.is_valid`.  Defaults to :class:`EditProfileForm`
+        from userena.
+</p><p>
+    :param template_name:
+        String of the template that is used to render this view. Defaults to
+        ``userena/edit_profile_form.html``.
+</p><p>
+    :param success_url:
+        Named URL which be passed on to a django ``reverse`` function after the
+        form is successfully saved. Defaults to the ``userena_detail`` url.
+</p><p>
+    :param extra_context:
+        Dictionary containing variables that are passed on to the
+        ``template_name`` template.  ``form`` key will always be the form used
+        to edit the profile, and the ``profile`` key is always the edited
+        profile.
+</p><p>
+    **Context**
+</p><p>
+    ``form``
+        Form that is used to alter the profile.
+</p><p>
+    ``profile``
+        Instance of the ``Profile`` that is edited.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="profile_list" ID="profile_list"></a>
+<h2>profile_list</h2>
+<b>profile_list</b>(<i>request, page=1, template_name='userena/profile_list.html', paginate_by=50, extra_context=None, **kwargs</i>)
+<p>
+    Returns a list of all profiles that are public.
+</p><p>
+    It's possible to disable this by changing ``USERENA_DISABLE_PROFILE_LIST``
+    to ``True`` in your settings.
+</p><p>
+    :param page:
+        Integer of the active page used for pagination. Defaults to the first
+        page.
+</p><p>
+    :param template_name:
+        String defining the name of the template that is used to render the
+        list of all users. Defaults to ``userena/list.html``.
+</p><p>
+    :param paginate_by:
+        Integer defining the amount of displayed profiles per page. Defaults to
+        50 profiles per page.
+</p><p>
+    :param extra_context:
+        Dictionary of variables that are passed on to the ``template_name``
+        template.
+</p><p>
+    **Context**
+</p><p>
+    ``profile_list``
+        A list of profiles.
+</p><p>
+    ``is_paginated``
+        A boolean representing whether the results are paginated.
+</p><p>
+    If the result is paginated. It will also contain the following variables.
+</p><p>
+    ``paginator``
+        An instance of ``django.core.paginator.Paginator``.
+</p><p>
+    ``page_obj``
+        An instance of ``django.core.paginator.Page``.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="signin" ID="signin"></a>
+<h2>signin</h2>
+<b>signin</b>(<i>request, auth_form=AuthenticationForm, template_name='userena/signin_form.html', redirect_field_name=REDIRECT_FIELD_NAME, redirect_signin_function=signin_redirect, extra_context=None</i>)
+<p>
+    Signin using email or username with password.
+</p><p>
+    Signs a user in by combining email/username with password. If the
+    combination is correct and the user :func:`is_active` the
+    :func:`redirect_signin_function` is called with the arguments
+    ``REDIRECT_FIELD_NAME`` and an instance of the :class:`User` whois is
+    trying the login. The returned value of the function will be the URL that
+    is redirected to.
+</p><p>
+    A user can also select to be remembered for ``USERENA_REMEMBER_DAYS``.
+</p><p>
+    :param auth_form:
+        Form to use for signing the user in. Defaults to the
+        :class:`AuthenticationForm` supplied by userena.
+</p><p>
+    :param template_name:
+        String defining the name of the template to use. Defaults to
+        ``userena/signin_form.html``.
+</p><p>
+    :param redirect_field_name:
+        Form field name which contains the value for a redirect to the
+        successing page. Defaults to ``next`` and is set in
+        ``REDIRECT_FIELD_NAME`` setting.
+</p><p>
+    :param redirect_signin_function:
+        Function which handles the redirect. This functions gets the value of
+        ``REDIRECT_FIELD_NAME`` and the :class:`User` who has logged in. It
+        must return a string which specifies the URI to redirect to.
+</p><p>
+    :param extra_context:
+        A dictionary containing extra variables that should be passed to the
+        rendered template. The ``form`` key is always the ``auth_form``.
+</p><p>
+    **Context**
+</p><p>
+    ``form``
+        Form used for authentication supplied by ``auth_form``.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="signup" ID="signup"></a>
+<h2>signup</h2>
+<b>signup</b>(<i>request, signup_form=SignupForm, template_name='userena/signup_form.html', success_url=None, extra_context=None</i>)
+<p>
+    Signup of an account.
+</p><p>
+    Signup requiring a username, email and password. After signup a user gets
+    an email with an activation link used to activate their account. After
+    successful signup redirects to ``success_url``.
+</p><p>
+    :param signup_form:
+        Form that will be used to sign a user. Defaults to userena's
+        :class:`SignupForm`.
+</p><p>
+    :param template_name:
+        String containing the template name that will be used to display the
+        signup form. Defaults to ``userena/signup_form.html``.
+</p><p>
+    :param success_url:
+        String containing the URI which should be redirected to after a
+        successfull signup. If not supplied will redirect to
+        ``userena_signup_complete`` view.
+</p><p>
+    :param extra_context:
+        Dictionary containing variables which are added to the template
+        context. Defaults to a dictionary with a ``form`` key containing the
+        ``signup_form``.
+</p><p>
+    **Context**
+</p><p>
+    ``form``
+        Form supplied by ``signup_form``.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

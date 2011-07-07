@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.crowdsourcing.forms</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.crowdsourcing.forms</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>QTYPE_FORM</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#BaseAnswerForm">BaseAnswerForm</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BaseOptionAnswer">BaseOptionAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BooleanInputAnswer">BooleanInputAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#EmailAnswer">EmailAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#FloatInputAnswer">FloatInputAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IntegerInputAnswer">IntegerInputAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#LocationAnswer">LocationAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OptionAnswer">OptionAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OptionCheckbox">OptionCheckbox</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OptionRadio">OptionRadio</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#PhotoUpload">PhotoUpload</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#SubmissionForm">SubmissionForm</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#TextAreaAnswer">TextAreaAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#TextInputAnswer">TextInputAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#VideoAnswer">VideoAnswer</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#_form_for_question">_form_for_question</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#forms_for_survey">forms_for_survey</a></td>
+<td></td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="BaseAnswerForm" ID="BaseAnswerForm"></a>
+<h2>BaseAnswerForm</h2>
+
+<h3>Derived from</h3>
+Form
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#BaseAnswerForm.__init__">BaseAnswerForm</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BaseAnswerForm._configure_answer_field">_configure_answer_field</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BaseAnswerForm.as_template">as_template</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BaseAnswerForm.save">save</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="BaseAnswerForm.__init__" ID="BaseAnswerForm.__init__"></a>
+<h4>BaseAnswerForm (Constructor)</h4>
+<b>BaseAnswerForm</b>(<i>question, session_key, submission=None, *args, **kwargs</i>)
+<a NAME="BaseAnswerForm._configure_answer_field" ID="BaseAnswerForm._configure_answer_field"></a>
+<h4>BaseAnswerForm._configure_answer_field</h4>
+<b>_configure_answer_field</b>(<i></i>)
+<a NAME="BaseAnswerForm.as_template" ID="BaseAnswerForm.as_template"></a>
+<h4>BaseAnswerForm.as_template</h4>
+<b>as_template</b>(<i></i>)
+<a NAME="BaseAnswerForm.save" ID="BaseAnswerForm.save"></a>
+<h4>BaseAnswerForm.save</h4>
+<b>save</b>(<i>commit=True</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="BaseOptionAnswer" ID="BaseOptionAnswer"></a>
+<h2>BaseOptionAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#BaseOptionAnswer.__init__">BaseOptionAnswer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BaseOptionAnswer.clean_answer">clean_answer</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BaseOptionAnswer.save">save</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="BaseOptionAnswer.__init__" ID="BaseOptionAnswer.__init__"></a>
+<h4>BaseOptionAnswer (Constructor)</h4>
+<b>BaseOptionAnswer</b>(<i>*args, **kwargs</i>)
+<a NAME="BaseOptionAnswer.clean_answer" ID="BaseOptionAnswer.clean_answer"></a>
+<h4>BaseOptionAnswer.clean_answer</h4>
+<b>clean_answer</b>(<i></i>)
+<a NAME="BaseOptionAnswer.save" ID="BaseOptionAnswer.save"></a>
+<h4>BaseOptionAnswer.save</h4>
+<b>save</b>(<i>commit=True</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="BooleanInputAnswer" ID="BooleanInputAnswer"></a>
+<h2>BooleanInputAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#BooleanInputAnswer._configure_answer_field">_configure_answer_field</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#BooleanInputAnswer.clean_answer">clean_answer</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="BooleanInputAnswer._configure_answer_field" ID="BooleanInputAnswer._configure_answer_field"></a>
+<h4>BooleanInputAnswer._configure_answer_field</h4>
+<b>_configure_answer_field</b>(<i></i>)
+<a NAME="BooleanInputAnswer.clean_answer" ID="BooleanInputAnswer.clean_answer"></a>
+<h4>BooleanInputAnswer.clean_answer</h4>
+<b>clean_answer</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="EmailAnswer" ID="EmailAnswer"></a>
+<h2>EmailAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="FloatInputAnswer" ID="FloatInputAnswer"></a>
+<h2>FloatInputAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="IntegerInputAnswer" ID="IntegerInputAnswer"></a>
+<h2>IntegerInputAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="LocationAnswer" ID="LocationAnswer"></a>
+<h2>LocationAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#LocationAnswer.save">save</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="LocationAnswer.save" ID="LocationAnswer.save"></a>
+<h4>LocationAnswer.save</h4>
+<b>save</b>(<i>commit=True</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta" ID="Meta"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>exclude</td></tr><tr><td>model</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OptionAnswer" ID="OptionAnswer"></a>
+<h2>OptionAnswer</h2>
+
+<h3>Derived from</h3>
+BaseOptionAnswer
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OptionCheckbox" ID="OptionCheckbox"></a>
+<h2>OptionCheckbox</h2>
+
+<h3>Derived from</h3>
+BaseOptionAnswer
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OptionRadio" ID="OptionRadio"></a>
+<h2>OptionRadio</h2>
+
+<h3>Derived from</h3>
+BaseOptionAnswer
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="PhotoUpload" ID="PhotoUpload"></a>
+<h2>PhotoUpload</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#PhotoUpload.clean_answer">clean_answer</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="PhotoUpload.clean_answer" ID="PhotoUpload.clean_answer"></a>
+<h4>PhotoUpload.clean_answer</h4>
+<b>clean_answer</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="SubmissionForm" ID="SubmissionForm"></a>
+<h2>SubmissionForm</h2>
+
+<h3>Derived from</h3>
+ModelForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#SubmissionForm.__init__">SubmissionForm</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="SubmissionForm.__init__" ID="SubmissionForm.__init__"></a>
+<h4>SubmissionForm (Constructor)</h4>
+<b>SubmissionForm</b>(<i>survey, *args, **kwargs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="TextAreaAnswer" ID="TextAreaAnswer"></a>
+<h2>TextAreaAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="TextInputAnswer" ID="TextInputAnswer"></a>
+<h2>TextInputAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="VideoAnswer" ID="VideoAnswer"></a>
+<h2>VideoAnswer</h2>
+
+<h3>Derived from</h3>
+BaseAnswerForm
+<h3>Class Attributes</h3>
+<table>
+<tr><td>answer</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#VideoAnswer.clean_answer">clean_answer</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="VideoAnswer.clean_answer" ID="VideoAnswer.clean_answer"></a>
+<h4>VideoAnswer.clean_answer</h4>
+<b>clean_answer</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="_form_for_question" ID="_form_for_question"></a>
+<h2>_form_for_question</h2>
+<b>_form_for_question</b>(<i>question, session_key="", submission=None, data=None, files=None</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="forms_for_survey" ID="forms_for_survey"></a>
+<h2>forms_for_survey</h2>
+<b>forms_for_survey</b>(<i>survey, request='testing', submission=None</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

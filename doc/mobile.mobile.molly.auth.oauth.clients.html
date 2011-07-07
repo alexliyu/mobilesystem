@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.molly.auth.oauth.clients</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.molly.auth.oauth.clients</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#OAuthClient">OAuthClient</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthHTTPError">OAuthHTTPError</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthHandler">OAuthHandler</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthOpener">OAuthOpener</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="OAuthClient" ID="OAuthClient"></a>
+<h2>OAuthClient</h2>
+
+<h3>Derived from</h3>
+oauth.OAuthClient
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#OAuthClient.__init__">OAuthClient</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthClient.authorize_token">authorize_token</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthClient.fetch_access_token">fetch_access_token</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthClient.fetch_request_token">fetch_request_token</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthClient.get_opener">get_opener</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="OAuthClient.__init__" ID="OAuthClient.__init__"></a>
+<h4>OAuthClient (Constructor)</h4>
+<b>OAuthClient</b>(<i>request_token_url='', access_token_url='', authorization_url=''</i>)
+<a NAME="OAuthClient.authorize_token" ID="OAuthClient.authorize_token"></a>
+<h4>OAuthClient.authorize_token</h4>
+<b>authorize_token</b>(<i>oauth_request</i>)
+<a NAME="OAuthClient.fetch_access_token" ID="OAuthClient.fetch_access_token"></a>
+<h4>OAuthClient.fetch_access_token</h4>
+<b>fetch_access_token</b>(<i>oauth_request</i>)
+<a NAME="OAuthClient.fetch_request_token" ID="OAuthClient.fetch_request_token"></a>
+<h4>OAuthClient.fetch_request_token</h4>
+<b>fetch_request_token</b>(<i>oauth_request</i>)
+<a NAME="OAuthClient.get_opener" ID="OAuthClient.get_opener"></a>
+<h4>OAuthClient.get_opener</h4>
+<b>get_opener</b>(<i>consumer, access_token, signature_method</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OAuthHTTPError" ID="OAuthHTTPError"></a>
+<h2>OAuthHTTPError</h2>
+
+<h3>Derived from</h3>
+urllib2.HTTPError, PermissionDenied
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#OAuthHTTPError.__init__">OAuthHTTPError</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthHTTPError.__getattr__">__getattr__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthHTTPError.__setattr__">__setattr__</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="OAuthHTTPError.__init__" ID="OAuthHTTPError.__init__"></a>
+<h4>OAuthHTTPError (Constructor)</h4>
+<b>OAuthHTTPError</b>(<i>e</i>)
+<a NAME="OAuthHTTPError.__getattr__" ID="OAuthHTTPError.__getattr__"></a>
+<h4>OAuthHTTPError.__getattr__</h4>
+<b>__getattr__</b>(<i>key</i>)
+<a NAME="OAuthHTTPError.__setattr__" ID="OAuthHTTPError.__setattr__"></a>
+<h4>OAuthHTTPError.__setattr__</h4>
+<b>__setattr__</b>(<i>key, value</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OAuthHandler" ID="OAuthHandler"></a>
+<h2>OAuthHandler</h2>
+
+<h3>Derived from</h3>
+urllib2.BaseHandler
+<h3>Class Attributes</h3>
+<table>
+<tr><td>http_request</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#OAuthHandler.__init__">OAuthHandler</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthHandler.https_request">https_request</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="OAuthHandler.__init__" ID="OAuthHandler.__init__"></a>
+<h4>OAuthHandler (Constructor)</h4>
+<b>OAuthHandler</b>(<i>consumer, access_token, signature_method</i>)
+<a NAME="OAuthHandler.https_request" ID="OAuthHandler.https_request"></a>
+<h4>OAuthHandler.https_request</h4>
+<b>https_request</b>(<i>request</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OAuthOpener" ID="OAuthOpener"></a>
+<h2>OAuthOpener</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#OAuthOpener.__init__">OAuthOpener</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthOpener.__delattr__">__delattr__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthOpener.__getattr__">__getattr__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthOpener.__setattr__">__setattr__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OAuthOpener.open">open</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="OAuthOpener.__init__" ID="OAuthOpener.__init__"></a>
+<h4>OAuthOpener (Constructor)</h4>
+<b>OAuthOpener</b>(<i>opener</i>)
+<a NAME="OAuthOpener.__delattr__" ID="OAuthOpener.__delattr__"></a>
+<h4>OAuthOpener.__delattr__</h4>
+<b>__delattr__</b>(<i>name</i>)
+<a NAME="OAuthOpener.__getattr__" ID="OAuthOpener.__getattr__"></a>
+<h4>OAuthOpener.__getattr__</h4>
+<b>__getattr__</b>(<i>name</i>)
+<a NAME="OAuthOpener.__setattr__" ID="OAuthOpener.__setattr__"></a>
+<h4>OAuthOpener.__setattr__</h4>
+<b>__setattr__</b>(<i>name, value</i>)
+<a NAME="OAuthOpener.open" ID="OAuthOpener.open"></a>
+<h4>OAuthOpener.open</h4>
+<b>open</b>(<i>*args, **kwargs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

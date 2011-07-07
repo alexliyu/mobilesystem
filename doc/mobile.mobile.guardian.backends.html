@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.guardian.backends</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.guardian.backends</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#ObjectPermissionBackend">ObjectPermissionBackend</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="ObjectPermissionBackend" ID="ObjectPermissionBackend"></a>
+<h2>ObjectPermissionBackend</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>supports_anonymous_user</td></tr><tr><td>supports_inactive_user</td></tr><tr><td>supports_object_permissions</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#ObjectPermissionBackend.authenticate">authenticate</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ObjectPermissionBackend.has_perm">has_perm</a></td>
+<td>Returns ``True`` if given ``user_obj`` has ``perm`` for ``obj``.</td>
+</tr>
+</table>
+<a NAME="ObjectPermissionBackend.authenticate" ID="ObjectPermissionBackend.authenticate"></a>
+<h4>ObjectPermissionBackend.authenticate</h4>
+<b>authenticate</b>(<i>username, password</i>)
+<a NAME="ObjectPermissionBackend.has_perm" ID="ObjectPermissionBackend.has_perm"></a>
+<h4>ObjectPermissionBackend.has_perm</h4>
+<b>has_perm</b>(<i>user_obj, perm, obj=None</i>)
+<p>
+        Returns ``True`` if given ``user_obj`` has ``perm`` for ``obj``. If no
+        ``obj`` is given, ``False`` is returned.
+</p><p>
+        .. note::
+</p><p>
+           Remember, that if user is not *active*, all checks would return
+           ``False``.
+</p><p>
+        Main difference between Django's ``ModelBackend`` is that we can pass
+        ``obj`` instance here and ``perm`` doesn't have to contain
+        ``app_label`` as it can be retrieved from given ``obj``.
+</p><p>
+        **Inactive user support**
+</p><p>
+        If user is authenticated but inactive at the same time, all checks
+        always returns ``False``.
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

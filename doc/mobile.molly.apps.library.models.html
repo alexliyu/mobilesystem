@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.molly.apps.library.models</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.molly.apps.library.models</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#InconsistentQuery">InconsistentQuery</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Library">Library</a></td>
+<td>An object representing a library (used in holdings)</td>
+</tr><tr>
+<td><a href="#LibrarySearchQuery">LibrarySearchQuery</a></td>
+<td>An object which gets passed to library search providers containing a library search query</td>
+</tr><tr>
+<td><a href="#LibrarySearchResult">LibrarySearchResult</a></td>
+<td>An object holding an individual result from a search</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="InconsistentQuery" ID="InconsistentQuery"></a>
+<h2>InconsistentQuery</h2>
+
+<h3>Derived from</h3>
+ValueError
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#InconsistentQuery.__init__">InconsistentQuery</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="InconsistentQuery.__init__" ID="InconsistentQuery.__init__"></a>
+<h4>InconsistentQuery (Constructor)</h4>
+<b>InconsistentQuery</b>(<i>msg</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="LibrarySearchQuery" ID="LibrarySearchQuery"></a>
+<h2>LibrarySearchQuery</h2>
+<p>
+    An object which gets passed to library search providers containing a library
+    search query
+</p>
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>STOP_WORDS</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#LibrarySearchQuery.__init__">LibrarySearchQuery</a></td>
+<td>@param title: The title of the book to search for @type title: str or None @param author: The author of the book to search for @type author: str or None @param isbn: an ISBN number to search for - can contain * in place of X.</td>
+</tr><tr>
+<td><a href="#LibrarySearchQuery._clean_input">_clean_input</a></td>
+<td>Remove stop words from the input</td>
+</tr><tr>
+<td><a href="#LibrarySearchQuery._clean_isbn">_clean_isbn</a></td>
+<td>Tidy up ISBN input - limit to only allowed characters, replacing * with X</td>
+</tr>
+</table>
+<a NAME="LibrarySearchQuery._clean_isbn" ID="LibrarySearchQuery._clean_isbn"></a>
+<h4>LibrarySearchQuery._clean_isbn</h4>
+<b>_clean_isbn</b>(<i></i>)
+<p>
+        Tidy up ISBN input - limit to only allowed characters, replacing * with
+        X
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="LibrarySearchResult" ID="LibrarySearchResult"></a>
+<h2>LibrarySearchResult</h2>
+<p>
+    An object holding an individual result from a search
+</p>
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>AVAIL_AVAILABLE</td></tr><tr><td>author</td></tr><tr><td>copies</td></tr><tr><td>description</td></tr><tr><td>edition</td></tr><tr><td>holding_libraries</td></tr><tr><td>holdings</td></tr><tr><td>id</td></tr><tr><td>isbns</td></tr><tr><td>issns</td></tr><tr><td>publisher</td></tr><tr><td>title</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#LibrarySearchResult.__unicode__">__unicode__</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="LibrarySearchResult.__unicode__" ID="LibrarySearchResult.__unicode__"></a>
+<h4>LibrarySearchResult.__unicode__</h4>
+<b>__unicode__</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

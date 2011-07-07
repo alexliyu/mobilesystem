@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.tracking.utils</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.tracking.utils</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>IP_RE</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#get_cleanup_timeout">get_cleanup_timeout</a></td>
+<td>Gets any specified visitor clean-up timeout from the settings file, or use 24 hours by default</td>
+</tr><tr>
+<td><a href="#get_ip">get_ip</a></td>
+<td>Retrieves the remote IP address from the request data.</td>
+</tr><tr>
+<td><a href="#get_timeout">get_timeout</a></td>
+<td>Gets any specified timeout from the settings file, or use 10 minutes by default</td>
+</tr><tr>
+<td><a href="#u_clean">u_clean</a></td>
+<td>A strange attempt at cleaning up unicode</td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="get_cleanup_timeout" ID="get_cleanup_timeout"></a>
+<h2>get_cleanup_timeout</h2>
+<b>get_cleanup_timeout</b>(<i></i>)
+<p>
+    Gets any specified visitor clean-up timeout from the settings file, or
+    use 24 hours by default
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_ip" ID="get_ip"></a>
+<h2>get_ip</h2>
+<b>get_ip</b>(<i>request</i>)
+<p>
+    Retrieves the remote IP address from the request data.  If the user is
+    behind a proxy, they may have a comma-separated list of IP addresses, so
+    we need to account for that.  In such a case, only the first IP in the
+    list will be retrieved.  Also, some hosts that use a proxy will put the
+    REMOTE_ADDR into HTTP_X_FORWARDED_FOR.  This will handle pulling back the
+    IP from the proper place.
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_timeout" ID="get_timeout"></a>
+<h2>get_timeout</h2>
+<b>get_timeout</b>(<i></i>)
+<p>
+    Gets any specified timeout from the settings file, or use 10 minutes by
+    default
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="u_clean" ID="u_clean"></a>
+<h2>u_clean</h2>
+<b>u_clean</b>(<i>s</i>)
+<p>
+A strange attempt at cleaning up unicode
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

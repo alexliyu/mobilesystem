@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.userena.contrib.umessages.managers</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.userena.contrib.umessages.managers</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#MessageContactManager">MessageContactManager</a></td>
+<td>Manager for the :class:`MessageContact` model</td>
+</tr><tr>
+<td><a href="#MessageManager">MessageManager</a></td>
+<td>Manager for the :class:`Message` model.</td>
+</tr><tr>
+<td><a href="#MessageRecipientManager">MessageRecipientManager</a></td>
+<td>Manager for the :class:`MessageRecipient` model.</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="MessageContactManager" ID="MessageContactManager"></a>
+<h2>MessageContactManager</h2>
+<p>
+ Manager for the :class:`MessageContact` model 
+</p>
+<h3>Derived from</h3>
+models.Manager
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#MessageContactManager.get_contacts_for">get_contacts_for</a></td>
+<td>Returns the contacts for this user.</td>
+</tr><tr>
+<td><a href="#MessageContactManager.get_or_create">get_or_create</a></td>
+<td>Get or create a Contact</td>
+</tr><tr>
+<td><a href="#MessageContactManager.update_contact">update_contact</a></td>
+<td>Get or update a contacts information</td>
+</tr>
+</table>
+<a NAME="MessageContactManager.get_contacts_for" ID="MessageContactManager.get_contacts_for"></a>
+<h4>MessageContactManager.get_contacts_for</h4>
+<b>get_contacts_for</b>(<i>user</i>)
+<p>
+        Returns the contacts for this user.
+</p><p>
+        Contacts are other users that this user has received messages
+        from or send messages to.
+</p><p>
+        :param user:
+            The :class:`User` which to get the contacts for.
+</p><p>
+
+</p><a NAME="MessageContactManager.get_or_create" ID="MessageContactManager.get_or_create"></a>
+<h4>MessageContactManager.get_or_create</h4>
+<b>get_or_create</b>(<i>from_user, to_user, message</i>)
+<p>
+        Get or create a Contact
+</p><p>
+        We override Django's :func:`get_or_create` because we want contact to
+        be unique in a bi-directional manner.
+</p><p>
+
+</p><a NAME="MessageContactManager.update_contact" ID="MessageContactManager.update_contact"></a>
+<h4>MessageContactManager.update_contact</h4>
+<b>update_contact</b>(<i>from_user, to_user, message</i>)
+<p>
+ Get or update a contacts information 
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="MessageManager" ID="MessageManager"></a>
+<h2>MessageManager</h2>
+<p>
+ Manager for the :class:`Message` model. 
+</p>
+<h3>Derived from</h3>
+models.Manager
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#MessageManager.get_conversation_between">get_conversation_between</a></td>
+<td>Returns a conversation between two users</td>
+</tr><tr>
+<td><a href="#MessageManager.send_message">send_message</a></td>
+<td>Send a message from a user, to a user.</td>
+</tr>
+</table>
+<a NAME="MessageManager.get_conversation_between" ID="MessageManager.get_conversation_between"></a>
+<h4>MessageManager.get_conversation_between</h4>
+<b>get_conversation_between</b>(<i>from_user, to_user</i>)
+<p>
+ Returns a conversation between two users 
+</p><a NAME="MessageManager.send_message" ID="MessageManager.send_message"></a>
+<h4>MessageManager.send_message</h4>
+<b>send_message</b>(<i>sender, to_user_list, body</i>)
+<p>
+        Send a message from a user, to a user.
+</p><p>
+        :param sender:
+            The :class:`User` which sends the message.
+</p><p>
+        :param to_user_list:
+            A list which elements are :class:`User` to whom the message is for.
+</p><p>
+        :param message:
+            String containing the message.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="MessageRecipientManager" ID="MessageRecipientManager"></a>
+<h2>MessageRecipientManager</h2>
+<p>
+ Manager for the :class:`MessageRecipient` model. 
+</p>
+<h3>Derived from</h3>
+models.Manager
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#MessageRecipientManager.count_unread_messages_between">count_unread_messages_between</a></td>
+<td>Returns the amount of unread messages between two users</td>
+</tr><tr>
+<td><a href="#MessageRecipientManager.count_unread_messages_for">count_unread_messages_for</a></td>
+<td>Returns the amount of unread messages for this user</td>
+</tr>
+</table>
+<a NAME="MessageRecipientManager.count_unread_messages_between" ID="MessageRecipientManager.count_unread_messages_between"></a>
+<h4>MessageRecipientManager.count_unread_messages_between</h4>
+<b>count_unread_messages_between</b>(<i>to_user, from_user</i>)
+<p>
+        Returns the amount of unread messages between two users
+</p><p>
+        :param to_user:
+            A Django :class:`User` for who the messages are for.
+</p><p>
+        :param from_user:
+            A Django :class:`User` from whom the messages originate from.
+</p><p>
+        :return:
+            An integer with the amount of unread messages.
+</p><p>
+
+</p><a NAME="MessageRecipientManager.count_unread_messages_for" ID="MessageRecipientManager.count_unread_messages_for"></a>
+<h4>MessageRecipientManager.count_unread_messages_for</h4>
+<b>count_unread_messages_for</b>(<i>user</i>)
+<p>
+        Returns the amount of unread messages for this user
+</p><p>
+        :param user:
+            A Django :class:`User`
+</p><p>
+        :return:
+            An integer with the amount of unread messages.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

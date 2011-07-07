@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.molly.utils.http</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.molly.utils.http</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#HttpResponseSeeOther">HttpResponseSeeOther</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType">MediaType</a></td>
+<td>Represents a parsed internet media type.</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#update_url">update_url</a></td>
+<td>Replaces query parameters with those given in query_update, and updates the fragment.</td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="HttpResponseSeeOther" ID="HttpResponseSeeOther"></a>
+<h2>HttpResponseSeeOther</h2>
+
+<h3>Derived from</h3>
+HttpResponseRedirect
+<h3>Class Attributes</h3>
+<table>
+<tr><td>status_code</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="MediaType" ID="MediaType"></a>
+<h2>MediaType</h2>
+<p>
+    Represents a parsed internet media type.
+</p>
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>_MEDIA_TYPE_RE</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#MediaType.__init__">MediaType</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.__cmp__">__cmp__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.__eq__">__eq__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.__gt__">__gt__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.__lt__">__lt__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.__ne__">__ne__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.__repr__">__repr__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.__unicode__">__unicode__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MediaType.equivalent">equivalent</a></td>
+<td>Returns whether two MediaTypes have the same overall specifity.</td>
+</tr><tr>
+<td><a href="#MediaType.provides">provides</a></td>
+<td>Returns True iff the self is at least as specific as other.</td>
+</tr><tr>
+<td><a href="#MediaType.resolve">resolve</a></td>
+<td>Resolves a list of accepted MediaTypes and available renderers to the preferred renderer.</td>
+</tr>
+</table>
+<a NAME="MediaType.__init__" ID="MediaType.__init__"></a>
+<h4>MediaType (Constructor)</h4>
+<b>MediaType</b>(<i>value, priority=0</i>)
+<a NAME="MediaType.__cmp__" ID="MediaType.__cmp__"></a>
+<h4>MediaType.__cmp__</h4>
+<b>__cmp__</b>(<i>other</i>)
+<a NAME="MediaType.__eq__" ID="MediaType.__eq__"></a>
+<h4>MediaType.__eq__</h4>
+<b>__eq__</b>(<i>other</i>)
+<a NAME="MediaType.__gt__" ID="MediaType.__gt__"></a>
+<h4>MediaType.__gt__</h4>
+<b>__gt__</b>(<i>other</i>)
+<a NAME="MediaType.__lt__" ID="MediaType.__lt__"></a>
+<h4>MediaType.__lt__</h4>
+<b>__lt__</b>(<i>other</i>)
+<a NAME="MediaType.__ne__" ID="MediaType.__ne__"></a>
+<h4>MediaType.__ne__</h4>
+<b>__ne__</b>(<i>other</i>)
+<a NAME="MediaType.__repr__" ID="MediaType.__repr__"></a>
+<h4>MediaType.__repr__</h4>
+<b>__repr__</b>(<i></i>)
+<a NAME="MediaType.__unicode__" ID="MediaType.__unicode__"></a>
+<h4>MediaType.__unicode__</h4>
+<b>__unicode__</b>(<i></i>)
+<a NAME="MediaType.equivalent" ID="MediaType.equivalent"></a>
+<h4>MediaType.equivalent</h4>
+<b>equivalent</b>(<i>other</i>)
+<p>
+        Returns whether two MediaTypes have the same overall specifity.
+</p><a NAME="MediaType.provides" ID="MediaType.provides"></a>
+<h4>MediaType.provides</h4>
+<b>provides</b>(<i>imt</i>)
+<p>
+        Returns True iff the self is at least as specific as other.
+</p><p>
+        Examples:
+        application/xhtml+xml provides application/xml, application/*, */*
+        text/html provides text/*, but not application/xhtml+xml or application/html
+</p><a NAME="MediaType.resolve" ID="MediaType.resolve"></a>
+<h4>MediaType.resolve</h4>
+<b>resolve</b>(<i>accept, provide</i>)
+<p>
+        Resolves a list of accepted MediaTypes and available renderers to the preferred renderer.
+</p><p>
+        Call as MediaType.resolve([MediaType], [(MediaType, renderer)]).
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="update_url" ID="update_url"></a>
+<h2>update_url</h2>
+<b>update_url</b>(<i>url, query_update, fragment = ''</i>)
+<p>
+    Replaces query parameters with those given in query_update, and updates the fragment.
+</p><p>
+    Use None to remove the relevant bits of the URL.
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

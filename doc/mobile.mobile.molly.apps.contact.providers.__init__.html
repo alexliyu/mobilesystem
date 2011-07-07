@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.molly.apps.contact.providers.__init__</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.molly.apps.contact.providers.__init__</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#BaseContactProvider">BaseContactProvider</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#NoSuchResult">NoSuchResult</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#TooManyResults">TooManyResults</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="BaseContactProvider" ID="BaseContactProvider"></a>
+<h2>BaseContactProvider</h2>
+
+<h3>Derived from</h3>
+object
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#BaseContactProvider.fetch_result">fetch_result</a></td>
+<td>May optionally be defined to return the full record for a person, where it is decided that :meth:`perform_query` should return a subset of the available fields.</td>
+</tr><tr>
+<td><a href="#BaseContactProvider.form">form</a></td>
+<td>A class object inheriting :class:`~django.forms.Form` to be presented to the user and used for input validation.</td>
+</tr><tr>
+<td><a href="#BaseContactProvider.medium_choices">medium_choices</a></td>
+<td>An attribute consisting of a list of tuples of the media supported by this provider (e.g., phonebook, e-mail address list, etc), where the tuple is the form ('key', 'description').</td>
+</tr><tr>
+<td><a href="#BaseContactProvider.normalize_query">normalize_query</a></td>
+<td>An attribute consisting of a list of tuples of the media supported by this provider (e.g., phonebook, e-mail address list, etc), where the tuple is the form ('key', 'description').</td>
+</tr><tr>
+<td><a href="#BaseContactProvider.perform_query">perform_query</a></td>
+<td>This method performs a contact lookup based on :data:`**kwargs`.</td>
+</tr>
+</table>
+<a NAME="BaseContactProvider.fetch_result" ID="BaseContactProvider.fetch_result"></a>
+<h4>BaseContactProvider.fetch_result</h4>
+<b>fetch_result</b>(<i>id</i>)
+<p>
+        May optionally be defined to return the full record for a person, where
+        it is decided that :meth:`perform_query` should return a subset of the
+        available fields.
+</p><p>
+        If defined, the default results template will provide a link to a page
+        for the individual.
+</p><p>
+        If the ID is invalid, self.NoSuchResult is raised
+</p><a NAME="BaseContactProvider.form" ID="BaseContactProvider.form"></a>
+<h4>BaseContactProvider.form</h4>
+<b>form</b>(<i></i>)
+<p>
+        A class object inheriting :class:`~django.forms.Form` to be presented to
+        the user and used for input validation. If not overriden, defaults to
+        :class:`~molly.apps.contact.forms.GenericContactForm`, which presents a
+        single query field.
+</p><a NAME="BaseContactProvider.medium_choices" ID="BaseContactProvider.medium_choices"></a>
+<h4>BaseContactProvider.medium_choices</h4>
+<b>medium_choices</b>(<i></i>)
+<p>
+        An attribute consisting of a list of tuples of the media supported by
+        this provider (e.g., phonebook, e-mail address list, etc), where the
+        tuple is the form ('key', 'description'). The key is what is passed as
+        the medium on the ``normalize_query`` method, and the description is
+        what is shown to the user.
+</p><a NAME="BaseContactProvider.normalize_query" ID="BaseContactProvider.normalize_query"></a>
+<h4>BaseContactProvider.normalize_query</h4>
+<b>normalize_query</b>(<i>cleaned_data, medium</i>)
+<p>
+        An attribute consisting of a list of tuples of the media supported by
+        this provider (e.g., phonebook, e-mail address list, etc), where the
+        tuple is the form ('key', 'description'). The key is what is passed as
+        the medium on the ``normalize_query`` method, and the description is
+        what is shown to the user.
+</p><a NAME="BaseContactProvider.perform_query" ID="BaseContactProvider.perform_query"></a>
+<h4>BaseContactProvider.perform_query</h4>
+<b>perform_query</b>(<i>**kwargs</i>)
+<p>
+        This method performs a contact lookup based on :data:`**kwargs`.
+</p><p>
+        Each result must be a dictionary containing some subset of the following
+        keys (taken from :rfc:`4519` which defines standard LDAP attributes):
+</p><p>
+        * `cn` (common name)
+        * `givenName`
+        * `sn` (surname)
+        * `telephoneNumber`
+        * `facsimileTelephoneNumber`
+        * `mail` (e-mail addresses)
+        * `roomNumber`
+        * `title` (job role, etc.)
+        * `ou` (organisational unit, e.g. department)
+</p><p>
+        With the exception of `cn`, all should be lists.
+</p><p>
+        Additionally, a result may contain an `id` item, containing a unique
+        identifier which may be passed to :meth:`fetch_result`. `id`\ s must be
+        URI-safe and not contain forward slashes.
+</p><p>
+        This can return :class:`molly.apps.contact.providers.TooManyResults` if
+        the provider (or underlying services) deems that the query has returned
+        "too many results"
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="NoSuchResult" ID="NoSuchResult"></a>
+<h2>NoSuchResult</h2>
+
+<h3>Derived from</h3>
+KeyError
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="TooManyResults" ID="TooManyResults"></a>
+<h2>TooManyResults</h2>
+
+<h3>Derived from</h3>
+Exception
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

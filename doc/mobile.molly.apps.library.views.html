@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.molly.apps.library.views</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.molly.apps.library.views</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>AVAIL_COLORS</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#IndexView">IndexView</a></td>
+<td>Index page of the library app</td>
+</tr><tr>
+<td><a href="#ItemDetailView">ItemDetailView</a></td>
+<td>More detail about the item page</td>
+</tr><tr>
+<td><a href="#ItemHoldingsView">ItemHoldingsView</a></td>
+<td>Specific details of holdings of a particular item</td>
+</tr><tr>
+<td><a href="#SearchDetailView">SearchDetailView</a></td>
+<td>Search results page</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="IndexView" ID="IndexView"></a>
+<h2>IndexView</h2>
+<p>
+    Index page of the library app
+</p>
+<h3>Derived from</h3>
+BaseView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#IndexView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.get_metadata">get_metadata</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.initial_context">initial_context</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="IndexView.breadcrumb" ID="IndexView.breadcrumb"></a>
+<h4>IndexView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context</i>)
+<a NAME="IndexView.get_metadata" ID="IndexView.get_metadata"></a>
+<h4>IndexView.get_metadata</h4>
+<b>get_metadata</b>(<i>request</i>)
+<a NAME="IndexView.handle_GET" ID="IndexView.handle_GET"></a>
+<h4>IndexView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context</i>)
+<a NAME="IndexView.initial_context" ID="IndexView.initial_context"></a>
+<h4>IndexView.initial_context</h4>
+<b>initial_context</b>(<i>request</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="ItemDetailView" ID="ItemDetailView"></a>
+<h2>ItemDetailView</h2>
+<p>
+    More detail about the item page
+</p>
+<h3>Derived from</h3>
+ZoomableView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#ItemDetailView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ItemDetailView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ItemDetailView.initial_context">initial_context</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="ItemDetailView.breadcrumb" ID="ItemDetailView.breadcrumb"></a>
+<h4>ItemDetailView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context, control_number</i>)
+<a NAME="ItemDetailView.handle_GET" ID="ItemDetailView.handle_GET"></a>
+<h4>ItemDetailView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context, control_number</i>)
+<a NAME="ItemDetailView.initial_context" ID="ItemDetailView.initial_context"></a>
+<h4>ItemDetailView.initial_context</h4>
+<b>initial_context</b>(<i>request, control_number</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="ItemHoldingsView" ID="ItemHoldingsView"></a>
+<h2>ItemHoldingsView</h2>
+<p>
+    Specific details of holdings of a particular item
+</p>
+<h3>Derived from</h3>
+ZoomableView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#ItemHoldingsView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ItemHoldingsView.get_metadata">get_metadata</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ItemHoldingsView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#ItemHoldingsView.initial_context">initial_context</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="ItemHoldingsView.breadcrumb" ID="ItemHoldingsView.breadcrumb"></a>
+<h4>ItemHoldingsView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context, control_number, sublocation</i>)
+<a NAME="ItemHoldingsView.get_metadata" ID="ItemHoldingsView.get_metadata"></a>
+<h4>ItemHoldingsView.get_metadata</h4>
+<b>get_metadata</b>(<i>request, control_number, sublocation</i>)
+<a NAME="ItemHoldingsView.handle_GET" ID="ItemHoldingsView.handle_GET"></a>
+<h4>ItemHoldingsView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context, control_number, sublocation</i>)
+<a NAME="ItemHoldingsView.initial_context" ID="ItemHoldingsView.initial_context"></a>
+<h4>ItemHoldingsView.initial_context</h4>
+<b>initial_context</b>(<i>request, control_number, sublocation</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="SearchDetailView" ID="SearchDetailView"></a>
+<h2>SearchDetailView</h2>
+<p>
+    Search results page
+</p>
+<h3>Derived from</h3>
+BaseView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#SearchDetailView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#SearchDetailView.get_metadata">get_metadata</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#SearchDetailView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#SearchDetailView.handle_error">handle_error</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#SearchDetailView.initial_context">initial_context</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="SearchDetailView.breadcrumb" ID="SearchDetailView.breadcrumb"></a>
+<h4>SearchDetailView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context</i>)
+<a NAME="SearchDetailView.get_metadata" ID="SearchDetailView.get_metadata"></a>
+<h4>SearchDetailView.get_metadata</h4>
+<b>get_metadata</b>(<i>request</i>)
+<a NAME="SearchDetailView.handle_GET" ID="SearchDetailView.handle_GET"></a>
+<h4>SearchDetailView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context</i>)
+<a NAME="SearchDetailView.handle_error" ID="SearchDetailView.handle_error"></a>
+<h4>SearchDetailView.handle_error</h4>
+<b>handle_error</b>(<i>request, context, message</i>)
+<a NAME="SearchDetailView.initial_context" ID="SearchDetailView.initial_context"></a>
+<h4>SearchDetailView.initial_context</h4>
+<b>initial_context</b>(<i>request</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

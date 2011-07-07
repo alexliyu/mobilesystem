@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.molly.apps.feeds.models</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.molly.apps.feeds.models</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>FEED_TYPE_CHOICES</td></tr><tr><td>PROVIDER_CHOICES</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#Feed">Feed</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Item">Item</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_1">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_2">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_3">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#NewsManager">NewsManager</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Series">Series</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Tag">Tag</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#vCard">vCard</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#get_query_set">get_query_set</a></td>
+<td></td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="Feed" ID="Feed"></a>
+<h2>Feed</h2>
+
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>events</td></tr><tr><td>importer_params</td></tr><tr><td>last_modified</td></tr><tr><td>news</td></tr><tr><td>objects</td></tr><tr><td>provider</td></tr><tr><td>ptype</td></tr><tr><td>rss_url</td></tr><tr><td>slug</td></tr><tr><td>tags</td></tr><tr><td>title</td></tr><tr><td>unit</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#Feed.__unicode__">__unicode__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Feed._get_importer_params">_get_importer_params</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Feed._set_importer_params">_set_importer_params</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Feed.get_absolute_url">get_absolute_url</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="Feed.__unicode__" ID="Feed.__unicode__"></a>
+<h4>Feed.__unicode__</h4>
+<b>__unicode__</b>(<i></i>)
+<a NAME="Feed._get_importer_params" ID="Feed._get_importer_params"></a>
+<h4>Feed._get_importer_params</h4>
+<b>_get_importer_params</b>(<i></i>)
+<a NAME="Feed._set_importer_params" ID="Feed._set_importer_params"></a>
+<h4>Feed._set_importer_params</h4>
+<b>_set_importer_params</b>(<i>value</i>)
+<a NAME="Feed.get_absolute_url" ID="Feed.get_absolute_url"></a>
+<h4>Feed.get_absolute_url</h4>
+<b>get_absolute_url</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Item" ID="Item"></a>
+<h2>Item</h2>
+
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>contact</td></tr><tr><td>description</td></tr><tr><td>dt_end</td></tr><tr><td>dt_has_time</td></tr><tr><td>dt_start</td></tr><tr><td>events</td></tr><tr><td>feed</td></tr><tr><td>guid</td></tr><tr><td>last_modified</td></tr><tr><td>link</td></tr><tr><td>news</td></tr><tr><td>objects</td></tr><tr><td>ordinal</td></tr><tr><td>organiser</td></tr><tr><td>ptype</td></tr><tr><td>series</td></tr><tr><td>speaker</td></tr><tr><td>tags</td></tr><tr><td>title</td></tr><tr><td>track</td></tr><tr><td>venue</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#Item.get_absolute_url">get_absolute_url</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Item.get_description_display">get_description_display</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Item.last_modified_local">last_modified_local</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Item.location_mobile_url">location_mobile_url</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Item.save">save</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="Item.get_absolute_url" ID="Item.get_absolute_url"></a>
+<h4>Item.get_absolute_url</h4>
+<b>get_absolute_url</b>(<i></i>)
+<a NAME="Item.get_description_display" ID="Item.get_description_display"></a>
+<h4>Item.get_description_display</h4>
+<b>get_description_display</b>(<i>device</i>)
+<a NAME="Item.last_modified_local" ID="Item.last_modified_local"></a>
+<h4>Item.last_modified_local</h4>
+<b>last_modified_local</b>(<i></i>)
+<a NAME="Item.location_mobile_url" ID="Item.location_mobile_url"></a>
+<h4>Item.location_mobile_url</h4>
+<b>location_mobile_url</b>(<i></i>)
+<a NAME="Item.save" ID="Item.save"></a>
+<h4>Item.save</h4>
+<b>save</b>(<i>*args, **kwargs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta" ID="Meta"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>ordering</td></tr><tr><td>verbose_name</td></tr><tr><td>verbose_name_plural</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_1" ID="Meta_1"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>verbose_name</td></tr><tr><td>verbose_name_plural</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_2" ID="Meta_2"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>verbose_name</td></tr><tr><td>verbose_name_plural</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_3" ID="Meta_3"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>ordering</td></tr><tr><td>verbose_name</td></tr><tr><td>verbose_name_plural</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="NewsManager" ID="NewsManager"></a>
+<h2>NewsManager</h2>
+
+<h3>Derived from</h3>
+models.Manager
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#NewsManager.get_query_set">get_query_set</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="NewsManager.get_query_set" ID="NewsManager.get_query_set"></a>
+<h4>NewsManager.get_query_set</h4>
+<b>get_query_set</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Series" ID="Series"></a>
+<h2>Series</h2>
+
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>feed</td></tr><tr><td>guid</td></tr><tr><td>tags</td></tr><tr><td>title</td></tr><tr><td>unit</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Tag" ID="Tag"></a>
+<h2>Tag</h2>
+
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>value</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="vCard" ID="vCard"></a>
+<h2>vCard</h2>
+
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>address</td></tr><tr><td>entity</td></tr><tr><td>location</td></tr><tr><td>name</td></tr><tr><td>telephone</td></tr><tr><td>uri</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_query_set" ID="get_query_set"></a>
+<h2>get_query_set</h2>
+<b>get_query_set</b>(<i>self</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

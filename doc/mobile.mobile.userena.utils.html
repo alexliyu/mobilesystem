@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.mobile.userena.utils</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.mobile.userena.utils</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#generate_sha1">generate_sha1</a></td>
+<td>Generates a sha1 hash for supplied string.</td>
+</tr><tr>
+<td><a href="#get_gravatar">get_gravatar</a></td>
+<td>Get's a Gravatar for a email address.</td>
+</tr><tr>
+<td><a href="#get_profile_model">get_profile_model</a></td>
+<td>Return the model class for the currently-active user profile model, as defined by the ``AUTH_PROFILE_MODULE`` setting.</td>
+</tr><tr>
+<td><a href="#get_protocol">get_protocol</a></td>
+<td>Returns a string with the current protocol.</td>
+</tr><tr>
+<td><a href="#signin_redirect">signin_redirect</a></td>
+<td>Redirect user after successful sign in.</td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="generate_sha1" ID="generate_sha1"></a>
+<h2>generate_sha1</h2>
+<b>generate_sha1</b>(<i>string, salt=None</i>)
+<p>
+    Generates a sha1 hash for supplied string. Doesn't need to be very secure
+    because it's not used for password checking. We got Django for that.
+</p><p>
+    :param string:
+        The string that needs to be encrypted.
+</p><p>
+    :param salt:
+        Optionally define your own salt. If none is supplied, will use a random
+        string of 5 characters.
+</p><p>
+    :return: Tuple containing the salt and hash.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_gravatar" ID="get_gravatar"></a>
+<h2>get_gravatar</h2>
+<b>get_gravatar</b>(<i>email, size=80, default='identicon'</i>)
+<p>
+ Get's a Gravatar for a email address.
+</p><p>
+    :param size:
+        The size in pixels of one side of the Gravatar's square image.
+        Optional, if not supplied will default to ``80``.
+</p><p>
+    :param default:
+        Defines what should be displayed if no image is found for this user.
+        Optional argument which defaults to ``identicon``. The argument can be
+        a URI to an image or one of the following options:
+</p><p>
+            ``404``
+                Do not load any image if none is associated with the email
+                hash, instead return an HTTP 404 (File Not Found) response.
+</p><p>
+            ``mm``
+                Mystery-man, a simple, cartoon-style silhouetted outline of a
+                person (does not vary by email hash).
+</p><p>
+            ``identicon``
+                A geometric pattern based on an email hash.
+</p><p>
+            ``monsterid``
+                A generated 'monster' with different colors, faces, etc.
+</p><p>
+            ``wavatar``
+                Generated faces with differing features and backgrounds
+</p><p>
+    :return: The URI pointing to the Gravatar.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_profile_model" ID="get_profile_model"></a>
+<h2>get_profile_model</h2>
+<b>get_profile_model</b>(<i></i>)
+<p>
+    Return the model class for the currently-active user profile
+    model, as defined by the ``AUTH_PROFILE_MODULE`` setting.
+</p><p>
+    :return: The model that is used as profile.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_protocol" ID="get_protocol"></a>
+<h2>get_protocol</h2>
+<b>get_protocol</b>(<i></i>)
+<p>
+    Returns a string with the current protocol.
+</p><p>
+    This can be either 'http' or 'https' depending on ``USERENA_USE_HTTPS``
+    setting.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="signin_redirect" ID="signin_redirect"></a>
+<h2>signin_redirect</h2>
+<b>signin_redirect</b>(<i>redirect=None, user=None</i>)
+<p>
+    Redirect user after successful sign in.
+</p><p>
+    First looks for a ``requested_redirect``. If not supplied will fall-back to
+    the user specific account page. If all fails, will fall-back to the standard
+    Django ``LOGIN_REDIRECT_URL`` setting. Returns a string defining the URI to
+    go next.
+</p><p>
+    :param redirect:
+        A value normally supplied by ``next`` form field. Gets preference
+        before the default view which requires the user.
+</p><p>
+    :param user:
+        A ``User`` object specifying the user who has just signed in.
+</p><p>
+    :return: String containing the URI to redirect to.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

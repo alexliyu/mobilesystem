@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.molly.geolocation.views</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.molly.geolocation.views</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#ClearHistoryView">ClearHistoryView</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#FavouritesView">FavouritesView</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeolocationView">GeolocationView</a></td>
+<td>Deals with setting location using POST requests (either forms or AJAX)</td>
+</tr><tr>
+<td><a href="#IndexView">IndexView</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#LocationRequiredView">LocationRequiredView</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="ClearHistoryView" ID="ClearHistoryView"></a>
+<h2>ClearHistoryView</h2>
+
+<h3>Derived from</h3>
+GeolocationView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>breadcrumb</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#ClearHistoryView.handle_POST">handle_POST</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="ClearHistoryView.handle_POST" ID="ClearHistoryView.handle_POST"></a>
+<h4>ClearHistoryView.handle_POST</h4>
+<b>handle_POST</b>(<i>request, context</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="FavouritesView" ID="FavouritesView"></a>
+<h2>FavouritesView</h2>
+
+<h3>Derived from</h3>
+GeolocationView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>actions</td></tr><tr><td>breadcrumb</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#FavouritesView.do_add">do_add</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#FavouritesView.do_remove">do_remove</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#FavouritesView.do_set">do_set</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#FavouritesView.handle_POST">handle_POST</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#FavouritesView.new_id">new_id</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="FavouritesView.do_add" ID="FavouritesView.do_add"></a>
+<h4>FavouritesView.do_add</h4>
+<b>do_add</b>(<i>request, context</i>)
+<a NAME="FavouritesView.do_remove" ID="FavouritesView.do_remove"></a>
+<h4>FavouritesView.do_remove</h4>
+<b>do_remove</b>(<i>request, context</i>)
+<a NAME="FavouritesView.do_set" ID="FavouritesView.do_set"></a>
+<h4>FavouritesView.do_set</h4>
+<b>do_set</b>(<i>request, context</i>)
+<a NAME="FavouritesView.handle_POST" ID="FavouritesView.handle_POST"></a>
+<h4>FavouritesView.handle_POST</h4>
+<b>handle_POST</b>(<i>request, context</i>)
+<a NAME="FavouritesView.new_id" ID="FavouritesView.new_id"></a>
+<h4>FavouritesView.new_id</h4>
+<b>new_id</b>(<i>request</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="GeolocationView" ID="GeolocationView"></a>
+<h2>GeolocationView</h2>
+<p>
+    Deals with setting location using POST requests (either forms or AJAX)
+</p>
+<h3>Derived from</h3>
+BaseView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#GeolocationView.add_to_history">add_to_history</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeolocationView.get_location_response">get_location_response</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeolocationView.handle_set_location">handle_set_location</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeolocationView.initial_context">initial_context</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeolocationView.render_embed">render_embed</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeolocationView.set_location">set_location</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="GeolocationView.add_to_history" ID="GeolocationView.add_to_history"></a>
+<h4>GeolocationView.add_to_history</h4>
+<b>add_to_history</b>(<i>request, name, location, accuracy, method</i>)
+<a NAME="GeolocationView.get_location_response" ID="GeolocationView.get_location_response"></a>
+<h4>GeolocationView.get_location_response</h4>
+<b>get_location_response</b>(<i>request, context, form = None</i>)
+<a NAME="GeolocationView.handle_set_location" ID="GeolocationView.handle_set_location"></a>
+<h4>GeolocationView.handle_set_location</h4>
+<b>handle_set_location</b>(<i>request, context</i>)
+<a NAME="GeolocationView.initial_context" ID="GeolocationView.initial_context"></a>
+<h4>GeolocationView.initial_context</h4>
+<b>initial_context</b>(<i>request</i>)
+<a NAME="GeolocationView.render_embed" ID="GeolocationView.render_embed"></a>
+<h4>GeolocationView.render_embed</h4>
+<b>render_embed</b>(<i>request, context, template_name</i>)
+<a NAME="GeolocationView.set_location" ID="GeolocationView.set_location"></a>
+<h4>GeolocationView.set_location</h4>
+<b>set_location</b>(<i>request, name, location, accuracy, method, with_history=False</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="IndexView" ID="IndexView"></a>
+<h2>IndexView</h2>
+
+<h3>Derived from</h3>
+GeolocationView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#IndexView.breadcrumb">breadcrumb</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.handle_GET">handle_GET</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#IndexView.handle_POST">handle_POST</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="IndexView.breadcrumb" ID="IndexView.breadcrumb"></a>
+<h4>IndexView.breadcrumb</h4>
+<b>breadcrumb</b>(<i>request, context</i>)
+<a NAME="IndexView.handle_GET" ID="IndexView.handle_GET"></a>
+<h4>IndexView.handle_GET</h4>
+<b>handle_GET</b>(<i>request, context</i>)
+<a NAME="IndexView.handle_POST" ID="IndexView.handle_POST"></a>
+<h4>IndexView.handle_POST</h4>
+<b>handle_POST</b>(<i>request, context</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="LocationRequiredView" ID="LocationRequiredView"></a>
+<h2>LocationRequiredView</h2>
+
+<h3>Derived from</h3>
+BaseView
+<h3>Class Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#LocationRequiredView.__call__">__call__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#LocationRequiredView.is_location_required">is_location_required</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="LocationRequiredView.__call__" ID="LocationRequiredView.__call__"></a>
+<h4>LocationRequiredView.__call__</h4>
+<b>__call__</b>(<i>request, *args, **kwargs</i>)
+<a NAME="LocationRequiredView.is_location_required" ID="LocationRequiredView.is_location_required"></a>
+<h4>LocationRequiredView.is_location_required</h4>
+<b>is_location_required</b>(<i>request, *args, **kwargs</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

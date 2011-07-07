@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.molly.maps.osm.models</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.molly.maps.osm.models</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#GeneratedMap">GeneratedMap</a></td>
+<td>In database representation of a generated map on disk</td>
+</tr><tr>
+<td><a href="#Meta">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_1">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_2">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMTile">OSMTile</a></td>
+<td>In-database representation of a cached OSM tile on disk</td>
+</tr><tr>
+<td><a href="#OSMUpdate">OSMUpdate</a></td>
+<td>A user-submitted update to OSM</td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr>
+<td><a href="#get_generated_map_dir">get_generated_map_dir</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#get_marker_dir">get_marker_dir</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#get_osm_tile_dir">get_osm_tile_dir</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#get_tile_url">get_tile_url</a></td>
+<td>Return a URL for a tile given some OSM tile co-ordinates</td>
+</tr>
+</table>
+<hr /><hr />
+<a NAME="GeneratedMap" ID="GeneratedMap"></a>
+<h2>GeneratedMap</h2>
+<p>
+    In database representation of a generated map on disk
+</p>
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>_metadata</td></tr><tr><td>faulty</td></tr><tr><td>generated</td></tr><tr><td>hash</td></tr><tr><td>last_accessed</td></tr><tr><td>metadata</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#GeneratedMap._get_metadata">_get_metadata</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeneratedMap._set_metadata">_set_metadata</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#GeneratedMap.delete">delete</a></td>
+<td>When deleting from the db, also delete on disk</td>
+</tr><tr>
+<td><a href="#GeneratedMap.get_filename">get_filename</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="GeneratedMap._get_metadata" ID="GeneratedMap._get_metadata"></a>
+<h4>GeneratedMap._get_metadata</h4>
+<b>_get_metadata</b>(<i></i>)
+<a NAME="GeneratedMap._set_metadata" ID="GeneratedMap._set_metadata"></a>
+<h4>GeneratedMap._set_metadata</h4>
+<b>_set_metadata</b>(<i>value</i>)
+<a NAME="GeneratedMap.delete" ID="GeneratedMap.delete"></a>
+<h4>GeneratedMap.delete</h4>
+<b>delete</b>(<i>*args, **kwargs</i>)
+<p>
+        When deleting from the db, also delete on disk
+</p><a NAME="GeneratedMap.get_filename" ID="GeneratedMap.get_filename"></a>
+<h4>GeneratedMap.get_filename</h4>
+<b>get_filename</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta" ID="Meta"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>app_label</td></tr><tr><td>db_table</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_1" ID="Meta_1"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>app_label</td></tr><tr><td>db_table</td></tr><tr><td>unique_together</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_2" ID="Meta_2"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>app_label</td></tr><tr><td>db_table</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OSMTile" ID="OSMTile"></a>
+<h2>OSMTile</h2>
+<p>
+    In-database representation of a cached OSM tile on disk
+</p>
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>last_fetched</td></tr><tr><td>xtile</td></tr><tr><td>ytile</td></tr><tr><td>zoom</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#OSMTile.get_data">get_data</a></td>
+<td>Fetch an OSM tile from the OSM tile server, and cache it if necessary.</td>
+</tr><tr>
+<td><a href="#OSMTile.get_filename">get_filename</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#OSMTile.refresh_data">refresh_data</a></td>
+<td></td>
+</tr>
+</table>
+<a NAME="OSMTile.get_data" ID="OSMTile.get_data"></a>
+<h4>OSMTile.get_data</h4>
+<b>get_data</b>(<i>ytile, zoom</i>)
+<p>
+        Fetch an OSM tile from the OSM tile server, and cache it if necessary.
+</p><a NAME="OSMTile.get_filename" ID="OSMTile.get_filename"></a>
+<h4>OSMTile.get_filename</h4>
+<b>get_filename</b>(<i></i>)
+<a NAME="OSMTile.refresh_data" ID="OSMTile.refresh_data"></a>
+<h4>OSMTile.refresh_data</h4>
+<b>refresh_data</b>(<i>retry=True</i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="OSMUpdate" ID="OSMUpdate"></a>
+<h2>OSMUpdate</h2>
+<p>
+    A user-submitted update to OSM 
+</p>
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>approved</td></tr><tr><td>contributor_attribute</td></tr><tr><td>contributor_email</td></tr><tr><td>contributor_name</td></tr><tr><td>entity</td></tr><tr><td>new</td></tr><tr><td>notes</td></tr><tr><td>old</td></tr><tr><td>submitted</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_generated_map_dir" ID="get_generated_map_dir"></a>
+<h2>get_generated_map_dir</h2>
+<b>get_generated_map_dir</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_marker_dir" ID="get_marker_dir"></a>
+<h2>get_marker_dir</h2>
+<b>get_marker_dir</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_osm_tile_dir" ID="get_osm_tile_dir"></a>
+<h2>get_osm_tile_dir</h2>
+<b>get_osm_tile_dir</b>(<i></i>)
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="get_tile_url" ID="get_tile_url"></a>
+<h2>get_tile_url</h2>
+<b>get_tile_url</b>(<i>xtile, ytile, zoom</i>)
+<p>
+    Return a URL for a tile given some OSM tile co-ordinates
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

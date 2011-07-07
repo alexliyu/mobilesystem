@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html><head>
+<title>mobile.userena.contrib.umessages.models</title>
+<style>
+body {
+    background:white;
+    margin: 0em 1em 10em 1em;
+    color: black;
+}
+
+h1 { color: white; background: #4FA4FF; }
+h2 { color: white; background: #4FA4FF; }
+h3 { color: white; background: #00557F; }
+h4 { color: white; background: #00557F; }
+    
+a { color: #AA5500; }
+
+</style>
+</head>
+<body><a NAME="top" ID="top"></a>
+<h1>mobile.userena.contrib.umessages.models</h1>
+
+<h3>Global Attributes</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<h3>Classes</h3>
+<table>
+<tr>
+<td><a href="#Message">Message</a></td>
+<td>Private message model, from user to user(s)</td>
+</tr><tr>
+<td><a href="#MessageContact">MessageContact</a></td>
+<td>Contact model.</td>
+</tr><tr>
+<td><a href="#MessageRecipient">MessageRecipient</a></td>
+<td>Intermediate model to allow per recipient marking as deleted, read etc.</td>
+</tr><tr>
+<td><a href="#Meta">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_1">Meta</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#Meta_2">Meta</a></td>
+<td></td>
+</tr>
+</table>
+<h3>Functions</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+<hr /><hr />
+<a NAME="Message" ID="Message"></a>
+<h2>Message</h2>
+<p>
+ Private message model, from user to user(s) 
+</p>
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>auto_now_add</td></tr><tr><td>blank</td></tr><tr><td>body</td></tr><tr><td>null</td></tr><tr><td>objects</td></tr><tr><td>recipients</td></tr><tr><td>related_name</td></tr><tr><td>sender</td></tr><tr><td>sender_deleted_at</td></tr><tr><td>sent_at</td></tr><tr><td>through</td></tr><tr><td>verbose_name</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#Message.__unicode__">__unicode__</a></td>
+<td>Human representation, displaying first ten words of the body.</td>
+</tr><tr>
+<td><a href="#Message.save_recipients">save_recipients</a></td>
+<td>Save the recipients for this message</td>
+</tr><tr>
+<td><a href="#Message.update_contacts">update_contacts</a></td>
+<td>Updates the contacts that are used for this message.</td>
+</tr>
+</table>
+<a NAME="Message.__unicode__" ID="Message.__unicode__"></a>
+<h4>Message.__unicode__</h4>
+<b>__unicode__</b>(<i></i>)
+<p>
+ Human representation, displaying first ten words of the body. 
+</p><a NAME="Message.save_recipients" ID="Message.save_recipients"></a>
+<h4>Message.save_recipients</h4>
+<b>save_recipients</b>(<i>to_user_list</i>)
+<p>
+        Save the recipients for this message
+</p><p>
+        :param to_user_list:
+            A list which elements are :class:`User` to whom the message is for.
+</p><p>
+        :return:
+            Boolean indicating if any users are saved.
+</p><p>
+
+</p><a NAME="Message.update_contacts" ID="Message.update_contacts"></a>
+<h4>Message.update_contacts</h4>
+<b>update_contacts</b>(<i>to_user_list</i>)
+<p>
+        Updates the contacts that are used for this message.
+</p><p>
+        :param to_user_list:
+            List of Django :class:`User`.
+</p><p>
+        :return:
+            A boolean if a user is contact is updated.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="MessageContact" ID="MessageContact"></a>
+<h2>MessageContact</h2>
+<p>
+    Contact model.
+</p><p>
+    A contact is a user to whom a user has send a message to or
+    received a message from.
+</p><p>
+
+</p>
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>from_user</td></tr><tr><td>latest_message</td></tr><tr><td>objects</td></tr><tr><td>related_name</td></tr><tr><td>to_user</td></tr><tr><td>verbose_name</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#MessageContact.__unicode__">__unicode__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MessageContact.opposite_user">opposite_user</a></td>
+<td>Returns the user opposite of the user that is given</td>
+</tr>
+</table>
+<a NAME="MessageContact.__unicode__" ID="MessageContact.__unicode__"></a>
+<h4>MessageContact.__unicode__</h4>
+<b>__unicode__</b>(<i></i>)
+<a NAME="MessageContact.opposite_user" ID="MessageContact.opposite_user"></a>
+<h4>MessageContact.opposite_user</h4>
+<b>opposite_user</b>(<i>user</i>)
+<p>
+        Returns the user opposite of the user that is given
+</p><p>
+        :param user:
+            A Django :class:`User`.
+</p><p>
+        :return:
+            A Django :class:`User`.
+</p><p>
+
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="MessageRecipient" ID="MessageRecipient"></a>
+<h2>MessageRecipient</h2>
+<p>
+    Intermediate model to allow per recipient marking as
+    deleted, read etc. of a message.
+</p><p>
+
+</p>
+<h3>Derived from</h3>
+models.Model
+<h3>Class Attributes</h3>
+<table>
+<tr><td>blank</td></tr><tr><td>deleted_at</td></tr><tr><td>message</td></tr><tr><td>null</td></tr><tr><td>objects</td></tr><tr><td>read_at</td></tr><tr><td>user</td></tr><tr><td>verbose_name</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr>
+<td><a href="#MessageRecipient.__unicode__">__unicode__</a></td>
+<td></td>
+</tr><tr>
+<td><a href="#MessageRecipient.is_read">is_read</a></td>
+<td>Returns a boolean whether the recipient has read the message</td>
+</tr>
+</table>
+<a NAME="MessageRecipient.__unicode__" ID="MessageRecipient.__unicode__"></a>
+<h4>MessageRecipient.__unicode__</h4>
+<b>__unicode__</b>(<i></i>)
+<a NAME="MessageRecipient.is_read" ID="MessageRecipient.is_read"></a>
+<h4>MessageRecipient.is_read</h4>
+<b>is_read</b>(<i></i>)
+<p>
+ Returns a boolean whether the recipient has read the message 
+</p>
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta" ID="Meta"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>ordering</td></tr><tr><td>unique_together</td></tr><tr><td>verbose_name</td></tr><tr><td>verbose_name_plural</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_1" ID="Meta_1"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>verbose_name</td></tr><tr><td>verbose_name_plural</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr /><hr />
+<a NAME="Meta_2" ID="Meta_2"></a>
+<h2>Meta</h2>
+
+<h3>Derived from</h3>
+None
+<h3>Class Attributes</h3>
+<table>
+<tr><td>ordering</td></tr><tr><td>verbose_name</td></tr><tr><td>verbose_name_plural</td></tr>
+</table>
+<h3>Methods</h3>
+<table>
+<tr><td>None</td></tr>
+</table>
+
+<div align="right"><a href="#top">Up</a></div>
+<hr />
+</body></html>

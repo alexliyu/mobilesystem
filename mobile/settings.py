@@ -1,13 +1,28 @@
 #-*- coding:utf-8 -*-
-'''
-Created on 2011-1-30
+"""
+这是项目的基本配置文件.
 
-@author: 李昱
-'''
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+
+@param DEBUG 是否开启调试模式
+
+@param TEMPLATE_DEBUG 是否开启模板调试模式
+
+@event event 无事件
+
+@exception exception 无返回
+
+@keyparam  param 无参数
+
+@return 无返回
+       
+"""
 from oauth.oauth import OAuthSignatureMethod_PLAINTEXT
 import os.path
-from molly.conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
-from molly.utils.media import get_compress_groups
+from mobile.molly.conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
+from mobile.molly.utils.media import get_compress_groups
 project_root = os.path.normpath(os.path.dirname(__file__))
 molly_root = os.path.join(project_root, 'molly')
 gettext = lambda s: s
@@ -20,7 +35,8 @@ MANAGERS = ADMINS
 
 # DEBUG mode is not recommended in production
 
-DEBUG = True
+DEBUG = True 
+
 DEBUG_SECURE = DEBUG
 TEMPLATE_DEBUG = DEBUG
 AUTH_PROFILE_MODULE = 'users.UserProfile' 
@@ -51,28 +67,27 @@ ROOT_URLCONF = 'mobile.urls'
 
 # 
 # 在公司的数据库配置
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': '192.168.1.34',
-        'NAME': 'mobile',
-        'USER': 'mobile',
-        'PASSWORD': 'mobile',
-##        'PASSWORD':'6b6RyKNvOnEvbrynYK',
-    }
-}
-
-# 在家里的数据库配置
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
+#        'ENGINE': 'django.db.backends.mysql',
 #        'HOST': '192.168.1.34',
-#        'NAME': os.path.join(project_root, 'mobile.db'),
+#        'NAME': 'mobile',
 #        'USER': 'mobile',
 #        'PASSWORD': 'mobile',
-#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
 #    }
 #}
+
+# 在家里的数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'HOST': '192.168.1.34',
+        'NAME': os.path.join(project_root, 'mobile.db'),
+        'USER': 'mobile',
+        'PASSWORD': 'mobile',
+        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+    }
+}
 
 
 # API keys are used to access particular services
