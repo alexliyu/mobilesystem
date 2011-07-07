@@ -1,38 +1,45 @@
 {% extends "business/base.html" %}
 
 {% block content %}
-<div class="section">
-	<div class="header">
-	  <h2>优惠活动</h2>
-	</div>
-<ul class="business_list">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<ul data-role="listview">
 	{% for b in list.object_list %}
-    	<li>
-		   <a href="/business/{{ b.id  }}">{{ b.businessName  }}</a>的<a href="{{ b.get_bidUrl}}">优惠活动</a>
-    	</li>
+    	
+    	<li><a href="/business/{{ b.id  }}">
+				<img src="{{b.get_logoUrl}}" />
+				<h3>{{ b.businessName  }}</h3><span class="ui-li-count">优惠活动有{{b.promotions_count}}项哦</span>
+				<p>{{b.introdution|safe}}</p>
+			</a>
+		</li>
+			
 	{% endfor %}
 </ul>
 </div>
+<div class="clear"></div>
 
-<div align="center"><h2>
+<div data-role="navbar">
+<ul>
 {{ userList.paginator.num_pages }}
-<a href="?page=1" title="首页">首页</a>
+<li><a href="?page=1" title="首页">首页</a></li>
 {% if list.has_previous %}
-<a href="?page={{ list.previous_page_number }}" title="下一页">上一页</a>&nbsp;
+<li><a href="?page={{ list.previous_page_number }}" title="下一页">上一页</a>&nbsp;</li>
 {% endif %}
+<li>
 {% for p in page_range %}
 {% ifequal p list.number %}
-<span>{{p}}</span>
+<a href="#" title="第{{p}}页" class="ui-btn-active">{{p}}</a>
 {% else %}
 <a href="?page={{p}}" title="第{{p}}页">{{p}}</a>
 {% endifequal %}
 {% endfor %}
 &nbsp;
+</li>
+
 {% if list.has_next %}
-<a href="?page={{ list.next_page_number }}" title="下一页">下一页</a>&nbsp;
+<li><a href="?page={{ list.next_page_number }}" title="下一页">下一页</a>&nbsp;</li>
 {% endif %}
-<a href="?page={{ list.paginator.num_pages }}" title="末页">末页</a>
-</h2>
+<li><a href="?page={{ list.paginator.num_pages }}" title="末页">末页</a></li>
+</ul>
 </div>
 
 {% endblock %}

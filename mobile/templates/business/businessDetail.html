@@ -1,13 +1,27 @@
 {% extends "business/base.html" %}
 
 {% block content %}
-<div class="bubble pad-10">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<ul class="ui-grid-a"><div class="ui-block-a"><img src="{{ business.get_logoUrl }}" width="160" height="120"/></div>
+    <div class="ui-block-b">
     <p>商家名称:{{ business.businessName  }}</p>
     <p>商家简介:</p>
     <p>{{ business.introdution|safe  }}</p>
     <p>商家网址:<a href="{{ business.businessUrl  }}">{{ business.businessUrl  }}</a></p>
     <p>联系电话:{{ business.telephone }}</p>
-    <p>商家LOGO:</p>
-    <p><img src="{{ business.get_logoUrl }}" width="160" height="120"/></p>
 </div>
+ </ul>  
+</div>
+
+<div class="content-secondary">
+		
+		<div data-role="collapsible" data-collapsed="true">
+			<h3>查看商家优惠活动列表</h3>
+			<ul data-role="listview" data-inset="true" data-theme="d">
+				{%for item in business.promotions_list%}
+									<li><a href="/business/detail/{{item.id}}">{{item.title}}<span class="ui-li-count">结束时间为{{item.endTime}}哦</span></a></li>
+				{%endfor%}
+			</ul>
+		</div><!-- /section 4 -->
+	</div>		
 {% endblock %}

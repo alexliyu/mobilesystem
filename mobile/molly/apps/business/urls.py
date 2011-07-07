@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns
-from mobile.molly.apps.business.views import PromotionsView,\
+from mobile.molly.apps.business.views import PromotionsView, \
     PromotionsDetail, PromotionsList, BusinessList, BusinessDetail
 
 #info = {
@@ -8,9 +8,9 @@ from mobile.molly.apps.business.views import PromotionsView,\
 #    'template_object_name': 'promotions',
 #}
 urlpatterns = patterns('',
-       (r'^(?P<slug>[\d+]+)/$', PromotionsDetail,{},'promotionsDetail'),
-       (r'^pro/(?P<slug>[\d+]+)/$', PromotionsView, {},'promotionsView'),
-       (r'^proall/', PromotionsList, {},'promotionsView'),
-       (r'^/business/(?P<slug>[\d+]+)/$', BusinessDetail,{},'businessDetail'),
-       (r'^$', BusinessList, {},'index'),
+       (r'^detail/(?P<slug>[\d+]+)/$', PromotionsDetail, {}, 'promotionsDetail'),
+       (r'^pro/(?P<slug>[\d+]+)/$', PromotionsView, {}, 'promotionsView'),
+       (r'^proall/', PromotionsList, {}, 'promotionsView'),
+       (r'^(?P<slug>[\d+]+)/$', BusinessDetail, {}, 'businessDetail'),
+       (r'^$', BusinessList, {}, 'index'),
        )

@@ -1,0 +1,13 @@
+{% extends "links/base.html" %}
+
+{% block content %}
+<ul data-role="listview" data-filter="true"> 
+{% for item in linkscategroy %}
+	<li data-role="list-divider">{{item.class_title}}</li>
+	{%for links in item.links%}
+    	<li><a href="{{ links.link_url  }}">{{ links.link_title  }}</a></li>
+    {%endfor%}
+{% endfor %}
+</ul>
+
+{% endblock %}

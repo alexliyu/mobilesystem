@@ -16,6 +16,12 @@ class BusinessInfo(models.Model):
     def get_bidUrl(self):
         return 'pro/%s' % self.id
     
+    def promotions_count(self):
+        return PromotionsInfo.objects.all().filter(business=self).count()
+    
+    def promotions_list(self):
+        return PromotionsInfo.objects.all().filter(business=self)
+    
     def get_logoUrl(self):
         try:
             a = self.businessLogo.__str__().split('/media/')
@@ -50,7 +56,7 @@ class PromotionsInfo(models.Model):
 
     def get_content(self):
         
-        return self.content.__str__().replace("^<[^\s]>","")
+        return self.content.__str__().replace("^<[^\s]>", "")
     
     def get_picSrc(self):
         try:

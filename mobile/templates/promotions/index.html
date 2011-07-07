@@ -1,38 +1,42 @@
 {% extends "promotions/base.html" %}
 
 {% block content %}
-<div class="section">
-    <div class="header">
-      <h2>优惠活动</h2>
-    </div>
-<ul class="business_list">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<ul data-role="listview">
 {% for promotions in list.object_list %}
     <li>
-    	<a href="/business/{{promotions.id}}">{{ promotions.title  }}</a>
-    	</li>
+    	<a href="/business/detail/{{promotions.id}}">{{ promotions.title  }}<span class="ui-li-count">结束时间为{{promotions.endTime}}哦</span></a>
+    </li>
 {% endfor %}
 
 </ul>
 </div>
 
-<div align="center"><h2>
-<a href="?page=1" title="首页">首页</a>
+<div class="clear"></div>
+
+<div data-role="navbar">
+<ul>
+
+<li><a href="?page=1" title="首页">首页</a></li>
 {% if list.has_previous %}
-<a href="?page={{ list.previous_page_number }}" title="下一页">上一页</a>&nbsp;
+<li><a href="?page={{ list.previous_page_number }}" title="下一页">上一页</a>&nbsp;</li>
 {% endif %}
+<li>
 {% for p in page_range %}
 {% ifequal p list.number %}
-<span>{{p}}</span>
+<a href="#" title="第{{p}}页" class="ui-btn-active">{{p}}</a>
 {% else %}
 <a href="?page={{p}}" title="第{{p}}页">{{p}}</a>
 {% endifequal %}
 {% endfor %}
 &nbsp;
+</li>
+
 {% if list.has_next %}
-<a href="?page={{ list.next_page_number }}" title="下一页">下一页</a>&nbsp;
+<li><a href="?page={{ list.next_page_number }}" title="下一页">下一页</a>&nbsp;</li>
 {% endif %}
-<a href="?page={{ list.paginator.num_pages }}" title="末页">末页</a>
-</h2>
+<li><a href="?page={{ list.paginator.num_pages }}" title="末页">末页</a></li>
+</ul>
 </div>
 
 {% endblock %}

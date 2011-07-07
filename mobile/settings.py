@@ -118,12 +118,9 @@ APPLICATIONS = [
     
     Application('molly.apps.weather', 'weather', '天气',
         location_id='1832',
-        provider=Provider('molly.apps.weather.providers.BBCWeatherProvider',
-            location_id=1832,
-        ),
          display_to_user=False,
     ),
-    Application('mobile.molly.apps.Lottery', 'Lottery', '中奖查询',
+    Application('mobile.molly.apps.Lottery', 'lottery', '中奖查询',
         providers=[        ],
          display_to_user=True,
         ),
@@ -214,15 +211,6 @@ APPLICATIONS = [
         ],
 
     ),
-    
-#    Application('mobile.molly.apps.transport', 'transport', '交通',
-#            train_station='crs:AYW',
-#        nearby={
-#            'bus_stops': ('bus-stop', 5),
-#        },
-#        #transit_status_provider = 'mobile.molly.apps.transport.providers.TubeStatusProvider',
-#    
-#        ),
     
     Application('molly.favourites', 'favourites', 'Favourite pages',
         display_to_user=False,

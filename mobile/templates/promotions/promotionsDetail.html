@@ -1,14 +1,21 @@
 {% extends "promotions/base.html" %}
 
 {% block content %}
-<div class="bubble pad-10">
-    <p>活动标题: <strong>{{ promotions.title  }} </strong></p>
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<h2>{{ promotions.title  }}</h2>
+<ul class="ui-grid-a">
+<div class="ui-block-a">
+    
     <p>活动内容:</p>
     <p>{{ promotions.content|safe  }}</p>
     <p>开始时间:{{ promotions.beginTime|date:" Y-m-j" }}</p>
     <p>结束时间:{{ promotions.endTime|date:" Y-m-j" }}</p>
     <p>所属商家:{{ promotions.business.businessName  }}</p>
+</div>
+<div class="ui-block-b">
     <p>优惠劵:</p>
     <p><a href="{{ promotions.get_picSrc }}"><img src="{{ promotions.get_picSrc }}" width="160" height="120"/></a></p>
+</div>
+</ul>
 </div>
 {% endblock %}

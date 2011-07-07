@@ -3,7 +3,7 @@
 {% load molly_utils %} 
 {% block site_title %}{% endblock %} {% block title %}{{site_name }}{% endblock %} 
 {% block header %}
-<div data-role="header" data-position="inline">
+<div data-role="header" data-position="inline" data-position="fixed">
 	<!--页面头部 -->
 	<h1><a href="{% url home:index %}"><img src="/media/site/images/logos/LOGO.png" alt="{{ site_name }}" /></a></h1>
 	
@@ -46,7 +46,7 @@
 
 	<form action="/accounts/signup/" method="post">
 		{% csrf_token %}
-		<h3>
+		<h4>
 			还没有注册手机号？亲，注册只要5钞钟！
 			</p>
 			<p>第一次有效注册前100名有奖品拿哦!
