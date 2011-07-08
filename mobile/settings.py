@@ -21,10 +21,10 @@
 """
 from oauth.oauth import OAuthSignatureMethod_PLAINTEXT
 import os.path
-from mobile.molly.conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
-from mobile.molly.utils.media import get_compress_groups
+from mobile.conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
+from mobile.utils.media import get_compress_groups
 project_root = os.path.normpath(os.path.dirname(__file__))
-molly_root = os.path.join(project_root, 'molly')
+molly_root = project_root
 gettext = lambda s: s
 
 ADMINS = (
@@ -67,27 +67,27 @@ ROOT_URLCONF = 'mobile.urls'
 
 # 
 # 在公司的数据库配置
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'HOST': '192.168.1.34',
-#        'NAME': 'mobile',
-#        'USER': 'mobile',
-#        'PASSWORD': 'mobile',
-#    }
-#}
-
-# 在家里的数据库配置
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'HOST': '192.168.1.34',
-        'NAME': os.path.join(project_root, 'mobile.db'),
+        'NAME': 'mobile',
         'USER': 'mobile',
         'PASSWORD': 'mobile',
-        'PASSWORD':'6b6RyKNvOnEvbrynYK',
     }
 }
+
+# 在家里的数据库配置
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'HOST': '192.168.1.34',
+#        'NAME': os.path.join(project_root, 'mobile.db'),
+#        'USER': 'mobile',
+#        'PASSWORD': 'mobile',
+#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#    }
+#}
 
 
 # API keys are used to access particular services
@@ -100,111 +100,111 @@ TIME_ZONE = 'Asia/Shanghai'
 # The meat of Molly - application configuration
 APPLICATIONS = [
 
-    Application('mobile.molly.apps.home', 'home', '主页',
+    Application('mobile.apps.home', 'home', '主页',
         display_to_user=False,
     ),
     
-#    Application('mobile.molly.apps.desktop', 'desktop', '桌面',
+#    Application('mobile.apps.desktop', 'desktop', '桌面',
 #        display_to_user=True,
 #        twitter_username='alexliyu',
 #        blog_rss_url='http://feeds.feedburner.com/mobileoxford',
 #    ),
     
-    Application('mobile.molly.apps.podcasts', 'podcasts', '视频点播',
+    Application('mobile.apps.podcasts', 'podcasts', '视频点播',
         providers=[        ]
         ),
     
-#   Application('mobile.molly.apps.webcams', 'webcams', 'Webcams'),
+#   Application('mobile.apps.webcams', 'webcams', 'Webcams'),
     
-    Application('molly.apps.weather', 'weather', '天气',
+    Application('mobile.apps.weather', 'weather', '天气',
         location_id='1832',
          display_to_user=False,
     ),
-    Application('mobile.molly.apps.Lottery', 'lottery', '中奖查询',
+    Application('mobile.apps.Lottery', 'lottery', '中奖查询',
         providers=[        ],
          display_to_user=True,
         ),
-    Application('mobile.molly.apps.service_status', 'service_status', '服务状态',
+    Application('mobile.apps.service_status', 'service_status', '服务状态',
         providers=[        ],
          display_to_user=False,
         ),
     
-    Application('mobile.molly.apps.search', 'search', '搜索',
+    Application('mobile.apps.search', 'search', '搜索',
         providers=[
-            Provider('mobile.molly.apps.search.providers.ApplicationSearchProvider'),
+            Provider('mobile.apps.search.providers.ApplicationSearchProvider'),
         ],
         # Uncomment if you're using a query expansion file
         #query_expansion_file = os.path.join(project_root, 'data', 'query_expansion.txt'),
         display_to_user=False,
     ),
     
-    Application('mobile.molly.apps.feeds', 'feeds', 'Feeds',
+    Application('mobile.apps.feeds', 'feeds', 'Feeds',
         providers=[
-            Provider('mobile.molly.apps.feeds.providers.RSSFeedsProvider'),
+            Provider('mobile.apps.feeds.providers.RSSFeedsProvider'),
         ],
         display_to_user=False,
     ),
     
-    Application('mobile.molly.apps.feeds.news', 'news', '团购'),
+    Application('mobile.apps.feeds.news', 'news', '团购'),
     
-    Application('mobile.molly.apps.feeds.events', 'events', '公告'),
+    Application('mobile.apps.feeds.events', 'events', '公告'),
     
-#    Application('molly.maps', 'maps', '地图',
+#    Application('mobile.maps', 'maps', '地图',
 #        display_to_user=False,
 #    ),
     
-#    Application('molly.geolocation', 'geolocation', 'Geolocation',
+#    Application('mobile.geolocation', 'geolocation', 'Geolocation',
 #    
 #        prefer_results_near=(118.115749, 24.471363, 10000),
 #        providers=[
-#            Provider('molly.geolocation.providers.PlacesGeolocationProvider'),
+#            Provider('mobile.geolocation.providers.PlacesGeolocationProvider'),
 #        ],
 #        display_to_user=False,
 #    ),
     
-    Application('mobile.molly.apps.feedback', 'feedback', '建议',
+    Application('mobile.apps.feedback', 'feedback', '建议',
         display_to_user=False,
     ),
 #    
-#    Application('mobile.molly.apps.feature_vote', 'feature_vote', '活动建议',
+#    Application('mobile.apps.feature_vote', 'feature_vote', '活动建议',
 #        display_to_user=True,
 #    ),
     
-    Application('molly.external_media', 'external_media', 'External Media',
+    Application('mobile.external_media', 'external_media', 'External Media',
         display_to_user=False,
     ),
     
-    Application('molly.wurfl', 'device_detection', '终端信息',
+    Application('mobile.wurfl', 'device_detection', '终端信息',
         display_to_user=False,
         expose_view=True,
     ),
 #    
-#    Application('mobile.molly.apps.stats', 'stats', 'Statistics',
+#    Application('mobile.apps.stats', 'stats', 'Statistics',
 #         display_to_user=True,
 #     ),
 #    
-    Application('molly.url_shortener', 'url_shortener', 'URL Shortener',
+    Application('mobile.url_shortener', 'url_shortener', 'URL Shortener',
         display_to_user=False,
     ),
     
-    Application('mobile.molly.apps.links', 'links', '网址导航',
+    Application('mobile.apps.links', 'links', '网址导航',
         display_to_user=True,
     ),
      
-    Application('molly.utils', 'utils', 'Molly utility services',
+    Application('mobile.utils', 'utils', 'Molly utility services',
         display_to_user=True,
     ),
 #    
-    Application('molly.auth', 'auth', '授权',
+    Application('mobile.auth', 'auth', '授权',
         display_to_user=False,
         secure=True,
         unify_identifiers=('weblearn:id',),
     ),
     
-    Application('mobile.molly.apps.places', 'places', '消费导航',
+    Application('mobile.apps.places', 'places', '消费导航',
         providers=[
-            'mobile.molly.apps.places.providers.ACISLiveMapsProvider',
-            Provider('mobile.molly.apps.places.providers.OSMMapsProvider',
+            'mobile.apps.places.providers.ACISLiveMapsProvider',
+            Provider('mobile.apps.places.providers.OSMMapsProvider',
                      lat_north=24.671363, lat_south=24.271363,
                      lon_west=117.915749, lon_east=118.315749
             ),
@@ -212,15 +212,15 @@ APPLICATIONS = [
 
     ),
     
-    Application('molly.favourites', 'favourites', 'Favourite pages',
+    Application('mobile.favourites', 'favourites', 'Favourite pages',
         display_to_user=False,
     ),
                 
-    Application('mobile.molly.apps.business', 'business', '联盟商家',
+    Application('mobile.apps.business', 'business', '联盟商家',
         display_to_user=True,
     ),
                 
-    Application('mobile.molly.apps.users', 'users', '用户中心',
+    Application('mobile.apps.users', 'users', '用户中心',
         display_to_user=False,
     ),
     
@@ -232,14 +232,14 @@ APPLICATIONS = [
 # handled by the view. They're useful in providing high-level global
 # functionality
 MIDDLEWARE_CLASSES = (
-    'mobile.molly.wurfl.middleware.WurflMiddleware',
+    'mobile.wurfl.middleware.WurflMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'mobile.molly.utils.middleware.ErrorHandlingMiddleware',
+    'mobile.utils.middleware.ErrorHandlingMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'mobile.molly.auth.middleware.SecureSessionMiddleware',
-    'mobile.molly.apps.stats.middleware.StatisticsMiddleware',
-    'mobile.molly.url_shortener.middleware.URLShortenerMiddleware',
+    'mobile.auth.middleware.SecureSessionMiddleware',
+    'mobile.apps.stats.middleware.StatisticsMiddleware',
+    'mobile.url_shortener.middleware.URLShortenerMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.csrf.CsrfResponseMiddleware',
     'mobile.tracking.middleware.VisitorTrackingMiddleware',
@@ -260,13 +260,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
-    'mobile.molly.utils.context_processors.ssl_media',
+    'mobile.utils.context_processors.ssl_media',
     'django.contrib.messages.context_processors.messages',
-    'mobile.molly.wurfl.context_processors.wurfl_device',
-    'mobile.molly.wurfl.context_processors.device_specific_media',
-    'mobile.molly.utils.context_processors.full_path',
-    'mobile.molly.utils.context_processors.site_name',
-    #'molly.utils.context_processors.google_analytics',
+    'mobile.wurfl.context_processors.wurfl_device',
+    'mobile.wurfl.context_processors.device_specific_media',
+    'mobile.utils.context_processors.full_path',
+    'mobile.utils.context_processors.site_name',
+    #'mobile.utils.context_processors.google_analytics',
     'django.core.context_processors.csrf',
 )
 
@@ -284,7 +284,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.load_template_source',
-    'mobile.molly.utils.template_loaders.MollyDefaultLoader'
+    'mobile.utils.template_loaders.MollyDefaultLoader'
 )
 
 STATICFILES_FINDERS = (
@@ -327,7 +327,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'django.contrib.sites',
     'django.contrib.comments',
     'django.contrib.staticfiles',
-    'molly.batch_processing',
+    'mobile.batch_processing',
 #    'debug_toolbar',
     'tinymce',
     'compress',
@@ -443,6 +443,7 @@ TINYMCE_COMPRESSOR = False
 
 
 MEDIA_ROOT = os.path.join(project_root, 'media') # the location on disk where media is stored
+UPLOADS_ROOT = os.path.join(os.path.abspath(MEDIA_ROOT), 'uploads/images') #上传文件路径
 MEDIA_URL = '/media/' # The URL used to refer to media
 ADMIN_MEDIA_PREFIX = MEDIA_URL + "grappelli/"
 GRAPPELLI_ADMIN_TITLE = u"娱讯手机门户管理平台"
@@ -455,7 +456,7 @@ COMPRESS_ROOT = MEDIA_URL
 COMPRESS_URL = MEDIA_URL
 COMPRESS_MEDIA_ROOT = MEDIA_ROOT
 COMPRESS_CSS, COMPRESS_JS = get_compress_groups(MEDIA_ROOT)
-COMPRESS_CSS_FILTERS = ('mobile.molly.utils.compress.MollyCSSFilter',) # CSS filter is custom-written since the provided one mangles it too much
+COMPRESS_CSS_FILTERS = ('mobile.utils.compress.MollyCSSFilter',) # CSS filter is custom-written since the provided one mangles it too much
 COMPRESS_CSSTIDY_SETTINGS = {
     'remove_bslash': True, # default True
     'compress_colors': True, # default True

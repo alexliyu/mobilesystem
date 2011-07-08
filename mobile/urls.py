@@ -1,8 +1,8 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
-from mobile.molly.conf import applications, all_apps
-from mobile.molly.apps.links import views
+from mobile.conf import applications, all_apps
+from mobile.apps.links import views
 
 # Admin
 admin.autodiscover()
@@ -34,7 +34,7 @@ urlpatterns += patterns('django.views.generic.simple',
     (r'^osm/(?P<remain>.*)$', 'redirect_to', {'url': '/maps/osm/%(remain)s'}),
 )
 
-handler500 = 'mobile.molly.utils.views.handler500'
+handler500 = 'mobile.utils.views.handler500'
 
 if settings.DEBUG:
     urlpatterns += patterns('',

@@ -6,8 +6,8 @@
 	{% for b in list.object_list %}
     	
     	<li><a href="/business/{{ b.id  }}">
-				<img src="{{b.get_logoUrl}}" />
-				<h3>{{ b.businessName  }}</h3><span class="ui-li-count">优惠活动有{{b.promotions_count}}项哦</span>
+				<img src="{{b.get_logoUrl}}" style="border:0px" width="60" height="60" />
+				<h3>{{ b.businessName  }}</h3><span class="ui-li-count">共{{b.promotions_count}}项</span>
 				<p>{{b.introdution|safe}}</p>
 			</a>
 		</li>
@@ -24,16 +24,7 @@
 {% if list.has_previous %}
 <li><a href="?page={{ list.previous_page_number }}" title="下一页">上一页</a>&nbsp;</li>
 {% endif %}
-<li>
-{% for p in page_range %}
-{% ifequal p list.number %}
-<a href="#" title="第{{p}}页" class="ui-btn-active">{{p}}</a>
-{% else %}
-<a href="?page={{p}}" title="第{{p}}页">{{p}}</a>
-{% endifequal %}
-{% endfor %}
-&nbsp;
-</li>
+
 
 {% if list.has_next %}
 <li><a href="?page={{ list.next_page_number }}" title="下一页">下一页</a>&nbsp;</li>

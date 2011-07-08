@@ -14,7 +14,7 @@ from mobile.userena import settings as userena_settings
 from mobile.userena.models import UserenaSignup
 from mobile.userena.utils import get_profile_model
 
-from mobile.molly.apps.users.models import UserProfile
+from mobile.apps.users.models import UserProfile
 import random
 
 attrs_dict = {'class': 'required'}
@@ -143,7 +143,7 @@ class SignupFormOnlyMobile(SignupForm):
         return self.cleaned_data['mobile']
     
     def save(self, request):
-        from mobile.molly.utils.tcp import arping
+        from mobile.utils.tcp import arping
         """ 生成一个动态的用户名 """
         while True:
             username = sha_constructor(str(random.random())).hexdigest()[:5]

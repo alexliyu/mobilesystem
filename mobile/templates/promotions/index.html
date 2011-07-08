@@ -21,6 +21,8 @@
 {% if list.has_previous %}
 <li><a href="?page={{ list.previous_page_number }}" title="下一页">上一页</a>&nbsp;</li>
 {% endif %}
+
+<!--
 <li>
 {% for p in page_range %}
 {% ifequal p list.number %}
@@ -31,6 +33,7 @@
 {% endfor %}
 &nbsp;
 </li>
+-->
 
 {% if list.has_next %}
 <li><a href="?page={{ list.next_page_number }}" title="下一页">下一页</a>&nbsp;</li>
