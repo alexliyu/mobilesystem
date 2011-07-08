@@ -12,10 +12,12 @@
     <p>结束时间:{{ promotions.endTime|date:" Y-m-j" }}</p>
     <p>所属商家:{{ promotions.business.businessName  }}</p>
 </div>
+{%if promotions.picSrc%}
 <div class="ui-block-b">
     <p>优惠劵:</p>
-    <p><a href="{{ promotions.get_picSrc }}"><img src="{{ promotions.get_picSrc }}" width="160" height="120"/></a></p>
+    <p><a href="/download{{ promotions.get_picSrc }}" target="foo"><img src="{{ promotions.get_picSrc }}" width="160" height="120"/></a></p>
 </div>
+{%endif%}
 </ul>
 </div>
 {% endblock %}

@@ -1,0 +1,72 @@
+{% extends "podcasts/base.html" %}{% load molly_utils %}{% load molly_external_media %}{% load molly_podcasts %}
+
+{% block breadcrumbs %}
+{{ block.super }}
+            <li><a href="{% url podcasts:index %}">
+                <img src="/media/images/index-icons/podcasts-bc.png" alt="Podcasts"/>
+            </a></li>
+{% if podcast.category %}
+    <li><a href="{{ podcast.category.get_absolute_url }}">...</a></li>
+{% endif %}
+{% endblock %}
+
+{% block pagetitle %}Podcast{% endblock %}
+{% block title %}{{ podcast.title }}{% endblock %}
+
+
+{% block extrahead %}
+<link href="{{ podcast.rss_url }}?destination=moxacuk" type="application/rss+xml" rel="alternate" title="Podcast RSS feed" />
+{% endblock %}
+
+{% block content %}
+
+<div class="section">
+  <div class="header">
+    {% if podcast.logo %}
+    {% with device|device_has_parent:"apple_iphone_ver4"|yesno:"120,60" as max_width %}
+    <img class="podcasts-icon" src="{% external_image podcast.logo max_width %}" width="60" height="60" alt=""/>
+    {% endwith %}
+    {% endif %}
+    <h2>{{ podcast.title }}</h2>
+    
+    <div style="font-size:1em; line-height:1.1em;">
+    {{ podcast.description|safe }}
+    </div>
+    <div style="clear:both;"> </div>
+  </div>
+<ul class="content-list">
+{% for item in items %}
+    
+    <li>
+    <h3>{{ item.title }}</h3>
+    {% if item.license_data %}
+    <a class="podcasts-license" href="{{ item.license }}">
+      <img src="{{ item.license_data.logo }}" alt="{{ item.license_data }}"/>
+    </a>
+    {% endif %}
+      
+      <small>
+      Published: {{ item.published_date|date:"j M Y" }}
+      </small><br />
+    <div style="line-height:1.1em; margin-top:5px">
+      {{ item.description|safe }}
+    </div>
+    
+    <ul class="link-list round-top" style="margin-top:10px;">
+    {% for enc in item.podcastenclosure_set.all %}
+      <li style="vertical-align:middle;">
+        <a href="{{ enc.url }}?CAMEFROM=moxacuk" style="vertical-align:middle; font-size:11px">
+        <img src="/media/site/images/icons/list-{{ enc.medium }}.png" style="vertical-align:middle; margin:2px;" alt="({{ enc.medium }})"/>
+          {% if item.duration %}{{ item.duration|humanize_seconds }}, {% endif %}{{ enc.get_mimetype_display|capfirst }}, {{ enc.length|filesizeformat }}
+          </a>
+        </li>
+    {% endfor %}
+      </ul>
+    </li>
+
+
+{% endfor %}
+</ul>
+</div>
+
+{% endblock %}

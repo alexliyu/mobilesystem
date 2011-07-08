@@ -1,0 +1,13 @@
+{% load i18n lazysignup_tags %}
+
+<nav id="account-bar">
+  <ul>
+    <li><a href="{% url home %}">{% trans "Home" %}</a></li>
+    {% if not user|is_lazy_user %}
+      <li><a href="#">{% trans "Account" %}</a></li>
+      <li><a href="{% url auth_logout %}">{% trans "Log out" %}</a></li>
+    {% else %}
+      <li><a href="{% url lazysignup_convert %}">{% trans "Save your data" %}</a> {% trans "by setting a username and password" %}</li>
+    {% endif %}
+  </ul>
+</nav>

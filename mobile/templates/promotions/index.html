@@ -5,7 +5,7 @@
 <ul data-role="listview">
 {% for promotions in list.object_list %}
     <li>
-    	<a href="/business/detail/{{promotions.id}}">{{ promotions.title  }}<span class="ui-li-count">结束时间为{{promotions.endTime}}哦</span></a>
+    	<a href="/business/detail/{{promotions.id}}">{{ promotions.title  }}<span class="ui-li-count">结束时间:{{promotions.endTime|date:"Y-f-j"}}</span></a>
     </li>
 {% endfor %}
 
