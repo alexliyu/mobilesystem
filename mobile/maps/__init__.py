@@ -80,13 +80,13 @@ class Map:
                     height=height,
                 )
         
-        markers = {
+        markers = [{
             'latitude':str(centre_point[1]),
             'longitude':str(centre_point[0]),
             'icon':centre_point[2] + '-star',
             'html':centre_point[3].encode('ascii', 'xmlcharrefreplace'),
             'popup':True,
-        } if centre_point != None else {}
+        }] if centre_point != None else []
         
         for point in self.points:
             markers.append(
@@ -103,7 +103,7 @@ class Map:
             'longitude': lon_center,
             'latitude': lat_center,
             'zoom': (self.zoom - 1) if len(self.points) > 0 else self.zoom,
-            'markers': [markers]
+            'markers': markers
         })
         
         self.slippy_map_parameters = map_parameters

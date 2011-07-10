@@ -1,0 +1,8 @@
+{% extends "gis/admin/openlayers.html" %}
+{% block openlayers %}{% include "gis/admin/google.js" %}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+ <link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
+<link rel="stylesheet" href="http://openlayers.org/dev/theme/default/google.css" type="text/css">
+{%endblock%}

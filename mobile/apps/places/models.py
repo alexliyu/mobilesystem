@@ -128,8 +128,7 @@ class EntityTypeName(models.Model):
 
 class Identifier(models.Model):
     """
-    Abstract identifier code for various identifier schemes such as ATCO, OSM,
-    NaPTAN (e.g. 910GYSTRADM) etc.
+    字典模型类，实现在系统内多个模块之间的关联
     """
 
     scheme = models.CharField(max_length=32)
@@ -166,8 +165,7 @@ class EntityGroupName(models.Model):
 
 class Entity(models.Model):
     """
-    An Entity represents a geo-spatial point with attached metadata. This
-    includes all DB stored Points regardless of data source.
+    存储 geo-spatial point 以及 attached metadata的数据模型. 这里存储了整套系统中所有的地理信息数据.
     """
     
     @property
