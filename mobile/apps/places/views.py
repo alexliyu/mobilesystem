@@ -1,9 +1,3 @@
-#-*- coding:utf-8 -*-
-'''
-Created on 2011-1-30
-
-@author: 李昱
-'''
 from __future__ import division
 
 from collections import defaultdict
@@ -11,7 +5,8 @@ from itertools import chain
 import simplejson
 import copy
 import math
-from datetime import timedelta
+from datetime import datetime, timedelta
+from urllib import unquote
 
 from suds import WebFault
 
@@ -21,35 +16,36 @@ from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import capfirst
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.utils.translation import ugettext as _
+from django.utils.translation import ungettext
 from django.contrib.gis.measure import D
 
-from mobile.utils.views import BaseView, ZoomableView
-from mobile.utils.breadcrumbs import *
-from mobile.favourites.views import FavouritableView
-from mobile.geolocation.views import LocationRequiredView
+from utils.views import BaseView, ZoomableView
+from utils.breadcrumbs import *
+from favourites.views import FavouritableView
+from geolocation.views import LocationRequiredView
 
-from mobile.maps import Map
-from mobile.maps.osm.models import OSMUpdate
+from maps import Map
+from maps.osm.models import OSMUpdate
 
-from mobile.apps.places.models import Entity, EntityType
-from mobile.apps.places import get_entity, get_point
-from mobile.apps.places.forms import UpdateOSMForm
+from apps.places.models import Entity, EntityType, Route, Journey
+from apps.places import get_entity, get_point
+from apps.places.forms import UpdateOSMForm
 
 
 class IndexView(BaseView):
 
     def get_metadata(self, request):
         return {
-            'title': 'places',
-            'additional': 'Find University buildings and units, along with' \
-                          + ' bus stops and local amenities', }
+            'title': _('places'),
+            'additional': _('Find University buildings and units, along with bus stops and local amenities'), }
 
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
             'places',
             None,
-            u'消费导航',
+            _('Places'),
             lazy_reverse('index'))
 
     def initial_context(self, request):
@@ -65,8 +61,8 @@ class NearbyListView(LocationRequiredView):
 
     def get_metadata(self, request, entity=None):
         return {
-            'title': 'Find things nearby',
-            'additional': 'Search for things based on your current location',
+            'title': _('Find things nearby'),
+            'additional': _('Search for things based on your current location'),
         }
 
     @BreadcrumbFactory
@@ -74,7 +70,7 @@ class NearbyListView(LocationRequiredView):
         return Breadcrumb(
             'places',
             lazy_parent('index'),
-            u'周边导航',
+            _('Things nearby'),
             url=lazy_reverse('nearby-list'),
         )
 
@@ -86,12 +82,14 @@ class NearbyListView(LocationRequiredView):
                                'places/entity_without_location')
         
         if entity:
-            return_url = reverse('places:entity-nearby-list')
+            return_url = reverse('places:entity-nearby-list',
+                      args=[entity.identifier_scheme, entity.identifier_value])
         else:
             return_url = reverse('places:nearby-list')
-        
+
         # Get entity types to show on nearby page
         entity_types = EntityType.objects.filter(show_in_nearby_list=True)
+        
         for et in entity_types:
             # For each et, get the entities that belong to it
             et.max_distance = 0
@@ -99,6 +97,7 @@ class NearbyListView(LocationRequiredView):
             es = et.entities_completion.filter(location__isnull=False,
                                                location__distance_lt=(point, D(km=5))).distance(point).order_by('distance')
             for e in es:
+                # Selection criteria for whether or not to count this entity
                 if (e.distance.m ** 0.75) * (et.entities_found + 1) > 500:
                     break
                 et.max_distance = e.distance.m
@@ -106,15 +105,16 @@ class NearbyListView(LocationRequiredView):
 
         categorised_entity_types = defaultdict(list)
         for et in filter(lambda et: et.entities_found > 0, entity_types):
-            categorised_entity_types[et.category.name].append(et)
+            categorised_entity_types[_(et.category.name)].append(et)
         # Need to do this other Django evalutes .items as ['items']
         categorised_entity_types = dict(categorised_entity_types.items())
-        
+
         context.update({
             'entity_types': categorised_entity_types,
             'entity': entity,
             'return_url': return_url,
-            'exposes_user_data': entity is None, # entity is None => we've searched around the user's location
+            # entity is None => we've searched around the user's location
+            'exposes_user_data': entity is None,
         })
         if entity and not entity.location:
             return self.render(request, context, 'places/entity_without_location')
@@ -130,11 +130,9 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
 
         if point:
             entities = Entity.objects.filter(location__isnull=False, is_sublocation=False)
-            if ptypes:
-                for et in entity_types:
-                    entities = entities.filter(all_types_completion=et)
-            else:
-                entity_types = []
+            for et in entity_types:
+                entities = entities.filter(all_types_completion=et)
+            
             entities = entities.distance(point).order_by('distance')[:99]
         else:
             entities = []
@@ -145,7 +143,8 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
             'point': point,
             'entities': entities,
             'entity': entity,
-            'exposes_user_data': entity is None, # entity is None => point is the user's location
+            # entity is None => point is the user's location
+            'exposes_user_data': entity is None,
         })
         return context
 
@@ -163,29 +162,30 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
         if len(context['entity_types']) == 0:
             return {
                 'exclude_from_search': True,
-                'title': 'Things near %s' % entity.title,
+                'title': _('Things near %(title)s') % {'title': entity.title}
             }
 
+        et_name = capfirst(context['entity_types'][0].verbose_name_plural)
+        if entity is not None:
+            title = _('%(entity_type)s near %(entity)s') % {
+                                                        'entity_type':et_name,
+                                                        'title': entity.title
+                                                    }
+        else:
+            title = _('%(et)s nearby') % {'et': et_name}
+            
         if len(context['entity_types']) > 1:
             return {
                 'exclude_from_search': True,
-                'title': '%s near%s%s' % (
-                    capfirst(context['entity_types'][0].verbose_name_plural),
-                    entity and ' ' or '',
-                    entity and entity.title or 'by',
-                ),
-            }
+                'title': title}
+        
+        number = len([e for e in context['entities'] if e.location.transform(4479, clone=True).distance(context['point'].transform(4479, clone=True)) <= 1000])
+        entity_type = context['entity_types'][0].verbose_name_plural
 
         return {
-            'title': '%s near%s%s' % (
-                capfirst(context['entity_types'][0].verbose_name_plural),
-                entity and ' ' or '',
-                entity and entity.title or 'by',
-            ),
-            'additional': '<strong>%d %s</strong> within 1km' % (
-                len([e for e in context['entities'] if e.location.transform(27700, clone=True).distance(context['point'].transform(27700, clone=True)) <= 1000]),
-                context['entity_types'][0].verbose_name_plural,
-            ),
+            'title': title,
+            'additional': _('<strong>%(number)d %(entity_type)s</strong> within 1km') % {'number': number,
+                               'entity_type': entity_type}
         }
 
     def handle_GET(self, request, context, ptypes, entity=None):
@@ -221,7 +221,11 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
             e.bearing = e.get_bearing(point)
             found_entity_types |= set(e.all_types.all())
         found_entity_types -= set(entity_types)
-
+        
+        # If there are no entities, return a 404. This should only happen if URLs are manually formed by user.
+        if len(entities) == 0:
+            raise Http404()
+        
         context.update({
             'entities': entities,
             'map': entity_map,
@@ -235,22 +239,31 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
 class EntityDetailView(ZoomableView, FavouritableView):
     default_zoom = 16
 
-    def get_metadata(self, request, scheme):
-        entity = get_entity(scheme)
+    def get_metadata(self, request, scheme, value):
+        entity = get_entity(scheme, value)
         user_location = request.session.get('geolocation:location')
         distance, bearing = entity.get_distance_and_bearing_from(user_location)
         additional = '<strong>%s</strong>' % capfirst(entity.primary_type.verbose_name)
         if distance:
-            additional += ', about %dm %s' % (int(math.ceil(distance / 10) * 10), bearing)
+            additional += ', ' + _('about %(distance)dm %(bearing)s') % {
+                                    'distance': int(math.ceil(distance / 10) * 10),
+                                    'bearing': bearing }
+        routes = sorted(set(sor.route.service_id for sor in entity.stoponroute_set.all()))
+        if routes:
+            additional += ', ' + ungettext('service %(services)s stops here',
+                                           'services %(services)s stop here',
+                                           len(routes)) % {
+                                                'services': ' '.join(routes)
+                                            }
         return {
             'title': entity.title,
             'additional': additional,
             'entity': entity,
         }
 
-    def initial_context(self, request, scheme):
+    def initial_context(self, request, scheme, value):
         context = super(EntityDetailView, self).initial_context(request)
-        entity = get_entity(scheme)
+        entity = get_entity(scheme, value)
         associations = []
         if hasattr(self.conf, 'associations'):
             for association in self.conf.associations:
@@ -260,21 +273,21 @@ class EntityDetailView(ZoomableView, FavouritableView):
                         associations += [{'type': type, 'entities': [get_entity(ns, value) for ns, value in es]} for type, es in associated_entities]
                 except (KeyError, Http404):
                     pass
-        
+
         for entity_group in entity.groups.all():
             group_entities = filter(lambda e: e != entity,
                                    Entity.objects.filter(groups=entity_group))
-            
+
             if len(group_entities) > 0:
                 associations.append({
                     'type': entity_group.title,
                     'entities': group_entities,
                 })
-        
+
         board = request.GET.get('board', 'departures')
         if board != 'departures':
             board = 'arrivals'
-        
+
         context.update({
             'entity': entity,
             'train_station': entity, # This allows the ldb metadata to be portable
@@ -285,32 +298,33 @@ class EntityDetailView(ZoomableView, FavouritableView):
         return context
 
     @BreadcrumbFactory
-    def breadcrumb(self, request, context, scheme):
+    def breadcrumb(self, request, context, scheme, value):
         if request.session.get('geolocation:location'):
             parent_view = 'nearby-detail'
         else:
             parent_view = 'category-detail'
-        entity = get_entity(scheme)
+        entity = get_entity(scheme, value)
         return Breadcrumb(
             'places',
             lazy_parent(parent_view, ptypes=entity.primary_type.slug),
             context['entity'].title,
-            lazy_reverse('entity', args=[scheme]),
+            lazy_reverse('entity', args=[scheme, value]),
         )
 
-    def handle_GET(self, request, context, scheme):
+    def handle_GET(self, request, context, scheme, value):
         entity = context['entity']
-        
-#        if entity.absolute_url != request.path:
+
+#        if unquote(entity.absolute_url) != request.path:
+#            
 #            return self.redirect(entity.absolute_url, request, 'perm')
-        
+
         entities = []
         for association in context['associations']:
             entities += association['entities']
 
-#        for provider in reversed(self.conf.providers):
-#            provider.augment_metadata((entity,), board=context['board'])
-#            provider.augment_metadata([e for atypes in context['associations'] for e in atypes['entities']], board=context['board'])
+        for provider in reversed(self.conf.providers):
+            provider.augment_metadata((entity,), board=context['board'])
+            provider.augment_metadata([e for atypes in context['associations'] for e in atypes['entities']], board=context['board'])
 
         return self.render(request, context, 'places/entity_detail')
 
@@ -334,12 +348,12 @@ class EntityUpdateView(ZoomableView):
         return Breadcrumb(
             'places',
             lazy_parent('entity', scheme=scheme, value=value),
-            u'更新定位',
+            'Update place',
             lazy_reverse('entity-update', args=[scheme, value]))
 
     def handle_GET(self, request, context, scheme, value):
         entity = context['entity']
-        if entity.source.module_name != 'mobile.providers.apps.maps.osm':
+        if entity.source.module_name != 'molly.providers.apps.maps.osm':
             raise Http404
 
         if request.GET.get('submitted') == 'true':
@@ -354,7 +368,7 @@ class EntityUpdateView(ZoomableView):
 
     def handle_POST(self, request, context, scheme, value):
         entity = context['entity'] = get_entity(scheme, value)
-        if entity.source.module_name != 'mobile.providers.apps.maps.osm':
+        if entity.source.module_name != 'molly.providers.apps.maps.osm':
             raise Http404
 
         form = UpdateOSMForm(request.POST)
@@ -407,7 +421,7 @@ class NearbyEntityListView(NearbyListView):
         return Breadcrumb(
             'places',
             lazy_parent('entity', scheme=scheme, value=value),
-            u'%s周边导航' % context['entity'].title,
+            'Things near %s' % context['entity'].title,
             lazy_reverse('entity-nearby-list', args=[scheme, value]))
 
     def handle_GET(self, request, context, scheme, value):
@@ -451,7 +465,7 @@ class CategoryListView(BaseView):
     def initial_context(self, request):
         categorised_entity_types = defaultdict(list)
         for et in EntityType.objects.filter(show_in_category_list=True):
-            categorised_entity_types[et.category.name].append(et)
+            categorised_entity_types[_(et.category.name)].append(et)
         # Need to do this other Django evalutes .items as ['items']
         categorised_entity_types = dict(categorised_entity_types.items())
         return {
@@ -463,7 +477,7 @@ class CategoryListView(BaseView):
         return Breadcrumb(
             'places',
             lazy_parent('index'),
-            u'分类',
+            'Categories',
             lazy_reverse('category-list'),
         )
 
@@ -480,20 +494,20 @@ class CategoryDetailView(BaseView):
         entities = Entity.objects.filter(is_sublocation=False)
         for entity_type in entity_types:
             entities = entities.filter(all_types_completion=entity_type)
-        entities = entities.order_by('title')
-        
+
+        entities = sorted(entities, key=lambda e: e.title)
         paginator = Paginator(entities, 100)
-        
+
         try:
             page = int(request.GET.get('page', '1'))
         except ValueError:
             page = 1
-        
+
         try:
             paged_entities = paginator.page(page)
         except (EmptyPage, InvalidPage):
             paged_entities = paginator.page(1)
-        
+
         found_entity_types = set()
         for e in entities:
             found_entity_types |= set(e.all_types.all())
@@ -555,65 +569,177 @@ class ServiceDetailView(BaseView):
 
     def initial_context(self, request, scheme, value):
 
-        try:
-            service_id = request.GET['id']
-        except KeyError:
-            raise Http404
-
         context = super(ServiceDetailView, self).initial_context(request)
-        entity = get_entity(scheme, value)
-
-        # Add live information from the providers
-        for provider in reversed(self.conf.providers):
-            provider.augment_metadata((entity,))
-
-        # If we have no way of getting further journey details, 404
-        if 'service_details' not in entity.metadata:
-            raise Http404
-
-        # Deal with train service data
-        if entity.metadata['service_type'] == 'ldb':
+        
+        service_id = request.GET.get('id')
+        route_id = request.GET.get('route')
+        route_pk = request.GET.get('routeid')
+        journey = request.GET.get('journey')
+        
+        if service_id or route_id or route_pk or journey:
+            entity = get_entity(scheme, value)
+        else:
+            raise Http404()
+        
+        context.update({
+            'entity': entity,
+        })
+        
+        if service_id:
+            # Add live information from the providers
+            for provider in reversed(self.conf.providers):
+                provider.augment_metadata((entity,))
+    
+            # If we have no way of getting further journey details, 404
+            if 'service_details' not in entity.metadata:
+                raise Http404
+    
+            # Deal with train service data
+            if entity.metadata['service_type'] == 'ldb':
+                # LDB has + in URLs, but Django converts that to space
+                service = entity.metadata['service_details'](service_id.replace(' ', '+'))
+            else:
+                service = entity.metadata['service_details'](service_id)
             
-            # LDB has + in URLs, but Django converts that to space
-            service = entity.metadata['service_details'](service_id.replace(' ', '+'))
             if service is None:
                 raise Http404
             if 'error' in service:
                 context.update({
                     'title': 'An error occurred',
-                    'entity': entity,
-                    'train_service': {
+                    'service': {
                         'error': service['error'],
                     },
                 })
                 return context
-            
+
             context.update({
-                'entity': entity,
-                'train_service': service,
+                'service': service,
                 'title': service['title'],
                 'zoom_controls': False,
             })
         
-        map = Map(
-            centre_point=(entity.location[0], entity.location[1],
-                            'green', entity.title),
-            points=[(e.location[0], e.location[1], 'red', e.title)
-                for e in service['entities']],
-            min_points=len(service['entities']),
-            zoom=None,
-            width=request.map_width,
-            height=request.map_height,
-        )
-
-        context.update({
-            'map': map
-        })
+        elif route_id or route_pk:
+            
+            if route_id:
+            
+                route = entity.route_set.filter(service_id=route_id).distinct()
+                if route.count() == 0:
+                    raise Http404()
+                elif route.count() > 1:
+                    context.update({
+                        'title': _('Multiple routes found'),
+                        'multiple_routes': route
+                    })
+                    return context
+                else:
+                    route = route[0]
+            
+            else:
+                
+                route = get_object_or_404(Route, id=route_pk)
+            
+            i = 1
+            calling_points = []
+            previous = True
+            for stop in route.stoponroute_set.all():
+                if stop.entity == entity:
+                    previous = False
+                calling_point = {
+                    'entity': stop.entity,
+                    'at': previous
+                }
+                if stop.entity.location is not None:
+                    calling_point['stop_num'] = i
+                    i += 1
+                calling_points.append(calling_point)
+            service = {
+                    'entities': route.stops.all(),
+                    'operator': route.operator,
+                    'has_timetable': False,
+                    'has_realtime': False,
+                    'calling_points': calling_points
+                }
+            if entity not in service['entities']:
+                raise Http404()
+            context.update({
+                'title': '%s: %s' % (route.service_id, route.service_name),
+                'service': service                
+            })
         
+        elif journey:
+            
+            journey = get_object_or_404(Journey, id=journey)
+            route = journey.route
+            entity_passed = False
+            i = 1
+            calling_points = []
+            
+            for stop in journey.scheduledstop_set.all():
+                
+                if stop.entity == entity:
+                    entity_passed = True
+                
+                if not entity_passed and stop.std < datetime.now().time():
+                    
+                    calling_point = {
+                        'entity': stop.entity,
+                        'st': stop.std.strftime('%H:%M'),
+                        'at': True
+                    }
+                
+                else:
+                    
+                    calling_point = {
+                        'entity': stop.entity,
+                        # Show arrival time (if it exists, else departure time)
+                        # if this stop is AFTER where we currently are, otherwise
+                        # show the time the bus left stops before this one (if
+                        # it exists)
+                        'st': ((stop.sta or stop.std) if entity_passed else (stop.std or stop.sta)).strftime('%H:%M'),
+                        'at': False
+                    }
+                
+                if stop.entity.location is not None:
+                    calling_point['stop_num'] = i
+                    i += 1
+                calling_points.append(calling_point)
+            
+            service = {
+                    'entities': [s.entity for s in journey.scheduledstop_set.all()],
+                    'operator': journey.route.operator,
+                    'has_timetable': True,
+                    'has_realtime': False,
+                    'calling_points': calling_points,
+                    'notes': journey.notes
+                }
+            if entity not in service['entities']:
+                raise Http404()
+            context.update({
+                'title': '%s: %s' % (route.service_id, route.service_name),
+                'service': service                
+            })
+        
+        if entity.location or len(filter(lambda e: e.location is not None, service['entities'])):
+            map = Map(
+                centre_point=(entity.location[0], entity.location[1],
+                                'green', entity.title) if entity.location else None,
+                points=[(e.location[0], e.location[1], 'red', e.title)
+                    for e in service['entities'] if e.location is not None],
+                min_points=len(service['entities']),
+                zoom=None,
+                width=request.map_width,
+                height=request.map_height,
+            )
+    
+            context.update({
+                    'map': map
+                })
+
         return context
 
     def handle_GET(self, request, context, scheme, value):
         return self.render(request, context, 'places/service_details')
+
 
 class APIView(BaseView):
     """
@@ -672,13 +798,13 @@ class APIView(BaseView):
 
         if 'near' in request.GET:
             try:
-                point = Point(map(float, request.GET['near'].split(',')), srid=4326).transform(27700, clone=True)
+                point = Point(map(float, request.GET['near'].split(',')), srid=4326).transform(4479, clone=True)
 
                 entities = entities.filter(location__isnull=False)
                 entities = entities.distance(point).order_by('distance')
 
                 for entity in entities:
-                    entity.distance = entity.location.transform(27700, clone=True).distance(point)
+                    entity.distance = entity.location.transform(4479, clone=True).distance(point)
 
                 if 'max_distance' in request.GET:
                     max_distance = float(request.GET['max_distance'])

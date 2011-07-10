@@ -6,9 +6,10 @@ from django.http import Http404
 from django.core.urlresolvers import resolve, reverse
 from django.shortcuts import get_object_or_404
 
-from mobile.utils.views import BaseView
+from utils.views import BaseView
 
-from models import ShortenedURL
+from url_shortener.models import ShortenedURL
+
 
 class IndexView(BaseView):
     # We'll omit characters that look similar to one another
@@ -29,7 +30,7 @@ class IndexView(BaseView):
                 except Exception, e:
                     view_context = None
 
-        except (KeyError, ):
+        except (KeyError,):
             raise Http404
 
         return {

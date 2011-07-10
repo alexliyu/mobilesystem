@@ -3,7 +3,7 @@ from django.utils.hashcompat import sha_constructor
 from django.contrib.auth.models import SiteProfileNotAvailable
 from django.db.models import get_model
 
-from mobile.userena import settings as userena_settings
+from userena import settings as userena_settings
 
 import urllib, random
 

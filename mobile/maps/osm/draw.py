@@ -7,7 +7,7 @@ import os.path
 import sys
 import time
 
-from mobile.maps.osm.models import OSMTile, get_marker_dir
+from maps.osm.models import OSMTile, get_marker_dir
 
 def log2(x):
     """

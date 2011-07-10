@@ -2,9 +2,9 @@ from lxml import etree
 from datetime import datetime
 import urllib, re, email, random
 
-from mobile.conf.settings import batch
-from mobile.apps.podcasts.providers import BasePodcastsProvider
-from mobile.apps.podcasts.models import Podcast, PodcastItem, PodcastCategory, PodcastEnclosure
+from conf.settings import batch
+from apps.podcasts.providers import BasePodcastsProvider
+from apps.podcasts.models import Podcast, PodcastItem, PodcastCategory, PodcastEnclosure
 
 from rss import RSSPodcastsProvider
 

@@ -1,8 +1,8 @@
 from django.http import Http404
 
-from mobile.conf.applications import app_by_local_name
-from mobile.apps.places import get_entity
-from mobile.apps.places.models import Entity
+from conf.applications import app_by_local_name
+from apps.places import get_entity
+from apps.places.models import Entity
 
 class LibrarySearchQuery:
     """

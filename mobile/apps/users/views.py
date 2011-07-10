@@ -9,16 +9,13 @@ from django.views.decorators.http import require_POST
 from django.views.generic.simple import direct_to_template
 from django.shortcuts import get_object_or_404
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
+from utils.views import BaseView
+from utils.breadcrumbs import *
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
 
 class IndexView(BaseView):
     def get_metadata(self, request):

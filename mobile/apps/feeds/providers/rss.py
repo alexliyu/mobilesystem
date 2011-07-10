@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
 import urllib, re, email, feedparser, time, random, traceback, logging
 
-from mobile.external_media import sanitise_html
-from mobile.conf.settings import batch
+from external_media import sanitise_html
+from conf.settings import batch
 
-from mobile.apps.feeds.providers import BaseFeedsProvider
+from apps.feeds.providers import BaseFeedsProvider
 
 __all__ = ['RSSFeedsProvider']
 
@@ -13,7 +13,7 @@ def parse_date(s):
 def struct_to_datetime(s):
     return datetime.fromtimestamp(time.mktime(s))
 
-logger = logging.getLogger('mobile.apps.providers.feeds.rss')
+logger = logging.getLogger('apps.providers.feeds.rss')
 
 class RSSFeedsProvider(BaseFeedsProvider):
     verbose_name = 'RSS'
@@ -22,7 +22,7 @@ class RSSFeedsProvider(BaseFeedsProvider):
     def import_data(self, metadata, output):
         "Pulls RSS feeds"
 
-        from mobile.apps.feeds.models import Feed
+        from apps.feeds.models import Feed
         for feed in Feed.objects.filter(provider=self.class_path):
             output.write("Importing %s\n" % feed.title)
             try:
@@ -36,7 +36,7 @@ class RSSFeedsProvider(BaseFeedsProvider):
         return metadata
             
     def import_feed(self, feed):
-        from mobile.apps.feeds.models import Item
+        from apps.feeds.models import Item
         
         feed_data = feedparser.parse(feed.rss_url)
         try:

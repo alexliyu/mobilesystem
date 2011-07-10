@@ -21,8 +21,8 @@
 """
 from oauth.oauth import OAuthSignatureMethod_PLAINTEXT
 import os.path
-from mobile.conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
-from mobile.utils.media import get_compress_groups
+from conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
+from utils.media import get_compress_groups
 project_root = os.path.normpath(os.path.dirname(__file__))
 molly_root = project_root
 gettext = lambda s: s
@@ -63,31 +63,31 @@ SITE_NAME = u'娱讯手机门户'
 # Molly can automatically generate the urlpatterns, so it's recommended by
 # default to use Molly's urls.py. This doesn't work if you have non-Molly apps
 # and may require a custom urls.py to be written
-ROOT_URLCONF = 'mobile.urls'
+ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': '192.168.1.34',
-        'NAME': 'mobile',
-        'USER': 'mobile',
-        'PASSWORD': 'mobile',
-    }
-}
-
-# 在家里的数据库配置
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
+#        'ENGINE': 'django.db.backends.mysql',
 #        'HOST': '192.168.1.34',
-#        'NAME': os.path.join(project_root, 'mobile.db'),
+#        'NAME': 'mobile',
 #        'USER': 'mobile',
 #        'PASSWORD': 'mobile',
-#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
 #    }
 #}
+
+# 在家里的数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'HOST': '127.0.0.1',
+        'NAME': 'molly',
+        'USER': 'molly',
+        #'PASSWORD': 'mobile',
+        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+    }
+}
 
 
 # API keys are used to access particular services
@@ -100,111 +100,109 @@ TIME_ZONE = 'Asia/Shanghai'
 # The meat of Molly - application configuration
 APPLICATIONS = [
 
-    Application('mobile.apps.home', 'home', '主页',
+    Application('apps.home', 'home', '主页',
         display_to_user=False,
     ),
     
-#    Application('mobile.apps.desktop', 'desktop', '桌面',
+#    Application('apps.desktop', 'desktop', '桌面',
 #        display_to_user=True,
 #        twitter_username='alexliyu',
 #        blog_rss_url='http://feeds.feedburner.com/mobileoxford',
 #    ),
     
-    Application('mobile.apps.podcasts', 'podcasts', '视频点播',
+    Application('apps.podcasts', 'podcasts', '视频点播',
         providers=[        ]
         ),
     
-#   Application('mobile.apps.webcams', 'webcams', 'Webcams'),
+#   Application('apps.webcams', 'webcams', 'Webcams'),
     
-    Application('mobile.apps.weather', 'weather', '天气',
+    Application('apps.weather', 'weather', '天气',
         location_id='1832',
          display_to_user=False,
     ),
-    Application('mobile.apps.Lottery', 'lottery', '中奖查询',
+    Application('apps.Lottery', 'lottery', '中奖查询',
         providers=[        ],
          display_to_user=True,
         ),
-    Application('mobile.apps.service_status', 'service_status', '服务状态',
+    Application('apps.service_status', 'service_status', '服务状态',
         providers=[        ],
          display_to_user=False,
         ),
     
-    Application('mobile.apps.search', 'search', '搜索',
+    Application('apps.search', 'search', '搜索',
         providers=[
-            Provider('mobile.apps.search.providers.ApplicationSearchProvider'),
+            Provider('apps.search.providers.ApplicationSearchProvider'),
         ],
         # Uncomment if you're using a query expansion file
         #query_expansion_file = os.path.join(project_root, 'data', 'query_expansion.txt'),
         display_to_user=False,
     ),
     
-    Application('mobile.apps.feeds', 'feeds', 'Feeds',
+    Application('apps.feeds', 'feeds', 'Feeds',
         providers=[
-            Provider('mobile.apps.feeds.providers.RSSFeedsProvider'),
+            Provider('apps.feeds.providers.RSSFeedsProvider'),
         ],
         display_to_user=False,
     ),
     
-    Application('mobile.apps.feeds.news', 'news', '团购'),
+    Application('apps.feeds.news', 'news', '团购'),
     
-    Application('mobile.apps.feeds.events', 'events', '公告'),
+    Application('apps.feeds.events', 'events', '公告'),
     
-#    Application('mobile.maps', 'maps', '地图',
-#        display_to_user=False,
-#    ),
+    Application('maps', 'maps', '地图',
+        display_to_user=True,
+    ),
     
-#    Application('mobile.geolocation', 'geolocation', 'Geolocation',
-#    
-#        prefer_results_near=(118.115749, 24.471363, 10000),
-#        providers=[
-#            Provider('mobile.geolocation.providers.PlacesGeolocationProvider'),
-#        ],
-#        display_to_user=False,
-#    ),
+    Application('geolocation', 'geolocation', 'Geolocation',
     
-    Application('mobile.apps.feedback', 'feedback', '建议',
+        prefer_results_near=(118.115749, 24.471363, 10000),
+        providers=[
+            Provider('geolocation.providers.PlacesGeolocationProvider'),
+        ],
+        display_to_user=True,
+    ),
+    
+    Application('apps.feedback', 'feedback', '建议',
         display_to_user=False,
     ),
 #    
-#    Application('mobile.apps.feature_vote', 'feature_vote', '活动建议',
+#    Application('apps.feature_vote', 'feature_vote', '活动建议',
 #        display_to_user=True,
 #    ),
     
-    Application('mobile.external_media', 'external_media', 'External Media',
+    Application('external_media', 'external_media', 'External Media',
         display_to_user=False,
     ),
     
-    Application('mobile.wurfl', 'device_detection', '终端信息',
+    Application('wurfl', 'device_detection', '终端信息',
         display_to_user=False,
         expose_view=True,
     ),
 #    
-#    Application('mobile.apps.stats', 'stats', 'Statistics',
+#    Application('apps.stats', 'stats', 'Statistics',
 #         display_to_user=True,
 #     ),
 #    
-    Application('mobile.url_shortener', 'url_shortener', 'URL Shortener',
+    Application('url_shortener', 'url_shortener', 'URL Shortener',
         display_to_user=False,
     ),
     
-    Application('mobile.apps.links', 'links', '网址导航',
+    Application('apps.links', 'links', '网址导航',
         display_to_user=True,
     ),
      
-    Application('mobile.utils', 'utils', 'Molly utility services',
+    Application('utils', 'utils', 'Molly utility services',
         display_to_user=True,
     ),
-#    
-    Application('mobile.auth', 'auth', '授权',
+    Application('auth', 'auth', '授权',
         display_to_user=False,
         secure=True,
         unify_identifiers=('weblearn:id',),
     ),
     
-    Application('mobile.apps.places', 'places', '消费导航',
+    Application('apps.places', 'places', '消费导航',
         providers=[
-            'mobile.apps.places.providers.ACISLiveMapsProvider',
-            Provider('mobile.apps.places.providers.OSMMapsProvider',
+            Provider('apps.places.providers.OSMMapsProvider',
                      lat_north=24.671363, lat_south=24.271363,
                      lon_west=117.915749, lon_east=118.315749
             ),
@@ -212,15 +210,15 @@ APPLICATIONS = [
 
     ),
     
-    Application('mobile.favourites', 'favourites', 'Favourite pages',
+    Application('favourites', 'favourites', 'Favourite pages',
         display_to_user=False,
     ),
                 
-    Application('mobile.apps.business', 'business', '联盟商家',
+    Application('apps.business', 'business', '联盟商家',
         display_to_user=True,
     ),
                 
-    Application('mobile.apps.users', 'users', '用户中心',
+    Application('apps.users', 'users', '用户中心',
         display_to_user=False,
     ),
     
@@ -232,17 +230,17 @@ APPLICATIONS = [
 # handled by the view. They're useful in providing high-level global
 # functionality
 MIDDLEWARE_CLASSES = (
-    'mobile.wurfl.middleware.WurflMiddleware',
+    'wurfl.middleware.WurflMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'mobile.utils.middleware.ErrorHandlingMiddleware',
+    'utils.middleware.ErrorHandlingMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'mobile.auth.middleware.SecureSessionMiddleware',
-    'mobile.apps.stats.middleware.StatisticsMiddleware',
-    'mobile.url_shortener.middleware.URLShortenerMiddleware',
+    'auth.middleware.SecureSessionMiddleware',
+    'apps.stats.middleware.StatisticsMiddleware',
+    'url_shortener.middleware.URLShortenerMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.csrf.CsrfResponseMiddleware',
-    'mobile.tracking.middleware.VisitorTrackingMiddleware',
+    'tracking.middleware.VisitorTrackingMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
@@ -260,13 +258,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
-    'mobile.utils.context_processors.ssl_media',
+    'utils.context_processors.ssl_media',
     'django.contrib.messages.context_processors.messages',
-    'mobile.wurfl.context_processors.wurfl_device',
-    'mobile.wurfl.context_processors.device_specific_media',
-    'mobile.utils.context_processors.full_path',
-    'mobile.utils.context_processors.site_name',
-    #'mobile.utils.context_processors.google_analytics',
+    'wurfl.context_processors.wurfl_device',
+    'wurfl.context_processors.device_specific_media',
+    'geolocation.context_processors.geolocation', # This adds the current known location of the user to the context
+    'utils.context_processors.full_path',
+    'utils.context_processors.site_name',
+    #'utils.context_processors.google_analytics',
     'django.core.context_processors.csrf',
 )
 
@@ -284,7 +283,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.load_template_source',
-    'mobile.utils.template_loaders.MollyDefaultLoader'
+    'utils.template_loaders.MollyDefaultLoader'
 )
 
 STATICFILES_FINDERS = (
@@ -309,8 +308,8 @@ DEBUG_TOOLBAR_PANELS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    'mobile.userena.backends.UserenaAuthenticationBackend',
-    'mobile.guardian.backends.ObjectPermissionBackend',
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
     'django.contrib.auth.backends.ModelBackend',
     
 )
@@ -327,7 +326,8 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'django.contrib.sites',
     'django.contrib.comments',
     'django.contrib.staticfiles',
-    'mobile.batch_processing',
+    'batch_processing',
+    'django.contrib.gis',
 #    'debug_toolbar',
     'tinymce',
     'compress',
@@ -339,10 +339,10 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
      'sentry',
     'sentry.client',
     'sorl.thumbnail',
-    'mobile.tracking',
+    'tracking',
 )
 
-GRAPPELLI_INDEX_DASHBOARD = 'mobile.dashboard.CustomIndexDashboard'
+GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 import logging
 from sentry.client.handlers import SentryHandler
 
@@ -414,7 +414,7 @@ CACHE_DIR = os.path.join(project_root, 'cache')
 MARKER_DIR = os.path.join(CACHE_DIR, 'markers')
 
 # This shouldn't need changing
-SRID = 27700
+SRID = 4479
 
 GMAP_JQUERY = 'http://code.jquery.com/jquery-1.4.2.min.js'
 GMAP_API = 'http: // maps.google.com / maps / api / js?sensor = false'
@@ -456,7 +456,7 @@ COMPRESS_ROOT = MEDIA_URL
 COMPRESS_URL = MEDIA_URL
 COMPRESS_MEDIA_ROOT = MEDIA_ROOT
 COMPRESS_CSS, COMPRESS_JS = get_compress_groups(MEDIA_ROOT)
-COMPRESS_CSS_FILTERS = ('mobile.utils.compress.MollyCSSFilter',) # CSS filter is custom-written since the provided one mangles it too much
+COMPRESS_CSS_FILTERS = ('utils.compress.MollyCSSFilter',) # CSS filter is custom-written since the provided one mangles it too much
 COMPRESS_CSSTIDY_SETTINGS = {
     'remove_bslash': True, # default True
     'compress_colors': True, # default True

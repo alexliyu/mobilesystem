@@ -5,13 +5,14 @@ from django.core.urlresolvers import resolve, reverse
 from django.http import HttpResponse, Http404, HttpResponseBadRequest
 from django.contrib.gis.geos import Point
 from django.conf import settings
+from django.utils.translation import ugettext as _
 
-from mobile.utils.views import BaseView, renderer
-from mobile.utils.breadcrumbs import *
-from mobile.utils.http import update_url
+from utils.views import BaseView, renderer
+from utils.breadcrumbs import *
+from utils.http import update_url
 
-from mobile.geolocation.forms import LocationUpdateForm
-from mobile.geolocation import geocode, reverse_geocode
+from geolocation.forms import LocationUpdateForm
+from geolocation import geocode, reverse_geocode
 
 class GeolocationView(BaseView):
     """
@@ -95,7 +96,7 @@ class GeolocationView(BaseView):
         response['X-Embed'] = 'True'
         return response
 
-    def get_location_response(self, request, context, form = None):
+    def get_location_response(self, request, context, form=None):
         if context.get('return_url').startswith('/'):
             redirect = context['return_url']
         else:
@@ -136,7 +137,7 @@ class IndexView(GeolocationView):
             return Breadcrumb(
                 self.conf.local_name,
                 None,
-                'Update location',
+                _('Update location'),
                 lazy_reverse('geolocation:index'),
             )
 
@@ -149,7 +150,7 @@ class IndexView(GeolocationView):
             application = parent_data.application
         except Exception:
             application = 'home'
-            parent = lambda _1,_2,_3, _4: type(
+            parent = lambda _1, _2, _3, _4: type(
                 'BC', (), {
                     'application': 'home',
                     'title': 'Back...',
@@ -159,7 +160,7 @@ class IndexView(GeolocationView):
         return Breadcrumb(
             application,
             parent,
-            'Update location',
+            _('Update location'),
             lazy_reverse('index'),
         )
 

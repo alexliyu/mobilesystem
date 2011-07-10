@@ -3,9 +3,9 @@ from functools import wraps
 from django.conf import settings
 from django.contrib.gis.geos import Point
 
-from mobile.conf import get_app
+from conf import get_app
 
-from mobile.geolocation.models import Geocode
+from geolocation.models import Geocode
 
 __all__ = ['geocode', 'reverse_geocode']
 
@@ -14,7 +14,7 @@ def _cached(getargsfunc):
         @wraps(f)
         def h(*args, **kwargs):
             args = getargsfunc(*args, **kwargs)
-            app = get_app('mobile.geolocation', args.pop('local_name', None))
+            app = get_app('geolocation', args.pop('local_name', None))
             try:
                 return Geocode.recent.get(local_name=app.local_name, **args).results
             except Geocode.DoesNotExist:
@@ -41,11 +41,11 @@ def _cached(getargsfunc):
                     results = filtered_results
 
             try:
-                geocode, _ = Geocode.objects.get_or_create(local_name=app.local_name,
+                geocode, created = Geocode.objects.get_or_create(local_name=app.local_name,
                                                             **args)
             except Geocode.MultipleObjectsReturned:
                 Geocode.objects.filter(local_name=app.local_name, **args).delete()
-                geocode, _ = Geocode.objects.get_or_create(local_name=app.local_name,
+                geocode, created = Geocode.objects.get_or_create(local_name=app.local_name,
                                                             **args)
             geocode.results = results
             geocode.save()

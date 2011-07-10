@@ -8,9 +8,9 @@ from lxml import etree
 from django.http import Http404
 from django.core.urlresolvers import Resolver404, reverse
 
-from mobile.apps.search.providers import BaseSearchProvider
+from apps.search.providers import BaseSearchProvider
 
-logger = logging.getLogger("mobile.providers.search.google_search_appliance")
+logger = logging.getLogger("providers.search.google_search_appliance")
 
 class GSASearchProvider(BaseSearchProvider):
 

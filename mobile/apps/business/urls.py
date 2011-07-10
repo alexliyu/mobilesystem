@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns
-from mobile.apps.business.views import PromotionsView, \
+from apps.business.views import PromotionsView, \
     PromotionsDetail, PromotionsList, BusinessList, BusinessDetail
 
 #info = {

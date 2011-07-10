@@ -7,9 +7,9 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.conf import settings
 
-from mobile.external_media import resize_external_image
-from mobile.apps.places.models import Entity
-from mobile.gmapsfield.fields import GoogleMapsField
+from external_media import resize_external_image
+from apps.places.models import Entity
+from gmapsfield.fields import GoogleMapsField
 FEED_TYPE_CHOICES = (
     ('n', 'news'),
     ('e', 'event'),
@@ -20,7 +20,7 @@ PROVIDER_CHOICES = tuple(
     (provider().class_path, provider().verbose_name)
         for app in settings.APPLICATIONS
         for provider in app.providers
-        if app.application_name == 'mobile.apps.feeds'
+        if app.application_name == 'apps.feeds'
 )
 
 FORMAT_CHOICES = tuple((x, x) for x in (

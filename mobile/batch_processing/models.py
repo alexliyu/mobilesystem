@@ -25,9 +25,9 @@ from StringIO import StringIO
 
 from django.db import models
 
-from mobile.conf import all_apps, app_by_local_name
+from conf import all_apps, app_by_local_name
 
-logger = logging.getLogger("mobile.batch_processing")
+logger = logging.getLogger("batch_processing")
 
 class TeeStringIO(StringIO):
     def __init__(self, *args, **kwargs):

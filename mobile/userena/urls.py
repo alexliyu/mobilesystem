@@ -3,8 +3,8 @@ from django.views.generic.simple import direct_to_template
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 
-from mobile.userena import views as userena_views
-from mobile.userena import settings as userena_settings
+from userena import views as userena_views
+from userena import settings as userena_settings
 
 urlpatterns = patterns('',
     # Signup, signin and signout

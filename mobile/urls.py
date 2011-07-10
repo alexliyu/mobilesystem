@@ -1,9 +1,9 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
-from mobile.conf import applications, all_apps
-from mobile.apps.links import views
-from mobile.apps.business.views import PicDownload
+from conf import applications, all_apps
+from apps.links import views
+from apps.business.views import PicDownload
 
 # Admin
 admin.autodiscover()
@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^sentry/', include('sentry.web.urls')),
-    (r'^tracking/', include('mobile.tracking.urls')),
+    (r'^tracking/', include('tracking.urls')),
     (r'^download/', PicDownload),
      
     (r'', applications.home.urls)) # Home default
@@ -36,7 +36,7 @@ urlpatterns += patterns('django.views.generic.simple',
     (r'^osm/(?P<remain>.*)$', 'redirect_to', {'url': '/maps/osm/%(remain)s'}),
 )
 
-handler500 = 'mobile.utils.views.handler500'
+handler500 = 'utils.views.handler500'
 
 if settings.DEBUG:
     urlpatterns += patterns('',

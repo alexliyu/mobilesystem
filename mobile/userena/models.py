@@ -8,12 +8,12 @@ from django.core.urlresolvers import reverse
 from django.core.mail import send_mail
 from django.core.exceptions import ImproperlyConfigured
 
-from mobile.userena.utils import get_gravatar, generate_sha1, get_protocol
-from mobile.userena.managers import UserenaManager, UserenaBaseProfileManager
-from mobile.userena import settings as userena_settings
+from userena.utils import get_gravatar, generate_sha1, get_protocol
+from userena.managers import UserenaManager, UserenaBaseProfileManager
+from userena import settings as userena_settings
 
-from mobile.guardian.shortcuts import get_perms
-from mobile.guardian.shortcuts import assign
+from guardian.shortcuts import get_perms
+from guardian.shortcuts import assign
 
 from easy_thumbnails.fields import ThumbnailerImageField
 

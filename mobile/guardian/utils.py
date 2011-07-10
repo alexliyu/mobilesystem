@@ -7,8 +7,8 @@ they actual input parameters/output type may change in future releases.
 """
 import logging
 from django.contrib.auth.models import User, AnonymousUser, Group
-from mobile.guardian.exceptions import NotUserNorGroup
-from mobile.guardian.conf.settings import ANONYMOUS_USER_ID
+from guardian.exceptions import NotUserNorGroup
+from guardian.conf.settings import ANONYMOUS_USER_ID
 from itertools import chain
 
 logger = logging.getLogger(__name__)
@@ -69,8 +69,8 @@ def clean_orphan_obj_perms():
 
     Returns number of removed objects.
     """
-    from mobile.guardian.models import UserObjectPermission
-    from mobile.guardian.models import GroupObjectPermission
+    from guardian.models import UserObjectPermission
+    from guardian.models import GroupObjectPermission
 
 
     deleted = 0

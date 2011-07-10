@@ -7,9 +7,9 @@ Created on 2011-1-30
 from datetime import timedelta
 from models import Lottery
 from django.contrib.auth.models import User
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
-from mobile.apps.users.models import UserProfile
+from utils.views import BaseView
+from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
+from apps.users.models import UserProfile
 
 
 class IndexView(BaseView):

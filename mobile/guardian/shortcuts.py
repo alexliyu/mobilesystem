@@ -6,11 +6,11 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.db.models import Q
 from django.shortcuts import _get_queryset
-from mobile.guardian.core import ObjectPermissionChecker
-from mobile.guardian.exceptions import MixedContentTypeError
-from mobile.guardian.exceptions import WrongAppError
-from mobile.guardian.models import UserObjectPermission, GroupObjectPermission
-from mobile.guardian.utils import get_identity
+from guardian.core import ObjectPermissionChecker
+from guardian.exceptions import MixedContentTypeError
+from guardian.exceptions import WrongAppError
+from guardian.models import UserObjectPermission, GroupObjectPermission
+from guardian.utils import get_identity
 from itertools import groupby
 
 def assign(perm, user_or_group, obj=None):

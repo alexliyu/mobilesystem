@@ -1,4 +1,4 @@
-from mobile.wurfl import device_parents
+from wurfl import device_parents
 
 def parse_version(s):
     try:

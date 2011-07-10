@@ -12,12 +12,12 @@ from django.http import HttpResponse, Http404
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
+from utils.views import BaseView
+from utils.breadcrumbs import *
 
-from mobile.wurfl import device_parents
+from wurfl import device_parents
 
-from mobile.apps.podcasts.models import Podcast, PodcastCategory
+from apps.podcasts.models import Podcast, PodcastCategory
 
 
 class IndexView(BaseView):

@@ -3,11 +3,11 @@ from django.db.models import Q
 from django.contrib.auth.models import User, UserManager, Permission, AnonymousUser
 from django.contrib.contenttypes.models import ContentType
 
-from mobile.userena import settings as userena_settings
-from mobile.userena.utils import generate_sha1, get_profile_model
-from mobile.userena import signals as userena_signals
+from userena import settings as userena_settings
+from userena.utils import generate_sha1, get_profile_model
+from userena import signals as userena_signals
 
-from mobile.guardian.shortcuts import assign, get_perms
+from guardian.shortcuts import assign, get_perms
 
 import re, datetime
 

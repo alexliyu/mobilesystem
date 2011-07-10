@@ -1,6 +1,6 @@
 import ldap, ldap.filter
 
-from mobile.apps.contact.providers import BaseContactProvider, TooManyResults
+from apps.contact.providers import BaseContactProvider, TooManyResults
 
 class LDAPContactProvider(BaseContactProvider):
 

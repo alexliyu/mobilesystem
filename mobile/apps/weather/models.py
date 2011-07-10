@@ -6,7 +6,7 @@ Created on 2011-1-30
 '''
 from datetime import datetime, time
 from django.db import models
-from mobile.gmapsfield.fields import GoogleMapsField
+from gmapsfield.fields import GoogleMapsField
 
 
 PRESSURE_STATE_CHOICES = (

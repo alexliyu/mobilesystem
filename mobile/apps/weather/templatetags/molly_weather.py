@@ -1,7 +1,7 @@
 from django import template
 
-from mobile.apps.weather.models import Weather
-from mobile.conf.applications import app_by_application_name
+from apps.weather.models import Weather
+from conf.applications import app_by_application_name
 
 register = template.Library()
 
@@ -20,7 +20,7 @@ class WeatherNode(template.Node):
     def render(self, context):
         # Voodoo ahead! Gets the location ID from the molly settings file to use when accessing Weather object.
         try:
-            context[self.name] = Weather.objects.get(location_id=app_by_application_name('mobile.apps.weather').location_id)
+            context[self.name] = Weather.objects.get(location_id=app_by_application_name('apps.weather').location_id)
         except Weather.DoesNotExist:
             context[self.name] = None
         return ''

@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from views import IndexView, ClearHistoryView, FavouritesView
+from geolocation.views import IndexView, ClearHistoryView, FavouritesView
 
 urlpatterns = patterns('',
     (r'^$',

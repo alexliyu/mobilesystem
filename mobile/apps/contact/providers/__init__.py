@@ -1,4 +1,4 @@
-from mobile.apps.contact.forms import GenericContactForm
+from apps.contact.forms import GenericContactForm
 
 class BaseContactProvider(object):
 
@@ -21,7 +21,7 @@ class BaseContactProvider(object):
         """
         A class object inheriting :class:`~django.forms.Form` to be presented to
         the user and used for input validation. If not overriden, defaults to
-        :class:`~mobile.apps.contact.forms.GenericContactForm`, which presents a
+        :class:`~apps.contact.forms.GenericContactForm`, which presents a
         single query field.
         """
         return GenericContactForm
@@ -59,7 +59,7 @@ class BaseContactProvider(object):
         identifier which may be passed to :meth:`fetch_result`. `id`\ s must be
         URI-safe and not contain forward slashes.
         
-        This can return :class:`mobile.apps.contact.providers.TooManyResults` if
+        This can return :class:`apps.contact.providers.TooManyResults` if
         the provider (or underlying services) deems that the query has returned
         "too many results"
         """

@@ -1,10 +1,10 @@
 #-*- coding:utf-8 -*-
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse, lazy_parent
-from mobile.apps.business.models import BusinessInfo, PromotionsInfo
+from utils.views import BaseView
+from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse, lazy_parent
+from apps.business.models import BusinessInfo, PromotionsInfo
 from django.core.paginator import  Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
-from mobile import settings
+import settings
  
 class BusinessList(BaseView):
     

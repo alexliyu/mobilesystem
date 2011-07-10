@@ -17,7 +17,7 @@ class EmailHandler(logging.Handler):
         from_email = settings.SERVER_EMAIL if hasattr(settings, 'SERVER_EMAIL') else 'molly@localhost'
     
     def emit(self, record):
-        if record.name == 'mobile.stats.requests':
+        if record.name == 'stats.requests':
             return
 
         # Recurse up the call stack to find the request that was being

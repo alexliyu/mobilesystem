@@ -7,7 +7,7 @@ from optparse import make_option
 from django.core.management.base import BaseCommand
 from django.db import connection
 
-from mobile.wurfl.wurfl_data import devices
+from wurfl.wurfl_data import devices
 
 class L(unicode):
     def __repr__(self):

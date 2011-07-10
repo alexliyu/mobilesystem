@@ -4,9 +4,9 @@ from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseForbidden
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
-from mobile.utils import send_email
+from utils.views import BaseView
+from utils.breadcrumbs import *
+from utils import send_email
 
 from .models import Feature
 from .forms import FeatureForm

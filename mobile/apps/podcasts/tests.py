@@ -3,15 +3,15 @@ import unittest
 from django.core.management import call_command
 from django.test.client import Client
 
-from mobile.apps.podcasts.models import Podcast, PodcastCategory
-from mobile.apps.podcasts.providers import OPMLPodcastsProvider
+from apps.podcasts.models import Podcast, PodcastCategory
+from apps.podcasts.providers import OPMLPodcastsProvider
 
 class PodcastsTestCase(unittest.TestCase):
     def setUp(self):
         if not Podcast.objects.count():
             opml = OPMLPodcastsProvider(url = 'http://www.bbc.co.uk/radio/opml/bbc_podcast_opml_v2.xml',
                                         rss_re = r'http://downloads.bbc.co.uk/podcasts/(.+)/rss.xml')
-            opml.class_path = 'mobile.providers.apps.podcasts.opml.OPMLPodcastsProvider'
+            opml.class_path = 'providers.apps.podcasts.opml.OPMLPodcastsProvider'
             opml.import_data(None, None)
         
     def testPodcasts(self):

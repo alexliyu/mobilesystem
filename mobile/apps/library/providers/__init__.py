@@ -6,7 +6,7 @@ class BaseLibrarySearchProvider:
     def library_search(self, query):
         """
         @param query: The query to be performed
-        @type query: mobile.apps.library.models.
+        @type query: apps.library.models.
         @return: A list of results
         @rtype: [LibrarySearchResult]
         """

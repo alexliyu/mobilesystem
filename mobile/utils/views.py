@@ -22,10 +22,10 @@ from django.conf import settings
 
 logger = logging.getLogger('core.requests')
 
-from mobile.utils.http import MediaType, HttpResponseSeeOther
-from mobile.utils.simplify import (simplify_value, simplify_model,
+from utils.http import MediaType, HttpResponseSeeOther
+from utils.simplify import (simplify_value, simplify_model,
                                   serialize_to_xml)
-from mobile.utils.breadcrumbs import NullBreadcrumb
+from utils.breadcrumbs import NullBreadcrumb
 
 def renderer(format, mimetypes=(), priority=0):
     """
@@ -463,7 +463,7 @@ def render_blocks_to_string(template_name, dictionary=None,
     return render_template_blocks(t, context_instance)
 
 def ReverseView(request):
-    from mobile.auth.views import SecureView
+    from auth.views import SecureView
 
     try:
         name = request.GET['name']
@@ -490,14 +490,14 @@ def handler500(request):
     # This will make things prettier if we can manage it.
     # No worries if we can't.
     try:
-        from mobile.wurfl.context_processors import device_specific_media
+        from wurfl.context_processors import device_specific_media
         context.update(device_specific_media(request))
     except Exception, e:
         pass
     
     # This will make stop mixed content warnings if we can manage it
     try:
-        from mobile.utils.context_processors import ssl_media
+        from utils.context_processors import ssl_media
         context.update(ssl_media(request))
     except Exception, e:
         context.update({'STATIC_URL': settings.STATIC_URL})

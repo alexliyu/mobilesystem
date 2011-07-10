@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 from django.db import models
 from django.core.urlresolvers import reverse
-from mobile.apps.podcasts.data import licenses
+from apps.podcasts.data import licenses
 
 MEDIUM_CHOICES = (
     ('audio', 'audio'),

@@ -5,8 +5,8 @@ from time import mktime
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, Http404
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import NullBreadcrumb
+from utils.views import BaseView
+from utils.breadcrumbs import NullBreadcrumb
 
 from models import ExternalImageSized
 

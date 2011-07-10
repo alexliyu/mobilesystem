@@ -12,12 +12,12 @@ from django import template
 from django.template.defaultfilters import stringfilter
 from django.utils.safestring import SafeUnicode, mark_safe
 
-from mobile.utils.xslt import transform
-from mobile.wurfl import device_parents
-from mobile.apps.places import get_entity
-from mobile.apps.places.models import Entity
-from mobile.conf.applications import has_app_by_local_name
-from mobile.gmapsfield.conf import settings
+from utils.xslt import transform
+from wurfl import device_parents
+from apps.places import get_entity
+from apps.places.models import Entity
+from conf.applications import has_app_by_local_name
+from gmapsfield.conf import settings
 register = template.Library()
 
 @register.filter()

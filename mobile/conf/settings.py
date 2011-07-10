@@ -56,7 +56,7 @@ class Application(object):
 
         bases = tuple(base() for base in self.extra_bases)
         if self.secure:
-            from mobile.auth.views import SecureView
+            from auth.views import SecureView
             bases = (SecureView,) + bases
 
         self.kwargs.update({
@@ -108,7 +108,7 @@ class Application(object):
 
         # Don't import at module scope as this module will be imported from a
         # settings file.
-        from mobile.utils.views import BaseView
+        from utils.views import BaseView
 
         if isinstance(pattern, RegexURLResolver):
             # Recurse through the patterns

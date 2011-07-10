@@ -1,6 +1,6 @@
 from django.core.management.base import NoArgsCommand
 
-from mobile.userena.models import UserenaSignup
+from userena.models import UserenaSignup
 
 class Command(NoArgsCommand):
     """

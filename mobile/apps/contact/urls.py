@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from views import IndexView, ResultListView, ResultDetailView
+from apps.contact.views import IndexView, ResultListView, ResultDetailView
 
 urlpatterns = patterns('',
     (r'^$', IndexView, {}, 'index'),

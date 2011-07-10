@@ -1,12 +1,12 @@
 from django.contrib.auth.models import User
 
-from mobile.conf import app_by_application_name
-from mobile.auth.models import UserIdentifier, UserSession, ExternalServiceToken
-from mobile.favourites.models import Favourite
+from conf import app_by_application_name
+from auth.models import UserIdentifier, UserSession, ExternalServiceToken
+from favourites.models import Favourite
 
 def unify_users(request):
     user = request.user
-    conf = app_by_application_name('mobile.auth')
+    conf = app_by_application_name('auth')
 
     users = set()
     for identifier in user.useridentifier_set.all():

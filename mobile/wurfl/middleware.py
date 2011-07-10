@@ -1,8 +1,8 @@
 from django.conf import settings
 
-from mobile.wurfl.wurfl_data import devices
+from wurfl.wurfl_data import devices
 from pywurfl.algorithms import DeviceNotFound
-from mobile.wurfl.vsm import vsa
+from wurfl.vsm import vsa
 
 class WurflMiddleware(object):
     def process_request(self, request):

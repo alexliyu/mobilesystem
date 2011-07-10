@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from views import IndexView
+from url_shortener.views import IndexView
 
 urlpatterns = patterns('',
     (r'^$',

@@ -8,4 +8,4 @@ class BaseTransitLineStatusProvider():
         # "disruption_reason"
         return {}
 
-from mobile.apps.transport.providers.tfl import TubeStatusProvider
+from apps.transport.providers.tfl import TubeStatusProvider

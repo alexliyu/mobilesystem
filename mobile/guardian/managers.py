@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 
-from mobile.guardian.exceptions import ObjectNotPersisted
+from guardian.exceptions import ObjectNotPersisted
 
 class UserObjectPermissionManager(models.Manager):
 

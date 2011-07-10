@@ -15,11 +15,11 @@ from django.http import Http404, HttpResponseBadRequest
 from django.core.urlresolvers import reverse
 from django.core.exceptions import PermissionDenied, ImproperlyConfigured
 
-from mobile.utils.views import BaseView
+from utils.views import BaseView
 
-from mobile.auth import unify_users
-from mobile.auth.models import ExternalServiceToken
-from mobile.auth.oauth.clients import OAuthClient, OAuthHTTPError
+from auth import unify_users
+from auth.models import ExternalServiceToken
+from auth.oauth.clients import OAuthClient, OAuthHTTPError
 
 class OAuthView(BaseView):
     """

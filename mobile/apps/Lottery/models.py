@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from django.db import models
-from mobile.apps.users.models import UserProfile
+from apps.users.models import UserProfile
 
 class Lottery(models.Model):
     Lottery_title=models.CharField("活动标题",max_length=50,blank=False)

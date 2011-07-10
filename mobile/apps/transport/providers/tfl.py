@@ -1,7 +1,7 @@
 import urllib
 from xml.dom import minidom
 
-from mobile.apps.transport.providers import BaseTransitLineStatusProvider
+from apps.transport.providers import BaseTransitLineStatusProvider
 
 class TubeStatusProvider(BaseTransitLineStatusProvider):
     

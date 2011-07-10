@@ -3,12 +3,12 @@ from datetime import timedelta
 from django.core.paginator import Paginator
 from django.http import Http404
 
-from mobile.utils.views import BaseView, ZoomableView
-from mobile.utils.breadcrumbs import *
-from mobile.maps import Map
+from utils.views import BaseView, ZoomableView
+from utils.breadcrumbs import *
+from maps import Map
 
-from mobile.apps.library.forms import SearchForm
-from mobile.apps.library.models import LibrarySearchQuery
+from apps.library.forms import SearchForm
+from apps.library.models import LibrarySearchQuery
 
 class IndexView(BaseView):
     """

@@ -1,0 +1,85 @@
+{% extends "places/base.html" %}{% load molly_maps %}{% load molly_utils %}
+{% load i18n %}
+
+{% block extrahead %}
+  {% if entity.metadata.meta_refresh %}
+    {% if not use_javascript %}
+      <meta http-equiv="refresh" content="{{ entity.metadata.meta_refresh }}" />
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% include "places/metadata/ldb.html" %}
+
+{% ifequal entity.primary_type.slug "travel-alert" %}
+<div class="section">
+  <div class="header">
+    <h2>{% trans "Travel Alert" %}</h2>
+  </div>
+  <div class="section-content"><div class="bubble pad-5">
+      {{ entity.title }}
+  </div></div>
+</div>
+{% endifequal %}
+
+<div class="section" id="poi-category-selector">
+  <div class="header">
+    {% if not entity.metadata.real_time_information %}
+      <h2>{% trans "Map" %}</h2>
+    {% else %}
+      {% if entity.identifiers.naptan %}
+        <h2><small>
+          {% blocktrans with entity.identifiers.naptan as stop_id %}Real-time information from stop {{ stop_id }}{% endblocktrans %}
+           - <span class="update-time">{% now "H:i:s" %}</span>
+        </small></h2>
+      {% else %}
+        <h2>{% trans "Real-time information" %} - <span class="update-time">{% now "H:i:s" %}</span></h2>
+      {% endif %}
+    {% endif %}
+  </div>
+  {% include "places/metadata/real_time_information.html" %}
+  {% if entity.location %}
+    <div class="section-content no-round-bottom">
+      {% render_location_map entity.location %}
+    </div>
+    <ul class="link-list category-list">
+      <li class="nearby">
+        <a href="{% url places:entity-nearby-list entity.identifier_scheme entity.identifier_value %}" rel="nofollow">
+          {% trans "Find things near here" %}</a>
+      </li>
+    </ul>
+    {% else %}
+      <div class="note"><div class="pad-10">
+        {% blocktrans with entity.primary_type.verbose_name as type_name %}We do not yet have a location for this {{ type_name }}.{% endblocktrans %}
+      </div></div>
+    {% endif %}
+</div>
+
+{% block metadata %}
+{% include "places/metadata/osm.html" %}
+{% include "places/metadata/park_and_ride.html" %}
+{% endblock %}
+
+{% for associated_type in associations %}
+
+<div class="section">
+  <div class="header">
+    <h2>{{ associated_type.type }}</h2>
+  </div>
+  <ul class="content-list">
+    {% for entity in associated_type.entities %}
+      <li>
+        <h3><a href="{{ entity.get_absolute_url }}">{{ entity.title }}</a></h3>
+        {% if entity.metadata.real_time_information %}
+          {% include "places/metadata/real_time_information.html" %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endfor %}
+
+{% endblock %}

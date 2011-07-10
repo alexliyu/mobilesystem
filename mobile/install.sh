@@ -9,6 +9,9 @@ sudo apt-get install python-mysqldb
 sudo apt-get install libjpeg62 libjpeg62-dev zlib1g-dev
 sudo apt-get install libjpeg8-dev
 sudo apt-get install libzip-dev
+sudo apt-get install libgdal1-dev
+sudo apt-get install binutils gdal-bin postgresql-8.4-postgis \
+     postgresql-server-dev-8.4 python-psycopg2 python-setuptools
 sudo ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib/
 sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/
 sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/

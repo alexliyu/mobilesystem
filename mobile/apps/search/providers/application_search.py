@@ -1,10 +1,10 @@
 import logging
 
-from mobile.apps.search.providers import BaseSearchProvider
+from apps.search.providers import BaseSearchProvider
 
-from mobile.conf import all_apps
+from conf import all_apps
 
-logger = logging.getLogger('mobile.providers.apps.search.application_search')
+logger = logging.getLogger('providers.apps.search.application_search')
 
 class ApplicationSearchProvider(BaseSearchProvider):
     def __init__(self, local_names=None):

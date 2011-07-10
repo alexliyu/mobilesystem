@@ -4,8 +4,8 @@ from xml.dom import minidom
 from PyZ3950 import zoom
 from PyZ3950.zmarc import MARC, MARC8_to_Unicode
 
-from mobile.apps.library.models import LibrarySearchResult, Library
-from mobile.apps.library.providers import BaseLibrarySearchProvider
+from apps.library.models import LibrarySearchResult, Library
+from apps.library.providers import BaseLibrarySearchProvider
 
 class SearchResult(LibrarySearchResult):
     
@@ -366,7 +366,7 @@ class Z3950(BaseLibrarySearchProvider):
     def library_search(self, query):
         """
         @param query: The query to be performed
-        @type query: mobile.apps.library.models.LibrarySearchQuery
+        @type query: apps.library.models.LibrarySearchQuery
         @return: A list of results
         @rtype: [LibrarySearchResult]
         """

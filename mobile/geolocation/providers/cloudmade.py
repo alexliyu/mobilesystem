@@ -6,9 +6,9 @@ from django.conf import settings
 from django.contrib.gis.gdal.datasource import OGRException
 from django.contrib.gis.geos import Point
 
-from mobile.geolocation.providers import BaseGeolocationProvider
+from geolocation.providers import BaseGeolocationProvider
 
-logger = logging.getLogger('mobile.contrib.generic.cloudmade')
+logger = logging.getLogger(__name__)
 
 class CloudmadeGeolocationProvider(BaseGeolocationProvider):
     REVERSE_GEOCODE_URL = 'http://geocoding.cloudmade.com/%(api_key)s/geocoding/closest/%(type)s/%(lat)f,%(lon)f.js'
@@ -26,12 +26,23 @@ class CloudmadeGeolocationProvider(BaseGeolocationProvider):
             'type': 'road',
         }
 
-        data = urllib2.urlopen(self.REVERSE_GEOCODE_URL % params)
-
-        json = simplejson.load(data)
+        try:
+            request_url = self.REVERSE_GEOCODE_URL % params
+            response = urllib2.urlopen(request_url)
+            if response.code != 200:
+                logger.error("Request to %s returned response code %d" % (request_url, response.code))
+                return []
+            json = simplejson.loads(response.read().replace('&apos;', "'"), 'utf8')
+        except urllib2.HTTPError, e:
+            logger.error("Cloudmade returned a non-OK response code %d", e.code)
+            return []
+        except urllib2.URLError, e:
+            logger.error("Encountered an error reaching Cloudmade: %s", str(e))
+            return []
         
         if not json:
             return []
+        
         else:
             name = json['features'][0]['properties'].get('name')
             try:
@@ -47,6 +58,10 @@ class CloudmadeGeolocationProvider(BaseGeolocationProvider):
             }]
 
     def geocode(self, query):
+        
+        if not query:
+            return []
+        
         if self.search_locality and not (', ' in query or ' near ' in query):
             query += ', %s' % self.search_locality
 
@@ -78,7 +93,7 @@ class CloudmadeGeolocationProvider(BaseGeolocationProvider):
 
         results = []
         
-        features = sorted(json['features'], key=lambda f: len(f['properties'].get('name', 'x'*1000)))        
+        features = sorted(json['features'], key=lambda f: len(f['properties'].get('name', 'x' * 1000)))        
         
         for i, feature in enumerate(features):
             try:

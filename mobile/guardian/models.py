@@ -5,9 +5,9 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.utils.translation import ugettext_lazy as _
 
-from mobile.guardian.managers import UserObjectPermissionManager
-from mobile.guardian.managers import GroupObjectPermissionManager
-from mobile.guardian.utils import get_anonymous_user
+from guardian.managers import UserObjectPermissionManager
+from guardian.managers import GroupObjectPermissionManager
+from guardian.utils import get_anonymous_user
 
 class BaseObjectPermission(models.Model):
     """

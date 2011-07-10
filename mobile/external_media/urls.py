@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from views import IndexView, ExternalImageView
+from external_media.views import IndexView, ExternalImageView
 
 urlpatterns = patterns('',
     (r'^$',

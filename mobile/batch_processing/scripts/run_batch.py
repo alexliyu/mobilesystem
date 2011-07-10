@@ -2,7 +2,7 @@
 
 import sys
 
-from mobile.batch_processing import run_batch
+from batch_processing import run_batch
     
 if __name__ == '__main__':
     run_batch(sys.argv[1], sys.argv[2], sys.argv[3], False)

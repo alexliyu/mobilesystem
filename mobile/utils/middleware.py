@@ -3,7 +3,7 @@ import logging
 from django.http import Http404
 from django.core.exceptions import ImproperlyConfigured, PermissionDenied
 
-logger = logging.getLogger("mobile.utils.middleware")
+logger = logging.getLogger("utils.middleware")
 
 class ErrorHandlingMiddleware(object):
     def process_exception(self, request, exception):

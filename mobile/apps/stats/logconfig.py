@@ -2,7 +2,7 @@ import logging
 
 from .models import Hit
 
-logger = logging.getLogger('mobile.stats.db')
+logger = logging.getLogger('stats.db')
 
 class StatisticsHandler(logging.Handler):
     def emit(self, record):
@@ -30,6 +30,6 @@ class StatisticsHandler(logging.Handler):
 
 def configure_logging(conf):
     if getattr(conf, 'log_to_database', True):
-       logger = logging.getLogger('mobile.stats.requests')
+       logger = logging.getLogger('stats.requests')
        logger.addHandler(StatisticsHandler())
 

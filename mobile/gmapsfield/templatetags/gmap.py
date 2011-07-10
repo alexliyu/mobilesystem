@@ -1,4 +1,4 @@
-from mobile.gmapsfield.conf import settings
+from gmapsfield.conf import settings
 from django import template
 register = template.Library()
 

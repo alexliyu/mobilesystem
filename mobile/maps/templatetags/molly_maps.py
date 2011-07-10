@@ -1,19 +1,19 @@
 from django import template
 from django.template.loader import get_template
 
-from mobile.maps import map_from_point
+from maps import map_from_point
 
 register = template.Library()
 
 class MapDisplayNode(template.Node):
     """
-    Node to display a more complex map from a @C{mobile.maps.Map} object
+    Node to display a more complex map from a @C{maps.Map} object
     """
     
     def __init__(self, map):
         """
         @param map: The Map to be rendered
-        @type map: mobile.maps.Map
+        @type map: maps.Map
         """
         self.map = map
     
@@ -64,6 +64,7 @@ class LocationDisplayNode(template.Node):
            'map': map_from_point(template.Variable(self.place).resolve(context),
                                  context['request'].map_width,
                                  context['request'].map_height,
+                                 title=context['entity'].title,
                                  zoom=context.get('zoom', 16))
            })
         return get_template('maps/embed.html').render(context)

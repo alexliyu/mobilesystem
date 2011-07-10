@@ -2,7 +2,7 @@ import re
 
 from django.http import HttpResponsePermanentRedirect
 
-from .models import ShortenedURL
+from url_shortener.models import ShortenedURL
 
 class URLShortenerMiddleware(object):
     url_re = re.compile(r"/[a-zA-Z\d]+")

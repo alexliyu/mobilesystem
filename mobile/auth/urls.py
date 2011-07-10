@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from views import IndexView, ClearSessionView
+from auth.views import IndexView, ClearSessionView
 
 urlpatterns = patterns('',
     (r'^$',

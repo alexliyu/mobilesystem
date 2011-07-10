@@ -13,32 +13,16 @@
         <meta name="author" content="dFacts Network" /> 
         <meta name="copyright" content="2009 dFacts Network, released under Apache License, Version 2.0" /> 
         <meta name="MSSmartTagsPreventParsing" content="true" /> 
-        {% compressed_css "touchMapLite-viewer" %}
-        {% compressed_js "PanoJS-EventUtils" %}
-        {% compressed_js "PanoJS-PanoJS" %}
-        {% compressed_js "touchMapLite-touchMapLite" %}
-        {% compressed_js "touchMapLite-touchMapLite.tileUrlProvider.OSM" %}
-        {% compressed_js "touchMapLite-touchMapLite.marker" %}
-        {% compressed_js "touchMapLite-touchMapLite.permalink.OSM" %}
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="/media/touchmaplite/js/jquery.gmap.js"></script>
+        {% compressed_js "jquery.gmap.js" %}
         <script type="text/javascript"> 
-            // <![CDATA[
-            
-            var mediaUrl = "{{ STATIC_URL|escapejs }}";
-            
-            var touchMap = null;
-             
-            var maximized = false;
-             
-            EventUtils.addEventListener(window, 'load', function(){
-                touchMap = new touchMapLite("viewer");
-                touchMap.init();
-            }, false);
-             
-            EventUtils.addEventListener(window, 'resize', function(){
-                touchMap.reinitializeGraphic();
-            }, false);
-             
-            // ]]>
+        $(document).ready(function()  
+                {  
+        
+            $('#map').gMap();
+        });
+                        
         </script> 
     </head> 
     <body> 
@@ -46,10 +30,10 @@
             <div class="well"><!-- --></div> 
             <div class="surface" id="touchArea"><!-- --></div> 
             <div class="marker" id="markers"></div>
+            
+			<div id="map">Placeholder in case of loading failure</div>
             <div class="controls">{% include "maps/map_elements.html" %}</div>
         </div>
-        {% compressed_js "touchMapLite-touchMapLite.event.touch" %}
-        {% compressed_js "touchMapLite-touchMapLite.event.wheel" %}
-        {% compressed_js "touchMapLite-touchMapLite.event.dblcick" %}
+       
     </body> 
 </html>

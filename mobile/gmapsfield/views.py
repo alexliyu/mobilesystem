@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader, Context
-from mobile.gmapsfield.conf import settings
+from gmapsfield.conf import settings
 
 def serve(request, file):
     if request.user.is_authenticated():

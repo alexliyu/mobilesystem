@@ -11,8 +11,8 @@ from datetime import datetime, timedelta
 
 from django.db import IntegrityError, transaction
 
-from mobile.maps.osm.models import GeneratedMap, get_generated_map_dir
-from mobile.maps.osm.draw import get_fitted_map, MapGenerationError
+from maps.osm.models import GeneratedMap, get_generated_map_dir
+from maps.osm.draw import get_fitted_map, MapGenerationError
 
 MARKER_COLORS = (
     # name, fill, border, text
@@ -26,7 +26,7 @@ MARKER_COLORS = (
 
 MARKER_RANGE = xrange(1, 100)
 
-logger = logging.getLogger('mobile.osm.generation')
+logger = logging.getLogger('osm.generation')
 
 def get_or_create_map(generator, args):
     """

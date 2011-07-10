@@ -3,30 +3,30 @@ from itertools import chain
 
 import simplejson
 
-from mobile.geolocation.providers import BaseGeolocationProvider
-from mobile.apps.places.models import Entity
+from geolocation.providers import BaseGeolocationProvider
+from apps.places.models import Entity, EntityName
 
-logger = logging.getLogger('mobile.contrib.oxford.providers.geolocation')
+logger = logging.getLogger(__name__)
 
 class PlacesGeolocationProvider(BaseGeolocationProvider):
-    def __init__(self, search_identifiers = None):
+    def __init__(self, search_identifiers=None):
         self.search_identifiers = search_identifiers
 
     def geocode(self, query):
         entities = Entity.objects.all()
         if self.search_identifiers:
             entities = entities.filter(
-                _identifiers__scheme__in = self.search_identifiers,
-                _identifiers__value__iexact = query,
+                _identifiers__scheme__in=self.search_identifiers,
+                _identifiers__value__iexact=query,
             )
         else:
             entities = entities.filter(
-                _identifiers__value__iexact = query,
+                _identifiers__value__iexact=query,
             )
 
         entities = chain(
-            Entity.objects.filter(title__iexact = query,
-                                  location__isnull = False),
+            Entity.objects.filter(names__title__iexact=query,
+                                  location__isnull=False),
             entities,
         )
 

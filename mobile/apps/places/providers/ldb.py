@@ -1,13 +1,13 @@
 import logging
-
-from mobile.apps.places.models import Entity
-
 import suds, suds.sudsobject
 from suds.sax.element import Element
 
-logger = logging.getLogger('mobile.providers.apps.places.ldb')
+from django.utils.translation import ugettext_lazy
 
-from mobile.apps.places.providers import BaseMapsProvider
+from apps.places.models import Entity
+from apps.places.providers import BaseMapsProvider
+
+logger = logging.getLogger(__name__)
 
 class LiveDepartureBoardPlacesProvider(BaseMapsProvider):
     _WSDL_URL = "http://realtime.nationalrail.co.uk/ldbws/wsdl.aspx"
@@ -87,40 +87,64 @@ class LiveDepartureBoardPlacesProvider(BaseMapsProvider):
         # details how these should be handled. First, we build a list of all
         # the calling points on the "through" train.
         calling_points = service['previousCallingPoints']['callingPointList'][0]['callingPoint'] if len(service['previousCallingPoints']) else []
-        calling_points += [{
-            'locationName': service['locationName'],
-            'crs': service['crs'],
-            'st': service['std'] if 'std' in service else service['sta'],
-            'et': service['etd'] if 'etd' in service else service['eta'],
-            'at': service['atd'] if 'atd' in service else '',
-        }]
-        if len(service['subsequentCallingPoints']):
-            calling_points += service['subsequentCallingPoints']['callingPointList'][0]['callingPoint']
 
         # Then attach joining services to our thorough route in the correct
         # point, but only if there is a list of previous calling points
         if len(service['previousCallingPoints']):
-            for points in service['previousCallingPoints']['callingPointList'][1:]:
-                for point in calling_points:
+            for i, points in enumerate(service['previousCallingPoints']['callingPointList'][1:]):
+                # If the other half of the split ends up here, it's not a split, but
+                # a change between rail replacement bus of train
+                for j, point in enumerate(calling_points):
                     if points['callingPoint'][-1]['crs'] == point['crs']:
-                        point['joining'] = points['callingPoint']
-
-        # And do the same with splitting services
-        if len(service['subsequentCallingPoints']):
-            for points in service['subsequentCallingPoints']['callingPointList'][1:]:
-                for point in calling_points:
-                    if points['callingPoint'][0]['crs'] == point['crs']:
-                        point['splitting'] = {'destination': points['callingPoint'][-1]['locationName'], 'list': points['callingPoint']}
-            
-        if len(service['previousCallingPoints']):
-            sources = [points['callingPoint'][0]['locationName'] for points in service['previousCallingPoints']['callingPointList']]
-        else:
-            sources = [service['locationName']]
+                        if j > 0:
+                            point['joining'] = points['callingPoint']
+                        else:
+                            point['service_change'] = service['previousCallingPoints']['callingPointList'][i]['_serviceType']
+                            calling_points = points['callingPoint'] + calling_points
+                            break
+        
+        # Add our current station
+        calling_points += [{
+            'locationName': service['locationName'],
+            'crs': service['crs'],
+            'st': service['std'] if 'std' in service else service['sta'],
+            'et': service['etd'] if 'etd' in service else service['eta'] if 'eta' in service else '',
+            'at': service['atd'] if 'atd' in service else '',
+        }]
         
         if len(service['subsequentCallingPoints']):
-            destinations = [points['callingPoint'][-1]['locationName'] for points in service['subsequentCallingPoints']['callingPointList']]
-        else:
-            destinations = [service['locationName']]
+            if service['serviceType'] != service['subsequentCallingPoints']['callingPointList'][0]['_serviceType']:
+                calling_points[-1]['service_change'] = ugettext_lazy(service['subsequentCallingPoints']['callingPointList'][0]['_serviceType'])
+        
+        if len(service['previousCallingPoints']):
+            if service['serviceType'] != service['previousCallingPoints']['callingPointList'][0]['_serviceType']:
+                calling_points[-1]['service_change'] = ugettext_lazy(service['serviceType'])
+        
+        # Now add services going forward
+        if len(service['subsequentCallingPoints']):
+            calling_points += service['subsequentCallingPoints']['callingPointList'][0]['callingPoint']
+        
+        # And do the same with splitting services
+        if len(service['subsequentCallingPoints']):
+            for i, points in enumerate(service['subsequentCallingPoints']['callingPointList'][1:]):
+                # Now we have to handle changes between trains and rail replacement services
+                if service['subsequentCallingPoints']['callingPointList'][i]['callingPoint'][-1]['crs'] == points['callingPoint'][0]['crs']:
+                    calling_points += points['callingPoint']
+                    points['callingPoint'][0]['service_change'] = ugettext_lazy(points['_serviceType'])
+                else:
+                    for point in calling_points:
+                        if points['callingPoint'][0]['crs'] == point['crs']:
+                            point['splitting'] = {'destination': points['callingPoint'][-1]['locationName'], 'list': points['callingPoint']}
+            
+        sources = [calling_points[0]['locationName']]
+        for point in calling_points:
+            if 'joining' in point:
+                sources.append(point['joining'][0]['locationName'])
+        
+        destinations = [calling_points[-1]['locationName']]
+        for point in calling_points:
+            if 'splitting' in point:
+                destinations.append(point['splitting']['destination'])
         
         stop_entities = []
         
@@ -159,16 +183,29 @@ class LiveDepartureBoardPlacesProvider(BaseMapsProvider):
             # This service arrives here
             title = service['sta'] + ' from ' + ' and '.join(sources)
         
+        messages = []
+        
+        if 'disruptionReason' in service:
+            messages.append(service['disruptionReason'])
+        
+        if 'overdueMessage' in service:
+            messages.append(service['overdueMessage'])
+        
         return {
             'title': title,
             'entities': stop_entities,
             'ldb': service,
-            'calling_points': calling_points
+            'calling_points': calling_points,
+            'has_timetable': True,
+            'has_realtime': True,
+            'operator': service.get('operator'),
+            'platform': service.get('platform'),
+            'messages': messages
         }
     
     def transform_suds(self, o):
         if isinstance(o, suds.sudsobject.Object):
-            return dict((k, self.transform_suds(v)) for k,v in o)
+            return dict((k, self.transform_suds(v)) for k, v in o)
         elif isinstance(o, list):
             return map(self.transform_suds, o)
         else:

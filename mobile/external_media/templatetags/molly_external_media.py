@@ -1,6 +1,6 @@
 from django import template
 
-from mobile.external_media import resize_external_image
+from external_media import resize_external_image
 
 register = template.Library()
 

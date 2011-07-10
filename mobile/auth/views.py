@@ -7,8 +7,8 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.forms.util import ErrorList
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, static_reverse, lazy_reverse, static_parent
+from utils.views import BaseView
+from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, static_reverse, lazy_reverse, static_parent
 
 from .forms import PreferencesForm, UserSessionFormSet, ExternalServiceTokenFormSet
 from .models import UserSession

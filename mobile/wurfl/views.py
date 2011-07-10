@@ -2,13 +2,13 @@ from pywurfl.algorithms import DeviceNotFound
 
 from django.http import Http404
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
-from mobile.utils.http import MediaType
+from utils.views import BaseView
+from utils.breadcrumbs import *
+from utils.http import MediaType
 
-from mobile.wurfl.vsm import vsa
-from mobile.wurfl import device_parents
-from mobile.wurfl.wurfl_data import devices
+from wurfl.vsm import vsa
+from wurfl import device_parents
+from wurfl.wurfl_data import devices
 
 class IndexView(BaseView):
     @BreadcrumbFactory

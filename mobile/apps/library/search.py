@@ -4,7 +4,7 @@ from itertools import cycle
 
 from django.core.urlresolvers import reverse
 
-from mobile.apps.library.models import LibrarySearchQuery
+from apps.library.models import LibrarySearchQuery
 
 def validate_isxn(s):
 

@@ -1,6 +1,6 @@
 from django import template
 
-from mobile.apps.search.forms import SearchForm
+from apps.search.forms import SearchForm
 
 register = template.Library()
 

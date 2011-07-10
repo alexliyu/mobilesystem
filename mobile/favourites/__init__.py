@@ -4,7 +4,7 @@ Utilities to help handling favourites
 
 from django.http import Http404
 from django.core.urlresolvers import resolve
-from mobile.favourites.models import Favourite
+from favourites.models import Favourite
 
 def get_favourites(request):
     """

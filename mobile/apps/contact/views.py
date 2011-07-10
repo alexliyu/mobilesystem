@@ -5,9 +5,9 @@ from datetime import timedelta
 
 from django.http import HttpResponse
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
-from mobile.apps.contact.providers import TooManyResults
+from utils.views import BaseView
+from utils.breadcrumbs import *
+from apps.contact.providers import TooManyResults
 
 from .forms import GenericContactForm
 

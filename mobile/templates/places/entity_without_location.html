@@ -1,0 +1,19 @@
+{% extends "places/base.html" %}{% load i18n %}
+
+{% block title %}
+    {% blocktrans with entity.title as title %}Things near {{ title }}{% endblocktrans %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="section">
+    <div class="header">
+      <h2>{% blocktrans with entity.title as title %}Things near {{ title }}{% endblocktrans %}</h2>
+    </div>
+    <div class="note"><div class="bubble pad-10">
+      {% trans "Unfortunately, we do not have a location for this object, and so cannot tell you what is near it." %}
+    </div></div>
+</div>
+
+{% endblock %}

@@ -5,7 +5,7 @@ from django.http import Http404
 from django.views.generic.simple import redirect_to
 
 
-logger = logging.getLogger('mobile.apps.search.providers')
+logger = logging.getLogger('apps.search.providers')
 
 class BaseSearchProvider(object):
     
@@ -22,7 +22,7 @@ class BaseSearchProvider(object):
         """
         Resolves the given :data:`url` to the view that would handle it and
         returns the result of calling
-        :meth:`~mobile.utils.views.BaseView.get_metadata` on that view, passing
+        :meth:`~utils.views.BaseView.get_metadata` on that view, passing
         it the :data:`request`.
         
         May raise :exc:`~django.core.urlresolvers.Resolver404` or

@@ -2,9 +2,9 @@ import simplejson, os.path, sys
 
 from django.conf import settings
 
-from mobile.conf import all_apps, app_by_local_name, app_by_application_name
-from mobile.batch_processing.models import Batch
-from mobile.utils.misc import get_norm_sys_path
+from conf import all_apps, app_by_local_name, app_by_application_name
+from batch_processing.models import Batch
+from utils.misc import get_norm_sys_path
 
 def load_batches():
     batch_details = []
@@ -39,9 +39,9 @@ def load_batches():
             batch.delete()
 
 def run_batch(local_name, provider_name, method_name, tee_to_stdout=True):
-    # This will force the loading of the mobile.utils app, attaching its log
+    # This will force the loading of the utils app, attaching its log
     # handler lest the batch logs anything that needs e-mailing.
-    app_by_application_name('mobile.utils')
+    app_by_application_name('utils')
     
     batch = Batch.objects.get(
         local_name=local_name,

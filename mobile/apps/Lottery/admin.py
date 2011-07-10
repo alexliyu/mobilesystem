@@ -1,4 +1,4 @@
 from django.contrib import admin
-from mobile.apps.Lottery.models import *
+from apps.Lottery.models import *
 
 admin.site.register(Lottery)

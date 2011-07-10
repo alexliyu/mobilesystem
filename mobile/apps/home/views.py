@@ -7,11 +7,11 @@ from django.template import loader, Context, RequestContext
 from django import forms
 from django.shortcuts import render_to_response
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
-from mobile.favourites import get_favourites
-from mobile.wurfl import device_parents
-from mobile import conf
+from utils.views import BaseView
+from utils.breadcrumbs import *
+from favourites import get_favourites
+from wurfl import device_parents
+import conf
 from models import UserMessage
 from forms import UserMessageFormSet
 
@@ -42,7 +42,7 @@ class IndexView(BaseView):
             and not request.GET.get('preview') == 'true'
             and not internal_referer
             and not settings.DEBUG
-            and conf.has_app('mobile.apps.desktop')
+            and conf.has_app('apps.desktop')
             and request.REQUEST.get('format') is None):
             return self.redirect(reverse('desktop:index'), request)
         

@@ -2,8 +2,8 @@ import itertools, subprocess, os.path, tempfile, os
 from django.core.management.base import NoArgsCommand
 from django.conf import settings
 
-from mobile.maps.osm import MARKER_COLORS, MARKER_RANGE
-from mobile.maps.osm.models import get_marker_dir
+from maps.osm import MARKER_COLORS, MARKER_RANGE
+from maps.osm.models import get_marker_dir
 
     
 class Command(NoArgsCommand):

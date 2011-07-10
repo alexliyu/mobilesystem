@@ -1,5 +1,5 @@
 from django import forms
-from mobile.conf import all_apps
+from conf import all_apps
 
 # We can't pick up the list of applications when this module is imported, as
 # that could lead to a circular import dependency.[0] Instead, wait until a
@@ -9,8 +9,8 @@ from mobile.conf import all_apps
 # is first required and transparently returns the result of calling its
 # constructor.
 #
-# [0] e.g. Another app is being loaded which depends on mobile.apps.search.
-#     mobile.apps.search.forms then tries to call all_apps, which would attempt
+# [0] e.g. Another app is being loaded which depends on apps.search.
+#     apps.search.forms then tries to call all_apps, which would attempt
 #     to load the other app again (and fail).
 
 class SearchForm(object):

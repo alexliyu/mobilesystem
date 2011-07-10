@@ -8,5 +8,5 @@ class BaseGeolocationProvider(object):
     def geocode(self, query):
         return []
 
-from cloudmade import CloudmadeGeolocationProvider
-from places import PlacesGeolocationProvider
+from .cloudmade import CloudmadeGeolocationProvider
+from .places import PlacesGeolocationProvider

@@ -2,7 +2,7 @@ import sys
 
 from django.core.management.base import NoArgsCommand
 
-from mobile.batch_processing import create_crontab
+from batch_processing import create_crontab
 
 class Command(NoArgsCommand):
     help = "Generates a crontab"

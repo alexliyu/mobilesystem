@@ -1,7 +1,7 @@
 from datetime import timedelta
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
+from utils.views import BaseView
+from utils.breadcrumbs import *
 
 from forms import SearchForm
 

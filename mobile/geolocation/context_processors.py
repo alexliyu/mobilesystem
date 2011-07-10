@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from mobile.conf import app_by_application_name
+from conf import app_by_application_name
 
 def geolocation(request):
     """
@@ -10,7 +10,7 @@ def geolocation(request):
     """
 
     # Use the epoch in the place of -inf; a time it has been a while since.
-    epoch = datetime(1970,1,1, 0, 0, 0)
+    epoch = datetime(1970, 1, 1, 0, 0, 0)
     
     # Only request a location if our current location is older than one minute
     # and the user isn't updating their location manually.
@@ -22,7 +22,7 @@ def geolocation(request):
     updated = request.session.get('geolocation:updated', epoch)
     method = request.session.get('geolocation:method')
 
-    period = getattr(app_by_application_name('mobile.geolocation'), 'location_request_period', 180)    
+    period = getattr(app_by_application_name('geolocation'), 'location_request_period', 180)    
     
     if max(requested, updated) + timedelta(0, period) < datetime.now() \
      and method in ('html5', 'gears', 'html5request', None):

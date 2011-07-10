@@ -4,11 +4,11 @@ from xml.sax.saxutils import escape
 from django.shortcuts import get_object_or_404
 from django.http import Http404
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
-from mobile.external_media import resize_external_image
+from utils.views import BaseView
+from utils.breadcrumbs import *
+from external_media import resize_external_image
 
-from mobile.apps.webcams.models import Webcam, WEBCAM_WIDTHS
+from apps.webcams.models import Webcam, WEBCAM_WIDTHS
 
 import datetime
 

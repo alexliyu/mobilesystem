@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
-from mobile.tracking import views
+from tracking import views
 
 urlpatterns = patterns('',
     url(r'^refresh/$', views.update_active_users, name='tracking-refresh-active-users'),

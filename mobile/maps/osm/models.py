@@ -9,7 +9,7 @@ from StringIO import StringIO
 from django.db import models, IntegrityError
 from django.conf import settings
 
-from mobile.apps.places.models import Entity
+from apps.places.models import Entity
 
 # This used to be its own app, but has now been subsumed into the 'Maps' app,
 # but we use the old app_label on the models for backwards compatibility

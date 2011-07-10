@@ -1,11 +1,11 @@
 from django.http import Http404
 from django.core.urlresolvers import resolve
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import lazy_reverse, Breadcrumb, BreadcrumbFactory
+from utils.views import BaseView
+from utils.breadcrumbs import lazy_reverse, Breadcrumb, BreadcrumbFactory
 
-from mobile.favourites import get_favourites
-from mobile.favourites.models import Favourite
+from favourites import get_favourites
+from favourites.models import Favourite
 
 class FavouritableView(BaseView):
     """

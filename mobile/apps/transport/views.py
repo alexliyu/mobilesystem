@@ -1,13 +1,13 @@
 from django.contrib.gis.geos import Point
 
-from mobile.conf import app_by_application_name
+from conf import app_by_application_name
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
-from mobile.favourites import get_favourites
+from utils.views import BaseView
+from utils.breadcrumbs import *
+from favourites import get_favourites
 
-from mobile.apps.places import get_entity
-from mobile.apps.places.models import Entity, EntityType
+from apps.places import get_entity
+from apps.places.models import Entity, EntityType
 
 class IndexView(BaseView):
     @BreadcrumbFactory
@@ -89,7 +89,7 @@ class IndexView(BaseView):
             context['travel_alerts'] = es
         
         # Get any real-time information for all the places we're about to display
-        places_conf = app_by_application_name('mobile.apps.places')
+        places_conf = app_by_application_name('apps.places')
         for provider in reversed(places_conf.providers):
             provider.augment_metadata(entities,
                                       board=request.GET.get('board', 'departures'))

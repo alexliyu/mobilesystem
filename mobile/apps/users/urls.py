@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
-from mobile.apps.users.views import IndexView
+from apps.users.views import IndexView
 
 
 urlpatterns = patterns('',

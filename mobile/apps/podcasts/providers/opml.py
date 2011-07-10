@@ -5,11 +5,11 @@ import traceback
 
 from django.template.defaultfilters import slugify
 
-from mobile.conf.settings import batch
-from mobile.apps.podcasts.providers import BasePodcastsProvider
-from mobile.apps.podcasts.models import Podcast, PodcastItem, PodcastCategory, PodcastEnclosure
+from conf.settings import batch
+from apps.podcasts.providers import BasePodcastsProvider
+from apps.podcasts.models import Podcast, PodcastItem, PodcastCategory, PodcastEnclosure
 
-from mobile.apps.podcasts.providers.rss import RSSPodcastsProvider
+from apps.podcasts.providers.rss import RSSPodcastsProvider
 
 logger = logging.getLogger(__name__)
 

@@ -1,6 +1,6 @@
 device_parents = {}
 try:
-    from mobile.wurfl import wurfl_data
+    from wurfl import wurfl_data
 except ImportError:
     pass
 else:

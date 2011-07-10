@@ -10,7 +10,7 @@ from django.conf import settings
 from django.http import Http404
 from django.core.exceptions import PermissionDenied
 
-logger = logging.getLogger('mobile.stats.requests')
+logger = logging.getLogger('stats.requests')
 
 class StatisticsMiddleware(object):
     def process_request(self, request):

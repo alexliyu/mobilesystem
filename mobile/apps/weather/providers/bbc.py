@@ -4,8 +4,8 @@ from xml.etree import ElementTree as ET
 
 from django.contrib.gis.geos import Point
 
-from mobile.conf.settings import batch
-from mobile.apps.weather.models import (
+from conf.settings import batch
+from apps.weather.models import (
     Weather, OUTLOOK_CHOICES, VISIBILITY_CHOICES, PRESSURE_STATE_CHOICES,
     SCALE_CHOICES
 )

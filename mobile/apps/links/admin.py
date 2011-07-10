@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mobile.apps.links.models import *
+from apps.links.models import *
 
 class LinksAdmin(admin.ModelAdmin):
     list_display = ('link_title', 'link_url', 'links_class','addTime')

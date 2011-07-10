@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django.db import models
-from mobile import settings
+import settings
 from tinymce import models as tinymce_models
 # Create your models here.
 class BusinessInfo(models.Model):

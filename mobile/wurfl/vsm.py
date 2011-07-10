@@ -2,7 +2,7 @@ from math import sqrt
 import time
 
 from pywurfl.algorithms import Algorithm
-from mobile.wurfl.wurfl_data import devices
+from wurfl.wurfl_data import devices
 
 class Vector(object):
     terms = {}

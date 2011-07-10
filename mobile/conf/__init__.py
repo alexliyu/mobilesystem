@@ -4,5 +4,5 @@ from applications import (
     applications, get_app,
     has_app_by_local_name, has_app_by_application_name, has_app,
 )
-import settings
+from conf import settings
 

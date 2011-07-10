@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from mobile.apps.home.views import (
+from apps.home.views import (
     IndexView, UserMessageView,
     StaticDetailView,
 )

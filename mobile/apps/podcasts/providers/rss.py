@@ -2,11 +2,11 @@ import random, urllib, email
 from lxml import etree
 from datetime import datetime
 
-from mobile.conf.settings import batch
+from conf.settings import batch
 import dateutil.parser
 
-from mobile.apps.podcasts.providers import BasePodcastsProvider
-from mobile.apps.podcasts.models import Podcast, PodcastItem, PodcastEnclosure
+from apps.podcasts.providers import BasePodcastsProvider
+from apps.podcasts.models import Podcast, PodcastItem, PodcastEnclosure
 
 class Namespace(object):
     def __init__(self, ns):

@@ -2,7 +2,7 @@ import sys
 
 from django.core.management.base import NoArgsCommand
 
-from mobile.batch_processing import run_batch
+from batch_processing import run_batch
 
 class Command(NoArgsCommand):
     help = "Runs a batch job"

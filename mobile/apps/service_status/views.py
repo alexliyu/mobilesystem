@@ -1,9 +1,9 @@
 import logging
 
-from mobile.utils.views import BaseView
-from mobile.utils.breadcrumbs import *
+from utils.views import BaseView
+from utils.breadcrumbs import *
 
-logger = logging.getLogger("mobile.apps.service_status.views")
+logger = logging.getLogger("apps.service_status.views")
 
 class IndexView(BaseView):
     """

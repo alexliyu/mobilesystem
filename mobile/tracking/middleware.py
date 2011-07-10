@@ -11,8 +11,8 @@ from django.contrib.auth.models import AnonymousUser
 from django.core.cache import cache
 from django.db.utils import DatabaseError
 from django.http import Http404
-from mobile.tracking import utils
-from mobile.tracking.models import Visitor, UntrackedUserAgent, BannedIP
+from tracking import utils
+from tracking.models import Visitor, UntrackedUserAgent, BannedIP
 
 title_re = re.compile('<title>(.*?)</title>')
 log = logging.getLogger('tracking.middleware')

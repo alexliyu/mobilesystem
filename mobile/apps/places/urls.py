@@ -1,8 +1,8 @@
 from django.conf.urls.defaults import *
 
-from mobile.apps.home.views import StaticDetailView
+from apps.home.views import StaticDetailView
 
-from views import (
+from apps.places.views import (
     IndexView,
     NearbyListView, NearbyDetailView,
     EntityDetailView,
@@ -17,7 +17,9 @@ from views import (
 )
 
 urlpatterns = patterns('',
-    
+    (r'^$',
+        IndexView, {},
+        'index'),
 
     (r'^nearby/$',
         NearbyListView, {},
@@ -33,22 +35,22 @@ urlpatterns = patterns('',
         CategoryDetailView, {},
         'category-detail'),
 
-    (r'^category/([^/;]+(\;[^/;]+)*)/(?P<scheme>[a-z_\-]+)$',
+    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/$',
         EntityDetailView, {},
         'entity'),
     
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[\da-zA-Z]+)/service$',
+    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/service$',
         ServiceDetailView, {},
         'service-detail'),
     
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[\da-zA-Z]+)/nearby/$',
+    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/nearby/$',
         NearbyEntityListView, {},
         'entity-nearby-list'),
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[\da-zA-Z]+)/nearby/(?P<ptype>[^/]+)/$',
+    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/nearby/(?P<ptype>[^/]+)/$',
         NearbyEntityDetailView, {},
         'entity-nearby-detail'),
 
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[\da-zA-Z]+)/update/$',
+    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/update/$',
         EntityUpdateView, {},
         'entity-update'),
 
@@ -60,7 +62,4 @@ urlpatterns = patterns('',
     (r'^api/$',
         APIView, {},
         'api'),
-    (r'^$',
-        IndexView, {},
-        'index'),
 )
