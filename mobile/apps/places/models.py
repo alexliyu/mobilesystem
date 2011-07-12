@@ -38,7 +38,7 @@ from utils.i18n import name_in_language
 
 class Source(models.Model):
     """
-    Defines the data source of an Entity
+    定义GIS数据源模型
     """
 
     module_name = models.CharField(max_length=128)
@@ -56,8 +56,7 @@ IDENTIFIER_SCHEME_PREFERENCE = getattr(
 
 class EntityTypeCategory(models.Model):
     """
-    Defines a category for an entity type to be part of e.g. a bus stop will be
-    part of the 'Transport' Entity Type Category.
+    定义GIS entity的分类模型，诸如：公交车站、娱乐场所、餐饮场所、火车站等等
     """
 
     name = models.TextField(blank=False)
@@ -68,8 +67,7 @@ class EntityTypeCategory(models.Model):
 
 class EntityType(models.Model):
     """
-    Defines a 'type' for each Entity. E.g. an entity could be of 'bus stop'
-    Entity Type
+    具体定义GIS entity的类别模型，诸如娱乐场所——夜总会之类，是子类.
     """
 
     slug = models.SlugField()
@@ -116,11 +114,14 @@ class EntityType(models.Model):
             super(EntityType, self).save(*args, **kwargs)
 
 class EntityTypeName(models.Model):
+    """
+    用来对GIS ENTITY模型进行多国语言化的模型类
+    """
     entity_type = models.ForeignKey(EntityType, related_name='names')
-    language_code = models.CharField(max_length=10, choices=settings.LANGUAGES)
-    verbose_name = models.TextField()
-    verbose_name_singular = models.TextField()
-    verbose_name_plural = models.TextField()
+    language_code = models.CharField('语言代码', max_length=10, choices=settings.LANGUAGES)
+    verbose_name = models.TextField('别名')
+    verbose_name_singular = models.TextField('单数别名')
+    verbose_name_plural = models.TextField('复数别名')
     
     class Meta:
         unique_together = ('entity_type', 'language_code')
@@ -131,8 +132,8 @@ class Identifier(models.Model):
     字典模型类，实现在系统内多个模块之间的关联
     """
 
-    scheme = models.CharField(max_length=32)
-    value = models.CharField(max_length=256)
+    scheme = models.CharField('关键字', max_length=32)
+    value = models.CharField('值', max_length=256)
 
     def __unicode__(self):
         return self.scheme + ': ' + self.value
@@ -140,7 +141,7 @@ class Identifier(models.Model):
 
 class EntityGroup(models.Model):
     """
-    Used to express relationships between entities
+    用来表示GIS entity实体之间的关系
     """
     
     @property

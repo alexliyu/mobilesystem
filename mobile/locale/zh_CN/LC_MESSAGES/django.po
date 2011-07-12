@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-05 09:47+0800\n"
-"PO-Revision-Date: 2011-07-07 15:15+0800\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-07-12 18:00+0800\n"
+"PO-Revision-Date: 2011-07-12 18:01+0800\n"
+"Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,1507 @@ msgstr "Django文档"
 msgid "Latest Django News"
 msgstr "最新Django新闻"
 
-#: settings.py:41
+#: settings.py:57
 msgid "Chinese"
 msgstr "中文"
+
+#: apps/business/__init__.py:15
+msgid "Business"
+msgstr "商家联盟"
+
+#: apps/feeds/__init__.py:15
+msgid "Feeds"
+msgstr "订阅"
+
+#: apps/home/__init__.py:10
+msgid "Comments"
+msgstr "评论"
+
+#: apps/links/__init__.py:15
+msgid "Links"
+msgstr "连接"
+
+#: apps/lottery/__init__.py:15
+msgid "Lottery"
+msgstr "抽奖"
+
+#: apps/places/__init__.py:15
+msgid "Place"
+msgstr "消费导航"
+
+#: apps/places/forms.py:12
+msgid "Your name"
+msgstr "您的名字"
+
+#: apps/places/forms.py:13
+msgid "Your e-mail address"
+msgstr "您的Email地址"
+
+#: apps/places/forms.py:14
+msgid "Include name in update"
+msgstr "在更新中包含的名称"
+
+#: apps/places/forms.py:19
+msgid "Opening hours"
+msgstr "开放时间"
+
+#: apps/places/forms.py:20
+msgid "Cuisine"
+msgstr "料理"
+
+#: apps/places/forms.py:22
+msgid "Phone number"
+msgstr "电话号码"
+
+#: apps/places/forms.py:24
+msgid "Food served"
+msgstr "食品供应"
+
+#: apps/places/forms.py:25
+msgid "Hours food is served"
+msgstr "限时食品供应"
+
+#: apps/places/forms.py:27
+msgid "ATM present"
+msgstr "ATM取款机"
+
+#: apps/places/forms.py:29
+#: templates/places/metadata/osm.html:40
+#: templates/places/metadata/osm.html:47
+#: templates/places/metadata/osm.html:54
+#: userena/templates/userena/profile_detail.html:33
+msgid "Website"
+msgstr "网站"
+
+#: apps/places/forms.py:31
+msgid "Reference (e.g. 'OX1 123')"
+msgstr ""
+
+#: apps/places/forms.py:32
+msgid "Collection times"
+msgstr "采集时间"
+
+#: apps/places/forms.py:34
+msgid "Capacity"
+msgstr "容量"
+
+#. Translators: These are compass points
+#: apps/places/models.py:245
+msgid "N"
+msgstr ""
+
+#: apps/places/models.py:245
+msgid "NE"
+msgstr ""
+
+#: apps/places/models.py:245
+msgid "E"
+msgstr ""
+
+#: apps/places/models.py:245
+msgid "SE"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "S"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "SW"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "W"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "NW"
+msgstr ""
+
+#: apps/places/models.py:567
+msgid "Scheduled time of arrival"
+msgstr ""
+
+#: apps/places/models.py:570
+msgid "Scheduled time of departure"
+msgstr ""
+
+#: apps/places/models.py:576
+msgid "Service starts here"
+msgstr ""
+
+#: apps/places/models.py:577
+msgid "Scheduled stop"
+msgstr "计划停止"
+
+#: apps/places/models.py:578
+msgid "Service picks up here only"
+msgstr ""
+
+#: apps/places/models.py:579
+msgid "Service does not pick up here"
+msgstr ""
+
+#: apps/places/models.py:580
+msgid "Service does not stop here"
+msgstr ""
+
+#: apps/places/models.py:581
+msgid "Service finishes here"
+msgstr ""
+
+#: apps/places/views.py:40
+msgid "places"
+msgstr ""
+
+#: apps/places/views.py:41
+msgid "Find University buildings and units, along with bus stops and local amenities"
+msgstr ""
+
+#: apps/places/views.py:48
+msgid "Places"
+msgstr "消费导航"
+
+#: apps/places/views.py:64
+msgid "Find things nearby"
+msgstr ""
+
+#: apps/places/views.py:65
+msgid "Search for things based on your current location"
+msgstr ""
+
+#: apps/places/views.py:73
+msgid "Things nearby"
+msgstr ""
+
+#: apps/places/views.py:165
+#: templates/places/entity_without_location.html:4
+#: templates/places/entity_without_location.html:12
+#, python-format
+msgid "Things near %(title)s"
+msgstr ""
+
+#: apps/places/views.py:170
+#, python-format
+msgid "%(entity_type)s near %(entity)s"
+msgstr "%(entity_type)s 在 %(entity)s 附近"
+
+#: apps/places/views.py:175
+#, python-format
+msgid "%(et)s nearby"
+msgstr ""
+
+#: apps/places/views.py:187
+#, python-format
+msgid "<strong>%(number)d %(entity_type)s</strong> within 1km"
+msgstr ""
+
+#: apps/places/views.py:248
+#, python-format
+msgid "about %(distance)dm %(bearing)s"
+msgstr ""
+
+#: apps/places/views.py:253
+#, python-format
+msgid "service %(services)s stops here"
+msgid_plural "services %(services)s stop here"
+msgstr[0] ""
+
+#: apps/places/views.py:630
+#: templates/places/service_details.html:10
+msgid "Multiple routes found"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:132
+#: apps/places/providers/naptan.py:694
+#: apps/places/providers/osm.py:454
+#: apps/places/providers/osm.py:466
+#: apps/places/providers/osm.py:580
+#: apps/places/providers/osm.py:670
+msgid "Transport"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:141
+msgid "travel alert"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:142
+msgid "a travel alert"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:143
+msgid "travel alerts"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:205
+#: apps/places/providers/naptan.py:206
+#: apps/places/providers/naptan.py:207
+msgid "Opposite"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:209
+msgid "Adjacent"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:211
+#: apps/places/providers/naptan.py:212
+msgid "Outside"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:214
+msgid "Near"
+msgstr "周边"
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:216
+msgid "Inside"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:218
+msgid "Stop"
+msgstr ""
+
+#. Translators: This is referring to public transport entities
+#: apps/places/providers/naptan.py:224
+#, python-format
+msgid "Entrance to %s"
+msgstr " %s 的入口"
+
+#. Translators: This is referring to ferry ports
+#: apps/places/providers/naptan.py:228
+#, python-format
+msgid "Berth at %s"
+msgstr "停泊在 %s."
+
+#. Translators: This is referring to rail and metro stations
+#: apps/places/providers/naptan.py:232
+#, python-format
+msgid "Platform at %s"
+msgstr ""
+
+#: apps/places/providers/naptan.py:323
+msgid "bus stop"
+msgstr "公交车站"
+
+#: apps/places/providers/naptan.py:324
+msgid "a bus stop"
+msgstr ""
+
+#: apps/places/providers/naptan.py:325
+msgid "bus stops"
+msgstr ""
+
+#: apps/places/providers/naptan.py:331
+#: apps/places/providers/osm.py:671
+msgid "taxi rank"
+msgstr ""
+
+#: apps/places/providers/naptan.py:332
+#: apps/places/providers/osm.py:673
+msgid "a taxi rank"
+msgstr ""
+
+#: apps/places/providers/naptan.py:333
+#: apps/places/providers/osm.py:672
+msgid "taxi ranks"
+msgstr ""
+
+#: apps/places/providers/naptan.py:339
+msgid "rail station"
+msgstr "火车站"
+
+#: apps/places/providers/naptan.py:340
+msgid "a rail station"
+msgstr "火车站"
+
+#: apps/places/providers/naptan.py:341
+msgid "rail stations"
+msgstr "火车站"
+
+#: apps/places/providers/naptan.py:347
+msgid "heritage rail station"
+msgstr "废弃的火车站"
+
+#: apps/places/providers/naptan.py:348
+msgid "a heritage rail station"
+msgstr "废弃的火车站"
+
+#: apps/places/providers/naptan.py:349
+msgid "heritage rail stations"
+msgstr "废弃的火车站"
+
+#: apps/places/providers/naptan.py:360
+msgid "bus station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:361
+msgid "a bus station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:362
+msgid "bus station entrances"
+msgstr ""
+
+#: apps/places/providers/naptan.py:371
+msgid "rail station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:372
+msgid "a rail station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:373
+msgid "rail station entrances"
+msgstr ""
+
+#: apps/places/providers/naptan.py:379
+msgid "rail platform"
+msgstr ""
+
+#: apps/places/providers/naptan.py:380
+msgid "a rail platform"
+msgstr ""
+
+#: apps/places/providers/naptan.py:381
+msgid "rail platforms"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:388
+msgid "metro station entrance"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:390
+msgid "a metro station entrance"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:392
+msgid "metro station entrances"
+msgstr "地铁车站出入口"
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:399
+msgid "metro station platform"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:401
+msgid "a metro station platform"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:403
+msgid "metro station platforms"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:410
+msgid "metro station"
+msgstr "地铁车站"
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:412
+msgid "a metro station"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:414
+msgid "metro stations"
+msgstr "地铁车站"
+
+#. Translators: This is the Blackpool tram system
+#: apps/places/providers/naptan.py:426
+msgid "tramway stop"
+msgstr ""
+
+#. Translators: This is the Blackpool tram system
+#: apps/places/providers/naptan.py:428
+msgid "a tramway stop"
+msgstr ""
+
+#. Translators: This is the Blackpool tram system
+#: apps/places/providers/naptan.py:430
+msgid "tramway stops"
+msgstr ""
+
+#: apps/places/providers/naptan.py:438
+#: apps/places/providers/naptan.py:523
+msgid "tram stop"
+msgstr ""
+
+#: apps/places/providers/naptan.py:439
+#: apps/places/providers/naptan.py:524
+msgid "a tram stop"
+msgstr ""
+
+#: apps/places/providers/naptan.py:440
+#: apps/places/providers/naptan.py:525
+msgid "tram stops"
+msgstr ""
+
+#. Translators: This is the Docklands Light Railway
+#: apps/places/providers/naptan.py:450
+msgid "DLR station"
+msgstr "DLR station"
+
+#. Translators: This is the Docklands Light Railway
+#: apps/places/providers/naptan.py:452
+msgid "a DLR station"
+msgstr ""
+
+#. Translators: This is the Docklands Light Railway
+#: apps/places/providers/naptan.py:454
+msgid "DLR stations"
+msgstr "DLR stations"
+
+#. Translators: This is the Glasgow Subway
+#: apps/places/providers/naptan.py:469
+msgid "Subway station"
+msgstr ""
+
+#. Translators: This is the Glasgow Subway
+#: apps/places/providers/naptan.py:471
+msgid "a Subway station"
+msgstr ""
+
+#. Translators: This is the Glasgow Subway
+#: apps/places/providers/naptan.py:473
+msgid "Subway stations"
+msgstr "地铁站"
+
+#. Translators: This is the Gatwick airport shuttle
+#: apps/places/providers/naptan.py:481
+msgid "shuttle station"
+msgstr ""
+
+#. Translators: This is the Gatwick airport shuttle
+#: apps/places/providers/naptan.py:483
+msgid "a shuttle station"
+msgstr ""
+
+#. Translators: This is the Gatwick airport shuttle
+#: apps/places/providers/naptan.py:485
+msgid "shuttle stations"
+msgstr ""
+
+#. Translators: This is the London Underground (Tube)
+#: apps/places/providers/naptan.py:499
+msgid "Underground station"
+msgstr ""
+
+#. Translators: This is the London Underground (Tube)
+#: apps/places/providers/naptan.py:501
+msgid "an Underground station"
+msgstr "地铁站"
+
+#. Translators: This is the London Underground (Tube)
+#: apps/places/providers/naptan.py:503
+msgid "Underground stations"
+msgstr ""
+
+#. Translators: This is the Manchester tram system
+#: apps/places/providers/naptan.py:510
+msgid "Metrolink station"
+msgstr ""
+
+#. Translators: This is the Manchester tram system
+#: apps/places/providers/naptan.py:512
+msgid "a Metrolink station"
+msgstr ""
+
+#. Translators: This is the Manchester tram system
+#: apps/places/providers/naptan.py:514
+msgid "Metrolink stations"
+msgstr "动车站"
+
+#. Translators: This is the Sheffield tram system
+#: apps/places/providers/naptan.py:545
+msgid "Supertram stop"
+msgstr ""
+
+#. Translators: This is the Sheffield tram system
+#: apps/places/providers/naptan.py:547
+msgid "a Supertram stop"
+msgstr ""
+
+#. Translators: This is the Sheffield tram system
+#: apps/places/providers/naptan.py:549
+msgid "Supertram stops"
+msgstr ""
+
+#. Translators: This is the Tyne & Wear metro system
+#: apps/places/providers/naptan.py:557
+msgid "Metro station"
+msgstr "动车站"
+
+#. Translators: This is the Tyne & Wear metro system
+#: apps/places/providers/naptan.py:559
+msgid "a Metro station"
+msgstr ""
+
+#. Translators: This is the Tyne & Wear metro system
+#: apps/places/providers/naptan.py:561
+msgid "Metro stations"
+msgstr "动车站"
+
+#. Translators: This is the Midland Metro system
+#: apps/places/providers/naptan.py:573
+msgid "Midland Metro stop"
+msgstr ""
+
+#. Translators: This is the Midland Metro system
+#: apps/places/providers/naptan.py:575
+msgid "a Midland Metro stop"
+msgstr ""
+
+#. Translators: This is the Midland Metro system
+#: apps/places/providers/naptan.py:577
+msgid "Midland Metro stops"
+msgstr ""
+
+#: apps/places/providers/naptan.py:585
+msgid "airport"
+msgstr "机场"
+
+#: apps/places/providers/naptan.py:586
+msgid "an airport"
+msgstr ""
+
+#: apps/places/providers/naptan.py:587
+msgid "airports"
+msgstr ""
+
+#: apps/places/providers/naptan.py:593
+msgid "airport entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:594
+msgid "an airport entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:595
+msgid "airport entrances"
+msgstr "机场出入口"
+
+#: apps/places/providers/naptan.py:601
+msgid "ferry terminal"
+msgstr ""
+
+#: apps/places/providers/naptan.py:602
+msgid "a ferry terminal"
+msgstr ""
+
+#: apps/places/providers/naptan.py:603
+msgid "ferry terminals"
+msgstr ""
+
+#: apps/places/providers/naptan.py:609
+msgid "ferry terminal entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:610
+msgid "a ferry terminal entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:611
+msgid "ferry terminal entrances"
+msgstr ""
+
+#: apps/places/providers/naptan.py:617
+msgid "ferry berth"
+msgstr ""
+
+#: apps/places/providers/naptan.py:618
+msgid "a ferry berth"
+msgstr ""
+
+#: apps/places/providers/naptan.py:619
+msgid "ferry berths"
+msgstr ""
+
+#: apps/places/providers/naptan.py:625
+msgid "public transport access node"
+msgstr ""
+
+#: apps/places/providers/naptan.py:626
+msgid "a public transport access node"
+msgstr ""
+
+#: apps/places/providers/naptan.py:627
+msgid "public transport access nodes"
+msgstr ""
+
+#: apps/places/providers/osm.py:430
+#: apps/places/providers/osm.py:436
+#: apps/places/providers/osm.py:442
+#: apps/places/providers/osm.py:448
+#: apps/places/providers/osm.py:460
+#: apps/places/providers/osm.py:472
+#: apps/places/providers/osm.py:478
+#: apps/places/providers/osm.py:484
+#: apps/places/providers/osm.py:496
+#: apps/places/providers/osm.py:502
+#: apps/places/providers/osm.py:508
+#: apps/places/providers/osm.py:514
+#: apps/places/providers/osm.py:520
+#: apps/places/providers/osm.py:526
+#: apps/places/providers/osm.py:532
+#: apps/places/providers/osm.py:544
+#: apps/places/providers/osm.py:550
+#: apps/places/providers/osm.py:556
+#: apps/places/providers/osm.py:562
+#: apps/places/providers/osm.py:586
+#: apps/places/providers/osm.py:592
+#: apps/places/providers/osm.py:598
+#: apps/places/providers/osm.py:604
+#: apps/places/providers/osm.py:610
+#: apps/places/providers/osm.py:616
+#: apps/places/providers/osm.py:628
+#: apps/places/providers/osm.py:634
+#: apps/places/providers/osm.py:640
+#: apps/places/providers/osm.py:664
+msgid "Amenities"
+msgstr ""
+
+#: apps/places/providers/osm.py:431
+msgid "ATM"
+msgstr "ATM"
+
+#: apps/places/providers/osm.py:432
+msgid "ATMs"
+msgstr ""
+
+#: apps/places/providers/osm.py:433
+msgid "an ATM"
+msgstr ""
+
+#: apps/places/providers/osm.py:437
+msgid "bank"
+msgstr "银行"
+
+#: apps/places/providers/osm.py:438
+msgid "banks"
+msgstr "银行"
+
+#: apps/places/providers/osm.py:439
+msgid "a bank"
+msgstr "一家银行"
+
+#: apps/places/providers/osm.py:443
+msgid "bar"
+msgstr "酒吧"
+
+#: apps/places/providers/osm.py:444
+msgid "bars"
+msgstr "酒吧"
+
+#: apps/places/providers/osm.py:445
+msgid "a bar"
+msgstr "酒吧"
+
+#: apps/places/providers/osm.py:449
+msgid "bench"
+msgstr "长凳"
+
+#: apps/places/providers/osm.py:450
+msgid "benches"
+msgstr "长凳"
+
+#: apps/places/providers/osm.py:451
+msgid "a bench"
+msgstr "长凳"
+
+#: apps/places/providers/osm.py:455
+msgid "bicycle rack"
+msgstr ""
+
+#: apps/places/providers/osm.py:456
+msgid "bicycle racks"
+msgstr ""
+
+#: apps/places/providers/osm.py:457
+msgid "a bicycle rack"
+msgstr ""
+
+#: apps/places/providers/osm.py:461
+msgid "café"
+msgstr ""
+
+#: apps/places/providers/osm.py:462
+msgid "cafés"
+msgstr ""
+
+#: apps/places/providers/osm.py:463
+msgid "a café"
+msgstr ""
+
+#: apps/places/providers/osm.py:467
+msgid "car park"
+msgstr ""
+
+#: apps/places/providers/osm.py:468
+msgid "car parks"
+msgstr ""
+
+#: apps/places/providers/osm.py:469
+msgid "a car park"
+msgstr ""
+
+#: apps/places/providers/osm.py:473
+msgid "cathedral"
+msgstr ""
+
+#: apps/places/providers/osm.py:474
+msgid "cathedrals"
+msgstr ""
+
+#: apps/places/providers/osm.py:475
+msgid "a cathedral"
+msgstr ""
+
+#: apps/places/providers/osm.py:479
+msgid "chapel"
+msgstr ""
+
+#: apps/places/providers/osm.py:480
+msgid "chapels"
+msgstr ""
+
+#: apps/places/providers/osm.py:481
+msgid "a chapel"
+msgstr "教堂"
+
+#: apps/places/providers/osm.py:485
+msgid "church"
+msgstr ""
+
+#: apps/places/providers/osm.py:486
+msgid "churches"
+msgstr ""
+
+#: apps/places/providers/osm.py:487
+msgid "a church"
+msgstr ""
+
+#: apps/places/providers/osm.py:490
+#: apps/places/providers/osm.py:538
+#: apps/places/providers/osm.py:568
+#: apps/places/providers/osm.py:574
+#: apps/places/providers/osm.py:622
+#: apps/places/providers/osm.py:646
+#: apps/places/providers/osm.py:652
+#: apps/places/providers/osm.py:658
+#: apps/places/providers/osm.py:676
+msgid "Leisure"
+msgstr ""
+
+#: apps/places/providers/osm.py:491
+msgid "cinema"
+msgstr ""
+
+#: apps/places/providers/osm.py:492
+msgid "cinemas"
+msgstr ""
+
+#: apps/places/providers/osm.py:493
+msgid "a cinema"
+msgstr ""
+
+#: apps/places/providers/osm.py:497
+msgid "cycle shop"
+msgstr ""
+
+#: apps/places/providers/osm.py:498
+msgid "cycle shops"
+msgstr ""
+
+#: apps/places/providers/osm.py:499
+msgid "a cycle shop"
+msgstr ""
+
+#: apps/places/providers/osm.py:503
+msgid "dispensing pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:504
+msgid "dispensing pharmacies"
+msgstr ""
+
+#: apps/places/providers/osm.py:505
+msgid "a dispensing pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:509
+msgid "doctor's surgery"
+msgstr ""
+
+#: apps/places/providers/osm.py:510
+msgid "doctors' surgeries"
+msgstr ""
+
+#: apps/places/providers/osm.py:511
+msgid "a doctor's surgery"
+msgstr ""
+
+#: apps/places/providers/osm.py:515
+msgid "fast food outlet"
+msgstr ""
+
+#: apps/places/providers/osm.py:516
+msgid "fast food outlets"
+msgstr ""
+
+#: apps/places/providers/osm.py:517
+msgid "a fast food outlet"
+msgstr ""
+
+#: apps/places/providers/osm.py:521
+msgid "place to eat"
+msgstr ""
+
+#: apps/places/providers/osm.py:522
+msgid "places to eat"
+msgstr ""
+
+#: apps/places/providers/osm.py:523
+msgid "a place to eat"
+msgstr ""
+
+#: apps/places/providers/osm.py:527
+msgid "hospital"
+msgstr ""
+
+#: apps/places/providers/osm.py:528
+msgid "hospitals"
+msgstr ""
+
+#: apps/places/providers/osm.py:529
+msgid "a hospital"
+msgstr ""
+
+#: apps/places/providers/osm.py:533
+msgid "ice cream café"
+msgstr ""
+
+#: apps/places/providers/osm.py:534
+msgid "ice cream cafés"
+msgstr ""
+
+#: apps/places/providers/osm.py:535
+msgid "an ice cream café"
+msgstr ""
+
+#: apps/places/providers/osm.py:539
+msgid "ice rink"
+msgstr ""
+
+#: apps/places/providers/osm.py:540
+msgid "ice rinks"
+msgstr "溜冰场"
+
+#: apps/places/providers/osm.py:541
+msgid "an ice rink"
+msgstr ""
+
+#: apps/places/providers/osm.py:545
+msgid "library"
+msgstr ""
+
+#: apps/places/providers/osm.py:546
+msgid "libraries"
+msgstr ""
+
+#: apps/places/providers/osm.py:547
+msgid "a library"
+msgstr ""
+
+#: apps/places/providers/osm.py:551
+msgid "mandir"
+msgstr ""
+
+#: apps/places/providers/osm.py:552
+msgid "mandirs"
+msgstr ""
+
+#: apps/places/providers/osm.py:553
+msgid "a mandir"
+msgstr ""
+
+#: apps/places/providers/osm.py:557
+msgid "place relating to health"
+msgstr ""
+
+#: apps/places/providers/osm.py:558
+msgid "places relating to health"
+msgstr ""
+
+#: apps/places/providers/osm.py:559
+msgid "a place relating to health"
+msgstr ""
+
+#: apps/places/providers/osm.py:563
+msgid "mosque"
+msgstr ""
+
+#: apps/places/providers/osm.py:564
+msgid "mosques"
+msgstr ""
+
+#: apps/places/providers/osm.py:565
+msgid "a mosque"
+msgstr ""
+
+#: apps/places/providers/osm.py:569
+msgid "museum"
+msgstr ""
+
+#: apps/places/providers/osm.py:570
+msgid "museums"
+msgstr ""
+
+#: apps/places/providers/osm.py:571
+msgid "a museum"
+msgstr ""
+
+#: apps/places/providers/osm.py:575
+msgid "park"
+msgstr ""
+
+#: apps/places/providers/osm.py:576
+msgid "parks"
+msgstr ""
+
+#: apps/places/providers/osm.py:577
+msgid "a park"
+msgstr ""
+
+#: apps/places/providers/osm.py:581
+msgid "park and ride"
+msgstr ""
+
+#: apps/places/providers/osm.py:582
+msgid "park and rides"
+msgstr ""
+
+#: apps/places/providers/osm.py:583
+msgid "a park and ride"
+msgstr ""
+
+#: apps/places/providers/osm.py:587
+msgid "pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:588
+msgid "pharmacies"
+msgstr ""
+
+#: apps/places/providers/osm.py:589
+msgid "a pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:593
+msgid "place of worship"
+msgstr ""
+
+#: apps/places/providers/osm.py:594
+msgid "places of worship"
+msgstr ""
+
+#: apps/places/providers/osm.py:595
+msgid "a place of worship"
+msgstr ""
+
+#: apps/places/providers/osm.py:599
+msgid "post box"
+msgstr ""
+
+#: apps/places/providers/osm.py:600
+msgid "post boxes"
+msgstr ""
+
+#: apps/places/providers/osm.py:601
+msgid "a post box"
+msgstr ""
+
+#: apps/places/providers/osm.py:605
+msgid "post office"
+msgstr ""
+
+#: apps/places/providers/osm.py:606
+msgid "post offices"
+msgstr ""
+
+#: apps/places/providers/osm.py:607
+msgid "a post office"
+msgstr ""
+
+#: apps/places/providers/osm.py:611
+msgid "pub"
+msgstr ""
+
+#: apps/places/providers/osm.py:612
+msgid "pubs"
+msgstr ""
+
+#: apps/places/providers/osm.py:613
+msgid "a pub"
+msgstr ""
+
+#: apps/places/providers/osm.py:617
+msgid "public library"
+msgstr ""
+
+#: apps/places/providers/osm.py:618
+msgid "public libraries"
+msgstr ""
+
+#: apps/places/providers/osm.py:619
+msgid "a public library"
+msgstr ""
+
+#: apps/places/providers/osm.py:623
+msgid "place to hire punts"
+msgstr ""
+
+#: apps/places/providers/osm.py:624
+msgid "places to hire punts"
+msgstr ""
+
+#: apps/places/providers/osm.py:625
+msgid "a place to hire punts"
+msgstr ""
+
+#: apps/places/providers/osm.py:629
+msgid "recycling facility"
+msgstr ""
+
+#: apps/places/providers/osm.py:630
+msgid "recycling facilities"
+msgstr ""
+
+#: apps/places/providers/osm.py:631
+msgid "a recycling facility"
+msgstr ""
+
+#: apps/places/providers/osm.py:635
+msgid "restaurant"
+msgstr ""
+
+#: apps/places/providers/osm.py:636
+msgid "restaurants"
+msgstr ""
+
+#: apps/places/providers/osm.py:637
+msgid "a restaurant"
+msgstr "餐厅"
+
+#: apps/places/providers/osm.py:641
+msgid "shop"
+msgstr "商铺"
+
+#: apps/places/providers/osm.py:642
+msgid "shops"
+msgstr "商铺"
+
+#: apps/places/providers/osm.py:643
+msgid "a shop"
+msgstr "商铺"
+
+#: apps/places/providers/osm.py:647
+msgid "place relating to sport"
+msgstr ""
+
+#: apps/places/providers/osm.py:648
+msgid "places relating to sport"
+msgstr ""
+
+#: apps/places/providers/osm.py:649
+msgid "a place relating to sport"
+msgstr ""
+
+#: apps/places/providers/osm.py:653
+msgid "sports centre"
+msgstr "体育中心"
+
+#: apps/places/providers/osm.py:654
+msgid "sports centres"
+msgstr "体育中心"
+
+#: apps/places/providers/osm.py:655
+msgid "a sports centre"
+msgstr "体育中心"
+
+#: apps/places/providers/osm.py:659
+msgid "swimming pool"
+msgstr ""
+
+#: apps/places/providers/osm.py:660
+msgid "swimming pools"
+msgstr ""
+
+#: apps/places/providers/osm.py:661
+msgid "a swimming pool"
+msgstr ""
+
+#: apps/places/providers/osm.py:665
+msgid "synagogue"
+msgstr ""
+
+#: apps/places/providers/osm.py:666
+msgid "synagogues"
+msgstr ""
+
+#: apps/places/providers/osm.py:667
+msgid "a synagogue"
+msgstr ""
+
+#: apps/places/providers/osm.py:677
+msgid "theatre"
+msgstr ""
+
+#: apps/places/providers/osm.py:678
+msgid "theatres"
+msgstr ""
+
+#: apps/places/providers/osm.py:679
+msgid "a theatre"
+msgstr ""
+
+#: apps/places/providers/postcodes.py:124
+msgid "Uncategorised"
+msgstr "未分类"
+
+#: apps/places/providers/postcodes.py:135
+msgid "postcode"
+msgstr ""
+
+#: apps/places/providers/postcodes.py:136
+msgid "a postcode"
+msgstr ""
+
+#: apps/places/providers/postcodes.py:137
+msgid "postcodes"
+msgstr ""
+
+#. Translators: This refers to arrival times of trains, in minutes
+#: apps/places/providers/tfl.py:75
+msgid "DUE"
+msgstr ""
+
+#: apps/places/providers/tfl.py:75
+#, python-format
+msgid "%d mins"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:10
+#: apps/places/templatetags/molly_osm.py:12
+msgid "Yes"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:11
+#: apps/places/templatetags/molly_osm.py:13
+msgid "No"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:20
+msgid "wi-fi access"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:23
+msgid "has ATM"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:26
+msgid "serves food"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:29
+msgid "opening hours"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:32
+msgid "collection times"
+msgstr "采集时间"
+
+#: apps/places/templatetags/molly_osm.py:36
+msgid "capacity"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:44
+msgid "cuisine"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:46
+msgid "cuisines"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:50
+msgid "operator"
+msgstr "运营商"
+
+#: apps/places/templatetags/molly_osm.py:51
+msgid "note"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:55
+msgid "dispensing"
+msgstr ""
+
+#: apps/podcasts/__init__.py:15
+msgid "Podcasts"
+msgstr "视频点播"
+
+#: apps/search/__init__.py:15
+#: templates/places/index.html:19
+msgid "Search"
+msgstr "搜索"
+
+#: apps/weather/__init__.py:14
+msgid "Weather"
+msgstr "天气预报"
+
+#: auth/__init__.py:14
+msgid "Auth"
+msgstr "账户"
+
+#: batch_processing/__init__.py:14
+msgid "Batch_Processing"
+msgstr "批量任务"
+
+#: crowdsourcing/admin.py:45
+msgid "For numeric select or numeric choice, all your options must be a number. This is not a number: "
+msgstr ""
+
+#: crowdsourcing/admin.py:51
+msgid "Choice type questions require a list of options."
+msgstr ""
+
+#: crowdsourcing/admin.py:57
+msgid "The field name must start with a letter and contain nothing but alphanumerics and underscore."
+msgstr ""
+
+#: crowdsourcing/admin.py:91
+msgid "Flickr support is broken. Contact a programmer."
+msgstr ""
+
+#: crowdsourcing/admin.py:95
+msgid "You can't access this group: "
+msgstr ""
+
+#: crowdsourcing/admin.py:100
+msgid "You can't access any Flickr groups. Either you don't have any groups or your configuration settings are incorrect and you need to contact a programmer."
+msgstr ""
+
+#: crowdsourcing/admin.py:177
+msgid "Use the 'annotation' of Text Survey Report Displays to insert arbitrary text."
+msgstr ""
+
+#: crowdsourcing/admin.py:181
+msgid "Given the options you picked, you need to specify some fieldnames or this Survey Report Display won't do anything."
+msgstr ""
+
+#: crowdsourcing/admin.py:186
+msgid "An x axis only makes sense for Bar and Line graphs."
+msgstr ""
+
+#: crowdsourcing/admin.py:189
+msgid "You have to specify an x-axis for bar and line graphs."
+msgstr ""
+
+#: crowdsourcing/admin.py:192
+msgid "Use 'Default' for Text."
+msgstr ""
+
+#: crowdsourcing/admin.py:195
+msgid "Use 'Default' or 'Count' for Pie charts."
+msgstr ""
+
+#: crowdsourcing/forms.py:75
+#: crowdsourcing/forms.py:189
+msgid "This field is required."
+msgstr ""
+
+#: crowdsourcing/forms.py:141
+msgid "I don't recognize this video url format. Try something like http://www.youtube.com/watch?v=Bfli1yuby58."
+msgstr ""
+
+#: crowdsourcing/forms.py:153
+msgid "We couldn't read your file. Make sure it's a .jpeg, .png, or .gif file, not a .psd or other unsupported type."
+msgstr ""
+
+#: crowdsourcing/models.py:82
+msgid "If checked, all submissions will start as NOT public and you will have to manually make them public. If your survey doesn't show any results, it may be because this option is checked."
+msgstr ""
+
+#: crowdsourcing/models.py:95
+msgid "At what point will Crowdsourcing make the results public? immediate: All results are immediately public. post-close: Results are public on or after the \"ends at\" option documented below. never: Results are never public."
+msgstr ""
+
+#: crowdsourcing/models.py:298
+msgid "a single-word identifier used to track this value; it must begin with a letter and may contain alphanumerics and underscores (no spaces)."
+msgstr ""
+
+#: crowdsourcing/models.py:302
+msgid "Appears on the survey entry page."
+msgstr ""
+
+#: crowdsourcing/models.py:303
+msgid "Appears on the results page."
+msgstr ""
+
+#: crowdsourcing/models.py:308
+msgid "Unsafe to change on live surveys. Radio button list and drop down list questions will have a blank option if they aren't required."
+msgstr ""
+
+#: crowdsourcing/models.py:314
+msgid " Use -1 to auto-assign."
+msgstr ""
+
+#: crowdsourcing/models.py:320
+msgid "You must not change this field on a live survey."
+msgstr ""
+
+#: crowdsourcing/models.py:327
+msgid "Use one option per line. On a live survey you can modify the order of these options. You can, at your own risk, add new options, but you must not change or remove options."
+msgstr ""
+
+#: crowdsourcing/models.py:739
+msgid "Crowdsourcing only displays public submissions. The 'Moderate submissions' checkbox of the survey determines the default value of this field."
+msgstr ""
+
+#: crowdsourcing/models.py:895
+msgid "You may leave this field blank. Crowdsourcing will use the survey title as a default."
+msgstr ""
+
+#: crowdsourcing/models.py:899
+msgid "The default is the description of the survey."
+msgstr ""
+
+#: crowdsourcing/models.py:918
+msgid "Include only featured submissions."
+msgstr ""
+
+#: crowdsourcing/models.py:921
+msgid "Display separate, individual results if this field is True and you have archivable questions, like those with paragraph answers."
+msgstr ""
+
+#: crowdsourcing/models.py:979
+msgid "We only use this field if you chose a Bar or Line Chart. How should we aggregate the y-axis? 'Average' is good for things like ratings, 'Sum' is good for totals, and 'Count' is good for a show of hands."
+msgstr ""
+
+#: crowdsourcing/models.py:986
+msgid "Pull these values from Survey -> Questions -> Fieldname. Separate by spaces. These are the y-axes of bar and line charts."
+msgstr ""
+
+#: crowdsourcing/models.py:991
+msgid "This only applies to bar and line charts. Use only 1 field."
+msgstr ""
+
+#: crowdsourcing/models.py:998
+msgid "Google maps gets pretty slow if you add too many points. Use this field to limit the number of points that display on the map."
+msgstr ""
+
+#: crowdsourcing/models.py:1004
+msgid "If you don't specify latitude, longitude, or zoom, the map will just center and zoom so that the map shows all the points."
+msgstr ""
+
+#: crowdsourcing/models.py:1011
+msgid "13 is about the right level for Manhattan. 0 shows the entire world."
+msgstr ""
+
+#: crowdsourcing/models.py:1016
+msgid "The answers to these questions will appear as captions below their corresponding slides. Separate by spaces."
+msgstr ""
+
+#: geolocation/views.py:140
+#: geolocation/views.py:163
+msgid "Update location"
+msgstr "更新所在位置"
+
+#: geolocation/templates/geolocation/require_location.html:6
+#: templates/geolocation/require_location.html:6
+msgid "Location required"
+msgstr "需要所在位置"
+
+#: geolocation/templates/geolocation/require_location.html:10
+#: templates/geolocation/require_location.html:10
+#, python-format
+msgid "To be able to use this feature you need to <a href=\"%(geolocation_url)s?return_url=%(return_url)s\">choose a location</a>."
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:4
+#: templates/geolocation/update_location_embed.html:4
+msgid "Your Location"
+msgstr "您的所在地点"
+
+#: geolocation/templates/geolocation/update_location_embed.html:10
+#: templates/geolocation/update_location_embed.html:10
+msgid "Update"
+msgstr "更新"
+
+#: geolocation/templates/geolocation/update_location_embed.html:15
+#: templates/geolocation/update_location_embed.html:15
+msgid "No location known"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:17
+#: templates/geolocation/update_location_embed.html:17
+#, python-format
+msgid "within approx. %(accuracy)s m"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:24
+#: templates/geolocation/update_location_embed.html:24
+msgid "Did you mean&hellip;"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:56
+#: templates/geolocation/update_location_embed.html:56
+msgid "Or search again:"
+msgstr "请再次搜索："
+
+#. Translators: This refers to sample things to be entered in the 'Set Location' box, postcode, building ID, street name
+#: geolocation/templates/geolocation/update_location_embed.html:67
+#: templates/geolocation/update_location_embed.html:67
+msgid "e.g., OX2 6NN, kebl, St Clements"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:71
+#: templates/geolocation/update_location_embed.html:71
+msgid "Set Location"
+msgstr "设置所在地点"
+
+#: geolocation/templates/geolocation/update_location_embed.html:76
+#: templates/geolocation/update_location_embed.html:76
+msgid "Favourite Locations"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:96
+#: templates/geolocation/update_location_embed.html:96
+msgid "(Remove from favourites)"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:104
+#: templates/geolocation/update_location_embed.html:104
+msgid "Location History"
+msgstr "所在位置历史"
+
+#: geolocation/templates/geolocation/update_location_embed.html:127
+#: templates/geolocation/update_location_embed.html:127
+msgid "(Add as favourite)"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:135
+#: templates/geolocation/update_location_embed.html:135
+msgid "Clear history"
+msgstr "清除历史"
 
 #: googlemap/models.py:65
 msgid "open map"
@@ -66,7 +1564,7 @@ msgid "Permissions saved."
 msgstr "权限已保存"
 
 #: guardian/admin.py:347
-#: userena/forms.py:29
+#: userena/forms.py:36
 msgid "Username"
 msgstr "用户名"
 
@@ -92,14 +1590,25 @@ msgstr "object ID"
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:12
 #: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:10
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:10
-#: molly/apps/users/templates/lazysignup/convert.html:5
-#: molly/templates/registration/logged_out.html:4
-#: molly/templates/registration/password_change_done.html:4
-#: molly/templates/registration/password_change_form.html:4
-#: molly/templates/registration/password_reset_complete.html:4
-#: molly/templates/registration/password_reset_confirm.html:4
-#: molly/templates/registration/password_reset_done.html:4
-#: molly/templates/registration/password_reset_form.html:4
+#: templates/admin/500.html:7
+#: templates/admin/app_index.html:11
+#: templates/admin/base.html:57
+#: templates/admin/change_form.html:62
+#: templates/admin/change_list.html:84
+#: templates/admin/csv_export_selected_confirmation.html:9
+#: templates/admin/delete_confirmation.html:9
+#: templates/admin/delete_selected_confirmation.html:9
+#: templates/admin/index.html:16
+#: templates/admin/invalid_setup.html:7
+#: templates/admin/object_history.html:9
+#: templates/admin/auth/user/change_password.html:20
+#: templates/registration/logged_out.html:4
+#: templates/registration/password_change_done.html:4
+#: templates/registration/password_change_form.html:4
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_done.html:4
+#: templates/registration/password_reset_form.html:4
 msgid "Home"
 msgstr "主页"
 
@@ -107,13 +1616,11 @@ msgstr "主页"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:92
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:27
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:81
-#, fuzzy
 msgid "Please correct the errors below."
-msgstr "请检查下方错误."
+msgstr "请检查下方错误"
 
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:36
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:31
-#, fuzzy
 msgid "Users"
 msgstr "用户"
 
@@ -126,6 +1633,7 @@ msgstr "用户权限"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:36
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:40
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:30
+#: templates/admin/object_history.html:26
 msgid "User"
 msgstr "用户"
 
@@ -133,6 +1641,7 @@ msgstr "用户"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:109
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:44
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:98
+#: templates/admin/object_history.html:27
 msgid "Action"
 msgstr "动作"
 
@@ -185,50 +1694,264 @@ msgstr "对象"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:48
 #: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:37
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:37
+#: templates/admin/submit_line.html:5
 msgid "Save"
 msgstr "保存"
 
 #: guardian/templates/admin/guardian/model/change_form.html:8
+#: templates/admin/change_form.html:75
+#: templates/admin/object_history.html:13
 msgid "History"
 msgstr "历史记录"
 
 #: guardian/templates/admin/guardian/model/change_form.html:9
+#: templates/admin/change_form.html:76
 msgid "View on site"
 msgstr "浏览站点"
 
-#: molly/apps/users/templates/lazysignup/convert.html:7
-msgid "Account"
-msgstr "账户"
+#: maps/__init__.py:15
+msgid "Maps"
+msgstr "地图库"
 
-#: molly/apps/users/templates/lazysignup/convert.html:8
-#: molly/templates/registration/password_change_done.html:3
-#: molly/templates/registration/password_change_form.html:3
-msgid "Log out"
-msgstr "注销"
+#: templates/admin/404.html:7
+#: templates/admin/404.html.py:11
+msgid "Page not found"
+msgstr "找不到页面"
 
-#: molly/apps/users/templates/lazysignup/convert.html:10
-msgid "Save your data"
-msgstr "保存您的数据"
+#: templates/admin/404.html:12
+msgid "We're sorry, but the requested page could not be found."
+msgstr "对不起，找不到请求的页面！"
 
-#: molly/apps/users/templates/lazysignup/convert.html:10
-msgid "by setting a username and password"
-msgstr "通过设置一个用户名和密码"
+#: templates/admin/500.html:7
+msgid "Server error"
+msgstr "服务器错误"
 
-#: molly/templates/registration/logged_out.html:8
-msgid "Thanks for spending some quality time with the Web site today."
-msgstr "感谢您今天花了宝贵的时间在这个网站"
+#: templates/admin/500.html:10
+msgid "Server error (500)"
+msgstr "服务器错误（500）"
 
-#: molly/templates/registration/logged_out.html:10
-msgid "Log in again"
-msgstr "重新登录"
+#: templates/admin/500.html:14
+msgid "Server Error <em>(500)</em>"
+msgstr "服务器错误 <em>(500)</em>"
 
-#: molly/templates/registration/password_change_done.html:3
-#: molly/templates/registration/password_change_form.html:3
+#: templates/admin/500.html:15
+msgid "There's been an error. It's been reported to the site administrators via e-mail and should be fixed shortly. Thanks for your patience."
+msgstr "出现了错误，已经发送邮件通知了管理员进行修复，感谢您的耐心."
+
+#: templates/admin/actions.html:10
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: templates/admin/actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr "选择全部%(total_count)s 个 %(module_name)s"
+
+#: templates/admin/actions.html:11
+msgid "Clear selection"
+msgstr "清除选择"
+
+#: templates/admin/app_index.html:13
+#, python-format
+msgid "%(name)s"
+msgstr "%(name)s"
+
+#: templates/admin/app_index.html:30
+#: templates/admin/change_form.html:65
+#: templates/admin/index.html:31
+msgid "Add"
+msgstr "新增"
+
+#: templates/admin/app_index.html:31
+#: templates/admin/index.html:32
+msgid "Change"
+msgstr "修改"
+
+#: templates/admin/base_site.html:7
+msgid "Django administration"
+msgstr "网站管理"
+
+#: templates/admin/change_form.html:96
+#: templates/admin/change_list.html:148
+#: templates/admin/auth/user/change_password.html:38
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "请检查下方错误"
+
+#: templates/admin/change_list.html:102
+#, python-format
+msgid "Add %(name)s"
+msgstr "新增 %(name)s"
+
+#: templates/admin/change_list.html:120
+msgid "Filter"
+msgstr "筛选"
+
+#: templates/admin/csv_export_selected_confirmation.html:12
+msgid "Export selection as CSV"
+msgstr "导出所选为CSV"
+
+#: templates/admin/csv_export_selected_confirmation.html:31
+msgid "Export following fields:"
+msgstr "导出以下："
+
+#: templates/admin/csv_export_selected_confirmation.html:34
+msgid "Select all"
+msgstr "全选"
+
+#: templates/admin/csv_export_selected_confirmation.html:54
+msgid "Back"
+msgstr "后退"
+
+#: templates/admin/csv_export_selected_confirmation.html:55
+msgid "Export"
+msgstr "导出"
+
+#: templates/admin/delete_confirmation.html:13
+#: templates/admin/submit_line.html:4
+msgid "Delete"
+msgstr "删除"
+
+#: templates/admin/delete_confirmation.html:23
+#, python-format
+msgid "Deleting the %(object_name)s '%(escaped_object)s' would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:33
+#, python-format
+msgid "Deleting the %(object_name)s '%(escaped_object)s' would require deleting the following protected related objects:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:45
+#, python-format
+msgid "Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? All of the following related items will be deleted:"
+msgstr "您确定想要删除 %(object_name)s \"%(escaped_object)s\"? 同时所有的与之相关联的对象都会被删除:"
+
+#: templates/admin/delete_confirmation.html:53
+#: templates/admin/delete_selected_confirmation.html:59
+msgid "Cancel"
+msgstr "取消"
+
+#: templates/admin/delete_confirmation.html:54
+#: templates/admin/delete_selected_confirmation.html:60
+msgid "Yes, I'm sure"
+msgstr "是，我却定"
+
+#: templates/admin/delete_selected_confirmation.html:12
+msgid "Delete multiple objects"
+msgstr "删除多个对象"
+
+#: templates/admin/delete_selected_confirmation.html:22
+#, python-format
+msgid "Deleting the %(objects_name)s would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:32
+#, python-format
+msgid "Deleting the selected %(objects_name)s would require deleting the following protected related objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:44
+#, python-format
+msgid "Are you sure you want to delete the selected %(objects_name)s objects? All of the following objects and their related items will be deleted:"
+msgstr "您确定想要删除已选的%(objects_name)s 对象？所有的对象及其相关的项目都会被删除："
+
+#: templates/admin/filter.html:3
+#, python-format
+msgid "%(filter_title)s"
+msgstr "%(filter_title)s"
+
+#: templates/admin/index.html:39
+msgid "You don´t have permission to edit anything."
+msgstr "您没有权限编辑"
+
+#: templates/admin/index.html:44
+msgid "Recent Actions"
+msgstr "最近动作"
+
+#: templates/admin/index.html:46
+msgid "My Actions"
+msgstr "我的动作"
+
+#: templates/admin/index.html:49
+msgid "None available"
+msgstr "不可用"
+
+#: templates/admin/invalid_setup.html:11
+msgid "Something's wrong with your database installation. Make sure the appropriate database tables have been created, and make sure the database is readable by the appropriate user."
+msgstr "您的数据库出现了一些问题，请确认您的数据库表格已全部建立，同时确认数据库可以被读取."
+
+#: templates/admin/login.html:31
+msgid "Username:"
+msgstr "用户名："
+
+#: templates/admin/login.html:35
+msgid "Password:"
+msgstr "密码："
+
+#: templates/admin/login.html:45
+#: templates/registration/password_reset_complete.html:14
+msgid "Log in"
+msgstr "登录"
+
+#: templates/admin/object_history.html:25
+#: userena/contrib/umessages/admin.py:25
+msgid "Date/time"
+msgstr "Date/time"
+
+#: templates/admin/object_history.html:33
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: templates/admin/object_history.html:37
+msgid "Created object"
+msgstr "已创建对象"
+
+#: templates/admin/object_history.html:47
+msgid "This object doesn't have a change history. It probably wasn't added via this admin site."
+msgstr ""
+
+#: templates/admin/pagination.html:8
+#, python-format
+msgid "1 result"
+msgid_plural "%(counter)s results"
+msgstr[0] "%(counter)s 个结果"
+
+#: templates/admin/pagination.html:13
+#: templates/admin/pagination.html.py:15
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr "共%(full_result_count)s 条"
+
+#: templates/admin/pagination.html:27
+msgid "Show all"
+msgstr "全部显示"
+
+#: templates/admin/submit_line.html:6
+msgid "Save as new"
+msgstr "保存为新建"
+
+#: templates/admin/submit_line.html:7
+msgid "Save and add another"
+msgstr "保存并继续"
+
+#: templates/admin/submit_line.html:8
+msgid "Save and continue editing"
+msgstr "保存并继续编辑"
+
+#: templates/admin/auth/user/change_password.html:7
+#: templates/admin/includes_grappelli/header.html:41
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
 msgid "Documentation"
 msgstr "文档"
 
-#: molly/templates/registration/password_change_done.html:3
-#: molly/templates/registration/password_change_form.html:3
+#: templates/admin/auth/user/change_password.html:11
+#: templates/admin/auth/user/change_password.html:23
+#: templates/admin/auth/user/change_password.html:62
+#: templates/admin/includes_grappelli/header.html:20
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
 #: userena/templates/userena/email_form.html:11
 #: userena/templates/userena/password_form.html:4
 #: userena/templates/userena/password_form.html:13
@@ -238,234 +1961,786 @@ msgstr "文档"
 msgid "Change password"
 msgstr "修改密码"
 
-#: molly/templates/registration/password_change_done.html:4
-#: molly/templates/registration/password_change_form.html:4
-#: molly/templates/registration/password_change_form.html:6
-#: molly/templates/registration/password_change_form.html:10
+#: templates/admin/auth/user/change_password.html:14
+#: templates/admin/includes_grappelli/header.html:28
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
+msgid "Log out"
+msgstr "注销"
+
+#: templates/admin/auth/user/change_password.html:27
+#: templates/registration/password_change_done.html:4
+#: templates/registration/password_change_form.html:4
+#: templates/registration/password_change_form.html:6
+#: templates/registration/password_change_form.html:10
 msgid "Password change"
 msgstr "修改密码"
 
-#: molly/templates/registration/password_change_done.html:6
-#: molly/templates/registration/password_change_done.html:10
+#: templates/admin/auth/user/change_password.html:35
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: templates/admin/auth/user/change_password.html:45
+#: templates/registration/password_change_form.html:19
+#: templates/registration/password_reset_confirm.html:19
+msgid "New password:"
+msgstr "新密码："
+
+#: templates/admin/auth/user/change_password.html:52
+msgid "Password (again)"
+msgstr "密码（再次）"
+
+#: templates/admin/auth/user/change_password.html:56
+msgid "Enter the same password as above, for verification."
+msgstr "请输入相同相同的密码，以用来验证."
+
+#: templates/admin/edit_inline/stacked.html:8
+msgid "Open All Items"
+msgstr "打开所有项目"
+
+#: templates/admin/edit_inline/stacked.html:9
+msgid "Close All Items"
+msgstr "关闭所有项目"
+
+#: templates/admin/edit_inline/stacked.html:10
+#: templates/admin/edit_inline/stacked.html:53
+#: templates/admin/edit_inline/tabular.html:87
+msgid "Add Item"
+msgstr "新增项目"
+
+#: templates/admin/edit_inline/stacked.html:23
+#: templates/admin/edit_inline/tabular.html:61
+msgid "View on Site"
+msgstr "浏览站点"
+
+#: templates/admin/edit_inline/stacked.html:25
+#: templates/admin/edit_inline/tabular.html:63
+msgid "Move Item"
+msgstr "移动项目"
+
+#: templates/admin/edit_inline/stacked.html:29
+#: templates/admin/edit_inline/stacked.html:31
+msgid "Delete Item"
+msgstr "删除项目"
+
+#: templates/admin/edit_inline/stacked.html:51
+#: templates/admin/edit_inline/tabular.html:85
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr "新增 %(verbose_name)s"
+
+#: templates/admin/edit_inline/tabular.html:8
+msgid "Add Another"
+msgstr "新增另一个"
+
+#: templates/admin/edit_inline/tabular.html:66
+#: templates/admin/edit_inline/tabular.html:71
+msgid "Remove"
+msgstr "移除"
+
+#: templates/admin/includes_grappelli/header.html:36
+msgid "Tests"
+msgstr "测试"
+
+#: templates/places/category_detail.html:14
+#: templates/places/nearby_detail.html:14
+#, python-format
+msgid "Found %(count)s %(name)s"
+msgid_plural "Found %(count)s %(name_plural)s"
+msgstr[0] "找到 %(count)s 项%(name)s"
+
+#: templates/places/category_detail.html:18
+#: templates/places/nearby_detail.html:19
+msgid "that is also"
+msgid_plural "that are also"
+msgstr[0] ""
+
+#: templates/places/category_detail.html:21
+#: templates/places/nearby_detail.html:23
+msgid "and"
+msgstr ""
+
+#: templates/places/category_detail.html:31
+#: templates/places/nearby_detail.html:32
+msgid "Limit to:"
+msgstr ""
+
+#: templates/places/category_detail.html:56
+#, python-format
+msgid "Page <span class=\"current-page\">%(page)s</span> of %(pages)s"
+msgstr ""
+
+#: templates/places/category_detail.html:62
+msgid "Previous page"
+msgstr "上一页"
+
+#: templates/places/category_detail.html:65
+msgid "Next page"
+msgstr "下一页"
+
+#: templates/places/entity_detail.html:19
+msgid "Travel Alert"
+msgstr ""
+
+#: templates/places/entity_detail.html:30
+#: templates/places/service_details.html:200
+#: templates/places/update_osm.html:42
+msgid "Map"
+msgstr "地图"
+
+#: templates/places/entity_detail.html:34
+#, python-format
+msgid "Real-time information from stop %(stop_id)s"
+msgstr ""
+
+#: templates/places/entity_detail.html:38
+msgid "Real-time information"
+msgstr ""
+
+#: templates/places/entity_detail.html:50
+msgid "Find things near here"
+msgstr ""
+
+#: templates/places/entity_detail.html:55
+#, python-format
+msgid "We do not yet have a location for this %(type_name)s."
+msgstr ""
+
+#: templates/places/entity_without_location.html:15
+msgid "Unfortunately, we do not have a location for this object, and so cannot tell you what is near it."
+msgstr ""
+
+#: templates/places/index.html:9
+#: templates/places/index.html.py:12
+#: templates/places/index.html:15
+msgid "Search Places"
+msgstr "搜索地点"
+
+#: templates/places/index.html:17
+msgid "Go!"
+msgstr ""
+
+#: templates/places/index.html:23
+msgid "Search by place name, bus stop number e.g. E7 or 69323498 or postcode"
+msgstr ""
+
+#: templates/places/index.html:34
+msgid "Points of Interest"
+msgstr ""
+
+#: templates/places/index.html:38
+msgid "Nearby"
+msgstr ""
+
+#: templates/places/index.html:39
+msgid "By Category"
+msgstr "按类别"
+
+#: templates/places/nearby_detail.html:12
+#, python-format
+msgid "Found %(count)s %(name)s near %(title)s"
+msgid_plural "Found %(count)s %(name_plural)s near %(title)s"
+msgstr[0] ""
+
+#: templates/places/nearby_detail.html:63
+#, python-format
+msgid "%(type_name)s, about %(distance)sm %(bearing)s"
+msgstr ""
+
+#: templates/places/nearby_detail.html:65
+#: templates/places/nearby_detail.html:74
+#, python-format
+msgid "%(distance)sm %(bearing)s"
+msgstr ""
+
+#: templates/places/nearby_detail.html:87
+#, python-format
+msgid "Find more %(type_name)s"
+msgstr ""
+
+#: templates/places/nearby_list.html:25
+#, python-format
+msgid "(%(quantity)s within %(distance)sm)"
+msgstr ""
+
+#: templates/places/service_details.html:13
+msgid "Multiple routes with the same number were found from this stop. This could be due to this stop serving two different directions. Please select exactly which route you want from the list below."
+msgstr ""
+
+#: templates/places/service_details.html:27
+msgid "Live Train Information"
+msgstr ""
+
+#: templates/places/service_details.html:30
+msgid "Route Information"
+msgstr "路线信息"
+
+#: templates/places/service_details.html:38
+#, python-format
+msgid "There is currently a problem retrieving live departure information from the National Rail web site. Departure information may still be accessed<a href=\"http://pda.ojp.nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly from their web site</a>."
+msgstr ""
+
+#: templates/places/service_details.html:40
+msgid "There is currently an error getting route information."
+msgstr ""
+
+#: templates/places/service_details.html:50
+#, python-format
+msgid "Operated by %(operator)s"
+msgstr "由%(operator)s 经营"
+
+#: templates/places/service_details.html:55
+#, python-format
+msgid "Calling at platform %(platform)s"
+msgstr ""
+
+#: templates/places/service_details.html:63
+msgid "Not all services necessarily call at all stops, particularly in the early morning and late at night. Always check local timetables."
+msgstr ""
+
+#: templates/places/service_details.html:68
+msgid "The information shown below is scheduled information only. Always check local information for any service changes."
+msgstr ""
+
+#: templates/places/service_details.html:77
+#: templates/places/service_details.html:97
+#: templates/places/service_details.html:158
+msgid "Calling Point"
+msgstr ""
+
+#: templates/places/service_details.html:79
+#: templates/places/service_details.html:99
+#: templates/places/service_details.html:160
+#: templates/places/metadata/ldb.html:29
+msgid "Scheduled"
+msgstr "计划的"
+
+#: templates/places/service_details.html:82
+#: templates/places/service_details.html:102
+#: templates/places/service_details.html:163
+msgid "Expected / Actual"
+msgstr ""
+
+#: templates/places/service_details.html:92
+#, python-format
+msgid "This service then merges with a service from %(location)s"
+msgstr ""
+
+#: templates/places/service_details.html:131
+#, python-format
+msgid "This service is then continued by %(service_type)s."
+msgstr ""
+
+#: templates/places/service_details.html:153
+#, python-format
+msgid "This service then splits to go to %(destination)s"
+msgstr ""
+
+#: templates/places/update_osm.html:5
+#, python-format
+msgid "Update %(title)s"
+msgstr "更新 %(title)s"
+
+#: templates/places/update_osm.html:15
+msgid "Important information"
+msgstr "重要信息"
+
+#: templates/places/update_osm.html:19
+#, python-format
+msgid "Thank you for wanting to improve the data provided by %(site_name)s. However, before you submit any changes, you should be aware of the following terms."
+msgstr ""
+
+#: templates/places/update_osm.html:23
+#, python-format
+msgid "Your contribution will be released into the Public Domain, and then submitted to OpenStreetMap by %(site_name)s."
+msgstr ""
+
+#: templates/places/update_osm.html:27
+#, python-format
+msgid "Your changes will be checked by a member of the %(site_name)s team before being uploaded. %(site_name)s may tidy or normalise the data you provide before they are uploaded using the %(site_name)s OSM account."
+msgstr ""
+
+#: templates/places/update_osm.html:31
+msgid "If you would like to be named as the original author of the changes, please provide your name and tick the attribution box. Your e-mail address will never be submitted to OSM, but may be used by us to clarify any changes you provide."
+msgstr ""
+
+#: templates/places/update_osm.html:36
+#, python-format
+msgid "You may be interested to read <a href=\"%(osm_url)s\">further information about OpenStreetMap and other ways in which one may contribute</a>."
+msgstr ""
+
+#: templates/places/update_osm.html:44
+#, python-format
+msgid "You are submitting an update to the %(type_name)s <em>&quot;%(title)s&quot;</em>."
+msgstr ""
+
+#: templates/places/update_osm.html:55
+msgid "Not all fields will be relevant to the item you are updating, and all fields are optional."
+msgstr ""
+
+#: templates/places/update_osm.html:62
+msgid "Provide your name and tick the box to be attributed for the change."
+msgstr ""
+
+#: templates/places/update_osm.html:76
+msgid "Your e-mail address is useful should we want to clarify any change you make."
+msgstr ""
+
+#: templates/places/update_osm.html:86
+msgid "The following are general properties for most types of item."
+msgstr ""
+
+#: templates/places/update_osm.html:116
+msgid "This next two about food apply mostly to pubs. For things that obviously serve food (e.g. restaurants), feel free to leave this empty."
+msgstr ""
+
+#: templates/places/update_osm.html:130
+msgid "If there is an ATM accessible at all hours here, please set this. This may be left blank if you are editing an ATM."
+msgstr ""
+
+#: templates/places/update_osm.html:140
+msgid "The following only apply to post boxes. The reference is normally printed at the bottom of the details on the post box."
+msgstr ""
+
+#: templates/places/update_osm.html:154
+msgid "For car parks and bicycle parking, please provide the number of spaces."
+msgstr ""
+
+#: templates/places/update_osm.html:164
+msgid "If you have any other information you think should be included, please tell us about it here."
+msgstr ""
+
+#: templates/places/update_osm.html:174
+msgid "If you are happy with your changes and agree to the terms above, you may now click 'Submit'."
+msgstr ""
+
+#: templates/places/update_osm.html:179
+msgid "Submit"
+msgstr "提交"
+
+#: templates/places/update_osm_done.html:10
+msgid "Thank you"
+msgstr "感谢您"
+
+#: templates/places/update_osm_done.html:14
+#, python-format
+msgid "Your changes have been submitted and will be checked shortly. Thank you for contributing to both %(site_name)s and OpenStreetMap!"
+msgstr ""
+
+#: templates/places/update_osm_done.html:18
+msgid "You may now wish to head back"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:5
+msgid "departures"
+msgstr "起飞"
+
+#: templates/places/metadata/ldb.html:21
+msgid "Origin"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:23
+#: templates/places/metadata/real_time_information.html:26
+msgid "Destination"
+msgstr "目的地"
+
+#: templates/places/metadata/ldb.html:27
+msgid "Plat."
+msgstr ""
+
+#: templates/places/metadata/ldb.html:30
+#: templates/places/metadata/real_time_information.html:27
+msgid "Expected"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:37
+msgid "There is currently a problem retrieving live departure information from the National Rail web site."
+msgstr ""
+
+#: templates/places/metadata/ldb.html:38
+#, python-format
+msgid "Departure information may still be accessed<a href=\"http://pda.ojp.nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly from their web site</a>."
+msgstr ""
+
+#: templates/places/metadata/ldb.html:64
+msgid "Circular Route"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:94
+#: templates/places/metadata/ldb.html:99
+msgid "View arrivals board"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:96
+msgid "View departures board"
+msgstr ""
+
+#: templates/places/metadata/osm.html:7
+msgid "Information from OpenStreetMap"
+msgstr ""
+
+#: templates/places/metadata/osm.html:24
+#, python-format
+msgid "Call <em>%(title)s</em>"
+msgstr ""
+
+#: templates/places/metadata/osm.html:33
+msgid "Wikipedia article"
+msgstr ""
+
+#: templates/places/metadata/osm.html:62
+msgid "Suggest a correction"
+msgstr ""
+
+#: templates/places/metadata/park_and_ride.html:5
+msgid "Car Park Information"
+msgstr ""
+
+#. Translators: As in, car parking spaces
+#: templates/places/metadata/park_and_ride.html:11
+#: templates/places/metadata/park_and_ride.html:18
+msgid "Spaces"
+msgstr ""
+
+#: templates/places/metadata/park_and_ride.html:16
+msgid "Space information currently unavailable"
+msgstr ""
+
+#: templates/places/metadata/real_time_information.html:15
+msgid "Sorry, there is currently no real time information for this stop."
+msgstr ""
+
+#: templates/places/metadata/real_time_information.html:25
+msgid "Service"
+msgstr "服务"
+
+#: templates/places/metadata/real_time_information.html:46
+msgid "Next"
+msgstr ""
+
+#: templates/places/metadata/real_time_information.html:46
+msgid "No further info"
+msgstr ""
+
+#: templates/places/metadata/transit_status.html:5
+#, python-format
+msgid "%(service_name)s line status"
+msgstr "%(service_name)s 的状态"
+
+#: templates/places/metadata/transit_status.html:10
+msgid "Line"
+msgstr ""
+
+#: templates/places/metadata/transit_status.html:11
+msgid "Status"
+msgstr "状态"
+
+#: templates/registration/logged_out.html:8
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr "感谢您今天花了宝贵的时间在这个网站"
+
+#: templates/registration/logged_out.html:10
+msgid "Log in again"
+msgstr "重新登录"
+
+#: templates/registration/password_change_done.html:6
+#: templates/registration/password_change_done.html:10
 msgid "Password change successful"
 msgstr "密码已成功修改"
 
-#: molly/templates/registration/password_change_done.html:12
+#: templates/registration/password_change_done.html:12
 msgid "Your password was changed."
 msgstr "您的密码已修改."
 
-#: molly/templates/registration/password_change_form.html:12
+#: templates/registration/password_change_form.html:12
 #, fuzzy
 msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
 msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确。"
 
-#: molly/templates/registration/password_change_form.html:17
+#: templates/registration/password_change_form.html:17
 msgid "Old password:"
 msgstr "旧密码："
 
-#: molly/templates/registration/password_change_form.html:19
-#: molly/templates/registration/password_reset_confirm.html:19
-msgid "New password:"
-msgstr "新密码："
-
-#: molly/templates/registration/password_change_form.html:21
-#: molly/templates/registration/password_reset_confirm.html:21
+#: templates/registration/password_change_form.html:21
+#: templates/registration/password_reset_confirm.html:21
 msgid "Confirm password:"
 msgstr "确认密码："
 
-#: molly/templates/registration/password_change_form.html:23
-#: molly/templates/registration/password_reset_confirm.html:22
+#: templates/registration/password_change_form.html:23
+#: templates/registration/password_reset_confirm.html:22
 msgid "Change my password"
 msgstr "修改我的密码"
 
-#: molly/templates/registration/password_reset_complete.html:4
-#: molly/templates/registration/password_reset_confirm.html:6
-#: molly/templates/registration/password_reset_done.html:4
-#: molly/templates/registration/password_reset_form.html:4
-#: molly/templates/registration/password_reset_form.html:6
-#: molly/templates/registration/password_reset_form.html:10
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_confirm.html:6
+#: templates/registration/password_reset_done.html:4
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:6
+#: templates/registration/password_reset_form.html:10
 #: userena/templates/userena/password_reset_complete.html:4
 msgid "Password reset"
 msgstr "重设密码"
 
-#: molly/templates/registration/password_reset_complete.html:6
-#: molly/templates/registration/password_reset_complete.html:10
+#: templates/registration/password_reset_complete.html:6
+#: templates/registration/password_reset_complete.html:10
 msgid "Password reset complete"
 msgstr "密码重设完成"
 
-#: molly/templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_complete.html:12
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr "您的密码已设置，您现在可以登录了."
 
-#: molly/templates/registration/password_reset_complete.html:14
-msgid "Log in"
-msgstr "登录"
-
-#: molly/templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_confirm.html:4
 msgid "Password reset confirmation"
 msgstr "密码重设确认"
 
-#: molly/templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_confirm.html:12
 msgid "Enter new password"
 msgstr "输入新密码"
 
-#: molly/templates/registration/password_reset_confirm.html:14
+#: templates/registration/password_reset_confirm.html:14
 msgid "Please enter your new password twice so we can verify you typed it in correctly."
 msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确。"
 
-#: molly/templates/registration/password_reset_confirm.html:27
+#: templates/registration/password_reset_confirm.html:27
 msgid "Password reset unsuccessful"
 msgstr "密码重设失败"
 
-#: molly/templates/registration/password_reset_confirm.html:29
+#: templates/registration/password_reset_confirm.html:29
 #, fuzzy
 msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
 msgstr "密码重设地址错误，这有可能是因为此地址已被使用过，请重新申请密码重设."
 
-#: molly/templates/registration/password_reset_done.html:6
-#: molly/templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_done.html:6
+#: templates/registration/password_reset_done.html:10
 msgid "Password reset successful"
 msgstr "重设密码成功"
 
-#: molly/templates/registration/password_reset_done.html:12
-#, fuzzy
+#: templates/registration/password_reset_done.html:12
 msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
-msgstr "我们已发送一封包含新密码的邮件到您的信箱，您很快就能收到它."
+msgstr "我们已发送一封包含新密码的邮件到您的信箱，您很快就能收到它"
 
-#: molly/templates/registration/password_reset_email.html:2
+#: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr "您将会收到一封电子邮件，因为您请求了密码重设"
 
-#: molly/templates/registration/password_reset_email.html:3
+#: templates/registration/password_reset_email.html:3
 #, python-format
 msgid "for your user account at %(site_name)s"
 msgstr "您在 %(site_name)s的用户账户"
 
-#: molly/templates/registration/password_reset_email.html:5
+#: templates/registration/password_reset_email.html:5
 msgid "Please go to the following page and choose a new password:"
 msgstr "请继续下个页面，然后选择一个新密码："
 
-#: molly/templates/registration/password_reset_email.html:9
+#: templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
 msgstr "您的用户名："
 
-#: molly/templates/registration/password_reset_email.html:11
+#: templates/registration/password_reset_email.html:11
 msgid "Thanks for using our site!"
 msgstr "感谢您使用我们的系统！"
 
-#: molly/templates/registration/password_reset_email.html:13
+#: templates/registration/password_reset_email.html:13
 #, python-format
 msgid "The %(site_name)s team"
 msgstr "%(site_name)s 团队"
 
-#: molly/templates/registration/password_reset_form.html:12
+#: templates/registration/password_reset_form.html:12
 msgid "Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
 msgstr "忘记您的密码了？请输入您的Email地址，我们将会重设您的密码并用邮件通知您"
 
-#: molly/templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:17
 msgid "E-mail address:"
 msgstr "Email地址："
 
-#: molly/templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:17
 msgid "Reset my password"
 msgstr "重设我的密码"
 
-#: userena/forms.py:30
+#: tracking/__init__.py:14
+msgid "Tracking"
+msgstr "访问跟踪"
+
+#: tracking/models.py:63
+msgid "unknown"
+msgstr ""
+
+#: tracking/models.py:108
+msgid "keyword"
+msgstr "关键词"
+
+#: tracking/models.py:108
+msgid "Part or all of a user-agent string.  For example, \"Googlebot\" here will be found in \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\" and that visitor will not be tracked."
+msgstr ""
+
+#: tracking/models.py:115
+msgid "Untracked User-Agent"
+msgstr "禁止的用户代理"
+
+#: tracking/models.py:116
+msgid "Untracked User-Agents"
+msgstr "禁止的用户代理"
+
+#: tracking/models.py:119
+msgid "The IP address that should be banned"
+msgstr "这个IP地址将被禁止"
+
+#: tracking/models.py:126
+msgid "Banned IP"
+msgstr "禁止的IP"
+
+#: tracking/models.py:127
+msgid "Banned IPs"
+msgstr "禁止的IP段"
+
+#: tracking/views.py:80
+#, python-format
+msgid "%(minutes)i minute"
+msgid_plural "%(minutes)i minutes"
+msgstr[0] ""
+
+#: tracking/views.py:86
+#, python-format
+msgid "%(seconds)i second"
+msgid_plural "%(seconds)i seconds"
+msgstr[0] ""
+
+#: tracking/templates/tracking/_active_users.html:2
+#, python-format
+msgid "1 active user"
+msgid_plural "%(counter)s active users"
+msgstr[0] "%(counter)s 个激活用户"
+
+#: tracking/templates/tracking/_active_users.html:5
+#, python-format
+msgid "1 guest user"
+msgid_plural "%(counter)s guest users"
+msgstr[0] "%(counter)s 个游客用户"
+
+#: tracking/templates/tracking/_active_users.html:15
+#, python-format
+msgid "1 registered user"
+msgid_plural "%(counter)s registered users"
+msgstr[0] "%(counter)s 个已注册用户"
+
+#: tracking/templates/tracking/visitor_map.html:4
+msgid "Active Visitors Map"
+msgstr ""
+
+#: tracking/templates/tracking/visitor_map.html:22
+msgid "Active Users"
+msgstr "激活的用户"
+
+#: tracking/templates/tracking/visitor_map.html:25
+msgid "Below is a map and a list of recently active users on this site.  It updates itself every 5 seconds or so, adding and removing pins in the map as necessary.  Stick around for a few minutes to see it in action!"
+msgstr ""
+
+#: userena/__init__.py:14
+msgid "Userna"
+msgstr "用户管理"
+
+#: userena/forms.py:37
 msgid "Username must contain only letters, numbers, dots and underscores."
 msgstr "用户名只能包含字母、数字以及符号"
 
-#: userena/forms.py:33
-#: userena/forms.py:192
+#: userena/forms.py:40
+#: userena/forms.py:213
 #: userena/templates/userena/profile_detail.html:27
 msgid "Email"
 msgstr "Email"
 
-#: userena/forms.py:36
+#: userena/forms.py:43
 msgid "Create password"
 msgstr "创建密码"
 
-#: userena/forms.py:39
+#: userena/forms.py:46
 msgid "Repeat password"
 msgstr "重设密码"
 
-#: userena/forms.py:42
+#: userena/forms.py:49
 msgid "Mobile"
 msgstr "Mobile"
 
-#: userena/forms.py:56
+#: userena/forms.py:63
 msgid "This username is already taken."
 msgstr "这个用户名已经被使用了"
 
-#: userena/forms.py:58
+#: userena/forms.py:65
 msgid "This username is not allowed."
 msgstr "这个用户名不允许使用"
 
-#: userena/forms.py:64
-#: userena/forms.py:234
+#: userena/forms.py:71
+#: userena/forms.py:255
 msgid "This email is already in use. Please supply a different email."
 msgstr "这个Email地址已经被使用，请尝试其他邮件地址"
 
-#: userena/forms.py:76
+#: userena/forms.py:83
 msgid "The two password fields didn't match."
 msgstr "两次密码输入不一至"
 
-#: userena/forms.py:156
+#: userena/forms.py:142
+msgid "这个手机号码已经被注册了，请确认您输入的手机号码！"
+msgstr ""
+
+#: userena/forms.py:177
 msgid "I have read and agree to the Terms of Service"
 msgstr "您已经阅读并且同意服务协议"
 
-#: userena/forms.py:157
+#: userena/forms.py:178
 msgid "You must agree to the terms to register."
 msgstr "你必须同意以上条款才能注册"
 
-#: userena/forms.py:170
+#: userena/forms.py:191
 #, python-format
 msgid "%(label)s"
 msgstr ""
 
-#: userena/forms.py:173
+#: userena/forms.py:194
 #, python-format
 msgid "%(error)s"
 msgstr "%(error)s"
 
-#: userena/forms.py:180
+#: userena/forms.py:201
 msgid "Email or username"
 msgstr "Email或者用户名"
 
-#: userena/forms.py:181
+#: userena/forms.py:202
 msgid "Either supply us with your email or username."
 msgstr "请输入电子Email或者用户名"
 
-#: userena/forms.py:182
+#: userena/forms.py:203
 msgid "Password"
 msgstr "密码"
 
-#: userena/forms.py:186
+#: userena/forms.py:207
 #, python-format
 msgid "Remember me for %(days)s"
 msgstr "记住我 %(days)s 天"
 
-#: userena/forms.py:193
+#: userena/forms.py:214
 msgid "Please supply your email."
 msgstr "请提供你的Email地址"
 
-#: userena/forms.py:208
+#: userena/forms.py:229
 msgid "Please enter a correct username or email and password. Note that both fields are case-sensitive."
 msgstr "请输入正确的用户名或电子邮件地址和密码。请注意大写小区分"
 
-#: userena/forms.py:214
+#: userena/forms.py:235
 #: userena/templates/userena/email_confirm_complete.html:6
 msgid "New email"
 msgstr "新的Email"
 
-#: userena/forms.py:232
+#: userena/forms.py:253
 msgid "You're already known under this email."
 msgstr "你已经知道下面的Email"
 
-#: userena/forms.py:248
+#: userena/forms.py:269
 msgid "First name"
 msgstr "姓"
 
-#: userena/forms.py:251
+#: userena/forms.py:272
 msgid "Last name"
 msgstr "姓"
 
@@ -539,9 +2814,8 @@ msgid "A personal image displayed in your profile."
 msgstr "个人形象显示在你的个人资料里面"
 
 #: userena/models.py:222
-#, fuzzy
 msgid "privacy"
-msgstr "隐私权"
+msgstr "隐私协议"
 
 #: userena/models.py:226
 msgid "Designates who can view your profile."
@@ -553,7 +2827,6 @@ msgid "%(first_name)s %(last_name)s"
 msgstr "%(first_name)s %(last_name)s"
 
 #: userena/models.py:367
-#, fuzzy
 msgid "language"
 msgstr "语言"
 
@@ -576,10 +2849,6 @@ msgstr "你的个人资料已经更新"
 #: userena/views.py:544
 msgid "You don't have permission to view this profile."
 msgstr "您没有查看这个个人资料"
-
-#: userena/contrib/umessages/admin.py:25
-msgid "Date/time"
-msgstr "Date/time"
 
 #: userena/contrib/umessages/fields.py:56
 #, python-format
@@ -801,7 +3070,6 @@ msgid "From now on you can use your new password to signin"
 msgstr "从现在开始你可以用你的密码登陆"
 
 #: userena/templates/userena/password_form.html:17
-#, fuzzy
 msgid "Change Password"
 msgstr "修改密码"
 
@@ -865,10 +3133,6 @@ msgstr "名字"
 #: userena/templates/userena/profile_detail.html:30
 msgid "Age"
 msgstr "年龄"
-
-#: userena/templates/userena/profile_detail.html:33
-msgid "Website"
-msgstr "网站"
 
 #: userena/templates/userena/profile_detail.html:36
 msgid "Location"
@@ -958,599 +3222,813 @@ msgstr "你已经发送一封激活链接的电子邮件到提供的电子邮件
 msgid "We will store your signup information for %(userena_activation_days)s days on our server. "
 msgstr "我们将会保存您每天的登陆信息在您的服务器上"
 
+#~ msgid "Account"
+#~ msgstr "账户"
+
+#~ msgid "Save your data"
+#~ msgstr "保存您的数据"
+
+#~ msgid "by setting a username and password"
+#~ msgstr "通过设置一个用户名和密码"
+
 #~ msgid "Please use WebLearn on a desktop PC to retrieve them."
 #~ msgstr "请在桌面电脑使用WebLearn"
+
 #~ msgid "Group: Administration & Applications"
 #~ msgstr "组：系统管理&应用程序"
+
 #~ msgid "Administration"
 #~ msgstr "系统管理"
+
 #~ msgid "Applications"
 #~ msgstr "程序"
+
 #~ msgid "AppList: Applications"
 #~ msgstr "程序列表：应用程序"
+
 #~ msgid "ModelList: Administration"
 #~ msgstr "模块列表：系统管理"
+
 #~ msgid "Media Management"
 #~ msgstr "媒体管理"
+
 #~ msgid "Support"
 #~ msgstr "提供"
+
 #~ msgid "Grappelli Documentation"
 #~ msgstr "文档"
-#~ msgid "Recent Actions"
-#~ msgstr "最近动作"
+
 #~ msgid "Dashboard"
 #~ msgstr "仪表盘"
+
 #~ msgid "English"
 #~ msgstr "英语"
-#~ msgid "French"
-#~ msgstr "法语"
+
 #~ msgid "German"
 #~ msgstr "德语"
+
 #~ msgid "Spanish"
 #~ msgstr "西班牙语"
+
 #~ msgid "Italian"
 #~ msgstr "印度语"
+
 #~ msgid "Dutch"
 #~ msgstr "荷兰"
+
 #~ msgid "Hungarian"
 #~ msgstr " 匈牙利"
+
 #~ msgid "Russian"
 #~ msgstr "俄语"
+
 #~ msgid "Polish"
 #~ msgstr "波兰"
+
 #~ msgid "Brazilian Portuguese"
 #~ msgstr "葡萄牙语"
+
 #~ msgid "Simplified Chinese"
 #~ msgstr "简体中文"
-#~ msgid "Latest entries"
-#~ msgstr "最新日志"
+
 #~ msgid "The latest entries for the site %s"
 #~ msgstr " %s 网站的最新内容"
+
 #~ msgid "Entries for the category %s"
 #~ msgstr "类别 %s 的日志"
+
 #~ msgid "The latest entries for the category %s"
 #~ msgstr " %s 分类的最新内容"
-#~ msgid "Entries for author %s"
-#~ msgstr "作者 %s 的日志"
+
 #~ msgid "The latest entries by %s"
 #~ msgstr " %s 的的最新内容"
+
 #~ msgid "Entries for the tag %s"
 #~ msgstr "标签含 %s 的日志"
+
 #~ msgid "The latest entries for the tag %s"
 #~ msgstr " %s 标签的最新内容"
+
 #~ msgid "Results of the search for %s"
 #~ msgstr "搜索 %s 的结果"
+
 #~ msgid "The entries containing the pattern %s"
 #~ msgstr " %s 的的最新内容"
+
 #~ msgid "Discussions on %s"
 #~ msgstr " %s 的相关评论"
+
 #~ msgid "The latest discussions for the entry %s"
 #~ msgstr " %s 的最新评论"
+
 #~ msgid "Comments on %s"
 #~ msgstr "对于 %s 的评论"
+
 #~ msgid "The latest comments for the entry %s"
 #~ msgstr "%s 的最新评论"
+
 #~ msgid "Pingbacks on %s"
 #~ msgstr " %s 的Pingbacks"
+
 #~ msgid "The latest pingbacks for the entry %s"
 #~ msgstr "%s 的最新pingbacks"
+
 #~ msgid "Trackbacks on %s"
 #~ msgstr "引用于 %s"
+
 #~ msgid "The latest trackbacks for the entry %s"
 #~ msgstr " %s 的最新pingbacks"
+
 #~ msgid "title"
 #~ msgstr "标题"
+
 #~ msgid "used for publication"
 #~ msgstr "用于发布"
+
 #~ msgid "description"
 #~ msgstr "描述"
+
 #~ msgid "parent category"
 #~ msgstr "上级分类"
+
 #~ msgid "category"
 #~ msgstr "类别"
-#~ msgid "categories"
-#~ msgstr "类别"
+
 #~ msgid "draft"
 #~ msgstr "草稿"
+
 #~ msgid "hidden"
 #~ msgstr "隐藏"
+
 #~ msgid "published"
 #~ msgstr "发布"
+
 #~ msgid "image"
 #~ msgstr "图片"
+
 #~ msgid "excerpt"
 #~ msgstr "摘要"
+
 #~ msgid "optional element"
 #~ msgstr "可选项"
+
 #~ msgid "tags"
 #~ msgstr "标签"
+
 #~ msgid "related entries"
 #~ msgstr "相关日志"
+
 #~ msgid "authors"
 #~ msgstr "作者"
-#~ msgid "featured"
-#~ msgstr "推荐的"
+
 #~ msgid "comment enabled"
 #~ msgstr "允许评论"
+
 #~ msgid "linkback enabled"
 #~ msgstr "已允许linkback"
-#~ msgid "creation date"
-#~ msgstr "创建日期"
+
 #~ msgid "last update"
 #~ msgstr "最后更新"
-#~ msgid "start publication"
-#~ msgstr "开始发布"
+
 #~ msgid "date start publish"
 #~ msgstr "开始发布日期"
+
 #~ msgid "end publication"
 #~ msgstr "结束发布"
+
 #~ msgid "date end publish"
 #~ msgstr "结束发布日期"
+
 #~ msgid "sites publication"
 #~ msgstr "发布网站"
+
 #~ msgid "login required"
 #~ msgstr "需要登录"
+
 #~ msgid "only authenticated users can view the entry"
 #~ msgstr "只有认证的用户才能查看"
+
 #~ msgid "password"
 #~ msgstr "密码"
+
 #~ msgid "protect the entry with a password"
 #~ msgstr "增加密码保护"
+
 #~ msgid "template"
 #~ msgstr "模板"
+
 #~ msgid "Default template"
 #~ msgstr "默认模板"
+
 #~ msgid "template used to display the entry"
 #~ msgstr "已被使用的模板"
+
 #~ msgid "entry"
 #~ msgstr "日志"
+
 #~ msgid "entries"
 #~ msgstr "日志"
+
 #~ msgid "[%(site)s] New comment posted on \"%(title)s\""
 #~ msgstr "[%(site)s] New comment posted on \"%(title)s\""
+
 #~ msgid "tree path"
 #~ msgstr "树形路径"
+
 #~ msgid "Content"
 #~ msgstr "内容"
+
 #~ msgid "Options"
 #~ msgstr "选项"
+
 #~ msgid "Discussion"
 #~ msgstr "评论"
+
 #~ msgid "Publication"
 #~ msgstr "发布"
+
 #~ msgid "%(title)s (%(word_count)i words)"
 #~ msgstr "%(title)s (%(word_count)i 个字符)"
+
 #~ msgid "%(title)s (%(comments)i comments)"
 #~ msgstr "%(title)s (%(comments)i 条评论)"
+
 #~ msgid "author(s)"
 #~ msgstr "作者"
+
 #~ msgid "category(s)"
 #~ msgstr "类别"
+
 #~ msgid "tag(s)"
 #~ msgstr "标签"
+
 #~ msgid "site(s)"
 #~ msgstr "网站"
+
 #~ msgid "is actual"
 #~ msgstr "发布期间"
+
 #~ msgid "is visible"
 #~ msgstr "是否可见"
+
 #~ msgid "<a href=\"%s\" target=\"blank\">View</a>"
 #~ msgstr "<a href=\"%s\" target=\"blank\">浏览</a>"
+
 #~ msgid "Unavailable"
 #~ msgstr "不存在"
+
 #~ msgid "short url"
 #~ msgstr "缩略URL"
+
 #~ msgid "Set the entries to the user"
 #~ msgstr "设置自己为所选日志的作者"
+
 #~ msgid "Set entries selected as published"
 #~ msgstr "发布所选日志"
+
 #~ msgid "Set entries selected as hidden"
 #~ msgstr "隐藏所选日志"
+
 #~ msgid "Tweet entries selected"
 #~ msgstr "推特所选日志"
+
 #~ msgid "Close the comments for selected entries"
 #~ msgstr "关闭所选日志的评论功能"
+
 #~ msgid "Close the linkbacks for selected entries"
 #~ msgstr "关闭所选记录的Linbacks"
+
 #~ msgid "Put the selected entries on top at the current date"
 #~ msgstr "将选定条目置顶"
+
 #~ msgid "%(directory)s directory succesfully pinged %(success)d entries."
 #~ msgstr "%(directory)s 目录成功的 ping了 %(success)d 条目."
+
 #~ msgid "Ping Directories for selected entries"
 #~ msgstr "提交所选日志到搜索引擎"
+
 #~ msgid "No parent category"
 #~ msgstr "没有上级分类"
+
 #~ msgid "A category cannot be parent of itself."
 #~ msgstr "不能成为自己的上级分类"
+
 #~ msgid "Categories"
 #~ msgstr "类别"
+
 #~ msgid "blog App Hook"
 #~ msgstr "博客应用程序钩子"
+
 #~ msgid "Sorting"
 #~ msgstr "分类"
+
 #~ msgid "Advanced"
 #~ msgstr "高级"
+
 #~ msgid "Selected entries"
 #~ msgstr "所选日志"
+
 #~ msgid "Random entries"
 #~ msgstr "随机日志"
+
 #~ msgid "blog Entry Menu"
 #~ msgstr "Blog内容菜单"
+
 #~ msgid "blog Category Menu"
 #~ msgstr "Blog分类菜单"
+
 #~ msgid "blog Author Menu"
 #~ msgstr "Blog作者菜单"
+
 #~ msgid "Authors"
 #~ msgstr "作者"
+
 #~ msgid "blog Tag Menu"
 #~ msgstr "Blog标签菜单"
+
 #~ msgid "Tags"
 #~ msgstr "标签"
+
 #~ msgid "Entry list (default)"
 #~ msgstr "内容列表（默认）"
+
 #~ msgid "include subcategories"
 #~ msgstr "包含子类"
-#~ msgid "number of entries"
-#~ msgstr "日志数量"
+
 #~ msgid "Template used to display the plugin"
 #~ msgstr "用于显示插件的模板"
-#~ msgid "%s entries"
-#~ msgstr "%s 日志"
+
 #~ msgid "Error 404"
 #~ msgstr "错误 404"
-#~ msgid "Page not found"
-#~ msgstr "找不到页面"
+
 #~ msgid "Sorry, but the requested page could not be found."
 #~ msgstr "对不起，找不到请求的页面"
+
 #~ msgid "Useful links"
 #~ msgstr "有用的连接"
+
 #~ msgid "Blog index"
 #~ msgstr "Blog索引"
+
 #~ msgid "Sitemap"
 #~ msgstr "Sitemap"
+
 #~ msgid "Recent entries"
 #~ msgstr "最近日志"
-#~ msgid "Search"
-#~ msgstr "搜索"
-#~ msgid "Keywords..."
-#~ msgstr "关键词..."
+
 #~ msgid "Error 500"
 #~ msgstr "错误 500"
-#~ msgid "Server error"
-#~ msgstr "服务器错误"
-#~ msgid ""
-#~ "There's been an error. It's been reported to the site administrators via "
-#~ "e-mail and should be fixed shortly. Thanks for your patience."
-#~ msgstr "出现了错误，已经发送邮件通知了管理员进行修复，感谢您的耐心."
+
 #~ msgid "Contents"
 #~ msgstr "内容"
+
 #~ msgid "Discussions"
 #~ msgstr "评论"
-#~ msgid "%(entries)s entries"
-#~ msgstr "%(entries)s 条目"
+
 #~ msgid "%(comments)s comments"
 #~ msgstr "%(comments)s 评论"
+
 #~ msgid "%(categories)s categories"
 #~ msgstr "%(categories)s 分类"
+
 #~ msgid "%(pingbacks)s pingbacks"
 #~ msgstr "%(pingbacks)s pingbacks"
+
 #~ msgid "%(tags)s tags"
 #~ msgstr "%(tags)s 标签"
+
 #~ msgid "%(trackbacks)s trackbacks"
 #~ msgstr "%(trackbacks)s 引用"
+
 #~ msgid "%(authors)s authors"
 #~ msgstr "%(authors)s 作者"
+
 #~ msgid "%(rejects)s rejected"
 #~ msgstr "%(rejects)s rejected"
+
 #~ msgid "Edit the entry"
 #~ msgstr "编辑内容"
+
 #~ msgid "on"
 #~ msgstr "在"
+
 #~ msgid "Preview"
 #~ msgstr "预览"
+
 #~ msgid "No draft entries."
 #~ msgstr "没有草稿"
+
 #~ msgid "View all draft entries"
 #~ msgstr "查看所有草稿"
+
 #~ msgid "in"
 #~ msgstr "在"
+
 #~ msgid "Comment on"
 #~ msgstr "评论于"
+
 #~ msgid "Edit the comment"
 #~ msgstr "编辑评论"
+
 #~ msgid "No comments yet."
 #~ msgstr "还没有任何评论"
+
 #~ msgid "Manage the comments"
 #~ msgstr "管理评论"
+
 #~ msgid "made a linkback on"
 #~ msgstr "创建Linback于"
+
 #~ msgid "Edit the linkback"
 #~ msgstr "编辑Linback"
+
 #~ msgid "No linkbacks yet."
 #~ msgstr "还没有任何Linbacks"
+
 #~ msgid "Today"
 #~ msgstr "今天"
-#~ msgid "Draft entries"
-#~ msgstr "草稿"
+
 #~ msgid "Quick publishing"
 #~ msgstr "快速发布"
+
 #~ msgid "Title"
 #~ msgstr "标题"
+
 #~ msgid "Reset"
 #~ msgstr "重设"
+
 #~ msgid "Publish"
 #~ msgstr "发布"
+
 #~ msgid "Recent comments"
 #~ msgstr "最近评论"
+
 #~ msgid "Recent linkbacks"
 #~ msgstr "最近Linbacks"
+
 #~ msgid "Written by"
 #~ msgstr "作者是"
+
 #~ msgid "Show %(author)s entries"
 #~ msgstr "显示 %(author)s 的日志"
+
 #~ msgid "No tags"
 #~ msgstr "没有标签"
+
 #~ msgid "Short url"
 #~ msgstr "缩略URL"
+
 #~ msgid "%(comment_count)s comment"
+
 #~ msgid_plural "%(comment_count)s comments"
 #~ msgstr[0] "%(comment_count)s 条评论"
+
 #~ msgid "Be first to comment!"
 #~ msgstr "第一个评论"
+
 #~ msgid "Comments are closed."
 #~ msgstr "评论已关闭"
+
 #~ msgid "%(pingback_count)s pingback"
+
 #~ msgid_plural "%(pingback_count)s pingbacks"
 #~ msgstr[0] "%(pingback_count)s 条pingbacks"
+
 #~ msgid "%(trackback_count)s trackback"
+
 #~ msgid_plural "%(trackback_count)s trackbacks"
 #~ msgstr[0] "%(trackback_count)s 引用"
+
 #~ msgid "Author list"
 #~ msgstr "作者列表"
+
 #~ msgid "%(entry_count)s entry"
+
 #~ msgid_plural "%(entry_count)s entries"
 #~ msgstr[0] "%(entry_count)s 记录"
+
 #~ msgid ""
 #~ "You can use - to exclude words or phrases, &quot;double quotes&quot; for "
 #~ "exact phrases and the AND/OR boolean operators combined with parenthesis "
 #~ "for complex searchs."
 #~ msgstr "你可以使用词或短语,以及ADN/OR等逻辑符号进行复杂的搜索."
+
 #~ msgid "Calendar"
 #~ msgstr "日历"
+
 #~ msgid "Popular entries"
 #~ msgstr "热门日志"
+
 #~ msgid "Archives"
 #~ msgstr "归档"
+
 #~ msgid "Tools"
 #~ msgstr "工具"
+
 #~ msgid "Post an entry"
 #~ msgstr "发布"
+
 #~ msgid "Category list"
 #~ msgstr "类别列表"
+
 #~ msgid "Daily archives"
 #~ msgstr "每日归档"
+
 #~ msgid "Monthly archives"
 #~ msgstr "每月归档"
+
 #~ msgid "RSS Feed of comments on"
 #~ msgstr "RSS 订阅（基于评论）"
-#~ msgid "Next entry"
-#~ msgstr "下一篇"
+
 #~ msgid "Related entries"
 #~ msgstr "相关日志"
+
 #~ msgid "Similar entries"
 #~ msgstr "类似日志"
-#~ msgid "Comments"
-#~ msgstr "评论"
+
 #~ msgid "Pingbacks"
 #~ msgstr "Pingbacks"
+
 #~ msgid "Pingbacks are open."
 #~ msgstr "Pingbacks已开放."
+
 #~ msgid "Pingbacks are closed."
 #~ msgstr "Pingbacks已关闭."
+
 #~ msgid "Trackbacks"
 #~ msgstr "引用"
+
 #~ msgid "Trackback URL"
 #~ msgstr "引用地址"
+
 #~ msgid "RSS Feed"
 #~ msgstr "RSS 订阅"
-#~ msgid "Category"
-#~ msgstr "类别"
+
 #~ msgid "Tag"
 #~ msgstr "标签"
-#~ msgid "Author"
-#~ msgstr "作者"
+
 #~ msgid "Page"
 #~ msgstr "页码"
-#~ msgid "Entries by %(author)s"
-#~ msgstr "作者 %(author)s 的日志"
+
 #~ msgid "No entries yet."
 #~ msgstr "还没有任何内容"
+
 #~ msgid "More recent entries"
 #~ msgstr "更多最近日志"
+
 #~ msgid "Entries page"
 #~ msgstr "内容页面"
+
 #~ msgid "More old entries"
 #~ msgstr "更多以前日志"
+
 #~ msgid "Edit the category"
 #~ msgstr "编辑分类"
+
 #~ msgid "Edit the tag"
 #~ msgstr "编辑标签"
+
 #~ msgid "Edit the author"
 #~ msgstr "编辑作者"
-#~ msgid "Search results"
-#~ msgstr "搜索结果"
+
 #~ msgid "RSS Feed of search result of"
 #~ msgstr "RSS 订阅（基于搜索）"
+
 #~ msgid "%(entry_count)s entry found"
+
 #~ msgid_plural "%(entry_count)s entries found"
 #~ msgstr[0] "找到 %(entry_count)s 条记录"
+
 #~ msgid "Nothing found."
 #~ msgstr "没有找到"
-#~ msgid "Login required"
-#~ msgstr "需要登录"
+
 #~ msgid "Your username and password didn't match. Please try again."
 #~ msgstr "您的用户名与密码不符，请重试"
+
 #~ msgid "Login"
 #~ msgstr "登录"
+
 #~ msgid "Password required"
 #~ msgstr "需要密码"
+
 #~ msgid "The password provided is not valid. Please try again."
 #~ msgstr "您输入的密码有误，请重试"
+
 #~ msgid "You need to provide a password to view this entry."
 #~ msgstr "您需要提供密码来查看这个内容"
+
 #~ msgid "Valid"
 #~ msgstr "有效的"
+
 #~ msgid "Entries per categories"
 #~ msgstr "每个分类的记录"
+
 #~ msgid "comment"
 #~ msgstr "评论"
+
 #~ msgid "All the entries"
 #~ msgstr "所有的内容"
+
 #~ msgid "No categories yet."
 #~ msgstr "还没有任何分类"
+
 #~ msgid "RSS Feed of latest entries"
 #~ msgstr "最新记录的RSS订阅"
+
 #~ msgid "Share"
 #~ msgstr "分享"
+
 #~ msgid "Tag list"
 #~ msgstr "标签列表"
+
 #~ msgid "No archives yet."
 #~ msgstr "还没有任何归档"
+
 #~ msgid "No authors yet."
 #~ msgstr "还没有任何作者"
+
 #~ msgid "Linkback on"
 #~ msgstr "Linkback于"
+
 #~ msgid "No similar entries."
 #~ msgstr "没有类似日志"
+
 #~ msgid "Comment preview"
 #~ msgstr "评论预览"
+
 #~ msgid "Please correct following error."
+
 #~ msgid_plural "Please correct following errors."
 #~ msgstr[0] "请检查错误."
+
 #~ msgid "Preview of the comment"
 #~ msgstr "预览评论"
+
 #~ msgid "Post your comment"
 #~ msgstr "发表评论"
+
 #~ msgid "Post"
 #~ msgstr "发表"
+
 #~ msgid "Thanks for your comment"
 #~ msgstr "感谢你的评论"
+
 #~ msgid "Return to entry list"
 #~ msgstr "返回日志列表"
+
 #~ msgid "The pattern is too short"
 #~ msgstr "模式长度不够"
+
 #~ msgid "No pattern to search found"
 #~ msgstr "没有搜索到相关模式"
+
 #~ msgid "Username is incorrect."
 #~ msgstr "无效用户名"
+
 #~ msgid "Password is invalid."
 #~ msgstr "无效密码"
+
 #~ msgid "User account unavailable."
 #~ msgstr "用户账户不可用"
-#~ msgid "User cannot %s."
-#~ msgstr "用户不能 %s."
+
 #~ msgid "No title"
 #~ msgstr "没有标题"
+
 #~ msgid "Schedule"
 #~ msgstr "计划"
+
 #~ msgid "Job"
 #~ msgstr "作业"
-#~ msgid "Scheduled"
-#~ msgstr "计划的"
+
 #~ msgid "Running"
 #~ msgstr "正在运行"
+
 #~ msgid "Failed"
 #~ msgstr "已失败"
+
 #~ msgid "Complete"
 #~ msgstr "完成"
+
 #~ msgid "Expired"
 #~ msgstr "过期的"
+
 #~ msgid "time slot start"
 #~ msgstr "开始时间段"
+
 #~ msgid "time slot end"
 #~ msgstr "结束时间段"
-#~ msgid "status"
-#~ msgstr "状态"
+
 #~ msgid "content type"
 #~ msgstr "内容类型"
+
 #~ msgid "callable name"
 #~ msgstr "callable name"
+
 #~ msgid "args"
 #~ msgstr "args"
+
 #~ msgid "kwargs"
 #~ msgstr "kwargs"
+
 #~ msgid "return value"
 #~ msgstr "返回值"
+
 #~ msgid "scheduled job"
 #~ msgstr "计划任务"
+
 #~ msgid "scheduled jobs"
 #~ msgstr "计划任务"
+
 #~ msgid "collect"
 #~ msgstr "收集"
-#~ msgid "Posts under %(tag)s tag - %(site_name)s"
-#~ msgstr "%(tag)s 标签下的- %(site_name)s"
+
 #~ msgid "Posts by %(author_name)s under %(tag)s tag - %(site_name)s"
 #~ msgstr "%(author_name)s 发布于%(tag)s标签下的- %(site_name)s"
+
 #~ msgid "Posts"
 #~ msgstr "发布"
+
 #~ msgid "Blogs"
 #~ msgstr "博客"
-#~ msgid "Feeds"
-#~ msgstr "订阅"
+
 #~ msgid "Url"
 #~ msgstr "Url"
+
 #~ msgid "Date created"
 #~ msgstr "创建日期"
+
 #~ msgid "Blog"
 #~ msgstr "博客"
-#~ msgid "Generator"
-#~ msgstr "生成器"
+
 #~ msgid "Generators"
 #~ msgstr "生成器"
+
 #~ msgid "Subtitle"
 #~ msgstr "标题"
+
 #~ msgid "Rights"
 #~ msgstr "权限"
+
 #~ msgid "Infos"
 #~ msgstr "信息"
+
 #~ msgid "Global Unique Identifier"
 #~ msgstr "全局唯一标识符"
+
 #~ msgid "Icon URL"
 #~ msgstr "图标地址"
+
 #~ msgid "Image URL"
 #~ msgstr "图片地址"
+
 #~ msgid "Etag"
 #~ msgstr "Etag"
+
 #~ msgid "Last checked"
 #~ msgstr "最后审核"
+
 #~ msgid "If disabled, this feed will not be further updated."
 #~ msgstr "如果禁止，订阅将不会被更新"
+
 #~ msgid "Feed"
 #~ msgstr "订阅"
+
 #~ msgid "Is Contributor?"
 #~ msgstr "贡献者？"
+
 #~ msgid "Comments URL"
 #~ msgstr "评论地址"
+
 #~ msgid "Date modified"
 #~ msgstr "日期已修改"
+
 #~ msgid "Author email"
 #~ msgstr "作者邮件"
+
 #~ msgid "Relation"
 #~ msgstr "关系"
+
 #~ msgid "MIME type"
 #~ msgstr "MIME类型"
+
 #~ msgid "Feed Link"
 #~ msgstr "订阅地址"
+
 #~ msgid "Feed Links"
 #~ msgstr "订阅地址"
+
 #~ msgid "Post Link"
 #~ msgstr "发布地址"
+
 #~ msgid "Post Links"
 #~ msgstr "发布地址"
+
 #~ msgid "Length"
 #~ msgstr "长度"
+
 #~ msgid "admin site"
 #~ msgstr "管理站点"
+
 #~ msgid ""
 #~ "Theme heavly based on the minimal and beautiful <a href=\"http://blog."
 #~ "montylounge.com/\" title=\"Visit Mounty Lounge Industries blog\">Mounty "
@@ -1558,244 +4036,208 @@ msgstr "我们将会保存您每天的登陆信息在您的服务器上"
 #~ msgstr ""
 #~ "使用基于<a href=\"http://blog.montylounge.com/\" title=\"Visit Mounty "
 #~ "Lounge Industries blog\">Mounty Lounge Industries blog's</a> 设计的皮肤"
+
 #~ msgid "Browse"
 #~ msgstr "浏览"
+
 #~ msgid "Tag Cloud"
 #~ msgstr "标签云"
-#~ msgid "Search in"
-#~ msgstr "搜索于"
+
 #~ msgid "This is a django powered site!"
 #~ msgstr "这是一个基于django的网站！"
+
 #~ msgid ""
 #~ "A <a href=\"https://github.com/alexliyu/lincdm\" title=\"LinCDM Powered"
 #~ "\">LinCDM</a> powered site"
 #~ msgstr ""
 #~ "基于 <a href=\"https://github.com/alexliyu/lincdm\" title=\"LinCDM Powered"
 #~ "\">LinCDM</a> 系统的网站"
+
 #~ msgid "blog"
 #~ msgstr "博客"
+
 #~ msgid "See the list of authors talking about this tag"
 #~ msgstr "查看这个标签的相关作者列表"
+
 #~ msgid "People talking about this"
 #~ msgstr "相关人们"
+
 #~ msgid "See the list of blogs talking about this tag"
 #~ msgstr "查看这个标签的相关博客列表"
+
 #~ msgid "Feeds talking about this"
 #~ msgstr "相关订阅"
+
 #~ msgid "See the complete list of posts by this author"
 #~ msgstr "查看这个作者的所有发布列表"
+
 #~ msgid "Authors list"
 #~ msgstr "作者列表"
+
 #~ msgid "Author:"
 #~ msgstr "作者："
+
 #~ msgid "Authors talking about"
 #~ msgstr "作者们谈论"
+
 #~ msgid "Authrs"
 #~ msgstr "作者"
+
 #~ msgid "Author of"
 #~ msgstr "的作者"
+
 #~ msgid "Posts in"
 #~ msgstr "发布于"
+
 #~ msgid "Go to the original blog"
 #~ msgstr "转到原博客"
+
 #~ msgid "RSS 2.0 Feed"
 #~ msgstr "RSS2.0 订阅"
+
 #~ msgid "feed"
 #~ msgstr "订阅"
+
 #~ msgid "See the full list of post from this feed"
 #~ msgstr "查看这个订阅的所有内容"
+
 #~ msgid "Blogs list"
 #~ msgstr "博客列表"
+
 #~ msgid "See the full list of posts from this blog"
 #~ msgstr "查看这个博客的所有内容"
+
 #~ msgid "browse"
 #~ msgstr "浏览"
+
 #~ msgid "Feed icon"
 #~ msgstr "订阅图标"
+
 #~ msgid "Feeds list"
 #~ msgstr "订阅列表"
+
 #~ msgid "See the full list of posts from this feed"
 #~ msgstr "查看这个订阅的所有内容"
+
 #~ msgid "Feeds talking about"
 #~ msgstr "相关订阅"
+
 #~ msgid "published in"
 #~ msgstr "发布于"
+
 #~ msgid "See all posts for this feed"
 #~ msgstr "查看这个订阅发布的"
+
 #~ msgid "Read more"
 #~ msgstr "阅读全文"
+
 #~ msgid "Read original post"
 #~ msgstr "阅读原文"
+
 #~ msgid "read original post"
 #~ msgstr "阅读原文"
+
 #~ msgid "See all posts for this author"
 #~ msgstr "查看这个作者发布的"
+
 #~ msgid "original entry"
 #~ msgstr "原文"
+
 #~ msgid "in blog"
 #~ msgstr "于博客"
+
 #~ msgid "Posts list"
 #~ msgstr "发布列表"
+
 #~ msgid "Latest posts"
 #~ msgstr "最新发布"
+
 #~ msgid "Tags cloud"
 #~ msgstr "标签云"
+
 #~ msgid "tag"
 #~ msgstr "标签"
+
 #~ msgid "See the list of feeds talking about this tag"
 #~ msgstr "查看这个标签的相关订阅列表"
+
 #~ msgid "Tags list"
 #~ msgstr "标签列表"
+
 #~ msgid "Tags cloud for author"
 #~ msgstr "作者的标签云"
+
 #~ msgid "Tags cloud for blog"
 #~ msgstr "博客的标签云"
+
 #~ msgid "Tags cloud for feed"
 #~ msgstr "订阅的标签云"
+
 #~ msgid "Related tags"
 #~ msgstr "相关标签"
-#~ msgid "Quick links"
-#~ msgstr "快捷连接"
+
 #~ msgid "Return to site"
 #~ msgstr "返回网站"
-#~ msgid "Django documentation"
-#~ msgstr "Django文档"
+
 #~ msgid "Django \"django-users\" mailing list"
 #~ msgstr "Django \"django-users\" 邮件列表"
+
 #~ msgid "Django irc channel"
 #~ msgstr "Django irc 频道"
-#~ msgid "Links"
-#~ msgstr "连接"
+
 #~ msgid "No recent actions."
 #~ msgstr "没有最近动作"
-#~ msgid "Add"
-#~ msgstr "新增"
+
 #~ msgid "None Available"
 #~ msgstr "不可用"
-#~ msgid "We're sorry, but the requested page could not be found."
-#~ msgstr "对不起，找不到请求的页面！"
-#~ msgid "Server error (500)"
-#~ msgstr "服务器错误（500）"
-#~ msgid "Server Error <em>(500)</em>"
-#~ msgstr "服务器错误 <em>(500)</em>"
-#~ msgid "Select all %(total_count)s %(module_name)s"
-#~ msgstr "选择全部%(total_count)s 个 %(module_name)s"
-#~ msgid "Clear selection"
-#~ msgstr "清除选择"
-#~ msgid "%(name)s"
-#~ msgstr "%(name)s"
+
 #~ msgid "Django site admin"
 #~ msgstr "网站管理"
-#~ msgid "Django administration"
-#~ msgstr "网站管理"
-#~ msgid "Add %(name)s"
-#~ msgstr "新增 %(name)s"
-#~ msgid "Filter"
-#~ msgstr "筛选"
-#~ msgid "Export selection as CSV"
-#~ msgstr "导出所选为CSV"
-#~ msgid "Export following fields:"
-#~ msgstr "导出以下："
-#~ msgid "Select all"
-#~ msgstr "全选"
-#~ msgid "Back"
-#~ msgstr "后退"
-#~ msgid "Export"
-#~ msgstr "导出"
-#~ msgid "Delete"
-#~ msgstr "删除"
-#~ msgid "Cancel"
-#~ msgstr "取消"
-#~ msgid "Yes, I'm sure"
-#~ msgstr "是，我却定"
-#~ msgid "Delete multiple objects"
-#~ msgstr "删除多个对象"
-#~ msgid ""
-#~ "Are you sure you want to delete the selected %(objects_name)s objects? "
-#~ "All of the following objects and their related items will be deleted:"
-#~ msgstr ""
-#~ "您确定想要删除已选的%(objects_name)s 对象？所有的对象及其相关的项目都会被"
-#~ "删除："
-#~ msgid "%(filter_title)s"
-#~ msgstr "%(filter_title)s"
-#~ msgid "My Actions"
-#~ msgstr "我的动作"
-#~ msgid "None available"
-#~ msgstr "不可用"
-#~ msgid ""
-#~ "Something's wrong with your database installation. Make sure the "
-#~ "appropriate database tables have been created, and make sure the database "
-#~ "is readable by the appropriate user."
-#~ msgstr ""
-#~ "您的数据库出现了一些问题，请确认您的数据库表格已全部建立，同时确认数据库可"
-#~ "以被读取."
-#~ msgid "Password:"
-#~ msgstr "密码："
-#~ msgid "Created object"
-#~ msgstr "已创建对象"
-#~ msgid "1 result"
-#~ msgid_plural "%(counter)s results"
-#~ msgstr[0] "%(counter)s 个结果"
-#~ msgid "%(full_result_count)s total"
-#~ msgstr "共%(full_result_count)s 条"
-#~ msgid "Show all"
-#~ msgstr "全部显示"
-#~ msgid "Save and add another"
-#~ msgstr "保存并继续"
-#~ msgid "Save and continue editing"
-#~ msgstr "保存并继续编辑"
-#~ msgid "Password (again)"
-#~ msgstr "密码（再次）"
-#~ msgid "Enter the same password as above, for verification."
-#~ msgstr "请输入相同相同的密码，以用来验证."
-#~ msgid "Open All Items"
-#~ msgstr "打开所有项目"
-#~ msgid "Close All Items"
-#~ msgstr "关闭所有项目"
-#~ msgid "Add Item"
-#~ msgstr "新增项目"
-#~ msgid "View on Site"
-#~ msgstr "浏览站点"
-#~ msgid "Move Item"
-#~ msgstr "移动项目"
-#~ msgid "Delete Item"
-#~ msgstr "删除项目"
-#~ msgid "Remove"
-#~ msgstr "移除"
-#~ msgid "Tests"
-#~ msgstr "测试"
+
 #~ msgid "Bookmarklets"
 #~ msgstr "书签 "
+
 #~ msgid "Documentation bookmarklets"
 #~ msgstr "文档书签"
+
 #~ msgid "Documentation for this page"
 #~ msgstr "本页的文档"
+
 #~ msgid "Show object ID"
 #~ msgstr "显示对象ID"
+
 #~ msgid "Edit this object (current window)"
 #~ msgstr "编辑这个对象（当前窗口）"
+
 #~ msgid "Jumps to the admin page for pages that represent a single object."
 #~ msgstr "跳转到管理页面"
+
 #~ msgid "Edit this object (new window)"
 #~ msgstr "编辑这个对象（新窗口）"
+
 #~ msgid "Not Found"
 #~ msgstr "没有找到!"
+
 #~ msgid "Error"
 #~ msgstr "错误"
+
 #~ msgid "Modules"
 #~ msgstr "模块"
+
 #~ msgid "Please enter a name for the bookmark"
 #~ msgstr "请输入书签的名称"
+
 #~ msgid "Welcome,"
 #~ msgstr "欢迎，"
-#~ msgid "on date"
-#~ msgstr "日期"
+
 #~ msgid "Not yet comments !"
 #~ msgstr "尚未有评论"
+
 #~ msgid "%s - News"
 #~ msgstr "%s - 新闻"
+
 #~ msgid "author"
 #~ msgstr "作者"
+
 #~ msgid "Can view all"
 #~ msgstr "可以查看所有作者日志"
-

@@ -38,4 +38,4 @@ class UserProfile(UserenaBaseProfile):
     def __unicode__(self):
         return self.mobile
     def replacestr(self):
-        return "%s****%s"% (self.__str__()[0:3],self.__str__()[7:11])
+        return "%s****%s" % (self.__str__()[0:3], self.__str__()[7:11])

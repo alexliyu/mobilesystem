@@ -1,6 +1,14 @@
+#-*- coding:utf-8 -*-
+"""
+这是地理信息系统的后台注册文件，注册模型到django后台管理界面
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
 from django.contrib.gis import admin
 from apps.places.models import (Entity, EntityName, EntityType, EntityTypeName, EntityGroup,
-                    EntityGroupName, Route, StopOnRoute, Journey)
+                    EntityGroupName, Route, StopOnRoute, Journey, Identifier)
 
 class EntityTypeNameInline(admin.TabularInline):
     model = EntityTypeName
@@ -30,6 +38,9 @@ class EntityGroupAdmin(admin.ModelAdmin):
 
 
 class EntityAdmin(admin.OSMGeoAdmin):
+    """
+    注册GEO管理模型
+    """
     list_display = ('title', 'absolute_url', 'primary_type')
     list_filter = ('source', 'primary_type',)
     map_template = 'gis/admin/google.html'
@@ -47,9 +58,12 @@ class RouteAdmin(admin.ModelAdmin):
     inlines = [
         StopOnRouteInline
     ]
-
+"""
+注册后台管理模块
+"""
 admin.site.register(Entity, EntityAdmin)
 admin.site.register(EntityType, EntityTypeAdmin)
 admin.site.register(EntityGroup, EntityGroupAdmin)
 admin.site.register(Route, RouteAdmin)
 admin.site.register(Journey)
+admin.site.register(Identifier)

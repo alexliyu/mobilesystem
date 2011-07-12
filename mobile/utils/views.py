@@ -216,7 +216,7 @@ class BaseView(object):
         
         redirect = {
             'found': HttpResponseRedirect,
-            'perm': HttpResponsePermanentRedirect,   
+            'perm': HttpResponsePermanentRedirect,
             'secure': HttpResponsePermanentRedirect,
             'seeother': HttpResponseSeeOther,
         }.get(type)
@@ -281,7 +281,7 @@ class BaseView(object):
                 tried_mimetypes = list(itertools.chain(*[r.mimetypes
                                                          for r in renderers]))
                 response = HttpResponse(
-                  "Your Accept header didn't contain any supported media " +
+                  "Your Accept header didn't contain any supported media " + 
                   "ranges.\n\nSupported ranges are:\n\n * %s\n" % '\n * '.join(
                       sorted('%s (%s)' % (f[0].value, f[1].format) for f in
                       self.FORMATS_BY_MIMETYPE if not f[0] in tried_mimetypes)),
@@ -289,7 +289,7 @@ class BaseView(object):
             else:
                 print self.FORMATS
                 response = HttpResponse(
-                  "Unable to render this document in this format.\n\n"+
+                  "Unable to render this document in this format.\n\n" + 
                   "Supported formats are:\n\n * %s\n" \
                                 % '\n * '.join(self.FORMATS.keys()),
                   mimetype="text/plain")
@@ -329,7 +329,7 @@ class BaseView(object):
     def render_html(self, request, context, template_name):
         if template_name is None:
             raise NotImplementedError
-        return render_to_response(template_name+'.html',
+        return render_to_response(template_name + '.html',
                                   context,
                                   context_instance=RequestContext(request),
                                   mimetype='text/html;charset=UTF-8')
@@ -346,7 +346,7 @@ class BaseView(object):
     try:
         # Try importing, but don't stick the result in locals.
         __import__('yaml')
-        @renderer(format="yaml", mimetypes=('application/x-yaml',), priority=-1)
+        @renderer(format="yaml", mimetypes=('application/x-yaml',), priority= -1)
         def render_yaml(self, request, context, template_name):
             import yaml
             context = simplify_value(context)

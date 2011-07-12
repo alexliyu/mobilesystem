@@ -67,7 +67,7 @@ class ExternalServiceToken(models.Model):
             return default
 
     @classmethod
-    def set(self, user, namespace, value, authorized = None):
+    def set(self, user, namespace, value, authorized=None):
         try:
             token = self.objects.get(user=user, namespace=namespace)
         except self.DoesNotExist:

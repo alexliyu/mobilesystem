@@ -1,3 +1,18 @@
+#-*- coding:utf-8 -*-
+"""
+这是用于进行批量任务处理的应用，采用多线程处理系统一些批量性的后台业务
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
+from django.utils.translation import ugettext_lazy as _
+
+class Mete:
+    """
+    定义此应用程序的附加信息，诸如应用程序名
+    """
+    title = _('Batch_Processing')
+
 import simplejson, os.path, sys
 
 from django.conf import settings
@@ -27,10 +42,10 @@ def load_batches():
     batches = set()
     for batch_detail in batch_details:
         batch, _ = Batch.objects.get_or_create(
-            local_name = batch_detail['local_name'],
-            provider_name = batch_detail['provider_name'],
-            method_name = batch_detail['method_name'],
-            defaults = {'title': batch_detail['title'],
+            local_name=batch_detail['local_name'],
+            provider_name=batch_detail['provider_name'],
+            method_name=batch_detail['method_name'],
+            defaults={'title': batch_detail['title'],
                         'cron_stmt': batch_detail['cron_stmt'],
                         '_metadata': simplejson.dumps(batch_detail['initial_metadata'])})
         batches.add(batch)

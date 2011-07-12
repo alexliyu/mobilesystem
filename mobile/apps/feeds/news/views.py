@@ -72,7 +72,7 @@ class ItemDetailView(BaseView):
             self.conf.local_name,
             lazy_parent('item-list', slug=slug),
             'News item',
-            lazy_reverse('item-detail', args=[slug,id])
+            lazy_reverse('item-detail', args=[slug, id])
         )
         
     def handle_GET(self, request, context, slug, id):

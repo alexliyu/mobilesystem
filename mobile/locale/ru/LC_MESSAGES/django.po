@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-05 09:48+0800\n"
+"POT-Creation-Date: 2011-07-12 16:41+0800\n"
 "PO-Revision-Date: 2011-02-01 09:16+0000\n"
 "Last-Translator: Fantomas42 <fantomas42@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
@@ -34,8 +34,1506 @@ msgstr "Комментарий к "
 msgid "Latest Django News"
 msgstr "Последние записи"
 
-#: settings.py:41
+#: settings.py:57
 msgid "Chinese"
+msgstr ""
+
+#: apps/places/forms.py:12
+#, fuzzy
+msgid "Your name"
+msgstr "содержимое"
+
+#: apps/places/forms.py:13
+#, fuzzy
+msgid "Your e-mail address"
+msgstr "пароль"
+
+#: apps/places/forms.py:14
+msgid "Include name in update"
+msgstr ""
+
+#: apps/places/forms.py:19
+msgid "Opening hours"
+msgstr ""
+
+#: apps/places/forms.py:20
+msgid "Cuisine"
+msgstr ""
+
+#: apps/places/forms.py:22
+msgid "Phone number"
+msgstr ""
+
+#: apps/places/forms.py:24
+msgid "Food served"
+msgstr ""
+
+#: apps/places/forms.py:25
+msgid "Hours food is served"
+msgstr ""
+
+#: apps/places/forms.py:27
+msgid "ATM present"
+msgstr ""
+
+#: apps/places/forms.py:29 templates/places/metadata/osm.html:40
+#: templates/places/metadata/osm.html:47 templates/places/metadata/osm.html:54
+#: userena/templates/userena/profile_detail.html:33
+msgid "Website"
+msgstr ""
+
+#: apps/places/forms.py:31
+msgid "Reference (e.g. 'OX1 123')"
+msgstr ""
+
+#: apps/places/forms.py:32
+msgid "Collection times"
+msgstr ""
+
+#: apps/places/forms.py:34
+msgid "Capacity"
+msgstr ""
+
+#. Translators: These are compass points
+#: apps/places/models.py:245
+msgid "N"
+msgstr ""
+
+#: apps/places/models.py:245
+msgid "NE"
+msgstr ""
+
+#: apps/places/models.py:245
+msgid "E"
+msgstr ""
+
+#: apps/places/models.py:245
+msgid "SE"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "S"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "SW"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "W"
+msgstr ""
+
+#: apps/places/models.py:246
+msgid "NW"
+msgstr ""
+
+#: apps/places/models.py:567
+msgid "Scheduled time of arrival"
+msgstr ""
+
+#: apps/places/models.py:570
+msgid "Scheduled time of departure"
+msgstr ""
+
+#: apps/places/models.py:576
+msgid "Service starts here"
+msgstr ""
+
+#: apps/places/models.py:577
+msgid "Scheduled stop"
+msgstr ""
+
+#: apps/places/models.py:578
+msgid "Service picks up here only"
+msgstr ""
+
+#: apps/places/models.py:579
+msgid "Service does not pick up here"
+msgstr ""
+
+#: apps/places/models.py:580
+msgid "Service does not stop here"
+msgstr ""
+
+#: apps/places/models.py:581
+msgid "Service finishes here"
+msgstr ""
+
+#: apps/places/views.py:40
+msgid "places"
+msgstr ""
+
+#: apps/places/views.py:41
+msgid ""
+"Find University buildings and units, along with bus stops and local amenities"
+msgstr ""
+
+#: apps/places/views.py:48
+msgid "Places"
+msgstr ""
+
+#: apps/places/views.py:64
+msgid "Find things nearby"
+msgstr ""
+
+#: apps/places/views.py:65
+msgid "Search for things based on your current location"
+msgstr ""
+
+#: apps/places/views.py:73
+msgid "Things nearby"
+msgstr ""
+
+#: apps/places/views.py:165 templates/places/entity_without_location.html:4
+#: templates/places/entity_without_location.html:12
+#, python-format
+msgid "Things near %(title)s"
+msgstr ""
+
+#: apps/places/views.py:170
+#, fuzzy, python-format
+msgid "%(entity_type)s near %(entity)s"
+msgstr "%(entries)s записей"
+
+#: apps/places/views.py:175
+#, python-format
+msgid "%(et)s nearby"
+msgstr ""
+
+#: apps/places/views.py:187
+#, python-format
+msgid "<strong>%(number)d %(entity_type)s</strong> within 1km"
+msgstr ""
+
+#: apps/places/views.py:248
+#, python-format
+msgid "about %(distance)dm %(bearing)s"
+msgstr ""
+
+#: apps/places/views.py:253
+#, python-format
+msgid "service %(services)s stops here"
+msgid_plural "services %(services)s stop here"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: apps/places/views.py:630 templates/places/service_details.html:10
+msgid "Multiple routes found"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:132 apps/places/providers/naptan.py:694
+#: apps/places/providers/osm.py:454 apps/places/providers/osm.py:466
+#: apps/places/providers/osm.py:580 apps/places/providers/osm.py:670
+msgid "Transport"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:141
+msgid "travel alert"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:142
+msgid "a travel alert"
+msgstr ""
+
+#: apps/places/providers/bbc_tpeg.py:143
+msgid "travel alerts"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:205 apps/places/providers/naptan.py:206
+#: apps/places/providers/naptan.py:207
+msgid "Opposite"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:209
+msgid "Adjacent"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:211 apps/places/providers/naptan.py:212
+msgid "Outside"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:214
+msgid "Near"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:216
+msgid "Inside"
+msgstr ""
+
+#. Translators: This is referring to bus stop location descriptions
+#: apps/places/providers/naptan.py:218
+msgid "Stop"
+msgstr ""
+
+#. Translators: This is referring to public transport entities
+#: apps/places/providers/naptan.py:224
+#, fuzzy, python-format
+msgid "Entrance to %s"
+msgstr "Записи от %s"
+
+#. Translators: This is referring to ferry ports
+#: apps/places/providers/naptan.py:228
+#, python-format
+msgid "Berth at %s"
+msgstr ""
+
+#. Translators: This is referring to rail and metro stations
+#: apps/places/providers/naptan.py:232
+#, python-format
+msgid "Platform at %s"
+msgstr ""
+
+#: apps/places/providers/naptan.py:323
+msgid "bus stop"
+msgstr ""
+
+#: apps/places/providers/naptan.py:324
+msgid "a bus stop"
+msgstr ""
+
+#: apps/places/providers/naptan.py:325
+msgid "bus stops"
+msgstr ""
+
+#: apps/places/providers/naptan.py:331 apps/places/providers/osm.py:671
+msgid "taxi rank"
+msgstr ""
+
+#: apps/places/providers/naptan.py:332 apps/places/providers/osm.py:673
+msgid "a taxi rank"
+msgstr ""
+
+#: apps/places/providers/naptan.py:333 apps/places/providers/osm.py:672
+msgid "taxi ranks"
+msgstr ""
+
+#: apps/places/providers/naptan.py:339
+#, fuzzy
+msgid "rail station"
+msgstr "используется для иллюстрации"
+
+#: apps/places/providers/naptan.py:340
+#, fuzzy
+msgid "a rail station"
+msgstr "используется для иллюстрации"
+
+#: apps/places/providers/naptan.py:341
+#, fuzzy
+msgid "rail stations"
+msgstr "используется для иллюстрации"
+
+#: apps/places/providers/naptan.py:347
+#, fuzzy
+msgid "heritage rail station"
+msgstr "используется для иллюстрации"
+
+#: apps/places/providers/naptan.py:348
+#, fuzzy
+msgid "a heritage rail station"
+msgstr "используется для иллюстрации"
+
+#: apps/places/providers/naptan.py:349
+#, fuzzy
+msgid "heritage rail stations"
+msgstr "используется для иллюстрации"
+
+#: apps/places/providers/naptan.py:360
+msgid "bus station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:361
+msgid "a bus station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:362
+msgid "bus station entrances"
+msgstr ""
+
+#: apps/places/providers/naptan.py:371
+msgid "rail station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:372
+msgid "a rail station entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:373
+msgid "rail station entrances"
+msgstr ""
+
+#: apps/places/providers/naptan.py:379
+msgid "rail platform"
+msgstr ""
+
+#: apps/places/providers/naptan.py:380
+msgid "a rail platform"
+msgstr ""
+
+#: apps/places/providers/naptan.py:381
+msgid "rail platforms"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:388
+msgid "metro station entrance"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:390
+msgid "a metro station entrance"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:392
+#, fuzzy
+msgid "metro station entrances"
+msgstr "количество записей"
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:399
+msgid "metro station platform"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:401
+msgid "a metro station platform"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:403
+msgid "metro station platforms"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:410
+#, fuzzy
+msgid "metro station"
+msgstr "Комментарий к "
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:412
+msgid "a metro station"
+msgstr ""
+
+#. Translators: This is the generic term for rapid transit systems
+#: apps/places/providers/naptan.py:414
+#, fuzzy
+msgid "metro stations"
+msgstr "используется для иллюстрации"
+
+#. Translators: This is the Blackpool tram system
+#: apps/places/providers/naptan.py:426
+msgid "tramway stop"
+msgstr ""
+
+#. Translators: This is the Blackpool tram system
+#: apps/places/providers/naptan.py:428
+msgid "a tramway stop"
+msgstr ""
+
+#. Translators: This is the Blackpool tram system
+#: apps/places/providers/naptan.py:430
+msgid "tramway stops"
+msgstr ""
+
+#: apps/places/providers/naptan.py:438 apps/places/providers/naptan.py:523
+msgid "tram stop"
+msgstr ""
+
+#: apps/places/providers/naptan.py:439 apps/places/providers/naptan.py:524
+msgid "a tram stop"
+msgstr ""
+
+#: apps/places/providers/naptan.py:440 apps/places/providers/naptan.py:525
+msgid "tram stops"
+msgstr ""
+
+#. Translators: This is the Docklands Light Railway
+#: apps/places/providers/naptan.py:450
+#, fuzzy
+msgid "DLR station"
+msgstr "Публикация"
+
+#. Translators: This is the Docklands Light Railway
+#: apps/places/providers/naptan.py:452
+msgid "a DLR station"
+msgstr ""
+
+#. Translators: This is the Docklands Light Railway
+#: apps/places/providers/naptan.py:454
+#, fuzzy
+msgid "DLR stations"
+msgstr "Публикация"
+
+#. Translators: This is the Glasgow Subway
+#: apps/places/providers/naptan.py:469
+msgid "Subway station"
+msgstr ""
+
+#. Translators: This is the Glasgow Subway
+#: apps/places/providers/naptan.py:471
+msgid "a Subway station"
+msgstr ""
+
+#. Translators: This is the Glasgow Subway
+#: apps/places/providers/naptan.py:473
+#, fuzzy
+msgid "Subway stations"
+msgstr "используется для иллюстрации"
+
+#. Translators: This is the Gatwick airport shuttle
+#: apps/places/providers/naptan.py:481
+msgid "shuttle station"
+msgstr ""
+
+#. Translators: This is the Gatwick airport shuttle
+#: apps/places/providers/naptan.py:483
+msgid "a shuttle station"
+msgstr ""
+
+#. Translators: This is the Gatwick airport shuttle
+#: apps/places/providers/naptan.py:485
+msgid "shuttle stations"
+msgstr ""
+
+#. Translators: This is the London Underground (Tube)
+#: apps/places/providers/naptan.py:499
+msgid "Underground station"
+msgstr ""
+
+#. Translators: This is the London Underground (Tube)
+#: apps/places/providers/naptan.py:501
+msgid "an Underground station"
+msgstr ""
+
+#. Translators: This is the London Underground (Tube)
+#: apps/places/providers/naptan.py:503
+msgid "Underground stations"
+msgstr ""
+
+#. Translators: This is the Manchester tram system
+#: apps/places/providers/naptan.py:510
+msgid "Metrolink station"
+msgstr ""
+
+#. Translators: This is the Manchester tram system
+#: apps/places/providers/naptan.py:512
+msgid "a Metrolink station"
+msgstr ""
+
+#. Translators: This is the Manchester tram system
+#: apps/places/providers/naptan.py:514
+#, fuzzy
+msgid "Metrolink stations"
+msgstr "используется для иллюстрации"
+
+#. Translators: This is the Sheffield tram system
+#: apps/places/providers/naptan.py:545
+msgid "Supertram stop"
+msgstr ""
+
+#. Translators: This is the Sheffield tram system
+#: apps/places/providers/naptan.py:547
+msgid "a Supertram stop"
+msgstr ""
+
+#. Translators: This is the Sheffield tram system
+#: apps/places/providers/naptan.py:549
+msgid "Supertram stops"
+msgstr ""
+
+#. Translators: This is the Tyne & Wear metro system
+#: apps/places/providers/naptan.py:557
+#, fuzzy
+msgid "Metro station"
+msgstr "используется для иллюстрации"
+
+#. Translators: This is the Tyne & Wear metro system
+#: apps/places/providers/naptan.py:559
+msgid "a Metro station"
+msgstr ""
+
+#. Translators: This is the Tyne & Wear metro system
+#: apps/places/providers/naptan.py:561
+#, fuzzy
+msgid "Metro stations"
+msgstr "используется для иллюстрации"
+
+#. Translators: This is the Midland Metro system
+#: apps/places/providers/naptan.py:573
+msgid "Midland Metro stop"
+msgstr ""
+
+#. Translators: This is the Midland Metro system
+#: apps/places/providers/naptan.py:575
+msgid "a Midland Metro stop"
+msgstr ""
+
+#. Translators: This is the Midland Metro system
+#: apps/places/providers/naptan.py:577
+msgid "Midland Metro stops"
+msgstr ""
+
+#: apps/places/providers/naptan.py:585
+msgid "airport"
+msgstr ""
+
+#: apps/places/providers/naptan.py:586
+msgid "an airport"
+msgstr ""
+
+#: apps/places/providers/naptan.py:587
+msgid "airports"
+msgstr ""
+
+#: apps/places/providers/naptan.py:593
+msgid "airport entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:594
+msgid "an airport entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:595
+msgid "airport entrances"
+msgstr ""
+
+#: apps/places/providers/naptan.py:601
+msgid "ferry terminal"
+msgstr ""
+
+#: apps/places/providers/naptan.py:602
+msgid "a ferry terminal"
+msgstr ""
+
+#: apps/places/providers/naptan.py:603
+msgid "ferry terminals"
+msgstr ""
+
+#: apps/places/providers/naptan.py:609
+msgid "ferry terminal entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:610
+msgid "a ferry terminal entrance"
+msgstr ""
+
+#: apps/places/providers/naptan.py:611
+msgid "ferry terminal entrances"
+msgstr ""
+
+#: apps/places/providers/naptan.py:617
+msgid "ferry berth"
+msgstr ""
+
+#: apps/places/providers/naptan.py:618
+msgid "a ferry berth"
+msgstr ""
+
+#: apps/places/providers/naptan.py:619
+msgid "ferry berths"
+msgstr ""
+
+#: apps/places/providers/naptan.py:625
+msgid "public transport access node"
+msgstr ""
+
+#: apps/places/providers/naptan.py:626
+msgid "a public transport access node"
+msgstr ""
+
+#: apps/places/providers/naptan.py:627
+msgid "public transport access nodes"
+msgstr ""
+
+#: apps/places/providers/osm.py:430 apps/places/providers/osm.py:436
+#: apps/places/providers/osm.py:442 apps/places/providers/osm.py:448
+#: apps/places/providers/osm.py:460 apps/places/providers/osm.py:472
+#: apps/places/providers/osm.py:478 apps/places/providers/osm.py:484
+#: apps/places/providers/osm.py:496 apps/places/providers/osm.py:502
+#: apps/places/providers/osm.py:508 apps/places/providers/osm.py:514
+#: apps/places/providers/osm.py:520 apps/places/providers/osm.py:526
+#: apps/places/providers/osm.py:532 apps/places/providers/osm.py:544
+#: apps/places/providers/osm.py:550 apps/places/providers/osm.py:556
+#: apps/places/providers/osm.py:562 apps/places/providers/osm.py:586
+#: apps/places/providers/osm.py:592 apps/places/providers/osm.py:598
+#: apps/places/providers/osm.py:604 apps/places/providers/osm.py:610
+#: apps/places/providers/osm.py:616 apps/places/providers/osm.py:628
+#: apps/places/providers/osm.py:634 apps/places/providers/osm.py:640
+#: apps/places/providers/osm.py:664
+msgid "Amenities"
+msgstr ""
+
+#: apps/places/providers/osm.py:431
+msgid "ATM"
+msgstr ""
+
+#: apps/places/providers/osm.py:432
+msgid "ATMs"
+msgstr ""
+
+#: apps/places/providers/osm.py:433
+msgid "an ATM"
+msgstr ""
+
+#: apps/places/providers/osm.py:437
+msgid "bank"
+msgstr ""
+
+#: apps/places/providers/osm.py:438
+msgid "banks"
+msgstr ""
+
+#: apps/places/providers/osm.py:439
+msgid "a bank"
+msgstr ""
+
+#: apps/places/providers/osm.py:443
+msgid "bar"
+msgstr ""
+
+#: apps/places/providers/osm.py:444
+msgid "bars"
+msgstr ""
+
+#: apps/places/providers/osm.py:445
+msgid "a bar"
+msgstr ""
+
+#: apps/places/providers/osm.py:449
+msgid "bench"
+msgstr ""
+
+#: apps/places/providers/osm.py:450
+msgid "benches"
+msgstr ""
+
+#: apps/places/providers/osm.py:451
+msgid "a bench"
+msgstr ""
+
+#: apps/places/providers/osm.py:455
+msgid "bicycle rack"
+msgstr ""
+
+#: apps/places/providers/osm.py:456
+msgid "bicycle racks"
+msgstr ""
+
+#: apps/places/providers/osm.py:457
+msgid "a bicycle rack"
+msgstr ""
+
+#: apps/places/providers/osm.py:461
+msgid "café"
+msgstr ""
+
+#: apps/places/providers/osm.py:462
+msgid "cafés"
+msgstr ""
+
+#: apps/places/providers/osm.py:463
+msgid "a café"
+msgstr ""
+
+#: apps/places/providers/osm.py:467
+msgid "car park"
+msgstr ""
+
+#: apps/places/providers/osm.py:468
+msgid "car parks"
+msgstr ""
+
+#: apps/places/providers/osm.py:469
+msgid "a car park"
+msgstr ""
+
+#: apps/places/providers/osm.py:473
+msgid "cathedral"
+msgstr ""
+
+#: apps/places/providers/osm.py:474
+msgid "cathedrals"
+msgstr ""
+
+#: apps/places/providers/osm.py:475
+msgid "a cathedral"
+msgstr ""
+
+#: apps/places/providers/osm.py:479
+msgid "chapel"
+msgstr ""
+
+#: apps/places/providers/osm.py:480
+msgid "chapels"
+msgstr ""
+
+#: apps/places/providers/osm.py:481
+msgid "a chapel"
+msgstr ""
+
+#: apps/places/providers/osm.py:485
+msgid "church"
+msgstr ""
+
+#: apps/places/providers/osm.py:486
+msgid "churches"
+msgstr ""
+
+#: apps/places/providers/osm.py:487
+msgid "a church"
+msgstr ""
+
+#: apps/places/providers/osm.py:490 apps/places/providers/osm.py:538
+#: apps/places/providers/osm.py:568 apps/places/providers/osm.py:574
+#: apps/places/providers/osm.py:622 apps/places/providers/osm.py:646
+#: apps/places/providers/osm.py:652 apps/places/providers/osm.py:658
+#: apps/places/providers/osm.py:676
+msgid "Leisure"
+msgstr ""
+
+#: apps/places/providers/osm.py:491
+msgid "cinema"
+msgstr ""
+
+#: apps/places/providers/osm.py:492
+msgid "cinemas"
+msgstr ""
+
+#: apps/places/providers/osm.py:493
+msgid "a cinema"
+msgstr ""
+
+#: apps/places/providers/osm.py:497
+msgid "cycle shop"
+msgstr ""
+
+#: apps/places/providers/osm.py:498
+msgid "cycle shops"
+msgstr ""
+
+#: apps/places/providers/osm.py:499
+msgid "a cycle shop"
+msgstr ""
+
+#: apps/places/providers/osm.py:503
+msgid "dispensing pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:504
+msgid "dispensing pharmacies"
+msgstr ""
+
+#: apps/places/providers/osm.py:505
+msgid "a dispensing pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:509
+msgid "doctor's surgery"
+msgstr ""
+
+#: apps/places/providers/osm.py:510
+msgid "doctors' surgeries"
+msgstr ""
+
+#: apps/places/providers/osm.py:511
+msgid "a doctor's surgery"
+msgstr ""
+
+#: apps/places/providers/osm.py:515
+msgid "fast food outlet"
+msgstr ""
+
+#: apps/places/providers/osm.py:516
+msgid "fast food outlets"
+msgstr ""
+
+#: apps/places/providers/osm.py:517
+msgid "a fast food outlet"
+msgstr ""
+
+#: apps/places/providers/osm.py:521
+msgid "place to eat"
+msgstr ""
+
+#: apps/places/providers/osm.py:522
+msgid "places to eat"
+msgstr ""
+
+#: apps/places/providers/osm.py:523
+msgid "a place to eat"
+msgstr ""
+
+#: apps/places/providers/osm.py:527
+msgid "hospital"
+msgstr ""
+
+#: apps/places/providers/osm.py:528
+msgid "hospitals"
+msgstr ""
+
+#: apps/places/providers/osm.py:529
+msgid "a hospital"
+msgstr ""
+
+#: apps/places/providers/osm.py:533
+msgid "ice cream café"
+msgstr ""
+
+#: apps/places/providers/osm.py:534
+msgid "ice cream cafés"
+msgstr ""
+
+#: apps/places/providers/osm.py:535
+msgid "an ice cream café"
+msgstr ""
+
+#: apps/places/providers/osm.py:539
+msgid "ice rink"
+msgstr ""
+
+#: apps/places/providers/osm.py:540
+#, fuzzy
+msgid "ice rinks"
+msgstr "Быстрая публикация"
+
+#: apps/places/providers/osm.py:541
+msgid "an ice rink"
+msgstr ""
+
+#: apps/places/providers/osm.py:545
+msgid "library"
+msgstr ""
+
+#: apps/places/providers/osm.py:546
+msgid "libraries"
+msgstr ""
+
+#: apps/places/providers/osm.py:547
+msgid "a library"
+msgstr ""
+
+#: apps/places/providers/osm.py:551
+msgid "mandir"
+msgstr ""
+
+#: apps/places/providers/osm.py:552
+msgid "mandirs"
+msgstr ""
+
+#: apps/places/providers/osm.py:553
+msgid "a mandir"
+msgstr ""
+
+#: apps/places/providers/osm.py:557
+msgid "place relating to health"
+msgstr ""
+
+#: apps/places/providers/osm.py:558
+msgid "places relating to health"
+msgstr ""
+
+#: apps/places/providers/osm.py:559
+msgid "a place relating to health"
+msgstr ""
+
+#: apps/places/providers/osm.py:563
+msgid "mosque"
+msgstr ""
+
+#: apps/places/providers/osm.py:564
+msgid "mosques"
+msgstr ""
+
+#: apps/places/providers/osm.py:565
+msgid "a mosque"
+msgstr ""
+
+#: apps/places/providers/osm.py:569
+msgid "museum"
+msgstr ""
+
+#: apps/places/providers/osm.py:570
+msgid "museums"
+msgstr ""
+
+#: apps/places/providers/osm.py:571
+msgid "a museum"
+msgstr ""
+
+#: apps/places/providers/osm.py:575
+msgid "park"
+msgstr ""
+
+#: apps/places/providers/osm.py:576
+msgid "parks"
+msgstr ""
+
+#: apps/places/providers/osm.py:577
+msgid "a park"
+msgstr ""
+
+#: apps/places/providers/osm.py:581
+msgid "park and ride"
+msgstr ""
+
+#: apps/places/providers/osm.py:582
+msgid "park and rides"
+msgstr ""
+
+#: apps/places/providers/osm.py:583
+msgid "a park and ride"
+msgstr ""
+
+#: apps/places/providers/osm.py:587
+msgid "pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:588
+msgid "pharmacies"
+msgstr ""
+
+#: apps/places/providers/osm.py:589
+msgid "a pharmacy"
+msgstr ""
+
+#: apps/places/providers/osm.py:593
+msgid "place of worship"
+msgstr ""
+
+#: apps/places/providers/osm.py:594
+msgid "places of worship"
+msgstr ""
+
+#: apps/places/providers/osm.py:595
+msgid "a place of worship"
+msgstr ""
+
+#: apps/places/providers/osm.py:599
+msgid "post box"
+msgstr ""
+
+#: apps/places/providers/osm.py:600
+msgid "post boxes"
+msgstr ""
+
+#: apps/places/providers/osm.py:601
+msgid "a post box"
+msgstr ""
+
+#: apps/places/providers/osm.py:605
+msgid "post office"
+msgstr ""
+
+#: apps/places/providers/osm.py:606
+msgid "post offices"
+msgstr ""
+
+#: apps/places/providers/osm.py:607
+msgid "a post office"
+msgstr ""
+
+#: apps/places/providers/osm.py:611
+msgid "pub"
+msgstr ""
+
+#: apps/places/providers/osm.py:612
+msgid "pubs"
+msgstr ""
+
+#: apps/places/providers/osm.py:613
+msgid "a pub"
+msgstr ""
+
+#: apps/places/providers/osm.py:617
+msgid "public library"
+msgstr ""
+
+#: apps/places/providers/osm.py:618
+msgid "public libraries"
+msgstr ""
+
+#: apps/places/providers/osm.py:619
+msgid "a public library"
+msgstr ""
+
+#: apps/places/providers/osm.py:623
+msgid "place to hire punts"
+msgstr ""
+
+#: apps/places/providers/osm.py:624
+msgid "places to hire punts"
+msgstr ""
+
+#: apps/places/providers/osm.py:625
+msgid "a place to hire punts"
+msgstr ""
+
+#: apps/places/providers/osm.py:629
+msgid "recycling facility"
+msgstr ""
+
+#: apps/places/providers/osm.py:630
+msgid "recycling facilities"
+msgstr ""
+
+#: apps/places/providers/osm.py:631
+msgid "a recycling facility"
+msgstr ""
+
+#: apps/places/providers/osm.py:635
+msgid "restaurant"
+msgstr ""
+
+#: apps/places/providers/osm.py:636
+msgid "restaurants"
+msgstr ""
+
+#: apps/places/providers/osm.py:637
+#, fuzzy
+msgid "a restaurant"
+msgstr "Результаты поиска"
+
+#: apps/places/providers/osm.py:641
+msgid "shop"
+msgstr ""
+
+#: apps/places/providers/osm.py:642
+msgid "shops"
+msgstr ""
+
+#: apps/places/providers/osm.py:643
+msgid "a shop"
+msgstr ""
+
+#: apps/places/providers/osm.py:647
+msgid "place relating to sport"
+msgstr ""
+
+#: apps/places/providers/osm.py:648
+msgid "places relating to sport"
+msgstr ""
+
+#: apps/places/providers/osm.py:649
+msgid "a place relating to sport"
+msgstr ""
+
+#: apps/places/providers/osm.py:653
+#, fuzzy
+msgid "sports centre"
+msgstr "%s записей"
+
+#: apps/places/providers/osm.py:654
+#, fuzzy
+msgid "sports centres"
+msgstr "%s записей"
+
+#: apps/places/providers/osm.py:655
+#, fuzzy
+msgid "a sports centre"
+msgstr "Последние записи"
+
+#: apps/places/providers/osm.py:659
+msgid "swimming pool"
+msgstr ""
+
+#: apps/places/providers/osm.py:660
+msgid "swimming pools"
+msgstr ""
+
+#: apps/places/providers/osm.py:661
+msgid "a swimming pool"
+msgstr ""
+
+#: apps/places/providers/osm.py:665
+msgid "synagogue"
+msgstr ""
+
+#: apps/places/providers/osm.py:666
+msgid "synagogues"
+msgstr ""
+
+#: apps/places/providers/osm.py:667
+msgid "a synagogue"
+msgstr ""
+
+#: apps/places/providers/osm.py:677
+msgid "theatre"
+msgstr ""
+
+#: apps/places/providers/osm.py:678
+msgid "theatres"
+msgstr ""
+
+#: apps/places/providers/osm.py:679
+msgid "a theatre"
+msgstr ""
+
+#: apps/places/providers/postcodes.py:124
+#, fuzzy
+msgid "Uncategorised"
+msgstr "категории"
+
+#: apps/places/providers/postcodes.py:135
+msgid "postcode"
+msgstr ""
+
+#: apps/places/providers/postcodes.py:136
+msgid "a postcode"
+msgstr ""
+
+#: apps/places/providers/postcodes.py:137
+msgid "postcodes"
+msgstr ""
+
+#. Translators: This refers to arrival times of trains, in minutes
+#: apps/places/providers/tfl.py:75
+msgid "DUE"
+msgstr ""
+
+#: apps/places/providers/tfl.py:75
+#, python-format
+msgid "%d mins"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:10
+#: apps/places/templatetags/molly_osm.py:12
+msgid "Yes"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:11
+#: apps/places/templatetags/molly_osm.py:13
+msgid "No"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:20
+msgid "wi-fi access"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:23
+msgid "has ATM"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:26
+msgid "serves food"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:29
+msgid "opening hours"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:32
+#, fuzzy
+msgid "collection times"
+msgstr "дата создания"
+
+#: apps/places/templatetags/molly_osm.py:36
+msgid "capacity"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:44
+msgid "cuisine"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:46
+msgid "cuisines"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:50
+msgid "operator"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:51
+msgid "note"
+msgstr ""
+
+#: apps/places/templatetags/molly_osm.py:55
+msgid "dispensing"
+msgstr ""
+
+#: crowdsourcing/admin.py:45
+msgid ""
+"For numeric select or numeric choice, all your options must be a number. "
+"This is not a number: "
+msgstr ""
+
+#: crowdsourcing/admin.py:51
+msgid "Choice type questions require a list of options."
+msgstr ""
+
+#: crowdsourcing/admin.py:57
+msgid ""
+"The field name must start with a letter and contain nothing but "
+"alphanumerics and underscore."
+msgstr ""
+
+#: crowdsourcing/admin.py:91
+msgid "Flickr support is broken. Contact a programmer."
+msgstr ""
+
+#: crowdsourcing/admin.py:95
+msgid "You can't access this group: "
+msgstr ""
+
+#: crowdsourcing/admin.py:100
+msgid ""
+"You can't access any Flickr groups. Either you don't have any groups or your "
+"configuration settings are incorrect and you need to contact a programmer."
+msgstr ""
+
+#: crowdsourcing/admin.py:177
+msgid ""
+"Use the 'annotation' of Text Survey Report Displays to insert arbitrary text."
+msgstr ""
+
+#: crowdsourcing/admin.py:181
+msgid ""
+"Given the options you picked, you need to specify some fieldnames or this "
+"Survey Report Display won't do anything."
+msgstr ""
+
+#: crowdsourcing/admin.py:186
+msgid "An x axis only makes sense for Bar and Line graphs."
+msgstr ""
+
+#: crowdsourcing/admin.py:189
+msgid "You have to specify an x-axis for bar and line graphs."
+msgstr ""
+
+#: crowdsourcing/admin.py:192
+msgid "Use 'Default' for Text."
+msgstr ""
+
+#: crowdsourcing/admin.py:195
+msgid "Use 'Default' or 'Count' for Pie charts."
+msgstr ""
+
+#: crowdsourcing/forms.py:75 crowdsourcing/forms.py:189
+msgid "This field is required."
+msgstr ""
+
+#: crowdsourcing/forms.py:141
+msgid ""
+"I don't recognize this video url format. Try something like http://www."
+"youtube.com/watch?v=Bfli1yuby58."
+msgstr ""
+
+#: crowdsourcing/forms.py:153
+msgid ""
+"We couldn't read your file. Make sure it's a .jpeg, .png, or .gif file, not "
+"a .psd or other unsupported type."
+msgstr ""
+
+#: crowdsourcing/models.py:82
+msgid ""
+"If checked, all submissions will start as NOT public and you will have to "
+"manually make them public. If your survey doesn't show any results, it may "
+"be because this option is checked."
+msgstr ""
+
+#: crowdsourcing/models.py:95
+msgid ""
+"At what point will Crowdsourcing make the results public? immediate: All "
+"results are immediately public. post-close: Results are public on or after "
+"the \"ends at\" option documented below. never: Results are never public."
+msgstr ""
+
+#: crowdsourcing/models.py:298
+msgid ""
+"a single-word identifier used to track this value; it must begin with a "
+"letter and may contain alphanumerics and underscores (no spaces)."
+msgstr ""
+
+#: crowdsourcing/models.py:302
+msgid "Appears on the survey entry page."
+msgstr ""
+
+#: crowdsourcing/models.py:303
+msgid "Appears on the results page."
+msgstr ""
+
+#: crowdsourcing/models.py:308
+msgid ""
+"Unsafe to change on live surveys. Radio button list and drop down list "
+"questions will have a blank option if they aren't required."
+msgstr ""
+
+#: crowdsourcing/models.py:314
+msgid " Use -1 to auto-assign."
+msgstr ""
+
+#: crowdsourcing/models.py:320
+msgid "You must not change this field on a live survey."
+msgstr ""
+
+#: crowdsourcing/models.py:327
+msgid ""
+"Use one option per line. On a live survey you can modify the order of these "
+"options. You can, at your own risk, add new options, but you must not change "
+"or remove options."
+msgstr ""
+
+#: crowdsourcing/models.py:739
+msgid ""
+"Crowdsourcing only displays public submissions. The 'Moderate submissions' "
+"checkbox of the survey determines the default value of this field."
+msgstr ""
+
+#: crowdsourcing/models.py:895
+msgid ""
+"You may leave this field blank. Crowdsourcing will use the survey title as a "
+"default."
+msgstr ""
+
+#: crowdsourcing/models.py:899
+msgid "The default is the description of the survey."
+msgstr ""
+
+#: crowdsourcing/models.py:918
+msgid "Include only featured submissions."
+msgstr ""
+
+#: crowdsourcing/models.py:921
+msgid ""
+"Display separate, individual results if this field is True and you have "
+"archivable questions, like those with paragraph answers."
+msgstr ""
+
+#: crowdsourcing/models.py:979
+msgid ""
+"We only use this field if you chose a Bar or Line Chart. How should we "
+"aggregate the y-axis? 'Average' is good for things like ratings, 'Sum' is "
+"good for totals, and 'Count' is good for a show of hands."
+msgstr ""
+
+#: crowdsourcing/models.py:986
+msgid ""
+"Pull these values from Survey -> Questions -> Fieldname. Separate by spaces. "
+"These are the y-axes of bar and line charts."
+msgstr ""
+
+#: crowdsourcing/models.py:991
+msgid "This only applies to bar and line charts. Use only 1 field."
+msgstr ""
+
+#: crowdsourcing/models.py:998
+msgid ""
+"Google maps gets pretty slow if you add too many points. Use this field to "
+"limit the number of points that display on the map."
+msgstr ""
+
+#: crowdsourcing/models.py:1004
+msgid ""
+"If you don't specify latitude, longitude, or zoom, the map will just center "
+"and zoom so that the map shows all the points."
+msgstr ""
+
+#: crowdsourcing/models.py:1011
+msgid "13 is about the right level for Manhattan. 0 shows the entire world."
+msgstr ""
+
+#: crowdsourcing/models.py:1016
+msgid ""
+"The answers to these questions will appear as captions below their "
+"corresponding slides. Separate by spaces."
+msgstr ""
+
+#: geolocation/views.py:140 geolocation/views.py:163
+#, fuzzy
+msgid "Update location"
+msgstr "начало публикации"
+
+#: geolocation/templates/geolocation/require_location.html:6
+#: templates/geolocation/require_location.html:6
+#, fuzzy
+msgid "Location required"
+msgstr "Требуется авторизация"
+
+#: geolocation/templates/geolocation/require_location.html:10
+#: templates/geolocation/require_location.html:10
+#, python-format
+msgid ""
+"To be able to use this feature you need to <a href=\"%(geolocation_url)s?"
+"return_url=%(return_url)s\">choose a location</a>."
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:4
+#: templates/geolocation/update_location_embed.html:4
+#, fuzzy
+msgid "Your Location"
+msgstr "Публикация"
+
+#: geolocation/templates/geolocation/update_location_embed.html:10
+#: templates/geolocation/update_location_embed.html:10
+#, fuzzy
+msgid "Update"
+msgstr "на дату"
+
+#: geolocation/templates/geolocation/update_location_embed.html:15
+#: templates/geolocation/update_location_embed.html:15
+msgid "No location known"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:17
+#: templates/geolocation/update_location_embed.html:17
+#, python-format
+msgid "within approx. %(accuracy)s m"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:24
+#: templates/geolocation/update_location_embed.html:24
+msgid "Did you mean&hellip;"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:56
+#: templates/geolocation/update_location_embed.html:56
+#, fuzzy
+msgid "Or search again:"
+msgstr "Поиск"
+
+#. Translators: This refers to sample things to be entered in the 'Set Location' box, postcode, building ID, street name
+#: geolocation/templates/geolocation/update_location_embed.html:67
+#: templates/geolocation/update_location_embed.html:67
+msgid "e.g., OX2 6NN, kebl, St Clements"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:71
+#: templates/geolocation/update_location_embed.html:71
+#, fuzzy
+msgid "Set Location"
+msgstr "Публикация"
+
+#: geolocation/templates/geolocation/update_location_embed.html:76
+#: templates/geolocation/update_location_embed.html:76
+msgid "Favourite Locations"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:96
+#: templates/geolocation/update_location_embed.html:96
+msgid "(Remove from favourites)"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:104
+#: templates/geolocation/update_location_embed.html:104
+#, fuzzy
+msgid "Location History"
+msgstr "Публикация"
+
+#: geolocation/templates/geolocation/update_location_embed.html:127
+#: templates/geolocation/update_location_embed.html:127
+msgid "(Add as favourite)"
+msgstr ""
+
+#: geolocation/templates/geolocation/update_location_embed.html:135
+#: templates/geolocation/update_location_embed.html:135
+msgid "Clear history"
 msgstr ""
 
 #: googlemap/models.py:65
@@ -66,7 +1564,7 @@ msgstr ""
 msgid "Permissions saved."
 msgstr ""
 
-#: guardian/admin.py:347 userena/forms.py:29
+#: guardian/admin.py:347 userena/forms.py:36
 msgid "Username"
 msgstr ""
 
@@ -92,14 +1590,22 @@ msgstr ""
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:12
 #: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:10
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:10
-#: molly/apps/users/templates/lazysignup/convert.html:5
-#: molly/templates/registration/logged_out.html:4
-#: molly/templates/registration/password_change_done.html:4
-#: molly/templates/registration/password_change_form.html:4
-#: molly/templates/registration/password_reset_complete.html:4
-#: molly/templates/registration/password_reset_confirm.html:4
-#: molly/templates/registration/password_reset_done.html:4
-#: molly/templates/registration/password_reset_form.html:4
+#: templates/admin/500.html:7 templates/admin/app_index.html:11
+#: templates/admin/base.html:57 templates/admin/change_form.html:62
+#: templates/admin/change_list.html:84
+#: templates/admin/csv_export_selected_confirmation.html:9
+#: templates/admin/delete_confirmation.html:9
+#: templates/admin/delete_selected_confirmation.html:9
+#: templates/admin/index.html:16 templates/admin/invalid_setup.html:7
+#: templates/admin/object_history.html:9
+#: templates/admin/auth/user/change_password.html:20
+#: templates/registration/logged_out.html:4
+#: templates/registration/password_change_done.html:4
+#: templates/registration/password_change_form.html:4
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_done.html:4
+#: templates/registration/password_reset_form.html:4
 msgid "Home"
 msgstr ""
 
@@ -124,6 +1630,7 @@ msgstr ""
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:36
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:40
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:30
+#: templates/admin/object_history.html:26
 msgid "User"
 msgstr ""
 
@@ -131,6 +1638,7 @@ msgstr ""
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:109
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:44
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:98
+#: templates/admin/object_history.html:27
 #, fuzzy
 msgid "Action"
 msgstr "Публикация"
@@ -184,51 +1692,293 @@ msgstr ""
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:48
 #: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:37
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:37
+#: templates/admin/submit_line.html:5
 msgid "Save"
 msgstr ""
 
 #: guardian/templates/admin/guardian/model/change_form.html:8
+#: templates/admin/change_form.html:75 templates/admin/object_history.html:13
 msgid "History"
 msgstr ""
 
 #: guardian/templates/admin/guardian/model/change_form.html:9
+#: templates/admin/change_form.html:76
 msgid "View on site"
 msgstr "Смотреть на сайте"
 
-#: molly/apps/users/templates/lazysignup/convert.html:7
-msgid "Account"
+#: templates/admin/404.html:7 templates/admin/404.html.py:11
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: templates/admin/404.html:12
+#, fuzzy
+msgid "We're sorry, but the requested page could not be found."
+msgstr "Извините, запрашиваемая страница не найдена."
+
+#: templates/admin/500.html:7
+msgid "Server error"
+msgstr "Ошибка сервера"
+
+#: templates/admin/500.html:10
+#, fuzzy
+msgid "Server error (500)"
+msgstr "Ошибка сервера"
+
+#: templates/admin/500.html:14
+#, fuzzy
+msgid "Server Error <em>(500)</em>"
+msgstr "Ошибка сервера"
+
+#: templates/admin/500.html:15
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
 msgstr ""
 
-#: molly/apps/users/templates/lazysignup/convert.html:8
-#: molly/templates/registration/password_change_done.html:3
-#: molly/templates/registration/password_change_form.html:3
-msgid "Log out"
+#: templates/admin/actions.html:10
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: templates/admin/actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: templates/admin/actions.html:11
+msgid "Clear selection"
+msgstr ""
+
+#: templates/admin/app_index.html:13
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: templates/admin/app_index.html:30 templates/admin/change_form.html:65
+#: templates/admin/index.html:31
+msgid "Add"
+msgstr ""
+
+#: templates/admin/app_index.html:31 templates/admin/index.html:32
+#, fuzzy
+msgid "Change"
+msgstr "пароль"
+
+#: templates/admin/base_site.html:7
+#, fuzzy
+msgid "Django administration"
+msgstr "Комментарий к "
+
+#: templates/admin/change_form.html:96 templates/admin/change_list.html:148
+#: templates/admin/auth/user/change_password.html:38
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: templates/admin/change_list.html:102
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: templates/admin/change_list.html:120
+msgid "Filter"
+msgstr ""
+
+#: templates/admin/csv_export_selected_confirmation.html:12
+msgid "Export selection as CSV"
+msgstr ""
+
+#: templates/admin/csv_export_selected_confirmation.html:31
+msgid "Export following fields:"
+msgstr ""
+
+#: templates/admin/csv_export_selected_confirmation.html:34
+msgid "Select all"
+msgstr ""
+
+#: templates/admin/csv_export_selected_confirmation.html:54
+msgid "Back"
+msgstr ""
+
+#: templates/admin/csv_export_selected_confirmation.html:55
+msgid "Export"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:13
+#: templates/admin/submit_line.html:4
+msgid "Delete"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:23
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:33
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:45
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:53
+#: templates/admin/delete_selected_confirmation.html:59
+msgid "Cancel"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:54
+#: templates/admin/delete_selected_confirmation.html:60
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:12
+msgid "Delete multiple objects"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:22
+#, python-format
+msgid ""
+"Deleting the %(objects_name)s would result in deleting related objects, but "
+"your account doesn't have permission to delete the following types of "
+"objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:32
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:44
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s objects? All "
+"of the following objects and their related items will be deleted:"
+msgstr ""
+
+#: templates/admin/filter.html:3
+#, python-format
+msgid "%(filter_title)s"
+msgstr ""
+
+#: templates/admin/index.html:39
+msgid "You don´t have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:44
+#, fuzzy
+msgid "Recent Actions"
+msgstr "Последние комментарии"
+
+#: templates/admin/index.html:46
+#, fuzzy
+msgid "My Actions"
+msgstr "Последние комментарии"
+
+#: templates/admin/index.html:49
+#, fuzzy
+msgid "None available"
+msgstr "Недоступно"
+
+#: templates/admin/invalid_setup.html:11
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+#: templates/admin/login.html:31
+msgid "Username:"
+msgstr ""
+
+#: templates/admin/login.html:35
+#, fuzzy
+msgid "Password:"
+msgstr "Пароль"
+
+#: templates/admin/login.html:45
+#: templates/registration/password_reset_complete.html:14
+#, fuzzy
+msgid "Log in"
 msgstr "Выйти"
 
-#: molly/apps/users/templates/lazysignup/convert.html:10
-msgid "Save your data"
+#: templates/admin/object_history.html:25
+#: userena/contrib/umessages/admin.py:25
+msgid "Date/time"
 msgstr ""
 
-#: molly/apps/users/templates/lazysignup/convert.html:10
-msgid "by setting a username and password"
+#: templates/admin/object_history.html:33
+msgid "DATETIME_FORMAT"
 msgstr ""
 
-#: molly/templates/registration/logged_out.html:8
-msgid "Thanks for spending some quality time with the Web site today."
+#: templates/admin/object_history.html:37
+#, fuzzy
+msgid "Created object"
+msgstr "связанные записи"
+
+#: templates/admin/object_history.html:47
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
 msgstr ""
 
-#: molly/templates/registration/logged_out.html:10
-msgid "Log in again"
+#: templates/admin/pagination.html:8
+#, fuzzy, python-format
+msgid "1 result"
+msgid_plural "%(counter)s results"
+msgstr[0] "Результаты поиска"
+msgstr[1] "Результаты поиска"
+msgstr[2] "Результаты поиска"
+msgstr[3] "Результаты поиска"
+
+#: templates/admin/pagination.html:13 templates/admin/pagination.html.py:15
+#, python-format
+msgid "%(full_result_count)s total"
 msgstr ""
 
-#: molly/templates/registration/password_change_done.html:3
-#: molly/templates/registration/password_change_form.html:3
+#: templates/admin/pagination.html:27
+msgid "Show all"
+msgstr ""
+
+#: templates/admin/submit_line.html:6
+msgid "Save as new"
+msgstr ""
+
+#: templates/admin/submit_line.html:7
+msgid "Save and add another"
+msgstr ""
+
+#: templates/admin/submit_line.html:8
+msgid "Save and continue editing"
+msgstr ""
+
+#: templates/admin/auth/user/change_password.html:7
+#: templates/admin/includes_grappelli/header.html:41
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
 #, fuzzy
 msgid "Documentation"
 msgstr "Комментарий к "
 
-#: molly/templates/registration/password_change_done.html:3
-#: molly/templates/registration/password_change_form.html:3
+#: templates/admin/auth/user/change_password.html:11
+#: templates/admin/auth/user/change_password.html:23
+#: templates/admin/auth/user/change_password.html:62
+#: templates/admin/includes_grappelli/header.html:20
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
 #: userena/templates/userena/email_form.html:11
 #: userena/templates/userena/password_form.html:4
 #: userena/templates/userena/password_form.html:13
@@ -239,255 +1989,889 @@ msgstr "Комментарий к "
 msgid "Change password"
 msgstr "пароль"
 
-#: molly/templates/registration/password_change_done.html:4
-#: molly/templates/registration/password_change_form.html:4
-#: molly/templates/registration/password_change_form.html:6
-#: molly/templates/registration/password_change_form.html:10
+#: templates/admin/auth/user/change_password.html:14
+#: templates/admin/includes_grappelli/header.html:28
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
+msgid "Log out"
+msgstr "Выйти"
+
+#: templates/admin/auth/user/change_password.html:27
+#: templates/registration/password_change_done.html:4
+#: templates/registration/password_change_form.html:4
+#: templates/registration/password_change_form.html:6
+#: templates/registration/password_change_form.html:10
 #, fuzzy
 msgid "Password change"
 msgstr "Пароль"
 
-#: molly/templates/registration/password_change_done.html:6
-#: molly/templates/registration/password_change_done.html:10
+#: templates/admin/auth/user/change_password.html:35
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: templates/admin/auth/user/change_password.html:45
+#: templates/registration/password_change_form.html:19
+#: templates/registration/password_reset_confirm.html:19
+#, fuzzy
+msgid "New password:"
+msgstr "пароль"
+
+#: templates/admin/auth/user/change_password.html:52
+#, fuzzy
+msgid "Password (again)"
+msgstr "Пароль"
+
+#: templates/admin/auth/user/change_password.html:56
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: templates/admin/edit_inline/stacked.html:8
+msgid "Open All Items"
+msgstr ""
+
+#: templates/admin/edit_inline/stacked.html:9
+msgid "Close All Items"
+msgstr ""
+
+#: templates/admin/edit_inline/stacked.html:10
+#: templates/admin/edit_inline/stacked.html:53
+#: templates/admin/edit_inline/tabular.html:87
+msgid "Add Item"
+msgstr ""
+
+#: templates/admin/edit_inline/stacked.html:23
+#: templates/admin/edit_inline/tabular.html:61
+#, fuzzy
+msgid "View on Site"
+msgstr "Смотреть на сайте"
+
+#: templates/admin/edit_inline/stacked.html:25
+#: templates/admin/edit_inline/tabular.html:63
+msgid "Move Item"
+msgstr ""
+
+#: templates/admin/edit_inline/stacked.html:29
+#: templates/admin/edit_inline/stacked.html:31
+msgid "Delete Item"
+msgstr ""
+
+#: templates/admin/edit_inline/stacked.html:51
+#: templates/admin/edit_inline/tabular.html:85
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: templates/admin/edit_inline/tabular.html:8
+msgid "Add Another"
+msgstr ""
+
+#: templates/admin/edit_inline/tabular.html:66
+#: templates/admin/edit_inline/tabular.html:71
+msgid "Remove"
+msgstr ""
+
+#: templates/admin/includes_grappelli/header.html:36
+msgid "Tests"
+msgstr ""
+
+#: templates/places/category_detail.html:14
+#: templates/places/nearby_detail.html:14
+#, python-format
+msgid "Found %(count)s %(name)s"
+msgid_plural "Found %(count)s %(name_plural)s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: templates/places/category_detail.html:18
+#: templates/places/nearby_detail.html:19
+msgid "that is also"
+msgid_plural "that are also"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: templates/places/category_detail.html:21
+#: templates/places/nearby_detail.html:23
+msgid "and"
+msgstr ""
+
+#: templates/places/category_detail.html:31
+#: templates/places/nearby_detail.html:32
+msgid "Limit to:"
+msgstr ""
+
+#: templates/places/category_detail.html:56
+#, python-format
+msgid "Page <span class=\"current-page\">%(page)s</span> of %(pages)s"
+msgstr ""
+
+#: templates/places/category_detail.html:62
+#, fuzzy
+msgid "Previous page"
+msgstr "Предыдущая запись"
+
+#: templates/places/category_detail.html:65
+#, fuzzy
+msgid "Next page"
+msgstr "Следующая запись"
+
+#: templates/places/entity_detail.html:19
+msgid "Travel Alert"
+msgstr ""
+
+#: templates/places/entity_detail.html:30
+#: templates/places/service_details.html:200
+#: templates/places/update_osm.html:42
+msgid "Map"
+msgstr ""
+
+#: templates/places/entity_detail.html:34
+#, python-format
+msgid "Real-time information from stop %(stop_id)s"
+msgstr ""
+
+#: templates/places/entity_detail.html:38
+msgid "Real-time information"
+msgstr ""
+
+#: templates/places/entity_detail.html:50
+msgid "Find things near here"
+msgstr ""
+
+#: templates/places/entity_detail.html:55
+#, python-format
+msgid "We do not yet have a location for this %(type_name)s."
+msgstr ""
+
+#: templates/places/entity_without_location.html:15
+msgid ""
+"Unfortunately, we do not have a location for this object, and so cannot tell "
+"you what is near it."
+msgstr ""
+
+#: templates/places/index.html:9 templates/places/index.html.py:12
+#: templates/places/index.html:15
+#, fuzzy
+msgid "Search Places"
+msgstr "Результаты поиска"
+
+#: templates/places/index.html:17
+msgid "Go!"
+msgstr ""
+
+#: templates/places/index.html:19
+msgid "Search"
+msgstr "Поиск"
+
+#: templates/places/index.html:23
+msgid "Search by place name, bus stop number e.g. E7 or 69323498 or postcode"
+msgstr ""
+
+#: templates/places/index.html:34
+msgid "Points of Interest"
+msgstr ""
+
+#: templates/places/index.html:38
+msgid "Nearby"
+msgstr ""
+
+#: templates/places/index.html:39
+#, fuzzy
+msgid "By Category"
+msgstr "Категория"
+
+#: templates/places/nearby_detail.html:12
+#, python-format
+msgid "Found %(count)s %(name)s near %(title)s"
+msgid_plural "Found %(count)s %(name_plural)s near %(title)s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: templates/places/nearby_detail.html:63
+#, python-format
+msgid "%(type_name)s, about %(distance)sm %(bearing)s"
+msgstr ""
+
+#: templates/places/nearby_detail.html:65
+#: templates/places/nearby_detail.html:74
+#, python-format
+msgid "%(distance)sm %(bearing)s"
+msgstr ""
+
+#: templates/places/nearby_detail.html:87
+#, python-format
+msgid "Find more %(type_name)s"
+msgstr ""
+
+#: templates/places/nearby_list.html:25
+#, python-format
+msgid "(%(quantity)s within %(distance)sm)"
+msgstr ""
+
+#: templates/places/service_details.html:13
+msgid ""
+"Multiple routes with the same number were found from this stop. This could "
+"be due to this stop serving two different directions. Please select exactly "
+"which route you want from the list below."
+msgstr ""
+
+#: templates/places/service_details.html:27
+msgid "Live Train Information"
+msgstr ""
+
+#: templates/places/service_details.html:30
+#, fuzzy
+msgid "Route Information"
+msgstr "Комментарий к "
+
+#: templates/places/service_details.html:38
+#, python-format
+msgid ""
+"There is currently a problem retrieving live departure information from the "
+"National Rail web site. Departure information may still be accessed<a href="
+"\"http://pda.ojp.nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly "
+"from their web site</a>."
+msgstr ""
+
+#: templates/places/service_details.html:40
+msgid "There is currently an error getting route information."
+msgstr ""
+
+#: templates/places/service_details.html:50
+#, fuzzy, python-format
+msgid "Operated by %(operator)s"
+msgstr "Записи от %(author)s"
+
+#: templates/places/service_details.html:55
+#, python-format
+msgid "Calling at platform %(platform)s"
+msgstr ""
+
+#: templates/places/service_details.html:63
+msgid ""
+"Not all services necessarily call at all stops, particularly in the early "
+"morning and late at night. Always check local timetables."
+msgstr ""
+
+#: templates/places/service_details.html:68
+msgid ""
+"The information shown below is scheduled information only. Always check "
+"local information for any service changes."
+msgstr ""
+
+#: templates/places/service_details.html:77
+#: templates/places/service_details.html:97
+#: templates/places/service_details.html:158
+msgid "Calling Point"
+msgstr ""
+
+#: templates/places/service_details.html:79
+#: templates/places/service_details.html:99
+#: templates/places/service_details.html:160
+#: templates/places/metadata/ldb.html:29
+msgid "Scheduled"
+msgstr ""
+
+#: templates/places/service_details.html:82
+#: templates/places/service_details.html:102
+#: templates/places/service_details.html:163
+msgid "Expected / Actual"
+msgstr ""
+
+#: templates/places/service_details.html:92
+#, python-format
+msgid "This service then merges with a service from %(location)s"
+msgstr ""
+
+#: templates/places/service_details.html:131
+#, python-format
+msgid "This service is then continued by %(service_type)s."
+msgstr ""
+
+#: templates/places/service_details.html:153
+#, python-format
+msgid "This service then splits to go to %(destination)s"
+msgstr ""
+
+#: templates/places/update_osm.html:5
+#, python-format
+msgid "Update %(title)s"
+msgstr ""
+
+#: templates/places/update_osm.html:15
+msgid "Important information"
+msgstr ""
+
+#: templates/places/update_osm.html:19
+#, python-format
+msgid ""
+"Thank you for wanting to improve the data provided by %(site_name)s. "
+"However, before you submit any changes, you should be aware of the following "
+"terms."
+msgstr ""
+
+#: templates/places/update_osm.html:23
+#, python-format
+msgid ""
+"Your contribution will be released into the Public Domain, and then "
+"submitted to OpenStreetMap by %(site_name)s."
+msgstr ""
+
+#: templates/places/update_osm.html:27
+#, python-format
+msgid ""
+"Your changes will be checked by a member of the %(site_name)s team before "
+"being uploaded. %(site_name)s may tidy or normalise the data you provide "
+"before they are uploaded using the %(site_name)s OSM account."
+msgstr ""
+
+#: templates/places/update_osm.html:31
+msgid ""
+"If you would like to be named as the original author of the changes, please "
+"provide your name and tick the attribution box. Your e-mail address will "
+"never be submitted to OSM, but may be used by us to clarify any changes you "
+"provide."
+msgstr ""
+
+#: templates/places/update_osm.html:36
+#, python-format
+msgid ""
+"You may be interested to read <a href=\"%(osm_url)s\">further information "
+"about OpenStreetMap and other ways in which one may contribute</a>."
+msgstr ""
+
+#: templates/places/update_osm.html:44
+#, python-format
+msgid ""
+"You are submitting an update to the %(type_name)s <em>&quot;%(title)s&quot;</"
+"em>."
+msgstr ""
+
+#: templates/places/update_osm.html:55
+msgid ""
+"Not all fields will be relevant to the item you are updating, and all fields "
+"are optional."
+msgstr ""
+
+#: templates/places/update_osm.html:62
+msgid "Provide your name and tick the box to be attributed for the change."
+msgstr ""
+
+#: templates/places/update_osm.html:76
+msgid ""
+"Your e-mail address is useful should we want to clarify any change you make."
+msgstr ""
+
+#: templates/places/update_osm.html:86
+msgid "The following are general properties for most types of item."
+msgstr ""
+
+#: templates/places/update_osm.html:116
+msgid ""
+"This next two about food apply mostly to pubs. For things that obviously "
+"serve food (e.g. restaurants), feel free to leave this empty."
+msgstr ""
+
+#: templates/places/update_osm.html:130
+msgid ""
+"If there is an ATM accessible at all hours here, please set this. This may "
+"be left blank if you are editing an ATM."
+msgstr ""
+
+#: templates/places/update_osm.html:140
+msgid ""
+"The following only apply to post boxes. The reference is normally printed at "
+"the bottom of the details on the post box."
+msgstr ""
+
+#: templates/places/update_osm.html:154
+msgid "For car parks and bicycle parking, please provide the number of spaces."
+msgstr ""
+
+#: templates/places/update_osm.html:164
+msgid ""
+"If you have any other information you think should be included, please tell "
+"us about it here."
+msgstr ""
+
+#: templates/places/update_osm.html:174
+msgid ""
+"If you are happy with your changes and agree to the terms above, you may now "
+"click 'Submit'."
+msgstr ""
+
+#: templates/places/update_osm.html:179
+msgid "Submit"
+msgstr ""
+
+#: templates/places/update_osm_done.html:10
+msgid "Thank you"
+msgstr ""
+
+#: templates/places/update_osm_done.html:14
+#, python-format
+msgid ""
+"Your changes have been submitted and will be checked shortly. Thank you for "
+"contributing to both %(site_name)s and OpenStreetMap!"
+msgstr ""
+
+#: templates/places/update_osm_done.html:18
+msgid "You may now wish to head back"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:5
+msgid "departures"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:21
+msgid "Origin"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:23
+#: templates/places/metadata/real_time_information.html:26
+#, fuzzy
+msgid "Destination"
+msgstr "Комментарий к "
+
+#: templates/places/metadata/ldb.html:27
+msgid "Plat."
+msgstr ""
+
+#: templates/places/metadata/ldb.html:30
+#: templates/places/metadata/real_time_information.html:27
+msgid "Expected"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:37
+msgid ""
+"There is currently a problem retrieving live departure information from the "
+"National Rail web site."
+msgstr ""
+
+#: templates/places/metadata/ldb.html:38
+#, python-format
+msgid ""
+"Departure information may still be accessed<a href=\"http://pda.ojp."
+"nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly from their web "
+"site</a>."
+msgstr ""
+
+#: templates/places/metadata/ldb.html:64
+msgid "Circular Route"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:94 templates/places/metadata/ldb.html:99
+msgid "View arrivals board"
+msgstr ""
+
+#: templates/places/metadata/ldb.html:96
+msgid "View departures board"
+msgstr ""
+
+#: templates/places/metadata/osm.html:7
+msgid "Information from OpenStreetMap"
+msgstr ""
+
+#: templates/places/metadata/osm.html:24
+#, python-format
+msgid "Call <em>%(title)s</em>"
+msgstr ""
+
+#: templates/places/metadata/osm.html:33
+msgid "Wikipedia article"
+msgstr ""
+
+#: templates/places/metadata/osm.html:62
+msgid "Suggest a correction"
+msgstr ""
+
+#: templates/places/metadata/park_and_ride.html:5
+msgid "Car Park Information"
+msgstr ""
+
+#. Translators: As in, car parking spaces
+#: templates/places/metadata/park_and_ride.html:11
+#: templates/places/metadata/park_and_ride.html:18
+msgid "Spaces"
+msgstr ""
+
+#: templates/places/metadata/park_and_ride.html:16
+msgid "Space information currently unavailable"
+msgstr ""
+
+#: templates/places/metadata/real_time_information.html:15
+msgid "Sorry, there is currently no real time information for this stop."
+msgstr ""
+
+#: templates/places/metadata/real_time_information.html:25
+msgid "Service"
+msgstr ""
+
+#: templates/places/metadata/real_time_information.html:46
+msgid "Next"
+msgstr ""
+
+#: templates/places/metadata/real_time_information.html:46
+msgid "No further info"
+msgstr ""
+
+#: templates/places/metadata/transit_status.html:5
+#, python-format
+msgid "%(service_name)s line status"
+msgstr ""
+
+#: templates/places/metadata/transit_status.html:10
+msgid "Line"
+msgstr ""
+
+#: templates/places/metadata/transit_status.html:11
+msgid "Status"
+msgstr ""
+
+#: templates/registration/logged_out.html:8
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: templates/registration/logged_out.html:10
+msgid "Log in again"
+msgstr ""
+
+#: templates/registration/password_change_done.html:6
+#: templates/registration/password_change_done.html:10
 msgid "Password change successful"
 msgstr ""
 
-#: molly/templates/registration/password_change_done.html:12
+#: templates/registration/password_change_done.html:12
 msgid "Your password was changed."
 msgstr ""
 
-#: molly/templates/registration/password_change_form.html:12
+#: templates/registration/password_change_form.html:12
 msgid ""
 "Please enter your old password, for security's sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
 
-#: molly/templates/registration/password_change_form.html:17
+#: templates/registration/password_change_form.html:17
 #, fuzzy
 msgid "Old password:"
 msgstr "пароль"
 
-#: molly/templates/registration/password_change_form.html:19
-#: molly/templates/registration/password_reset_confirm.html:19
-#, fuzzy
-msgid "New password:"
-msgstr "пароль"
-
-#: molly/templates/registration/password_change_form.html:21
-#: molly/templates/registration/password_reset_confirm.html:21
+#: templates/registration/password_change_form.html:21
+#: templates/registration/password_reset_confirm.html:21
 #, fuzzy
 msgid "Confirm password:"
 msgstr "пароль"
 
-#: molly/templates/registration/password_change_form.html:23
-#: molly/templates/registration/password_reset_confirm.html:22
+#: templates/registration/password_change_form.html:23
+#: templates/registration/password_reset_confirm.html:22
 #, fuzzy
 msgid "Change my password"
 msgstr "пароль"
 
-#: molly/templates/registration/password_reset_complete.html:4
-#: molly/templates/registration/password_reset_confirm.html:6
-#: molly/templates/registration/password_reset_done.html:4
-#: molly/templates/registration/password_reset_form.html:4
-#: molly/templates/registration/password_reset_form.html:6
-#: molly/templates/registration/password_reset_form.html:10
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_confirm.html:6
+#: templates/registration/password_reset_done.html:4
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:6
+#: templates/registration/password_reset_form.html:10
 #: userena/templates/userena/password_reset_complete.html:4
 #, fuzzy
 msgid "Password reset"
 msgstr "Требуется пароль"
 
-#: molly/templates/registration/password_reset_complete.html:6
-#: molly/templates/registration/password_reset_complete.html:10
+#: templates/registration/password_reset_complete.html:6
+#: templates/registration/password_reset_complete.html:10
 #, fuzzy
 msgid "Password reset complete"
 msgstr "Требуется пароль"
 
-#: molly/templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_complete.html:12
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr ""
 
-#: molly/templates/registration/password_reset_complete.html:14
-#, fuzzy
-msgid "Log in"
-msgstr "Выйти"
-
-#: molly/templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_confirm.html:4
 msgid "Password reset confirmation"
 msgstr ""
 
-#: molly/templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_confirm.html:12
 #, fuzzy
 msgid "Enter new password"
 msgstr "пароль"
 
-#: molly/templates/registration/password_reset_confirm.html:14
+#: templates/registration/password_reset_confirm.html:14
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
 
-#: molly/templates/registration/password_reset_confirm.html:27
+#: templates/registration/password_reset_confirm.html:27
 msgid "Password reset unsuccessful"
 msgstr ""
 
-#: molly/templates/registration/password_reset_confirm.html:29
+#: templates/registration/password_reset_confirm.html:29
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
 
-#: molly/templates/registration/password_reset_done.html:6
-#: molly/templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_done.html:6
+#: templates/registration/password_reset_done.html:10
 #, fuzzy
 msgid "Password reset successful"
 msgstr "Требуется пароль"
 
-#: molly/templates/registration/password_reset_done.html:12
+#: templates/registration/password_reset_done.html:12
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
 msgstr ""
 
-#: molly/templates/registration/password_reset_email.html:2
+#: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr ""
 
-#: molly/templates/registration/password_reset_email.html:3
+#: templates/registration/password_reset_email.html:3
 #, python-format
 msgid "for your user account at %(site_name)s"
 msgstr ""
 
-#: molly/templates/registration/password_reset_email.html:5
+#: templates/registration/password_reset_email.html:5
 msgid "Please go to the following page and choose a new password:"
 msgstr ""
 
-#: molly/templates/registration/password_reset_email.html:9
+#: templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
 msgstr ""
 
-#: molly/templates/registration/password_reset_email.html:11
+#: templates/registration/password_reset_email.html:11
 #, fuzzy
 msgid "Thanks for using our site!"
 msgstr "Спасибо за комментарий"
 
-#: molly/templates/registration/password_reset_email.html:13
+#: templates/registration/password_reset_email.html:13
 #, python-format
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: molly/templates/registration/password_reset_form.html:12
+#: templates/registration/password_reset_form.html:12
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll e-mail "
 "instructions for setting a new one."
 msgstr ""
 
-#: molly/templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:17
 msgid "E-mail address:"
 msgstr ""
 
-#: molly/templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:17
 #, fuzzy
 msgid "Reset my password"
 msgstr "пароль"
 
-#: userena/forms.py:30
+#: tracking/models.py:63
+msgid "unknown"
+msgstr ""
+
+#: tracking/models.py:108
+#, fuzzy
+msgid "keyword"
+msgstr "Ключевые слова..."
+
+#: tracking/models.py:108
+msgid ""
+"Part or all of a user-agent string.  For example, \"Googlebot\" here will be "
+"found in \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/"
+"bot.html)\" and that visitor will not be tracked."
+msgstr ""
+
+#: tracking/models.py:115
+msgid "Untracked User-Agent"
+msgstr ""
+
+#: tracking/models.py:116
+msgid "Untracked User-Agents"
+msgstr ""
+
+#: tracking/models.py:119
+msgid "The IP address that should be banned"
+msgstr ""
+
+#: tracking/models.py:126
+msgid "Banned IP"
+msgstr ""
+
+#: tracking/models.py:127
+msgid "Banned IPs"
+msgstr ""
+
+#: tracking/views.py:80
+#, python-format
+msgid "%(minutes)i minute"
+msgid_plural "%(minutes)i minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: tracking/views.py:86
+#, python-format
+msgid "%(seconds)i second"
+msgid_plural "%(seconds)i seconds"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: tracking/templates/tracking/_active_users.html:2
+#, python-format
+msgid "1 active user"
+msgid_plural "%(counter)s active users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: tracking/templates/tracking/_active_users.html:5
+#, python-format
+msgid "1 guest user"
+msgid_plural "%(counter)s guest users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: tracking/templates/tracking/_active_users.html:15
+#, python-format
+msgid "1 registered user"
+msgid_plural "%(counter)s registered users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: tracking/templates/tracking/visitor_map.html:4
+msgid "Active Visitors Map"
+msgstr ""
+
+#: tracking/templates/tracking/visitor_map.html:22
+msgid "Active Users"
+msgstr ""
+
+#: tracking/templates/tracking/visitor_map.html:25
+msgid ""
+"Below is a map and a list of recently active users on this site.  It updates "
+"itself every 5 seconds or so, adding and removing pins in the map as "
+"necessary.  Stick around for a few minutes to see it in action!"
+msgstr ""
+
+#: userena/forms.py:37
 msgid "Username must contain only letters, numbers, dots and underscores."
 msgstr ""
 
-#: userena/forms.py:33 userena/forms.py:192
+#: userena/forms.py:40 userena/forms.py:213
 #: userena/templates/userena/profile_detail.html:27
 msgid "Email"
 msgstr ""
 
-#: userena/forms.py:36
+#: userena/forms.py:43
 #, fuzzy
 msgid "Create password"
 msgstr "пароль"
 
-#: userena/forms.py:39
+#: userena/forms.py:46
 #, fuzzy
 msgid "Repeat password"
 msgstr "пароль"
 
-#: userena/forms.py:42
+#: userena/forms.py:49
 msgid "Mobile"
 msgstr ""
 
-#: userena/forms.py:56
+#: userena/forms.py:63
 msgid "This username is already taken."
 msgstr ""
 
-#: userena/forms.py:58
+#: userena/forms.py:65
 msgid "This username is not allowed."
 msgstr ""
 
-#: userena/forms.py:64 userena/forms.py:234
+#: userena/forms.py:71 userena/forms.py:255
 msgid "This email is already in use. Please supply a different email."
 msgstr ""
 
-#: userena/forms.py:76
+#: userena/forms.py:83
 msgid "The two password fields didn't match."
 msgstr ""
 
-#: userena/forms.py:156
+#: userena/forms.py:142
+msgid "这个手机号码已经被注册了，请确认您输入的手机号码！"
+msgstr ""
+
+#: userena/forms.py:177
 msgid "I have read and agree to the Terms of Service"
 msgstr ""
 
-#: userena/forms.py:157
+#: userena/forms.py:178
 msgid "You must agree to the terms to register."
 msgstr ""
 
-#: userena/forms.py:170
+#: userena/forms.py:191
 #, python-format
 msgid "%(label)s"
 msgstr ""
 
-#: userena/forms.py:173
+#: userena/forms.py:194
 #, python-format
 msgid "%(error)s"
 msgstr ""
 
-#: userena/forms.py:180
+#: userena/forms.py:201
 msgid "Email or username"
 msgstr ""
 
-#: userena/forms.py:181
+#: userena/forms.py:202
 msgid "Either supply us with your email or username."
 msgstr ""
 
-#: userena/forms.py:182
+#: userena/forms.py:203
 msgid "Password"
 msgstr "Пароль"
 
-#: userena/forms.py:186
+#: userena/forms.py:207
 #, python-format
 msgid "Remember me for %(days)s"
 msgstr ""
 
-#: userena/forms.py:193
+#: userena/forms.py:214
 msgid "Please supply your email."
 msgstr ""
 
-#: userena/forms.py:208
+#: userena/forms.py:229
 msgid ""
 "Please enter a correct username or email and password. Note that both fields "
 "are case-sensitive."
 msgstr ""
 
-#: userena/forms.py:214
+#: userena/forms.py:235
 #: userena/templates/userena/email_confirm_complete.html:6
 msgid "New email"
 msgstr ""
 
-#: userena/forms.py:232
+#: userena/forms.py:253
 msgid "You're already known under this email."
 msgstr ""
 
-#: userena/forms.py:248
+#: userena/forms.py:269
 msgid "First name"
 msgstr ""
 
-#: userena/forms.py:251
+#: userena/forms.py:272
 #, fuzzy
 msgid "Last name"
 msgstr "последнее обновление"
@@ -600,10 +2984,6 @@ msgstr ""
 
 #: userena/views.py:544
 msgid "You don't have permission to view this profile."
-msgstr ""
-
-#: userena/contrib/umessages/admin.py:25
-msgid "Date/time"
 msgstr ""
 
 #: userena/contrib/umessages/fields.py:56
@@ -921,10 +3301,6 @@ msgstr ""
 msgid "Age"
 msgstr ""
 
-#: userena/templates/userena/profile_detail.html:33
-msgid "Website"
-msgstr ""
-
 #: userena/templates/userena/profile_detail.html:36
 #, fuzzy
 msgid "Location"
@@ -1030,15 +3406,8 @@ msgstr ""
 #~ msgstr "Комментарий к "
 
 #, fuzzy
-#~ msgid "Recent Actions"
-#~ msgstr "Последние комментарии"
-
-#, fuzzy
 #~ msgid "Polish"
 #~ msgstr "Опубликована"
-
-#~ msgid "Latest entries"
-#~ msgstr "Последние записи"
 
 #~ msgid "The latest entries for the site %s"
 #~ msgstr "Последние новости сайта %s"
@@ -1048,9 +3417,6 @@ msgstr ""
 
 #~ msgid "The latest entries for the category %s"
 #~ msgstr "Последние новости в категории %s"
-
-#~ msgid "Entries for author %s"
-#~ msgstr "Записи от %s"
 
 #~ msgid "The latest entries by %s"
 #~ msgstr "Последние новости от %s"
@@ -1106,9 +3472,6 @@ msgstr ""
 #~ msgid "category"
 #~ msgstr "категория"
 
-#~ msgid "categories"
-#~ msgstr "категории"
-
 #~ msgid "draft"
 #~ msgstr "черновик"
 
@@ -1138,12 +3501,6 @@ msgstr ""
 
 #~ msgid "comment enabled"
 #~ msgstr "комментирование включено"
-
-#~ msgid "creation date"
-#~ msgstr "дата создания"
-
-#~ msgid "start publication"
-#~ msgstr "начало публикации"
 
 #~ msgid "date start publish"
 #~ msgstr "дата начала публикации"
@@ -1262,20 +3619,11 @@ msgstr ""
 #~ msgid "include subcategories"
 #~ msgstr "включает подкатегории"
 
-#~ msgid "number of entries"
-#~ msgstr "количество записей"
-
 #~ msgid "Template used to display the plugin"
 #~ msgstr "Шаблон для отображения плагина"
 
-#~ msgid "%s entries"
-#~ msgstr "%s записей"
-
 #~ msgid "Error 404"
 #~ msgstr "Ошибка 404"
-
-#~ msgid "Page not found"
-#~ msgstr "Страница не найдена"
 
 #~ msgid "Sorry, but the requested page could not be found."
 #~ msgstr "Извините, запрашиваемая страница не найдена."
@@ -1289,23 +3637,11 @@ msgstr ""
 #~ msgid "Recent entries"
 #~ msgstr "Последние записи"
 
-#~ msgid "Search"
-#~ msgstr "Поиск"
-
-#~ msgid "Keywords..."
-#~ msgstr "Ключевые слова..."
-
 #~ msgid "Error 500"
 #~ msgstr "Ошибка 500"
 
-#~ msgid "Server error"
-#~ msgstr "Ошибка сервера"
-
 #~ msgid "Contents"
 #~ msgstr "Содержимое"
-
-#~ msgid "%(entries)s entries"
-#~ msgstr "%(entries)s записей"
 
 #~ msgid "%(comments)s comments"
 #~ msgstr "%(comments)s комментариев    "
@@ -1425,9 +3761,6 @@ msgstr ""
 #~ msgid "RSS Feed of trackbacks on"
 #~ msgstr "RSS лента трэкбэков к"
 
-#~ msgid "Next entry"
-#~ msgstr "Следующая запись"
-
 #~ msgid "Related entries"
 #~ msgstr "Связанные записи"
 
@@ -1449,9 +3782,6 @@ msgstr ""
 #~ msgid "RSS Feed"
 #~ msgstr "RSS лента"
 
-#~ msgid "Category"
-#~ msgstr "Категория"
-
 #~ msgid "Tag"
 #~ msgstr "Тег"
 
@@ -1460,9 +3790,6 @@ msgstr ""
 
 #~ msgid "Page"
 #~ msgstr "Страница"
-
-#~ msgid "Entries by %(author)s"
-#~ msgstr "Записи от %(author)s"
 
 #~ msgid "No entries yet."
 #~ msgstr "Записей еще нет."
@@ -1479,17 +3806,11 @@ msgstr ""
 #~ msgid "Edit the author"
 #~ msgstr "Редактировать автора"
 
-#~ msgid "Search results"
-#~ msgstr "Результаты поиска"
-
 #~ msgid "RSS Feed of search result of"
 #~ msgstr "RSS лента результатов поиска "
 
 #~ msgid "Nothing found."
 #~ msgstr "Ничего не найдено."
-
-#~ msgid "Login required"
-#~ msgstr "Требуется авторизация"
 
 #~ msgid "Your username and password didn't match. Please try again."
 #~ msgstr ""
@@ -1602,10 +3923,6 @@ msgstr ""
 #~ msgstr "Смотреть на сайте"
 
 #, fuzzy
-#~ msgid "Search in"
-#~ msgstr "Поиск"
-
-#, fuzzy
 #~ msgid "Authors list"
 #~ msgstr "Список авторов"
 
@@ -1662,10 +3979,6 @@ msgstr ""
 #~ msgstr "Связанные записи"
 
 #, fuzzy
-#~ msgid "Quick links"
-#~ msgstr "Быстрая публикация"
-
-#, fuzzy
 #~ msgid "Return to site"
 #~ msgstr "Вернуться к списку записей"
 
@@ -1676,46 +3989,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "None Available"
 #~ msgstr "Недоступно"
-
-#, fuzzy
-#~ msgid "We're sorry, but the requested page could not be found."
-#~ msgstr "Извините, запрашиваемая страница не найдена."
-
-#, fuzzy
-#~ msgid "Server error (500)"
-#~ msgstr "Ошибка сервера"
-
-#, fuzzy
-#~ msgid "My Actions"
-#~ msgstr "Последние комментарии"
-
-#, fuzzy
-#~ msgid "None available"
-#~ msgstr "Недоступно"
-
-#, fuzzy
-#~ msgid "Password:"
-#~ msgstr "Пароль"
-
-#, fuzzy
-#~ msgid "Created object"
-#~ msgstr "связанные записи"
-
-#, fuzzy
-#~ msgid "1 result"
-#~ msgid_plural "%(counter)s results"
-#~ msgstr[0] "Результаты поиска"
-#~ msgstr[1] "Результаты поиска"
-#~ msgstr[2] "Результаты поиска"
-#~ msgstr[3] "Результаты поиска"
-
-#, fuzzy
-#~ msgid "Password (again)"
-#~ msgstr "Пароль"
-
-#, fuzzy
-#~ msgid "View on Site"
-#~ msgstr "Смотреть на сайте"
 
 #, fuzzy
 #~ msgid "Documentation bookmarklets"
@@ -1732,12 +4005,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Error"
 #~ msgstr "Ошибка 404"
-
-#~ msgid "on date"
-#~ msgstr "на дату"
-
-#~ msgid "Your contents"
-#~ msgstr "содержимое"
 
 #~ msgid "Comment"
 #~ msgstr "Комментарии"

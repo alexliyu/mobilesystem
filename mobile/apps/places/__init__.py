@@ -1,23 +1,19 @@
 #-*- coding:utf-8 -*-
 """
-这是地理信息系统的初始化类，用于生成公共方法
+这是用于GIS的应用程序，作为系统最核心的应用之一，将会与其他各个应用相关联
 创建于 2011-1-30.
 
 @author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
-
-@param DEBUG 是否开启调试模式
-
-@param TEMPLATE_DEBUG 是否开启模板调试模式
-
-@event event 无事件
-
-@exception exception 无返回
-
-@keyparam  param 无参数
-
-@return 无返回
        
 """
+from django.utils.translation import ugettext_lazy as _
+
+class Mete:
+    """
+    定义此应用程序的附加信息，诸如应用程序名
+    """
+    title = _('Place')
+
 from math import atan2, degrees
 from django.shortcuts import get_object_or_404
 from django.contrib.gis.geos import Point

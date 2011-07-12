@@ -1,8 +1,15 @@
+#-*- coding:utf-8 -*-
 """
-Feeds package
+这是用于采集FEED与格式化显示FEED的应用程序，可以通过在批量处理里面进行同步
+创建于 2011-1-30.
 
-Imports, parses and stores RSS feeds in a standard model. Designed to be used in conjunction with a cron job for 'syncing'.
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
 """
+from django.utils.translation import ugettext_lazy as _
 
-# TODO: Move some oxford specific info in initial_data.json the demos/*
-# TODO: move 'importers' to molly/providers ?
+class Mete:
+    """
+    定义此应用程序的附加信息，诸如应用程序名
+    """
+    title = _('Feeds')

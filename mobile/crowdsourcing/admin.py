@@ -1,3 +1,11 @@
+#-*- coding:utf-8 -*-
+"""
+这是动态生成调查问卷系统的后台注册文件，注册模型到django后台管理界面
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
 from __future__ import absolute_import
 
 import re
@@ -35,7 +43,7 @@ class QuestionForm(ModelForm):
                 except ValueError:
                     raise ValidationError(_(
                         "For numeric select or numeric choice, all your "
-                        "options must be a number. This is not a number: ") +
+                        "options must be a number. This is not a number: ") + 
                         option)
         if numeric_list or option_type in (OTC.SELECT, OTC.CHOICE,):
             if not opts.splitlines():
@@ -84,23 +92,22 @@ class SurveyAdminForm(ModelForm):
             elif not get_group_id(group):
                 names = ", ".join(get_group_names())
                 if names:
-                    args = (group, names)
-                    raise ValidationError(
-                        _("You can't access this group: %s. Either the group "
+                    msg = _("You can't access this group: " + group + ". Either the group "
                           "doesn't exist, or you don't have permission. You "
-                          "have permission to these groups: %s") % args)
+                          "have permission to these groups:" + names) 
+                    raise ValidationError(msg)
                 else:
-                    raise ValidationError(
-                        _("You can't access any Flickr groups. Either you "
+                    msg = _("You can't access any Flickr groups. Either you "
                           "don't have any groups or your configuration "
                           "settings are incorrect and you need to contact a "
-                          "programmer."))
+                          "programmer.")
+                    raise ValidationError(msg)
         return group
 
 
 def submissions_as(obj):
     return obj.get_download_tags()
-submissions_as.allow_tags=True
+submissions_as.allow_tags = True
 submissions_as.short_description = 'Submissions as'
 
 

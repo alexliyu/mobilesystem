@@ -1,3 +1,18 @@
+#-*- coding:utf-8 -*-
+"""
+这是用于系统用户帐号的应用，主要用于与外部其他网站进行账户关联
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
+from django.utils.translation import ugettext_lazy as _
+
+class Mete:
+    """
+    定义此应用程序的附加信息，诸如应用程序名
+    """
+    title = _('Auth')
+
 from django.contrib.auth.models import User
 
 from conf import app_by_application_name
@@ -31,7 +46,7 @@ def unify_users(request):
     # We accomplish this by sorting the set into a list, with a custom
     # comparison function which gives the root_user the lowest value (and so is
     # first)
-    for u in sorted(users, cmp=lambda x, y: -1 if x == root_user else 1 if y == root_user else 0):
+    for u in sorted(users, cmp=lambda x, y:-1 if x == root_user else 1 if y == root_user else 0):
 
         u.usersession_set.all().update(user=root_user)
 

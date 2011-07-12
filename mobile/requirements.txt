@@ -27,3 +27,4 @@ django-sentry
 sorl-thumbnail
 django-mediagenerator
 easy_thumbnails
+pyyaml

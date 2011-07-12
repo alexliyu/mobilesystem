@@ -1,3 +1,20 @@
+
+#-*- coding:utf-8 -*-
+"""
+这是地图应用程序，用于管理及显示地图
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
+from django.utils.translation import ugettext_lazy as _
+
+class Mete:
+    """
+    定义此应用程序的附加信息，诸如应用程序名
+    """
+    title = _('Maps')
+
+
 from urllib import urlencode
 import simplejson
 from maps.osm import fit_to_map
