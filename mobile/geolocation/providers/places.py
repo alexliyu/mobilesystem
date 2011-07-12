@@ -1,3 +1,14 @@
+#-*- coding:utf-8 -*-
+"""
+这是用于查询GIS地理位置的provider之一，用于检索数据库中所保存的地理位置.
+
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+
+       
+"""
+
 import logging
 from itertools import chain
 
@@ -20,12 +31,15 @@ class PlacesGeolocationProvider(BaseGeolocationProvider):
                 _identifiers__value__iexact=query,
             )
         else:
+            """
+            2011-07-13 修正查找GIS地点时全部匹配查询为部分匹配查询
+            """
             entities = entities.filter(
-                _identifiers__value__iexact=query,
+                _identifiers__value__icontains=query,
             )
 
         entities = chain(
-            Entity.objects.filter(names__title__iexact=query,
+            Entity.objects.filter(names__title__icontains=query,
                                   location__isnull=False),
             entities,
         )

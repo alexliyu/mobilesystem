@@ -67,28 +67,28 @@ ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '192.168.1.34',
-        'NAME': 'mobile',
-        'USER': 'mobile',
-        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
-    }
-}
-
-
-# 在家里的数据库配置
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '127.0.0.1',
-#        'NAME': 'molly',
-#        'USER': 'molly',
-#        #'PASSWORD': 'mobile',
-#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#        'HOST': '192.168.1.34',
+#        'NAME': 'mobile',
+#        'USER': 'mobile',
+#        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
 #    }
 #}
+
+
+# 在家里的数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'HOST': '127.0.0.1',
+        'NAME': 'molly',
+        'USER': 'molly',
+        #'PASSWORD': 'mobile',
+        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+    }
+}
 
 
 # API keys are used to access particular services
@@ -159,6 +159,7 @@ APPLICATIONS = [
         prefer_results_near=(118.115749, 24.471363, 10000),
         providers=[
             Provider('geolocation.providers.PlacesGeolocationProvider'),
+            Provider('geolocation.providers.CloudmadeGeolocationProvider',),
         ],
         display_to_user=False,
     ),
@@ -416,7 +417,7 @@ CACHE_DIR = os.path.join(project_root, 'cache')
 MARKER_DIR = os.path.join(CACHE_DIR, 'markers')
 
 # This shouldn't need changing
-SRID = 4479
+SRID = 3857
 
 GMAP_JQUERY = 'http://code.jquery.com/jquery-1.4.2.min.js'
 GMAP_API = 'http: // maps.google.com / maps / api / js?sensor = false'

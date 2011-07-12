@@ -265,8 +265,8 @@ class Entity(models.Model):
         if not isinstance(point, Point):
             point = Point(point, srid=4326)
         return (
-            point.transform(4479, clone=True).distance(
-                self.location.transform(4479, clone=True)),
+            point.transform(3857, clone=True).distance(
+                self.location.transform(3857, clone=True)),
             self.get_bearing(point),
         )
     

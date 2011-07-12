@@ -106,7 +106,7 @@ class PostcodesMapsProvider(BaseMapsProvider):
             except Entity.DoesNotExist:
                 entity = Entity(source=source)
             
-            entity.location = Point(easting, northing, srid=4479)
+            entity.location = Point(easting, northing, srid=3857)
             entity.geometry = entity.location
             entity.primary_type = entity_type
             

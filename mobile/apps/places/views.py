@@ -179,7 +179,7 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
                 'exclude_from_search': True,
                 'title': title}
         
-        number = len([e for e in context['entities'] if e.location.transform(4479, clone=True).distance(context['point'].transform(4479, clone=True)) <= 1000])
+        number = len([e for e in context['entities'] if e.location.transform(3857, clone=True).distance(context['point'].transform(3857, clone=True)) <= 1000])
         entity_type = context['entity_types'][0].verbose_name_plural
 
         return {
@@ -798,13 +798,13 @@ class APIView(BaseView):
 
         if 'near' in request.GET:
             try:
-                point = Point(map(float, request.GET['near'].split(',')), srid=4326).transform(4479, clone=True)
+                point = Point(map(float, request.GET['near'].split(',')), srid=4326).transform(3857, clone=True)
 
                 entities = entities.filter(location__isnull=False)
                 entities = entities.distance(point).order_by('distance')
 
                 for entity in entities:
-                    entity.distance = entity.location.transform(4479, clone=True).distance(point)
+                    entity.distance = entity.location.transform(3857, clone=True).distance(point)
 
                 if 'max_distance' in request.GET:
                     max_distance = float(request.GET['max_distance'])
