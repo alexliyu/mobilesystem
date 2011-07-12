@@ -5,7 +5,7 @@ Created on 2011-1-30
 @author: 李昱
 '''
 from datetime import timedelta
-from models import lottery
+from apps.lottery.models import lottery
 from django.contrib.auth.models import User
 from utils.views import BaseView
 from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
