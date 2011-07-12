@@ -1,0 +1,12 @@
+{% extends "links/base.html" %}
+
+{% block content %}
+<ul data-role="listview" data-filter="true"> 
+{% for item in blacklist %}
+    <li><h4>中奖手机号码为：{{ item.replacestr }}</h3></li>
+{% endfor %}
+    
+</ul>
+
+
+{% endblock %}
