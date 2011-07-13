@@ -78,7 +78,7 @@ class GeolocationView(BaseView):
         if form.is_valid():
             self.set_location(request,
                              form.cleaned_data['name'],
-                             form.cleaned_data['location'],
+                             [form.cleaned_data['latitude'], form.cleaned_data['longitude']],
                              form.cleaned_data['accuracy'],
                              form.cleaned_data['method'],
                              True)

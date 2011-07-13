@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 class CloudmadeGeolocationProvider(BaseGeolocationProvider):
     REVERSE_GEOCODE_URL = 'http://geocoding.cloudmade.com/%(api_key)s/geocoding/closest/%(type)s/%(lat)f,%(lon)f.js'
-    GEOCODE_URL = 'http://geocoding.cloudmade.com/%(api_key)s/geocoding/find/%(query)s.js'
+    GEOCODE_URL = 'http://maps.google.com/maps/api/geocode/json?address=%(query)s&sensor=false'
 
     def __init__(self, search_locality=None):
         self.search_locality = search_locality
@@ -70,8 +70,7 @@ class CloudmadeGeolocationProvider(BaseGeolocationProvider):
             query = ' '.join(query.split(' ')[1:])
 
         params = {
-            'api_key': settings.API_KEYS['cloudmade'],
-            'query': urllib.quote_plus(query),
+            'query': urllib.quote_plus(str(query)),
         }
 
         try:
@@ -93,23 +92,28 @@ class CloudmadeGeolocationProvider(BaseGeolocationProvider):
 
         results = []
         
-        features = sorted(json['features'], key=lambda f: len(f['properties'].get('name', 'x' * 1000)))        
+        features = [{
+                  'address_components':json['results'][0]['address_components'],
+                  'bounds':json['results'][0]['geometry']['bounds']['northeast'],
+                  'location':json['results'][0]['geometry']['location']
+                  
+                  }]       
         
         for i, feature in enumerate(features):
             try:
                 # Cloudmade returns a lat-long (and we use long-lats internally)
-                bounds_a, bounds_b = [Point(p[1], p[0], srid=4326).transform(settings.SRID, clone=True) for p in feature['bounds']]
+                bounds_a, bounds_b = Point(feature['bounds']['lng'], feature['bounds']['lat'], srid=4326).transform(settings.SRID, clone=True)
             except OGRException:
                 # The point wasn't transformable into the co-ordinate
                 # scheme desired - it's probably a long way away.
                 continue
 
-            centroid = tuple(feature['centroid']['coordinates'])
+            centroid = tuple(feature['location']['lng'], feature['location']['lat'])
             centroid = centroid[1], centroid[0]
             accuracy = bounds_a.distance(bounds_b) / 1.414
             
             try:
-                name = feature['properties']['name']
+                name = feature['address_components']['formatted_address']
                 if name == self.search_locality and name.lower() != query.split(',')[0].lower():
                     continue
 
