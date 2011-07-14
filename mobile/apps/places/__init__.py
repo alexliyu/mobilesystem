@@ -24,7 +24,7 @@ def get_entity(scheme, value):
     """
     2011-07-09修复，用scheme:value这样的值来匹配entity，或者地图实例
     """
-    return get_object_or_404(Entity, identifier_scheme=scheme, identifier_value=value)
+    return get_object_or_404(Entity, _identifiers__scheme=scheme, _identifiers__value=value)
 class EntityCache(dict):
     
     def __missing__(self, key):

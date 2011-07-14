@@ -22,7 +22,7 @@
 	{% endif %} 
 	{{ entity_type.verbose_name_plural|capfirst }} 
 	<small>
-	  {% blocktrans with entity_type.entities_found as quantity and entity_type.max_distance|round_up_10 as distance %}({{ quantity }} within {{ distance }}m){% endblocktrans %}
+	  {% blocktrans with entity_type.entities_found as quantity and entity_type.max_distance|round_up_10 as distance %}(共{{ quantity }}项，距离大约 {{ distance }}米){% endblocktrans %}
 	</small></a>
       </li>
     {% endfor %}

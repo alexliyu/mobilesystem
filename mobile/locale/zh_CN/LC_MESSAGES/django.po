@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-12 18:00+0800\n"
-"PO-Revision-Date: 2011-07-12 18:01+0800\n"
+"POT-Creation-Date: 2011-07-14 17:03+0800\n"
+"PO-Revision-Date: 2011-07-14 17:16+0800\n"
 "Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
 "Language: zh_CN\n"
@@ -118,35 +118,35 @@ msgstr "容量"
 #. Translators: These are compass points
 #: apps/places/models.py:245
 msgid "N"
-msgstr ""
+msgstr "北"
 
 #: apps/places/models.py:245
 msgid "NE"
-msgstr ""
+msgstr "东北"
 
 #: apps/places/models.py:245
 msgid "E"
-msgstr ""
+msgstr "东"
 
 #: apps/places/models.py:245
 msgid "SE"
-msgstr ""
+msgstr "东南"
 
 #: apps/places/models.py:246
 msgid "S"
-msgstr ""
+msgstr "南"
 
 #: apps/places/models.py:246
 msgid "SW"
-msgstr ""
+msgstr "西南"
 
 #: apps/places/models.py:246
 msgid "W"
-msgstr ""
+msgstr "西"
 
 #: apps/places/models.py:246
 msgid "NW"
-msgstr ""
+msgstr "西北"
 
 #: apps/places/models.py:567
 msgid "Scheduled time of arrival"
@@ -237,7 +237,7 @@ msgid "service %(services)s stops here"
 msgid_plural "services %(services)s stop here"
 msgstr[0] ""
 
-#: apps/places/views.py:630
+#: apps/places/views.py:632
 #: templates/places/service_details.html:10
 msgid "Multiple routes found"
 msgstr ""
@@ -698,7 +698,7 @@ msgstr ""
 #: apps/places/providers/osm.py:640
 #: apps/places/providers/osm.py:664
 msgid "Amenities"
-msgstr ""
+msgstr "设施"
 
 #: apps/places/providers/osm.py:431
 msgid "ATM"
@@ -1289,7 +1289,6 @@ msgid "Podcasts"
 msgstr "视频点播"
 
 #: apps/search/__init__.py:15
-#: templates/places/index.html:19
 msgid "Search"
 msgstr "搜索"
 
@@ -1467,69 +1466,68 @@ msgid "To be able to use this feature you need to <a href=\"%(geolocation_url)s?
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:4
-#: templates/geolocation/update_location_embed.html:4
 msgid "Your Location"
 msgstr "您的所在地点"
 
 #: geolocation/templates/geolocation/update_location_embed.html:10
-#: templates/geolocation/update_location_embed.html:10
+#: templates/geolocation/update_location_embed.html:8
 msgid "Update"
 msgstr "更新"
 
 #: geolocation/templates/geolocation/update_location_embed.html:15
-#: templates/geolocation/update_location_embed.html:15
+#: templates/geolocation/update_location_embed.html:13
 msgid "No location known"
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:17
-#: templates/geolocation/update_location_embed.html:17
+#: templates/geolocation/update_location_embed.html:15
 #, python-format
 msgid "within approx. %(accuracy)s m"
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:24
-#: templates/geolocation/update_location_embed.html:24
+#: templates/geolocation/update_location_embed.html:22
 msgid "Did you mean&hellip;"
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:56
-#: templates/geolocation/update_location_embed.html:56
+#: templates/geolocation/update_location_embed.html:54
 msgid "Or search again:"
 msgstr "请再次搜索："
 
 #. Translators: This refers to sample things to be entered in the 'Set Location' box, postcode, building ID, street name
 #: geolocation/templates/geolocation/update_location_embed.html:67
-#: templates/geolocation/update_location_embed.html:67
+#: templates/geolocation/update_location_embed.html:65
 msgid "e.g., OX2 6NN, kebl, St Clements"
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:71
-#: templates/geolocation/update_location_embed.html:71
+#: templates/geolocation/update_location_embed.html:69
 msgid "Set Location"
 msgstr "设置所在地点"
 
 #: geolocation/templates/geolocation/update_location_embed.html:76
-#: templates/geolocation/update_location_embed.html:76
+#: templates/geolocation/update_location_embed.html:74
 msgid "Favourite Locations"
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:96
-#: templates/geolocation/update_location_embed.html:96
+#: templates/geolocation/update_location_embed.html:94
 msgid "(Remove from favourites)"
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:104
-#: templates/geolocation/update_location_embed.html:104
+#: templates/geolocation/update_location_embed.html:102
 msgid "Location History"
 msgstr "所在位置历史"
 
 #: geolocation/templates/geolocation/update_location_embed.html:127
-#: templates/geolocation/update_location_embed.html:127
+#: templates/geolocation/update_location_embed.html:125
 msgid "(Add as favourite)"
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:135
-#: templates/geolocation/update_location_embed.html:135
+#: templates/geolocation/update_location_embed.html:133
 msgid "Clear history"
 msgstr "清除历史"
 
@@ -1590,18 +1588,6 @@ msgstr "object ID"
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:12
 #: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:10
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:10
-#: templates/admin/500.html:7
-#: templates/admin/app_index.html:11
-#: templates/admin/base.html:57
-#: templates/admin/change_form.html:62
-#: templates/admin/change_list.html:84
-#: templates/admin/csv_export_selected_confirmation.html:9
-#: templates/admin/delete_confirmation.html:9
-#: templates/admin/delete_selected_confirmation.html:9
-#: templates/admin/index.html:16
-#: templates/admin/invalid_setup.html:7
-#: templates/admin/object_history.html:9
-#: templates/admin/auth/user/change_password.html:20
 #: templates/registration/logged_out.html:4
 #: templates/registration/password_change_done.html:4
 #: templates/registration/password_change_form.html:4
@@ -1633,7 +1619,6 @@ msgstr "用户权限"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:36
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:40
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:30
-#: templates/admin/object_history.html:26
 msgid "User"
 msgstr "用户"
 
@@ -1641,7 +1626,6 @@ msgstr "用户"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:109
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:44
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:98
-#: templates/admin/object_history.html:27
 msgid "Action"
 msgstr "动作"
 
@@ -1694,18 +1678,14 @@ msgstr "对象"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage_user.html:48
 #: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:37
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:37
-#: templates/admin/submit_line.html:5
 msgid "Save"
 msgstr "保存"
 
 #: guardian/templates/admin/guardian/model/change_form.html:8
-#: templates/admin/change_form.html:75
-#: templates/admin/object_history.html:13
 msgid "History"
 msgstr "历史记录"
 
 #: guardian/templates/admin/guardian/model/change_form.html:9
-#: templates/admin/change_form.html:76
 msgid "View on site"
 msgstr "浏览站点"
 
@@ -1713,335 +1693,23 @@ msgstr "浏览站点"
 msgid "Maps"
 msgstr "地图库"
 
-#: templates/admin/404.html:7
-#: templates/admin/404.html.py:11
-msgid "Page not found"
-msgstr "找不到页面"
-
-#: templates/admin/404.html:12
-msgid "We're sorry, but the requested page could not be found."
-msgstr "对不起，找不到请求的页面！"
-
-#: templates/admin/500.html:7
-msgid "Server error"
-msgstr "服务器错误"
-
-#: templates/admin/500.html:10
-msgid "Server error (500)"
-msgstr "服务器错误（500）"
-
-#: templates/admin/500.html:14
-msgid "Server Error <em>(500)</em>"
-msgstr "服务器错误 <em>(500)</em>"
-
-#: templates/admin/500.html:15
-msgid "There's been an error. It's been reported to the site administrators via e-mail and should be fixed shortly. Thanks for your patience."
-msgstr "出现了错误，已经发送邮件通知了管理员进行修复，感谢您的耐心."
-
-#: templates/admin/actions.html:10
-msgid "Click here to select the objects across all pages"
-msgstr ""
-
-#: templates/admin/actions.html:10
-#, python-format
-msgid "Select all %(total_count)s %(module_name)s"
-msgstr "选择全部%(total_count)s 个 %(module_name)s"
-
-#: templates/admin/actions.html:11
-msgid "Clear selection"
-msgstr "清除选择"
-
-#: templates/admin/app_index.html:13
-#, python-format
-msgid "%(name)s"
-msgstr "%(name)s"
-
-#: templates/admin/app_index.html:30
-#: templates/admin/change_form.html:65
-#: templates/admin/index.html:31
-msgid "Add"
-msgstr "新增"
-
-#: templates/admin/app_index.html:31
-#: templates/admin/index.html:32
-msgid "Change"
-msgstr "修改"
-
 #: templates/admin/base_site.html:7
 msgid "Django administration"
 msgstr "网站管理"
 
-#: templates/admin/change_form.html:96
-#: templates/admin/change_list.html:148
-#: templates/admin/auth/user/change_password.html:38
-msgid "Please correct the error below."
-msgid_plural "Please correct the errors below."
-msgstr[0] "请检查下方错误"
+#: templates/grappelli/dashboard/modules/app_list.html:19
+#: templates/grappelli/dashboard/modules/model_list.html:9
+msgid "Add"
+msgstr "新增"
 
-#: templates/admin/change_list.html:102
-#, python-format
-msgid "Add %(name)s"
-msgstr "新增 %(name)s"
+#: templates/grappelli/dashboard/modules/app_list.html:24
+#: templates/grappelli/dashboard/modules/model_list.html:10
+msgid "Change"
+msgstr "修改"
 
-#: templates/admin/change_list.html:120
-msgid "Filter"
-msgstr "筛选"
-
-#: templates/admin/csv_export_selected_confirmation.html:12
-msgid "Export selection as CSV"
-msgstr "导出所选为CSV"
-
-#: templates/admin/csv_export_selected_confirmation.html:31
-msgid "Export following fields:"
-msgstr "导出以下："
-
-#: templates/admin/csv_export_selected_confirmation.html:34
-msgid "Select all"
-msgstr "全选"
-
-#: templates/admin/csv_export_selected_confirmation.html:54
-msgid "Back"
-msgstr "后退"
-
-#: templates/admin/csv_export_selected_confirmation.html:55
-msgid "Export"
-msgstr "导出"
-
-#: templates/admin/delete_confirmation.html:13
-#: templates/admin/submit_line.html:4
-msgid "Delete"
-msgstr "删除"
-
-#: templates/admin/delete_confirmation.html:23
-#, python-format
-msgid "Deleting the %(object_name)s '%(escaped_object)s' would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
-msgstr ""
-
-#: templates/admin/delete_confirmation.html:33
-#, python-format
-msgid "Deleting the %(object_name)s '%(escaped_object)s' would require deleting the following protected related objects:"
-msgstr ""
-
-#: templates/admin/delete_confirmation.html:45
-#, python-format
-msgid "Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? All of the following related items will be deleted:"
-msgstr "您确定想要删除 %(object_name)s \"%(escaped_object)s\"? 同时所有的与之相关联的对象都会被删除:"
-
-#: templates/admin/delete_confirmation.html:53
-#: templates/admin/delete_selected_confirmation.html:59
-msgid "Cancel"
-msgstr "取消"
-
-#: templates/admin/delete_confirmation.html:54
-#: templates/admin/delete_selected_confirmation.html:60
-msgid "Yes, I'm sure"
-msgstr "是，我却定"
-
-#: templates/admin/delete_selected_confirmation.html:12
-msgid "Delete multiple objects"
-msgstr "删除多个对象"
-
-#: templates/admin/delete_selected_confirmation.html:22
-#, python-format
-msgid "Deleting the %(objects_name)s would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
-msgstr ""
-
-#: templates/admin/delete_selected_confirmation.html:32
-#, python-format
-msgid "Deleting the selected %(objects_name)s would require deleting the following protected related objects:"
-msgstr ""
-
-#: templates/admin/delete_selected_confirmation.html:44
-#, python-format
-msgid "Are you sure you want to delete the selected %(objects_name)s objects? All of the following objects and their related items will be deleted:"
-msgstr "您确定想要删除已选的%(objects_name)s 对象？所有的对象及其相关的项目都会被删除："
-
-#: templates/admin/filter.html:3
-#, python-format
-msgid "%(filter_title)s"
-msgstr "%(filter_title)s"
-
-#: templates/admin/index.html:39
-msgid "You don´t have permission to edit anything."
-msgstr "您没有权限编辑"
-
-#: templates/admin/index.html:44
-msgid "Recent Actions"
-msgstr "最近动作"
-
-#: templates/admin/index.html:46
-msgid "My Actions"
-msgstr "我的动作"
-
-#: templates/admin/index.html:49
-msgid "None available"
+#: templates/grappelli/dashboard/modules/recent_actions.html:12
+msgid "None Available"
 msgstr "不可用"
-
-#: templates/admin/invalid_setup.html:11
-msgid "Something's wrong with your database installation. Make sure the appropriate database tables have been created, and make sure the database is readable by the appropriate user."
-msgstr "您的数据库出现了一些问题，请确认您的数据库表格已全部建立，同时确认数据库可以被读取."
-
-#: templates/admin/login.html:31
-msgid "Username:"
-msgstr "用户名："
-
-#: templates/admin/login.html:35
-msgid "Password:"
-msgstr "密码："
-
-#: templates/admin/login.html:45
-#: templates/registration/password_reset_complete.html:14
-msgid "Log in"
-msgstr "登录"
-
-#: templates/admin/object_history.html:25
-#: userena/contrib/umessages/admin.py:25
-msgid "Date/time"
-msgstr "Date/time"
-
-#: templates/admin/object_history.html:33
-msgid "DATETIME_FORMAT"
-msgstr ""
-
-#: templates/admin/object_history.html:37
-msgid "Created object"
-msgstr "已创建对象"
-
-#: templates/admin/object_history.html:47
-msgid "This object doesn't have a change history. It probably wasn't added via this admin site."
-msgstr ""
-
-#: templates/admin/pagination.html:8
-#, python-format
-msgid "1 result"
-msgid_plural "%(counter)s results"
-msgstr[0] "%(counter)s 个结果"
-
-#: templates/admin/pagination.html:13
-#: templates/admin/pagination.html.py:15
-#, python-format
-msgid "%(full_result_count)s total"
-msgstr "共%(full_result_count)s 条"
-
-#: templates/admin/pagination.html:27
-msgid "Show all"
-msgstr "全部显示"
-
-#: templates/admin/submit_line.html:6
-msgid "Save as new"
-msgstr "保存为新建"
-
-#: templates/admin/submit_line.html:7
-msgid "Save and add another"
-msgstr "保存并继续"
-
-#: templates/admin/submit_line.html:8
-msgid "Save and continue editing"
-msgstr "保存并继续编辑"
-
-#: templates/admin/auth/user/change_password.html:7
-#: templates/admin/includes_grappelli/header.html:41
-#: templates/registration/password_change_done.html:3
-#: templates/registration/password_change_form.html:3
-msgid "Documentation"
-msgstr "文档"
-
-#: templates/admin/auth/user/change_password.html:11
-#: templates/admin/auth/user/change_password.html:23
-#: templates/admin/auth/user/change_password.html:62
-#: templates/admin/includes_grappelli/header.html:20
-#: templates/registration/password_change_done.html:3
-#: templates/registration/password_change_form.html:3
-#: userena/templates/userena/email_form.html:11
-#: userena/templates/userena/password_form.html:4
-#: userena/templates/userena/password_form.html:13
-#: userena/templates/userena/password_form.html:21
-#: userena/templates/userena/profile_detail.html:16
-#: userena/templates/userena/profile_form.html:14
-msgid "Change password"
-msgstr "修改密码"
-
-#: templates/admin/auth/user/change_password.html:14
-#: templates/admin/includes_grappelli/header.html:28
-#: templates/registration/password_change_done.html:3
-#: templates/registration/password_change_form.html:3
-msgid "Log out"
-msgstr "注销"
-
-#: templates/admin/auth/user/change_password.html:27
-#: templates/registration/password_change_done.html:4
-#: templates/registration/password_change_form.html:4
-#: templates/registration/password_change_form.html:6
-#: templates/registration/password_change_form.html:10
-msgid "Password change"
-msgstr "修改密码"
-
-#: templates/admin/auth/user/change_password.html:35
-#, python-format
-msgid "Enter a new password for the user <strong>%(username)s</strong>."
-msgstr ""
-
-#: templates/admin/auth/user/change_password.html:45
-#: templates/registration/password_change_form.html:19
-#: templates/registration/password_reset_confirm.html:19
-msgid "New password:"
-msgstr "新密码："
-
-#: templates/admin/auth/user/change_password.html:52
-msgid "Password (again)"
-msgstr "密码（再次）"
-
-#: templates/admin/auth/user/change_password.html:56
-msgid "Enter the same password as above, for verification."
-msgstr "请输入相同相同的密码，以用来验证."
-
-#: templates/admin/edit_inline/stacked.html:8
-msgid "Open All Items"
-msgstr "打开所有项目"
-
-#: templates/admin/edit_inline/stacked.html:9
-msgid "Close All Items"
-msgstr "关闭所有项目"
-
-#: templates/admin/edit_inline/stacked.html:10
-#: templates/admin/edit_inline/stacked.html:53
-#: templates/admin/edit_inline/tabular.html:87
-msgid "Add Item"
-msgstr "新增项目"
-
-#: templates/admin/edit_inline/stacked.html:23
-#: templates/admin/edit_inline/tabular.html:61
-msgid "View on Site"
-msgstr "浏览站点"
-
-#: templates/admin/edit_inline/stacked.html:25
-#: templates/admin/edit_inline/tabular.html:63
-msgid "Move Item"
-msgstr "移动项目"
-
-#: templates/admin/edit_inline/stacked.html:29
-#: templates/admin/edit_inline/stacked.html:31
-msgid "Delete Item"
-msgstr "删除项目"
-
-#: templates/admin/edit_inline/stacked.html:51
-#: templates/admin/edit_inline/tabular.html:85
-#, python-format
-msgid "Add another %(verbose_name)s"
-msgstr "新增 %(verbose_name)s"
-
-#: templates/admin/edit_inline/tabular.html:8
-msgid "Add Another"
-msgstr "新增另一个"
-
-#: templates/admin/edit_inline/tabular.html:66
-#: templates/admin/edit_inline/tabular.html:71
-msgid "Remove"
-msgstr "移除"
-
-#: templates/admin/includes_grappelli/header.html:36
-msgid "Tests"
-msgstr "测试"
 
 #: templates/places/category_detail.html:14
 #: templates/places/nearby_detail.html:14
@@ -2098,10 +1766,6 @@ msgstr ""
 msgid "Real-time information"
 msgstr ""
 
-#: templates/places/entity_detail.html:50
-msgid "Find things near here"
-msgstr ""
-
 #: templates/places/entity_detail.html:55
 #, python-format
 msgid "We do not yet have a location for this %(type_name)s."
@@ -2111,31 +1775,11 @@ msgstr ""
 msgid "Unfortunately, we do not have a location for this object, and so cannot tell you what is near it."
 msgstr ""
 
-#: templates/places/index.html:9
-#: templates/places/index.html.py:12
-#: templates/places/index.html:15
+#: templates/places/index.html:10
+#: templates/places/index.html.py:15
+#: templates/places/index.html:18
 msgid "Search Places"
 msgstr "搜索地点"
-
-#: templates/places/index.html:17
-msgid "Go!"
-msgstr ""
-
-#: templates/places/index.html:23
-msgid "Search by place name, bus stop number e.g. E7 or 69323498 or postcode"
-msgstr ""
-
-#: templates/places/index.html:34
-msgid "Points of Interest"
-msgstr ""
-
-#: templates/places/index.html:38
-msgid "Nearby"
-msgstr ""
-
-#: templates/places/index.html:39
-msgid "By Category"
-msgstr "按类别"
 
 #: templates/places/nearby_detail.html:12
 #, python-format
@@ -2145,18 +1789,18 @@ msgstr[0] ""
 
 #: templates/places/nearby_detail.html:63
 #, python-format
-msgid "%(type_name)s, about %(distance)sm %(bearing)s"
+msgid "%(type_name)s, 大概距此%(bearing)s方向 %(distance)s米 "
 msgstr ""
 
 #: templates/places/nearby_detail.html:65
 #: templates/places/nearby_detail.html:74
 #, python-format
-msgid "%(distance)sm %(bearing)s"
+msgid "距此%(bearing)s方向 %(distance)s米"
 msgstr ""
 
 #: templates/places/nearby_detail.html:87
 #, python-format
-msgid "Find more %(type_name)s"
+msgid "查看更多%(type_name)s"
 msgstr ""
 
 #: templates/places/nearby_list.html:25
@@ -2444,6 +2088,34 @@ msgstr "感谢您今天花了宝贵的时间在这个网站"
 msgid "Log in again"
 msgstr "重新登录"
 
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
+msgid "Documentation"
+msgstr "文档"
+
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
+#: userena/templates/userena/email_form.html:11
+#: userena/templates/userena/password_form.html:4
+#: userena/templates/userena/password_form.html:13
+#: userena/templates/userena/password_form.html:21
+#: userena/templates/userena/profile_detail.html:16
+#: userena/templates/userena/profile_form.html:14
+msgid "Change password"
+msgstr "修改密码"
+
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_form.html:3
+msgid "Log out"
+msgstr "注销"
+
+#: templates/registration/password_change_done.html:4
+#: templates/registration/password_change_form.html:4
+#: templates/registration/password_change_form.html:6
+#: templates/registration/password_change_form.html:10
+msgid "Password change"
+msgstr "修改密码"
+
 #: templates/registration/password_change_done.html:6
 #: templates/registration/password_change_done.html:10
 msgid "Password change successful"
@@ -2461,6 +2133,11 @@ msgstr "请输入您的新密码两次,这样我们可以检验您是否输入�
 #: templates/registration/password_change_form.html:17
 msgid "Old password:"
 msgstr "旧密码："
+
+#: templates/registration/password_change_form.html:19
+#: templates/registration/password_reset_confirm.html:19
+msgid "New password:"
+msgstr "新密码："
 
 #: templates/registration/password_change_form.html:21
 #: templates/registration/password_reset_confirm.html:21
@@ -2490,6 +2167,10 @@ msgstr "密码重设完成"
 #: templates/registration/password_reset_complete.html:12
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr "您的密码已设置，您现在可以登录了."
+
+#: templates/registration/password_reset_complete.html:14
+msgid "Log in"
+msgstr "登录"
 
 #: templates/registration/password_reset_confirm.html:4
 msgid "Password reset confirmation"
@@ -2849,6 +2530,10 @@ msgstr "你的个人资料已经更新"
 #: userena/views.py:544
 msgid "You don't have permission to view this profile."
 msgstr "您没有查看这个个人资料"
+
+#: userena/contrib/umessages/admin.py:25
+msgid "Date/time"
+msgstr "Date/time"
 
 #: userena/contrib/umessages/fields.py:56
 #, python-format
@@ -3221,6 +2906,178 @@ msgstr "你已经发送一封激活链接的电子邮件到提供的电子邮件
 #, python-format
 msgid "We will store your signup information for %(userena_activation_days)s days on our server. "
 msgstr "我们将会保存您每天的登陆信息在您的服务器上"
+
+#~ msgid "Page not found"
+#~ msgstr "找不到页面"
+
+#~ msgid "We're sorry, but the requested page could not be found."
+#~ msgstr "对不起，找不到请求的页面！"
+
+#~ msgid "Server error"
+#~ msgstr "服务器错误"
+
+#~ msgid "Server error (500)"
+#~ msgstr "服务器错误（500）"
+
+#~ msgid "Server Error <em>(500)</em>"
+#~ msgstr "服务器错误 <em>(500)</em>"
+
+#~ msgid ""
+#~ "There's been an error. It's been reported to the site administrators via "
+#~ "e-mail and should be fixed shortly. Thanks for your patience."
+#~ msgstr "出现了错误，已经发送邮件通知了管理员进行修复，感谢您的耐心."
+
+#~ msgid "Select all %(total_count)s %(module_name)s"
+#~ msgstr "选择全部%(total_count)s 个 %(module_name)s"
+
+#~ msgid "Clear selection"
+#~ msgstr "清除选择"
+
+#~ msgid "%(name)s"
+#~ msgstr "%(name)s"
+
+#~ msgid "Please correct the error below."
+
+#~ msgid_plural "Please correct the errors below."
+#~ msgstr[0] "请检查下方错误"
+
+#~ msgid "Add %(name)s"
+#~ msgstr "新增 %(name)s"
+
+#~ msgid "Filter"
+#~ msgstr "筛选"
+
+#~ msgid "Export selection as CSV"
+#~ msgstr "导出所选为CSV"
+
+#~ msgid "Export following fields:"
+#~ msgstr "导出以下："
+
+#~ msgid "Select all"
+#~ msgstr "全选"
+
+#~ msgid "Back"
+#~ msgstr "后退"
+
+#~ msgid "Export"
+#~ msgstr "导出"
+
+#~ msgid "Delete"
+#~ msgstr "删除"
+
+#~ msgid ""
+#~ "Are you sure you want to delete the %(object_name)s \"%(escaped_object)s"
+#~ "\"? All of the following related items will be deleted:"
+#~ msgstr ""
+#~ "您确定想要删除 %(object_name)s \"%(escaped_object)s\"? 同时所有的与之相关"
+#~ "联的对象都会被删除:"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
+
+#~ msgid "Yes, I'm sure"
+#~ msgstr "是，我却定"
+
+#~ msgid "Delete multiple objects"
+#~ msgstr "删除多个对象"
+
+#~ msgid ""
+#~ "Are you sure you want to delete the selected %(objects_name)s objects? "
+#~ "All of the following objects and their related items will be deleted:"
+#~ msgstr ""
+#~ "您确定想要删除已选的%(objects_name)s 对象？所有的对象及其相关的项目都会被"
+#~ "删除："
+
+#~ msgid "%(filter_title)s"
+#~ msgstr "%(filter_title)s"
+
+#~ msgid "You don´t have permission to edit anything."
+#~ msgstr "您没有权限编辑"
+
+#~ msgid "Recent Actions"
+#~ msgstr "最近动作"
+
+#~ msgid "My Actions"
+#~ msgstr "我的动作"
+
+#~ msgid "None available"
+#~ msgstr "不可用"
+
+#~ msgid ""
+#~ "Something's wrong with your database installation. Make sure the "
+#~ "appropriate database tables have been created, and make sure the database "
+#~ "is readable by the appropriate user."
+#~ msgstr ""
+#~ "您的数据库出现了一些问题，请确认您的数据库表格已全部建立，同时确认数据库可"
+#~ "以被读取."
+
+#~ msgid "Username:"
+#~ msgstr "用户名："
+
+#~ msgid "Password:"
+#~ msgstr "密码："
+
+#~ msgid "Created object"
+#~ msgstr "已创建对象"
+
+#~ msgid "1 result"
+
+#~ msgid_plural "%(counter)s results"
+#~ msgstr[0] "%(counter)s 个结果"
+
+#~ msgid "%(full_result_count)s total"
+#~ msgstr "共%(full_result_count)s 条"
+
+#~ msgid "Show all"
+#~ msgstr "全部显示"
+
+#~ msgid "Save as new"
+#~ msgstr "保存为新建"
+
+#~ msgid "Save and add another"
+#~ msgstr "保存并继续"
+
+#~ msgid "Save and continue editing"
+#~ msgstr "保存并继续编辑"
+
+#~ msgid "Password (again)"
+#~ msgstr "密码（再次）"
+
+#~ msgid "Enter the same password as above, for verification."
+#~ msgstr "请输入相同相同的密码，以用来验证."
+
+#~ msgid "Open All Items"
+#~ msgstr "打开所有项目"
+
+#~ msgid "Close All Items"
+#~ msgstr "关闭所有项目"
+
+#~ msgid "Add Item"
+#~ msgstr "新增项目"
+
+#~ msgid "View on Site"
+#~ msgstr "浏览站点"
+
+#~ msgid "Move Item"
+#~ msgstr "移动项目"
+
+#~ msgid "Delete Item"
+#~ msgstr "删除项目"
+
+#~ msgid "Add another %(verbose_name)s"
+#~ msgstr "新增 %(verbose_name)s"
+
+#~ msgid "Add Another"
+#~ msgstr "新增另一个"
+
+#~ msgid "Remove"
+#~ msgstr "移除"
+
+#~ msgid "Tests"
+#~ msgstr "测试"
+
+#~ msgid "By Category"
+#~ msgstr "按类别"
 
 #~ msgid "Account"
 #~ msgstr "账户"
@@ -4187,9 +4044,6 @@ msgstr "我们将会保存您每天的登陆信息在您的服务器上"
 
 #~ msgid "No recent actions."
 #~ msgstr "没有最近动作"
-
-#~ msgid "None Available"
-#~ msgstr "不可用"
 
 #~ msgid "Django site admin"
 #~ msgstr "网站管理"

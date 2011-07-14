@@ -35,7 +35,7 @@ urlpatterns = patterns('',
         CategoryDetailView, {},
         'category-detail'),
 
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/$',
+    (r'^(?P<scheme>[^/]+):(?P<value>[^/]+)/$',
         EntityDetailView, {},
         'entity'),
     
@@ -43,10 +43,10 @@ urlpatterns = patterns('',
         ServiceDetailView, {},
         'service-detail'),
     
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/nearby/$',
+    (r'^(?P<scheme>[^/]+):(?P<value>[^/]+)/nearby/$',
         NearbyEntityListView, {},
         'entity-nearby-list'),
-    (r'^(?P<scheme>[a-z_\-]+):(?P<value>[^/]+)/nearby/(?P<ptype>[^/]+)/$',
+    (r'^(?P<scheme>[^/]+):(?P<value>[^/]+)/nearby/(?P<ptype>[^/]+)/$',
         NearbyEntityDetailView, {},
         'entity-nearby-detail'),
 

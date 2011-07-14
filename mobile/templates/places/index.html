@@ -4,40 +4,39 @@
 
 {# Places Search #}
 {% search_form %}
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 <form method="get" action="{% url search:index %}">
     <!-- Doing the devil's work below: couldn't get a CSS design to work with Blackberry 8900 so using Tables as a last resort. Tim F -->
 <h2 class="invisible">{% trans "Search Places" %}</h2>    
-<table class="search"><tbody>
-        <tr><td>
-                <label class="invisible" for="id_query">{% trans "Search Places" %}</label>
-                {{ search_form.query }}
-        </td><td>
+
+<p>
+               
+                <label for="search">搜索消费场所:</label>
+                <input type="search"  name="query" id="id_query" title='{% trans "Search Places" %}'/>
+                您可以使用地点、商铺名称、电话等来进行搜索
+   </p>
                 <input type="hidden" name="application" value="places" title='{% trans "Search Places" %}' />
-                {% ifequal style_group "dumb" %}
-                    <button type="submit">{% trans "Go!" %}</button>
-                {% else %}
-                	<input type="image" src="{{ STATIC_URL }}site/images/buttons/search-button.png" title='{% trans "Search" %}' alt='{% trans "Search" %}' />
-                {% endifequal %}
-        </td></tr>    
-        <tr><td>
-                <p class="help-bubble top">{% trans "Search by place name, bus stop number e.g. E7 or 69323498 or postcode" %}</p>
-        </td><td></td></tr></tbody>
-</table>
+           
+       
+        
+               
+        
 </form>
+</div>
 {# End Places Search #}
   
 
 
 {# Points of Interest #}
-<div class="section" id="poi-category-selector">
-<div class="header">
-  <h2>{% trans "Points of Interest" %}</h2>
+<div data-role="listview" data-inset="true" data-theme="d">
+
+  
   {% include "geolocation/update_location_embed.html" %}
-</div>
-  <ul class="link-list category-list">
-    <li class="nearby"><a href="{% url places:nearby-list %}">{% trans "Nearby" %}</a></li>
-    <li class="categories"><a href="{% url places:category-list %}">{% trans "By Category" %}</a></li>
-  </ul>
+
+ 
+    <li class="nearby"><a href="{% url places:nearby-list %}">浏览周边消费场所</a></li>
+    <li class="categories"><a href="{% url places:category-list %}">按分类浏览消费场所</a></li>
+  
 </div>
 {# End Points of Interest #}
 

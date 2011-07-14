@@ -1,9 +1,7 @@
 {% load i18n %}
-<div class="location-box section" id="location-box">
-    <div class="header location-box-header">
-        <h2>{% trans "Your Location" %}</h2>
-    </div>
-    <div class="section-content">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+     <h2>您当前所在位置</h2>
+    <ul>
         <div class="current-location-box" style="position:relative;{% if request.GET.update or geolocation_alternatives %}display:none;{% endif %}">
             <form method="get" action="{% url geolocation:index %}">
                 {% if return_url %}<input type="hidden" name="return_url" value="{{ return_url }}"/>{% endif %}
@@ -139,5 +137,5 @@
                 {% endif %}
             </div>
         </div>
-    </div>
+    </ul>
 </div>

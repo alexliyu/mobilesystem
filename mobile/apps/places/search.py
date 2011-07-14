@@ -33,7 +33,7 @@ class ApplicationSearch(object):
             )
         else:
             entities = entities.filter(
-                _identifiers__value__iexact=query,
+                _identifiers__value__icontains=query,
             )
 
         entities = chain(

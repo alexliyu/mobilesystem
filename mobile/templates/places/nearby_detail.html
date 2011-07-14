@@ -60,9 +60,9 @@
             {{ forloop.counter }}. {{ entity.title }}<br />
             <small>
             {% if found_entity_types %}
-              {% blocktrans with entity.primary_type.verbose_name|capfirst as type_name and entity.distance.m|round_up_10 as distance and entity.bearing as bearing %}{{ type_name }}, about {{ distance }}m {{ bearing }}{% endblocktrans %}
+              {% blocktrans with entity.primary_type.verbose_name|capfirst as type_name and entity.distance.m|round_up_10 as distance and entity.bearing as bearing %}{{ type_name }}, 大概距此{{ bearing }}方向 {{ distance }}米 {% endblocktrans %}
             {% else %}
-              {% blocktrans with entity.distance.m|round_up_10 as distance and entity.bearing as bearing %}{{ distance }}m {{ bearing }}{% endblocktrans %}
+              {% blocktrans with entity.distance.m|round_up_10 as distance and entity.bearing as bearing %}距此{{ bearing }}方向 {{ distance }}米{% endblocktrans %}
             {% endif %}
             </small>
           </a></li>
@@ -71,7 +71,7 @@
       {% with entity_group.0 as entity %}
           <li class="non-link-item">
             {{ forloop.counter }}. <em>{{ entity_group|length }} {{ entity_type.0.verbose_name_plural }}</em> 
-            {% blocktrans with entity.distance.m|round_up_10 as distance and entity.bearing as bearing %}{{ distance }}m {{ bearing }}{% endblocktrans %}
+            {% blocktrans with entity.distance.m|round_up_10 as distance and entity.bearing as bearing %}距此{{ bearing }}方向 {{ distance }}米{% endblocktrans %}
           </li>
       {% endwith %}
       {% for entity in entity_group %}
@@ -84,7 +84,7 @@
 
   {% if map.zoom > 10 %}
     <li><a class="no-icon" href="?zoom={{ map.zoom|add:"-1" }}"><strong>
-                {% blocktrans with entity_types.0.verbose_name_plural as type_name %}Find more {{ type_name }}{% endblocktrans %}
+                {% blocktrans with entity_types.0.verbose_name_plural as type_name %}查看更多{{ type_name }}{% endblocktrans %}
         </strong></a></li>
   {% endif %}
 

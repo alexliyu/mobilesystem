@@ -345,7 +345,7 @@ class Entity(models.Model):
         raise AssertionError
 
     def get_absolute_url(self):
-        return self.absolute_url
+        return '/places/%s:%s' % self.identifiers.items()[0]
     
     def __unicode__(self):
         return self.title

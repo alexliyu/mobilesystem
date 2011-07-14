@@ -1,4 +1,3 @@
-
 #-*- coding:utf-8 -*-
 """
 这是地图应用程序，用于管理及显示地图
@@ -96,12 +95,19 @@ class Map:
                     width=width,
                     height=height,
                 )
-        
+        """
+        用于判断HTML内容是否为空，如果为空则表示是当前位置
+        """
+        if centre_point[3].encode('ascii', 'xmlcharrefreplace'):
+            html = centre_point[3].encode('ascii', 'xmlcharrefreplace') 
+        else:
+            html = '当前您的位置'
+            
         markers = [{
             'latitude':str(centre_point[1]),
             'longitude':str(centre_point[0]),
             'icon':centre_point[2] + '-star',
-            'html':centre_point[3].encode('ascii', 'xmlcharrefreplace'),
+            'html':html,
             'popup':True,
         }] if centre_point != None else []
         

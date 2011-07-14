@@ -1,3 +1,11 @@
+
+#-*- coding:utf-8 -*-
+"""
+这是消费导航的主视图，用于显示各个页面
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
 from __future__ import division
 
 from collections import defaultdict
@@ -299,6 +307,8 @@ class EntityDetailView(ZoomableView, FavouritableView):
 
     @BreadcrumbFactory
     def breadcrumb(self, request, context, scheme, value):
+        scheme = unquote(scheme)
+        value = unquote(value)
         if request.session.get('geolocation:location'):
             parent_view = 'nearby-detail'
         else:
@@ -421,7 +431,7 @@ class NearbyEntityListView(NearbyListView):
         return Breadcrumb(
             'places',
             lazy_parent('entity', scheme=scheme, value=value),
-            'Things near %s' % context['entity'].title,
+            '%s的周边导航' % context['entity'].title,
             lazy_reverse('entity-nearby-list', args=[scheme, value]))
 
     def handle_GET(self, request, context, scheme, value):
