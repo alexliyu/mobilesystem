@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{%block load%}{% load tagging_tags entry_tags %}{%endblock%}
+{% block meta-description %}最新文章列表 | {% if category %}分类：{{ category }}{% if category.description %}: {{ category.description|striptags|safe }}{% endif %}{% endif %}{% if tag %}标签：{{ tag }}{% endif %}{% if author %} 作者：{{ author }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} 页： {{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
+
+{% block link %}
+  {{ block.super }}
+  {% if category %}
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed {{ category.title }}" href="{% url entry_category_feed category.tree_path %}" />
+  {% endif %}
+  {% if tag %}
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed {{ tag.name }}" href="{% url entry_tag_feed tag.name %}" />
+  {% endif %}
+  {% if author %}
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed {{ author.username }}" href="{% url entry_author_feed author.username %}" />
+  {% endif %}
+{% endblock %}
+
+{% block title %}最新文章{% if category %}| 分类：{{ category }}{% endif %}{% if tag %}| 标签：{{ tag }}{% endif %}{% if author %}| 作者：{{ author }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} | 页：{{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
+
+{% block content %}
+<div class="main" id="main-three-columns">
+
+			<div class="left" id="main-left">
+
+				<h1>文章列表</h1>
+
+				<div class="post-meta archive-pagination">
+					
+					
+					{% if is_paginated %}
+  						{% entry_pagination page_obj %}
+			{% endif %}
+					<div class="clearer">&nbsp;</div>
+					
+				</div>
+				
+				
+				{% for object in object_list %}
+				<div class="post">
+
+					<div class="archive-post-date">
+						<div class="archive-post-day">{{object.creation_date|date:"j"}}</div>
+						<div class="archive-post-month">{{object.creation_date|date:"F"}}</div>
+					</div>
+
+					<div class="archive-post-title">
+						<h3><a href="{{ object.get_absolute_url }}">{{object.title}}</a></h3>
+						<div class="post-date">于{{object.creation_date}},
+						{% if object.categories.count %}
+    										发布在：
+    										{% for category in object.categories.all %}
+    													<a href="{{ category.get_absolute_url }}" title="{{ category }}" rel="tag category">{{ category }}</a>
+    													{% if not forloop.last %}, {% endif %}
+    										{% endfor %}
+    								{% endif %}.
+						
+						
+						</div>
+					</div>
+
+					<div class="clearer">&nbsp;</div>
+
+				</div>
+
+				<div class="archive-separator"></div>
+				{%endfor%}
+				
+				
+			</div>
+
+			<div class="left sidebar" id="sidebar-1">
+
+				{% get_featured_entries 5%}			
+
+			</div>
+
+			
+
+			{% block sider %}{% include "right_sider.html" %}{%endblock%}
+
+		</div>
+{% endblock %}

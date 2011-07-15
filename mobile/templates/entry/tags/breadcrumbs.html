@@ -1,0 +1,12 @@
+<li><a href="#">当前您位于：</a></li>
+{%if breadcrumbs%}
+	{% for crumb in breadcrumbs %}
+			{% if not forloop.last %}
+						<li><a href="{{ crumb.url }}" title="{{ crumb.name }}" style="padding-right: 0; padding-left: 0;">{{ crumb.name }}{{ separator }}</a> </li>
+			{% else %}
+  						<li><a href="#" style="padding-right: 0; padding-left: 0;">{{ crumb.name }}</a></li>
+			{% endif %}
+	{% endfor %}
+{%else%}
+	<li><a href="#">首页</a></li>
+{%endif%}

@@ -1,0 +1,5 @@
+{% extends "entry_detail.html" %}
+{%block load%}{% load tagging_tags comments blog_tags %}{%endblock%}
+{%block index_entries%}{%endblock%}
+{% block sider %}{% include "right_blog_sider.html" %}{%endblock%}
+{%block breadcrumbs%}{% blog_breadcrumbs %}{%endblock%}

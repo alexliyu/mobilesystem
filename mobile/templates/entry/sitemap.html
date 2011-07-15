@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{%block load%}{% load entry_tags mptt_tags%}{%endblock%}
+{% block title %}网站地图{% endblock %}
+
+{% block content %}
+<h2>网站地图</h2>
+
+<div class="entriesbycategories">
+  <h3>每个栏目中的文章</h3>
+  {% for category in categories %}
+  <h4>{{ category }}</h4>
+  <ul>
+    {% for entry in category.entries_published.all %}
+    <li>
+      <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
+      {% with entry.comments.count as comment_count %}
+      - {{ comment_count }} 评论{{ comment_count|pluralize }}
+      {% endwith %}
+    </li>
+    {% empty %}
+    <li>
+     还没有任何文章
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
+
+<div class="allentries">
+  <h3>所有文章</h3>
+  <ul>
+    {% for entry in entries %}
+    <li>
+      <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
+      - {{ entry.creation_date|date:"SHORT_DATE_FORMAT" }}
+      {% with entry.comments.count as comment_count %}
+      - {{ comment_count }} 评论{{ comment_count|pluralize }}
+      {% endwith %}
+    </li>
+    {% empty %}
+    <li>
+     还没有任何文章
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="categories">
+  <h3>栏目</h3>
+  {% for category, structure in categories|tree_info %}
+    {% if structure.new_level %}<ul><li>{% else %}</li><li>{% endif %}
+      <a href="{{ category.get_absolute_url }}" title="{{ category.title }}">{{ category.title }}</a>
+      -
+      {{category.entries_published.count}}篇文章
+    {% for level in structure.closed_levels %}</li></ul>{% endfor %}
+    {% empty %}
+  <ul>
+    <li>
+      没有任何栏目
+    </li>
+  </ul>
+  {% endfor %}
+</div>
+
+<div class="montharchives">
+  <h3>月文章归档</h3>
+  {% get_archives_entries %}
+</div>
+{% endblock %}

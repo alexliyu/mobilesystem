@@ -1,0 +1,25 @@
+{% extends "blog/entry_list.html" %}
+{%block load%}{% load blog_tags %}{%endblock%}
+{% block meta-description %}最新文章{% endblock %}
+
+{% block link %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/slider.css" />
+{% endblock %}
+
+{% block script %}
+  {{ block.super }}
+  <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.js"></script>
+  <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.ui.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#slider").tabs({ fx:{ opacity: "toggle"}}).tabs("rotate", 5000, true);
+      $("#slider").hover(
+        function() { $("#slider").tabs("rotate", 0, true); },
+        function() { $("#slider").tabs("rotate", 5000, true); });
+    });
+  </script>
+{% endblock %}
+
+{% block title %}最新文章{% endblock %}
+

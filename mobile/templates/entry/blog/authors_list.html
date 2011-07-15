@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{%block load%}{% load blog_tags%}{%endblock%}
+{% block meta-description %}博客——作者列表{% endblock %}
+
+{% block title %}博客——作者列表{% endblock %}
+{%block breadcrumbs%}{% blog_breadcrumbs %}{%endblock%}
+{% block content %}
+<div class="main" id="main-two-columns">
+
+			<div class="left" id="main-left">
+
+				<li><h2>作者列表</h2></li>
+				
+				{% for object in object_list %}
+				<div class="content-separator"></div>
+
+				<div class="post">
+				
+
+					<a href="#"><img src="{% get_gravatar object.email 100 "G" %}" alt="" class="left bordered"/></a>
+
+					<h3><a href="{% url blog_author_detail object.username %}" title="{{ object.username }}">{{object.last_name}}{{object.first_name}}</a></h3>
+
+					<p>共发表{{object.blog_entries_published.count}}篇文章</p>
+
+					<a href="{% url blog_author_detail object.username %}" class="more">查看详细文章列表 &#187;</a>
+
+					<div class="clearer">&nbsp;</div>
+
+				</div>
+				{% endfor %}
+				
+
+				
+				<div class="content-separator"></div>
+			</div>
+			
+			
+			{% block sider %}{% include "right_blog_sider.html" %}{%endblock%}	
+		</div>
+{% endblock %}

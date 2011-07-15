@@ -1,0 +1,22 @@
+{% extends "blog/entry_list.html" %}
+
+{% block meta-description %}{{ day|date:"DATE_FORMAT" }}日志归档{% endblock %}
+
+{% block title %}{{ day|date:"DATE_FORMAT" }}日志归档{% endblock %}
+
+{% block content %}
+<h1>{{ day|date:"DATE_FORMAT" }} 日志归档</h1>
+
+{{ block.super }}
+
+<!--<ul>
+  <li>
+    <a href="{% url entry_entry_archive_day previous_day|date:"Y" previous_day|date:"m" previous_day|date:"d" %}" rel="archives">{{ previous_day|date:"DATE_FORMAT" }}</a>
+  </li>
+  {% if next_day %}
+  <li>
+    <a href="{% url entry_entry_archive_day next_day|date:"Y" next_day|date:"m" next_day|date:"d" %}" rel="archives">{{ next_day|date:"DATE_FORMAT" }}</a>
+  </li>
+  {% endif %}
+</ul>-->
+{% endblock %}

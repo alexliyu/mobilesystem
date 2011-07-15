@@ -1,0 +1,165 @@
+{%block load%}{% load blog_tags tagging_tags%}{%endblock%}
+<div class="right sidebar" id="sidebar-2">
+				<div class="section">
+
+				<div class="section-title">搜索</div>
+
+				<div class="section-content">
+					<form method="get" id="searchform" action="{% url blog_entry_search %}">
+						<input type="text" value="关键词" class="text" size="28" name="pattern" id="searchbox" onfocus="this.value=''"> &nbsp; <input type="submit" class="button" value="搜索" >
+					</form>
+				</div>
+
+			</div>
+				<div class="section">
+
+					<div class="section-title">
+
+						<div class="left">最新更新</div>
+						<div class="right"><img src="/media/images/icon-time.gif" width="14" height="14" alt="" /></div>
+
+						<div class="clearer">&nbsp;</div>
+
+					</div>
+
+					<div class="section-content">
+						{% get_recent_entries 6 %}
+						
+					</div>
+
+				</div>
+
+				<div class="section">
+
+					<div class="section-title">最多关注</div>
+
+					<div class="section-content">
+						{% get_popular_entries 5 %}
+						
+						
+					</div>
+
+				</div>
+				
+				<div class="section">
+
+					<div class="section-title">随机推荐</div>
+
+					<div class="section-content">
+							{% get_random_entries 8 %}
+						
+						
+					</div>
+
+				</div>
+
+				<div class="section network-section">
+
+					<div class="section-title">最新评论</div>
+
+					<div class="section-content">
+						{% get_recent_comments 8 %}
+						
+						
+					</div>
+
+				</div>
+				<div class="section">
+
+					<div class="section-title">
+
+						<div class="left">最新作者</div>
+						<div class="right"><img src="/media/images/icon-time.gif" width="14" height="14" alt="" /></div>
+
+						<div class="clearer">&nbsp;</div>
+
+					</div>
+
+					<div class="section-content">
+						{% get_authors %}
+						
+					</div>
+
+				</div>
+				
+				<div class="section network-section">
+
+					<div class="section-title">标签云</div>
+
+					<div class="tags">
+						{% tag_cloud_for_model blog.entry as tag_cloud with steps=6 %}
+  						<ul>
+    							{% for tag in tag_cloud %}
+    									<li>
+      										<a href="{% url blog_tag_detail tag.name %}"  title="{{ tag.count }}篇文章"
+         									class="tag_{{ tag.font_size }}">{{ tag }}</a>
+    									</li>
+    							{% endfor %}
+  						</ul>
+						
+						
+					</div>
+
+				</div>
+			{% if user.is_authenticated %}
+				{% block admin_tools %}
+				<div class="section network-section">
+						<div class="section-title">管理工具</div>
+								<div class="section-content">
+  	{% if perms.entry %}
+	    <li>
+	      <a href="{% url admin:app_list "blog" %}" title="管理面版">
+	        管理面版
+	      </a>
+	    </li>
+	{% endif %}
+    {% if perms.entry.add_entry %}
+		    <li>
+		      <a href="{% url admin:blog_entry_add %}" title="发表文章">
+		        发表文章
+		      </a>
+		    </li>
+    {% endif %}
+				
+  {% if category and perms.entry.change_category %}
+  <li>
+    <a href="{% url admin:blog_category_change category.pk %}" title="编辑类别">
+      编辑类别
+    </a>
+  </li>
+  {% endif %}
+  {% if tag and perms.tagging.change_tag %}
+  <li>
+    <a href="{% url admin:tagging_tag_change tag.pk %}" title="编辑标签">
+      编辑标签
+    </a>
+  </li>
+  {% endif %}
+  {% if author and perms.auth.change_user %}
+  <li>
+    <a href="{% url admin:auth_user_change author.pk %}" title="编辑作者">
+      编辑作者
+    </a>
+  </li>
+  {% endif %}
+  {% if object and perms.entry.change_entry %}
+						<li>
+						  <a href="{% url admin:blog_entry_change object.pk %}" title="编辑本文">
+						    编辑本文
+						  </a>
+						</li>
+  {% endif %}
+  <li>
+      <a href="{% url admin:logout %}" title=注销>
+        注销
+      </a>
+    </li>
+  		
+					</div>
+
+				</div>
+{% endblock %}
+{%endif%}
+			</div>
+			<div class="clearer">&nbsp;</div>
+			

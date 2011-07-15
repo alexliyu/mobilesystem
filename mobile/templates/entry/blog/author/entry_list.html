@@ -1,0 +1,4 @@
+{% extends "date_entry.html" %}
+{%block load%}{% load tagging_tags blog_tags %}{%endblock%}
+{% block sider %}{% include "right_blog_sider.html" %}{%endblock%}
+{%block breadcrumbs%}{% blog_breadcrumbs %}{%endblock%}

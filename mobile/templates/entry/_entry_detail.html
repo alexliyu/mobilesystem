@@ -1,0 +1,101 @@
+{% load tagging_tags comments%}
+
+<div class="entry-header span-16 last">
+  <h2 class="entry-title">
+    <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+      {{ object.title }}
+    </a>
+  </h2>
+  <p class="entry-info">
+    {% if object.authors.count %}
+    作者是
+    {% for author in object.authors.all %}
+    <span class="vcard author">
+      <a href="{% url entry_author_detail author %}" class="fn nickname url" rel="author"
+         title="查看{{ author.last_name }}{{ author.first_name }}发布的文章">{{ author.last_name }}{{ author.first_name }}</a>
+    </span>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+    于
+    {% else %}
+    于
+    {% endif %}
+    <abbr class="published" title="{{ object.creation_date|date:"c" }}Z">{{ object.creation_date|date:"DATE_FORMAT" }}</abbr>
+    {% if object.categories.count %}
+    在
+    {% for category in object.categories.all %}
+    <a href="{{ category.get_absolute_url }}" title="{{ category }}" rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}.
+  </p>
+</div>
+
+<div class="entry-body span-16 last">
+  {% if object.image %}
+  <div class="entry-image">
+    <p>
+      <a href="{{ object.get_absolute_url }}" rel="bookmark">
+	<img src="{{ object.image.url }}" alt="{{ object.title }}" class="left" />
+      </a>
+    </p>
+  </div>
+  {% endif %}
+  <div class="entry-content">
+    {{ object_content }}
+  </div>
+</div>
+
+<div class="entry-footer">
+  <p class="entry-tags span-16 last">
+    <strong>标签</strong> :
+    {% tags_for_object object as tag_list %}
+    {% for tag in tag_list %}
+    <a href="{% url entry_tag_detail tag %}"
+       title="标签 {{ tag }}" rel="tag">{{ tag }}</a>
+    {% empty %}
+    <span>没有任何标签哦</span>
+    {% endfor %}
+  </p>
+
+  <p class="entry-shorturl span-16 last">
+    <strong>缩略地址</strong> :
+    {% if object.short_url %}
+    <a href="{{ object.short_url }}" title="{{ object.title }}" rel="shortlink">
+      {{ object.short_url }}
+    </a>
+    {% else %}
+    不可使用
+    {% endif %}
+  </p>
+
+  <p class="entry-comments span-16 last">
+    <strong>评论数</strong> :
+    {% with object.comments.count as comment_count %}
+    {% if comment_count %}
+    <a href="{{ object.get_absolute_url }}#comments" title="{{ object.title }}">
+      comment_count条
+    </a>
+    {% else %}
+      {% if object.comments_are_open %}
+      还没有任何评论
+    <a href="{{ object.get_absolute_url }}#comments" title="{{ object.title }}">
+      赶快抢占第一楼哦！！
+    </a>
+      {% else %}
+     评论已关闭
+      {% endif %}
+    {% endif %}
+    {% endwith %}
+    {% with object.pingbacks.count as pingback_count %}
+    {% if pingback_count %}
+    , <a href="{{ object.get_absolute_url }}#pingbacks" title="{{ object.title }}">
+      Pingback数为：{{pingback_count}}
+    </a>
+    {% endif %}
+    {% endwith %}
+    {% with object.trackbacks.count as trackback_count %}
+    {% if trackback_count %}
+    , <a href="{{ object.get_absolute_url }}#trackbacks" title="{{ object.title }}">
+      trackback数为：{{trackback_count}}
+    </a>
+    {% endif %}
+    {% endwith %}
+  </p>
+</div>

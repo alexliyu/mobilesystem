@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block load%}{% load entry_tags tagging_tags%}{%endblock%}
+{% block content %}
+<div class="main" id="main-three-columns">
+
+			<div class="left" id="main-left">
+
+				<div class="post">
+
+					{% get_indexfeatured_entries %}
+
+					
+				
+				</div>
+
+				<div class="content-separator"></div>
+
+				{% get_indexrecent_entries 6%}
+				
+			</div>
+
+			<div class="left sidebar" id="sidebar-1">
+
+				{% get_featured_entries 5%}			
+
+			</div>
+
+			
+
+			{% block sider %}{% include "entry/right_sider.html" %}{%endblock%}
+
+		</div>
+{% endblock %}

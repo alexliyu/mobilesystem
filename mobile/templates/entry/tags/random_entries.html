@@ -1,0 +1,8 @@
+
+
+<ul class="nice-list">
+{% for entry in entries %}
+							<li><span class="quiet">{{forloop.counter}}.</span> <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a></li>
+{% endfor %}
+							<li><a href="#" class="more">更多 &#187;</a></li>
+						</ul>

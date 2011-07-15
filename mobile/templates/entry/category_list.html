@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{%block load%}{% load mptt_tags%}{%endblock%}
+{% block meta-description %}栏目列表{% endblock %}
+
+{% block title %}栏目{% endblock %}
+
+
+{% block content %}
+<div class="main" id="main-two-columns">
+
+			<div class="left" id="main-left">
+
+				<li><h2>栏目列表</h2></li>
+				
+				{% for object, structure in object_list|tree_info %}
+				<div class="content-separator"></div>
+
+			
+				
+
+					 {% if structure.new_level %}<ul><li>{% else %}</li><li>{% endif %}
+      <a href="{{ object.get_absolute_url }}" title="{{ object }}">{{ object }}</a> 
+      共{{object.entries_published.count}}篇文章
+      {% if object.description %}<br />{{ object.description|striptags|safe }}{% endif %}
+    {% for level in structure.closed_levels %}</li></ul>{% endfor %}
+  {% endfor %}
+
+				
+				
+
+				
+				<div class="content-separator"></div>
+			</div>
+			
+			
+			{% block sider %}{% include "right_sider.html" %}{%endblock%}	
+		</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}感谢您发布评论！{% endblock %}
+
+{% block content %}
+<h2>感谢您发布评论！</h2>
+<p>
+  <a href="{% url index %}" title="返回文章列表">返回文章列表
+
+  </a>
+</p>
+
+{% endblock %}
+<script type="text/javascript">
+
+setTimeout("window.location.href={% url index %}",3000)
+</script>

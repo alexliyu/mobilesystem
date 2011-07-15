@@ -25,6 +25,8 @@ from conf.settings import Application, extract_installed_apps, Authentication, E
 from utils.media import get_compress_groups
 project_root = os.path.normpath(os.path.dirname(__file__))
 molly_root = project_root
+COPYRIGHT = 'e2 mobile'
+
 gettext = lambda s: s
 
 ADMINS = (
@@ -67,28 +69,28 @@ ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '192.168.1.34',
-        'NAME': 'mobile',
-        'USER': 'mobile',
-        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
-    }
-}
-
-
-# 在家里的数据库配置
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '127.0.0.1',
-#        'NAME': 'molly',
-#        'USER': 'molly',
-#        'PASSWORD': 'mobile',
-#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#        'HOST': '192.168.1.34',
+#        'NAME': 'mobile',
+#        'USER': 'mobile',
+#        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
 #    }
 #}
+
+
+# 在家里的数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'HOST': '127.0.0.1',
+        'NAME': 'molly',
+        'USER': 'molly',
+        'PASSWORD': 'mobile',
+        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+    }
+}
 
 
 # API keys are used to access particular services
@@ -148,7 +150,7 @@ APPLICATIONS = [
     
     Application('apps.feeds.news', 'news', '团购'),
     
-    Application('apps.feeds.events', 'events', '公告'),
+    Application('apps.feeds.events', 'events', '杂志'),
     
     Application('maps', 'maps', '地图',
         display_to_user=False,
@@ -330,6 +332,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'django.contrib.staticfiles',
     'batch_processing',
     'django.contrib.gis',
+    'entry',
 #    'debug_toolbar',
     'tinymce',
     'compress',
@@ -337,6 +340,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'guardian',
     'south',
     'userena',
+    'tagging',
     'userena.contrib.umessages',
      'sentry',
     'sentry.client',
@@ -481,3 +485,59 @@ COMPRESS_JS_FILTERS = ('compress.filters.jsmin.JSMinFilter',)
 #COMPRESS = DEBUG     # Only enable on production (to help debugging)
 COMPRESS = False
 COMPRESS_VERSION = True  # Add a version number to compressed files.
+
+
+MARKUP_LANGUAGE = 'html'
+
+ENTRY_TEMPLATES = []
+ENTRY_BASE_MODEL = ''
+MARKDOWN_EXTENSIONS = ''
+
+AUTO_CLOSE_COMMENTS_AFTER = None
+
+URL_SHORTENER_BACKEND = 'entry.url_shortener.backends.default'
+
+PROTOCOL = 'http'
+
+MAIL_COMMENT_REPLY = False
+MAIL_COMMENT_AUTHORS = True
+AUTO_MODERATE_COMMENTS = False
+SPAM_CHECKER_BACKENDS = ()
+WYSIWYG = 'wymeditor'
+
+PING_DIRECTORIES = ('http://www.33445120.tk/xmlrpc/',)
+SAVE_PING_DIRECTORIES = bool(PING_DIRECTORIES)
+SAVE_PING_EXTERNAL_URLS = True
+MAIL_COMMENT_NOTIFICATION_RECIPIENTS = ''
+PAGINATION = 10
+ALLOW_EMPTY = True
+ALLOW_FUTURE = True
+
+ENTRY_TEMPLATES = []
+
+MARKUP_LANGUAGE = 'html'
+
+PROTOCOL = 'http'
+
+
+FEEDS_FORMAT = 'rss'
+FEEDS_MAX_ITEMS = 15
+
+PINGBACK_CONTENT_LENGTH = 300
+
+F_MIN = 0.1
+F_MAX = 1.0
+STOP_WORDS = ('able', 'about', 'across', 'after', 'all', 'almost',
+                      'also', 'among', 'and', 'any', 'are', 'because', 'been',
+                      'but', 'can', 'cannot', 'could', 'dear', 'did', 'does',
+                      'either', 'else', 'ever', 'every', 'for', 'from', 'get',
+                      'got', 'had', 'has', 'have', 'her', 'hers', 'him', 'his',
+                      'how', 'however', 'into', 'its', 'just', 'least', 'let',
+                      'like', 'likely', 'may', 'might', 'most', 'must',
+                      'neither', 'nor', 'not', 'off', 'often', 'only', 'other',
+                      'our', 'own', 'rather', 'said', 'say', 'says', 'she',
+                      'should', 'since', 'some', 'than', 'that', 'the',
+                      'their', 'them', 'then', 'there', 'these', 'they',
+                      'this', 'tis', 'too', 'twas', 'wants', 'was', 'were',
+                      'what', 'when', 'where', 'which', 'while', 'who', 'whom',
+                      'why', 'will', 'with', 'would', 'yet', 'you', 'your')

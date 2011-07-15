@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
+  <service>
+    <engineName>LinCDM {{ entry_VERSION }}</engineName>
+    <engineLink>http://github.com/alexliyu/lincdm</engineLink>
+    <homePageLink>{{ protocol }}://{{ site.domain }}/</homePageLink>
+    <apis>
+      <api name="MetaWeentry" preferred="true" apiLink="{{ protocol }}://{{ site.domain }}/xmlrpc/" entryID="{{ site.id }}">
+        <settings>
+          <docs>http://www.xmlrpc.com/metaWeentryApi</docs>
+          <notes>MetaWeentry API support + Blogger API partial support</notes>
+        </settings>
+      </api>
+    </apis>
+  </service>
+</rsd>

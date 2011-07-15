@@ -1,0 +1,28 @@
+{% block subnav %}
+{% if category.children.all %}
+		<li><a href="#">其中包含子栏目：</a></li>
+		{%for child in category.children.all %}
+				<li>
+							<a href="{{child.get_absolute_url}}" title="{{child.description|striptags|safe}}">{{child.title}}</a>
+				</li>
+		{%endfor%}
+{% endif %}
+
+{% if tag %}
+		<li><a href="#">标签：</a></li>
+		<li>
+			 <a href="{{tag.get_absolute_url}}">{{tag}}</a>
+		</li>
+{% endif %}
+
+{% if author %}
+		<li><a href="#">作者：</a></li>
+		{%with author.username as author %}
+		<li>
+			 <a href="{{author.get_absolute_url}}">{{ author }}</a>
+		</li>
+		{% endwith %}
+{% endif %}
+
+
+{%endblock%}

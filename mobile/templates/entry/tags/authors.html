@@ -1,0 +1,9 @@
+<ul>
+  {% for author in authors %}
+  <li>
+    <a href="{% url entry_author_detail author.username %}"
+       title="{{ author.username }}" class="fn nickname url">{{ author.last_name }}{{ author.first_name }}</a>
+     发布了{{ author.entries_published.count }}篇文章
+  </li>
+  {% endfor %}
+</ul>

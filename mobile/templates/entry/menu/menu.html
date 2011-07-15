@@ -1,0 +1,33 @@
+{% load menu_tags cache %}
+
+
+<div id="main-nav">
+
+					<ul class="tabbed">
+					{% for child in children %}
+<li {% if child.selected %}class="current-tab"{% endif %}>
+	<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+	
+</li>
+{% endfor %}
+					</ul>
+
+					<div class="clearer">&nbsp;</div>
+
+				</div>
+
+				<div id="sub-nav">
+
+					<ul class="tabbed">
+						{% for child in children %}
+
+							{% if child.children %}
+            					{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+							{% endif %}
+
+						{% endfor %}
+					</ul>
+
+					<div class="clearer">&nbsp;</div>
+
+				</div>

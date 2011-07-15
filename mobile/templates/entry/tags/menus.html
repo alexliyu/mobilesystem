@@ -1,0 +1,26 @@
+{% load entry_tags %}
+
+
+
+
+
+<div id="main-nav">
+
+			<ul class="tabbed">
+					<li class="current-tab">
+						<a href="/" title="首页">首页</a>
+					</li>
+					{% for menu in menus %}
+						{% if menu|menulevel:0 %}
+<li>
+	<a href="{{  menu.get_absolute_url }}" title="{{ menu.description }}">{{ menu.title }}</a>
+</li>
+	{%endif%}
+{% endfor %}
+					</ul>
+
+					<div class="clearer">&nbsp;</div>
+
+				</div>
+
+				

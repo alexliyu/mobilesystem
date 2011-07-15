@@ -1,0 +1,19 @@
+
+{% for entry in entries %}
+<div class="post-title"><h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2></div>
+
+					<div class="post-date">
+					{% for author in entry.authors.all %}
+					{{ author.last_name }}{{ author.first_name }}
+					{%endfor%}
+					发布于{{ entry.creation_date }}</div>
+
+					<div class="post-body">
+					    {% with entry.html_content|safe as object_content %}
+								{{object_content }}
+						{% endwith %}
+						<a href="{{ entry.get_absolute_url }}" rel="bookmark" class="more">阅读全文 &#187;</a>
+						
+					</div>
+ {% endfor %}		
+					

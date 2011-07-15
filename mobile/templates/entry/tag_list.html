@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{%block load%}{% load tagging_tags%}{%endblock%}
+{% block meta-description %}标签列表{% endblock %}
+
+{% block title %}标签{% endblock %}
+
+{% block content %}
+<h2>标签列表</h2>
+<div>
+  <ul>
+    {% for object in object_list %}
+    <li>
+      <a href="{% url entry_tag_detail object %}" title="{{ object }}">{{ object }}</a>
+      {% tagged_objects object in entry.entry as tag_entries %}
+      {{tag_entries.count}}篇文章
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

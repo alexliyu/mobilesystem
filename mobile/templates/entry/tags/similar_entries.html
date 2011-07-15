@@ -1,0 +1,23 @@
+{% load i18n entry_tags%}
+{% load thumbnail %}
+
+{% for entry in entries %}
+				<div class="content-separator"></div>
+
+				<div class="post">
+			
+					
+					<a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{% thumbnail entry.content|getimages "185x100" crop="80% top" as im %}
+    <img src="{{ im.url }}" alt="{{ entry.title }}" class="bordered" />
+{% endthumbnail %}</a>
+
+					<h3><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h3>
+
+					<p>{{entry.excerpt}}</p>
+
+					<a href="{{ entry.get_absolute_url }}" class="more">阅读全文 &#187;</a>
+
+					<div class="clearer">&nbsp;</div>
+
+				</div>
+{% endfor %}
