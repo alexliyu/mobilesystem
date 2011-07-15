@@ -69,28 +69,28 @@ ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '192.168.1.34',
-#        'NAME': 'mobile',
-#        'USER': 'mobile',
-#        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
-#    }
-#}
-
-
-# 在家里的数据库配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '127.0.0.1',
-        'NAME': 'molly',
-        'USER': 'molly',
-        'PASSWORD': 'mobile',
-        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+        'HOST': '192.168.1.34',
+        'NAME': 'mobile',
+        'USER': 'mobile',
+        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
     }
 }
+
+
+# 在家里的数据库配置
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#        'HOST': '127.0.0.1',
+#        'NAME': 'molly',
+#        'USER': 'molly',
+#        'PASSWORD': 'mobile',
+#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#    }
+#}
 
 
 # API keys are used to access particular services
@@ -336,7 +336,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
 #    'debug_toolbar',
     'tinymce',
     'compress',
-    'easy_thumbnails',
+   
     'guardian',
     'south',
     'userena',

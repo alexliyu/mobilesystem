@@ -13,8 +13,7 @@ from django.core.urlresolvers import reverse, NoReverseMatch
 
 from tagging.models import Tag
 
-from settings import WYSIWYG, MARKUP_LANGUAGE
-import settings
+from django.conf import settings
 from ..managers import HIDDEN
 from ..managers import PUBLISHED
 from .forms import EntryAdminForm
@@ -276,26 +275,6 @@ class EntryAdmin(admin.ModelAdmin):
                 '%sjs/jquery.bgiframe.js' % MEDIA_URL,
                 '%sjs/jquery.autocomplete.js' % MEDIA_URL,
                 reverse('admin:entry_entry_autocomplete_tags'),))
-
-        if WYSIWYG == 'wymeditor':
-            media += Media(
-                js=('%sjs/wymeditor/jquery.wymeditor.pack.js' % MEDIA_URL,
-                    '%sjs/wymeditor/plugins/hovertools/'
-                    'jquery.wymeditor.hovertools.js' % MEDIA_URL,
-                    reverse('admin:entry_entry_wymeditor')))
-        elif WYSIWYG == 'tinymce':
-            from tinymce.widgets import TinyMCE
-            media += TinyMCE().media + Media(
-                js=(reverse('tinymce-js', args=('admin/entry/entry',)),))
-        elif WYSIWYG == 'markitup':
-            media += Media(
-                js=('%sjs/markitup/jquery.markitup.js' % MEDIA_URL,
-                    '%sjs/markitup/sets/%s/set.js' % (
-                        MEDIA_URL, MARKUP_LANGUAGE),
-                    reverse('admin:entry_entry_markitup')),
-                css={'all': (
-                    '%sjs/markitup/skins/django/style.css' % MEDIA_URL,
-                    '%sjs/markitup/sets/%s/style.css' % (
-                        MEDIA_URL, MARKUP_LANGUAGE))})
+       
         return media
     media = property(_media)

@@ -1,3 +1,11 @@
+#-*- coding:utf-8 -*-
+"""
+这是项目的gevent服务器运行文件.
+
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+"""
 import sys, os
 
 from gevent import wsgi 

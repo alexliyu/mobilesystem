@@ -1,5 +1,6 @@
 from urllib import urlencode
 from urllib2 import urlopen
+from utils.htmllib import encoding
 try:
     import json
 except ImportError:
@@ -70,7 +71,7 @@ class Google(Geocoder):
         return "http://%s/maps/api/geocode/%s?%%s&language=zh_CN&sensor=true" % (domain, self.output_format.lower())
 
     def geocode(self, string, exactly_one=True):
-        params = {'address': self.format_string % string,
+        params = {'address': self.format_string % encoding(string),
                   }
         
         if self.api_key:

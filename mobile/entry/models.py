@@ -26,7 +26,7 @@ from django.contrib.markup.templatetags.markup import restructuredtext
 
 import mptt
 from tagging.fields import TagField
-
+from tinymce import models as tinymce_models
 from settings import UPLOADS_ROOT as UPLOAD_TO
 from settings import MARKUP_LANGUAGE
 from settings import ENTRY_TEMPLATES
@@ -119,7 +119,7 @@ class EntryAbstractClass(models.Model):
 
     image = models.ImageField(_('image'), upload_to=UPLOAD_TO,
                               blank=True, help_text=_('used for illustration'))
-    content = models.TextField(_('content'))
+    content = tinymce_models.HTMLField(_('content'))
     excerpt = models.TextField(_('excerpt'), blank=True,
                                 help_text=_('optional element'))
 
@@ -164,8 +164,8 @@ class EntryAbstractClass(models.Model):
 
     template = models.CharField(
         _('template'), max_length=250,
-        default='entry_detail.html',
-        choices=[('entry_detail.html', _('Default template'))] + \
+        default='entry/entry_detail.html',
+        choices=[('entry/entry_detail.html', _('Default template'))] + \
         ENTRY_TEMPLATES,
         help_text=_('template used to display the entry'))
 

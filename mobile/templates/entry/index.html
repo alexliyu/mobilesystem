@@ -1,33 +1,58 @@
-{% extends "base.html" %}
-{%block load%}{% load entry_tags tagging_tags%}{%endblock%}
+{{% extends "base.html" %}
+{%block load%}{% load tagging_tags entry_tags %}{%endblock%}
+{% block meta-description %}最新文章列表 | {% if category %}分类：{{ category }}{% if category.description %}: {{ category.description|striptags|safe }}{% endif %}{% endif %}{% if tag %}标签：{{ tag }}{% endif %}{% if author %} 作者：{{ author }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} 页： {{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
+
+{% block link %}
+  {{ block.super }}
+  {% if category %}
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed {{ category.title }}" href="{% url entry_category_feed category.tree_path %}" />
+  {% endif %}
+  {% if tag %}
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed {{ tag.name }}" href="{% url entry_tag_feed tag.name %}" />
+  {% endif %}
+  {% if author %}
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed {{ author.username }}" href="{% url entry_author_feed author.username %}" />
+  {% endif %}
+{% endblock %}
+
+{% block title %}最新文章{% if category %}| 分类：{{ category }}{% endif %}{% if tag %}| 标签：{{ tag }}{% endif %}{% if author %}| 作者：{{ author }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} | 页：{{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
+
 {% block content %}
-<div class="main" id="main-three-columns">
+
+<div class="main" id="main-two-columns">
 
 			<div class="left" id="main-left">
 
-				<div class="post">
-
-					{% get_indexfeatured_entries %}
-
-					
+				{%block index_entries%}{% get_index_entries object_list%}{%endblock%}
 				
-				</div>
-
+				{% for object in object_list %}
 				<div class="content-separator"></div>
 
-				{% get_indexrecent_entries 6%}
+				<div class="post">
 				
+
+					<a href="#"><img src="{{object.content|getimages}}" alt="" class="left bordered" width=185 height=100/></a>
+
+					<h3><a href="{{ object.get_absolute_url }}">{{object.title}}</a></h3>
+
+					<p>{{object.excerpt}}</p>
+
+					<a href="{{ object.get_absolute_url }}" class="more">阅读全文 &#187;</a>
+
+					<div class="clearer">&nbsp;</div>
+
+				</div>
+				{% endfor %}
+				
+
+				<div class="content-separator"></div>
+				{% if is_paginated %}
+  						{% entry_pagination page_obj %}
+			{% endif %}
+				<div class="content-separator"></div>
 			</div>
-
-			<div class="left sidebar" id="sidebar-1">
-
-				{% get_featured_entries 5%}			
-
-			</div>
-
 			
-
+			
 			{% block sider %}{% include "entry/right_sider.html" %}{%endblock%}
-
 		</div>
 {% endblock %}

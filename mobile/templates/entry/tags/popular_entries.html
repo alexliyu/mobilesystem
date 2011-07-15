@@ -1,14 +1,11 @@
 
-
-
-<ul class="nice-list">
 	{% for entry in entries %}
-							<li><span class="quiet">{{forloop.counter}}.</span> <a href="{{ entry.get_absolute_url }}"  title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
-							 {% with entry.comments.count as comment_count %}
-    <a href="{{ entry.get_absolute_url }}#comments" title="{{ entry.title }}">{{ comment_count }} 评论 </a>
+	{% with entry.comments.count as comment_count %}
+							<li><a href="{{ entry.get_absolute_url }}"  title="{{ entry.title }}" rel="bookmark">{{ entry.title }}<span class="ui-li-count">评论:{{ comment_count }}</span></a>
+
     {% endwith %}
 							
 	</li>						
 	{% endfor %}						
 							<li><a href="#" class="more">更多 &#187;</a></li>
-						</ul>
+						

@@ -1,101 +1,58 @@
 {%block load%}{% load entry_tags tagging_tags%}{%endblock%}
-<div class="right sidebar" id="sidebar-2">
-				<div class="section">
+<div data-role="collapsible" data-collapsed="true">
+			<h3>查看附加信息</h3>
+				
+				
 
-				<div class="section-title">搜索</div>
+				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 
-				<div class="section-content">
-					<form method="get" id="searchform" action="{% url entry_entry_search %}">
-						<input type="text" value="关键词" class="text" size="28" name="pattern" id="searchbox" onfocus="this.value=''"> &nbsp; <input type="submit" class="button" value="搜索" >
-					</form>
-				</div>
+					<h4>最多关注</h4>
 
-			</div>
-				<div class="section">
-
-					<div class="section-title">
-
-						<div class="left">最新更新</div>
-						<div class="right"><img src="/media/images/icon-time.gif" width="14" height="14" alt="" /></div>
-
-						<div class="clearer">&nbsp;</div>
-
-					</div>
-
-					<div class="section-content">
-						{% get_recent_entries 6 %}
-						
-					</div>
-
-				</div>
-
-				<div class="section">
-
-					<div class="section-title">最多关注</div>
-
-					<div class="section-content">
+					<ul data-role="listview" data-inset="true" data-theme="d">
 						{% get_popular_entries 5 %}
 						
 						
-					</div>
+					</ul>
 
 				</div>
 				
-				<div class="section">
+				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 
-					<div class="section-title">随机推荐</div>
+					<h4>随机推荐</h4>
 
-					<div class="section-content">
+				<ul data-role="listview" data-inset="true" data-theme="d">
 							{% get_random_entries 8 %}
 						
 						
-					</div>
+					</ul>
 
 				</div>
 
-				<div class="section network-section">
+				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 
-					<div class="section-title">最新评论</div>
+					<h4>最新评论</h4>
 
-					<div class="section-content">
+					<ul data-role="listview" data-inset="true" data-theme="d">
 						{% get_recent_comments 8 %}
 						
 						
-					</div>
-
-				</div>
-				<div class="section">
-
-					<div class="section-title">
-
-						<div class="left">最新作者</div>
-						<div class="right"><img src="/media/images/icon-time.gif" width="14" height="14" alt="" /></div>
-
-						<div class="clearer">&nbsp;</div>
-
-					</div>
-
-					<div class="section-content">
-						{% get_authors %}
-						
-					</div>
-
+					</ul>
 				</div>
 				
-				<div class="section network-section">
+				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 
-					<div class="section-title">标签云</div>
+					<h4>标签云</h4>
 
 					<div class="tags">
 						{% tag_cloud_for_model entry.entry as tag_cloud with steps=6 %}
-  						<ul>
+  					
     							{% for tag in tag_cloud %}
-    									<li>
+    									
       										<a href="{% url entry_tag_detail tag.name %}"  title="{{ tag.count }}篇文章"
          									class="tag_{{ tag.font_size }}">{{ tag }}</a>
-    									</li>
+    									
     							{% endfor %}
-  						</ul>
+  						
 						
 						
 					</div>
@@ -103,5 +60,5 @@
 				</div>
 			
 			</div>
-			<div class="clearer">&nbsp;</div>
+			
 			

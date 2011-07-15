@@ -5,7 +5,7 @@ Created on 2011-1-30
 @author: 李昱
 '''
 from datetime import timedelta
-from apps.lottery.models import lottery
+from entry.models import Entry
 from django.contrib.auth.models import User
 from utils.views import BaseView
 from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
@@ -16,11 +16,11 @@ class IndexView(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, u'中奖查询',
+            self.conf.local_name, None, u'新闻',
             lazy_reverse('index'))
     
     def handle_GET(self, request, context):
-        lotterylist = lottery.objects.all()
+        lotterylist = entry_index
         context['lotterylist'] = lotterylist
         context.update({
            'sent': request.GET.get('sent') == 'true',

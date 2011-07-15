@@ -1,11 +1,20 @@
+#-*- coding:utf-8 -*-
+"""
+这是项目的用于通用属性的中间件
+
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+"""
+
 from urlparse import urlparse, urlunparse, parse_qs
 from urllib import urlencode
-
+from utils.htmllib import encoding 
 from django.conf import settings
 
 def site_name(request):
     return {
-        'site_name': settings.SITE_NAME if hasattr(settings, 'SITE_NAME') else 'Molly Project'
+        'site_name': settings.SITE_NAME if hasattr(settings, 'SITE_NAME') else 'E2 Mobile Project'
     }
     
 def full_path(request):
@@ -17,7 +26,10 @@ def full_path(request):
             continue
         else:
             for v in vs:
-                args.append((k, v))
+                """
+                使用encoding转换中文编码
+                """
+                args.append((k, encoding(v)))
     query = urlencode(args)
     uri = urlunparse((scheme, netloc, path, params, query, fragment))
     return {

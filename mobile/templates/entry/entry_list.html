@@ -18,41 +18,43 @@
 {% block title %}最新文章{% if category %}| 分类：{{ category }}{% endif %}{% if tag %}| 标签：{{ tag }}{% endif %}{% if author %}| 作者：{{ author }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} | 页：{{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
 
 {% block content %}
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<form method="get" action="{% url entry_entry_search %}">
+<h2 class="invisible">搜索</h2>    
 
-<div class="main" id="main-two-columns">
+<p>
+               
+                <label for="search">搜索新闻:</label>
+                <input type="search"  name="pattern" id="searchbox" title='搜索'/>
+                您可以使用地点、商铺名称、关键词等来进行搜索
+   </p>
+             
+           
+       
+        
+               
+        
+</form>
+</div>
+{# End Places Search #}
 
-			<div class="left" id="main-left">
-
-				{%block index_entries%}{% get_index_entries object_list%}{%endblock%}
-				
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<ul data-role="listview" data-inset="true" data-theme="d">
 				{% for object in object_list %}
-				<div class="content-separator"></div>
 
-				<div class="post">
-				
+					<li><a href="{{ object.get_absolute_url }}">{{object.title}}</a><span class="ui-li-count">{{object.creation_date|date:"Y-f-j"}}</span></li>
 
-					<a href="#"><img src="{{object.content|getimages}}" alt="" class="left bordered" width=185 height=100/></a>
-
-					<h3><a href="{{ object.get_absolute_url }}">{{object.title}}</a></h3>
-
-					<p>{{object.excerpt}}</p>
-
-					<a href="{{ object.get_absolute_url }}" class="more">阅读全文 &#187;</a>
-
-					<div class="clearer">&nbsp;</div>
-
-				</div>
+					
 				{% endfor %}
 				
-
-				<div class="content-separator"></div>
+</ul>
+</div>
 				{% if is_paginated %}
   						{% entry_pagination page_obj %}
 			{% endif %}
-				<div class="content-separator"></div>
-			</div>
+				
 			
 			
-			{% block sider %}{% include "right_sider.html" %}{%endblock%}
-		</div>
+			{% block sider %}{% include "entry/right_sider.html" %}{%endblock%}
+		
 {% endblock %}
