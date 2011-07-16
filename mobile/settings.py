@@ -23,8 +23,13 @@ from oauth.oauth import OAuthSignatureMethod_PLAINTEXT
 import os.path
 from conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
 from utils.media import get_compress_groups
+
+from utils import loading
 project_root = os.path.normpath(os.path.dirname(__file__))
 molly_root = project_root
+
+APPLICATIONS = loading.load_apps()
+
 COPYRIGHT = 'e2 mobile'
 
 gettext = lambda s: s
@@ -69,28 +74,28 @@ ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '192.168.1.34',
-        'NAME': 'mobile',
-        'USER': 'mobile',
-        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
-    }
-}
-
-
-# 在家里的数据库配置
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '127.0.0.1',
-#        'NAME': 'molly',
-#        'USER': 'molly',
-#        'PASSWORD': 'mobile',
-#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#        'HOST': '192.168.1.34',
+#        'NAME': 'mobile',
+#        'USER': 'mobile',
+#        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
 #    }
 #}
+
+
+# 在家里的数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'HOST': '127.0.0.1',
+        'NAME': 'molly',
+        'USER': 'molly',
+        'PASSWORD': 'mobile',
+        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+    }
+}
 
 
 # API keys are used to access particular services
@@ -101,133 +106,7 @@ API_KEYS = {
 
 TIME_ZONE = 'Asia/Shanghai'
 # The meat of Molly - application configuration
-APPLICATIONS = [
 
-    Application('apps.home', 'home', '主页',
-        display_to_user=False,
-    ),
-    
-#    Application('apps.desktop', 'desktop', '桌面',
-#        display_to_user=True,
-#        twitter_username='alexliyu',
-#        blog_rss_url='http://feeds.feedburner.com/mobileoxford',
-#    ),
-    
-    Application('apps.podcasts', 'podcasts', '视频点播',
-        providers=[        ]
-        ),
-    
-#   Application('apps.webcams', 'webcams', 'Webcams'),
-    
-    Application('apps.weather', 'weather', '天气',
-        location_id='1832',
-         display_to_user=False,
-    ),
-    Application('apps.lottery', 'lottery', '中奖查询',
-        providers=[        ],
-         display_to_user=True,
-        ),
-    Application('apps.service_status', 'service_status', '服务状态',
-        providers=[        ],
-         display_to_user=False,
-        ),
-    
-    Application('apps.search', 'search', '搜索',
-        providers=[
-            Provider('apps.search.providers.ApplicationSearchProvider'),
-        ],
-        # Uncomment if you're using a query expansion file
-        #query_expansion_file = os.path.join(project_root, 'data', 'query_expansion.txt'),
-        display_to_user=False,
-    ),
-    
-    Application('apps.feeds', 'feeds', 'Feeds',
-        providers=[
-            Provider('apps.feeds.providers.RSSFeedsProvider'),
-        ],
-        display_to_user=False,
-    ),
-    
-    Application('apps.feeds.news', 'news', '团购'),
-    
-    Application('apps.feeds.events', 'events', '杂志'),
-    
-    Application('maps', 'maps', '地图',
-        display_to_user=False,
-    ),
-    
-    Application('geolocation', 'geolocation', 'Geolocation',
-    
-        prefer_results_near=(118.115749, 24.471363, 10000),
-        providers=[
-            Provider('geolocation.providers.PlacesGeolocationProvider'),
-            Provider('geolocation.providers.CloudmadeGeolocationProvider',),
-        ],
-        display_to_user=False,
-    ),
-    
-    Application('apps.feedback', 'feedback', '建议',
-        display_to_user=False,
-    ),
-#    
-#    Application('apps.feature_vote', 'feature_vote', '活动建议',
-#        display_to_user=True,
-#    ),
-    
-    Application('external_media', 'external_media', 'External Media',
-        display_to_user=False,
-    ),
-    
-    Application('wurfl', 'device_detection', '终端信息',
-        display_to_user=False,
-        expose_view=True,
-    ),
-#    
-#    Application('apps.stats', 'stats', 'Statistics',
-#         display_to_user=True,
-#     ),
-#    
-    Application('url_shortener', 'url_shortener', 'URL Shortener',
-        display_to_user=False,
-    ),
-    
-    Application('apps.links', 'links', '网址导航',
-        display_to_user=True,
-    ),
-     
-    Application('utils', 'utils', 'Molly utility services',
-        display_to_user=True,
-    ),
-    Application('auth', 'auth', '授权',
-        display_to_user=False,
-        secure=True,
-        unify_identifiers=('weblearn:id',),
-    ),
-    
-    Application('apps.places', 'places', '消费导航',
-        providers=[
-            Provider('apps.places.providers.OSMMapsProvider',
-                     lat_north=24.671363, lat_south=24.271363,
-                     lon_west=117.915749, lon_east=118.315749
-            ),
-        ],
-
-    ),
-    
-    Application('favourites', 'favourites', 'Favourite pages',
-        display_to_user=False,
-    ),
-                
-    Application('apps.business', 'business', '联盟商家',
-        display_to_user=True,
-    ),
-                
-    Application('apps.users', 'users', '用户中心',
-        display_to_user=False,
-    ),
-    
-    
-]
 
 
 # Middleware classes alter requests and responses before/after they get
@@ -330,6 +209,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'django.contrib.sites',
     'django.contrib.comments',
     'django.contrib.staticfiles',
+    'mobile',
     'batch_processing',
     'django.contrib.gis',
     'entry',

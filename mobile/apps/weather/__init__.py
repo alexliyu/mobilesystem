@@ -12,3 +12,7 @@ class Mete:
     定义此应用程序的附加信息，诸如应用程序名
     """
     title = _('Weather')
+    config = {
+            'location_id':'1832',
+            'display_to_user':True,
+            }

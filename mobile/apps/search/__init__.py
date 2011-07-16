@@ -13,3 +13,14 @@ class Mete:
     定义此应用程序的附加信息，诸如应用程序名
     """
     title = _('Search')
+    config = {
+            'providers':['apps.search.providers.ApplicationSearchProvider'],
+#        # Uncomment if you're using a query expansion file
+#        #query_expansion_file = os.path.join(project_root, 'data', 'query_expansion.txt'),
+        'display_to_user':False,
+            
+            
+            
+            
+            }
+    

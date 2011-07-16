@@ -8,3 +8,16 @@
 from django.utils.translation import ugettext_lazy as _
 
 comments_title = _('Comments')
+
+from django.utils.translation import ugettext_lazy as _
+
+class Mete:
+    """
+    定义此应用程序的附加信息，诸如应用程序名
+    """
+    title = _('Home')
+    config = {
+        'display_to_user':False
+        
+        }
+    
