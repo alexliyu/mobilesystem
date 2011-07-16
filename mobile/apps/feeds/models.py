@@ -11,8 +11,8 @@ from external_media import resize_external_image
 from apps.places.models import Entity
 from gmapsfield.fields import GoogleMapsField
 FEED_TYPE_CHOICES = (
-    ('n', 'news'),
-    ('e', 'event'),
+    ('n', 'tuan'),
+    ('e', 'zine'),
 )
 
 
@@ -68,9 +68,9 @@ class Feed(models.Model):
         
     def get_absolute_url(self):
         if self.ptype == 'n':
-            return reverse('news:item-list', args=[self.slug])
+            return reverse('tuan:item-list', args=[self.slug])
         else:
-            return reverse('events:item-list', args=[self.slug])
+            return reverse('zine:item-list', args=[self.slug])
         
     class Meta:
         ordering = ('title',)
@@ -144,9 +144,9 @@ class Item(models.Model):
     
     def get_absolute_url(self):
         if self.ptype == 'n':
-            return reverse('news:item-detail', args=[self.feed.slug, self.id])
+            return reverse('tuan:item-detail', args=[self.feed.slug, self.id])
         else:
-            return reverse('events:item-detail', args=[self.feed.slug, self.id])
+            return reverse('zine:item-detail', args=[self.feed.slug, self.id])
         
         
     def get_description_display(self, device):

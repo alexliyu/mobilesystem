@@ -3,5 +3,4 @@ from apps.news.views import *
 
 urlpatterns = patterns('',
     (r'^$', IndexView, {}, 'index'),
-    (r'^(\d+)/$', DetailsView, {}, 'details'),
 )

@@ -21,7 +21,7 @@ class IndexView(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, '公告', lazy_reverse('events:index')
+            self.conf.local_name, None, '生活杂志', lazy_reverse('zine:index')
         )
 
     def handle_GET(self, request, context):
@@ -72,7 +72,7 @@ class ItemDetailView(BaseView):
             self.conf.local_name,
             lazy_parent('item-list', slug=slug),
             'Events item',
-            lazy_reverse('item-detail', args=[slug,id])
+            lazy_reverse('item-detail', args=[slug, id])
         )
 
     def handle_GET(self, request, context, slug, id):
