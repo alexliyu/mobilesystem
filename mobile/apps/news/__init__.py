@@ -13,3 +13,7 @@ class Mete:
     定义此应用程序的附加信息，诸如应用程序名
     """
     title = _('News')
+    config = {
+        'display_to_user':True,
+        'providers':['entry.providers.CategoriesEntryProvider']
+        }

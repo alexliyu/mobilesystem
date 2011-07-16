@@ -20,14 +20,7 @@ class IndexView(BaseView):
             lazy_reverse('index'))
     
     def handle_GET(self, request, context):
-        lotterylist = entry_index
-        context['lotterylist'] = lotterylist
-        context.update({
-           'sent': request.GET.get('sent') == 'true',
-           'referer': request.GET.get('referer', ''),
-        })
-        return self.render(request, context, 'lottery/index',
-                           expires=timedelta(days=7))
+        return self.conf.provider.category_detail(request, 'news')
     
 class DetailsView(BaseView):
     @BreadcrumbFactory

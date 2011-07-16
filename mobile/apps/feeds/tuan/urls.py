@@ -2,6 +2,7 @@ from django.conf.urls.defaults import *
 
 from .views import IndexView, ItemListView, ItemDetailView
 
+
 urlpatterns = patterns('',
    (r'^$',
        IndexView, {},

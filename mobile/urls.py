@@ -2,7 +2,6 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
 from conf import applications, all_apps
-from apps.links import views
 from apps.business.views import PicDownload
 
 # Admin
