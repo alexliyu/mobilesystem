@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-import urllib, re, email, feedparser, time, random, traceback, logging
+import urllib, urllib2, re, email, feedparser, time, random, traceback, logging
 
 from external_media import sanitise_html
 from conf.settings import batch
@@ -39,6 +39,11 @@ class RSSFeedsProvider(BaseFeedsProvider):
         from apps.feeds.models import Item
         
         feed_data = feedparser.parse(feed.rss_url)
+        if feed_data['entries'] == []:
+            import xml.dom.minidom as minidom  
+            feed_tmp = urllib2.urlopen(feed.rss_url, timeout=30).read()
+            feed_xml = minidom.parseString(feed_tmp).childNodes[0].childNodes[1].toprettyxml()
+            feed_data = feedparser.parse(feed_xml)
         try:
             feed.last_modified = struct_to_datetime(feed_data.feed.updated_parsed)
         except:

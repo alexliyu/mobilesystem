@@ -104,13 +104,13 @@ class Series(models.Model):
 
 class Item(models.Model):
     feed = models.ForeignKey(Feed)
-    title = models.TextField(u'产品标题', default='', max_length=50)
+    title = models.TextField(u'标题', default='', max_length=50)
     guid = models.TextField(u'编号', default='')
-    description = models.TextField(u'产品描述', default='', max_length=500)
-    link = models.URLField(u'产品网址', blank=True)
+    description = models.TextField(u'描述', default='', max_length=500)
+    link = models.URLField(u'网址', blank=True)
     last_modified = models.DateTimeField(u"最后修改日期", null=True, blank=True) # this one is also in UTC
     
-    ptype = models.CharField(u'产品类型', max_length=16, choices=FEED_TYPE_CHOICES)
+    ptype = models.CharField(u'类型', max_length=16, choices=FEED_TYPE_CHOICES)
     
     organiser = models.ForeignKey(vCard, related_name='organising_set', null=True, blank=True)
     speaker = models.ForeignKey(vCard, related_name='speaking_set', null=True, blank=True)
@@ -167,7 +167,7 @@ class Item(models.Model):
     class Meta:
         ordering = ('-last_modified',)
 
-        verbose_name = u"产品列表"
-        verbose_name_plural = u"产品列表"
+        verbose_name = u"订阅列表"
+        verbose_name_plural = u"订阅列表"
 
     

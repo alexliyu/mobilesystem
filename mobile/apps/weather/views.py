@@ -8,12 +8,12 @@ from models import Weather
 class IndexView(BaseView):
     def initial_context(self, request):
         try:
-            observation = Weather.objects.get(location_id=self.conf.location_id, ptype='o')
+            observation = Weather.objects.get(location_id=self.conf.location_id)
         except Weather.DoesNotExist:
             observation = None
         return {
             'observation': observation,
-            'forecasts': Weather.objects.filter(location_id=self.conf.location_id, ptype='f', observed_date__gte=datetime.now().date()).order_by('observed_date'),
+            'forecasts': Weather.objects.filter(location_id=self.conf.location_id, observed_date__gte=datetime.now().date()).order_by('observed_date'),
         }
 
     @BreadcrumbFactory
