@@ -14,7 +14,7 @@
 {% include "places/metadata/ldb.html" %}
 
 {% ifequal entity.primary_type.slug "travel-alert" %}
-<div class="section">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
   <div class="header">
     <h2>{% trans "Travel Alert" %}</h2>
   </div>
@@ -64,7 +64,7 @@
 
 {% for associated_type in associations %}
 
-<div class="section">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
   <div class="header">
     <h2>{{ associated_type.type }}</h2>
   </div>

@@ -1,14 +1,14 @@
-{% extends template %}
+{% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Active Visitors Map" %}{% endblock %}
+{% block title %}当前在线访问者分布图{% endblock %}
 
 
 
 
 
 {% block content %}
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+
 <style type="text/css">
 #active-users-map {
     height: 400px;
@@ -19,10 +19,10 @@
 <script type="text/javascript">
 {% include 'tracking/_active_users.js' %}
 </script>
-<h2>{% trans "Active Users" %}</h2>
+<h2>当前在线用户</h2>
 
 <p>
-    {% trans "Below is a map and a list of recently active users on this site.  It updates itself every 5 seconds or so, adding and removing pins in the map as necessary.  Stick around for a few minutes to see it in action!" %}
+    每5秒钟这个地图会更新一次，显示出来当前在线的用户分布，并标注在google地图上
 </p>
 
 <div id="active-users-map"></div>

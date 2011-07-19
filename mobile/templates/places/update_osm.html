@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<div class="section">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
   <h2>{% trans "Important information" %}</h2>
   
   <div class="article"><div class="bubble pad-5">
@@ -38,7 +38,7 @@
   </div></div>
 </div>
 
-<div class="section">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
   <h2>{% trans "Map" %}</h2>
   <div class="note"><div class="bubble pad-10">
 	{% blocktrans with entity.primary_type.verbose_name as type_name and entity.title as title %}You are submitting an update to the {{ type_name }} <em>&quot;{{ title }}&quot;</em>.{% endblocktrans %}

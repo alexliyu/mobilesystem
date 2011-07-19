@@ -15,16 +15,16 @@
 
 {% block content %}
 
-<div class="section">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
     <h2>{{ item.title }}</h2>
     
-    <div class="article"><div class="bubble pad-5" style="margin: 2px;">
+    <div class="ui-block-b"><div class="bubble pad-5" style="margin: 2px;">
         {{ description|safe }}
         <br />
         
         <small><em>
-            {{ item.last_modified_local|date:"j M Y \a\t H:m" }}<br />
-            Link: <a href="{{ item.link }}" title="{{ item.title }}">{{ item.link }}</a>
+            {{ item.last_modified_local|date:"Y M j H:m" }}<br />
+            查看原文: <a href="{{ item.link }}" title="{{ item.title }}">{{ item.link }}</a>
         </em></small>
     </div></div>
 </div>

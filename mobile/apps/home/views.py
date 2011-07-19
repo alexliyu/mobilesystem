@@ -1,3 +1,11 @@
+#-*- coding:utf-8 -*-
+"""
+这是项目的home应用模块的主视图.
+
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+"""
 from datetime import datetime, timedelta
 
 from django.http import HttpResponse
@@ -24,7 +32,7 @@ class IndexView(BaseView):
     def breadcrumb(self, request, context):
         return Breadcrumb(self.conf.local_name,
                           None,
-                          'Home',
+                          '主页',
                           lazy_reverse('index'))
     def handle_GET(self, request, context):
         # Check whether the referer header is from the same host as the server
@@ -77,7 +85,7 @@ class IndexView(BaseView):
             'hide_feedback_link': True,
             'is_christmas': datetime.now().month == 12,
             'messages': messages,
-            'favourites': get_favourites(request),
+           
         }
         return self.render(request, context, 'home/index',
                            expires=timedelta(minutes=10))

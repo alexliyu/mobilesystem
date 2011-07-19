@@ -16,7 +16,9 @@ def get_ip(request):
     """
 
     # if neither header contain a value, just use local loopback
-    ip_address = request.META.get('HTTP_X_FORWARDED_FOR',
+    ip_address = request.META.get('HTTP_X_REAL_IP')
+    if not ip_address:
+        ip_address = request.META.get('HTTP_X_FORWARDED_FOR',
                                   request.META.get('REMOTE_ADDR', '127.0.0.1'))
     if ip_address:
         # make sure we have one and only one IP

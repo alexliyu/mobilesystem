@@ -23,12 +23,13 @@ import os, re
 
 from conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
 
-REMOVELIST = ['places', 'feature_vote', 'stats', 'webcams', 'desktop', 'feeds', 'transport', 'library', 'contact' ]
+REMOVELIST = ['places', 'feature_vote', 'stats', 'webcams', 'desktop', 'feeds', 'transport', 'library', 'contact']
 APPLICATIONS = [
     
     Application('apps.feeds', 'feeds', 'Feeds',
         providers=[
             Provider('apps.feeds.providers.RSSFeedsProvider'),
+            Provider('apps.feeds.providers.MeituanFeedsProvider'),
         ],
         display_to_user=False,
     ),
@@ -84,9 +85,7 @@ APPLICATIONS = [
 
     ),
     
-    Application('favourites', 'favourites', 'Favourite pages',
-        display_to_user=False,
-    ),
+   
 ]
 def load_apps():
     """

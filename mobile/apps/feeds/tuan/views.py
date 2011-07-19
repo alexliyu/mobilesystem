@@ -46,7 +46,7 @@ class ItemListView(BaseView):
         return Breadcrumb(
             self.conf.local_name,
             lazy_parent('index'),
-            'News feed',
+            u'团购信息',
             lazy_reverse('item-list', args=[slug])
         )
         
@@ -71,7 +71,7 @@ class ItemDetailView(BaseView):
         return Breadcrumb(
             self.conf.local_name,
             lazy_parent('item-list', slug=slug),
-            'News item',
+            u'团购详情',
             lazy_reverse('item-detail', args=[slug, id])
         )
         

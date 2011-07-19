@@ -3,7 +3,7 @@
 {% block content %}
 
 {% for slug, name, lastBuildDate, statuses, announcements in services %}
-<div class="section">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
   <div class="header">
     <h2>{{ name }} <small>at {{ lastBuildDate|date:"G:i D, j F Y" }}</small></h2>
   </div>

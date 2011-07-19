@@ -12,27 +12,27 @@
 
 {% block content %}
 
-<div class="section">
-<div class="header">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+
     <h2>{{ feed.title }}</h2>
-</div>
-    <ul class="link-list">
+
+    <div class="ui-body ui-body-d ui-corner-all ui-shadow">
 {% for item in feed.item_set.all %}
         <li {% if forloop.last %}class="round-bottom"{% endif %}>
             <a href="{{ item.get_absolute_url }}">
-                {{ item.title }}<br />
-                <small><em>
+                {{ item.title }}
+                 <span class="ui-li-count">
                 {% if not item.last_modified_local|this_year %}
-                    {{ item.last_modified_local|date:"j M Y" }}
+                    {{ item.last_modified_local|date:"Y M j" }}
                 {% else %}
-                    {{ item.last_modified_local|date:"j M"}}
+                    {{ item.last_modified_local|date:"M j"}}
                 {% endif %}
-                </em></small>
+                </span>
                 
             </a>
         </li>
 {% endfor %}
-    </ul>
+    </div>
 </div>
 
 {% endblock %}

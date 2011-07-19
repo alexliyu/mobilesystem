@@ -14,17 +14,14 @@
 {% block title %}News: {{ item.title }}{% endblock %}
 
 {% block content %}
-<div class="section">
-  <div class="header">
-    <h2>{{ item.title }}</h2>
-  </div>
-  
-    <div class="section-content">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+  <h2>{{ item.title }}</h2>
+   <div class="ui-block-b">
     {{ description|safe }}
     <br />
         <small><em>
-            {{ item.last_modified_local|date:"j M Y \a\t H:m" }}<br />
-            Link: <a href="{{ item.link }}" title="{{ item.title }}">{{ item.link }}</a>
+            {{ item.last_modified_local|date:"Y M j H:m" }}<br />
+            点击进入团购页面: <a href="{{ item.link }}" title="{{ item.title }}">{{ item.link }}</a>
         </em></small>
     </div>
 </div>

@@ -4,39 +4,29 @@
 
 {# News Search #}
 {% search_form %}
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 <form method="get" action="{% url search:index %}">
     <!-- Doing the devil's work below: couldn't get a CSS design to work with Blackberry 8900 so using Tables as a last resort. Tim F -->
-<h2 class="invisible">Search News</h2>
-<table class="search"><tbody>
-        <tr><td>
-                <label style="display:none;" for="id_query">Search News Box</label>
-                {{ search_form.query }}
-        </td><td>
-                <input type="hidden" name="application" value="events" title="Search News" />
-                {% ifequal style_group "dumb" %}
-                    <button type="submit">Go!</button>
-                {% else %}
-                        <input type="image" src="/media/site/images/buttons/search-button.png" title="Search" alt="Search"/>
-                {% endifequal %}
-        </td></tr><tr><td>
-                <p class="help-bubble top">Search for particular events</p>
-        </td><td></td></tr></tbody>
-</table>
+<h2 class="invisible">搜索杂志内容</h2>    
+<p>
+               
+                <label for="search">搜索杂志内容:</label>
+                 <input type="search"  name="query" id="id_query" title='搜索杂志内容'/>
+                 
+   </p>
+                <input type="hidden" name="application" value="zine" title="Search News" />
 </form>
 {# End News Search #}
+</div>
 
-
-<div class="section">
-  <div class="header">
-        <h2>Feeds</h2>
-  </div>
-    <ul class="link-list">
+<div data-role="listview" data-inset="true" data-theme="d">
+<h3>本地生活杂志内容合作伙伴</h3>
 {% for feed in feeds %}
         <li {% if forloop.last %}class="round-bottom"{% endif %}>
             <a href="{{ feed.get_absolute_url }}">{{ feed.title }}</a>
         </li>
 {% endfor %}
-    </ul>
+    
 </div>
 
 

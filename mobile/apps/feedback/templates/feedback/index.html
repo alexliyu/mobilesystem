@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if sent %}
-	<div class="section">
+	<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 	  <h2>Thank you for your feedback!</h2>
 	  <div class="note"><div class="bubble pad-10">
 	{% if referer %}
@@ -26,7 +26,7 @@
   {% csrf_token %}
 <input type="hidden" name="referer" value="{{ referer }}"/>
 
-<div class="section">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 	<div class="form">
 	<h3>{{ feedback_form.email.label}}</h3>
 	{% if feedback_form.email.errors %}

@@ -109,7 +109,8 @@ class Item(models.Model):
     description = models.TextField(u'描述', default='', max_length=500)
     link = models.URLField(u'网址', blank=True)
     last_modified = models.DateTimeField(u"最后修改日期", null=True, blank=True) # this one is also in UTC
-    
+    small_image = models.URLField(u'小图', blank=True)
+    big_image = models.URLField(u'大图', blank=True)
     ptype = models.CharField(u'类型', max_length=16, choices=FEED_TYPE_CHOICES)
     
     organiser = models.ForeignKey(vCard, related_name='organising_set', null=True, blank=True)
@@ -152,7 +153,7 @@ class Item(models.Model):
     def get_description_display(self, device):
         html = etree.fromstring('<div>%s</div>' % self.description, parser=etree.HTMLParser())
         for img in html.findall('.//img'):
-            eis = resize_external_image(img.attrib['src'], device.max_image_width - 40)
+            eis = resize_external_image(img.attrib['src'], device.max_image_width - 10)
             if eis != None:
                 img.attrib['src'] = eis.get_absolute_url()
                 img.attrib['width'] = '%d' % eis.width

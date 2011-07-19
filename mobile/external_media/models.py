@@ -44,7 +44,7 @@ class ExternalImageSized(models.Model):
         external_image_dir = get_external_image_dir()
         if not self.slug:
             while not self.slug or ExternalImageSized.objects.filter(slug=self.slug).count():
-                self.slug = "%08x" % random.randint(0, 16**8-1)
+                self.slug = "%08x" % random.randint(0, 16 ** 8 - 1)
         if not os.path.exists(external_image_dir):
             os.makedirs(external_image_dir)
         return os.path.join(external_image_dir, self.slug)
@@ -54,20 +54,18 @@ class ExternalImageSized(models.Model):
 
     def save(self, force_insert=False, force_update=False, *args, **kwargs):
         if not self.id:
-	    print self.external_image.url
-            response = urllib2.urlopen(self.external_image.url,timeout=20)
+            response = urllib2.urlopen(self.external_image.url, timeout=20)
             data = StringIO(response.read())
             im = Image.open(data)
 
             size = im.size
             ratio = size[1] / size[0]
-	    print self.get_filename()
 
             if self.width >= size[0]:
                 resized = im
             else:
                 try:
-                    resized = im.resize((self.width, int(round(self.width*ratio))), Image.ANTIALIAS)
+                    resized = im.resize((self.width, int(round(self.width * ratio))), Image.ANTIALIAS)
                 except IOError, e:
                     if e.message == "cannot read interlaced PNG files":
                         # Ain't nothing can be done until you upgrade PIL to 1.1.7
@@ -75,7 +73,7 @@ class ExternalImageSized(models.Model):
                     else:
                         raise
             self.width, self.height = resized.size
-	    print self.get_filename()
+
             try:
                 resized.save(self.get_filename(), format='jpeg')
                 self.content_type = 'image/jpeg'
