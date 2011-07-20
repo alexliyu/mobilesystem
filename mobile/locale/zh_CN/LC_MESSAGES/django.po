@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-18 15:14+0800\n"
-"PO-Revision-Date: 2011-07-18 15:21+0800\n"
+"POT-Creation-Date: 2011-07-20 16:32+0800\n"
+"PO-Revision-Date: 2011-07-20 16:44+0800\n"
 "Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
 "Language: zh_CN\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: __init__.py:14
 msgid "E2 Mobile System"
-msgstr ""
+msgstr "E2 Mobile System"
 
 #: dashboard.py:61
 msgid "FileBrowser"
@@ -1546,9 +1546,9 @@ msgid "The latest entries for the tag %s"
 msgstr " %s 标签的最新内容"
 
 #: entry/feeds.py:203
-#, fuzzy, python-format
+#, python-format
 msgid "Results of the search for '%s'"
-msgstr "搜索 %s 的结果"
+msgstr "%s 的搜索结果"
 
 #: entry/feeds.py:207
 #, python-format
@@ -1829,9 +1829,8 @@ msgid "short url"
 msgstr "缩略URL"
 
 #: entry/admin/entry.py:207
-#, fuzzy
 msgid "The selected entries now belong to you."
-msgstr " %s 标签的最新内容"
+msgstr "所选择的文章内容现在属于您"
 
 #: entry/admin/entry.py:208
 msgid "Set the entries to the user"
@@ -2216,7 +2215,7 @@ msgid "You need to provide a password to view this entry."
 msgstr "您需要提供密码来查看这个内容"
 
 #: templates/entry/password.html:23
-#: userena/forms.py:203
+#: userena/forms.py:208
 msgid "Password"
 msgstr "密码"
 
@@ -2235,7 +2234,7 @@ msgstr "评论"
 #: templates/entry/admin/entry/widgets/_content_stats.html:10
 #, python-format
 msgid "%(entries)s entries"
-msgstr "%(categories)s 篇文章"
+msgstr "%(entries)s  文章"
 
 #: templates/entry/admin/entry/widgets/_content_stats.html:15
 #, python-format
@@ -2503,7 +2502,7 @@ msgstr "不可用"
 #, python-format
 msgid "Found %(count)s %(name)s"
 msgid_plural "Found %(count)s %(name_plural)s"
-msgstr[0] "找到 %(count)s 项%(name)s"
+msgstr[0] "找到 %(count)s 项%(name_plural)s"
 
 #: templates/places/category_detail.html:18
 #: templates/places/nearby_detail.html:19
@@ -3091,18 +3090,6 @@ msgid "1 registered user"
 msgid_plural "%(counter)s registered users"
 msgstr[0] "%(counter)s 个已注册用户"
 
-#: tracking/templates/tracking/visitor_map.html:4
-msgid "Active Visitors Map"
-msgstr ""
-
-#: tracking/templates/tracking/visitor_map.html:22
-msgid "Active Users"
-msgstr "激活的用户"
-
-#: tracking/templates/tracking/visitor_map.html:25
-msgid "Below is a map and a list of recently active users on this site.  It updates itself every 5 seconds or so, adding and removing pins in the map as necessary.  Stick around for a few minutes to see it in action!"
-msgstr ""
-
 #: userena/__init__.py:14
 msgid "Userna"
 msgstr "用户管理"
@@ -3112,7 +3099,7 @@ msgid "Username must contain only letters, numbers, dots and underscores."
 msgstr "用户名只能包含字母、数字以及符号"
 
 #: userena/forms.py:40
-#: userena/forms.py:213
+#: userena/forms.py:218
 #: userena/templates/userena/profile_detail.html:27
 msgid "Email"
 msgstr "Email"
@@ -3127,7 +3114,7 @@ msgstr "重设密码"
 
 #: userena/forms.py:49
 msgid "Mobile"
-msgstr "Mobile"
+msgstr "手机号码"
 
 #: userena/forms.py:63
 msgid "This username is already taken."
@@ -3138,7 +3125,7 @@ msgid "This username is not allowed."
 msgstr "这个用户名不允许使用"
 
 #: userena/forms.py:71
-#: userena/forms.py:255
+#: userena/forms.py:260
 msgid "This email is already in use. Please supply a different email."
 msgstr "这个Email地址已经被使用，请尝试其他邮件地址"
 
@@ -3147,62 +3134,63 @@ msgid "The two password fields didn't match."
 msgstr "两次密码输入不一至"
 
 #: userena/forms.py:142
+#: userena/forms.py:144
 msgid "这个手机号码已经被注册了，请确认您输入的手机号码！"
 msgstr ""
 
-#: userena/forms.py:177
+#: userena/forms.py:182
 msgid "I have read and agree to the Terms of Service"
 msgstr "您已经阅读并且同意服务协议"
 
-#: userena/forms.py:178
+#: userena/forms.py:183
 msgid "You must agree to the terms to register."
 msgstr "你必须同意以上条款才能注册"
 
-#: userena/forms.py:191
+#: userena/forms.py:196
 #, python-format
 msgid "%(label)s"
 msgstr ""
 
-#: userena/forms.py:194
+#: userena/forms.py:199
 #, python-format
 msgid "%(error)s"
 msgstr "%(error)s"
 
-#: userena/forms.py:201
+#: userena/forms.py:206
 msgid "Email or username"
 msgstr "Email或者用户名"
 
-#: userena/forms.py:202
+#: userena/forms.py:207
 msgid "Either supply us with your email or username."
 msgstr "请输入电子Email或者用户名"
 
-#: userena/forms.py:207
+#: userena/forms.py:212
 #, python-format
 msgid "Remember me for %(days)s"
 msgstr "记住我 %(days)s 天"
 
-#: userena/forms.py:214
+#: userena/forms.py:219
 msgid "Please supply your email."
 msgstr "请提供你的Email地址"
 
-#: userena/forms.py:229
+#: userena/forms.py:234
 msgid "Please enter a correct username or email and password. Note that both fields are case-sensitive."
 msgstr "请输入正确的用户名或电子邮件地址和密码。请注意大写小区分"
 
-#: userena/forms.py:235
+#: userena/forms.py:240
 #: userena/templates/userena/email_confirm_complete.html:6
 msgid "New email"
 msgstr "新的Email"
 
-#: userena/forms.py:253
+#: userena/forms.py:258
 msgid "You're already known under this email."
 msgstr "你已经知道下面的Email"
 
-#: userena/forms.py:269
+#: userena/forms.py:274
 msgid "First name"
 msgstr "姓"
 
-#: userena/forms.py:272
+#: userena/forms.py:277
 msgid "Last name"
 msgstr "姓"
 
@@ -3319,7 +3307,7 @@ msgstr "Date/time"
 #: userena/contrib/umessages/fields.py:56
 #, python-format
 msgid "The following usernames are incorrect: %(users)s."
-msgstr "下面的用户名称是不正确的"
+msgstr "下面的用户名称是不正确的: %(users)s."
 
 #: userena/contrib/umessages/forms.py:10
 msgid "To"
@@ -3671,7 +3659,7 @@ msgstr "注册已完成！"
 
 #: userena/templates/userena/signup_complete.html:6
 #: userena/templates/userena/signup_form.html:4
-#: userena/templates/userena/signup_form.html:27
+#: userena/templates/userena/signup_form.html:28
 msgid "Signup"
 msgstr "注册"
 
@@ -3686,7 +3674,10 @@ msgstr "你已经发送一封激活链接的电子邮件到提供的电子邮件
 #: userena/templates/userena/signup_complete.html:11
 #, python-format
 msgid "We will store your signup information for %(userena_activation_days)s days on our server. "
-msgstr "我们将会保存您每天的登陆信息在您的服务器上"
+msgstr "我们将会在服务器上保存您的注册信息%(userena_activation_days)s天"
+
+#~ msgid "Active Users"
+#~ msgstr "激活的用户"
 
 #~ msgid "Page not found"
 #~ msgstr "找不到页面"

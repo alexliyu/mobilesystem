@@ -140,27 +140,32 @@ class SignupFormOnlyMobile(SignupForm):
         """验证用户输入注册的手机号码是否已经被使用 """
         if UserProfile.objects.filter(mobile__iexact=self.cleaned_data['mobile']):
             raise forms.ValidationError(_(u'这个手机号码已经被注册了，请确认您输入的手机号码！'))
+        if User.objects.filter(username__iexact=self.cleaned_data['mobile']):
+            raise forms.ValidationError(_(u'这个手机号码已经被注册了，请确认您输入的手机号码！'))
         return self.cleaned_data['mobile']
     
     def save(self, request):
-        from utils.tcp import arping
-        """ 生成一个动态的用户名 """
-        while True:
-            username = sha_constructor(str(random.random())).hexdigest()[:5]
-            try:
-                User.objects.get(username__iexact=username)
-            except User.DoesNotExist: break
-
         
-        email = 'xxx@eiimedia.cn'
+#        from utils.tcp import arping
+#        """ 生成一个动态的用户名 """
+#        while True:
+#            username = sha_constructor(str(random.random())).hexdigest()[:5]
+#            try:
+#                User.objects.get(username__iexact=username)
+#            except User.DoesNotExist: break
+            
+
+        username = self.cleaned_data['mobile']
+        mobile = username
+        email = '%s@5166918.com' % mobile
         ip = request.META['REMOTE_ADDR']
         if ip == 'localhost':ip = request.META['HTTP_X_REAL_IP']
         try:
-            password = arping(ip)[0][1]
+            password = mobile[5:]
         except:
             password = 123456
         #password = '6cf0498e39da'
-        mobile = self.cleaned_data['mobile']
+        
 
         new_user = UserenaSignup.objects.create_inactive_user(username, email, password)
         new_user.is_active = True
