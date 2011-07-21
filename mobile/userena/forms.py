@@ -14,7 +14,7 @@ from userena import settings as userena_settings
 from userena.models import UserenaSignup
 from userena.utils import get_profile_model
 
-from apps.users.models import UserProfile
+from userena.models import UserProfile
 import random
 
 attrs_dict = {'class': 'required'}

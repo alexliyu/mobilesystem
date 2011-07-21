@@ -3,10 +3,14 @@
 {% load molly_utils %} 
 {% block site_title %}{% endblock %} {% block title %}{{site_name }}{% endblock %} 
 {% block header %}
-<div data-role="header"  data-position="fixed" style="height: 30px;">
+<div data-role="header"  data-position="fixed" style="height: 40px;">
 	<!--页面头部 -->
 	<h1 style="margin-top: 0px; margin-bottom: 0px;"><a href="{% url home:index %}"><img src="/media/site/images/logos/LOGO.png" alt="{{ site_name }}" /></a></h1>
-	
+	{%if not user.is_authenticated%}
+	<a href="/accounts/signin" data-icon="check" class="ui-btn-right">登录</a>
+	{%else%}
+	<a href="/accounts/signout" data-icon="check" class="ui-btn-right">注销</a>
+	{%endif%}
 </div>
 {% endblock %} 
 
@@ -42,7 +46,7 @@
 <!--首页快速注册模块 -->
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
 
-	{% block reg %} {%if user.is_authenticated%}
+	{% block reg %} {%if not user.is_authenticated%}
 
 	<form action="/accounts/signup/" method="post">
 		{% csrf_token %}
@@ -56,17 +60,17 @@
 				type="submit" value="注册" />
 	</form>
 
-</div>
-{%else%}
-<h3>尊敬的用户：{{user.username}}，感谢您再次访问娱讯移动互动平台！</h3>
-{%endif%} {% endblock %}
 
+{%else%}
+<h4>尊敬的用户：{{user.username}}，感谢您再次访问娱讯移动互动平台！</h4>
+{%endif%} {% endblock %}
+</div>
 <p />
 
 <!--首页天气预报与时间显示 -->
 <div class="ui-grid-a ui-body-d ui-corner-all ui-shadow">
 	<div>
-		<h4>{% block date %} 当前时间：{% now "Y M d，l H:i" %} {% endblock %}
+		<h4>{% block date %} 当前时间：{% now "Y-m-d，l H:i" %} {% endblock %}
 		</h4>
 	</div>
 

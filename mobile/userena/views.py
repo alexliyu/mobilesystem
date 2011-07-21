@@ -1,3 +1,12 @@
+#-*- coding:utf-8 -*-
+"""
+这是项目的用户系统相关视图文件.
+
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
 from django.views.generic.simple import direct_to_template
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect, get_object_or_404
@@ -71,7 +80,7 @@ def signup(request, signup_form=SignupForm,
         form = signup_form(request.POST, request.FILES)
         if form.is_valid():
             user = form.save(request)
-
+            
             if success_url: redirect_to = success_url
             else: redirect_to = reverse('userena_signup_complete',
                                         kwargs={'username': user.username})
@@ -79,6 +88,12 @@ def signup(request, signup_form=SignupForm,
             # A new signed user should logout the old one.
             if request.user.is_authenticated():
                 logout(request)
+            """
+            自动登录
+            """
+            user = authenticate(identification=user.email, check_password=False)
+            login(request, user)
+            request.session.set_expiry(userena_settings.USERENA_REMEMBER_ME_DAYS[1] * 86400)
             return redirect(redirect_to)
 
     if not extra_context: extra_context = dict()

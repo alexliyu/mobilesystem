@@ -90,7 +90,7 @@ li#menu-proall {background-image:url('../../site/images/index-icons/heart.png');
 
 /* Breadcrumb Trail Styles */
 div#bc-header {
-    height:34px;
+    height:40px;
     width: 100%;
     background:url('../../site/images/gradients/bc-gradient.png') repeat-x top;
     overflow:hidden;
@@ -108,8 +108,8 @@ ol#bc li {
     padding-left:0px;
     display:block;
     float:left;
-    height:30px;
-    line-height:30px;
+    height:40px;
+    line-height:40px;
     overflow:hidden;
 }
 ol#bc li a {
@@ -128,7 +128,7 @@ div#bc-title {
 
 div#bc-title h1 {
     margin: 0;
-    line-height:30px;
+    line-height:40px;
     padding-top: 0px;
     float:left;
     font-size:12pt;

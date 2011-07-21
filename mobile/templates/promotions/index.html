@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
-<ul data-role="listview">
+<ul data-role="listview" data-inset="true" data-theme="d">
 {% for promotions in list.object_list %}
     <li>
     	<a href="/business/detail/{{promotions.id}}">{{ promotions.title  }}<span class="ui-li-count">结束时间:{{promotions.endTime|date:"Y-f-j"}}</span></a>

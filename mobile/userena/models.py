@@ -1,3 +1,12 @@
+#-*- coding:utf-8 -*-
+'''
+项目的用户模型文件
+
+Created on 2011-1-30
+
+@author: 李昱
+'''
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
@@ -16,7 +25,9 @@ from guardian.shortcuts import get_perms
 from guardian.shortcuts import assign
 
 from easy_thumbnails.fields import ThumbnailerImageField
-
+from django.utils import timesince, html
+from mobile.utils import formatter, function
+import PIL
 import datetime, random
 
 PROFILE_PERMISSIONS = (
@@ -372,3 +383,110 @@ class UserenaLanguageBaseProfile(UserenaBaseProfile):
     class Meta:
         abstract = True
         permissions = PROFILE_PERMISSIONS
+
+# Area Model
+class Area(models.Model):
+    TYPE_CHOISES = (
+        (0, '国家'),
+        (1, '省'),
+        (2, '市'),
+        (3, '区县'),
+    )
+    name = models.CharField('地名', max_length=100)
+    code = models.CharField('代码', max_length=255)
+    type = models.IntegerField('类型', choices=TYPE_CHOISES)
+    parent = models.IntegerField('父级编号(关联自已)')
+    
+    def __unicode__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = u'所在地'
+        verbose_name_plural = u'所在地'
+        
+class UserProfile(UserenaBaseProfile):
+    GENDER_CHOICES = (
+                                    ('M', '男'),
+                                    ('F', '女'),
+                                    )
+    #user = models.ForeignKey(User, unique=True, verbose_name=u'用户')
+    birthday = models.DateField(u'用户生日')
+    mac = models.CharField(u'用户mac地址', max_length=30, blank=True)
+    mobile = models.CharField(u'移动电话', max_length=20, blank=True, null=True)
+    address = models.CharField(u'家庭地址', max_length=100, blank=True, null=True)
+    website = models.URLField(u'个人主页', blank=True, null=True)
+    birthday = models.DateField(u'出生日期', blank=True, null=True)
+    gender = models.CharField(u'性别', max_length=1, choices=GENDER_CHOICES, default='M')
+    blog = models.URLField(u'个人主页', blank=True, null=True)
+    QQ = models.CharField('QQ', max_length=50, blank=True, null=True)
+    MSN = models.CharField(max_length=50, blank=True, null=True)
+    IM = models.CharField(max_length=50, blank=True, null=True)
+    position = models.CharField(u'目前所在地', max_length=200, blank=True, null=True)
+    area = models.ForeignKey(Area, verbose_name='地区')
+    about = models.TextField('关于我', max_length=1000, default='', blank=True)
+    friend = models.ManyToManyField("self", verbose_name='朋友')
+    
+    
+    class Meta:
+        verbose_name = u"用户信息列表"
+        verbose_name_plural = u"用户信息列表"
+    
+    def __unicode__(self):
+        return self.mobile
+    def replacestr(self):
+        return "%s****%s" % (self.__str__()[0:3], self.__str__()[7:11])
+
+# category model
+class Category(models.Model):
+    name = models.CharField('名称', max_length=20)
+    
+    def __unicode__(self):
+        return self.name
+    
+    def save(self, **kwags):
+        self.name = self.name[0:20]
+        return super(Category, self).save()        
+    
+    class Meta:
+        verbose_name = '分类'
+        verbose_name_plural = '分类'
+        
+
+# Note model
+class Note(models.Model):
+    
+    id = models.AutoField(
+        primary_key=True
+    )
+    message = models.TextField('消息')
+    addtime = models.DateTimeField('发布时间', auto_now=True)
+    category = models.ForeignKey(Category, verbose_name='来源')
+    user = models.ForeignKey(User, verbose_name='发布者')
+    
+    def __unicode__(self):
+        return self.message
+    
+    def message_short(self):
+        return formatter.substr(self.message, 30)
+
+    def addtime_format_admin(self):
+        return self.addtime.strftime('%Y-%m-%d %H:%M:%S')
+        
+    def category_name(self):
+        return self.category.name
+    
+    def user_name(self):
+        return self.user.realname
+
+    def save(self, force_insert=True):
+        self.message = formatter.content_tiny_url(self.message)
+        self.message = html.escape(self.message)
+        self.message = formatter.substr(self.message, 140)
+        super(Note, self).save()
+    
+    class Meta:
+        verbose_name = u'消息'
+        verbose_name_plural = u'消息'
+    
+    def get_absolute_url(self):
+        return  '/message/%s/' % self.id

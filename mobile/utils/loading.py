@@ -69,12 +69,12 @@ APPLICATIONS = [
     Application('utils', 'utils', 'Molly utility services',
         display_to_user=True,
     ),
-    Application('auth', 'auth', '授权',
-        display_to_user=False,
-        secure=True,
-        unify_identifiers=('weblearn:id',),
-    ),
-    
+#    Application('auth', 'auth', '授权',
+#        display_to_user=False,
+#        secure=True,
+#        unify_identifiers=('weblearn:id',),
+#    ),
+#    
     Application('apps.places', 'places', '消费导航',
         providers=[
             Provider('apps.places.providers.OSMMapsProvider',

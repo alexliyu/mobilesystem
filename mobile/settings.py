@@ -21,7 +21,7 @@
 """
 from oauth.oauth import OAuthSignatureMethod_PLAINTEXT
 import os.path
-from conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
+from conf.settings import  extract_installed_apps
 from utils.media import get_compress_groups
 
 from utils import loading
@@ -46,7 +46,7 @@ DEBUG = True
 
 DEBUG_SECURE = DEBUG
 TEMPLATE_DEBUG = DEBUG
-AUTH_PROFILE_MODULE = 'users.UserProfile' 
+AUTH_PROFILE_MODULE = 'userena.UserProfile' 
 
 LANGUAGE_CODE = 'zh-cn'
 
@@ -118,7 +118,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'utils.middleware.ErrorHandlingMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'auth.middleware.SecureSessionMiddleware',
+#    'auth.middleware.SecureSessionMiddleware',
     'apps.stats.middleware.StatisticsMiddleware',
     'url_shortener.middleware.URLShortenerMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
