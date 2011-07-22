@@ -1,0 +1,20 @@
+{% load comments i18n %}
+
+								<form action="{% comment_form_target %}" method="post" id="commentform">
+
+									<fieldset>
+									<input type="hidden" name="next" value="{{request.path}}"/>
+										{{form.content_type}}
+										{{form.object_pk}}
+										{{form.timestamp}}
+										{{form.security_hash}}
+										{{form.comment}}
+										<div class="form-row form-row-submit">	
+											 {% csrf_token %}													
+											<input type="submit" class="button" name="submit" value="发布评论">
+											
+										</div>
+
+									</fieldset>
+
+								</form>
