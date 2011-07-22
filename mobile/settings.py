@@ -123,6 +123,8 @@ MIDDLEWARE_CLASSES = (
     'url_shortener.middleware.URLShortenerMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.csrf.CsrfResponseMiddleware',
+    'pagination.middleware.PaginationMiddleware',
+    'onlineuser.middleware.OnlineUserMiddleware',
     'tracking.middleware.VisitorTrackingMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
@@ -150,6 +152,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'utils.context_processors.site_name',
     #'utils.context_processors.google_analytics',
     'django.core.context_processors.csrf',
+    'djangohelper.context_processors.ctx_config',
 )
 
 # This setting defines where Django looks for templates when searching - it
@@ -213,6 +216,12 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'batch_processing',
     'django.contrib.gis',
     'entry',
+    'forum',
+    'simpleavatar',
+    'djangohelper',
+    'onlineuser',
+    'attachments',
+    
 #    'debug_toolbar',
     'tinymce',
     'compress',
@@ -421,3 +430,37 @@ STOP_WORDS = ('able', 'about', 'across', 'after', 'all', 'almost',
                       'this', 'tis', 'too', 'twas', 'wants', 'was', 'were',
                       'what', 'when', 'where', 'which', 'while', 'who', 'whom',
                       'why', 'will', 'with', 'would', 'yet', 'you', 'your')
+
+# URL prefix for lbforum media -- CSS, JavaScript and images. Make sure to use a
+# trailing slash.
+# Examples: "http://foo.com/media/", "/media/".    
+LBFORUM_MEDIA_PREFIX = '%sforum/' % MEDIA_URL
+    
+#The URL where requests are redirected after login
+LOGIN_REDIRECT_URL = '/'
+#The URL where requests are redirected for login
+LOGIN_URL = "/accounts/signin/"
+#LOGIN_URL counterpart
+LOGOUT_URL = "/accounts/signout/"
+#register url 
+REGISTER_URL = '/accounts/signup/'
+
+CTX_CONFIG = {
+            'LBFORUM_TITLE': 'LBForum',
+            'LBFORUM_SUB_TITLE': 'A forum engine written in Python using Django',
+            'FORUM_PAGE_SIZE': 50,
+            'TOPIC_PAGE_SIZE': 20,
+    
+            'LBFORUM_MEDIA_PREFIX': LBFORUM_MEDIA_PREFIX,
+            'LOGIN_URL': LOGIN_URL,
+            'LOGOUT_URL': LOGOUT_URL,
+            'REGISTER_URL': REGISTER_URL,
+            }
+BBCODE_AUTO_URLS = True
+#add allow tags
+HTML_SAFE_TAGS = ['embed']
+HTML_SAFE_ATTRS = ['allowscriptaccess', 'allowfullscreen', 'wmode']
+#add forbid tags
+HTML_UNSAFE_TAGS = []
+HTML_UNSAFE_ATTRS = []
+    

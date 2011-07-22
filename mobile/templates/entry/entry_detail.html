@@ -24,6 +24,7 @@
 {% endblock %}
 
 {% block subnav %}
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 		{% if category %}
 				<h1>{{ category.title }}</h1>
 				{% if category.description %}
@@ -38,19 +39,20 @@
 		{% if author %}
 				<h1>{%with author.username as author %}Entries by {{ author }}{% endwith %}</h1>
 		{% endif %}
+</div>
 {%endblock%}
 
 
 
 {% block content %}
+<!--正文 -->
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
 
-<div class="main" id="main-two-columns">
+			
 
-			<div class="left" id="main-left">
+				<h2><a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">{{ object.title }}</a></h2>
 
-				<div class="post-title"><h2><a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">{{ object.title }}</a></h2></div>
-
-					<div class="post-date">
+					<h4>
 					{% if object.authors.count %}
 									{% for author in object.authors.all %}
 												
@@ -67,7 +69,7 @@
     										{% endfor %}
     								{% endif %}.
     				{%endif%}
-  					</div>
+  					</h4>
 
 					<div class="post-body">
 					    {% with object.html_content|safe as object_content %}
@@ -75,28 +77,32 @@
 						{% endwith %}
 						
 						<div class="success">
-						<li>
-						    <span>
+						    <h3>
 						    标签:
 						    {% tags_for_object object as tag_list %}
 						    {% for tag in tag_list %}
 						    		<a href="{% url entry_tag_detail tag %}" title="Tag {{ tag }}" rel="tag">{{ tag }}</a>
 						    {% endfor %}
-						    </span> 
-						  </li>
+						    </h3>
 						
-						  <li>
-						    <span>缩略URL:
+						  <h3>缩略URL:
 						    {% if object.short_url %}
 						    		<a href="{{ object.short_url }}" title="{{ object.title }}" rel="shortlink">
 						      		{{ object.short_url }}</a>
 						    {% else %}
 						    		未提供
 						    {% endif %}
-						    </span>
-						  </li>
+						   </h3>
 						</div>
-						<div class="entry-widgets span-16 last">
+						
+					</div>
+					
+			
+			
+		</div>
+		<!--正文后的相关文章导航 -->
+					<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+					<div class="entry-widgets span-16 last">
   						{% with object.next_entry as next_entry %}
 								  {% if next_entry %}
 								  <div class="entry-next">
@@ -138,21 +144,17 @@
 						  </div>
 						  {% endif %}
 					</div>
-					</div>
 				{% get_similar_entries 5 %}
 				
-				
+				</div>
 
-				<div class="content-separator"></div>
+				<div class="clear"></div>
 				{% include "entry/before_end.html" %}
-				<div class="content-separator"></div>
-			</div>
+				<div class="clear"></div>
 			
 			
-			{% block sider %}{% include "entry/right_sider.html" %}{%endblock%}
 			
 			
-		</div>
 {% endblock %}
 
 

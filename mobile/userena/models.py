@@ -30,6 +30,7 @@ from mobile.utils import formatter, function
 import PIL
 import datetime, random
 
+
 PROFILE_PERMISSIONS = (
             ('view_profile', 'Can view profile'),
 )
@@ -422,20 +423,33 @@ class UserProfile(UserenaBaseProfile):
     MSN = models.CharField(max_length=50, blank=True, null=True)
     IM = models.CharField(max_length=50, blank=True, null=True)
     position = models.CharField(u'目前所在地', max_length=200, blank=True, null=True)
-    area = models.ForeignKey(Area, verbose_name='地区')
-    about = models.TextField('关于我', max_length=1000, default='', blank=True)
-    friend = models.ManyToManyField("self", verbose_name='朋友')
-    
+    area = models.ForeignKey(Area, verbose_name=u'地区')
+    about = models.TextField(u'关于我', max_length=1000, default='', blank=True)
+    friend = models.ManyToManyField("self", verbose_name=u'朋友')
+    staytime = models.DecimalField(u'在线时长', default=0, decimal_places=0, max_digits=20)
+    experience = models.DecimalField(u'经验值', default=0, decimal_places=0, max_digits=20)
+    score = models.DecimalField(u'会员积分', default=0, decimal_places=0, max_digits=10)
+    grade = models.IntegerField(u'等级', default=1)
+    last_activity = models.DateTimeField(auto_now_add=True)
+    userrank = models.CharField(max_length=30, default="Junior Member")
+    last_posttime = models.DateTimeField(auto_now_add=True)
+    signature = models.CharField(max_length=1000, blank=True)
     
     class Meta:
         verbose_name = u"用户信息列表"
         verbose_name_plural = u"用户信息列表"
     
     def __unicode__(self):
-        return self.mobile
+        return self.user.username
     def replacestr(self):
         return "%s****%s" % (self.__str__()[0:3], self.__str__()[7:11])
+    
+    def get_total_posts(self):
+        return self.user.post_set.count()
 
+    def get_absolute_url(self):
+        return self.user.get_absolute_url()
+    
 # category model
 class Category(models.Model):
     name = models.CharField('名称', max_length=20)

@@ -19,7 +19,7 @@
 				
 
 					 {% if structure.new_level %}<ul><li>{% else %}</li><li>{% endif %}
-      <a href="{{ object.get_absolute_url }}" title="{{ object }}">{{ object }}</a> 
+      <a href="{{ object.get_absolute_url }}" title="{{ object }}"  rel="external">{{ object }}</a> 
       共{{object.entries_published.count}}篇文章
       {% if object.description %}<br />{{ object.description|striptags|safe }}{% endif %}
     {% for level in structure.closed_levels %}</li></ul>{% endfor %}

@@ -300,10 +300,13 @@ def signin(request, auth_form=AuthenticationForm,
                                 password=password)
             if user.is_active:
                 login(request, user)
-                if remember_me:
-                    request.session.set_expiry(userena_settings.USERENA_REMEMBER_ME_DAYS[1] * 86400)
-                else: request.session.set_expiry(0)
-
+                """
+                2011-07-22 修正默认保留用户session
+                """
+#                if remember_me:
+#                    request.session.set_expiry(userena_settings.USERENA_REMEMBER_ME_DAYS[1] * 86400)
+#                else: request.session.set_expiry(0)
+                request.session.set_expiry(userena_settings.USERENA_REMEMBER_ME_DAYS[1] * 86400)
                 if userena_settings.USERENA_USE_MESSAGES:
                     messages.success(request, _('You have been signed in.'),
                                      fail_silently=True)

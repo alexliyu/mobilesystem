@@ -28,3 +28,9 @@ sorl-thumbnail
 django-mediagenerator
 easy_thumbnails
 pyyaml
+django-simple-avatar
+django-onlineuser
+django-helper
+django-lb-attachments
+django-pagination
+postmarkup

@@ -1,145 +1,55 @@
 {%block load%}{% load tagging_tags comments entry_tags%}{%endblock%}
-			<div id="comments">
-
-				<div class="left">
-					<h2>评论数:{{object.comments.count}}</h2>
-				</div>
-
-				<h3 class="right">
-					<a href="#respond">发布评论 &#187;</a>
-				</h3>
-
-				<div class="clearer">&nbsp;</div>
-
-				<div class="comment-list-wrapper">
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>查看评论</h3>
+				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+				<ul data-role="listview">
+					<li><h4>评论数:{{object.comments.count}}</h4></li>
 					{% with object.comments as comment_list %}
   					{% if comment_list.count %}
-					<ul class="comment-list">
+					
 						{% for comment in comment_list %}
-						<li class="comment comment-parent" id="comment-{{ comment.pk }}">
-
-							<div class="comment-profile-wrapper left">
-
-								<div class="comment-profile">
-									<div class="comment-gravatar"><img src="{% get_gravatar comment.email 60 "G" %}" height="40" width="40" alt="{{ comment.user_name }}" /></div>
-									<div class="comment-author"><a href="{{ comment.url }}">{{ comment.user_name }}</a></div>
-	
-								</div>
-
-							</div>
-
-							<div class="comment-content-wrapper right">
-								<div class="comment-content-wrapper-2">
-
-									<div class="comment-body">
-									
-										<div class="comment-arrow"></div>
-										
-										<div class="post-date">
-
-											<div class="left">{{ comment.submit_date|date:"SHORT_DATETIME_FORMAT" }}<span class="text-separator">|</span> <a href="#">Reply &#187;</a></div>
-											<div class="right"><a href="#comment-47">#{{ comment.pk }}</a></div>
-
-											<div class="clearer">&nbsp;</div>
-
-										</div>
-
-										<div class="comment-text">
-											<p> {{ comment.comment }}</p>			
-										</div>					
-
-										<div class="clearer">&nbsp;</div>
-
-									</div>
-								
-								</div>
-							</div>
-
-							<div class="clearer">&nbsp;</div>
-
-<!-- 							<ul class="children"> -->
-
-<!-- 								<li class="comment" id="comment-49"> -->
-									
-<!-- 									<div class="comment-content"> -->
-
-<!-- 										<div class="comment-body"> -->
-										
-<!-- 											<div class="post-date"> -->
-
-<!-- 												<div class="left"><img src="img/sample-gravatar.gif" height="14" width="14" alt="" /> <span class="loud"><a href="#">Viktor Persson</a></span> - August 13th, 2009 at 23:05 <span class="text-separator">|</span> <a href="#">Reply &#187;</a></div> -->
-
-<!-- 												<div class="right"><a href="#comment-49">#49</a></div> -->
-
-<!-- 												<div class="clearer">&nbsp;</div> -->
-
-<!-- 											</div> -->
-								
-<!-- 											<div class="comment-text"> -->
-<!-- 												<p>Ligula in felis tristique convallis.</p> -->
-<!-- 											</div> -->
-
-<!-- 										</div> -->
-
-<!-- 									</div> -->
-
-<!-- 								</li> -->
-
-<!-- 							</ul> -->
+						<li id="comment-{{ comment.pk }}">
+							<a href="{{ comment.url }}">
+							<img src="{% get_gravatar comment.email 60 "G" %}" alt="{{ comment.user_name }}" />
+							
+							<h3>{{ comment.user_name }}，评论于：{{ comment.submit_date|date:"Y-m-j" }}</h3>
+							<p> {{ comment.comment }}</p>
+							</a>
 						</li>
 						
 						{%endfor%}
 					
-					</ul>
+					
 			
 					 {%endif%}
 				{%endwith%}
-				</div>
+			</ul>
 			</div>
-
-			<div id="respond">
-
-				<ul>
+			</div>
+			<!--生成评论表单 -->
+			{%if user.is_authenticated%}
+			<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+				<h3>留下个评论哦~~</h3>
+			
 					{% if object.comments_are_open %}
-					<li>
+				
+						
 
-						<div class="legend" id="comment-form-title">留下个评论哦</div>
-
-						<div class="comment-profile-wrapper left">
-
-							<div class="comment-profile">				
-								<div class="comment-gravatar"><img src="{{MEDIA_URL}}images/sample-gravatar.gif" width="40" height="40" alt="您的头像" /></div>
-								<div class="comment-author">您的姓名</div>
-							</div>
-
-						</div>
-
-						<div class="comment-content-wrapper">
-								
-							<div class="comment-body">
-							
-								<div class="comment-arrow"></div>
-									
 								
 			
   										{% render_comment_form for object %}
 		
 								
 
-							</div>				
+							
 						
-							<div class="clearer">&nbsp;</div>
-
-						</div>
-
-						<div class="clearer">&nbsp;</div>
-						
-					</li>
+				
 				{%else%}
-					<li>本文章暂时没有开放评论哦！</li>
+					<h3>本文章暂时没有开放评论哦！</h3>
 				{% endif %}
-				</ul>
+				
 
 			</div>
+			{%endif%}
 
 

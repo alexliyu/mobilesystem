@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     (r'^sentry/', include('sentry.web.urls')),
     (r'^tracking/', include('tracking.urls')),
     (r'^entry/', include('entry.urls')),
+    (r'^forum/', include('forum.urls')),
     (r'^download/', PicDownload),
      
     (r'', applications.home.urls)) # Home default

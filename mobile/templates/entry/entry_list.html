@@ -42,7 +42,7 @@
 <ul data-role="listview" data-inset="true" data-theme="d">
 				{% for object in object_list %}
 
-					<li><a href="{{ object.get_absolute_url }}">{{object.title}}</a><span class="ui-li-count">{{object.creation_date|date:"Y-f-j"}}</span></li>
+					<li><a href="{{ object.get_absolute_url }}"  rel="external">{{object.title}}</a><span class="ui-li-count">{{object.creation_date|date:"Y-f-j"}}</span></li>
 
 					
 				{% endfor %}
