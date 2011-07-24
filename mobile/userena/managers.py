@@ -1,3 +1,9 @@
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 from django.db import models
 from django.db.models import Q
 from django.contrib.auth.models import User, UserManager, Permission, AnonymousUser
@@ -64,7 +70,17 @@ class UserenaManager(UserManager):
 
         # Give permissions to view and change profile
         for perm in ASSIGNED_PERMISSIONS['profile']:
-            assign(perm[0], new_user, new_profile)
+            try:
+                assign(perm[0], new_user, new_profile)
+            except:
+                """
+                2011-07-22 补丁，用于解决当生成默认数据库表时，permission表中，缺少view_profile项的情况
+                """
+                Permission.objects.get_or_create(content_type=ContentType.objects.get(model='userprofile'), codename='view_profile', name='Can view profile')
+                try:
+                    assign(perm[0], new_user, new_profile)
+                except:
+                    assign(perm[0], new_user, profile)
 
         # Give permissinos to view and change itself
         for perm in ASSIGNED_PERMISSIONS['user']:

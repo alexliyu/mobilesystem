@@ -388,10 +388,10 @@ class UserenaLanguageBaseProfile(UserenaBaseProfile):
 # Area Model
 class Area(models.Model):
     TYPE_CHOISES = (
-        (0, '国家'),
-        (1, '省'),
-        (2, '市'),
-        (3, '区县'),
+        (0, '市'),
+        (1, '区县'),
+        (2, '街道'),
+        (3, '社区'),
     )
     name = models.CharField('地名', max_length=100)
     code = models.CharField('代码', max_length=255)
@@ -423,9 +423,9 @@ class UserProfile(UserenaBaseProfile):
     MSN = models.CharField(max_length=50, blank=True, null=True)
     IM = models.CharField(max_length=50, blank=True, null=True)
     position = models.CharField(u'目前所在地', max_length=200, blank=True, null=True)
-    area = models.ForeignKey(Area, verbose_name=u'地区')
+    area = models.ForeignKey(Area, verbose_name=u'地区', blank=True)
     about = models.TextField(u'关于我', max_length=1000, default='', blank=True)
-    friend = models.ManyToManyField("self", verbose_name=u'朋友')
+    friend = models.ManyToManyField('self', verbose_name=u'朋友', related_name='friend')
     staytime = models.DecimalField(u'在线时长', default=0, decimal_places=0, max_digits=20)
     experience = models.DecimalField(u'经验值', default=0, decimal_places=0, max_digits=20)
     score = models.DecimalField(u'会员积分', default=0, decimal_places=0, max_digits=10)
@@ -438,9 +438,11 @@ class UserProfile(UserenaBaseProfile):
     class Meta:
         verbose_name = u"用户信息列表"
         verbose_name_plural = u"用户信息列表"
+        
     
-    def __unicode__(self):
-        return self.user.username
+#    def __unicode__(self):
+#        return self.user.username
+    
     def replacestr(self):
         return "%s****%s" % (self.__str__()[0:3], self.__str__()[7:11])
     
