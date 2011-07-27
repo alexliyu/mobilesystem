@@ -8,7 +8,7 @@
 
 {% block content_content %}
    <div class="ui-body ui-body-d ui-corner-all ui-shadow">
-        
+        <h4>主题列表</h4>
 
         {% include 'forum/inc_topic_list.html' %}
 
@@ -16,16 +16,27 @@
             <a href="{% url forum_recent %}">{% trans "More" %}</a>
         </div>
     </div>
+    <div class="clear"></div>
 {% endblock %}
 
 {% block content_right_bar %}
-    {% include 'forum/widgets/cur_user_profile.html' %}
-    <div class="sep20"></div>
-    {% lbf_categories_and_forums %}
-    <div class="sep20"></div>
-    {% lbf_status %}
-    <div class="sep20"></div>
-    {% onlineinfos 1 "forum/widgets/onlineinfos.html" %}
-    <div class="sep20"></div>
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<h4>社区运行状态</h4>
+	<div class="ui-grid-a">
+			<div class="ui-block-a">
+    			{% include 'forum/widgets/cur_user_profile.html' %}
+    		</div>
+    		<div class="ui-block-b">
+     			{% lbf_status %}
+    		</div>
    
+    		<div class="sep20"></div>
+    		{% onlineinfos 1 "forum/widgets/onlineinfos.html" %}
+   	</div>
+</div>
+<div class="clear"></div>
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<h4>分类</h4>
+    {% lbf_categories_and_forums %}
+</div>
 {% endblock %}

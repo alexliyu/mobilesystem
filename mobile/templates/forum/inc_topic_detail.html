@@ -2,45 +2,21 @@
 {% load forum_filters %}
 {% load forum_tags %}
 {% load avatar_tags %}
-<div class="cell">
-    <table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-                <td valign="top" class="avatar">
-                    <a class="dark" href="{% url forum_user_profile t.posted_by.pk %}">{% avatar t.posted_by 48 %}</a>
-                </td>
-                <td valign="top" style="padding-left: 12px">
-                    <div class="fr">
-                        <a class="count_livid" href="{{ t.get_absolute_url }}">{{ t.num_replies|add:"-1"}}</a>
-                    </div>
-                    <div class="sep3"></div>
-                    <span style="color:#636A86" class="bigger">
-                        {% if t.closed %}
-                        <strong>({% trans "Closed" %})</strong>
-                        {% endif %}
-
-                        {% if t.sticky %}
-                        <strong>({% trans "Sticky" %})</strong>
-                        {% endif %}		
-
-                        {% if t.level == 60 %}
-                        <strong>({% trans "Distillate" %})</strong>
-                        {% endif %}		
-                        {% if t.t_type %}
-                        [{{ t.t_type }}]
-                        {% endif %}
-                        <a href="{{ t.get_absolute_url }}">{{t.subject}}</a>
-                    </span>
-                    <div class="sep5"></div>
-                    <span class="created">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+   <ul data-role="listview"> 
+   
+   <li><a href="{{ t.get_absolute_url }}"> 
+				{% avatar t.posted_by 80 %} 
+				<h3>{{t.subject}}</h3> 
+                <p>
+                    由 {{t.get_last_post.posted_by}} 于 <strong>{{ t.get_last_post.update|lbtimesince }}</strong> 发布在
                         {% if not forum %}
-                        <strong><a class="node" href="{% url forum_forum t.forum.slug %}">{{t.forum.name}}</a></strong> &bull;
+                        <strong>{{t.forum.name}}</strong>
                         {% endif %}
-                        <strong><a class="dark" href="{% url forum_user_profile t.posted_by.pk %}">{{t.posted_by.username}}</a></strong> &bull;
-                        {{ t.num_views }} {% trans "views" %} &bull;
-                        {% trans "Last post" %} {{ t.get_last_post.update|lbtimesince }} by 
-                        {{t.get_last_post.posted_by}}
-                    </span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                 </p>
+                 <span class="ui-li-count">浏览数：{{ t.num_views }}，评论数：{{ t.num_replies|add:"-1"}}</span>
+			</a>
+			
+		</li> 	
+   </ul>
 </div>

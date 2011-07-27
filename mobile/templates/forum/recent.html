@@ -9,11 +9,7 @@
     {{ forum }} - {{ topic_type }} - {{ topic_type2 }} - {{ FORUM_TITLE }}
 {% endblock %}
 
-{% block content_right_bar %}
-    {% include 'forum/widgets/cur_user_profile.html' %}
-    <div class="sep20"></div>
-    {% lbf_categories_and_forums %}
-{% endblock %}
+
 
 {% block content_content %}
     <div class="box">
@@ -29,4 +25,12 @@
             {% paginate %}
         </div>
     </div>
+    <div class="clear"></div>
+{% endblock %}
+
+{% block content_right_bar %}
+    <div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<h4>分类</h4>
+    {% lbf_categories_and_forums %}
+</div>
 {% endblock %}
