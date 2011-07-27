@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from forms import SignatureForm
 
-def profile(request, user_id=None, template_name="lbforum/account/profile.html"):
+def profile(request, user_id=None, template_name="forum/account/profile.html"):
     view_user = request.user
     if user_id:
         view_user = get_object_or_404(User, pk=user_id)
@@ -13,7 +13,7 @@ def profile(request, user_id=None, template_name="lbforum/account/profile.html")
     return render(request, template_name, ext_ctx)
 
 @login_required
-def signature(request, form_class=SignatureForm, template_name="lbforum/account/signature.html"):
+def signature(request, form_class=SignatureForm, template_name="forum/account/signature.html"):
     profile = request.user.get_profile()
     if request.method == "POST":
         form = form_class(instance=profile, data=request.POST)

@@ -93,7 +93,10 @@ def load_apps():
     @return 返回配置好的APPLICATIONS列表
     """
     all_apps = [f for f in os.listdir(os.path.join(os.path.dirname(__file__).rstrip('utils'), 'apps')) if not f.endswith(".py") or f.endswith(".pyc")]
-    all_apps.remove('__init__.pyc')
+    try:
+        all_apps.remove('__init__.pyc')
+    except:
+        pass
     for f in REMOVELIST:
         all_apps.remove(f)
 

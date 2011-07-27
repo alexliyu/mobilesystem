@@ -74,28 +74,28 @@ ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '192.168.1.34',
-#        'NAME': 'mobile',
-#        'USER': 'mobile',
-#        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
-#    }
-#}
-
-
-# 在家里的数据库配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '127.0.0.1',
-        'NAME': 'molly',
-        'USER': 'molly',
-        'PASSWORD': 'mobile',
-        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+        'HOST': '192.168.1.34',
+        'NAME': 'mobile',
+        'USER': 'mobile',
+        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
     }
 }
+
+
+# 在家里的数据库配置
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#        'HOST': '127.0.0.1',
+#        'NAME': 'molly',
+#        'USER': 'molly',
+#        'PASSWORD': 'mobile',
+#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#    }
+#}
 
 
 # API keys are used to access particular services
@@ -431,10 +431,10 @@ STOP_WORDS = ('able', 'about', 'across', 'after', 'all', 'almost',
                       'what', 'when', 'where', 'which', 'while', 'who', 'whom',
                       'why', 'will', 'with', 'would', 'yet', 'you', 'your')
 
-# URL prefix for lbforum media -- CSS, JavaScript and images. Make sure to use a
+# URL prefix for forum media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".    
-LBFORUM_MEDIA_PREFIX = '%sforum/' % MEDIA_URL
+FORUM_MEDIA_PREFIX = '%sforum/' % MEDIA_URL
     
 #The URL where requests are redirected after login
 LOGIN_REDIRECT_URL = '/'
@@ -446,12 +446,12 @@ LOGOUT_URL = "/accounts/signout/"
 REGISTER_URL = '/accounts/signup/'
 
 CTX_CONFIG = {
-            'LBFORUM_TITLE': 'LBForum',
-            'LBFORUM_SUB_TITLE': 'A forum engine written in Python using Django',
+            'FORUM_TITLE': 'LBForum',
+            'FORUM_SUB_TITLE': 'A forum engine written in Python using Django',
             'FORUM_PAGE_SIZE': 50,
             'TOPIC_PAGE_SIZE': 20,
     
-            'LBFORUM_MEDIA_PREFIX': LBFORUM_MEDIA_PREFIX,
+            'FORUM_MEDIA_PREFIX': FORUM_MEDIA_PREFIX,
             'LOGIN_URL': LOGIN_URL,
             'LOGOUT_URL': LOGOUT_URL,
             'REGISTER_URL': REGISTER_URL,

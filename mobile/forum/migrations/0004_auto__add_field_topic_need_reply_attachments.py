@@ -9,13 +9,13 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         
         # Adding field 'Topic.need_reply_attachments'
-        db.add_column('lbforum_topic', 'need_reply_attachments', self.gf('django.db.models.fields.BooleanField')(default=False, blank=True), keep_default=False)
+        db.add_column('forum_topic', 'need_reply_attachments', self.gf('django.db.models.fields.BooleanField')(default=False, blank=True), keep_default=False)
 
 
     def backwards(self, orm):
         
         # Deleting field 'Topic.need_reply_attachments'
-        db.delete_column('lbforum_topic', 'need_reply_attachments')
+        db.delete_column('forum_topic', 'need_reply_attachments')
 
 
     models = {
@@ -69,7 +69,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'lbforum.category': {
+        'forum.category': {
             'Meta': {'object_name': 'Category'},
             'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'default': "''"}),
@@ -78,15 +78,15 @@ class Migration(SchemaMigration):
             'ordering': ('django.db.models.fields.PositiveIntegerField', [], {'default': '1'}),
             'updated_on': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'})
         },
-        'lbforum.config': {
+        'forum.config': {
             'Meta': {'object_name': 'Config'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'key': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'value': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        'lbforum.forum': {
+        'forum.forum': {
             'Meta': {'object_name': 'Forum'},
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['lbforum.Category']"}),
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['forum.Category']"}),
             'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'default': "''"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -98,16 +98,16 @@ class Migration(SchemaMigration):
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '110', 'db_index': 'True'}),
             'updated_on': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'})
         },
-        'lbforum.lbforumuserprofile': {
+        'forum.forumuserprofile': {
             'Meta': {'object_name': 'LBForumUserProfile'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'last_activity': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'last_posttime': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'signature': ('django.db.models.fields.CharField', [], {'max_length': '1000', 'blank': 'True'}),
-            'user': ('django.db.models.fields.related.OneToOneField', [], {'related_name': "'lbforum_profile'", 'unique': 'True', 'to': "orm['auth.User']"}),
+            'user': ('django.db.models.fields.related.OneToOneField', [], {'related_name': "'forum_profile'", 'unique': 'True', 'to': "orm['auth.User']"}),
             'userrank': ('django.db.models.fields.CharField', [], {'default': "'Junior Member'", 'max_length': '30'})
         },
-        'lbforum.post': {
+        'forum.post': {
             'Meta': {'object_name': 'Post'},
             'attachments': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['attachments.Attachment']", 'symmetrical': 'False', 'blank': 'True'}),
             'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
@@ -119,15 +119,15 @@ class Migration(SchemaMigration):
             'message': ('django.db.models.fields.TextField', [], {}),
             'posted_by': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"}),
             'poster_ip': ('django.db.models.fields.IPAddressField', [], {'max_length': '15'}),
-            'topic': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['lbforum.Topic']"}),
+            'topic': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['forum.Topic']"}),
             'topic_post': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
             'updated_on': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'})
         },
-        'lbforum.topic': {
+        'forum.topic': {
             'Meta': {'object_name': 'Topic'},
             'closed': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
             'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            'forum': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['lbforum.Forum']"}),
+            'forum': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['forum.Forum']"}),
             'has_attachments': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
             'has_imgs': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
             'hidden': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
@@ -146,4 +146,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['lbforum']
+    complete_apps = ['forum']

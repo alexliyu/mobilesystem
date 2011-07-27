@@ -76,7 +76,7 @@ class UserenaManager(UserManager):
                 """
                 2011-07-22 补丁，用于解决当生成默认数据库表时，permission表中，缺少view_profile项的情况
                 """
-                Permission.objects.get_or_create(content_type=ContentType.objects.get(model='userprofile'), codename='view_profile', name='Can view profile')
+                Permission.objects.get_or_create(content_type=ContentType.objects.get(model='userprofile'), codename='view_profile', name='Can View User Profile')
                 try:
                     assign(perm[0], new_user, new_profile)
                 except:

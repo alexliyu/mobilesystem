@@ -12,19 +12,19 @@ from forms import EditPostForm, NewPostForm, ForumForm
 from models import Topic, Forum, Post
 import settings as lbf_settings
 
-def index(request, template_name="lbforum/index.html"):
+def index(request, template_name="forum/index.html"):
     ctx = {}
     if lbf_settings.LAST_TOPIC_NO_INDEX: 
         ctx['topics'] = Topic.objects.all().order_by('-last_reply_on')[:20]
     return render(request, template_name, ctx)
 
-def recent(request, template_name="lbforum/recent.html"):
+def recent(request, template_name="forum/recent.html"):
     ctx = {}
     ctx['topics'] = Topic.objects.all().order_by('-last_reply_on').select_related()
     return render(request, template_name, ctx)
 
 def forum(request, forum_slug, topic_type='', topic_type2='',
-        template_name="lbforum/forum.html"):
+        template_name="forum/forum.html"):
     forum = get_object_or_404(Forum, slug = forum_slug)
     topics = forum.topic_set.all()
     if topic_type and topic_type != 'good':
@@ -42,7 +42,7 @@ def forum(request, forum_slug, topic_type='', topic_type2='',
             'topic_type': topic_type, 'topic_type2': topic_type2}
     return render(request, template_name, ext_ctx)
 
-def topic(request, topic_id, template_name="lbforum/topic.html"):
+def topic(request, topic_id, template_name="forum/topic.html"):
     topic = get_object_or_404(Topic, id = topic_id)
     topic.num_views += 1
     topic.save()
@@ -59,12 +59,12 @@ def post(request, post_id):
     return HttpResponseRedirect(post.get_absolute_url_ext())
 
 @csrf_exempt
-def markitup_preview(request, template_name="lbforum/markitup_preview.html"):
+def markitup_preview(request, template_name="forum/markitup_preview.html"):
     return render(request, template_name, {'message': request.POST['data']})
 
 @login_required
 def new_post(request, forum_id=None, topic_id=None, form_class=NewPostForm, \
-        template_name='lbforum/post.html'):
+        template_name='forum/post.html'):
     qpost = topic = forum = first_post = preview = None
     post_type = _('topic')
     topic_post = True
@@ -85,7 +85,7 @@ def new_post(request, forum_id=None, topic_id=None, form_class=NewPostForm, \
             if topic:
                 return HttpResponseRedirect(post.get_absolute_url_ext())
             else:
-                return HttpResponseRedirect(reverse("lbforum_forum", args=[forum.slug]))
+                return HttpResponseRedirect(reverse("forum_forum", args=[forum.slug]))
     else:
         initial={}
         qid = request.GET.get('qid', '')
@@ -102,7 +102,7 @@ def new_post(request, forum_id=None, topic_id=None, form_class=NewPostForm, \
     return render(request, template_name, ext_ctx)
 
 @login_required
-def edit_post(request, post_id, form_class=EditPostForm, template_name="lbforum/post.html"):
+def edit_post(request, post_id, form_class=EditPostForm, template_name="forum/post.html"):
     preview = None
     post_type = _('reply')
     edit_post = get_object_or_404(Post, id=post_id)
@@ -124,13 +124,13 @@ def edit_post(request, post_id, form_class=EditPostForm, template_name="lbforum/
     return render(request, template_name, ext_ctx)
 
 @login_required
-def user_topics(request, user_id, template_name='lbforum/account/user_topics.html'):
+def user_topics(request, user_id, template_name='forum/account/user_topics.html'):
     view_user = User.objects.get(pk=user_id)
     topics = view_user.topic_set.order_by('-created_on').select_related()
     return render(request, template_name, {'topics': topics, 'view_user': view_user})
 
 @login_required
-def user_posts(request, user_id, template_name='lbforum/account/user_posts.html'):
+def user_posts(request, user_id, template_name='forum/account/user_posts.html'):
     view_user = User.objects.get(pk=user_id)
     posts = view_user.post_set.order_by('-created_on').select_related()
     return render(request, template_name, {'posts': posts, 'view_user': view_user})

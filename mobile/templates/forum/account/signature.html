@@ -1,16 +1,16 @@
-{% extends 'lbforum/account/base.html' %}
+{% extends 'forum/account/base.html' %}
 
 {% load i18n %}
-{% load lbforum_filters %}
-{% load lbforum_tags %}
+{% load forum_filters %}
+{% load forum_tags %}
 
 {% block title %}
-	{{ LBFORUM_TITLE }} - {% blocktrans %}{{ user }}'s profile{% endblocktrans %} : {% trans "Signature" %}
+	{{ FORUM_TITLE }} - {% blocktrans %}{{ user }}'s profile{% endblocktrans %} : {% trans "Signature" %}
 {% endblock %}
 
 {% block extra_header %}
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ LBFORUM_MEDIA_PREFIX }}scripts/markitup/skins/markitup/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ LBFORUM_MEDIA_PREFIX }}scripts/markitup/sets/bbcode/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/skins/markitup/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/sets/bbcode/style.css" />
 {% endblock %}
 
 {% block brd-page-id %}brd-profile-signature{% endblock %}
@@ -35,7 +35,7 @@
             <div class="ct-set info-set set1">
                 <div class="ct-box info-box">
                     <h3 class="ct-legend hn">{% trans "Current signature" %}</h3>
-                    <div class="sig-demo">{{ user.lbforum_profile.signature|bbcode|safe }}</div>
+                    <div class="sig-demo">{{ user.forum_profile.signature|bbcode|safe }}</div>
                 </div>
             </div>
             <div class="txt-set set2">
@@ -61,9 +61,9 @@
 {% endblock %}
 
 {% block content_footer %}
-    <script type="text/javascript" src="{{ LBFORUM_MEDIA_PREFIX }}scripts/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ LBFORUM_MEDIA_PREFIX }}scripts/markitup/jquery.markitup.js"></script>
-    <script type="text/javascript" src="{{ LBFORUM_MEDIA_PREFIX }}scripts/markitup/sets/bbcode/set.js"></script>
+    <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/sets/bbcode/set.js"></script>
     <script type="text/javascript">
         mySettings['previewParserPath']='{% url markitup_preview %}';
 	    $("#id_signature").markItUp(mySettings);

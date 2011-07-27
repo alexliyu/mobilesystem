@@ -63,7 +63,7 @@ class Forum(models.Model):
     
     @models.permalink
     def get_absolute_url(self):
-        return ('lbforum_forum', (), {'forum_slug': self.slug})
+        return ('forum_forum', (), {'forum_slug': self.slug})
 
     def __unicode__(self):
         return self.name 
@@ -130,7 +130,7 @@ class Topic(models.Model):
     
     @models.permalink
     def get_absolute_url(self):
-        return ('lbforum_topic', (), {'topic_id': self.id})
+        return ('forum_topic', (), {'topic_id': self.id})
     
     def get_last_post(self):
         if not self.last_post:
@@ -209,7 +209,7 @@ class Post(models.Model):#can't edit...
 
     @models.permalink
     def get_absolute_url(self):
-        return ('lbforum_post', (), { 'post_id': self.pk })
+        return ('forum_post', (), { 'post_id': self.pk })
 
     def get_absolute_url_ext(self):
         topic = self.topic
