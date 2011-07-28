@@ -63,7 +63,7 @@ class Forum(models.Model):
     
     @models.permalink
     def get_absolute_url(self):
-        return ('forum_forum', (), {'forum_slug': self.slug})
+        return ('forum:forum_forum', (), {'forum_slug': self.slug})
 
     def __unicode__(self):
         return self.name 

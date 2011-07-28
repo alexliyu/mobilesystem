@@ -101,14 +101,16 @@ class topic(BaseView):
         
     @BreadcrumbFactory
     def breadcrumb(self, request, context, topic_id,):
+        self.topic = get_object_or_404(Topic, id=topic_id)
+        slug = self.topic.forum.slug 
         return Breadcrumb(
-            self.conf.local_name, lazy_parent('forum_forum') , u'厦门掌上社区', lazy_reverse('forum_topic', args=[topic_id, ])
+            self.conf.local_name, lazy_parent('forum_forum', forum_slug=slug) , u'厦门掌上社区', lazy_reverse('forum_topic', args=[topic_id, ])
         )
         
     def handle_GET(self, request, context, topic_id,):
         template_name = "forum/topic"
     
-        topic = get_object_or_404(Topic, id=topic_id)
+        topic = self.topic
         topic.num_views += 1
         topic.save()
         posts = topic.posts
@@ -207,7 +209,7 @@ class new_post(BaseView):
                 if topic:
                     return self.redirect (post.get_absolute_url_ext())
                 else:
-                    return self.redirect (reverse("forum_forum", args=[forum.slug]))
+                    return self.redirect (reverse("forum:forum_forum", args=[forum.slug]))
         else:
             initial = {}
             qid = request.GET.get('qid', '')
