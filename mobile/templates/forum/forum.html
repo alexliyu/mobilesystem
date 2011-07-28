@@ -10,17 +10,13 @@
 {% endblock %}
 
 {% block content_right_bar %}
+ <div class="ui-body ui-body-d ui-corner-all ui-shadow">
     {% include 'forum/widgets/cur_user_profile.html' %}
 
     {% if forum.description %}
-        <div class="sep20"></div>
-        <div class="box">
-            <div class="inner">
-                {{forum.description}}
-            </div>
-        </div>
+		<p><strong>本栏目简介:</strong>{{forum.description}}</p>
     {% endif %}
-
+	</div>
     {% if forum.topictype_set.all.count %}
         <div class="sep20"></div>
         <div class="box">
@@ -57,7 +53,7 @@
                             </span> 
                         </div>
                         <span class="bigger">
-                            <a href="{% url forum_index %}">{{ FORUM_TITLE }}</a>
+                            <a href="{% url forum:index %}">{{ FORUM_TITLE }}</a>
                             <span class="chevron">&raquo;</span>
                             {{ forum }}
                         </span>
@@ -65,7 +61,7 @@
                             <div class="sep10"></div>
                             <div class="sep10"></div>
                             <div align="left">
-                                <a href="{% url forum_new_topic forum.pk %}" class="super normal button">{% trans "Post new topic" %}</a>
+                                <a href="{% url forum:forum_new_topic forum.pk %}" class="super normal button">{% trans "Post new topic" %}</a>
                             </div>
                         {% endif %} 
                         <div class="sep5"></div>

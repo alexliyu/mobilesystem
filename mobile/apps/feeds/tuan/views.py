@@ -4,6 +4,7 @@ from xml.sax.saxutils import escape
 
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.http import HttpResponse
+# -*- coding: utf-8 -*-
 from django.shortcuts import get_object_or_404
 
 from utils.views import BaseView
@@ -14,7 +15,7 @@ from ..models import Feed, Item
 class IndexView(BaseView):
     def get_metadata(self, request):
         return {
-            'title': 'News',
+            'title': u'团购',
             'additional': 'View news feeds and events from across the University.',
         }
         

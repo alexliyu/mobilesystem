@@ -13,8 +13,10 @@
                         {% if not forum %}
                         <strong>{{t.forum.name}}</strong>
                         {% endif %}
+                        
+                 <br><span>浏览数：{{ t.num_views }}，评论数：{{ t.num_replies|add:"-1"}}</span>
                  </p>
-                 <span class="ui-li-count">浏览数：{{ t.num_views }}，评论数：{{ t.num_replies|add:"-1"}}</span>
+                 
 			</a>
 			
 		</li> 	

@@ -36,7 +36,7 @@
     <div class="box">
         <div class="cell">
             <span class="bigger">
-                <a href="{% url forum_index %}">{{ FORUM_TITLE }}</a>
+                <a href="{% url forum:index %}">{{ FORUM_TITLE }}</a>
                 <span class="chevron">&raquo;</span>
                 <a href="{{ forum.get_absolute_url }}">{{ forum.name }}</a>
                 {% if topic %}
@@ -87,7 +87,7 @@
 {% endblock %}
 
 {% block footer_js %}
-    <script type="text/javascript" src="{% url forum_lang_js %}"></script>
+    <script type="text/javascript" src="{% url forum:forum_lang_js %}"></script>
     <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/jquery.min.js"></script>
     <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/jquery.markitup.js"></script>
     <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/sets/bbcode/set.js"></script>

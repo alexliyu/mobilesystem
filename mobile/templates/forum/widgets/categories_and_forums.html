@@ -4,7 +4,7 @@
     <div class="inner">
         {% for category in categories %}
         {% for forum in category.forum_set.all %}
-        <a class="item_node" href="{% url forum_forum forum.slug %}"><span> {{forum}} </span></a>
+        <a class="item_node" href="{% url forum:forum_forum forum.slug %}"><span> {{forum}} </span></a>
         {% endfor %}
         <br/>
         {% endfor %}

@@ -10,11 +10,11 @@
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
             <tbody><tr>
                     <td width="48" valign="top">
-                        <a href="{% url forum_user_profile user.pk %}">{% avatar user 48 %}</a>
+                        <a href="{% url forum:forum_user_profile user.pk %}">{% avatar user 48 %}</a>
                     </td>
                     <td width="10" valign="top"></td>
                     <td width="auto" align="left">
-                        <span class="bigger"><a href="{% url forum_user_profile user.pk %}">vicalloy</a></span>
+                        <span class="bigger"><a href="{% url forum:forum_user_profile user.pk %}">vicalloy</a></span>
                         <div class="sep5"></div>
                         <span class="fade"></span>
                     </td>
@@ -26,20 +26,8 @@
     </div>
 </div>
 {% else %}
-<div class="box">
-    <div class="cell">
-        <strong>{{FORUM_TITLE}}</strong>
-        <div class="sep5"></div>
-        <span class="fade">{{FORUM_SUB_TITLE}}</span>
-    </div>
-    <div class="inner">
-        <div class="sep5"></div>
-        <div align="center">
+
             <a href="{{ REGISTER_URL }}" class="super normal button">{% trans "Register" %}</a>
-            <div class="sep5"></div>
-            <div class="sep10"></div>
-            OR <a href="{{ LOGIN_URL }}">{% trans "Login" %}</a>
-        </div>
-    </div>
-</div>
+            或 <a href="{{ LOGIN_URL }}">{% trans "Login" %}</a>
+      
 {% endif %}

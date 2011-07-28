@@ -3,7 +3,7 @@
 {% load molly_utils %} 
 {% block site_title %}{% endblock %} {% block title %}{{site_name }}{% endblock %} 
 {% block header %}
-<div data-role="header"  data-position="fixed" style="height: 40px;">
+<div data-role="header"  data-position="fixed" style="height: 40px;" id="divMain">
 	<!--页面头部 -->
 	<h1 style="margin-top: 0px; margin-bottom: 0px;"><a href="{% url home:index %}"><img src="/media/site/images/logos/LOGO.png" alt="{{ site_name }}" /></a></h1>
 	{%if not user.is_authenticated%}
@@ -50,7 +50,7 @@
 
 	<form action="/accounts/signup/" method="post">
 		{% csrf_token %}
-		<h4>
+		<h4 class="clNr">
 			还没有注册手机号？只要5钞钟！
 			</p>
 			<p>第一次注册前100名有奖品拿哦!
@@ -62,7 +62,7 @@
 
 
 {%else%}
-<h4>尊敬的用户：{{user.username}}，感谢您再次访问娱讯移动互动平台！</h4>
+<h4 class="clNr">尊敬的用户：{{user.username}}，感谢您再次访问娱讯移动互动平台！</h4>
 {%endif%} {% endblock %}
 </div>
 <p />
@@ -70,12 +70,12 @@
 <!--首页天气预报与时间显示 -->
 <div class="ui-grid-a ui-body-d ui-corner-all ui-shadow">
 	<div>
-		<h4>{% block date %} 当前时间：{% now "Y-m-d，l H:i" %} {% endblock %}
+		<h4 class="clNr">{% block date %} 当前时间：{% now "Y-m-d，l H:i" %} {% endblock %}
 		</h4>
 	</div>
 
 	<div>
-	<h4>
+	<h4 class="clNr">
 		{% weather %}{% block weather-location %}{{ weather.name }}{% endblock%}: {{ weather.temperature }}&deg;C<img src="/media/weather/images/{{ weather.icon }}_small.png" alt="{{ weather.get_outlook_display|capfirst }}" height="30" width="30" style="vertical-align: middle;" />
 		</h4>
 	</div>

@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     (r'^sentry/', include('sentry.web.urls')),
     (r'^tracking/', include('tracking.urls')),
     (r'^entry/', include('entry.urls')),
-    (r'^forum/', include('forum.urls')),
+    
     (r'^download/', PicDownload),
      
     (r'', applications.home.urls)) # Home default
@@ -38,6 +38,13 @@ urlpatterns += patterns('django.views.generic.simple',
 )
 
 handler500 = 'utils.views.handler500'
+
+urlpatterns += patterns('simpleavatar.views',
+        url('^account/avatar/change/$', 'change', {'template_name': 'forum/account/avatar/change.html'}, \
+                name='forum_avatar_change'),
+
+    (r'^accounts/avatar/', include('simpleavatar.urls')),
+)
 
 if settings.DEBUG:
     urlpatterns += patterns('',

@@ -65,7 +65,7 @@
     <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/jquery.markitup.js"></script>
     <script type="text/javascript" src="{{ FORUM_MEDIA_PREFIX }}scripts/markitup/sets/bbcode/set.js"></script>
     <script type="text/javascript">
-        mySettings['previewParserPath']='{% url markitup_preview %}';
+        mySettings['previewParserPath']='{% url forum:markitup_preview %}';
 	    $("#id_signature").markItUp(mySettings);
     </script>
 {% endblock %}

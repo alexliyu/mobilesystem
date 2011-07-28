@@ -18,7 +18,7 @@ def bbcode(context, s, has_replied=False):
         return ""
     tag_data = {'has_replied': has_replied}
     html = _postmarkup(s, #cosmetic_replace=False, 
-            tag_data=tag_data, 
+            tag_data=tag_data,
             auto_urls=getattr(settings, 'BBCODE_AUTO_URLS', True))
     context['hide_attachs'] = tag_data.get('hide_attachs', [])
     return html
@@ -26,10 +26,10 @@ def bbcode(context, s, has_replied=False):
 @register.simple_tag
 def forum_url(forum, topic_type, topic_type2):
     if topic_type and topic_type2:
-        return reverse('forum_forum_ext2', args=[forum.slug, topic_type, topic_type2])
+        return reverse('forum:forum_forum_ext2', args=[forum.slug, topic_type, topic_type2])
     if topic_type or topic_type2:
-        return reverse('forum_forum_ext', args=[forum.slug, topic_type or topic_type2])
-    return reverse('forum_forum', args=[forum.slug])
+        return reverse('forum:forum_forum_ext', args=[forum.slug, topic_type or topic_type2])
+    return reverse('forum:forum_forum', args=[forum.slug])
 
 @register.simple_tag
 def show_attach(attach, post, has_replied, hide_attachs):
@@ -49,8 +49,8 @@ def page_range_info(page_obj):
     paginator = page_obj.paginator
     if paginator.num_pages == 1:
         return paginator.count
-    return str(page_obj.start_index()) +' ' + 'to' + ' ' +  \
-            str(page_obj.end_index()) + ' ' + 'of' + ' ' +  str(page_obj.paginator.count)
+    return str(page_obj.start_index()) + ' ' + 'to' + ' ' + \
+            str(page_obj.end_index()) + ' ' + 'of' + ' ' + str(page_obj.paginator.count)
 
 DEFAULT_PAGINATION = getattr(settings, 'PAGINATION_DEFAULT_PAGINATION', 20)
 DEFAULT_WINDOW = getattr(settings, 'PAGINATION_DEFAULT_WINDOW', 4)
@@ -71,7 +71,7 @@ def post_paginate(context, count, paginate_by=DEFAULT_PAGINATION, window=DEFAULT
     elif window >= page_count:
         pages = [e + 1 for e in range(page_count)]
     else:
-        pages = [e + 1 for e in range(window-1)]
+        pages = [e + 1 for e in range(window - 1)]
     context['pages'] = pages
     context['window'] = window
     return context

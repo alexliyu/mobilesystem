@@ -130,7 +130,7 @@ class Topic(models.Model):
     
     @models.permalink
     def get_absolute_url(self):
-        return ('forum_topic', (), {'topic_id': self.id})
+        return ('forum:forum_topic', (), {'topic_id': self.id})
     
     def get_last_post(self):
         if not self.last_post:

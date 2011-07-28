@@ -37,6 +37,7 @@ APPLICATIONS = [
     Application('apps.feeds.tuan', 'tuan', '团购'),
     
     Application('apps.feeds.zine', 'zine', '杂志'),
+    Application('forum', 'forum', '社区'),
     
     Application('maps', 'maps', '地图',
         display_to_user=False,
@@ -95,6 +96,7 @@ def load_apps():
     all_apps = [f for f in os.listdir(os.path.join(os.path.dirname(__file__).rstrip('utils'), 'apps')) if not f.endswith(".py") or f.endswith(".pyc")]
     try:
         all_apps.remove('__init__.pyc')
+        all_apps.remove('.svn')
     except:
         pass
     for f in REMOVELIST:

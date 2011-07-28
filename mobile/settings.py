@@ -216,7 +216,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'batch_processing',
     'django.contrib.gis',
     'entry',
-    'forum',
+    
     'simpleavatar',
     'djangohelper',
     'onlineuser',
