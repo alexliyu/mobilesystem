@@ -13,10 +13,10 @@
   
 	<div class="note">
 		<div class="weather-icon">
-	    <img src="/media/weather/images/{{ observation.icon }}.png" alt="{{ observation.get_outlook_display|capfirst }}"/><br/>
+	    <img id="imgWea" src="/media/weather/images/{{ observation.icon }}.png" alt="{{ observation.get_outlook_display|capfirst }}"/><br/>
 	    </div>
 		<div class="weather-live-info">
-          <span style="font-size: 36pt;">{{ observation.temperature }}&deg;C</span><br/>
+          <span style="font-size: 24pt;">{{ observation.temperature }}&deg;C</span><br/>
           风力：{{ observation.wind_direction }}风，{{ observation.wind_speed }}英里/每小时 <br/>
           空气：{{ observation.humidity }}% 相对湿度<br/>
           气压：{{ observation.pressure }} mbar，比昨天{{ observation.get_pressure_state_display }}<br/>

@@ -27,21 +27,34 @@ footer, header, nav, section, audio, video {
 a img {border: 0;}
 /*	---------首页头部以及h4字体大小--------	*/
 #divMain{text-align:center;background: rgb(51,51,51);}
-.ui-btn-right{position:absolute;right:10px;top:3.5em}
+.ui-btn-right{position:absolute;right:40px;top:3.5em}
 .clNr{font-size: 14px}
 #id_mobile{font: 12px/24px Georgia;}
 #bc-title h1{font-size: 18px}
 /*	---------底部导航---------	*/
 #footer div ul{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
 #footer div ul li{display:inline;}
-#footer div ul li a{float:left;width:2em;text-decoration:none;color:white;background: rgb(51,51,51);;padding:0.2em 0.3em;border-right:1px solid white;}
-#footer div ul li a:hover {background-color:#ff3300}
+#footer div ul li a{float:left;width:2em;text-decoration:none;color:white;background: rgb(51,51,51);padding:0.2em 0.4em;border-right:1px solid white;}
 
 /*	---------关于娱讯---------	*/
-.note{}
 .ui-corner-all h2{font-size:16px;}
-.bubble img{width:260px;height:140px;}
-#imgMap{width:260px;height:240px;};
+.note div img{width:260px;height:140px;}
+#divLink {list-style-type:none;}
+#divLink img{width:260px;height:230px;}
+#imgWea{
+	width:30px;
+	height:20px;
+}
+/** -------新闻---------*/
+.entry-title{
+	font-size:16px;
+}
+#divTuan h3{
+	font-size: 16px;
+}
+#divTuan li{
+	list-style-type:none;font-size: 14px;}
+}
 /*	Typography presets
 	------------------	*/
 
@@ -177,4 +190,10 @@ px      68    160    252    344    436    */
 	
 	}
 	
+}
+#divVideo h2{
+	font-size: 16px;
+}
+#divVideo li{
+	list-style-type:none;font-size: 14px;}
 }

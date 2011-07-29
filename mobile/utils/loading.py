@@ -37,7 +37,10 @@ APPLICATIONS = [
     Application('apps.feeds.tuan', 'tuan', '团购'),
     
     Application('apps.feeds.zine', 'zine', '杂志'),
-    Application('forum', 'forum', '社区'),
+    Application('forum', 'forum', '社区',
+                display_to_user=False,
+                
+    ),
     
     Application('maps', 'maps', '地图',
         display_to_user=False,

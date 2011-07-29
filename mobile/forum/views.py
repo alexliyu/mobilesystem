@@ -16,6 +16,7 @@ from utils.breadcrumbs import *
 
 
 
+
 class IndexView(BaseView):
     def get_metadata(self, request):
         return {
@@ -100,17 +101,17 @@ class topic(BaseView):
         }
         
     @BreadcrumbFactory
-    def breadcrumb(self, request, context, topic_id,):
-        self.topic = get_object_or_404(Topic, id=topic_id)
-        slug = self.topic.forum.slug 
+    def breadcrumb(self, request, context, topic_id):
+       
         return Breadcrumb(
-            self.conf.local_name, lazy_parent('forum_forum', slug) , u'厦门掌上社区', lazy_reverse('forum_topic', args=[topic_id, ])
+            self.conf.local_name, lazy_parent('index') , u'厦门掌上社区', lazy_reverse('forum_topic', topic_id=topic_id)
+            
         )
         
-    def handle_GET(self, request, context, topic_id,):
+    def handle_GET(self, request, context, topic_id):
         template_name = "forum/topic"
     
-        topic = self.topic
+        topic = get_object_or_404(Topic, id=topic_id)
         topic.num_views += 1
         topic.save()
         posts = topic.posts
