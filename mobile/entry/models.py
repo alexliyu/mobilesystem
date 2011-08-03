@@ -262,7 +262,7 @@ class EntryAbstractClass(models.Model):
     @models.permalink
     def get_absolute_url(self):
         """Return entry's URL"""
-        return ('entry_entry_detail', (), {
+        return ('entry:entry_entry_detail', (), {
             'year': self.creation_date.strftime('%Y'),
             'month': self.creation_date.strftime('%m'),
             'day': self.creation_date.strftime('%d'),

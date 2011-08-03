@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^sentry/', include('sentry.web.urls')),
     (r'^tracking/', include('tracking.urls')),
-    (r'^entry/', include('entry.urls')),
+#    (r'^entry/', include('entry.urls')),
     
     (r'^download/', PicDownload),
      

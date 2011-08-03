@@ -11,6 +11,7 @@ from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
 
 
 class IndexView(BaseView):
+    
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
