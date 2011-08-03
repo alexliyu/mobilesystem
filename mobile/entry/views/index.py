@@ -1,0 +1,92 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+'''
+Created on 2011-8-3
+
+@author: 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+__________________________________________________________
+'''
+
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
+from django.contrib.csrf.middleware import csrf_exempt
+from django.db.models.query import QuerySet
+
+from entry.models import Category, Entry
+from utils.views import BaseView
+from utils.breadcrumbs import *
+from settings import PAGINATION
+from .decorators import template_name_for_entry_queryset_filtered
+
+
+
+class IndexView(BaseView):
+    def get_metadata(self, request):
+        return {
+            'title': u'团购',
+            'additional': 'View news feeds and events from across the University.',
+        }
+        
+    @BreadcrumbFactory
+    def breadcrumb(self, request, context):
+        return Breadcrumb(
+            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+        )
+        
+    def handle_GET(self, request, context):
+        template_name = 'entry/index'
+        context['category'] = Category.tree.all()
+        context['object_list'] = Entry.published.all()
+        return self.render(request, context, template_name)
+
+class category_detail(BaseView):
+    """显示一个分类中的文章"""
+    def get_metadata(self, request):
+        return {
+            'title': u'团购',
+            'additional': 'View news feeds and events from across the University.',
+        }
+        
+    @BreadcrumbFactory
+    def breadcrumb(self, request, context, path, page=None):
+        return Breadcrumb(
+            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+        )
+        
+    def handle_GET(self, request, context, path, page=None):
+        category = get_category_or_404(path)
+        template_name = template_name_for_entry_queryset_filtered('category', category.slug)
+        context['category'] = category
+        
+
+        matches = QuerySet
+        '''
+        这里用于获取category的下级分类的查询记录集，并进行合并，生成一个查询记录集
+        '''
+        if category.children.all():
+                for child in category.children.all():
+                    try:
+                            matches = matches() | child.entries_published()
+                    except:
+                            matches = child.entries_published()
+                matches = matches | category.entries_published()
+        else:
+                matches = category.entries_published()
+                
+        context['queryset'] = matches
+        context['paginate_by'] = PAGINATION
+        context['page'] = page
+
+        return self.render(request, context, template_name)
+
+def get_category_or_404(path):
+    """Retrieve a Category by a path"""
+    path_bits = [p for p in path.split('/') if p]
+    return get_object_or_404(Category, slug=path_bits[-1])
+
+
+
