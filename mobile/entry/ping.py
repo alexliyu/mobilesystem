@@ -21,7 +21,7 @@ class URLRessources(object):
         self.current_site = Site.objects.get_current()
         self.site_url = '%s://%s' % (PROTOCOL, self.current_site.domain)
         self.blog_url = '%s%s' % (self.site_url,
-                                  reverse('index'))
+                                  reverse('entry:index'))
         self.blog_feed = '%s%s' % (self.site_url,
                                    reverse('entry_entry_latest_feed'))
 

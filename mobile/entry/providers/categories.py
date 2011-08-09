@@ -23,17 +23,11 @@ class CategoriesEntryProvider(BaseEntryProvider):
         return get_object_or_404(Category, slug=path_bits[-1])
     
     
-    def category_detail(self, request, path, page=None, **kwargs):
+    def category_detail(self, request, context, path, page=None, **kwargs):
         """显示一个分类中的文章"""
-        extra_context = kwargs.pop('extra_context', {})
-    
         category = self.get_category_or_404(path)
-        if not kwargs.get('template_name'):
-            kwargs['template_name'] = template_name_for_entry_queryset_filtered(
-                'category', category.slug)
-    
-        extra_context.update({'category': category})
-        kwargs['extra_context'] = extra_context
+        template_name = 'entry/entry_list'
+        context['category'] = category
         matches = QuerySet
         '''
         这里用于获取category的下级分类的查询记录集，并进行合并，生成一个查询记录集
@@ -47,6 +41,10 @@ class CategoriesEntryProvider(BaseEntryProvider):
                 matches = matches | category.entries_published()
         else:
                 matches = category.entries_published()
-        return object_list(request, queryset=matches,
-                           paginate_by=PAGINATION, page=page,
-                           ** kwargs)
+                
+        context['object_list'] = matches
+        context['paginate_by'] = PAGINATION
+        context['template_name'] = template_name
+        context['page'] = page
+        
+        return context

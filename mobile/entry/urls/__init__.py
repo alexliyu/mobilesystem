@@ -10,6 +10,7 @@ from entry.views.index import IndexView, category_detail
 from entry.views.search import entry_search
 from entry.views.entries import entry_index, entry_day, entry_detail, entry_month, entry_shortlink, entry_year
 from entry.views.authors import author_list, author_detail
+from entry.views.tags import tag_list, tag_detail
 urlpatterns = patterns('',
 #    url(r'^tags/', include('entry.urls.tags',)),
 #    url(r'^feeds/', include('entry.urls.feeds')),
@@ -26,6 +27,9 @@ urlpatterns = patterns('',
      url(r'^author/(?P<username>[.+-@\w]+)/$', author_detail, {}, 'entry_author_detail'),
      url(r'^author/(?P<username>[.+-@\w]+)/page/(?P<page>\d+)/$', author_detail, {}, 'entry_author_detail_paginated'),
      url(r'^page/(?P<page>\d+)/$', entry_index, {}, 'index_paginated'),
+     url(r'^tag/$', tag_list, {}, 'entry_tag_list'),
+     url(r'^tag/(?P<tag>[- \w]+)/$', tag_detail, {}, 'entry_tag_detail'),
+     url(r'^tag/(?P<tag>[- \w]+)/page/(?P<page>\d+)/$', tag_detail, {}, 'entry_tag_detail_paginated'),
      url(r'^(?P<year>\d{4})/$', entry_year, {}, 'entry_entry_archive_year'),
      url(r'^(?P<year>\d{4})/(?P<month>\d{2})/$', entry_month, {}, 'entry_entry_archive_month'),
      url(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/$', entry_day, {}, 'entry_entry_archive_day'),
@@ -33,6 +37,7 @@ urlpatterns = patterns('',
      url(r'^(?P<object_id>\d+)/$', entry_shortlink, {}, 'entry_entry_shortlink'),
      url(r'^(?P<path>[-\/\w]+)/page/(?P<page>\d+)/$', category_detail, {}, 'entry_category_detail_paginated'),
      url(r'^(?P<path>[-\/\w]+)/$', category_detail, {}, 'entry_category_detail'),
+
 )
 #urlpatterns += patterns('',
 #      (r'^static/(?P<path>.*)$', 'django.views.static.serve',

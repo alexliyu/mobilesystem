@@ -19,7 +19,7 @@ class IndexView(BaseView):
             lazy_reverse('index'))
     
     def handle_GET(self, request, context, page=None):
-        return self.conf.provider.category_detail(request, 'news', page)
-    
+        context = self.conf.provider.category_detail(request, context, 'news', page)
+        return  self.render(request, context, context['template_name'])
 
     

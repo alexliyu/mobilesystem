@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib import admin
 from conf import applications, all_apps
 from apps.business.views import PicDownload
-
+from feeds import LatestEntries, EntryDiscussions, EntryComments, EntryTrackbacks, EntryPingbacks, SearchEntries, TagEntries, CategoryEntries, AuthorEntries
 # Admin
 admin.autodiscover()
 
@@ -20,7 +20,33 @@ urlpatterns = patterns('',
 #    (r'^entry/', include('entry.urls')),
     
     (r'^download/', PicDownload),
-     
+     url(r'^latest/$',
+                           LatestEntries(),
+                           name='entry_entry_latest_feed'),
+                       url(r'^search/$',
+                           SearchEntries(),
+                           name='entry_entry_search_feed'),
+                       url(r'^tags/(?P<slug>[- \w]+)/$',
+                           TagEntries(),
+                           name='entry_tag_feed'),
+                       url(r'^authors/(?P<username>[.+-@\w]+)/$',
+                           AuthorEntries(),
+                           name='entry_author_feed'),
+                       url(r'^categories/(?P<path>[-\/\w]+)/$',
+                           CategoryEntries(),
+                           name='entry_category_feed'),
+                       url(r'^discussions/(?P<slug>[-\w]+)/$',
+                           EntryDiscussions(),
+                           name='entry_entry_discussion_feed'),
+                       url(r'^comments/(?P<slug>[-\w]+)/$',
+                           EntryComments(),
+                           name='entry_entry_comment_feed'),
+                       url(r'^pingbacks/(?P<slug>[-\w]+)/$',
+                           EntryPingbacks(),
+                           name='entry_entry_pingback_feed'),
+                       url(r'^trackbacks/(?P<slug>[-\w]+)/$',
+                           EntryTrackbacks(),
+                           name='entry_entry_trackback_feed'),
     (r'', applications.home.urls)) # Home default
 
 # Dynamically add apps

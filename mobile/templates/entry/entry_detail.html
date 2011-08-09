@@ -81,7 +81,7 @@
 						    标签:
 						    {% tags_for_object object as tag_list %}
 						    {% for tag in tag_list %}
-						    		<a href="{% url entry_tag_detail tag %}" title="Tag {{ tag }}" rel="tag">{{ tag }}</a>
+						    		<a href="{% url entry:entry_tag_detail tag %}" title="Tag {{ tag }}" rel="tag">{{ tag }}</a>
 						    {% endfor %}
 						    </h3>
 						

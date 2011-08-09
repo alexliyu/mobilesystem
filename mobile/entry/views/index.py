@@ -21,6 +21,7 @@ from utils.views import BaseView
 from utils.breadcrumbs import *
 from settings import PAGINATION
 from .decorators import template_name_for_entry_queryset_filtered
+from entry.views.categories import category
 
 
 
@@ -34,7 +35,7 @@ class IndexView(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯厦门', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context):
@@ -42,7 +43,6 @@ class IndexView(BaseView):
         context['category'] = Category.tree.all()
         context['object_list'] = Entry.published.all()
         return self.render(request, context, template_name)
-
 class category_detail(BaseView):
     """显示一个分类中的文章"""
     def get_metadata(self, request):
@@ -53,13 +53,14 @@ class category_detail(BaseView):
         
     @BreadcrumbFactory
     def breadcrumb(self, request, context, path, page=None):
+        self.category = get_category_or_404(path)
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, lazy_parent('index'), self.category, lazy_reverse('entry_category_detail', args=[self.category.slug])
         )
         
     def handle_GET(self, request, context, path, page=None):
-        category = get_category_or_404(path)
-        template_name = template_name_for_entry_queryset_filtered('category', category.slug)
+        category = self.category
+        template_name = 'entry/entry_list'
         context['category'] = category
         
 
@@ -80,6 +81,7 @@ class category_detail(BaseView):
         context['queryset'] = matches
         context['paginate_by'] = PAGINATION
         context['page'] = page
+        context['object_list'] = matches
 
         return self.render(request, context, template_name)
 

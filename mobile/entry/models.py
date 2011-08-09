@@ -164,8 +164,8 @@ class EntryAbstractClass(models.Model):
 
     template = models.CharField(
         _('template'), max_length=250,
-        default='entry/entry_detail.html',
-        choices=[('entry/entry_detail.html', _('Default template'))] + \
+        default='entry/entry_detail',
+        choices=[('entry/entry_detail', _('Default template'))] + \
         ENTRY_TEMPLATES,
         help_text=_('template used to display the entry'))
 

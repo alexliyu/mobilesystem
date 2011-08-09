@@ -43,7 +43,7 @@ class entry_index(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯厦门', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context):
@@ -65,11 +65,11 @@ class entry_year(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context, year):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯厦门', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context, year):
-        archive_year = Entry.published.all().filter(creation_date__year=year)
+        archive_year = Entry.published.all()
         template_name = 'entry/date_entry'
         context['archive_year'] = archive_year
         context['paginate_by'] = PAGINATION
@@ -92,11 +92,11 @@ class entry_month(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context, year, month):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯厦门', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context, year, month):
-        archive_month = Entry.published.all().filter(creation_date__year=year, creation_date__month=month)
+        archive_month = Entry.published.all()
         template_name = 'entry/date_entry'
         context['archive_month'] = archive_month
         context['paginate_by'] = PAGINATION
@@ -119,11 +119,11 @@ class entry_day(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context, year, month, day):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯厦门', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context, year, month, day):
-        entry_day = Entry.published.all().filter(creation_date__year=year, creation_date__month=month, creation_date__day=day)
+        entry_day = Entry.published.all()
         template_name = 'entry/date_entry'
         context['entry_day'] = entry_day
         context['paginate_by'] = PAGINATION
@@ -145,16 +145,14 @@ class entry_detail(BaseView):
         
     @BreadcrumbFactory
     def breadcrumb(self, request, context, year, month, day, slug):
+        self.entry = get_object_or_404(Entry, slug=slug, creation_date__year=year, creation_date__month=month, creation_date__day=day)
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, lazy_parent('entry_category_detail', self.entry.categories.get().slug) , self.entry.title, lazy_reverse('entry_entry_detail', year=year, month=month, day=day, slug=slug)
         )
         
     def handle_GET(self, request, context, year, month, day, slug):
         template_name = 'entry/entry_detail'
-        entry = get_object_or_404(Entry, slug=slug,
-                                  creation_date__year=year,
-                                  creation_date__month=month,
-                                  creation_date__day=day)
+        entry = self.entry
 
         if entry.login_required and not request.user.is_authenticated():
             return login(request, 'login.html')
@@ -183,7 +181,7 @@ class entry_shortlink(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context, object_id):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯厦门', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context, object_id):

@@ -1,16 +1,19 @@
-{% load i18n mptt_tags %}
+{% load i18n %}
+<!--首页上方导航栏 -->
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<div class="center">
+		<ol class="icon-menu">
+			{% for category in categories %}
+						
+								<li id="menu-{{ category.slug }}">
+									<a  href="{{ category.get_absolute_url }}" title="{{ category.title }}">{{ category.title }}</a>
+								</li> 
+						
+			{% endfor %}
+			
+		</ol>
+		{# Only necessary if using floating icons #} {# <div class="clearhidden"></div> #}
+	</div>
+</div>
 
-{% for category, structure in categories|tree_info %}
-  {% if structure.new_level %}<ul><li>{% else %}</li><li>{% endif %}
-    <a href="{{ category.get_absolute_url }}" title="{{ category.title }}">{{ category.title }}</a> 
-    {% blocktrans count category.entries_published.count as entry_count %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}
-  {% for level in structure.closed_levels %}</li></ul>{% endfor %}
-  {% empty %}
-<ul>
-  <li>
-    {% trans "No categories yet." %}
-  </li>
-</ul>
-{% endfor %}
-
-
+<p />
