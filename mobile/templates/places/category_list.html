@@ -4,15 +4,16 @@
 
 {% for name, types in entity_types.items %}
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
-    <div class="header">
-        <h2>{{ name }}</h2>
-    </div>
-    <ul class="link-list">
+    
+    <ul><h2>{{ name }}</h2></ul>
+    
+    <ul data-role="listview">
         {% for entity_type in types %}
-            <li><a href="{% url places:category-detail entity_type.slug %}">{{ entity_type.verbose_name_plural|capfirst }}</a></li>
+            <li><a href="{% url places:category-detail entity_type.slug %}" rel="external"><h5>{{ entity_type.verbose_name_plural|capfirst }}</h5></a></li>
         {% endfor %}
     </ul>
 </div>
+<p></p>
 {% endfor %}
 
 {% endblock %}

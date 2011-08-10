@@ -21,7 +21,7 @@ from utils.views import BaseView
 from utils.breadcrumbs import *
 from settings import PAGINATION
 from .decorators import template_name_for_entry_queryset_filtered
-from entry.views.categories import category
+
 
 
 

@@ -70,7 +70,8 @@ def get_tile_url(xtile, ytile, zoom):
     """
     Return a URL for a tile given some OSM tile co-ordinates
     """
-    return "http://tile.openstreetmap.org/%d/%d/%d.png" % (zoom, xtile, ytile)
+    return "http://maps.google.com/maps/api/staticmap?center=%s,%s&zoom=%s&size=400x400&maptype=roadmap&mobile=true&sensor=true&language=zh_CN" % (xtile, ytile, zoom)
+    #return "http://tile.openstreetmap.org/%d/%d/%d.png" % (zoom, xtile, ytile)
 
 class OSMTile(models.Model):
     """
@@ -119,7 +120,7 @@ class OSMTile(models.Model):
         Fetch an OSM tile from the OSM tile server, and cache it if necessary.
         """
         try:
-            osm_tile = OSMTile.objects.get(xtile=xtile, ytile=ytile, zoom=zoom, last_fetched__gt = datetime.now() - timedelta(1))
+            osm_tile = OSMTile.objects.get(xtile=xtile, ytile=ytile, zoom=zoom, last_fetched__gt=datetime.now() - timedelta(1))
             if osm_tile.last_fetched < datetime.now() - timedelta(weeks=1):
                 try:
                     return osm_tile.refresh_data()

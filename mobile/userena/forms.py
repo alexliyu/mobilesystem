@@ -1,5 +1,6 @@
 #-*- coding:utf-8 -*-
 '''
+用户注册、用户中心等表单视图文件
 Created on 2011-1-30
 
 @author: 李昱
@@ -136,8 +137,21 @@ class SignupFormOnlyMobile(SignupForm):
         del self.fields['email']
         
         
+    def check_mobile(self, mobile):
+        """
+        用来验证手机号码是否是合法的手机号码，如果合法则返回True，反之返回False
+        """
+        import re
+        mobile_re = re.compile('((13[0-9]|15[0|3|6|7|8|9]|18[8|9])\d{8})')
+        if mobile_re.search(mobile):
+            return True
+        else:
+            return False
+        
     def clean_mobile(self):
-        """验证用户输入注册的手机号码是否已经被使用 """
+        """验证用户输入注册的手机号码是否已经被使用以及用户手机号码是否合法 """
+        if not self.check_mobile(self.cleaned_data['mobile']):
+            raise forms.ValidationError(_(u'您的手机号码有可能输入错误了，请确认您输入的手机号码！'))
         if UserProfile.objects.filter(mobile__iexact=self.cleaned_data['mobile']):
             raise forms.ValidationError(_(u'这个手机号码已经被注册了，请确认您输入的手机号码！'))
         if User.objects.filter(username__iexact=self.cleaned_data['mobile']):

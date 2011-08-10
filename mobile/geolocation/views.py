@@ -168,12 +168,8 @@ class IndexView(GeolocationView):
         if context['format'] == 'embed':
             return self.render(request, context, 'geolocation/update_location_embed')
         else:
-            if request.session.get('geolocation:location') \
-              and context.get('return_url') \
-              and not request.REQUEST.get('update', False) \
-              and not 'geolocation_alternatives' in context:
-                return self.redirect(context.get('return_url'),
-                                     request, 'seeother')
+            if request.session.get('geolocation:location') and context.get('return_url') and not request.REQUEST.get('update', False) and not 'geolocation_alternatives' in context:
+                return self.redirect(context.get('return_url'), request, 'seeother')
             return self.render(request, context, 'geolocation/update_location')
 
     def handle_POST(self, request, context):

@@ -13,7 +13,7 @@ def log2(x):
     """
     @return: log(x)/log(2)
     """
-    return math.log(x)/math.log(2)
+    return math.log(x) / math.log(2)
 
 def get_tile_ref(lon_deg, lat_deg, zoom):
     """
@@ -102,11 +102,12 @@ def get_map(points, width, height, filename, zoom=None, lon_center=None, lat_cen
     
     lon_min, lon_max = minmax(p[0] for p in points)
     lat_min, lat_max = minmax(p[1] for p in points)
-    
+    if width <= 30:width = 100
+    if height <= 30:height = 100
     if not zoom:
         size = min(width, height)
         if lat_min != lat_max:
-            zoom = int(log2(360/abs(lat_min - lat_max)) + log2(size/256)-1.0)
+            zoom = int(log2(360 / abs(lat_min - lat_max)) + log2(size / 256) - 1.0)
         else:
             zoom = 16
     
@@ -114,21 +115,21 @@ def get_map(points, width, height, filename, zoom=None, lon_center=None, lat_cen
 
     lon_range, lat_range = lon_max - lon_min, lat_min - lat_max
     if not lat_center:
-        lon_center, lat_center = (lon_min + lon_max)/2, (lat_min + lat_max)/2
+        lon_center, lat_center = (lon_min + lon_max) / 2, (lat_min + lat_max) / 2
     
     tx_min, tx_max = map(int, minmax(p[0][0] for p in points))
     ty_min, ty_max = map(int, minmax(p[0][1] for p in points))
-    ty_max, tx_max = ty_max+1, tx_max+1
+    ty_max, tx_max = ty_max + 1, tx_max + 1
     
     cx, cy = get_tile_ref(lon_center, lat_center, zoom)
-    oxc = int((cx - tx_min) * 256 - width/2)
-    oyc = int((cy - ty_min) * 256 - height/2)
-    ox, oy = oxc, oyc-10
+    oxc = int((cx - tx_min) * 256 - width / 2)
+    oyc = int((cy - ty_min) * 256 - height / 2)
+    ox, oy = oxc, oyc - 10
 
-    tx_min_ = int(tx_min + ox/256)
-    tx_max_ = int(tx_max + (width+ox)/256)
-    ty_min_ = int(ty_min + oy/256)
-    ty_max_ = int(ty_max + (height+oy)/256)
+    tx_min_ = int(tx_min + ox / 256)
+    tx_max_ = int(tx_max + (width + ox) / 256)
+    ty_min_ = int(ty_min + oy / 256)
+    ty_max_ = int(ty_max + (height + oy) / 256)
     tiles = [{ 'ref':(tx, ty) }
         for tx in range(tx_min_, tx_max_) for ty in range(ty_min_, ty_max_)]
     
@@ -144,11 +145,11 @@ def get_map(points, width, height, filename, zoom=None, lon_center=None, lat_cen
         offx = (tile['ref'][0] - tx_min) * 256 - ox
         offy = (tile['ref'][1] - ty_min) * 256 - oy
         
-        if not (-256 < offx and offx < width and -256 < offy and offy < height):
+        if not (-256 < offx and offx < width and - 256 < offy and offy < height):
             continue
         
         try:
-            tile_data = OSMTile.get_data(tile['ref'][0], tile['ref'][1], zoom)
+            tile_data = OSMTile.get_data(lat_center, lon_center, zoom)
             tile['surface'] = PIL.Image.open(tile_data)
         except Exception, e:
             tile['surface'] = PIL.Image.open(os.path.join(os.path.dirname(__file__), 'fallback', 'fallback.png'))
@@ -240,7 +241,7 @@ class PointSet(set):
         top_left = get_tile_ref(self._min[0], self._min[1], zoom)
         bottom_right = get_tile_ref(self._max[0], self._max[1], zoom)
         
-        a = (bottom_right[0]-top_left[0])*256, (top_left[1]-bottom_right[1])*256
+        a = (bottom_right[0] - top_left[0]) * 256, (top_left[1] - bottom_right[1]) * 256
         return a
         
     def contained_within(self, box, zoom):
@@ -292,14 +293,14 @@ def get_fitted_map(centre_point, points, min_points, zoom, width, height, filena
     if not zoom:
         zoom = 18
 
-    box = max(64, width - 20), max(64, height-35)
+    box = max(64, width - 20), max(64, height - 35)
     
     new_points = []
     for i, point in enumerate(points):
-        if i>1 and point == new_points[-1][0]:
+        if i > 1 and point == new_points[-1][0]:
             new_points[-1][1].append(i)
         else:
-            new_points.append( (point, [i]) )
+            new_points.append((point, [i]))
     
     points = [p[0] for p in new_points]
     
@@ -308,7 +309,7 @@ def get_fitted_map(centre_point, points, min_points, zoom, width, height, filena
         points = [centre_point] + list(points)
     
     # Get a set of the minimum points
-    point_set, points = PointSet(points[:min_points+1]), points[min_points+1:]
+    point_set, points = PointSet(points[:min_points + 1]), points[min_points + 1:]
     
     # Zoom out until the entire point set fits inside the generated map
     while not point_set.contained_within(box, zoom):
@@ -333,11 +334,11 @@ def get_fitted_map(centre_point, points, min_points, zoom, width, height, filena
     
     for i, point in enumerate(used_points):
         points.append(
-            (point[0], point[1], point[2], i+1)
+            (point[0], point[1], point[2], i + 1)
         )
     
     if centre_point:
-        new_points = new_points[:len(point_set)-1]
+        new_points = new_points[:len(point_set) - 1]
     else:
         new_points = new_points[:len(point_set)]
     

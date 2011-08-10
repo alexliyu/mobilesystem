@@ -78,7 +78,7 @@ class NearbyListView(LocationRequiredView):
         return Breadcrumb(
             'places',
             lazy_parent('index'),
-            _('Things nearby'),
+            u'附近的消费场所',
             url=lazy_reverse('nearby-list'),
         )
 
@@ -456,9 +456,8 @@ class NearbyEntityDetailView(NearbyDetailView):
         return Breadcrumb(
             'places',
             lazy_parent('entity-nearby-list', scheme=scheme, value=value),
-            '%s near %s' % (
-                capfirst(entity_type.verbose_name_plural),
-                context['entity'].title,),
+            '在%s附近的%s' % (
+                context['entity'].title, capfirst(entity_type.verbose_name_plural),),
             lazy_reverse('places:entity_nearby_detail', args=[scheme, value, ptype]))
 
     def get_metadata(self, request, scheme, value, ptype):
@@ -487,7 +486,7 @@ class CategoryListView(BaseView):
         return Breadcrumb(
             'places',
             lazy_parent('index'),
-            'Categories',
+            u'消费场所分类',
             lazy_reverse('category-list'),
         )
 

@@ -30,7 +30,7 @@ a img {border: 0;}
 .ui-btn-right{position:absolute;right:40px;top:3.5em}
 .clNr{font-size: 14px}
 #id_mobile{font: 12px/24px Georgia;}
-#bc-title h1{font-size: 18px}
+.invisible{font-size: 14px;line-height:20px;height:20px;}
 /*	---------底部导航---------	*/
 #footer div ul{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
 #footer div ul li{display:inline;}
@@ -45,15 +45,26 @@ a img {border: 0;}
 	width:30px;
 	height:20px;
 }
+.clear{padding-top:5px;}
 /** -------新闻---------*/
 .entry-title{
-	font-size:16px;
+	font-size:15px;
 }
+ui-shadow ul{font-size:14px;line-height:20px;}
+ui-shadow ul li{line-height:18px;}
 #divTuan h3{
-	font-size: 16px;
+	font-size: 14px;
+	line-height:18px;
+	height:18px;
 }
 #divTuan li{
-	list-style-type:none;font-size: 14px;}
+	list-style-type:none;font-size: 13px;}
+}
+/** -------社区---------*/
+#Main div h3{
+	font-size: 14px;
+	line-height:18px;
+	height:18px;
 }
 /*	Typography presets
 	------------------	*/
@@ -64,27 +75,8 @@ a img {border: 0;}
 	letter-spacing: -2px;
 }
 
-.huge, h1 {
-	font-size: 68px;
-	line-height: 72px;
-	letter-spacing: -1px;
-}
 
-.large, h2 {
-	font-size: 42px;
-	line-height: 48px;
-}
-
-.bigger, h3 {
-	font-size: 26px;
-	line-height: 36px;
-}
-
-.big, h4 {
-	font-size: 22px;
-	line-height: 30px;
-}
-
+li{list-style-type:none;}
 body {
 	font: 16px/24px Georgia, serif;
 }
@@ -193,7 +185,20 @@ px      68    160    252    344    436    */
 }
 #divVideo h2{
 	font-size: 16px;
+	line-height:18px;
+	height:18px;
 }
 #divVideo li{
-	list-style-type:none;font-size: 14px;}
+	list-style-type:none;font-size: 14px;
+	line-height:15px;}
 }
+.clsH4{
+	font-size: 15px;
+	line-height:16px;
+}
+#divHead{
+	height:40px;
+	line-height:40px;
+	color:white;background: rgb(51,51,51);
+}
+#bc-title h1{font-size: 16px;line-height:40px;height:40px;}

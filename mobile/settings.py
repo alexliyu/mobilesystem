@@ -65,7 +65,7 @@ LANGUAGES = [
 ]
 DEFAULT_LANGUAGE = 0
 # Site name is used extensively in templates to name the site
-SITE_NAME = u'娱讯手机门户'
+SITE_NAME = u'娱讯互动平台'
 
 # Molly can automatically generate the urlpatterns, so it's recommended by
 # default to use Molly's urls.py. This doesn't work if you have non-Molly apps
@@ -107,7 +107,8 @@ API_KEYS = {
 TIME_ZONE = 'Asia/Shanghai'
 # The meat of Molly - application configuration
 
-
+GEOIP_PATH = os.path.join(project_root, 'geodata')
+GEOIP_CITY = os.path.join(GEOIP_PATH, 'GeoLiteCity.dat')
 
 # Middleware classes alter requests and responses before/after they get
 # handled by the view. They're useful in providing high-level global
@@ -342,7 +343,7 @@ MEDIA_ROOT = os.path.join(project_root, 'media') # the location on disk where me
 UPLOADS_ROOT = os.path.join(os.path.abspath(MEDIA_ROOT), 'uploads/images') #上传文件路径
 MEDIA_URL = '/media/' # The URL used to refer to media
 ADMIN_MEDIA_PREFIX = MEDIA_URL + "grappelli/"
-GRAPPELLI_ADMIN_TITLE = u"娱讯手机门户管理平台"
+GRAPPELLI_ADMIN_TITLE = u"娱讯互动平台管理系统"
 
 TRACKING_USE_GEOIP = False
 
@@ -446,8 +447,8 @@ LOGOUT_URL = "/accounts/signout/"
 REGISTER_URL = '/accounts/signup/'
 
 CTX_CONFIG = {
-            'FORUM_TITLE': 'LBForum',
-            'FORUM_SUB_TITLE': 'A forum engine written in Python using Django',
+            'FORUM_TITLE': u'厦门掌上社区',
+            'FORUM_SUB_TITLE': u'厦门同城社区、本地交友、团购、娱乐',
             'FORUM_PAGE_SIZE': 50,
             'TOPIC_PAGE_SIZE': 20,
     
