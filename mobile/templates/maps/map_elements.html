@@ -4,10 +4,10 @@
             <img src="/media/site/images/icons/zoom-out.png" alt="Zoom out"/>
         </a>
     {% endifnotequal %}
-    {% ifnotequal zoom 18 %}
+    {% ifnotequal zoom 14 %}
         <a class="no-icon zoom-in zoomIn" href="?zoom={{ map.zoom|add:"1" }}" rel="nofollow">
             <img src="/media/site/images/icons/zoom-in.png" alt="Zoom in"/>
         </a>
     {% endifnotequal %}
 {% endif %}
-    <div class="osm-license">Map &copy; <a href="{% url maps:osm-about %}">OpenStreetMap</a> and contributors, CC-BY-SA</div>
+    <div class="osm-license">消费地图 &copy; <a href="http://www.eiimedia.com">娱讯传媒</a>以及其合作伙伴</div>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-27 11:59+0800\n"
-"PO-Revision-Date: 2011-07-20 16:44+0800\n"
+"POT-Creation-Date: 2011-08-11 11:36+0800\n"
+"PO-Revision-Date: 2011-08-11 13:36+0800\n"
 "Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
 "Language: zh_CN\n"
@@ -34,6 +34,95 @@ msgstr "Django文档"
 #: dashboard.py:93
 msgid "Latest Django News"
 msgstr "最新Django新闻"
+
+#: feeds.py:110
+msgid "Latest entries"
+msgstr "最新文章"
+
+#: feeds.py:114
+#, python-format
+msgid "The latest entries for the site %s"
+msgstr " %s 网站的最新内容"
+
+#: feeds.py:134
+#, python-format
+msgid "Entries for the category %s"
+msgstr "类别 %s 的日志"
+
+#: feeds.py:138
+#, python-format
+msgid "The latest entries for the category %s"
+msgstr " %s 分类的最新内容"
+
+#: feeds.py:158
+#, python-format
+msgid "Entries for author %s"
+msgstr "用户 %s 的文章"
+
+#: feeds.py:162
+#, python-format
+msgid "The latest entries by %s"
+msgstr " %s 的的最新内容"
+
+#: feeds.py:183
+#, python-format
+msgid "Entries for the tag %s"
+msgstr "标签含 %s 的日志"
+
+#: feeds.py:187
+#, python-format
+msgid "The latest entries for the tag %s"
+msgstr " %s 标签的最新内容"
+
+#: feeds.py:210
+#, python-format
+msgid "Results of the search for '%s'"
+msgstr "%s 的搜索结果"
+
+#: feeds.py:214
+#, python-format
+msgid "The entries containing the pattern '%s'"
+msgstr " 包含关键词 %s 的文章"
+
+#: feeds.py:256
+#, python-format
+msgid "Discussions on %s"
+msgstr " %s 的相关评论"
+
+#: feeds.py:260
+#, python-format
+msgid "The latest discussions for the entry %s"
+msgstr " %s 的最新评论"
+
+#: feeds.py:278
+#, python-format
+msgid "Comments on %s"
+msgstr "对于 %s 的评论"
+
+#: feeds.py:282
+#, python-format
+msgid "The latest comments for the entry %s"
+msgstr "%s 的最新评论"
+
+#: feeds.py:312
+#, python-format
+msgid "Pingbacks on %s"
+msgstr " %s 的Pingbacks"
+
+#: feeds.py:316
+#, python-format
+msgid "The latest pingbacks for the entry %s"
+msgstr "%s 的最新pingbacks"
+
+#: feeds.py:334
+#, python-format
+msgid "Trackbacks on %s"
+msgstr "引用于 %s"
+
+#: feeds.py:338
+#, python-format
+msgid "The latest trackbacks for the entry %s"
+msgstr " %s 的最新pingbacks"
 
 #: settings.py:64
 msgid "Chinese"
@@ -132,8 +221,10 @@ msgstr "限时食品供应"
 msgid "ATM present"
 msgstr "ATM取款机"
 
-#: apps/places/forms.py:29 templates/places/metadata/osm.html:40
-#: templates/places/metadata/osm.html:47 templates/places/metadata/osm.html:54
+#: apps/places/forms.py:29
+#: templates/places/metadata/osm.html:40
+#: templates/places/metadata/osm.html:47
+#: templates/places/metadata/osm.html:54
 #: templates/userena/profile_detail.html:33
 msgid "Website"
 msgstr "网站"
@@ -220,8 +311,7 @@ msgid "places"
 msgstr ""
 
 #: apps/places/views.py:49
-msgid ""
-"Find University buildings and units, along with bus stops and local amenities"
+msgid "Find University buildings and units, along with bus stops and local amenities"
 msgstr ""
 
 #: apps/places/views.py:56
@@ -236,11 +326,8 @@ msgstr ""
 msgid "Search for things based on your current location"
 msgstr ""
 
-#: apps/places/views.py:81
-msgid "Things nearby"
-msgstr ""
-
-#: apps/places/views.py:173 templates/places/entity_without_location.html:4
+#: apps/places/views.py:173
+#: templates/places/entity_without_location.html:4
 #: templates/places/entity_without_location.html:12
 #, python-format
 msgid "Things near %(title)s"
@@ -272,13 +359,17 @@ msgid "service %(services)s stops here"
 msgid_plural "services %(services)s stop here"
 msgstr[0] ""
 
-#: apps/places/views.py:640 templates/places/service_details.html:10
+#: apps/places/views.py:639
+#: templates/places/service_details.html:10
 msgid "Multiple routes found"
 msgstr ""
 
-#: apps/places/providers/bbc_tpeg.py:132 apps/places/providers/naptan.py:694
-#: apps/places/providers/osm.py:454 apps/places/providers/osm.py:466
-#: apps/places/providers/osm.py:580 apps/places/providers/osm.py:670
+#: apps/places/providers/bbc_tpeg.py:132
+#: apps/places/providers/naptan.py:694
+#: apps/places/providers/osm.py:454
+#: apps/places/providers/osm.py:466
+#: apps/places/providers/osm.py:580
+#: apps/places/providers/osm.py:670
 msgid "Transport"
 msgstr ""
 
@@ -295,7 +386,8 @@ msgid "travel alerts"
 msgstr ""
 
 #. Translators: This is referring to bus stop location descriptions
-#: apps/places/providers/naptan.py:205 apps/places/providers/naptan.py:206
+#: apps/places/providers/naptan.py:205
+#: apps/places/providers/naptan.py:206
 #: apps/places/providers/naptan.py:207
 msgid "Opposite"
 msgstr ""
@@ -306,7 +398,8 @@ msgid "Adjacent"
 msgstr ""
 
 #. Translators: This is referring to bus stop location descriptions
-#: apps/places/providers/naptan.py:211 apps/places/providers/naptan.py:212
+#: apps/places/providers/naptan.py:211
+#: apps/places/providers/naptan.py:212
 msgid "Outside"
 msgstr ""
 
@@ -355,15 +448,18 @@ msgstr ""
 msgid "bus stops"
 msgstr ""
 
-#: apps/places/providers/naptan.py:331 apps/places/providers/osm.py:671
+#: apps/places/providers/naptan.py:331
+#: apps/places/providers/osm.py:671
 msgid "taxi rank"
 msgstr ""
 
-#: apps/places/providers/naptan.py:332 apps/places/providers/osm.py:673
+#: apps/places/providers/naptan.py:332
+#: apps/places/providers/osm.py:673
 msgid "a taxi rank"
 msgstr ""
 
-#: apps/places/providers/naptan.py:333 apps/places/providers/osm.py:672
+#: apps/places/providers/naptan.py:333
+#: apps/places/providers/osm.py:672
 msgid "taxi ranks"
 msgstr ""
 
@@ -487,15 +583,18 @@ msgstr ""
 msgid "tramway stops"
 msgstr ""
 
-#: apps/places/providers/naptan.py:438 apps/places/providers/naptan.py:523
+#: apps/places/providers/naptan.py:438
+#: apps/places/providers/naptan.py:523
 msgid "tram stop"
 msgstr ""
 
-#: apps/places/providers/naptan.py:439 apps/places/providers/naptan.py:524
+#: apps/places/providers/naptan.py:439
+#: apps/places/providers/naptan.py:524
 msgid "a tram stop"
 msgstr ""
 
-#: apps/places/providers/naptan.py:440 apps/places/providers/naptan.py:525
+#: apps/places/providers/naptan.py:440
+#: apps/places/providers/naptan.py:525
 msgid "tram stops"
 msgstr ""
 
@@ -691,20 +790,34 @@ msgstr ""
 msgid "public transport access nodes"
 msgstr ""
 
-#: apps/places/providers/osm.py:430 apps/places/providers/osm.py:436
-#: apps/places/providers/osm.py:442 apps/places/providers/osm.py:448
-#: apps/places/providers/osm.py:460 apps/places/providers/osm.py:472
-#: apps/places/providers/osm.py:478 apps/places/providers/osm.py:484
-#: apps/places/providers/osm.py:496 apps/places/providers/osm.py:502
-#: apps/places/providers/osm.py:508 apps/places/providers/osm.py:514
-#: apps/places/providers/osm.py:520 apps/places/providers/osm.py:526
-#: apps/places/providers/osm.py:532 apps/places/providers/osm.py:544
-#: apps/places/providers/osm.py:550 apps/places/providers/osm.py:556
-#: apps/places/providers/osm.py:562 apps/places/providers/osm.py:586
-#: apps/places/providers/osm.py:592 apps/places/providers/osm.py:598
-#: apps/places/providers/osm.py:604 apps/places/providers/osm.py:610
-#: apps/places/providers/osm.py:616 apps/places/providers/osm.py:628
-#: apps/places/providers/osm.py:634 apps/places/providers/osm.py:640
+#: apps/places/providers/osm.py:430
+#: apps/places/providers/osm.py:436
+#: apps/places/providers/osm.py:442
+#: apps/places/providers/osm.py:448
+#: apps/places/providers/osm.py:460
+#: apps/places/providers/osm.py:472
+#: apps/places/providers/osm.py:478
+#: apps/places/providers/osm.py:484
+#: apps/places/providers/osm.py:496
+#: apps/places/providers/osm.py:502
+#: apps/places/providers/osm.py:508
+#: apps/places/providers/osm.py:514
+#: apps/places/providers/osm.py:520
+#: apps/places/providers/osm.py:526
+#: apps/places/providers/osm.py:532
+#: apps/places/providers/osm.py:544
+#: apps/places/providers/osm.py:550
+#: apps/places/providers/osm.py:556
+#: apps/places/providers/osm.py:562
+#: apps/places/providers/osm.py:586
+#: apps/places/providers/osm.py:592
+#: apps/places/providers/osm.py:598
+#: apps/places/providers/osm.py:604
+#: apps/places/providers/osm.py:610
+#: apps/places/providers/osm.py:616
+#: apps/places/providers/osm.py:628
+#: apps/places/providers/osm.py:634
+#: apps/places/providers/osm.py:640
 #: apps/places/providers/osm.py:664
 msgid "Amenities"
 msgstr "设施"
@@ -829,10 +942,14 @@ msgstr ""
 msgid "a church"
 msgstr ""
 
-#: apps/places/providers/osm.py:490 apps/places/providers/osm.py:538
-#: apps/places/providers/osm.py:568 apps/places/providers/osm.py:574
-#: apps/places/providers/osm.py:622 apps/places/providers/osm.py:646
-#: apps/places/providers/osm.py:652 apps/places/providers/osm.py:658
+#: apps/places/providers/osm.py:490
+#: apps/places/providers/osm.py:538
+#: apps/places/providers/osm.py:568
+#: apps/places/providers/osm.py:574
+#: apps/places/providers/osm.py:622
+#: apps/places/providers/osm.py:646
+#: apps/places/providers/osm.py:652
+#: apps/places/providers/osm.py:658
 #: apps/places/providers/osm.py:676
 msgid "Leisure"
 msgstr ""
@@ -1293,7 +1410,8 @@ msgstr ""
 msgid "Podcasts"
 msgstr "视频点播"
 
-#: apps/search/__init__.py:15 templates/entry/500.html:41
+#: apps/search/__init__.py:15
+#: templates/entry/500.html:41
 msgid "Search"
 msgstr "搜索"
 
@@ -1302,7 +1420,6 @@ msgid "Service_status"
 msgstr "服务状态"
 
 #: apps/stats/__init__.py:15
-#, fuzzy
 msgid "Stats"
 msgstr "状态"
 
@@ -1323,9 +1440,7 @@ msgid "Batch_Processing"
 msgstr "批量任务"
 
 #: crowdsourcing/admin.py:45
-msgid ""
-"For numeric select or numeric choice, all your options must be a number. "
-"This is not a number: "
+msgid "For numeric select or numeric choice, all your options must be a number. This is not a number: "
 msgstr ""
 
 #: crowdsourcing/admin.py:51
@@ -1333,9 +1448,7 @@ msgid "Choice type questions require a list of options."
 msgstr ""
 
 #: crowdsourcing/admin.py:57
-msgid ""
-"The field name must start with a letter and contain nothing but "
-"alphanumerics and underscore."
+msgid "The field name must start with a letter and contain nothing but alphanumerics and underscore."
 msgstr ""
 
 #: crowdsourcing/admin.py:91
@@ -1347,20 +1460,15 @@ msgid "You can't access this group: "
 msgstr ""
 
 #: crowdsourcing/admin.py:100
-msgid ""
-"You can't access any Flickr groups. Either you don't have any groups or your "
-"configuration settings are incorrect and you need to contact a programmer."
+msgid "You can't access any Flickr groups. Either you don't have any groups or your configuration settings are incorrect and you need to contact a programmer."
 msgstr ""
 
 #: crowdsourcing/admin.py:177
-msgid ""
-"Use the 'annotation' of Text Survey Report Displays to insert arbitrary text."
+msgid "Use the 'annotation' of Text Survey Report Displays to insert arbitrary text."
 msgstr ""
 
 #: crowdsourcing/admin.py:181
-msgid ""
-"Given the options you picked, you need to specify some fieldnames or this "
-"Survey Report Display won't do anything."
+msgid "Given the options you picked, you need to specify some fieldnames or this Survey Report Display won't do anything."
 msgstr ""
 
 #: crowdsourcing/admin.py:186
@@ -1379,40 +1487,29 @@ msgstr ""
 msgid "Use 'Default' or 'Count' for Pie charts."
 msgstr ""
 
-#: crowdsourcing/forms.py:75 crowdsourcing/forms.py:189
+#: crowdsourcing/forms.py:75
+#: crowdsourcing/forms.py:189
 msgid "This field is required."
 msgstr ""
 
 #: crowdsourcing/forms.py:141
-msgid ""
-"I don't recognize this video url format. Try something like http://www."
-"youtube.com/watch?v=Bfli1yuby58."
+msgid "I don't recognize this video url format. Try something like http://www.youtube.com/watch?v=Bfli1yuby58."
 msgstr ""
 
 #: crowdsourcing/forms.py:153
-msgid ""
-"We couldn't read your file. Make sure it's a .jpeg, .png, or .gif file, not "
-"a .psd or other unsupported type."
+msgid "We couldn't read your file. Make sure it's a .jpeg, .png, or .gif file, not a .psd or other unsupported type."
 msgstr ""
 
 #: crowdsourcing/models.py:82
-msgid ""
-"If checked, all submissions will start as NOT public and you will have to "
-"manually make them public. If your survey doesn't show any results, it may "
-"be because this option is checked."
+msgid "If checked, all submissions will start as NOT public and you will have to manually make them public. If your survey doesn't show any results, it may be because this option is checked."
 msgstr ""
 
 #: crowdsourcing/models.py:95
-msgid ""
-"At what point will Crowdsourcing make the results public? immediate: All "
-"results are immediately public. post-close: Results are public on or after "
-"the \"ends at\" option documented below. never: Results are never public."
+msgid "At what point will Crowdsourcing make the results public? immediate: All results are immediately public. post-close: Results are public on or after the \"ends at\" option documented below. never: Results are never public."
 msgstr ""
 
 #: crowdsourcing/models.py:298
-msgid ""
-"a single-word identifier used to track this value; it must begin with a "
-"letter and may contain alphanumerics and underscores (no spaces)."
+msgid "a single-word identifier used to track this value; it must begin with a letter and may contain alphanumerics and underscores (no spaces)."
 msgstr ""
 
 #: crowdsourcing/models.py:302
@@ -1424,9 +1521,7 @@ msgid "Appears on the results page."
 msgstr ""
 
 #: crowdsourcing/models.py:308
-msgid ""
-"Unsafe to change on live surveys. Radio button list and drop down list "
-"questions will have a blank option if they aren't required."
+msgid "Unsafe to change on live surveys. Radio button list and drop down list questions will have a blank option if they aren't required."
 msgstr ""
 
 #: crowdsourcing/models.py:314
@@ -1438,22 +1533,15 @@ msgid "You must not change this field on a live survey."
 msgstr ""
 
 #: crowdsourcing/models.py:327
-msgid ""
-"Use one option per line. On a live survey you can modify the order of these "
-"options. You can, at your own risk, add new options, but you must not change "
-"or remove options."
+msgid "Use one option per line. On a live survey you can modify the order of these options. You can, at your own risk, add new options, but you must not change or remove options."
 msgstr ""
 
 #: crowdsourcing/models.py:739
-msgid ""
-"Crowdsourcing only displays public submissions. The 'Moderate submissions' "
-"checkbox of the survey determines the default value of this field."
+msgid "Crowdsourcing only displays public submissions. The 'Moderate submissions' checkbox of the survey determines the default value of this field."
 msgstr ""
 
 #: crowdsourcing/models.py:895
-msgid ""
-"You may leave this field blank. Crowdsourcing will use the survey title as a "
-"default."
+msgid "You may leave this field blank. Crowdsourcing will use the survey title as a default."
 msgstr ""
 
 #: crowdsourcing/models.py:899
@@ -1465,22 +1553,15 @@ msgid "Include only featured submissions."
 msgstr ""
 
 #: crowdsourcing/models.py:921
-msgid ""
-"Display separate, individual results if this field is True and you have "
-"archivable questions, like those with paragraph answers."
+msgid "Display separate, individual results if this field is True and you have archivable questions, like those with paragraph answers."
 msgstr ""
 
 #: crowdsourcing/models.py:979
-msgid ""
-"We only use this field if you chose a Bar or Line Chart. How should we "
-"aggregate the y-axis? 'Average' is good for things like ratings, 'Sum' is "
-"good for totals, and 'Count' is good for a show of hands."
+msgid "We only use this field if you chose a Bar or Line Chart. How should we aggregate the y-axis? 'Average' is good for things like ratings, 'Sum' is good for totals, and 'Count' is good for a show of hands."
 msgstr ""
 
 #: crowdsourcing/models.py:986
-msgid ""
-"Pull these values from Survey -> Questions -> Fieldname. Separate by spaces. "
-"These are the y-axes of bar and line charts."
+msgid "Pull these values from Survey -> Questions -> Fieldname. Separate by spaces. These are the y-axes of bar and line charts."
 msgstr ""
 
 #: crowdsourcing/models.py:991
@@ -1488,15 +1569,11 @@ msgid "This only applies to bar and line charts. Use only 1 field."
 msgstr ""
 
 #: crowdsourcing/models.py:998
-msgid ""
-"Google maps gets pretty slow if you add too many points. Use this field to "
-"limit the number of points that display on the map."
+msgid "Google maps gets pretty slow if you add too many points. Use this field to limit the number of points that display on the map."
 msgstr ""
 
 #: crowdsourcing/models.py:1004
-msgid ""
-"If you don't specify latitude, longitude, or zoom, the map will just center "
-"and zoom so that the map shows all the points."
+msgid "If you don't specify latitude, longitude, or zoom, the map will just center and zoom so that the map shows all the points."
 msgstr ""
 
 #: crowdsourcing/models.py:1011
@@ -1504,105 +1581,17 @@ msgid "13 is about the right level for Manhattan. 0 shows the entire world."
 msgstr ""
 
 #: crowdsourcing/models.py:1016
-msgid ""
-"The answers to these questions will appear as captions below their "
-"corresponding slides. Separate by spaces."
+msgid "The answers to these questions will appear as captions below their corresponding slides. Separate by spaces."
 msgstr ""
 
-#: entry/feeds.py:103
-msgid "Latest entries"
-msgstr "最新文章"
-
-#: entry/feeds.py:107
-#, python-format
-msgid "The latest entries for the site %s"
-msgstr " %s 网站的最新内容"
-
-#: entry/feeds.py:127
-#, python-format
-msgid "Entries for the category %s"
-msgstr "类别 %s 的日志"
-
-#: entry/feeds.py:131
-#, python-format
-msgid "The latest entries for the category %s"
-msgstr " %s 分类的最新内容"
-
-#: entry/feeds.py:151
-#, python-format
-msgid "Entries for author %s"
-msgstr "用户 %s 的文章"
-
-#: entry/feeds.py:155
-#, python-format
-msgid "The latest entries by %s"
-msgstr " %s 的的最新内容"
-
-#: entry/feeds.py:176
-#, python-format
-msgid "Entries for the tag %s"
-msgstr "标签含 %s 的日志"
-
-#: entry/feeds.py:180
-#, python-format
-msgid "The latest entries for the tag %s"
-msgstr " %s 标签的最新内容"
-
-#: entry/feeds.py:203
-#, python-format
-msgid "Results of the search for '%s'"
-msgstr "%s 的搜索结果"
-
-#: entry/feeds.py:207
-#, python-format
-msgid "The entries containing the pattern '%s'"
-msgstr " 包含关键词 %s 的文章"
-
-#: entry/feeds.py:249
-#, python-format
-msgid "Discussions on %s"
-msgstr " %s 的相关评论"
-
-#: entry/feeds.py:253
-#, python-format
-msgid "The latest discussions for the entry %s"
-msgstr " %s 的最新评论"
-
-#: entry/feeds.py:271
-#, python-format
-msgid "Comments on %s"
-msgstr "对于 %s 的评论"
-
-#: entry/feeds.py:275
-#, python-format
-msgid "The latest comments for the entry %s"
-msgstr "%s 的最新评论"
-
-#: entry/feeds.py:305
-#, python-format
-msgid "Pingbacks on %s"
-msgstr " %s 的Pingbacks"
-
-#: entry/feeds.py:309
-#, python-format
-msgid "The latest pingbacks for the entry %s"
-msgstr "%s 的最新pingbacks"
-
-#: entry/feeds.py:327
-#, python-format
-msgid "Trackbacks on %s"
-msgstr "引用于 %s"
-
-#: entry/feeds.py:331
-#, python-format
-msgid "The latest trackbacks for the entry %s"
-msgstr " %s 的最新pingbacks"
-
-#: entry/models.py:73 entry/models.py:118 entry/admin/entry.py:73
+#: entry/models.py:73
+#: entry/models.py:118
+#: entry/admin/entry.py:73
 msgid "title"
 msgstr "标题"
 
-#: entry/models.py:74 entry/models.py:133
+#: entry/models.py:74
+#: entry/models.py:133
 msgid "used for publication"
 msgstr "用于发布"
 
@@ -1610,7 +1599,8 @@ msgstr "用于发布"
 msgid "description"
 msgstr "描述"
 
-#: entry/models.py:79 entry/admin/forms.py:18
+#: entry/models.py:79
+#: entry/admin/forms.py:18
 msgid "parent category"
 msgstr "上级分类"
 
@@ -1618,7 +1608,9 @@ msgstr "上级分类"
 msgid "category"
 msgstr "类别"
 
-#: entry/models.py:109 entry/models.py:127 entry/admin/forms.py:47
+#: entry/models.py:109
+#: entry/models.py:127
+#: entry/admin/forms.py:47
 msgid "categories"
 msgstr "分类"
 
@@ -1644,7 +1636,6 @@ msgid "used for illustration"
 msgstr "用于发布"
 
 #: entry/models.py:122
-#, fuzzy
 msgid "content"
 msgstr "内容"
 
@@ -1672,7 +1663,8 @@ msgstr "作者"
 msgid "featured"
 msgstr "推荐"
 
-#: entry/models.py:142 entry/admin/entry.py:125
+#: entry/models.py:142
+#: entry/admin/entry.py:125
 msgid "comment enabled"
 msgstr "允许评论"
 
@@ -1736,11 +1728,14 @@ msgstr "默认模板"
 msgid "template used to display the entry"
 msgstr "已被使用的模板"
 
-#: entry/models.py:299 entry/models.py:300
+#: entry/models.py:299
+#: entry/models.py:300
 msgid "内容"
 msgstr ""
 
-#: entry/moderator.py:59 entry/moderator.py:82 entry/moderator.py:107
+#: entry/moderator.py:59
+#: entry/moderator.py:82
+#: entry/moderator.py:107
 #, python-format
 msgid "[%(site)s] New comment posted on \"%(title)s\""
 msgstr "[%(site)s] New comment posted on \"%(title)s\""
@@ -1806,7 +1801,7 @@ msgstr "是否可见"
 
 #: entry/admin/entry.py:142
 msgid "View"
-msgstr ""
+msgstr "查看"
 
 #: entry/admin/entry.py:144
 #: guardian/templates/admin/guardian/model/change_form.html:9
@@ -1880,7 +1875,8 @@ msgstr "没有上级分类"
 msgid "A category cannot be parent of itself."
 msgstr "不能成为自己的上级分类"
 
-#: entry/admin/forms.py:46 entry/templatetags/zbreadcrumbs.py:50
+#: entry/admin/forms.py:46
+#: entry/templatetags/zbreadcrumbs.py:50
 #: forum/models.py:29
 msgid "Categories"
 msgstr "类别"
@@ -1936,77 +1932,83 @@ msgid "hide/unhide topics"
 msgstr ""
 
 #: forum/forms.py:12
-#, fuzzy
 msgid "Last Reply"
-msgstr "姓"
+msgstr "最新回复"
 
 #: forum/forms.py:13
 msgid "Last Topic"
-msgstr ""
+msgstr "最新话题"
 
 #: forum/forms.py:17
 msgid "Order By"
 msgstr ""
 
-#: forum/forms.py:21 forum/models.py:91 templates/forum/forum.html:28
+#: forum/forms.py:21
+#: forum/models.py:91
+#: templates/forum/forum.html:24
 msgid "Topic Type"
-msgstr ""
+msgstr "话题类型"
 
 #: forum/forms.py:22
-#, fuzzy
 msgid "Subject"
-msgstr "对象"
+msgstr "主题"
 
-#: forum/forms.py:24 forum/forms.py:117 userena/contrib/umessages/forms.py:11
+#: forum/forms.py:24
+#: forum/forms.py:117
+#: userena/contrib/umessages/forms.py:11
 msgid "Message"
 msgstr "消息"
 
-#: forum/forms.py:26 templates/forum/inc_post_content.html:12
+#: forum/forms.py:26
+#: templates/forum/inc_post_content.html:12
 msgid "Attachments"
-msgstr ""
+msgstr "附件"
 
 #: forum/forms.py:28
 msgid "Need Reply"
-msgstr ""
+msgstr "需要回复"
 
 #: forum/forms.py:29
 msgid "Attachments Need Reply"
-msgstr ""
+msgstr "查看附件需要回复"
 
 #: forum/models.py:28
-#, fuzzy
 msgid "Category"
-msgstr "类别"
+msgstr "分类"
 
-#: forum/models.py:49 forum/models.py:72 forum/models.py:90
+#: forum/models.py:49
+#: forum/models.py:72
+#: forum/models.py:90
 msgid "Forum"
-msgstr ""
+msgstr "社区"
 
 #: forum/models.py:50
 msgid "Forums"
-msgstr ""
+msgstr "社区"
 
 #: forum/models.py:85
-#, fuzzy
 msgid "Default"
-msgstr "默认模板"
+msgstr "默认"
 
-#: forum/models.py:86 templates/forum/inc_topic_detail.html:25
+#: forum/models.py:86
 msgid "Distillate"
 msgstr ""
 
-#: forum/models.py:96 forum/models.py:169
+#: forum/models.py:96
+#: forum/models.py:169
 msgid "Post"
 msgstr "发表"
 
-#: forum/models.py:122 forum/models.py:152
+#: forum/models.py:122
+#: forum/models.py:152
 msgid "Topic"
-msgstr ""
+msgstr "话题"
 
-#: forum/models.py:123 templates/forum/forum.html:55
+#: forum/models.py:123
+#: templates/forum/forum.html:51
 #: templates/forum/account/inc_base_profile.html:26
 msgid "Topics"
-msgstr ""
+msgstr "话题"
 
 #: forum/models.py:146
 msgid "BBCode"
@@ -2016,7 +2018,8 @@ msgstr ""
 msgid "Html"
 msgstr ""
 
-#: forum/models.py:170 templates/forum/topic.html:77
+#: forum/models.py:170
+#: templates/forum/topic.html:85
 #: templates/forum/account/inc_base_profile.html:29
 msgid "Posts"
 msgstr "发布"
@@ -2024,43 +2027,47 @@ msgstr "发布"
 #: forum/models.py:179
 #, python-format
 msgid "Topic: %s"
-msgstr ""
+msgstr "话题: %s"
 
 #: forum/models.py:180
 #, python-format
 msgid "Re: %s"
-msgstr ""
+msgstr "回复: %s"
 
-#: forum/views.py:69 forum/views.py:110
+#: forum/views.py:193
+#: forum/views.py:255
 msgid "topic"
-msgstr ""
+msgstr "话题"
 
-#: forum/views.py:74 forum/views.py:107
+#: forum/views.py:198
+#: forum/views.py:252
 msgid "reply"
-msgstr ""
+msgstr "回复"
 
-#: forum/templatetags/bbcode.py:31 templates/forum/inc_post_content.html:40
+#: forum/templatetags/bbcode.py:31
+#: templates/forum/inc_post_content.html:40
 msgid "to see the content, user must reply first."
-msgstr ""
+msgstr "查看内容前，必须要先回复"
 
 #: forum/templatetags/forum_filters.py:64
 msgid "Online"
-msgstr ""
+msgstr "在线"
 
 #: forum/templatetags/forum_filters.py:67
 msgid "Offline"
-msgstr ""
+msgstr "不在线"
 
 #: forum/templatetags/forum_filters.py:87
 #, python-format
 msgid "%s ago"
-msgstr ""
+msgstr "%s 之前"
 
 #: forum/templatetags/forum_tags.py:39
 msgid "reply to see the attachments"
-msgstr ""
+msgstr "回复后查看附件"
 
-#: geolocation/views.py:140 geolocation/views.py:163
+#: geolocation/views.py:140
+#: geolocation/views.py:163
 msgid "Update location"
 msgstr "更新所在位置"
 
@@ -2072,9 +2079,7 @@ msgstr "需要所在位置"
 #: geolocation/templates/geolocation/require_location.html:10
 #: templates/geolocation/require_location.html:10
 #, python-format
-msgid ""
-"To be able to use this feature you need to <a href=\"%(geolocation_url)s?"
-"return_url=%(return_url)s\">choose a location</a>."
+msgid "To be able to use this feature you need to <a href=\"%(geolocation_url)s?return_url=%(return_url)s\">choose a location</a>."
 msgstr ""
 
 #: geolocation/templates/geolocation/update_location_embed.html:4
@@ -2092,15 +2097,14 @@ msgid "No location known"
 msgstr "未知地点"
 
 #: geolocation/templates/geolocation/update_location_embed.html:17
-#: templates/geolocation/update_location_embed.html:15
 #, python-format
 msgid "within approx. %(accuracy)s m"
-msgstr ""
+msgstr "大约在 %(accuracy)s 米内"
 
 #: geolocation/templates/geolocation/update_location_embed.html:24
 #: templates/geolocation/update_location_embed.html:22
 msgid "Did you mean&hellip;"
-msgstr ""
+msgstr "您的意思是&hellip;"
 
 #: geolocation/templates/geolocation/update_location_embed.html:56
 #: templates/geolocation/update_location_embed.html:54
@@ -2147,7 +2151,9 @@ msgstr "清除历史"
 msgid "open map"
 msgstr "打开地图"
 
-#: guardian/admin.py:29 guardian/admin.py:39 guardian/forms.py:53
+#: guardian/admin.py:29
+#: guardian/admin.py:39
+#: guardian/forms.py:53
 msgid "Permissions"
 msgstr "权限"
 
@@ -2166,11 +2172,13 @@ msgstr "权限"
 msgid "Object permissions"
 msgstr "对象权限"
 
-#: guardian/admin.py:250 guardian/admin.py:303
+#: guardian/admin.py:250
+#: guardian/admin.py:303
 msgid "Permissions saved."
 msgstr "权限已保存"
 
-#: guardian/admin.py:347 userena/forms.py:36
+#: guardian/admin.py:347
+#: userena/forms.py:37
 msgid "Username"
 msgstr "用户名"
 
@@ -2194,7 +2202,8 @@ msgstr "object ID"
 #: guardian/templates/admin/guardian/contrib/grappelli/obj_perms_manage.html:92
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:27
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:81
-#: templates/forum/post.html:61 templates/forum/account/signature.html:25
+#: templates/forum/post.html:61
+#: templates/forum/account/signature.html:25
 msgid "Please correct the errors below."
 msgstr "请检查下方错误"
 
@@ -2316,25 +2325,26 @@ msgstr "在"
 msgid "Error 500"
 msgstr "错误 500"
 
-#: templates/entry/500.html:13 templates/entry/500.html.py:16
+#: templates/entry/500.html:13
+#: templates/entry/500.html.py:16
 msgid "Server error"
 msgstr "服务器错误"
 
 #: templates/entry/500.html:18
-msgid ""
-"There's been an error. It's been reported to the site administrators via e-"
-"mail and should be fixed shortly. Thanks for your patience."
+msgid "There's been an error. It's been reported to the site administrators via e-mail and should be fixed shortly. Thanks for your patience."
 msgstr "出现了错误，已经发送邮件通知了管理员进行修复，感谢您的耐心."
 
 #: templates/entry/500.html:20
 msgid "Useful links"
 msgstr "有用的连接"
 
-#: templates/entry/500.html:24 templates/entry/500.html.py:25
+#: templates/entry/500.html:24
+#: templates/entry/500.html.py:25
 msgid "Blog index"
 msgstr "Blog索引"
 
-#: templates/entry/500.html:29 templates/entry/500.html.py:30
+#: templates/entry/500.html:29
+#: templates/entry/500.html.py:30
 #: templates/entry/entry/skeleton.html:32
 #: templates/entry/entry/skeleton.html:33
 msgid "Sitemap"
@@ -2348,7 +2358,8 @@ msgstr "最近日志"
 msgid "Keywords..."
 msgstr "关键词……"
 
-#: templates/entry/login.html:4 templates/entry/login.html.py:7
+#: templates/entry/login.html:4
+#: templates/entry/login.html.py:7
 msgid "Login required"
 msgstr "需要先登录"
 
@@ -2361,11 +2372,12 @@ msgid "You need to be connected to view this entry."
 msgstr "您需要接入后才可以访问这篇文章"
 
 #: templates/entry/login.html:33
-#: templates/forum/widgets/cur_user_profile.html:41
+#: templates/forum/widgets/cur_user_profile.html:31
 msgid "Login"
 msgstr "登录"
 
-#: templates/entry/password.html:4 templates/entry/password.html.py:7
+#: templates/entry/password.html:4
+#: templates/entry/password.html.py:7
 msgid "Password required"
 msgstr "需要密码"
 
@@ -2377,7 +2389,8 @@ msgstr "您输入的密码有误，请重试"
 msgid "You need to provide a password to view this entry."
 msgstr "您需要提供密码来查看这个内容"
 
-#: templates/entry/password.html:23 userena/forms.py:208
+#: templates/entry/password.html:23
+#: userena/forms.py:222
 msgid "Password"
 msgstr "密码"
 
@@ -2438,7 +2451,8 @@ msgid "Edit the entry"
 msgstr "编辑内容"
 
 #: templates/entry/admin/entry/widgets/_draft_entries.html:16
-#: templates/forum/post.html:83 templates/forum/topic.html:107
+#: templates/forum/post.html:83
+#: templates/forum/topic.html:109
 msgid "Preview"
 msgstr "预览"
 
@@ -2610,184 +2624,140 @@ msgstr "评论"
 msgid "No archives yet."
 msgstr "还没有任何归档"
 
-#: templates/entry/tags/categories.html:6
-#, python-format
-msgid "%(entry_count)s entry"
-msgid_plural "%(entry_count)s entries"
-msgstr[0] "%(entry_count)s 记录"
-
-#: templates/entry/tags/categories.html:11
-msgid "No categories yet."
-msgstr "还没有任何分类"
-
 #: templates/entry/tags/recent_linkbacks.html:10
 msgid "Linkback on"
 msgstr "Linkback于"
 
-#: templates/forum/forum.html:33 templates/forum/forum.html.py:75
+#: templates/forum/forum.html:29
+#: templates/forum/forum.html.py:71
 msgid "All"
-msgstr ""
+msgstr "所有的"
 
-#: templates/forum/forum.html:68
+#: templates/forum/forum.html:64
 msgid "Post new topic"
-msgstr ""
+msgstr "发布新话题"
 
-#: templates/forum/forum.html:78
+#: templates/forum/forum.html:74
 msgid "Distillate District"
 msgstr ""
 
 #: templates/forum/inc_announce.html:7
 msgid "New Announcement"
-msgstr ""
+msgstr "新公告"
 
 #: templates/forum/inc_new_post_brd_crumbs.html:18
 #: templates/forum/post.html:47
-#, fuzzy
 msgid "Post new"
-msgstr "发布于"
+msgstr "新话题"
 
 #: templates/forum/inc_post_content.html:25
 msgid "Show Image Attachments"
-msgstr ""
+msgstr "显示图片附件"
 
 #: templates/forum/inc_post_content.html:28
-#, fuzzy
 msgid "Image Attachments"
-msgstr "管理评论"
+msgstr "图片附件"
 
-#: templates/forum/inc_post_detail.html:17 templates/forum/topic.html:52
+#: templates/forum/inc_post_detail.html:17
+#: templates/forum/topic.html:59
 msgid "quote"
 msgstr ""
 
-#: templates/forum/inc_post_detail.html:19 templates/forum/topic.html:47
+#: templates/forum/inc_post_detail.html:19
+#: templates/forum/topic.html:54
 msgid "edit"
-msgstr ""
-
-#: templates/forum/inc_topic_detail.html:17 userena/models.py:216
-msgid "Closed"
-msgstr "关闭"
-
-#: templates/forum/inc_topic_detail.html:21
-msgid "Sticky"
-msgstr ""
-
-#: templates/forum/inc_topic_detail.html:38
-#, fuzzy
-msgid "views"
-msgstr "预览"
-
-#: templates/forum/inc_topic_detail.html:39 templates/forum/topic.html:79
-#, fuzzy
-msgid "Last post"
-msgstr "最新发布"
+msgstr "编辑"
 
 #: templates/forum/index.html:16
 msgid "More"
-msgstr ""
+msgstr "更多"
 
 #: templates/forum/markitup_preview.html:11
-#, fuzzy
 msgid "preview"
 msgstr "预览"
 
-#: templates/forum/post.html:26 templates/forum/topic.html:113
-#, fuzzy
+#: templates/forum/post.html:26
+#: templates/forum/topic.html:116
 msgid "You may use"
-msgstr "来自用户"
+msgstr "您可能使用"
 
-#: templates/forum/post.html:82 templates/forum/topic.html:106
+#: templates/forum/post.html:82
+#: templates/forum/topic.html:108
 #: templates/places/update_osm.html:179
 msgid "Submit"
 msgstr "提交"
 
 #: templates/forum/post.html:107
-#, fuzzy
 msgid "submit"
 msgstr "提交"
 
 #: templates/forum/post_paginate.html:5
-#, fuzzy
 msgid "Pages"
-msgstr "页码"
+msgstr "页"
 
-#: templates/forum/recent.html:23
-#, fuzzy
+#: templates/forum/recent.html:19
 msgid "Recent Topics"
-msgstr "最近Linbacks"
+msgstr "最新话题"
 
 #: templates/forum/redirect.html:18
 msgid "You should automatically be forwarded to a new page in 5 second."
 msgstr ""
 
 #: templates/forum/redirect.html:21
-msgid ""
-"Click here if you do not want to wait any longer (or if your browser does "
-"not automatically forward you)"
+msgid "Click here if you do not want to wait any longer (or if your browser does not automatically forward you)"
 msgstr ""
 
-#: templates/forum/topic.html:57
-#, fuzzy
+#: templates/forum/topic.html:64
 msgid "Post reply"
-msgstr "发布"
+msgstr "回复话题"
 
-#: templates/forum/topic.html:70
+#: templates/forum/topic.html:78
 msgid "No Reply"
-msgstr ""
+msgstr "没有回复"
 
-#: templates/forum/topic.html:98
-msgid "Quick reply to this topic"
-msgstr ""
+#: templates/forum/topic.html:87
+msgid "Last post"
+msgstr "最新发表"
 
-#: templates/forum/account/base.html:18 templates/forum/account/base.html:21
-#, fuzzy
+#: templates/forum/account/base.html:18
+#: templates/forum/account/base.html:21
 msgid "Introduction"
-msgstr "地点"
+msgstr "介绍"
 
 #: templates/forum/account/base.html:26
-#, fuzzy
 msgid "Change your password"
-msgstr "修改我的密码"
+msgstr "修改您的密码"
 
 #: templates/forum/account/base.html:29
 #: templates/forum/account/avatar/change.html:16
 msgid "Avatar"
-msgstr ""
+msgstr "头像"
 
 #: templates/forum/account/inc_base_profile.html:19
-#: templates/forum/widgets/cur_user_profile.html:25 userena/models.py:215
+#: templates/forum/widgets/cur_user_profile.html:25
+#: userena/models.py:215
 msgid "Registered"
 msgstr "注册"
-
-#: templates/forum/account/inc_base_profile.html:34
-#, python-format
-msgid "View all %(view_user)s's topics"
-msgstr ""
-
-#: templates/forum/account/inc_base_profile.html:37
-#, python-format
-msgid "View all %(view_user)s's posts"
-msgstr ""
 
 #: templates/forum/account/profile.html:9
 #: templates/forum/account/user_posts.html:9
 #: templates/forum/account/user_topics.html:9
 #: templates/forum/account/avatar/change.html:9
-#, fuzzy, python-format
+#, python-format
 msgid "%(view_user)s's profile"
-msgstr "%(username)s's 个人资料"
+msgstr "%(view_user)s's 个人资料"
 
 #: templates/forum/account/signature.html:8
 #: templates/forum/account/signature.html:19
-#, fuzzy, python-format
+#, python-format
 msgid "%(user)s's profile"
-msgstr "%(username)s's 个人资料"
+msgstr "%(user)s 的个人资料"
 
 #: templates/forum/account/signature.html:8
 #: templates/forum/account/signature.html:19
 #: templates/forum/account/signature.html:34
-#, fuzzy
 msgid "Signature"
-msgstr "注册"
+msgstr "签名"
 
 #: templates/forum/account/signature.html:20
 msgid "Create or modify a signature for display in your posts"
@@ -2806,7 +2776,6 @@ msgid "Maximum size 400 characters long and 4 lines high."
 msgstr ""
 
 #: templates/forum/account/signature.html:57
-#, fuzzy
 msgid "Update profile"
 msgstr "编辑个人资料"
 
@@ -2814,90 +2783,90 @@ msgstr "编辑个人资料"
 #: templates/forum/account/user_topics.html:24
 #, python-format
 msgid "Topics by %(view_user)s"
-msgstr ""
+msgstr "%(view_user)s的话题"
 
 #: templates/forum/account/user_topics.html:29
 msgid "replies"
-msgstr ""
+msgstr "回复"
 
 #: templates/forum/account/user_topics.html:30
 msgid "topics"
-msgstr ""
+msgstr "话题"
 
 #: templates/forum/account/user_topics.html:31
-#, fuzzy
 msgid "last post"
-msgstr "最新发布"
+msgstr "最新发表"
 
 #: templates/forum/account/avatar/change.html:24
 msgid "Current avatar"
-msgstr ""
+msgstr "当前头像"
 
 #: templates/forum/account/avatar/change.html:36
 msgid "The allowed image file types are"
-msgstr ""
+msgstr "娱讯的图片文件类型有"
 
 #: templates/forum/account/avatar/change.html:36
 #: templates/places/category_detail.html:21
 #: templates/places/nearby_detail.html:23
 msgid "and"
-msgstr ""
+msgstr "和"
 
 #: templates/forum/account/avatar/change.html:42
 msgid "Upload avatar file"
-msgstr ""
+msgstr "上传头像文件"
 
 #: templates/forum/account/avatar/change.html:45
 msgid "Avatar Image"
-msgstr ""
+msgstr "头像图片"
 
 #: templates/forum/account/avatar/change.html:52
 msgid "Upload New Image"
-msgstr ""
+msgstr "上传新图片"
 
 #: templates/forum/pagination/pagination.html:5
 #: templates/forum/pagination/pagination.html:7
-#: templates/userena/profile_list.html:21
+#: templates/userena/profile_list.html:25
 msgid "previous"
 msgstr "往前"
 
 #: templates/forum/pagination/pagination.html:21
 #: templates/forum/pagination/pagination.html:23
-#: templates/userena/profile_list.html:31
+#: templates/userena/profile_list.html:35
 msgid "next"
 msgstr "下一步"
 
-#: templates/forum/widgets/cur_user_profile.html:38
-#, fuzzy
+#: templates/forum/widgets/cur_user_profile.html:30
 msgid "Register"
 msgstr "注册"
 
 #: templates/forum/widgets/lbf_status.html:4
-#, fuzzy
 msgid "Total number of registered users"
-msgstr "%(counter)s 个已注册用户"
+msgstr "已注册用户数"
 
 #: templates/forum/widgets/lbf_status.html:6
 msgid "Total number of topics"
-msgstr ""
+msgstr "话题数"
 
 #: templates/forum/widgets/lbf_status.html:8
 msgid "Total number of posts"
-msgstr ""
+msgstr "讨论总数"
 
 #: templates/forum/widgets/onlineinfos.html:4
 msgid "Currently online"
-msgstr ""
+msgstr "当前在线"
 
 #: templates/forum/widgets/onlineinfos.html:5
-#, fuzzy
 msgid "guests"
-msgstr "测试"
+msgstr "游客"
 
 #: templates/forum/widgets/onlineinfos.html:5
-#, fuzzy
 msgid "registered user"
-msgstr "%(counter)s 个已注册用户"
+msgstr "已注册的用户"
+
+#: templates/geolocation/update_location_embed.html:15
+#, python-format
+msgid "约%(accuracy)s米"
+msgstr ""
 
 #: templates/grappelli/dashboard/modules/app_list.html:19
 #: templates/grappelli/dashboard/modules/model_list.html:9
@@ -2914,7 +2883,6 @@ msgid "None Available"
 msgstr "不可用"
 
 #: templates/places/category_detail.html:14
-#: templates/places/nearby_detail.html:14
 #, python-format
 msgid "Found %(count)s %(name)s"
 msgid_plural "Found %(count)s %(name_plural)s"
@@ -2924,7 +2892,7 @@ msgstr[0] "找到 %(count)s 项%(name_plural)s"
 #: templates/places/nearby_detail.html:19
 msgid "that is also"
 msgid_plural "that are also"
-msgstr[0] ""
+msgstr[0] "也"
 
 #: templates/places/category_detail.html:31
 #: templates/places/nearby_detail.html:32
@@ -2969,21 +2937,26 @@ msgid "We do not yet have a location for this %(type_name)s."
 msgstr ""
 
 #: templates/places/entity_without_location.html:15
-msgid ""
-"Unfortunately, we do not have a location for this object, and so cannot tell "
-"you what is near it."
+msgid "Unfortunately, we do not have a location for this object, and so cannot tell you what is near it."
 msgstr ""
 
-#: templates/places/index.html:10 templates/places/index.html.py:15
+#: templates/places/index.html:10
+#: templates/places/index.html.py:15
 #: templates/places/index.html:18
 msgid "Search Places"
 msgstr "搜索地点"
 
 #: templates/places/nearby_detail.html:12
 #, python-format
-msgid "Found %(count)s %(name)s near %(title)s"
-msgid_plural "Found %(count)s %(name_plural)s near %(title)s"
+msgid "找到 %(count)s %(name)s 在 %(title)s 附近"
+msgid_plural "找到 %(count)s %(name_plural)s 在 %(title)s 附近"
 msgstr[0] ""
+
+#: templates/places/nearby_detail.html:14
+#, fuzzy, python-format
+msgid "找到 %(count)s %(name)s"
+msgid_plural "找到 %(count)s %(name_plural)s"
+msgstr[0] "找到 %(count)s 项%(name_plural)s"
 
 #: templates/places/nearby_detail.html:63
 #, python-format
@@ -3007,10 +2980,7 @@ msgid "(共%(quantity)s项，距离大约 %(distance)s米)"
 msgstr ""
 
 #: templates/places/service_details.html:13
-msgid ""
-"Multiple routes with the same number were found from this stop. This could "
-"be due to this stop serving two different directions. Please select exactly "
-"which route you want from the list below."
+msgid "Multiple routes with the same number were found from this stop. This could be due to this stop serving two different directions. Please select exactly which route you want from the list below."
 msgstr ""
 
 #: templates/places/service_details.html:27
@@ -3023,11 +2993,7 @@ msgstr "路线信息"
 
 #: templates/places/service_details.html:38
 #, python-format
-msgid ""
-"There is currently a problem retrieving live departure information from the "
-"National Rail web site. Departure information may still be accessed<a href="
-"\"http://pda.ojp.nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly "
-"from their web site</a>."
+msgid "There is currently a problem retrieving live departure information from the National Rail web site. Departure information may still be accessed<a href=\"http://pda.ojp.nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly from their web site</a>."
 msgstr ""
 
 #: templates/places/service_details.html:40
@@ -3045,15 +3011,11 @@ msgid "Calling at platform %(platform)s"
 msgstr ""
 
 #: templates/places/service_details.html:63
-msgid ""
-"Not all services necessarily call at all stops, particularly in the early "
-"morning and late at night. Always check local timetables."
+msgid "Not all services necessarily call at all stops, particularly in the early morning and late at night. Always check local timetables."
 msgstr ""
 
 #: templates/places/service_details.html:68
-msgid ""
-"The information shown below is scheduled information only. Always check "
-"local information for any service changes."
+msgid "The information shown below is scheduled information only. Always check local information for any service changes."
 msgstr ""
 
 #: templates/places/service_details.html:77
@@ -3101,53 +3063,35 @@ msgstr "重要信息"
 
 #: templates/places/update_osm.html:19
 #, python-format
-msgid ""
-"Thank you for wanting to improve the data provided by %(site_name)s. "
-"However, before you submit any changes, you should be aware of the following "
-"terms."
+msgid "Thank you for wanting to improve the data provided by %(site_name)s. However, before you submit any changes, you should be aware of the following terms."
 msgstr ""
 
 #: templates/places/update_osm.html:23
 #, python-format
-msgid ""
-"Your contribution will be released into the Public Domain, and then "
-"submitted to OpenStreetMap by %(site_name)s."
+msgid "Your contribution will be released into the Public Domain, and then submitted to OpenStreetMap by %(site_name)s."
 msgstr ""
 
 #: templates/places/update_osm.html:27
 #, python-format
-msgid ""
-"Your changes will be checked by a member of the %(site_name)s team before "
-"being uploaded. %(site_name)s may tidy or normalise the data you provide "
-"before they are uploaded using the %(site_name)s OSM account."
+msgid "Your changes will be checked by a member of the %(site_name)s team before being uploaded. %(site_name)s may tidy or normalise the data you provide before they are uploaded using the %(site_name)s OSM account."
 msgstr ""
 
 #: templates/places/update_osm.html:31
-msgid ""
-"If you would like to be named as the original author of the changes, please "
-"provide your name and tick the attribution box. Your e-mail address will "
-"never be submitted to OSM, but may be used by us to clarify any changes you "
-"provide."
+msgid "If you would like to be named as the original author of the changes, please provide your name and tick the attribution box. Your e-mail address will never be submitted to OSM, but may be used by us to clarify any changes you provide."
 msgstr ""
 
 #: templates/places/update_osm.html:36
 #, python-format
-msgid ""
-"You may be interested to read <a href=\"%(osm_url)s\">further information "
-"about OpenStreetMap and other ways in which one may contribute</a>."
+msgid "You may be interested to read <a href=\"%(osm_url)s\">further information about OpenStreetMap and other ways in which one may contribute</a>."
 msgstr ""
 
 #: templates/places/update_osm.html:44
 #, python-format
-msgid ""
-"You are submitting an update to the %(type_name)s <em>&quot;%(title)s&quot;</"
-"em>."
+msgid "You are submitting an update to the %(type_name)s <em>&quot;%(title)s&quot;</em>."
 msgstr ""
 
 #: templates/places/update_osm.html:55
-msgid ""
-"Not all fields will be relevant to the item you are updating, and all fields "
-"are optional."
+msgid "Not all fields will be relevant to the item you are updating, and all fields are optional."
 msgstr ""
 
 #: templates/places/update_osm.html:62
@@ -3155,8 +3099,7 @@ msgid "Provide your name and tick the box to be attributed for the change."
 msgstr ""
 
 #: templates/places/update_osm.html:76
-msgid ""
-"Your e-mail address is useful should we want to clarify any change you make."
+msgid "Your e-mail address is useful should we want to clarify any change you make."
 msgstr ""
 
 #: templates/places/update_osm.html:86
@@ -3164,21 +3107,15 @@ msgid "The following are general properties for most types of item."
 msgstr ""
 
 #: templates/places/update_osm.html:116
-msgid ""
-"This next two about food apply mostly to pubs. For things that obviously "
-"serve food (e.g. restaurants), feel free to leave this empty."
+msgid "This next two about food apply mostly to pubs. For things that obviously serve food (e.g. restaurants), feel free to leave this empty."
 msgstr ""
 
 #: templates/places/update_osm.html:130
-msgid ""
-"If there is an ATM accessible at all hours here, please set this. This may "
-"be left blank if you are editing an ATM."
+msgid "If there is an ATM accessible at all hours here, please set this. This may be left blank if you are editing an ATM."
 msgstr ""
 
 #: templates/places/update_osm.html:140
-msgid ""
-"The following only apply to post boxes. The reference is normally printed at "
-"the bottom of the details on the post box."
+msgid "The following only apply to post boxes. The reference is normally printed at the bottom of the details on the post box."
 msgstr ""
 
 #: templates/places/update_osm.html:154
@@ -3186,15 +3123,11 @@ msgid "For car parks and bicycle parking, please provide the number of spaces."
 msgstr ""
 
 #: templates/places/update_osm.html:164
-msgid ""
-"If you have any other information you think should be included, please tell "
-"us about it here."
+msgid "If you have any other information you think should be included, please tell us about it here."
 msgstr ""
 
 #: templates/places/update_osm.html:174
-msgid ""
-"If you are happy with your changes and agree to the terms above, you may now "
-"click 'Submit'."
+msgid "If you are happy with your changes and agree to the terms above, you may now click 'Submit'."
 msgstr ""
 
 #: templates/places/update_osm_done.html:10
@@ -3203,9 +3136,7 @@ msgstr "感谢您"
 
 #: templates/places/update_osm_done.html:14
 #, python-format
-msgid ""
-"Your changes have been submitted and will be checked shortly. Thank you for "
-"contributing to both %(site_name)s and OpenStreetMap!"
+msgid "Your changes have been submitted and will be checked shortly. Thank you for contributing to both %(site_name)s and OpenStreetMap!"
 msgstr ""
 
 #: templates/places/update_osm_done.html:18
@@ -3235,24 +3166,20 @@ msgid "Expected"
 msgstr ""
 
 #: templates/places/metadata/ldb.html:37
-msgid ""
-"There is currently a problem retrieving live departure information from the "
-"National Rail web site."
+msgid "There is currently a problem retrieving live departure information from the National Rail web site."
 msgstr ""
 
 #: templates/places/metadata/ldb.html:38
 #, python-format
-msgid ""
-"Departure information may still be accessed<a href=\"http://pda.ojp."
-"nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly from their web "
-"site</a>."
+msgid "Departure information may still be accessed<a href=\"http://pda.ojp.nationalrail.co.uk/en/pj/ldbboard/dep/%(crs)s\">directly from their web site</a>."
 msgstr ""
 
 #: templates/places/metadata/ldb.html:64
 msgid "Circular Route"
 msgstr ""
 
-#: templates/places/metadata/ldb.html:94 templates/places/metadata/ldb.html:99
+#: templates/places/metadata/ldb.html:94
+#: templates/places/metadata/ldb.html:99
 msgid "View arrivals board"
 msgstr ""
 
@@ -3301,11 +3228,11 @@ msgstr "服务"
 
 #: templates/places/metadata/real_time_information.html:46
 msgid "Next"
-msgstr ""
+msgstr "往后"
 
 #: templates/places/metadata/real_time_information.html:46
 msgid "No further info"
-msgstr ""
+msgstr "没有更详细的信息"
 
 #: templates/places/metadata/transit_status.html:5
 #, python-format
@@ -3335,7 +3262,8 @@ msgstr "文档"
 
 #: templates/registration/password_change_done.html:3
 #: templates/registration/password_change_form.html:3
-#: templates/userena/email_form.html:11 templates/userena/password_form.html:4
+#: templates/userena/email_form.html:11
+#: templates/userena/password_form.html:4
 #: templates/userena/password_form.html:13
 #: templates/userena/password_form.html:21
 #: templates/userena/profile_detail.html:16
@@ -3365,9 +3293,7 @@ msgid "Your password was changed."
 msgstr "您的密码已修改."
 
 #: templates/registration/password_change_form.html:12
-msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
 msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确."
 
 #: templates/registration/password_change_form.html:17
@@ -3421,9 +3347,7 @@ msgid "Enter new password"
 msgstr "输入新密码"
 
 #: templates/registration/password_reset_confirm.html:14
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
 msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确。"
 
 #: templates/registration/password_reset_confirm.html:27
@@ -3431,9 +3355,7 @@ msgid "Password reset unsuccessful"
 msgstr "密码重设失败"
 
 #: templates/registration/password_reset_confirm.html:29
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
 msgstr "密码重设地址错误，这有可能是因为此地址已被使用过，请重新申请密码重设."
 
 #: templates/registration/password_reset_done.html:6
@@ -3442,9 +3364,7 @@ msgid "Password reset successful"
 msgstr "重设密码成功"
 
 #: templates/registration/password_reset_done.html:12
-msgid ""
-"We've e-mailed you instructions for setting your password to the e-mail "
-"address you submitted. You should be receiving it shortly."
+msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
 msgstr "我们已发送一封包含新密码的邮件到您的信箱，您很快就能收到它"
 
 #: templates/registration/password_reset_email.html:2
@@ -3474,11 +3394,8 @@ msgid "The %(site_name)s team"
 msgstr "%(site_name)s 团队"
 
 #: templates/registration/password_reset_form.html:12
-msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
-"instructions for setting a new one."
-msgstr ""
-"忘记您的密码了？请输入您的Email地址，我们将会重设您的密码并用邮件通知您"
+msgid "Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
+msgstr "忘记您的密码了？请输入您的Email地址，我们将会重设您的密码并用邮件通知您"
 
 #: templates/registration/password_reset_form.html:17
 msgid "E-mail address:"
@@ -3497,14 +3414,11 @@ msgid "Your account could not be activated.."
 msgstr "你的账户不能被激活"
 
 #: templates/userena/activate_fail.html:8
-msgid ""
-"Your account could not be activated. This could be because your activation "
-"link has aged."
+msgid "Your account could not be activated. This could be because your activation link has aged."
 msgstr "你的账户不能被激活，可能是因为你的账户已经改变"
 
 #: templates/userena/activate_fail.html:9
-msgid ""
-"Please try signing up again or contact us if you think something went wrong."
+msgid "Please try signing up again or contact us if you think something went wrong."
 msgstr "如果你认为有些东西出问题请尝试重新注册或者联系我们"
 
 #: templates/userena/disabled.html:4
@@ -3520,9 +3434,7 @@ msgid "It seems your account has been disabled."
 msgstr "看来您的帐户已被禁用"
 
 #: templates/userena/disabled.html:8
-msgid ""
-"If you feel that injustice has been done to you, feel free to contact the "
-"administrators to find out why"
+msgid "If you feel that injustice has been done to you, feel free to contact the administrators to find out why"
 msgstr "如果你觉得这样对你不公正，随时联系管理员找出电子邮件验证的原因"
 
 #: templates/userena/email_change_complete.html:4
@@ -3540,23 +3452,20 @@ msgstr "您收到一封电子邮件，在%(email)s."
 
 #: templates/userena/email_change_complete.html:9
 #, python-format
-msgid ""
-"To associate this email address with your account (%(username)s) click on "
-"the link provided in this email."
+msgid "To associate this email address with your account (%(username)s) click on the link provided in this email."
 msgstr "点击邮件提供的链接，用你的账户 (%(username)s) 来关联你的邮件地址"
 
 #: templates/userena/email_confirm_complete.html:4
 msgid "Email changed!"
 msgstr "电子邮件改变"
 
-#: templates/userena/email_confirm_complete.html:6 userena/forms.py:240
+#: templates/userena/email_confirm_complete.html:6
+#: userena/forms.py:254
 msgid "New email"
 msgstr "新的Email"
 
 #: templates/userena/email_confirm_complete.html:8
-msgid ""
-"Your new email address is saved. You can continue using userena with this "
-"email."
+msgid "Your new email address is saved. You can continue using userena with this email."
 msgstr "你的新邮件地址已经被保存。你可以继续使用这份邮件"
 
 #: templates/userena/email_confirm_fail.html:4
@@ -3575,13 +3484,15 @@ msgstr "你的电子邮件不能被验证"
 msgid "You could try changing it again in your account settings."
 msgstr "你可以在你的账户设置里面试着改变它"
 
-#: templates/userena/email_form.html:4 templates/userena/password_form.html:6
+#: templates/userena/email_form.html:4
+#: templates/userena/password_form.html:6
 #: templates/userena/profile_form.html:6
 #, python-format
 msgid "Account &raquo; %(username)s"
 msgstr "账户  &raquo; %(username)s"
 
-#: templates/userena/email_form.html:9 templates/userena/password_form.html:11
+#: templates/userena/email_form.html:9
+#: templates/userena/password_form.html:11
 #: templates/userena/profile_detail.html:14
 #: templates/userena/profile_form.html:12
 msgid "View profile"
@@ -3593,7 +3504,8 @@ msgstr "浏览个人资料"
 msgid "Edit profile"
 msgstr "编辑个人资料"
 
-#: templates/userena/email_form.html:12 templates/userena/email_form.html:19
+#: templates/userena/email_form.html:12
+#: templates/userena/email_form.html:19
 #: templates/userena/password_form.html:14
 #: templates/userena/profile_detail.html:17
 #: templates/userena/profile_form.html:15
@@ -3653,8 +3565,7 @@ msgid "Reset password email is send"
 msgstr "重设密码邮件已发送"
 
 #: templates/userena/password_reset_done.html:8
-msgid ""
-"An e-mail has been send to you which explains how to reset your password."
+msgid "An e-mail has been send to you which explains how to reset your password."
 msgstr "一封有关于如何重置你的密码的邮件已经发送给你"
 
 #: templates/userena/password_reset_form.html:13
@@ -3678,8 +3589,9 @@ msgstr "你的面部照片"
 msgid "Name"
 msgstr "名字"
 
-#: templates/userena/profile_detail.html:27 userena/forms.py:40
-#: userena/forms.py:218
+#: templates/userena/profile_detail.html:27
+#: userena/forms.py:41
+#: userena/forms.py:232
 msgid "Email"
 msgstr "Email"
 
@@ -3711,7 +3623,7 @@ msgstr "保存修改"
 msgid "Profiles"
 msgstr "个人资料"
 
-#: templates/userena/profile_list.html:25
+#: templates/userena/profile_list.html:29
 #, python-format
 msgid ""
 "\n"
@@ -3722,7 +3634,8 @@ msgstr ""
 "      Page %(page)s of %(num_pages)s\n"
 "      "
 
-#: templates/userena/signin_form.html:4 templates/userena/signin_form.html:29
+#: templates/userena/signin_form.html:4
+#: templates/userena/signin_form.html:29
 msgid "Signin"
 msgstr "登录"
 
@@ -3742,7 +3655,8 @@ msgstr "你已经退出登陆"
 msgid "You have been signed out. Till we meet again."
 msgstr "你已经退出登陆，后会有期"
 
-#: templates/userena/signup_form.html:4 templates/userena/signup_form.html:28
+#: templates/userena/signup_form.html:4
+#: templates/userena/signup_form.html:28
 msgid "Signup"
 msgstr "注册"
 
@@ -3752,17 +3666,14 @@ msgstr "访问跟踪"
 
 #: tracking/models.py:63
 msgid "unknown"
-msgstr ""
+msgstr "未知的"
 
 #: tracking/models.py:108
 msgid "keyword"
 msgstr "关键词"
 
 #: tracking/models.py:108
-msgid ""
-"Part or all of a user-agent string.  For example, \"Googlebot\" here will be "
-"found in \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/"
-"bot.html)\" and that visitor will not be tracked."
+msgid "Part or all of a user-agent string.  For example, \"Googlebot\" here will be found in \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\" and that visitor will not be tracked."
 msgstr ""
 
 #: tracking/models.py:115
@@ -3819,96 +3730,101 @@ msgstr[0] "%(counter)s 个已注册用户"
 msgid "Userna"
 msgstr "用户管理"
 
-#: userena/forms.py:37
+#: userena/forms.py:38
 msgid "Username must contain only letters, numbers, dots and underscores."
 msgstr "用户名只能包含字母、数字以及符号"
 
-#: userena/forms.py:43
+#: userena/forms.py:44
 msgid "Create password"
 msgstr "创建密码"
 
-#: userena/forms.py:46
+#: userena/forms.py:47
 msgid "Repeat password"
 msgstr "重设密码"
 
-#: userena/forms.py:49
+#: userena/forms.py:50
 msgid "Mobile"
 msgstr "手机号码"
 
-#: userena/forms.py:63
+#: userena/forms.py:64
 msgid "This username is already taken."
 msgstr "这个用户名已经被使用了"
 
-#: userena/forms.py:65
+#: userena/forms.py:66
 msgid "This username is not allowed."
 msgstr "这个用户名不允许使用"
 
-#: userena/forms.py:71 userena/forms.py:260
+#: userena/forms.py:72
+#: userena/forms.py:274
 msgid "This email is already in use. Please supply a different email."
 msgstr "这个Email地址已经被使用，请尝试其他邮件地址"
 
-#: userena/forms.py:83
+#: userena/forms.py:84
 msgid "The two password fields didn't match."
 msgstr "两次密码输入不一至"
 
-#: userena/forms.py:142 userena/forms.py:144
+#: userena/forms.py:154
+msgid "您的手机号码有可能输入错误了，请确认您输入的手机号码！"
+msgstr ""
+
+#: userena/forms.py:156
+#: userena/forms.py:158
 msgid "这个手机号码已经被注册了，请确认您输入的手机号码！"
 msgstr ""
 
-#: userena/forms.py:182
+#: userena/forms.py:196
 msgid "I have read and agree to the Terms of Service"
 msgstr "您已经阅读并且同意服务协议"
 
-#: userena/forms.py:183
+#: userena/forms.py:197
 msgid "You must agree to the terms to register."
 msgstr "你必须同意以上条款才能注册"
 
-#: userena/forms.py:196
+#: userena/forms.py:210
 #, python-format
 msgid "%(label)s"
 msgstr ""
 
-#: userena/forms.py:199
+#: userena/forms.py:213
 #, python-format
 msgid "%(error)s"
 msgstr "%(error)s"
 
-#: userena/forms.py:206
-msgid "Email or username"
-msgstr "Email或者用户名"
+#: userena/forms.py:220
+msgid "Email or mobile"
+msgstr "Email或者手机号码"
 
-#: userena/forms.py:207
-msgid "Either supply us with your email or username."
-msgstr "请输入电子Email或者用户名"
+#: userena/forms.py:221
+msgid "Either supply us with your email or mobile."
+msgstr "请输入电子Email或者手机号码"
 
-#: userena/forms.py:212
+#: userena/forms.py:226
 #, python-format
 msgid "Remember me for %(days)s"
 msgstr "记住我 %(days)s 天"
 
-#: userena/forms.py:219
+#: userena/forms.py:233
 msgid "Please supply your email."
 msgstr "请提供你的Email地址"
 
-#: userena/forms.py:234
-msgid ""
-"Please enter a correct username or email and password. Note that both fields "
-"are case-sensitive."
-msgstr "请输入正确的用户名或电子邮件地址和密码。请注意大写小区分"
+#: userena/forms.py:248
+msgid "Please enter a correct mobile or email and password. Note that both fields are case-sensitive."
+msgstr "请输入正确的手机号码或电子邮件地址和密码。请注意大写小区分"
 
-#: userena/forms.py:258
+#: userena/forms.py:272
 msgid "You're already known under this email."
 msgstr "你已经知道下面的Email"
 
-#: userena/forms.py:274
+#: userena/forms.py:288
 msgid "First name"
 msgstr "姓"
 
-#: userena/forms.py:277
+#: userena/forms.py:291
 msgid "Last name"
 msgstr "姓"
 
-#: userena/models.py:58 userena/models.py:225
+#: userena/models.py:58
+#: userena/models.py:225
 msgid "user"
 msgstr "用户"
 
@@ -3929,9 +3845,7 @@ msgid "notification send"
 msgstr "通知发送"
 
 #: userena/models.py:73
-msgid ""
-"Designates whether this user has already got a notification about activating "
-"their account."
+msgid "Designates whether this user has already got a notification about activating their account."
 msgstr "指定这个用户是否已经获得激活他们账户的通知"
 
 #: userena/models.py:75
@@ -3962,6 +3876,10 @@ msgstr "注册"
 msgid "Open"
 msgstr "打开"
 
+#: userena/models.py:216
+msgid "Closed"
+msgstr "关闭"
+
 #: userena/models.py:228
 msgid "mugshot"
 msgstr "面部照片"
@@ -3978,12 +3896,12 @@ msgstr "隐私协议"
 msgid "Designates who can view your profile."
 msgstr "指定谁能浏览你的个人资料"
 
-#: userena/models.py:317
+#: userena/models.py:324
 #, python-format
 msgid "%(first_name)s %(last_name)s"
 msgstr "%(first_name)s %(last_name)s"
 
-#: userena/models.py:379
+#: userena/models.py:386
 msgid "language"
 msgstr "语言"
 
@@ -4005,7 +3923,7 @@ msgstr "你的个人资料已经更新"
 
 #: userena/views.py:562
 msgid "You don't have permission to view this profile."
-msgstr "您没有查看这个个人资料"
+msgstr "您没有权限查看这个个人资料"
 
 #: userena/contrib/umessages/admin.py:25
 msgid "Date/time"
@@ -4108,6 +4026,18 @@ msgid "Message is successfully removed."
 msgid_plural "Messages are successfully removed."
 msgstr[0] "消息成功清除"
 
+#~ msgid "%(entry_count)s entry"
+
+#~ msgid_plural "%(entry_count)s entries"
+#~ msgstr[0] "%(entry_count)s 记录"
+
+#~ msgid "No categories yet."
+#~ msgstr "还没有任何分类"
+
+#, fuzzy
+#~ msgid "views"
+#~ msgstr "预览"
+
 #~ msgid "Signup almost done!"
 #~ msgstr "注册已完成！"
 
@@ -4149,6 +4079,7 @@ msgstr[0] "消息成功清除"
 #~ msgstr "%(name)s"
 
 #~ msgid "Please correct the error below."
+
 #~ msgid_plural "Please correct the errors below."
 #~ msgstr[0] "请检查下方错误"
 
@@ -4232,6 +4163,7 @@ msgstr[0] "消息成功清除"
 #~ msgstr "已创建对象"
 
 #~ msgid "1 result"
+
 #~ msgid_plural "%(counter)s results"
 #~ msgstr[0] "%(counter)s 个结果"
 
@@ -4422,6 +4354,7 @@ msgstr[0] "消息成功清除"
 #~ msgstr "缩略URL"
 
 #~ msgid "%(comment_count)s comment"
+
 #~ msgid_plural "%(comment_count)s comments"
 #~ msgstr[0] "%(comment_count)s 条评论"
 
@@ -4432,10 +4365,12 @@ msgstr[0] "消息成功清除"
 #~ msgstr "评论已关闭"
 
 #~ msgid "%(pingback_count)s pingback"
+
 #~ msgid_plural "%(pingback_count)s pingbacks"
 #~ msgstr[0] "%(pingback_count)s 条pingbacks"
 
 #~ msgid "%(trackback_count)s trackback"
+
 #~ msgid_plural "%(trackback_count)s trackbacks"
 #~ msgstr[0] "%(trackback_count)s 引用"
 
@@ -4500,6 +4435,7 @@ msgstr[0] "消息成功清除"
 #~ msgstr "RSS 订阅（基于搜索）"
 
 #~ msgid "%(entry_count)s entry found"
+
 #~ msgid_plural "%(entry_count)s entries found"
 #~ msgstr[0] "找到 %(entry_count)s 条记录"
 

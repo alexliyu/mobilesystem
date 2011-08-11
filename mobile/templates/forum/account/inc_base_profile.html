@@ -13,7 +13,7 @@
                     </td>
                     <td width="10" valign="top"></td>
                     <td width="auto" valign="top" align="left">
-                        <h2 style="padding: 0px; margin: 0px; font-size: 22px; line-height: 22px;">{{view_user.username}}</h2>
+                        <h2 style="padding: 0px; margin: 0px; font-size: 22px; line-height: 22px;">{{view_user.get_profile.get_user_real_name}}</h2>
                         <div class="sep5"></div>
                         <span class="snow">
                             {% trans "Registered" %}: <strong>{{view_user.date_joined|date:"Y-m-d"}}</strong>
@@ -31,10 +31,10 @@
                                 </tr>
                                 <tr>
                                     <td width="50%">
-                                        <a href="{% url forum:forum_user_topics view_user.pk %}">{% blocktrans %}View all {{view_user}}'s topics{% endblocktrans %}</a>
+                                        <a href="{% url forum:forum_user_topics view_user.pk %}">查看{{view_user.get_profile.get_user_real_name}}的所有话题</a>
                                     </td>
                                     <td width="50%">
-                                        <a href="{% url forum:forum_user_posts view_user.pk %}">{% blocktrans %}View all {{view_user}}'s posts{% endblocktrans %}</a>
+                                        <a href="{% url forum:forum_user_posts view_user.pk %}">查看{{view_user.get_profile.get_user_real_name}}所参与的话题</a>
                                     </td>
                                 </tr>
 

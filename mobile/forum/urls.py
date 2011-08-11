@@ -13,9 +13,10 @@ urlpatterns = patterns('',
    ('^topic/(?P<topic_id>\d+)/$', topic, {}, 'forum_topic'),
    ('^topic/new/(?P<forum_id>\d+)/$', new_post, {}, 'forum_new_topic'),
    ('^reply/new/(?P<topic_id>\d+)/$', new_post, {}, 'forum_new_replay'),
+   
    url(r'^account/$', profile, {}, 'forum_account_index'),
    url(r'^account/signature/$', signature, {}, 'forum_signature'),
-
+   
    url(r'^user/(?P<user_id>\d+)/$', profile, {}, 'forum_user_profile'),
    (r'^(?P<forum_slug>\w+)/(?P<topic_type>\w+)/$', forum, {}, 'forum_forum_ext'),
    (r'^(?P<forum_slug>\w+)/(?P<topic_type>\w+)/(?P<topic_type2>\w+)/$', forum, {}, 'forum_forum_ext2'),

@@ -1,3 +1,10 @@
+#-*- coding:utf-8 -*-
+"""
+这是地图应用程序，用于管理及显示地图
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
 from email.utils import formatdate
 from datetime import datetime, timedelta
 from time import mktime
@@ -35,7 +42,7 @@ class AboutView(BaseView):
         return Breadcrumb(
             self.conf.local_name,
             None,
-            'About OpenStreetMap',
+            u'关于娱讯地图',
             lazy_reverse('maps:osm-about'),
         )
 

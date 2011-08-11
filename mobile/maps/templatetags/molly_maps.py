@@ -65,7 +65,7 @@ class LocationDisplayNode(template.Node):
                                  context['request'].map_width,
                                  context['request'].map_height,
                                  title=context['entity'].title,
-                                 zoom=context.get('zoom', 16))
+                                 zoom=context.get('zoom', 14))
            })
         return get_template('maps/embed.html').render(context)
 

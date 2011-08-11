@@ -1,18 +1,22 @@
 {% extends 'userena/base_userena.html' %}
 {% load i18n %}
-
+{% load avatar_tags %}
 {% block content_title %}<h2>{% trans 'Profiles' %}</h2>{% endblock %}
 
 {% block content %}
-<ul id="profile_list">
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<ul><h2>公开用户列表</h2></ul>
+<ul data-role="listview">
   {% for profile in profile_list %}
   <li>
-  <a href="{% url userena_profile_detail profile.user.username %}"><img src="{{ profile.get_mugshot_url }}" /></a>
-  <a href="{% url userena_profile_detail profile.user.username %}">{{ profile.user.username }}</a>
+  <a href="{% url userena_profile_detail profile.user.username %}">{% avatar profile.user %}
+  <h4>{{ profile.get_user_real_name }}</h4>
+ </a>
   </li>
   {% endfor %}
 
-</ul>
+ </ul>
+</div>
 
 {% if is_paginated %}
 <div class="pagination">

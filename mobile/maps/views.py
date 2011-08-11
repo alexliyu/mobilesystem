@@ -1,3 +1,10 @@
+#-*- coding:utf-8 -*-
+"""
+这是地图应用程序，用于管理及显示地图
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
 from datetime import timedelta
 
 from django.http import Http404
@@ -11,7 +18,7 @@ class IndexView(BaseView):
         return Breadcrumb(
             self.conf.local_name,
             None,
-            'Maps',
+            u'地图',
             lazy_reverse('maps:osm-about'),
         )
 
@@ -24,7 +31,7 @@ class TouchMapLiteView(BaseView):
         return Breadcrumb(
             self.conf.local_name,
             None,
-            'Maps',
+            u'地图',
             lazy_reverse('maps:touchmaplite'),
         )
 

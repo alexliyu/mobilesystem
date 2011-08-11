@@ -25,47 +25,6 @@ footer, header, nav, section, audio, video {
 }
 
 a img {border: 0;}
-/*	---------首页头部以及h4字体大小--------	*/
-#divMain{text-align:center;background: rgb(51,51,51);}
-.ui-btn-right{position:absolute;right:40px;top:3.5em}
-.clNr{font-size: 14px}
-#id_mobile{font: 12px/24px Georgia;}
-.invisible{font-size: 14px;line-height:20px;height:20px;}
-/*	---------底部导航---------	*/
-#footer div ul{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
-#footer div ul li{display:inline;}
-#footer div ul li a{float:left;width:2em;text-decoration:none;color:white;background: rgb(51,51,51);padding:0.2em 0.4em;border-right:1px solid white;}
-
-/*	---------关于娱讯---------	*/
-.ui-corner-all h2{font-size:16px;}
-.note div img{width:260px;height:140px;}
-#divLink {list-style-type:none;}
-#divLink img{width:260px;height:230px;}
-#imgWea{
-	width:30px;
-	height:20px;
-}
-.clear{padding-top:5px;}
-/** -------新闻---------*/
-.entry-title{
-	font-size:15px;
-}
-ui-shadow ul{font-size:14px;line-height:20px;}
-ui-shadow ul li{line-height:18px;}
-#divTuan h3{
-	font-size: 14px;
-	line-height:18px;
-	height:18px;
-}
-#divTuan li{
-	list-style-type:none;font-size: 13px;}
-}
-/** -------社区---------*/
-#Main div h3{
-	font-size: 14px;
-	line-height:18px;
-	height:18px;
-}
 /*	Typography presets
 	------------------	*/
 
@@ -183,6 +142,42 @@ px      68    160    252    344    436    */
 	}
 	
 }
+
+/*	---------底部导航---------	*/
+#footer div ul{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
+#footer div ul li{display:inline;text-align:center;}
+#footer div ul li a{float:left;width:2.5em;text-decoration:none;color:white;background: rgb(51,51,51);padding:0.2em 0.4em;border-right:1px solid white;}
+
+/*	---------关于娱讯---------	*/
+.ui-corner-all h2{font-size:16px;}
+.note div img{width:260px;height:140px;}
+#divLink {list-style-type:none;}
+#divLink img{width:260px;height:230px;}
+#imgWea{
+	width:30px;
+	height:20px;
+}
+.clear{padding-top:5px;}
+/** -------新闻---------*/
+.entry-title{
+	font-size:15px;
+}
+ui-shadow ul{font-size:14px;line-height:20px;}
+ui-shadow ul li{line-height:18px;}
+#divTuan h3{
+	font-size: 14px;
+	line-height:18px;
+	height:18px;
+}
+#divTuan li{
+	list-style-type:none;font-size: 13px;}
+}
+/** -------社区---------*/
+#Main div h3{
+	font-size: 14px;
+	line-height:18px;
+	height:18px;
+}
 #divVideo h2{
 	font-size: 16px;
 	line-height:18px;
@@ -197,8 +192,31 @@ px      68    160    252    344    436    */
 	line-height:16px;
 }
 #divHead{
-	height:40px;
-	line-height:40px;
+	height:28px;
+	line-height:28px;
 	color:white;background: rgb(51,51,51);
 }
-#bc-title h1{font-size: 16px;line-height:40px;height:40px;}
+/*	---------首页头部以及h4字体大小--------	*/
+#divMain{text-align:center;background: rgb(51,51,51);height: 28px;line-height:28px;}
+.ui-btn-right{float:right;display:inline;color:white;}
+.clNr{font-size: 14px}
+#id_mobile{font: 12px/24px Georgia;}
+.invisible{font-size: 14px;line-height:20px;height:20px;}
+.icon-menu{
+ padding: 5px;
+ width: 100%;
+ margin-bottom: 10px;
+ float: left;
+ padding-left: 25px;
+}
+.center{	
+}
+.icon-menu li{
+ width: 50%;
+ float: left;
+ font-size: 14px;
+ line-height: 18px;
+ text-align: left;
+}
+#bc-title{float:left;display:inline}
+#bc-title h1{font-size: 16px;line-height:28px;height:28px;}

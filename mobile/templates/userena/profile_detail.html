@@ -1,41 +1,77 @@
 {% extends 'userena/base_userena.html' %}
 {% load i18n %}
-
+{% load avatar_tags %}
+{% load forum_filters %}
+{% load forum_tags %}
+{% load forum_widget_tags %}
 {% block title %}{% blocktrans with profile.user.username as username %}{{ username }}'s profile.{% endblocktrans %}{% endblock %}
 {% block content_title %}<h2>{{ profile.user.username }} {% if profile.user.get_full_name %}({{ profile.user.get_full_name }}){% endif %}</h2>{% endblock %}
 
 {% block content %}
-<div class="white-box">
+<div class="ui-grid-a ui-body-d ui-corner-all ui-shadow">
 
   {% comment %}Dirty hack. Will use django-guardian in the future.{% endcomment %}
   {% if user.username == profile.user.username %}
-  <ul id="box-nav">
-    <li><a href="{% url userena_profile_detail user.username %}">{% trans "View profile" %} &raquo;</a></li>
-    <li><a href="{% url userena_profile_edit user.username %}">{% trans "Edit details" %} &raquo;</a></li>
-    <li><a href="{% url userena_password_change user.username %}">{% trans "Change password" %} &raquo;</a></li>
-    <li><a href="{% url userena_email_change user.username %}">{% trans "Change email" %} &raquo;</a></li>
+  <div data-role="navbar">
+  <ul>
+    <li><a href="{% url userena_profile_detail user.username %}" class="ui-btn-active">{% trans "View profile" %}</a></li>
+    <li><a href="{% url userena_profile_edit user.username %}">{% trans "Edit details" %}</a></li>
+    <li><a href="{% url userena_password_change user.username %}">{% trans "Change password" %}</a></li>
+    <li><a href="{% url userena_email_change user.username %}">{% trans "Change email" %}</a></li>
+    <li><a href="{% url forum_avatar_change %}"><span>{% trans "Avatar" %}</span></a></li>
   </ul>
+  </div>
   {% endif %}
 
-  <div id="details">
-    <img src="{{ profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
-    {% if profile.user.get_full_name %}
-    <p><strong>{% trans "Name" %}</strong><br /> {{ profile.user.get_full_name }}</p>
-    {% endif %}
+  <div class="ui-grid-a">
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:80px"><strong>头像</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{% avatar profile.user 80 %}</div></div>
+   
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Name" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.get_user_real_name }}</div></div>
+
     {% if profile.user.email %}
-    <p><strong>{% trans "Email" %}</strong><br />{{ profile.user.email }}</p>
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Email" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.user.email }}</div></div>
     {% endif %}
     {% if profile.age %}
-    <p><strong>{% trans "Age" %}</strong><br /> {{ profile.age }}</p>
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Age" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.age }}</div></div>
     {% endif %}
     {% if profile.website %}
-    <p><strong>{% trans "Website" %}</strong><br /> <a href="{{ profile.website }}">{{ profile.website }}</a></p>
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Website" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a"><a href="{{ profile.website }}">{{ profile.website }}</a></div></div>
     {% endif %}
     {% if profile.location %}
-    <p><strong>{% trans "Location" %}</strong><br />{{ profile.location }}</p>
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Location" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.location }}</div></div>
+    {% endif %}
+    {% if profile.address %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>地址：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.address }}</div></div>
+    {% endif %}
+    {% if profile.website %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>个人网站：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.website }}</div></div>
+    {% endif %}
+    {% if profile.gender %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>性别：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.get_gender }}</div></div>
+    {% endif %}
+    {% if profile.QQ %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>QQ：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.QQ }}</div></div>
+    {% endif %}
+    {% if profile.staytime %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>在线时长：</strong></div></div><div class="ui-block-b">{{ profile.staytime }}</div></div>
+    {% endif %}
+    {% if profile.experience %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>互动经验值：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.experience }}</div></div>
+    {% endif %}
+    {% if profile.score %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>会员积分：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.score }}</div></div>
+    {% endif %}
+    {% if profile.grade %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>会员等级：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.grade }}</div></div>
+    {% endif %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>注册时间：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.user.date_joined|date:"Y-m-d" }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>发表话题数:</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a"><a href="{% url forum:forum_user_topics profile.user.pk %}">{{ profile.user.topic_set.all.count }}</a></div></div>
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>参与话题数:</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a"><a href="{% url forum:forum_user_posts profile.user.pk %}">{{ profile.user.post_set.all.count }}</a></div></div>
+    {% if profile.signature %}
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>个人签名：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.signature }}</div></div>
     {% endif %}
     {% if profile.about_me %}
-    <p><strong>{% trans "About me" %}</strong><br />{{ profile.about_me }}</p>
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "About me" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.about_me }}</div></div>
     {% endif %}
   </div>
 </div>

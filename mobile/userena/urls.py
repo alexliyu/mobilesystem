@@ -97,3 +97,7 @@ urlpatterns = patterns('',
        userena_views.profile_list,
        name='userena_profile_list'),
 )
+
+urlpatterns += patterns('simpleavatar.views',
+        url('^avatar/change/$', 'change', {'template_name': 'userena/avatar/change.html'}, \
+                name='forum_avatar_change'), (r'^accounts/avatar/', include('simpleavatar.urls')),)

@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^sentry/', include('sentry.web.urls')),
     (r'^tracking/', include('tracking.urls')),
+    
 #    (r'^entry/', include('entry.urls')),
     
     (r'^download/', PicDownload),
@@ -62,6 +63,7 @@ urlpatterns += patterns('django.views.generic.simple',
     (r'^maps/(?P<remain>.*)$', 'redirect_to', {'url': '/places/%(remain)s'}),
     (r'^osm/(?P<remain>.*)$', 'redirect_to', {'url': '/maps/osm/%(remain)s'}),
 )
+
 
 handler500 = 'utils.views.handler500'
 

@@ -7,7 +7,7 @@
     </td>
 <tr>
 	<td>
-        {% for o in online_users %} <a class="item_node" href="{% url forum:forum_user_profile o.user_id %}">{{o.username}}</a> {% endfor %}        
+        {% for o in online_users %} <a class="item_node" href="{% url userena_profile_detail o.user.username %}">{{o.user.get_profile.get_user_real_name}}</a> {% endfor %}        
         {% for forum in category.forum_set.all %}
         <a class="item_node" href="{% url forum:forum_forum forum.slug %}"><span> {{forum}} </span></a>
         {% endfor %}

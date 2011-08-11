@@ -214,11 +214,11 @@ def identification_field_factory(label, error_required):
 
 class AuthenticationForm(forms.Form):
     """
-    A custom form where the identification can be a e-mail address or username.
+    自定义登录验证表单，使用Email或者手机号码进行登录
 
     """
-    identification = identification_field_factory(_(u"Email or username"),
-                                                  _(u"Either supply us with your email or username."))
+    identification = identification_field_factory(_(u"Email or mobile"),
+                                                  _(u"Either supply us with your email or mobile."))
     password = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput(attrs=attrs_dict, render_value=False))
     remember_me = forms.BooleanField(widget=forms.CheckboxInput(attrs=attrs_dict),
@@ -245,7 +245,7 @@ class AuthenticationForm(forms.Form):
         if identification and password:
             user = authenticate(identification=identification, password=password)
             if user is None:
-                raise forms.ValidationError(_(u"Please enter a correct username or email and password. Note that both fields are case-sensitive."))
+                raise forms.ValidationError(_(u"Please enter a correct mobile or email and password. Note that both fields are case-sensitive."))
         return self.cleaned_data
 
 class ChangeEmailForm(forms.Form):

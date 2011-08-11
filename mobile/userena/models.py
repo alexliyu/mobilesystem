@@ -294,7 +294,14 @@ class UserenaBaseProfile(models.Model):
                                                                 'wavatar']:
                 return userena_settings.USERENA_MUGSHOT_DEFAULT
             else: return None
-
+    def get_user_real_name(self):
+        """
+        返回用户的真实姓名，如果用户真实姓名为空，则返回娱讯用户
+        """
+        if self.user.first_name or self.user.last_name:
+            return self.user.last_name + self.user.first_name
+        else:
+            return u"娱客%s" % self.user.id
     def get_full_name_or_username(self):
         """
         Returns the full name of the user, or if none is supplied will return
@@ -411,14 +418,12 @@ class UserProfile(UserenaBaseProfile):
                                     ('F', '女'),
                                     )
     #user = models.ForeignKey(User, unique=True, verbose_name=u'用户')
-    birthday = models.DateField(u'用户生日')
     mac = models.CharField(u'用户mac地址', max_length=30, blank=True)
     mobile = models.CharField(u'移动电话', max_length=20, blank=True, null=True)
     address = models.CharField(u'家庭地址', max_length=100, blank=True, null=True)
     website = models.URLField(u'个人主页', blank=True, null=True)
     birthday = models.DateField(u'出生日期', blank=True, null=True)
     gender = models.CharField(u'性别', max_length=1, choices=GENDER_CHOICES, default='M')
-    blog = models.URLField(u'个人主页', blank=True, null=True)
     QQ = models.CharField('QQ', max_length=50, blank=True, null=True)
     MSN = models.CharField(max_length=50, blank=True, null=True)
     IM = models.CharField(max_length=50, blank=True, null=True)
@@ -452,6 +457,14 @@ class UserProfile(UserenaBaseProfile):
     def get_absolute_url(self):
         return self.user.get_absolute_url()
     
+    def get_gender(self):
+        """
+        返回用户性别
+        """
+        if self.gender == 'M':
+            return u"帅哥"
+        else:
+            return u"美女"
 # category model
 class Category(models.Model):
     name = models.CharField('名称', max_length=20)

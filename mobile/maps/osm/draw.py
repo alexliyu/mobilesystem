@@ -102,8 +102,8 @@ def get_map(points, width, height, filename, zoom=None, lon_center=None, lat_cen
     
     lon_min, lon_max = minmax(p[0] for p in points)
     lat_min, lat_max = minmax(p[1] for p in points)
-    if width <= 30:width = 100
-    if height <= 30:height = 100
+    if width <= 30:width = 200
+    if height <= 30:height = 200
     if not zoom:
         size = min(width, height)
         if lat_min != lat_max:
