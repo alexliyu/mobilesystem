@@ -1,3 +1,10 @@
+#-*- coding:utf-8 -*-
+"""
+这是地图绘制程序，用于生成带标注的静态地图文件，主要用于在非webkit浏览器浏览时显示的静态地图
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+       
+"""
 from __future__ import division
 import math
 import random
@@ -6,7 +13,7 @@ import urllib
 import os.path
 import sys
 import time
-
+from StringIO import StringIO
 from maps.osm.models import OSMTile, get_marker_dir
 
 def log2(x):
@@ -74,9 +81,17 @@ def minmax(i):
         max_ = max(max_, e)
     return min_, max_
 
-def get_map(points, width, height, filename, zoom=None, lon_center=None, lat_center=None):
+def get_map_url(points, zoom, lon_center, lat_center):
     """
-    Generates a map for the passed in arguments, saving that to filename
+    根据GOOGLE API生成用于获取标注好的静态地图文件的URL
+    """
+    g_points = ['&markers=color:%s|label:%s|%s,%s' % (p[2], p[3], p[1], p[0]) for p in points]
+    g_api = "http://maps.google.com/maps/api/staticmap?center=%s,%s&zoom=%s&size=400x400&maptype=roadmap&mobile=true&sensor=true&language=zh_CN" % (lat_center, lon_center, zoom)
+    g_map = g_api + ''.join(g_points)
+    return g_map
+def get_map(points, width, height, filename, zoom=None, lon_center=None, lat_center=None, retry=True):
+    """
+    根据参数生成带标注的静态地图文件
     
     @param points: The points where markers on the map should be added. This
                    should be a list of tuples corresponding to the points where
@@ -110,73 +125,27 @@ def get_map(points, width, height, filename, zoom=None, lon_center=None, lat_cen
             zoom = int(log2(360 / abs(lat_min - lat_max)) + log2(size / 256) - 1.0)
         else:
             zoom = 16
-    
-    points = [(get_tile_ref(p[0], p[1], zoom), p[2], p[3]) for p in points]
-
+    """
+    2011-8-12 修改原有的通过本地静态地图文件进行标注为直接从GOOGLE服务器获取标注好的静态地图图片文件
+    """
+    #points = [(get_tile_ref(p[0], p[1], zoom), p[2], p[3]) for p in points]
     lon_range, lat_range = lon_max - lon_min, lat_min - lat_max
     if not lat_center:
         lon_center, lat_center = (lon_min + lon_max) / 2, (lat_min + lat_max) / 2
-    
-    tx_min, tx_max = map(int, minmax(p[0][0] for p in points))
-    ty_min, ty_max = map(int, minmax(p[0][1] for p in points))
-    ty_max, tx_max = ty_max + 1, tx_max + 1
-    
-    cx, cy = get_tile_ref(lon_center, lat_center, zoom)
-    oxc = int((cx - tx_min) * 256 - width / 2)
-    oyc = int((cy - ty_min) * 256 - height / 2)
-    ox, oy = oxc, oyc - 10
+    try:
+        response = urllib.urlopen(get_map_url(points, zoom, lon_center, lat_center))
+    except IOError:
+            # If it fails... try again, but only once
+            if retry:
+                return get_map(points, width, height, filename, zoom, lon_center, lat_center, retry=False)
+            else:
+                raise
+    s = StringIO()
+    s.write(response.read())
+    f = open(filename, 'w')
+    f.write(s.getvalue())
+    f.close()
 
-    tx_min_ = int(tx_min + ox / 256)
-    tx_max_ = int(tx_max + (width + ox) / 256)
-    ty_min_ = int(ty_min + oy / 256)
-    ty_max_ = int(ty_max + (height + oy) / 256)
-    tiles = [{ 'ref':(tx, ty) }
-        for tx in range(tx_min_, tx_max_) for ty in range(ty_min_, ty_max_)]
-    
-    # Create a new blank image for us to add the tiles on to
-    image = PIL.Image.new('RGBA', (width, height))
-    
-    # Keep track of if the image if malformed or not
-    malformed = False
-    
-    # Lots of different tiles contain the parts we're interested in, so take the
-    # parts of those tiles, and copy them into our new image
-    for tile in tiles:
-        offx = (tile['ref'][0] - tx_min) * 256 - ox
-        offy = (tile['ref'][1] - ty_min) * 256 - oy
-        
-        if not (-256 < offx and offx < width and - 256 < offy and offy < height):
-            continue
-        
-        try:
-            tile_data = OSMTile.get_data(lat_center, lon_center, zoom)
-            tile['surface'] = PIL.Image.open(tile_data)
-        except Exception, e:
-            tile['surface'] = PIL.Image.open(os.path.join(os.path.dirname(__file__), 'fallback', 'fallback.png'))
-            malformed = True
-        
-        image.paste(tile['surface'], ((tile['ref'][0] - tx_min) * 256 - ox, (tile['ref'][1] - ty_min) * 256 - oy))
-    
-    # Now add the markers to the image
-    points.sort(key=lambda p:p[0][1])
-    marker_dir = get_marker_dir()
-    for (tx, ty), color, index in points:
-        if index is None:
-            off, fn = (10, 10), "%s-star.png" % color
-        else:
-            off, fn = (10, 25), "%s-%d.png" % (color, index)
-        fn = os.path.join(marker_dir, fn)
-        marker = PIL.Image.open(fn)
-        off = (
-            int((tx - tx_min) * 256 - off[0] - ox),
-            int((ty - ty_min) * 256 - off[1] - oy),
-        )
-        image.paste(marker, (off[0], off[1]), marker)
-    
-    image.save(filename, 'png')
-    
-    if malformed:
-        raise MapGenerationError((lon_center, lat_center))
     return lon_center, lat_center
 
 class PointSet(set):

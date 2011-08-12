@@ -180,7 +180,7 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
                                                         'title': entity.title
                                                     }
         else:
-            title = _('附近的%(et)s') % {'et': et_name}
+            title = u'附近的%(et)s' % {'et': et_name}
             
         if len(context['entity_types']) > 1:
             return {
@@ -431,7 +431,7 @@ class NearbyEntityListView(NearbyListView):
         return Breadcrumb(
             'places',
             lazy_parent('entity', scheme=scheme, value=value),
-            '%s的周边导航' % context['entity'].title,
+            u'%s的周边导航' % context['entity'].title,
             lazy_reverse('entity-nearby-list', args=[scheme, value]))
 
     def handle_GET(self, request, context, scheme, value):
@@ -456,7 +456,7 @@ class NearbyEntityDetailView(NearbyDetailView):
         return Breadcrumb(
             'places',
             lazy_parent('entity-nearby-list', scheme=scheme, value=value),
-            '在%s附近的%s' % (
+            u'在%s附近的%s' % (
                 context['entity'].title, capfirst(entity_type.verbose_name_plural),),
             lazy_reverse('places:entity_nearby_detail', args=[scheme, value, ptype]))
 

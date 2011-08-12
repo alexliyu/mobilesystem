@@ -130,14 +130,7 @@ MIDDLEWARE_CLASSES = (
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
-# Each entity has a primary identifier which is used to generate the absolute
-# URL of the entity page. We can define a list of identifier preferences, so
-# that when an entity is imported, these identifier namespaces are looked at in
-# order until a value in that namespace is chosen. This is then used as the
-# primary identifer.
-#IDENTIFIER_SCHEME_PREFERENCE = ('atco', 'osm', 'naptan', 'postcode', 'bbc-tpeg')
 
-# This setting defines which context processors are used - this can affect what
 # is available in the context of a view
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -304,9 +297,13 @@ USERENA_WITH_MOBILE = True
 # Guardian
 ANONYMOUS_USER_ID = -1
 
+MEDIA_ROOT = os.path.join(project_root, 'media') # the location on disk where media is stored
+UPLOADS_ROOT = os.path.join(os.path.abspath(MEDIA_ROOT), 'uploads/images') #上传文件路径
+MEDIA_URL = '/media/' # The URL used to refer to media
+
 # The CACHE_DIR is used by default to store cached map tiles, generated static
 # maps, markers, external images, etc
-CACHE_DIR = os.path.join(project_root, 'cache')
+CACHE_DIR = os.path.join(MEDIA_ROOT, 'cache')
 # Defines where markers get generated
 MARKER_DIR = os.path.join(CACHE_DIR, 'markers')
 
@@ -314,7 +311,7 @@ MARKER_DIR = os.path.join(CACHE_DIR, 'markers')
 SRID = 3857
 
 GMAP_JQUERY = 'http://code.jquery.com/jquery-1.4.2.min.js'
-GMAP_API = 'http: // maps.google.com / maps / api / js?sensor = false'
+GMAP_API = 'http://maps.google.com/maps/api/js?sensor=false'
 GMAP_DEFAULT = [-34.397, 150.644]
 # Settings relating to staticfiles
 STATIC_ROOT = os.path.join(project_root, 'static') # the location on disk where media is stored
@@ -339,9 +336,7 @@ TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = False
 
 
-MEDIA_ROOT = os.path.join(project_root, 'media') # the location on disk where media is stored
-UPLOADS_ROOT = os.path.join(os.path.abspath(MEDIA_ROOT), 'uploads/images') #上传文件路径
-MEDIA_URL = '/media/' # The URL used to refer to media
+
 ADMIN_MEDIA_PREFIX = MEDIA_URL + "grappelli/"
 GRAPPELLI_ADMIN_TITLE = u"娱讯互动平台管理系统"
 
