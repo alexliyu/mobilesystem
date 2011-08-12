@@ -91,7 +91,7 @@ class NearbyListView(LocationRequiredView):
         
         if entity:
             return_url = reverse('places:entity-nearby-list',
-                      args=[entity.identifier_scheme, entity.identifier_value])
+                      args=[entity.primary_type.slug, entity.slug])
         else:
             return_url = reverse('places:nearby-list')
 
@@ -180,7 +180,7 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
                                                         'title': entity.title
                                                     }
         else:
-            title = _('%(et)s nearby') % {'et': et_name}
+            title = _('附近的%(et)s') % {'et': et_name}
             
         if len(context['entity_types']) > 1:
             return {

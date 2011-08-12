@@ -18,13 +18,14 @@ from math import atan2, degrees
 from django.shortcuts import get_object_or_404
 from django.contrib.gis.geos import Point
 
-from apps.places.models import EntityType, Entity, Identifier
+from apps.places.models import EntityType, Entity
 
 def get_entity(scheme, value):
     """
     2011-07-09修复，用scheme:value这样的值来匹配entity，或者地图实例
     """
-    return get_object_or_404(Entity, _identifiers__scheme=scheme, _identifiers__value=value)
+    scheme = get_object_or_404(EntityType, slug=scheme)
+    return get_object_or_404(Entity, primary_type=scheme, slug=value)
 class EntityCache(dict):
     
     def __missing__(self, key):

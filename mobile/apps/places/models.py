@@ -47,11 +47,12 @@ class Source(models.Model):
 
     def __unicode__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = u"地理数据来源"
+        verbose_name_plural = u"地理数据来源"
 
-IDENTIFIER_SCHEME_PREFERENCE = getattr(
-    settings,
-    'IDENTIFIER_SCHEME_PREFERENCE',
-    ('atco', 'osm', 'naptan', 'postcode', 'bbc-tpeg'))
+
 
 
 class EntityTypeCategory(models.Model):
@@ -84,9 +85,9 @@ class EntityType(models.Model):
     def verbose_name_plural(self):
         return name_in_language(self, 'verbose_name_plural', self.slug)
     
-    show_in_nearby_list = models.BooleanField()
-    show_in_category_list = models.BooleanField()
-    note = models.TextField(null=True, blank=True)
+    show_in_nearby_list = models.BooleanField(u'显示在附近列表')
+    show_in_category_list = models.BooleanField(u'显示在分类列表')
+    note = models.TextField(u'备注', null=True, blank=True)
     category = models.ForeignKey(EntityTypeCategory)
 
     subtype_of = models.ManyToManyField('self', blank=True, symmetrical=False,
@@ -112,6 +113,10 @@ class EntityType(models.Model):
                 e.save()
         else:
             super(EntityType, self).save(*args, **kwargs)
+            
+    class Meta:
+        verbose_name = u"地理位置分类"
+        verbose_name_plural = u"地理位置分类"
 
 class EntityTypeName(models.Model):
     """
@@ -127,16 +132,6 @@ class EntityTypeName(models.Model):
         unique_together = ('entity_type', 'language_code')
 
 
-class Identifier(models.Model):
-    """
-    字典模型类，实现在系统内多个模块之间的关联
-    """
-
-    scheme = models.CharField('关键字', max_length=32)
-    value = models.CharField('值', max_length=256)
-
-    def __unicode__(self):
-        return self.scheme + ': ' + self.value
 
 
 class EntityGroup(models.Model):
@@ -153,7 +148,10 @@ class EntityGroup(models.Model):
 
     def __unicode__(self):
         return self.title
-
+    
+    class Meta:
+        verbose_name = u"地理位置分组"
+        verbose_name_plural = u"地理位置分组"    
 
 class EntityGroupName(models.Model):
     entity_group = models.ForeignKey(EntityGroup, related_name='names')
@@ -172,7 +170,7 @@ class Entity(models.Model):
     @property
     def title(self):
         return name_in_language(self, 'title',
-                    '%s:%s' % (self.identifier_scheme, self.identifier_value))
+                    '%s:%s' % (self.primary_type.slug, self.slug))
     
     source = models.ForeignKey(Source)
 
@@ -181,7 +179,7 @@ class Entity(models.Model):
                                        related_name='entities')
     all_types_completion = models.ManyToManyField(EntityType, blank=True,
                                             related_name='entities_completion')
-    
+    slug = models.CharField(max_length=50)
     location = models.PointField(srid=4326, null=True)
     """
     修复：2011-07-09 本身是geometry=models.GeometryField(srid=4326, null=True),但是gdal里面会判断成UNKNOW类型的。结果就是openlayer中显示不出
@@ -194,41 +192,15 @@ class Entity(models.Model):
     
     absolute_url = models.TextField()
     
-    parent = models.ForeignKey('self', null=True, blank=True)
+   
     is_sublocation = models.BooleanField(default=False)
     is_stack = models.BooleanField(default=False)
 
-    _identifiers = models.ManyToManyField(Identifier, blank=True)
-    identifier_scheme = models.CharField(max_length=32)
-    identifier_value = models.CharField(max_length=256)
+
 
     groups = models.ManyToManyField(EntityGroup)
 
-    @property
-    def identifiers(self):
-        try:
-            return self.__identifiers
-        except AttributeError:
-            self.__identifiers = dict()
-            for identifier in self._identifiers.all():
-                scheme, value = identifier.scheme, identifier.value
-                if scheme in self.__identifiers:
-                    # Multi-valued list - first check if we've converted this
-                    # key to a list already
-                    if getattr(self.__identifiers[scheme], '__iter__', False) \
-                     and not \
-                     isinstance(self.__identifiers[scheme], basestring):
-                        # We have, so just add it to the current list
-                        self.__identifiers[scheme].append(value)
-                    else:
-                        # convert this into a list
-                        self.__identifiers[scheme] = [
-                            self.__identifiers[scheme],
-                            value]
-                else:
-                    self.__identifiers[scheme] = value
-
-            return self.__identifiers
+    
     
     def get_metadata(self):
         try:
@@ -276,28 +248,8 @@ class Entity(models.Model):
         except AttributeError:
             pass
         
-        identifiers = kwargs.pop('identifiers', None)
-        if not identifiers is None:
-            self.absolute_url = self._get_absolute_url(identifiers)
-        
+        self.absolute_url = self._get_absolute_url()
         super(Entity, self).save(*args, **kwargs)
-
-        if not identifiers is None:
-            self._identifiers.all().delete()
-            id_objs = []
-            for scheme, value in identifiers.items():
-                if getattr(value, '__iter__', False) and \
-                  not isinstance(value, basestring):
-                    # Is an iterable, but not a string
-                    for val in value:
-                        id_obj = Identifier(scheme=scheme, value=val)
-                        id_obj.save()
-                        id_objs.append(id_obj)
-                else:
-                    id_obj = Identifier(scheme=scheme, value=value)
-                    id_obj.save()
-                    id_objs.append(id_obj)
-            self._identifiers.add(*id_objs)
         self.update_all_types_completion()
 
     def update_all_types_completion(self):
@@ -319,33 +271,21 @@ class Entity(models.Model):
             return self.metadata['types']
 
     def delete(self, *args, **kwargs):
-        for identifier in self._identifiers.all():
-            identifier.delete()
         super(Entity, self).delete()
     
     objects = models.GeoManager()
 
-    def _get_absolute_url(self, identifiers):
-        for scheme in IDENTIFIER_SCHEME_PREFERENCE:
-            if scheme in identifiers:
-                self.identifier_scheme = scheme
-                self.identifier_value = identifiers[scheme]
-                return reverse('places:entity',
-                               args=[scheme, identifiers[scheme]])
-        if len(identifiers) > 0:
-            for scheme, identifier in identifiers.items():
-                try:
-                    url = reverse('places:entity', args=[scheme, identifier])
-                except NoReverseMatch:
-                    continue
-                else:
-                    self.identifier_scheme = scheme
-                    self.identifier_value = identifier
-                    return url
-        raise AssertionError
+    def _get_absolute_url(self, identifiers=None):
+        if identifiers:
+            return reverse('places:entity', args=[identifiers['scheme'], identifiers['value']])
+        else:
+            identifiers = dict()
+            identifiers['scheme'] = self.primary_type.slug
+            identifiers['value'] = self.slug
+            return reverse('places:entity', args=[identifiers['scheme'], identifiers['value']])
 
     def get_absolute_url(self):
-        return '/places/%s:%s' % self.identifiers.items()[0]
+        return self._get_absolute_url()
     
     def __unicode__(self):
         return self.title
@@ -370,10 +310,13 @@ class Entity(models.Model):
             'primary_type': simplify_model(self.primary_type, terse=True),
             'metadata': self.metadata,
             'title': self.title,
-            'identifiers': self.identifiers,
-            'identifier_scheme': self.identifier_scheme,
-            'identifier_value': self.identifier_value
+            'identifier_scheme': self.primary_type,
+            'identifier_value': self.title
         })
+        
+    class Meta:
+        verbose_name = u"地理位置"
+        verbose_name_plural = u"地理位置"
 
 class EntityName(models.Model):
     entity = models.ForeignKey(Entity, related_name='names')
@@ -405,6 +348,10 @@ class Route(models.Model):
     def __unicode__(self):
         return u'%s: %s' % (self.service_id, self.service_name)
     
+    class Meta:
+        verbose_name = u"地理导航"
+        verbose_name_plural = u"地理导航"
+
 class StopOnRoute(models.Model):
     
     entity = models.ForeignKey(Entity)
@@ -553,6 +500,10 @@ class Journey(models.Model):
     
     def __unicode__(self):
         return self.route.__unicode__()
+    
+    class Meta:
+        verbose_name = u"路线导航"
+        verbose_name_plural = u"路线导航"
 
 class ScheduledStop(models.Model):
     """

@@ -31,7 +31,7 @@
             {% trans "Limit to:" %}
             {% for et in found_entity_types %}
                 {% if entity %}
-                <a href="{% url places:entity-category-list entity.identifier_scheme entity.identifier_value %}{{ et.slug }}{% for oet in entity_types %}{% if not et.subtype_of.all|contains:oet %};{{ oet.slug }}{% endif %}{% endfor %}/" rel="external">
+                <a href="{% url places:entity-category-list entity.primary_type.slug entity.slug %}{{ et.slug }}{% for oet in entity_types %}{% if not et.subtype_of.all|contains:oet %};{{ oet.slug }}{% endif %}{% endfor %}/" rel="external">
                     {{ et.verbose_name_plural }}</a>
                 {% else %}
                 <a href="{% url places:category-list %}{{ et.slug }}{% for oet in entity_types %}{% if not et.subtype_of_completion.all|contains:oet %};{{ oet.slug }}{% endif %}{% endfor %} /" rel="external">

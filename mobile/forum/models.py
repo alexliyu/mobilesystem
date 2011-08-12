@@ -77,6 +77,10 @@ class TopicType(models.Model):
     def __unicode__(self):
         return self.name 
     
+    class Meta:
+        verbose_name = u"话题类型"
+        verbose_name_plural = u"话题类型"
+    
 class TopicManager(models.Manager):
     def get_query_set(self):
         return super(TopicManager, self).get_query_set().filter(hidden=False)

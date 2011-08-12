@@ -16,7 +16,7 @@
     {% for entity_type in types %}
       <li>
 	{% if entity %}
-	  <a href="{% url places:entity-nearby-detail entity.identifier_scheme,entity.identifier_value,entity_type.slug %}"  rel="external">
+	  <a href="{% url places:entity-nearby-detail entity.primary_type.slug,entity.slug,entity_type.slug %}"  rel="external">
 	{% else %}
 	  <a href="{% url places:nearby-detail entity_type.slug %}"  rel="external">
 	{% endif %} 

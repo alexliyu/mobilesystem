@@ -150,14 +150,13 @@ px      68    160    252    344    436    */
 
 /*	---------关于娱讯---------	*/
 .ui-corner-all h2{font-size:16px;}
-.note div img{width:260px;height:140px;}
 #divLink {list-style-type:none;}
 #divLink img{width:260px;height:230px;}
 #imgWea{
 	width:30px;
 	height:20px;
 }
-.clear{padding-top:5px;}
+.clear{padding-top:5px;clear:both;}
 /** -------新闻---------*/
 .entry-title{
 	font-size:15px;
@@ -207,12 +206,12 @@ ui-shadow ul li{line-height:18px;}
  width: 100%;
  margin-bottom: 10px;
  float: left;
- padding-left: 25px;
+ padding-left: 15px;
 }
 .center{	
 }
 .icon-menu li{
- width: 50%;
+ width: 80px;
  float: left;
  font-size: 14px;
  line-height: 18px;
@@ -220,3 +219,14 @@ ui-shadow ul li{line-height:18px;}
 }
 #bc-title{float:left;display:inline}
 #bc-title h1{font-size: 16px;line-height:28px;height:28px;}
+
+#lvList{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
+#lvList li{display:inline;text-align:center;}
+#lvList a{float:left;width:200px;text-decoration:none;padding:0.2em 0.2em;}
+#lvList a img{float:left;width:50px;height:50px;text-align:right;}
+#lvList a h3{float:left;}
+#lvList a span{float:left;}
+#lvList a p{float:left;}
+#divPaper ul{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
+#divPaper ul li{display:inline;text-align:center;}
+#divPaper ul li a{float:left;width:3em;text-decoration:none;padding:0 0 0.2em;border-right:1px solid white;}

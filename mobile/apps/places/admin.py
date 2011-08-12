@@ -8,7 +8,7 @@
 """
 from django.contrib.gis import admin
 from apps.places.models import (Entity, EntityName, EntityType, EntityTypeName, EntityGroup,
-                    EntityGroupName, Route, StopOnRoute, Journey, Identifier)
+                    EntityGroupName, Route, StopOnRoute, Journey)
 
 class EntityTypeNameInline(admin.TabularInline):
     model = EntityTypeName
@@ -66,4 +66,4 @@ admin.site.register(EntityType, EntityTypeAdmin)
 admin.site.register(EntityGroup, EntityGroupAdmin)
 admin.site.register(Route, RouteAdmin)
 admin.site.register(Journey)
-admin.site.register(Identifier)
+

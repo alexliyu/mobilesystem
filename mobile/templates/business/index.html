@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
-<ul data-role="listview">
+<ul data-role="listview" id="lvList">
 	{% for b in list.object_list %}
     	
     	<li><a href="/business/{{ b.id  }}">
@@ -17,7 +17,7 @@
 </div>
 <div class="clear"></div>
 
-<div data-role="navbar">
+<div data-role="navbar" id="divPaper">
 <ul>
 {{ userList.paginator.num_pages }}
 <li><a href="?page=1" title="首页">首页</a></li>
