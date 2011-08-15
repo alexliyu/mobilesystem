@@ -1,11 +1,11 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
-from django.contrib.auth.decorators import login_required
+
 
 from forum.accountviews import profile, signature 
 
 from .views import IndexView, forum, recent, topic, post, new_post, edit_post, user_posts, user_topics, markitup_preview
-from django.views.generic.simple import direct_to_template
+
 
 urlpatterns = patterns('',
    (r'^$', IndexView, {}, 'index'),

@@ -9,7 +9,6 @@ __________________________________________________________
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse

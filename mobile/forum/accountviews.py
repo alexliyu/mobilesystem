@@ -2,10 +2,10 @@
 # -*- coding: UTF-8 -*-
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.decorators import login_required
 
 from forms import SignatureForm
-from utils.views import BaseView
+from utils.views import BaseView, login_required
 from utils.breadcrumbs import *
 
 

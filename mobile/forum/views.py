@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
@@ -11,8 +11,10 @@ from django.contrib.csrf.middleware import csrf_exempt
 from forum.forms import EditPostForm, NewPostForm, ForumForm
 from forum.models import Topic, Forum, Post
 import forum.settings as lbf_settings
-from utils.views import BaseView
+from utils.views import BaseView, login_required
 from utils.breadcrumbs import *
+
+
 
 
 
@@ -173,10 +175,12 @@ class markitup_preview(BaseView):
 #    return render(request, template_name, {'message': request.POST['data']})
 
 
+
+
 class new_post(BaseView):
     def get_metadata(self, request):
         return {
-            'title': u'团购',
+            'title': u'新话题',
             'additional': 'View news feeds and events from across the University.',
         }
         
@@ -230,7 +234,7 @@ class new_post(BaseView):
         context['session_key'] = request.session.session_key
         
         return self.render(request, context, template_name) 
-    
+        
 
 
 class edit_post(BaseView):

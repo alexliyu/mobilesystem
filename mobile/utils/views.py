@@ -1,3 +1,11 @@
+#-*- coding:utf-8 -*-
+"""
+这是项目的基视图.
+
+创建于 2011-1-30.
+
+@author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
+"""
 from email.utils import formatdate
 from time import mktime
 from inspect import isfunction
@@ -26,6 +34,18 @@ from utils.http import MediaType, HttpResponseSeeOther
 from utils.simplify import (simplify_value, simplify_model,
                                   serialize_to_xml)
 from utils.breadcrumbs import NullBreadcrumb
+
+def login_required(function=None):
+    """
+    用来实现判断是否用户已登录，如果已登录则继续执行方法，否则跳转到登录页面
+    """
+    def wrapper(self, request, context, *args, **kwargs):
+        if not request.user.is_authenticated():
+            return self.redirect(settings.LOGIN_URL, request)
+        else:
+            
+            return function(self, request, context, *args, **kwargs)
+    return wrapper
 
 def renderer(format, mimetypes=(), priority=0):
     """
