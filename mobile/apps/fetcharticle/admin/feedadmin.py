@@ -15,29 +15,33 @@ from django.conf.urls.defaults import url
 from django.conf.urls.defaults import patterns
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse, NoReverseMatch
-
+from django.contrib.sites.models import Site
 from tagging.models import Tag
 
-from lincdm import settings
-from lincdm.managers import HIDDEN
-from lincdm.managers import PUBLISHED
-from lincdm.entry.admin.forms import EntryAdminForm
-from lincdm.app.fetchblog.feedstest import getpage
-from lincdm.app.fetchblog.models import FeedList, FeedsResult, TempImages
+from django.conf import settings
+from entry.managers import HIDDEN
+from entry.managers import PUBLISHED
+from entry.admin.forms import EntryAdminForm
+from apps.fetcharticle.feedstest import getpage
+from apps.fetcharticle.models import FeedList, FeedsResult, TempImages
 import feedparser, os
-from lincdm.lib import htmllib
-from lincdm.lib.htmllib import HTMLStripper, gbtools
-from lincdm.entry.models import Entry, EntryAbstractClass
+from utils import htmllib
+from utils.htmllib import HTMLStripper, gbtools
+from entry.models import Entry, EntryAbstractClass
 
 
 
-'''
-用于管理采集文章
-'''
+
 class TempImagesAdmin(admin.ModelAdmin):
+    '''
+    用于管理采集图片
+    '''
     actions = ['getImages']
     actions_on_top = True
     actions_on_bottom = True
+    
+    list_filter = ('stat',)
+    list_display = ('oldurl', 'stat', 'greatdate', 'parsedate', 'entry')
     
     def getImages(self, request, queryset, *arg1, **arg2):
                 for image in queryset:
@@ -60,11 +64,11 @@ class TempImagesAdmin(admin.ModelAdmin):
     
     def __saveImages(self, name, image):
         try:
-            path = os.path.join(settings.MEDIA_ROOT, 'cache/%s' % name)
+            path = os.path.join(settings.MEDIA_ROOT, 'cache/images/%s' % name)
             f = file(path, "wb")
             f.write(image)
             f.close()
-            return "%scache/%s" % (settings.MEDIA_URL, name)
+            return "%scache/images/%s" % (settings.MEDIA_URL, name)
         except Exception, e:
             logging.error(e)
             return False
@@ -82,14 +86,17 @@ class TempImagesAdmin(admin.ModelAdmin):
                 except Exception, data:
                         model.stat = 2
                         logging.error('the db saved error is: %s', data)
-        
-'''
-用于管理采集文章
-'''
+
 class FeedsRresultAdmin(admin.ModelAdmin):
+            
+    '''
+    用于管理采集文章
+    '''
     actions = ['getArticle', 'getFeed', 'saveArticle' ]
     actions_on_top = True
     actions_on_bottom = True
+    list_filter = ('fetch_stat',)
+    list_display = ('title', 'author_name', 'date', 'link', 'category', 'fetch_stat')
     
     def getArticle(self, request, queryset, *arg1, **arg2):
                 for feed in queryset:
@@ -109,8 +116,9 @@ class FeedsRresultAdmin(admin.ModelAdmin):
                         
                                                         self.__store_article(contenthtml, feed)
                         
-                                                        return True
-                                                return False
+                                                else:
+                                                    feed.fetch_stat = 2
+                                                    feed.save()
                                         except Exception, data:
                                                 logging.info('DownloadError in get %s.the error is %s', feed.link, data)
                                                 return False
@@ -144,13 +152,14 @@ class FeedsRresultAdmin(admin.ModelAdmin):
     def __store_entry(self, feed):
                 try:
                     entry, result = Entry.published.get_or_create(title=feed.title)
-                    entry.excerpt = feed.excerpt
+                    entry.excerpt = htmllib.Filter_html(feed.excerpt).strip()[:80] + '……'
                     entry.status = 2
                     entry.author_name = feed.author_name
                     entry.date = feed.date
                     entry.slug = htmllib.sid() 
                     entry.content = self.__Parse_image(feed.content)
-                    entry.categories.add(feed.feed.category)                   
+                    entry.categories.add(feed.feed.category)
+                    entry.sites = [Site.objects.get_current(), ]             
                     entry.save()
                     feed.fetch_stat = 4
                     feed.save()
@@ -183,7 +192,8 @@ class FeedAdmin(admin.ModelAdmin):
     actions = ['test_feed', 'getFeed' ]
     actions_on_top = True
     actions_on_bottom = True
-    
+
+    list_display = ('name', 'feedurl', 'category', 'last_retrieved')
     
     # Custom Actions
     def test_feed(self, request, queryset):
@@ -306,6 +316,7 @@ class FeedAdmin(admin.ModelAdmin):
                                           feed=self.model.objects.get(),
                                           date=datetime.now()
                                           )
+                        
                        
 #                        try:
 #                                entry.date = datetime.strptime(date_published[:-6], '%a, %d %b %Y %H:%M:%S')

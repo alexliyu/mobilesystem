@@ -17,7 +17,7 @@
 import logging
 import urllib2
 import urlparse
-from lincdm.lib import htmllib
+from utils import htmllib
 
 
 theresult = []

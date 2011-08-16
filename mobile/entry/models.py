@@ -100,7 +100,7 @@ class Category(models.Model):
     @models.permalink
     def get_absolute_url(self):
         """Return category's URL"""
-        return ('entry_category_detail', (self.tree_path,))
+        return ('entry:entry_category_detail', (self.tree_path,))
 
     class Meta:
         """Category's Meta"""

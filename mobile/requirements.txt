@@ -1,3 +1,4 @@
+django-activity-stream
 postmarkup
 pywurfl
 slimmer

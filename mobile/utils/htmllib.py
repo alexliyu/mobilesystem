@@ -20,7 +20,10 @@ import StringIO
 import struct
 import gbtools
 
-def parsehtml(html_content, feed, feed_url, url):
+def parsehtml(html_content, feed, url, feed_url):
+		"""
+		格式化采集后的内容
+		"""
 		start_target = feed.start_target
 		allow_target = feed.allow_target
 		mid_target = feed.mid_target
@@ -209,15 +212,24 @@ def do_str(soup):
 			return result
 
 def do_imgclean(url, soup):
+		"""
+		用于提取图片地址后，从相对路径转为绝对路径，
+		2011-08-16 目前还是发现有点问题，等待以后进行修正 李昱
+		"""
 		oldsrc = ''
 		newimg = ''
 		for cimg in soup.findAll('img'):
-				if 'http://' in cimg['src']:
-						pass
+				if cimg['src'].split('../'):
+					oldsrc = cimg['src']
+					newimg = urlparse.urljoin(url, oldsrc)
+					cimg['src'] = newimg
 				else:
-						oldsrc = cimg['src']
-						newimg = urlparse.urljoin(url, oldsrc)
-						cimg['src'] = newimg
+					if 'http://' in cimg['src']:
+						pass
+					else:
+							oldsrc = cimg['src']
+							newimg = urlparse.urljoin(url, oldsrc)
+							cimg['src'] = newimg
 		return soup
 
 def geturl(url):

@@ -6,7 +6,7 @@ Created on 2011-1-30
 '''
 from django.db import models
 from datetime import datetime
-from lincdm.entry.models import Category
+from entry.models import Category
 # Create your models here.
 
         
@@ -15,7 +15,7 @@ class FeedList(models.Model):
         name = models.CharField(u'名称', default=u'李昱的博客', max_length=20)
         feedurl = models.CharField(u'rss订阅地址', default='http://alexliyu.blog.163.com/rss', max_length=300)
         latest = models.CharField(default='first', max_length=300)
-        last_retrieved = models.DateTimeField(default=datetime.today().fromtimestamp(0))
+        last_retrieved = models.DateTimeField(u'最后采集时间', default=datetime.today().fromtimestamp(0))
         remotecategory = models.CharField(u'远程栏目', default='douban', max_length=300)
         remoteconf = models.CharField(u'远程配置', default='0', max_length=30)
         start_target = models.CharField(u'起始位置', default='nohtml', max_length=300)
@@ -55,7 +55,7 @@ class FeedsResult(models.Model):
         )
         
         title = models.CharField(u'标题', default='', max_length=50)
-        author_name = models.CharField(u'作者', max_length=15)
+        author_name = models.CharField(u'作者', max_length=50)
         date = models.DateTimeField(u'添加时间', auto_now_add=True)
         link = models.URLField(u'原文地址')
         excerpt = models.TextField(u'摘要', blank=True, max_length=500)
