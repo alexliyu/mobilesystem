@@ -449,7 +449,7 @@ class UserProfile(UserenaBaseProfile):
 #        return self.user.username
     
     def replacestr(self):
-        return "%s****%s" % (self.__str__()[0:3], self.__str__()[7:11])
+        return "%s****%s" % (self.user.__str__()[0:3], self.user.__str__()[7:11])
     
     def get_total_posts(self):
         return self.user.post_set.count()
