@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<ul data-role="listview" data-filter="true"> 
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<h2>本活动简介</h2>
+{{description|safe}}
+</div>
+<br/>
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<ul><h2>中奖会员</h2></ul>
+<ul data-role="listview"> 
 {% for item in blacklist %}
-    <li><h4>中奖手机号码为：{{ item.replacestr }}</h3></li>
+    <li><a href="{%url userena_profile_detail item.user%}"><h4>中奖手机号码为：{{ item.replacestr }}</h3></a></li>
 {% endfor %}
     
 </ul>
-
+</div>
 
 {% endblock %}

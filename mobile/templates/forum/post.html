@@ -56,25 +56,25 @@
                 </div>
             </div>
         {% endif %}
-        <div class="inner">
+        <div class="ui-grid-a ui-body-d ui-corner-all ui-shadow">
             {% if form.errors %}
                 <strong> {% trans "Please correct the errors below." %}  </strong>
                 {{ form|form_all_error }}
                 <br/>
             {% endif %}
-            <form action="" accept-charset="utf-8" method="post" class="frm-form" id="post-form">
+            <form action="" accept-charset="utf-8" method="post" class="frm-form" id="post-form" data-ajax="false">
                 <div class="hidden" id="hidden_fields">
                     {% csrf_token %} 
                 </div>
                 {% if topic_post%}
-                    {{form.topic_type}} {{form.subject}}
+                    <div data-role="fieldcontain"><label for="topic_type"> 话题类型：</label>{{form.topic_type}} </div>
+                    <div data-role="fieldcontain"><label for="subject"> 话题标题：</label>{{form.subject}}</div>
                     <div class="sep10"></div>
                 {% endif %}
-                {{form.message}}
+                <div data-role="fieldcontain"><label for="message"> 话题内容：</label>{{form.message}}</div>
                 <div class="sep10"></div>
-                <div id="uploadify" class="multi-file-upload">
-                    <input id="fileInput" name="file" type="file" />
-                </div>
+                <div data-role="fieldcontain"><label for="message"> 附件：</label><input id="fileInput" name="file" type="file" /></div>
+                
 
                 <ul id="uploaded_files">
                 </ul>

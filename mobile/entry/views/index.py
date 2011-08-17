@@ -40,7 +40,7 @@ class IndexView(BaseView):
     def handle_GET(self, request, context):
         template_name = 'entry/index'
         context['category'] = Category.tree.all()
-        context['object_list'] = Entry.published.all()
+        context['object_list'] = Entry.published.all()[:10]
         return self.render(request, context, template_name)
 class category_detail(BaseView):
     """显示一个分类中的文章"""

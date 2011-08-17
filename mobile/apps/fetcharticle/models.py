@@ -7,7 +7,7 @@ Created on 2011-1-30
 from django.db import models
 from datetime import datetime
 from entry.models import Category
-# Create your models here.
+from tinymce import models as tinymce_models
 
         
 
@@ -54,12 +54,12 @@ class FeedsResult(models.Model):
         (4, u'已存储数据库'),
         )
         
-        title = models.CharField(u'标题', default='', max_length=50)
-        author_name = models.CharField(u'作者', max_length=50)
+        title = models.CharField(u'标题', default='', max_length=100)
+        author_name = models.CharField(u'作者', max_length=100)
         date = models.DateTimeField(u'添加时间', auto_now_add=True)
         link = models.URLField(u'原文地址')
-        excerpt = models.TextField(u'摘要', blank=True, max_length=500)
-        content = models.TextField(u'内容', blank=True)
+        excerpt = models.TextField(u'摘要', blank=True, max_length=1000)
+        content = tinymce_models.HTMLField(u'内容', blank=True)
         feed = models.ForeignKey(FeedList, verbose_name=u'采集订阅')
         category = models.ForeignKey(Category, verbose_name=u'目标栏目')
         fetch_stat = models.IntegerField(u'采集状态', default=0, max_length=1, choices=GENDER_CHOICES)

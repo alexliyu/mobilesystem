@@ -1,60 +1,40 @@
-{% extends 'forum/account/base.html' %}
+{% extends 'base.html' %}
 
 {% load i18n %}
-{% load forum_filters %}
-{% load forum_tags %}
+
 {% load avatar_tags %}
 
 {% block title %}
-    {{ FORUM_TITLE }} - {% blocktrans %}{{ view_user }}'s profile{% endblocktrans %}
+    修改头像
 {% endblock %}
 
-{% block content_content %}
-    <div class="box">
-        <div class="cell">
-            <span class="fade">
-                {% trans "Avatar" %}
-            </span>
-        </div>
+{% block content %}
+<div class="ui-grid-a ui-body-d ui-corner-all ui-shadow">
+ <div data-role="navbar">
+  <ul>
+    <li><a href="{% url userena_profile_detail user.username %}"><span>{% trans 'View profile' %}</span></a></li>
+    <li><a href="{% url userena_profile_edit user.username %}">{% trans "Edit profile" %}</a></li>
+    <li><a href="{% url userena_password_change user.username %}">{% trans "Change password" %}</a></li>
+    <li><a href="{% url userena_email_change user.username %}">{% trans "Change email" %}</a></li>
+    <li><a href="{% url forum_avatar_change %}" class="ui-btn-active"><span>{% trans "Avatar" %}</span></a></li>
+  </ul>
+ </div>
 
-        <div class="cell">
-            <table border="0" cellpadding="5" cellspacing="0">
-                <tbody><tr>
-                        <td align="right" width="80">
-                            {% trans "Current avatar" %}
-                        </td>
-                        <td align="left" width="200">
-                            {% avatar user %}
-                        </td>
-                    </tr>
-                </tbody></table>
-        </div>
-        <div class="inner">
-            <form enctype="multipart/form-data" method="POST" action="">
+        
+       		<div class="ui-grid-a">
+						<div class="ui-block-a"><strong>{% trans "Current avatar" %}:</div>
+						<div class="ui-block-b">{% avatar user %}</div>
+			</div><!-- /grid-a -->
+            <form enctype="multipart/form-data" method="POST" action=""  data-ajax="false">
                 {% csrf_token %}
-                <span class="fade">
-                    {% trans "The allowed image file types are" %} gif, jpeg {% trans "and" %} png.
-                </span>
+              
+ 				
                 <div class="sep5"></div>
-                <table border="0" cellpadding="5" cellspacing="0">
-                    <tbody><tr>
-                            <td align="right" width="80">
-                                {% trans "Upload avatar file" %}
-                            </td>
-                            <td align="left" width="200">
-                                <input type="file" name="avatar" value="{% trans "Avatar Image" %}" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right" width="80">
-                            </td>
-                            <td align="left" width="200">
-                                <input type="submit" class="super normal button" value="{% trans "Upload New Image" %}" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <label for="avatar"> {% trans "Upload avatar file" %}:</label><input type="file" name="avatar" value="{% trans "The allowed image file types are" %} gif, jpeg {% trans "and" %} png." />
+                              
+                <input type="submit"  value="{% trans "Upload New Image" %}" />
+                        
             </form>
-        </div>
+       
     </div>
 {% endblock %}

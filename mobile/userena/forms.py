@@ -142,7 +142,7 @@ class SignupFormOnlyMobile(SignupForm):
         用来验证手机号码是否是合法的手机号码，如果合法则返回True，反之返回False
         """
         import re
-        mobile_re = re.compile('((13[0-9]|15[0|3|6|7|8|9]|18[8|9])\d{8})')
+        mobile_re = re.compile('((13[0-9]|15[0|2|3|6|7|8|9]|18[2|8|9])\d{8})')
         if mobile_re.search(mobile):
             return True
         else:
@@ -284,7 +284,7 @@ class ChangeEmailForm(forms.Form):
         return self.user.userena_signup.change_email(self.cleaned_data['email'])
 
 class EditProfileForm(forms.ModelForm):
-    """ Base form used for fields that are always required """
+    """ 编辑用户个人基本资料的表单 """
     first_name = forms.CharField(label=_(u'First name'),
                                  max_length=30,
                                  required=False)
@@ -296,8 +296,23 @@ class EditProfileForm(forms.ModelForm):
         super(forms.ModelForm, self).__init__(*args, **kw)
         # Put the first and last name at the top
         new_order = self.fields.keyOrder[:-2]
-        new_order.insert(0, 'first_name')
-        new_order.insert(1, 'last_name')
+        new_order.insert(0, 'last_name')
+        new_order.insert(1, 'first_name')
+        
+        """
+        删除一些不允许用户修改的字段
+        """
+        new_order.remove('mugshot')
+        new_order.remove('mac')
+        new_order.remove('mobile')
+        new_order.remove('staytime')
+        new_order.remove('experience')
+        new_order.remove('score')
+        new_order.remove('grade')
+        new_order.remove('userrank')
+        new_order.remove('signature')
+        new_order.remove('friend')
+        
         self.fields.keyOrder = new_order
 
     class Meta:
@@ -311,5 +326,6 @@ class EditProfileForm(forms.ModelForm):
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.save()
+      
 
         return profile

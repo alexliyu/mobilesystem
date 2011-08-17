@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-11 11:36+0800\n"
-"PO-Revision-Date: 2011-08-11 13:36+0800\n"
+"PO-Revision-Date: 2011-08-17 16:33+0800\n"
 "Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
 "Language: zh_CN\n"
@@ -3817,7 +3817,7 @@ msgstr "你已经知道下面的Email"
 
 #: userena/forms.py:288
 msgid "First name"
-msgstr "姓"
+msgstr "名"
 
 #: userena/forms.py:291
 msgid "Last name"
@@ -3894,7 +3894,7 @@ msgstr "隐私协议"
 
 #: userena/models.py:238
 msgid "Designates who can view your profile."
-msgstr "指定谁能浏览你的个人资料"
+msgstr "是否允许非会员浏览你的个人资料"
 
 #: userena/models.py:324
 #, python-format

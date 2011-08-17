@@ -436,7 +436,7 @@ class UserProfile(UserenaBaseProfile):
     score = models.DecimalField(u'会员积分', default=0, decimal_places=0, max_digits=10)
     grade = models.IntegerField(u'等级', default=1)
     last_activity = models.DateTimeField(auto_now_add=True)
-    userrank = models.CharField(max_length=30, default="Junior Member")
+    userrank = models.CharField(max_length=30, default="Junior Member", blank=True)
     last_posttime = models.DateTimeField(auto_now_add=True)
     signature = models.CharField(max_length=1000, blank=True)
     

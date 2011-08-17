@@ -47,16 +47,19 @@ class TempImagesAdmin(admin.ModelAdmin):
                 for image in queryset:
                         logging.info('start to fetch images,The url is %s', image.oldurl)
                         try:
-                                name = htmllib.sid() + '.jpg'
-                                result = getpage(htmllib.encoding(image.oldurl), 30)
-                                if result.code == 200:
-                                        result = self.__store_images(result.read(), name, image)
+                                if image.stat == 1:
+                                    pass
                                 else:
-                                        result = False
-                                if result:
-                                        logging.info('Success!')
-                                else:
-                                        logging.info('this one was Fail!')
+                                    name = htmllib.sid() + '.jpg'
+                                    result = getpage(htmllib.encoding(image.oldurl), 30)
+                                    if result.code == 200:
+                                            result = self.__store_images(result.read(), name, image)
+                                    else:
+                                            result = False
+                                    if result:
+                                            logging.info('Success!')
+                                    else:
+                                            logging.info('this one was Fail!')
 
                         except Exception, data:
                                 logging.info(data)
@@ -313,7 +316,7 @@ class FeedAdmin(admin.ModelAdmin):
                                           excerpt=content,
                                           author_name=htmllib.decoding(author_name),
                                           category=category,
-                                          feed=self.model.objects.get(),
+                                          feed=self.model.objects.get(feedurl=feed_link),
                                           date=datetime.now()
                                           )
                         

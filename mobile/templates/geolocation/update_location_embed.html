@@ -58,11 +58,11 @@
             <form method="post" action="{% url geolocation:index %}" class="update-location-form">
                 {% csrf_token %}
                 <input name="return_url" type="hidden" value="{% if return_url %}{{ return_url }}{% else %}{% url geolocation:index %}{% endif %}"/>
-                <div class="update-location-name-container">
-                    <input type="text" name="name" class="update-location-name" />
+                <div data-role="fieldcontain">
+                   <label for="name">输入当前位置:</label> <input type="text" name="name" id="name"/>
                     {% ifnotequal style_group "smart" %}
                     {# Translators: This refers to sample things to be entered in the 'Set Location' box, postcode, building ID, street name #}
-                    <p>{% trans "e.g., OX2 6NN, kebl, St Clements" %}</p>
+                    <p>比如：厦门 莲坂好又多</p>
                     {% endifnotequal %}
                 </div>
                 <input name="method" type="hidden" value="geocoded" />

@@ -69,7 +69,7 @@ urlpatterns += patterns('django.views.generic.simple',
 handler500 = 'utils.views.handler500'
 
 urlpatterns += patterns('simpleavatar.views',
-        url('^account/avatar/change/$', 'change', {'template_name': 'forum/account/avatar/change.html'}, \
+        url('^accounts/avatar/change/$', 'change', {'template_name': 'userena/avatar/change.html'}, \
                 name='forum_avatar_change'),
 
     (r'^accounts/avatar/', include('simpleavatar.urls')),

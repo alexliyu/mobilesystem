@@ -189,6 +189,7 @@ class new_post(BaseView):
         return Breadcrumb(
             self.conf.local_name, lazy_parent('index') , u'发布新话题', lazy_reverse('forum_new_topic', args=[forum_id, topic_id, form_class ])
         )
+        
     @login_required
     def handle_GET(self, request, context, forum_id=None, topic_id=None, form_class=NewPostForm,):
         template_name = "forum/post"
@@ -204,24 +205,14 @@ class new_post(BaseView):
             topic = get_object_or_404(Topic, pk=topic_id)
             forum = topic.forum
             first_post = topic.posts.order_by('created_on').select_related()[0]
-        if request.method == "POST":
-            form = form_class(request.POST, user=request.user, forum=forum, topic=topic, \
-                    ip=request.META['REMOTE_ADDR'])
-            preview = request.POST.get('preview', '')
-            if form.is_valid() and request.POST.get('submit', ''):
-                post = form.save()
-                
-                if topic:
-                    return self.redirect (post.get_absolute_url_ext())
-                else:
-                    return self.redirect (reverse("forum:forum_forum", args=[forum.slug]))
-        else:
-            initial = {}
-            qid = request.GET.get('qid', '')
-            if qid:
-                qpost = get_object_or_404(Post, id=qid)
-                initial['message'] = "[quote=%s]%s[/quote]" % (qpost.posted_by.username, qpost.message)
-            form = form_class(initial=initial, forum=forum)
+            
+       
+        initial = {}
+        qid = request.GET.get('qid', '')
+        if qid:
+            qpost = get_object_or_404(Post, id=qid)
+            initial['message'] = "[quote=%s]%s[/quote]" % (qpost.posted_by.username, qpost.message)
+        form = form_class(initial=initial, forum=forum)
         context['forum'] = forum
         context['form'] = form
         context['topic'] = topic
@@ -235,7 +226,29 @@ class new_post(BaseView):
         
         return self.render(request, context, template_name) 
         
-
+    def handle_POST(self, request, context, forum_id=None, topic_id=None, form_class=NewPostForm,):
+        qpost = topic = forum = first_post = preview = None
+        post_type = _('topic')
+        topic_post = True
+        if forum_id:
+            forum = get_object_or_404(Forum, pk=forum_id)
+        if topic_id:
+            post_type = _('reply')
+            topic_post = False
+            topic = get_object_or_404(Topic, pk=topic_id)
+            forum = topic.forum
+            first_post = topic.posts.order_by('created_on').select_related()[0]
+            
+        form = form_class(request.POST, user=request.user, forum=forum, topic=topic, \
+                    ip=request.META['REMOTE_ADDR'])
+        preview = request.POST.get('preview', '')
+        if form.is_valid() and request.POST.get('submit', ''):
+            post = form.save()
+                
+            if topic:
+                return self.redirect (post.get_absolute_url_ext(), request)
+            else:
+                return self.redirect (reverse("forum:forum_forum", args=[forum.slug]), request)
 
 class edit_post(BaseView):
     def get_metadata(self, request):

@@ -187,6 +187,6 @@ class entry_shortlink(BaseView):
     def handle_GET(self, request, context, object_id):
 
         entry = get_object_or_404(Entry, pk=object_id)
-        return self.redirect(entry, permanent=True)
+        return self.redirect(entry.get_absolute_url(), request)
 
 

@@ -42,6 +42,7 @@ class DetailsView(BaseView):
         blacklist = a.UserProfile.all()
 
         context['blacklist'] = blacklist
+        context['description'] = a.description
         context.update({
            'sent': request.GET.get('sent') == 'true',
            'referer': request.GET.get('referer', ''),
