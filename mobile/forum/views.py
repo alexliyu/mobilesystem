@@ -29,13 +29,12 @@ class IndexView(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯互动社区', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context):
-        template_name = "forum/index"
-        if lbf_settings.LAST_TOPIC_NO_INDEX: 
-            context['topics'] = Topic.objects.all().order_by('-last_reply_on')[:20]
+        template_name = "forum/index" 
+        context['topics'] = Topic.objects.all().order_by('-num_replies')[:10]
         return self.render(request, context, template_name)
         
 class forum(BaseView):
@@ -48,7 +47,7 @@ class forum(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context, forum_slug, topic_type='', topic_type2=''):
         return Breadcrumb(
-            self.conf.local_name, lazy_parent('index') , u'厦门掌上社区', lazy_reverse('forum_forum', args=[forum_slug, topic_type, topic_type2])
+            self.conf.local_name, lazy_parent('index') , u'娱讯互动社区', lazy_reverse('forum_forum', args=[forum_slug, topic_type, topic_type2])
         )
         
     def handle_GET(self, request, context, forum_slug, topic_type='', topic_type2=''):
@@ -106,7 +105,7 @@ class topic(BaseView):
     def breadcrumb(self, request, context, topic_id):
        
         return Breadcrumb(
-            self.conf.local_name, lazy_parent('index') , u'厦门掌上社区', lazy_reverse('forum_topic', topic_id=topic_id)
+            self.conf.local_name, lazy_parent('index') , u'娱讯互动社区', lazy_reverse('forum_topic', topic_id=topic_id)
             
         )
         
@@ -138,7 +137,7 @@ class post(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context, post_id):
         return Breadcrumb(
-            self.conf.local_name, lazy_parent('index') , u'厦门掌上社区', lazy_reverse('forum_post', args=[post_id])
+            self.conf.local_name, lazy_parent('index') , u'娱讯互动社区', lazy_reverse('forum_post', args=[post_id])
         )
         
     def handle_POST(self, request, context, post_id):
@@ -159,7 +158,7 @@ class markitup_preview(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, lazy_parent('index') , u'厦门掌上社区', lazy_reverse('markitup_preview')
+            self.conf.local_name, lazy_parent('index') , u'娱讯互动社区', lazy_reverse('markitup_preview')
         )
     @login_required    
     def handle_GET(self, request, context):

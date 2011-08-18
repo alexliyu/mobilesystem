@@ -4,6 +4,9 @@
 {% block content_title %}<h2>{% trans 'Profiles' %}</h2>{% endblock %}
 
 {% block content %}
+{% block usernav %}
+	{{block.super}}
+{%endblock%}
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
 <ul><h2>公开用户列表</h2></ul>
 <ul data-role="listview">
@@ -19,22 +22,19 @@
 </div>
 
 {% if is_paginated %}
-<div class="pagination">
-  <span class="step-links">
+<div data-role="navbar" id="divPaper">
+	<ul>
     {% if page_obj.has_previous %}
-    <a href="{% url userena_profile_list_paginated page_obj.previous_page_number %}">{% trans 'previous' %}</a>
+    <li><a href="{% url userena_profile_list_paginated page_obj.previous_page_number %}">上一页</a></li>
     {% endif %}
-
-    <span class="current">
       {% blocktrans with page_obj.number as page and page_obj.paginator.num_pages as num_pages %}
-      Page {{ page }} of {{ num_pages }}
+      <li><a href="">第{{ page }}页/共{{ num_pages }}页</a></li>
       {% endblocktrans %}
-    </span>
 
     {% if page_obj.has_next %}
-    <a href="{% url userena_profile_list_paginated  page_obj.next_page_number %}">{% trans 'next' %}</a>
+    <li><a href="{% url userena_profile_list_paginated  page_obj.next_page_number %}">下一页</a></li>
     {% endif %}
-  </span>
+  </ul>
 </div>
 {% endif %}
 {% endblock %}

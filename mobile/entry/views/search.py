@@ -23,7 +23,7 @@ class entry_search(BaseView):
     @BreadcrumbFactory
     def breadcrumb(self, request, context):
         return Breadcrumb(
-            self.conf.local_name, None, u'厦门掌上社区', lazy_reverse('index')
+            self.conf.local_name, None, u'娱讯互动社区', lazy_reverse('index')
         )
         
     def handle_GET(self, request, context):

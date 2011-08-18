@@ -219,6 +219,12 @@ def do_imgclean(url, soup):
 		oldsrc = ''
 		newimg = ''
 		for cimg in soup.findAll('img'):
+				if cimg.has_key('file'):
+					"""
+					采集某些论坛页面时，对方为了防止采集会把图片地址放到file属性
+					"""
+					cimg['src'] = cimg['file']
+	
 				if cimg['src'].split('../'):
 					oldsrc = cimg['src']
 					newimg = urlparse.urljoin(url, oldsrc)

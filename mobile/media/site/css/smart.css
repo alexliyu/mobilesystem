@@ -85,6 +85,13 @@ li#menu-links{background-image:url('../../site/images/index-icons/flag.png');}
 li#menu-lottery{background-image:url('../../site/images/index-icons/search.png');}
 li#menu-business{background-image:url('../../site/images/index-icons/suppliers.png');}
 li#menu-proall {background-image:url('../../site/images/index-icons/heart.png');}
+li#menu-localnews {background-image:url('../../site/images/index-icons/bendixinwen.png');}
+li#menu-guangyingxm {background-image:url('../../site/images/index-icons/zoom.png');}
+li#menu-youqu {background-image:url('../../site/images/index-icons/youqude.png');}
+li#menu-ludaominsheng {background-image:url('../../site/images/index-icons/ludaominsheng.png');}
+li#menu-shi {background-image:url('../../site/images/index-icons/shizaixiamen.png');}
+li#menu-fangchanjujiao {background-image:url('../../site/images/index-icons/fangchanjujiao.png');}
+li#menu-haokangxiangbao {background-image:url('../../site/images/index-icons/haokangxiangbao.png');}
 /* End Index Page Specific */
 
 
@@ -560,6 +567,10 @@ div.form-section h2 {
 
 div.clear {
 padding-top: 50px;	
+	
+}
+div.smallclear {
+padding-top: 5px;	
 	
 }
 div.form-section dl {

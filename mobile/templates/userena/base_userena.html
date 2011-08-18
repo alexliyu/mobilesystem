@@ -1,1 +1,18 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block usernav %}
+	{%if user.is_authenticated%}
+		<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+			<ul><h2>我的个人面板</h2></ul>
+			<div data-role="navbar">
+				  <ul>
+				    <li><a href="{% url userena_profile_detail user.username %}" class="ui-btn-active">{% trans "View profile" %}</a></li>
+				    <li><a href="{% url userena_profile_edit user.username %}">{% trans "Edit details" %}</a></li>
+				    <li><a href="{% url userena_password_change user.username %}">{% trans "Change password" %}</a></li>
+				    <li><a href="{% url userena_email_change user.username %}">{% trans "Change email" %}</a></li>
+				    <li><a href="{% url forum_avatar_change %}"><span>{% trans "Avatar" %}</span></a></li>
+				  </ul>
+		  	</div>
+		</div>
+	{%endif%}
+{% endblock %}

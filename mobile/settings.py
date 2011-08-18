@@ -32,6 +32,14 @@ APPLICATIONS = loading.load_apps()
 
 COPYRIGHT = 'e2 mobile'
 
+"""
+短信接口帐号及密码
+"""
+#SMS_SN = 'SDK-XJG-010-00137'
+#SMS_PWD = '438483'
+
+SMS_SN = 'SDK-CSL-010-00012'
+SMS_PWD = '909861'
 gettext = lambda s: s
 
 ADMINS = (
@@ -441,7 +449,7 @@ LOGOUT_URL = "/accounts/signout/"
 REGISTER_URL = '/accounts/signup/'
 
 CTX_CONFIG = {
-            'FORUM_TITLE': u'厦门掌上社区',
+            'FORUM_TITLE': u'娱讯互动社区',
             'FORUM_SUB_TITLE': u'厦门同城社区、本地交友、团购、娱乐',
             'FORUM_PAGE_SIZE': 50,
             'TOPIC_PAGE_SIZE': 20,

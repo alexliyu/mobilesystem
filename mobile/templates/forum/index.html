@@ -11,12 +11,15 @@
         <h4>热门话题</h4>
 
         {% include 'forum/inc_topic_list.html' %}
-
-        <div class="inner">
-            <a href="{% url forum:forum_recent %}">{% trans "More" %}</a>
-        </div>
+        
+        <div data-role="navbar">
+				<ul>
+					<li><a href="{% url forum:forum_recent %}" >{% trans "More" %}</a></li>
+					
+				</ul>
+		</div>
     </div>
-    <div class="clear"></div>
+    <div class="smallclear"></div>
 {% endblock %}
 
 {% block content_right_bar %}

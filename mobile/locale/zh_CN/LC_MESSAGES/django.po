@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-11 11:36+0800\n"
-"PO-Revision-Date: 2011-08-17 16:33+0800\n"
+"POT-Creation-Date: 2011-08-18 09:39+0800\n"
+"PO-Revision-Date: 2011-08-18 09:42+0800\n"
 "Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
 "Language: zh_CN\n"
@@ -148,6 +148,175 @@ msgstr "反馈"
 msgid "Feeds"
 msgstr "订阅"
 
+#: apps/fetcharticle/__init__.py:15
+msgid "Fetcharticle"
+msgstr "采集模块"
+
+#: apps/fetcharticle/admin/feedadmin.py:348
+#: entry/admin/entry.py:26
+#: templates/entry/admin/entry/widgets/quickpost.html:17
+msgid "Content"
+msgstr "内容"
+
+#: apps/fetcharticle/admin/feedadmin.py:350
+#: entry/admin/entry.py:28
+msgid "Options"
+msgstr "选项"
+
+#: apps/fetcharticle/admin/feedadmin.py:356
+#: entry/admin/entry.py:34
+msgid "Privacy"
+msgstr "隐私"
+
+#: apps/fetcharticle/admin/feedadmin.py:358
+#: entry/admin/entry.py:36
+msgid "Discussion"
+msgstr "评论"
+
+#: apps/fetcharticle/admin/feedadmin.py:360
+#: entry/admin/entry.py:38
+msgid "Publication"
+msgstr "发布"
+
+#: apps/fetcharticle/admin/feedadmin.py:388
+#: entry/admin/entry.py:66
+#, python-format
+msgid "%(title)s (%(word_count)i words)"
+msgstr "%(title)s (%(word_count)i 个字符)"
+
+#: apps/fetcharticle/admin/feedadmin.py:392
+#: entry/admin/entry.py:70
+#, python-format
+msgid "%(title)s (%(comments)i comments)"
+msgstr "%(title)s (%(comments)i 条评论)"
+
+#: apps/fetcharticle/admin/feedadmin.py:395
+#: entry/models.py:73
+#: entry/models.py:118
+#: entry/admin/entry.py:73
+msgid "title"
+msgstr "标题"
+
+#: apps/fetcharticle/admin/feedadmin.py:408
+#: entry/admin/entry.py:86
+msgid "author(s)"
+msgstr "作者"
+
+#: apps/fetcharticle/admin/feedadmin.py:421
+#: entry/admin/entry.py:99
+msgid "category(s)"
+msgstr "类别"
+
+#: apps/fetcharticle/admin/feedadmin.py:433
+#: entry/admin/entry.py:111
+msgid "tag(s)"
+msgstr "标签"
+
+#: apps/fetcharticle/admin/feedadmin.py:441
+#: entry/admin/entry.py:119
+msgid "site(s)"
+msgstr "网站"
+
+#: apps/fetcharticle/admin/feedadmin.py:447
+#: entry/models.py:142
+#: entry/admin/entry.py:125
+msgid "comment enabled"
+msgstr "允许评论"
+
+#: apps/fetcharticle/admin/feedadmin.py:453
+#: entry/admin/entry.py:131
+msgid "is actual"
+msgstr "发布期间"
+
+#: apps/fetcharticle/admin/feedadmin.py:459
+#: entry/admin/entry.py:137
+msgid "is visible"
+msgstr "是否可见"
+
+#: apps/fetcharticle/admin/feedadmin.py:464
+#: entry/admin/entry.py:142
+msgid "View"
+msgstr "查看"
+
+#: apps/fetcharticle/admin/feedadmin.py:466
+#: entry/admin/entry.py:144
+#: guardian/templates/admin/guardian/model/change_form.html:9
+msgid "View on site"
+msgstr "浏览站点"
+
+#: apps/fetcharticle/admin/feedadmin.py:472
+#: entry/admin/entry.py:150
+msgid "Unavailable"
+msgstr "不存在"
+
+#: apps/fetcharticle/admin/feedadmin.py:476
+#: entry/admin/entry.py:154
+msgid "short url"
+msgstr "缩略URL"
+
+#: apps/fetcharticle/admin/feedadmin.py:529
+#: entry/admin/entry.py:207
+msgid "The selected entries now belong to you."
+msgstr "所选择的文章内容现在属于您"
+
+#: apps/fetcharticle/admin/feedadmin.py:530
+#: entry/admin/entry.py:208
+msgid "Set the entries to the user"
+msgstr "设置自己为所选日志的作者"
+
+#: apps/fetcharticle/admin/feedadmin.py:537
+#: entry/admin/entry.py:215
+#, fuzzy
+msgid "The selected entries are now marked as published."
+msgstr "发布所选日志"
+
+#: apps/fetcharticle/admin/feedadmin.py:538
+#: entry/admin/entry.py:216
+msgid "Set entries selected as published"
+msgstr "发布所选日志"
+
+#: apps/fetcharticle/admin/feedadmin.py:544
+#: entry/admin/entry.py:222
+#, fuzzy
+msgid "The selected entries are now marked as hidden."
+msgstr "隐藏所选日志"
+
+#: apps/fetcharticle/admin/feedadmin.py:545
+#: entry/admin/entry.py:223
+msgid "Set entries selected as hidden"
+msgstr "隐藏所选日志"
+
+#: apps/fetcharticle/admin/feedadmin.py:552
+#: entry/admin/entry.py:230
+#, fuzzy
+msgid "Comments are now closed for selected entries."
+msgstr "关闭所选日志的评论功能"
+
+#: apps/fetcharticle/admin/feedadmin.py:553
+#: entry/admin/entry.py:231
+msgid "Close the comments for selected entries"
+msgstr "关闭所选日志的评论功能"
+
+#: apps/fetcharticle/admin/feedadmin.py:560
+#: entry/admin/entry.py:238
+msgid "Linkbacks are now closed for selected entries."
+msgstr "选定的文章的Linkbacks现在已经关闭"
+
+#: apps/fetcharticle/admin/feedadmin.py:562
+#: entry/admin/entry.py:240
+msgid "Close the linkbacks for selected entries"
+msgstr "关闭所选记录的Linbacks"
+
+#: apps/fetcharticle/admin/feedadmin.py:569
+#: entry/admin/entry.py:247
+msgid "The selected entries are now set at the current date."
+msgstr "将选定的文章设置为当前日期"
+
+#: apps/fetcharticle/admin/feedadmin.py:571
+#: entry/admin/entry.py:249
+msgid "Put the selected entries on top at the current date"
+msgstr "将选定条目置顶"
+
 #: apps/home/__init__.py:10
 msgid "Comments"
 msgstr "评论"
@@ -225,7 +394,7 @@ msgstr "ATM取款机"
 #: templates/places/metadata/osm.html:40
 #: templates/places/metadata/osm.html:47
 #: templates/places/metadata/osm.html:54
-#: templates/userena/profile_detail.html:33
+#: templates/userena/profile_detail.html:39
 msgid "Website"
 msgstr "网站"
 
@@ -242,73 +411,73 @@ msgid "Capacity"
 msgstr "容量"
 
 #. Translators: These are compass points
-#: apps/places/models.py:245
+#: apps/places/models.py:217
 msgid "N"
 msgstr "北"
 
-#: apps/places/models.py:245
+#: apps/places/models.py:217
 msgid "NE"
 msgstr "东北"
 
-#: apps/places/models.py:245
+#: apps/places/models.py:217
 msgid "E"
 msgstr "东"
 
-#: apps/places/models.py:245
+#: apps/places/models.py:217
 msgid "SE"
 msgstr "东南"
 
-#: apps/places/models.py:246
+#: apps/places/models.py:218
 msgid "S"
 msgstr "南"
 
-#: apps/places/models.py:246
+#: apps/places/models.py:218
 msgid "SW"
 msgstr "西南"
 
-#: apps/places/models.py:246
+#: apps/places/models.py:218
 msgid "W"
 msgstr "西"
 
-#: apps/places/models.py:246
+#: apps/places/models.py:218
 msgid "NW"
 msgstr "西北"
 
-#: apps/places/models.py:567
+#: apps/places/models.py:518
 msgid "Scheduled time of arrival"
 msgstr ""
 
-#: apps/places/models.py:570
+#: apps/places/models.py:521
 msgid "Scheduled time of departure"
 msgstr ""
 
-#: apps/places/models.py:576
+#: apps/places/models.py:527
 msgid "Service starts here"
 msgstr ""
 
-#: apps/places/models.py:577
+#: apps/places/models.py:528
 msgid "Scheduled stop"
 msgstr "计划停止"
 
-#: apps/places/models.py:578
+#: apps/places/models.py:529
 msgid "Service picks up here only"
 msgstr ""
 
-#: apps/places/models.py:579
+#: apps/places/models.py:530
 msgid "Service does not pick up here"
 msgstr ""
 
-#: apps/places/models.py:580
+#: apps/places/models.py:531
 msgid "Service does not stop here"
 msgstr ""
 
-#: apps/places/models.py:581
+#: apps/places/models.py:532
 msgid "Service finishes here"
 msgstr ""
 
 #: apps/places/views.py:48
 msgid "places"
-msgstr ""
+msgstr "地点"
 
 #: apps/places/views.py:49
 msgid "Find University buildings and units, along with bus stops and local amenities"
@@ -337,11 +506,6 @@ msgstr ""
 #, python-format
 msgid "%(entity_type)s near %(entity)s"
 msgstr "%(entity_type)s 在 %(entity)s 附近"
-
-#: apps/places/views.py:183
-#, python-format
-msgid "%(et)s nearby"
-msgstr ""
 
 #: apps/places/views.py:195
 #, python-format
@@ -1584,12 +1748,6 @@ msgstr ""
 msgid "The answers to these questions will appear as captions below their corresponding slides. Separate by spaces."
 msgstr ""
 
-#: entry/models.py:73
-#: entry/models.py:118
-#: entry/admin/entry.py:73
-msgid "title"
-msgstr "标题"
-
 #: entry/models.py:74
 #: entry/models.py:133
 msgid "used for publication"
@@ -1662,11 +1820,6 @@ msgstr "作者"
 #: entry/models.py:141
 msgid "featured"
 msgstr "推荐"
-
-#: entry/models.py:142
-#: entry/admin/entry.py:125
-msgid "comment enabled"
-msgstr "允许评论"
 
 #: entry/models.py:143
 msgid "linkback enabled"
@@ -1743,129 +1896,6 @@ msgstr "[%(site)s] New comment posted on \"%(title)s\""
 #: entry/admin/category.py:29
 msgid "tree path"
 msgstr "树形路径"
-
-#: entry/admin/entry.py:26
-#: templates/entry/admin/entry/widgets/quickpost.html:17
-msgid "Content"
-msgstr "内容"
-
-#: entry/admin/entry.py:28
-msgid "Options"
-msgstr "选项"
-
-#: entry/admin/entry.py:34
-msgid "Privacy"
-msgstr "隐私"
-
-#: entry/admin/entry.py:36
-msgid "Discussion"
-msgstr "评论"
-
-#: entry/admin/entry.py:38
-msgid "Publication"
-msgstr "发布"
-
-#: entry/admin/entry.py:66
-#, python-format
-msgid "%(title)s (%(word_count)i words)"
-msgstr "%(title)s (%(word_count)i 个字符)"
-
-#: entry/admin/entry.py:70
-#, python-format
-msgid "%(title)s (%(comments)i comments)"
-msgstr "%(title)s (%(comments)i 条评论)"
-
-#: entry/admin/entry.py:86
-msgid "author(s)"
-msgstr "作者"
-
-#: entry/admin/entry.py:99
-msgid "category(s)"
-msgstr "类别"
-
-#: entry/admin/entry.py:111
-msgid "tag(s)"
-msgstr "标签"
-
-#: entry/admin/entry.py:119
-msgid "site(s)"
-msgstr "网站"
-
-#: entry/admin/entry.py:131
-msgid "is actual"
-msgstr "发布期间"
-
-#: entry/admin/entry.py:137
-msgid "is visible"
-msgstr "是否可见"
-
-#: entry/admin/entry.py:142
-msgid "View"
-msgstr "查看"
-
-#: entry/admin/entry.py:144
-#: guardian/templates/admin/guardian/model/change_form.html:9
-msgid "View on site"
-msgstr "浏览站点"
-
-#: entry/admin/entry.py:150
-msgid "Unavailable"
-msgstr "不存在"
-
-#: entry/admin/entry.py:154
-msgid "short url"
-msgstr "缩略URL"
-
-#: entry/admin/entry.py:207
-msgid "The selected entries now belong to you."
-msgstr "所选择的文章内容现在属于您"
-
-#: entry/admin/entry.py:208
-msgid "Set the entries to the user"
-msgstr "设置自己为所选日志的作者"
-
-#: entry/admin/entry.py:215
-#, fuzzy
-msgid "The selected entries are now marked as published."
-msgstr "发布所选日志"
-
-#: entry/admin/entry.py:216
-msgid "Set entries selected as published"
-msgstr "发布所选日志"
-
-#: entry/admin/entry.py:222
-#, fuzzy
-msgid "The selected entries are now marked as hidden."
-msgstr "隐藏所选日志"
-
-#: entry/admin/entry.py:223
-msgid "Set entries selected as hidden"
-msgstr "隐藏所选日志"
-
-#: entry/admin/entry.py:230
-#, fuzzy
-msgid "Comments are now closed for selected entries."
-msgstr "关闭所选日志的评论功能"
-
-#: entry/admin/entry.py:231
-msgid "Close the comments for selected entries"
-msgstr "关闭所选日志的评论功能"
-
-#: entry/admin/entry.py:238
-msgid "Linkbacks are now closed for selected entries."
-msgstr "选定的文章的Linkbacks现在已经关闭"
-
-#: entry/admin/entry.py:240
-msgid "Close the linkbacks for selected entries"
-msgstr "关闭所选记录的Linbacks"
-
-#: entry/admin/entry.py:247
-msgid "The selected entries are now set at the current date."
-msgstr "将选定的文章设置为当前日期"
-
-#: entry/admin/entry.py:249
-msgid "Put the selected entries on top at the current date"
-msgstr "将选定条目置顶"
 
 #: entry/admin/forms.py:20
 msgid "No parent category"
@@ -1944,7 +1974,7 @@ msgid "Order By"
 msgstr ""
 
 #: forum/forms.py:21
-#: forum/models.py:91
+#: forum/models.py:95
 #: templates/forum/forum.html:24
 msgid "Topic Type"
 msgstr "话题类型"
@@ -1978,7 +2008,7 @@ msgstr "分类"
 
 #: forum/models.py:49
 #: forum/models.py:72
-#: forum/models.py:90
+#: forum/models.py:94
 msgid "Forum"
 msgstr "社区"
 
@@ -1986,61 +2016,63 @@ msgstr "社区"
 msgid "Forums"
 msgstr "社区"
 
-#: forum/models.py:85
+#: forum/models.py:89
 msgid "Default"
 msgstr "默认"
 
-#: forum/models.py:86
+#: forum/models.py:90
 msgid "Distillate"
 msgstr ""
 
-#: forum/models.py:96
-#: forum/models.py:169
+#: forum/models.py:100
+#: forum/models.py:173
 msgid "Post"
 msgstr "发表"
 
-#: forum/models.py:122
-#: forum/models.py:152
+#: forum/models.py:126
+#: forum/models.py:156
 msgid "Topic"
 msgstr "话题"
 
-#: forum/models.py:123
+#: forum/models.py:127
 #: templates/forum/forum.html:51
 #: templates/forum/account/inc_base_profile.html:26
 msgid "Topics"
 msgstr "话题"
 
-#: forum/models.py:146
+#: forum/models.py:150
 msgid "BBCode"
 msgstr ""
 
-#: forum/models.py:147
+#: forum/models.py:151
 msgid "Html"
 msgstr ""
 
-#: forum/models.py:170
+#: forum/models.py:174
 #: templates/forum/topic.html:85
 #: templates/forum/account/inc_base_profile.html:29
 msgid "Posts"
 msgstr "发布"
 
-#: forum/models.py:179
+#: forum/models.py:183
 #, python-format
 msgid "Topic: %s"
 msgstr "话题: %s"
 
-#: forum/models.py:180
+#: forum/models.py:184
 #, python-format
 msgid "Re: %s"
 msgstr "回复: %s"
 
-#: forum/views.py:193
-#: forum/views.py:255
+#: forum/views.py:198
+#: forum/views.py:231
+#: forum/views.py:272
 msgid "topic"
 msgstr "话题"
 
-#: forum/views.py:198
-#: forum/views.py:252
+#: forum/views.py:203
+#: forum/views.py:236
+#: forum/views.py:269
 msgid "reply"
 msgstr "回复"
 
@@ -2113,7 +2145,6 @@ msgstr "请再次搜索："
 
 #. Translators: This refers to sample things to be entered in the 'Set Location' box, postcode, building ID, street name
 #: geolocation/templates/geolocation/update_location_embed.html:67
-#: templates/geolocation/update_location_embed.html:65
 msgid "e.g., OX2 6NN, kebl, St Clements"
 msgstr ""
 
@@ -2724,12 +2755,10 @@ msgstr "最新发表"
 msgid "Introduction"
 msgstr "介绍"
 
-#: templates/forum/account/base.html:26
-msgid "Change your password"
-msgstr "修改您的密码"
-
-#: templates/forum/account/base.html:29
-#: templates/forum/account/avatar/change.html:16
+#: templates/forum/account/base.html:27
+#: templates/userena/profile_detail.html:22
+#: templates/userena/profile_form.html:21
+#: templates/userena/avatar/change.html:19
 msgid "Avatar"
 msgstr "头像"
 
@@ -2742,7 +2771,6 @@ msgstr "注册"
 #: templates/forum/account/profile.html:9
 #: templates/forum/account/user_posts.html:9
 #: templates/forum/account/user_topics.html:9
-#: templates/forum/account/avatar/change.html:9
 #, python-format
 msgid "%(view_user)s's profile"
 msgstr "%(view_user)s's 个人资料"
@@ -2796,32 +2824,6 @@ msgstr "话题"
 #: templates/forum/account/user_topics.html:31
 msgid "last post"
 msgstr "最新发表"
-
-#: templates/forum/account/avatar/change.html:24
-msgid "Current avatar"
-msgstr "当前头像"
-
-#: templates/forum/account/avatar/change.html:36
-msgid "The allowed image file types are"
-msgstr "娱讯的图片文件类型有"
-
-#: templates/forum/account/avatar/change.html:36
-#: templates/places/category_detail.html:21
-#: templates/places/nearby_detail.html:23
-msgid "and"
-msgstr "和"
-
-#: templates/forum/account/avatar/change.html:42
-msgid "Upload avatar file"
-msgstr "上传头像文件"
-
-#: templates/forum/account/avatar/change.html:45
-msgid "Avatar Image"
-msgstr "头像图片"
-
-#: templates/forum/account/avatar/change.html:52
-msgid "Upload New Image"
-msgstr "上传新图片"
 
 #: templates/forum/pagination/pagination.html:5
 #: templates/forum/pagination/pagination.html:7
@@ -2893,6 +2895,12 @@ msgstr[0] "找到 %(count)s 项%(name_plural)s"
 msgid "that is also"
 msgid_plural "that are also"
 msgstr[0] "也"
+
+#: templates/places/category_detail.html:21
+#: templates/places/nearby_detail.html:23
+#: templates/userena/avatar/change.html:33
+msgid "and"
+msgstr "和"
 
 #: templates/places/category_detail.html:31
 #: templates/places/nearby_detail.html:32
@@ -3266,8 +3274,9 @@ msgstr "文档"
 #: templates/userena/password_form.html:4
 #: templates/userena/password_form.html:13
 #: templates/userena/password_form.html:21
-#: templates/userena/profile_detail.html:16
-#: templates/userena/profile_form.html:14
+#: templates/userena/profile_detail.html:20
+#: templates/userena/profile_form.html:19
+#: templates/userena/avatar/change.html:17
 msgid "Change password"
 msgstr "修改密码"
 
@@ -3493,22 +3502,25 @@ msgstr "账户  &raquo; %(username)s"
 
 #: templates/userena/email_form.html:9
 #: templates/userena/password_form.html:11
-#: templates/userena/profile_detail.html:14
-#: templates/userena/profile_form.html:12
+#: templates/userena/profile_detail.html:18
+#: templates/userena/profile_form.html:17
+#: templates/userena/avatar/change.html:15
 msgid "View profile"
 msgstr "浏览个人资料"
 
 #: templates/userena/email_form.html:10
 #: templates/userena/password_form.html:12
-#: templates/userena/profile_form.html:13
+#: templates/userena/profile_form.html:18
+#: templates/userena/avatar/change.html:16
 msgid "Edit profile"
 msgstr "编辑个人资料"
 
 #: templates/userena/email_form.html:12
 #: templates/userena/email_form.html:19
 #: templates/userena/password_form.html:14
-#: templates/userena/profile_detail.html:17
-#: templates/userena/profile_form.html:15
+#: templates/userena/profile_detail.html:21
+#: templates/userena/profile_form.html:20
+#: templates/userena/avatar/change.html:18
 msgid "Change email"
 msgstr "修改Email"
 
@@ -3572,38 +3584,34 @@ msgstr "一封有关于如何重置你的密码的邮件已经发送给你"
 msgid "Send password"
 msgstr "发送密码"
 
-#: templates/userena/profile_detail.html:4
+#: templates/userena/profile_detail.html:7
 #, python-format
 msgid "%(username)s's profile."
 msgstr "%(username)s's 个人资料"
 
-#: templates/userena/profile_detail.html:15
+#: templates/userena/profile_detail.html:19
 msgid "Edit details"
 msgstr "编辑详细内容"
 
-#: templates/userena/profile_detail.html:22
-msgid "Your mugshot"
-msgstr "你的面部照片"
-
-#: templates/userena/profile_detail.html:24
+#: templates/userena/profile_detail.html:30
 msgid "Name"
 msgstr "名字"
 
-#: templates/userena/profile_detail.html:27
+#: templates/userena/profile_detail.html:33
 #: userena/forms.py:41
 #: userena/forms.py:232
 msgid "Email"
 msgstr "Email"
 
-#: templates/userena/profile_detail.html:30
+#: templates/userena/profile_detail.html:36
 msgid "Age"
 msgstr "年龄"
 
-#: templates/userena/profile_detail.html:36
+#: templates/userena/profile_detail.html:42
 msgid "Location"
 msgstr "地点"
 
-#: templates/userena/profile_detail.html:39
+#: templates/userena/profile_detail.html:75
 msgid "About me"
 msgstr "关于我"
 
@@ -3611,11 +3619,7 @@ msgstr "关于我"
 msgid "Account setup"
 msgstr "账户设置"
 
-#: templates/userena/profile_form.html:19
-msgid "Edit Profile"
-msgstr "编辑个人资料"
-
-#: templates/userena/profile_form.html:22
+#: templates/userena/profile_form.html:31
 msgid "Save changes"
 msgstr "保存修改"
 
@@ -3659,6 +3663,22 @@ msgstr "你已经退出登陆，后会有期"
 #: templates/userena/signup_form.html:28
 msgid "Signup"
 msgstr "注册"
+
+#: templates/userena/avatar/change.html:25
+msgid "Current avatar"
+msgstr "当前头像"
+
+#: templates/userena/avatar/change.html:33
+msgid "Upload avatar file"
+msgstr "上传头像文件"
+
+#: templates/userena/avatar/change.html:33
+msgid "The allowed image file types are"
+msgstr "娱讯的图片文件类型有"
+
+#: templates/userena/avatar/change.html:35
+msgid "Upload New Image"
+msgstr "上传新图片"
 
 #: tracking/__init__.py:14
 msgid "Tracking"
@@ -4025,6 +4045,18 @@ msgstr[0] "消息成功还原"
 msgid "Message is successfully removed."
 msgid_plural "Messages are successfully removed."
 msgstr[0] "消息成功清除"
+
+#~ msgid "Change your password"
+#~ msgstr "修改您的密码"
+
+#~ msgid "Avatar Image"
+#~ msgstr "头像图片"
+
+#~ msgid "Your mugshot"
+#~ msgstr "你的面部照片"
+
+#~ msgid "Edit Profile"
+#~ msgstr "编辑个人资料"
 
 #~ msgid "%(entry_count)s entry"
 

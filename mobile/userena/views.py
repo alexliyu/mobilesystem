@@ -567,12 +567,11 @@ def profile_detail(request, username, template_name='userena/profile_detail.html
                               extra_context=extra_context)
 
 def profile_list(request, page=1, template_name='userena/profile_list.html',
-                 paginate_by=50, extra_context=None, **kwargs):
+                 paginate_by=5, extra_context=None, **kwargs):
     """
-    Returns a list of all profiles that are public.
+    返回公开用户资料的用户列表.
 
-    It's possible to disable this by changing ``USERENA_DISABLE_PROFILE_LIST``
-    to ``True`` in your settings.
+    当在settings文件中设置 ``USERENA_DISABLE_PROFILE_LIST``为True时可用.
 
     :param page:
         Integer of the active page used for pagination. Defaults to the first
@@ -618,7 +617,7 @@ def profile_list(request, page=1, template_name='userena/profile_list.html',
 
     profile_model = get_profile_model()
     queryset = profile_model.objects.get_visible_profiles(request.user)
-
+    extra_context = {'is_paginated':True}
     if not extra_context: extra_context = dict()
     return list_detail.object_list(request,
                                    queryset=queryset,
