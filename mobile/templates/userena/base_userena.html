@@ -10,7 +10,11 @@
 				    <li><a href="{% url userena_profile_edit user.username %}">{% trans "Edit details" %}</a></li>
 				    <li><a href="{% url userena_password_change user.username %}">{% trans "Change password" %}</a></li>
 				    <li><a href="{% url userena_email_change user.username %}">{% trans "Change email" %}</a></li>
-				    <li><a href="{% url forum_avatar_change %}"><span>{% trans "Avatar" %}</span></a></li>
+				    <li><a href="{% url forum_avatar_change %}"><span>修改头像</span></a></li>
+				    <li><a href="{% url forum_avatar_change %}"><span>好友</span></a></li>
+				    <li><a href="{% url forum_avatar_change %}"><span>微博</span></a></li>
+				    <li><a href="/activity"><span>动态</span></a></li>
+				    <li><a href="{% url userena_signout %}"><span>注销</span></a></li>
 				  </ul>
 		  	</div>
 		</div>

@@ -22,6 +22,8 @@ from settings import ALLOW_FUTURE
 from utils.views import BaseView
 from utils.breadcrumbs import *
 
+from actstream import action
+
 #entry_index = update_queryset(object_list, Entry.published.all)
 #
 #entry_year = update_queryset(archive_year, Entry.published.all)
@@ -105,7 +107,8 @@ class entry_month(BaseView):
         context['allow_future'] = ALLOW_FUTURE
         context['month_format'] = '%m'
         context['make_object_list'] = True
-
+        
+        
         return self.render(request, context, template_name)
     
 class entry_day(BaseView):
@@ -167,7 +170,8 @@ class entry_detail(BaseView):
         context['month_format'] = '%m'
         context['make_object_list'] = True
         context['queryset'] = Entry.published.on_site()
-
+        
+        action.send(request.user, verb=u'正在浏览', target=entry)
         return self.render(request, context, template_name)
         
 class entry_shortlink(BaseView):

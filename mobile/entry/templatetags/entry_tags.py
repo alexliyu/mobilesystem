@@ -17,6 +17,7 @@ from django.contrib.comments.models import CommentFlag
 from django.contrib.contenttypes.models import ContentType
 from django.utils.encoding import smart_unicode
 
+
 from ..models import Entry
 from ..models import Author
 from ..models import Category
@@ -64,20 +65,29 @@ def menulevel(menus, level):
         result = False
     return result
 
-'''
-用于获取html中的图片
-'''
+
 @register.filter
 def getimages(content, num=0):
-    """
-    根据level值返回菜单,用于筛选多级菜单
-    """    
+    '''
+    用于获取html中的图片,只返回图片
+    '''  
     imglist = Parse_images_url(content)
     if imglist:
         return imglist[num]
     else:
         return None
 
+@register.filter
+def getimages_img(content, num=0):
+    """
+    用于获取html中的图片,返回图片以及标签
+    """    
+    imglist = Parse_images_url(content)
+    if imglist:
+        return """<img src="%s" />""" % imglist[num]
+    else:
+        return ''
+    
 
 '''
 首页显示带图片的最新文章

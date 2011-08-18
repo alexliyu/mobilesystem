@@ -8,9 +8,19 @@ import inspect
 from functools import wraps
 
 from django.db.models.signals import post_save
-
+from django.contrib.comments.signals import comment_was_posted
+from django.contrib.comments.models import Comment
+from actstream import action
 import settings
 from settings import SAVE_PING_DIRECTORIES, PING_DIRECTORIES, SAVE_PING_EXTERNAL_URLS
+
+def comment_post_handler(sender, **kwargs):
+    """
+    注册一个handler,用于在评论后，自动添加一条用户动态
+    """
+    action.send(kwargs['request'].user, verb=u'刚评论了', action_object=kwargs['comment'], target=kwargs['comment'].content_object)
+
+comment_was_posted.connect(comment_post_handler, sender=Comment)
 
 def disable_for_loaddata(signal_handler):
     """Decorator for disabling signals sent

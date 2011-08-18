@@ -7,9 +7,13 @@
 				<div class="post">
 			
 					
-					<a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{% thumbnail entry.content|getimages "185x100" crop="80% top" as im %}
-    <img src="{{ im.url }}" alt="{{ entry.title }}" class="bordered" />
-{% endthumbnail %}</a>
+					<a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">
+						{%if entry.content|getimages%}
+							{% thumbnail entry.content|getimages "185x100" crop="80% top" as im %}
+	    							<img src="{{ im.url }}" alt="{{ entry.title }}" class="bordered" />
+							{% endthumbnail %}
+						{%endif%}
+					</a>
 
 					<h3><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h3>
 
