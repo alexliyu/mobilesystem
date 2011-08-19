@@ -175,7 +175,7 @@ class SignupFormOnlyMobile(SignupForm):
         ip = request.META['REMOTE_ADDR']
         if ip == 'localhost':ip = request.META['HTTP_X_REAL_IP']
         try:
-            password = mobile[5:]
+            password = int(random.random() * 100000)
         except:
             password = 123456
         #password = '6cf0498e39da'

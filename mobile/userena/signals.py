@@ -17,6 +17,6 @@ def signup_complete_handler(sender, **kwargs):
     """
     注册一个handler,用于在评论后，自动添加一条用户动态
     """
-    action.send(kwargs['request'].user, verb=u'刚注册成为会员')
+    action.send(kwargs['user'], verb=u'刚注册成为会员')
 
 signup_complete.connect(signup_complete_handler)

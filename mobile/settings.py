@@ -38,8 +38,21 @@ COPYRIGHT = 'e2 mobile'
 #SMS_SN = 'SDK-XJG-010-00137'
 #SMS_PWD = '438483'
 
-SMS_SN = 'SDK-CSL-010-00012'
-SMS_PWD = '909861'
+SMS_SN = 'SDK-XJG-010-00137'
+SMS_PWD = '438483'
+SMS_PROVINCE = u'福建'
+SMS_CITY = u'厦门'
+SMS_TRADE = u'新媒体'
+SMS_ENTNAME = u'娱讯（厦门）文化传播有限公司'
+SMS_LINKMAN = u'李昱'
+SMS_PHONE = '05925166918'
+SMS_MOBILE = '13959260801'
+SMS_EMAIL = 'liy@eiimedia.cn'
+SMS_FAX = '05925166755'
+SMS_ADDRESS = u'厦门禾祥东路138号4楼'
+SMS_POSTCODE = 361000
+SMS_SIGN = u'娱讯互动平台'
+
 gettext = lambda s: s
 
 ADMINS = (
@@ -82,28 +95,28 @@ ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '192.168.1.34',
-#        'NAME': 'mobile',
-#        'USER': 'mobile',
-#        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
-#    }
-#}
-
-
-# 在家里的数据库配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '127.0.0.1',
-        'NAME': 'molly',
-        'USER': 'molly',
-        'PASSWORD': 'mobile',
-        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+        'HOST': '192.168.1.34',
+        'NAME': 'mobile',
+        'USER': 'mobile',
+        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
     }
 }
+
+
+# 在家里的数据库配置
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#        'HOST': '127.0.0.1',
+#        'NAME': 'molly',
+#        'USER': 'molly',
+#        'PASSWORD': 'mobile',
+#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#    }
+#}
 
 
 # API keys are used to access particular services

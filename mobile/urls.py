@@ -63,6 +63,7 @@ urlpatterns += patterns('django.views.generic.simple',
     (r'^maps/(?P<remain>.*)$', 'redirect_to', {'url': '/places/%(remain)s'}),
     (r'^osm/(?P<remain>.*)$', 'redirect_to', {'url': '/maps/osm/%(remain)s'}),
     ('^activity/', include('actstream.urls')),
+    
 )
 
 

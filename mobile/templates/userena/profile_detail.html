@@ -4,6 +4,7 @@
 {% load forum_filters %}
 {% load forum_tags %}
 {% load forum_widget_tags %}
+{% load activity_tags %}
 {% block title %}{% blocktrans with profile.user.username as username %}{{ username }}'s profile.{% endblocktrans %}{% endblock %}
 {% block content_title %}<h2>{{ profile.user.username }} {% if profile.user.get_full_name %}({{ profile.user.get_full_name }}){% endif %}</h2>{% endblock %}
 
@@ -22,7 +23,20 @@
   </ul>
   </div>
   {% endif %}
+  
+  	{%if request.user|check_follow:profile.user%}
+		<li><a href="{% url actstream_unfollow content_type  profile.user.pk %}" id="unfollow_button">取消关注</a> </li>
+	{%else%}
+		{% ifequal request.user profile.user %}
+		{% else %}
+		    <li>
+		        
+		        <a href="{% url actstream_follow content_type  profile.user.pk %}" id="follow_button" >关注他</a>
+		    </li>
+		{% endifequal %}
+	{%endif%}
 
+  
   <div class="ui-grid-a">
     <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:80px"><strong>头像</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{% avatar profile.user 80 %}</div></div>
    

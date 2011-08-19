@@ -19,7 +19,7 @@ from django.contrib import messages
 from django.utils.translation import ugettext as _
 from django.views.generic import list_detail
 from django.http import HttpResponseForbidden, Http404
-
+from django.contrib.contenttypes.models import ContentType
 from userena.forms import (SignupForm, SignupFormOnlyEmail, AuthenticationForm,
                            ChangeEmailForm, EditProfileForm,
     SignupFormOnlyMobile)
@@ -30,7 +30,7 @@ from userena.utils import signin_redirect, get_profile_model
 from userena import settings as userena_settings
 
 from guardian.decorators import permission_required_or_403
-
+from mobile.utils.sms import sms
 @secure_required
 def signup(request, signup_form=SignupForm,
            template_name='userena/signup_form.html', success_url=None,
@@ -93,6 +93,9 @@ def signup(request, signup_form=SignupForm,
             """
             user = authenticate(identification=user.email, check_password=False)
             login(request, user)
+            sms_object = sms()
+            content = u'您的初始密码是%s,您可以在『个人中心』中修改您的密码。畅享吃喝玩乐就在娱讯互动平台' % user.get_profile().mac
+            sms_object.post_sms(user.get_profile().mobile, content)
             request.session.set_expiry(userena_settings.USERENA_REMEMBER_ME_DAYS[1] * 86400)
             return redirect(redirect_to)
 
@@ -562,6 +565,7 @@ def profile_detail(request, username, template_name='userena/profile_detail.html
         return HttpResponseForbidden(_("You don't have permission to view this profile."))
     if not extra_context: extra_context = dict()
     extra_context['profile'] = user.get_profile()
+    extra_context['content_type'] = ContentType.objects.get(model='user').pk
     return direct_to_template(request,
                               template_name,
                               extra_context=extra_context)

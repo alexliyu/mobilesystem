@@ -14,6 +14,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django.contrib.csrf.middleware import csrf_exempt
 from django.db.models.query import QuerySet
+from django.core.paginator import  Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 
 from entry.models import Category, Entry
 from utils.views import BaseView
@@ -25,6 +26,9 @@ from .decorators import template_name_for_entry_queryset_filtered
 
 
 class IndexView(BaseView):
+    """
+    资讯、生活的首页定义类
+    """
     def get_metadata(self, request):
         return {
             'title': u'团购',
@@ -42,6 +46,7 @@ class IndexView(BaseView):
         context['category'] = Category.tree.all()
         context['object_list'] = Entry.published.all()[:10]
         return self.render(request, context, template_name)
+    
 class category_detail(BaseView):
     """显示一个分类中的文章"""
     def get_metadata(self, request):
@@ -76,11 +81,28 @@ class category_detail(BaseView):
                 matches = matches | category.entries_published()
         else:
                 matches = category.entries_published()
-                
-        context['queryset'] = matches
+        
+     
+        try:
+            if page < 1:
+                page = 1
+        except ValueError:
+            page = 1    
+            
+       
+        paginator = Paginator(matches, PAGINATION) 
+        
+        try:
+            list = paginator.page(page)
+        except(EmptyPage, InvalidPage, PageNotAnInteger):
+            list = paginator.page(1)
+       
+                    
+        
+        context['page_object'] = list
         context['paginate_by'] = PAGINATION
         context['page'] = page
-        context['object_list'] = matches
+       
 
         return self.render(request, context, template_name)
 
