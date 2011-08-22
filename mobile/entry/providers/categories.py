@@ -6,6 +6,7 @@ Created on 2011-1-30
 '''
 from django.shortcuts import get_object_or_404
 from django.views.generic.list_detail import object_list
+from django.core.paginator import  Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 
 from entry.models import Category
 from settings import PAGINATION
@@ -42,7 +43,22 @@ class CategoriesEntryProvider(BaseEntryProvider):
         else:
                 matches = category.entries_published()
                 
-        context['object_list'] = matches
+                
+        try:
+            if page < 1:
+                page = 1
+        except ValueError:
+            page = 1    
+            
+       
+        paginator = Paginator(matches, PAGINATION) 
+        
+        try:
+            list = paginator.page(page)
+        except(EmptyPage, InvalidPage, PageNotAnInteger):
+            list = paginator.page(1)
+                
+        context['page_object'] = list
         context['paginate_by'] = PAGINATION
         context['template_name'] = template_name
         context['page'] = page

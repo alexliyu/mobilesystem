@@ -303,6 +303,7 @@ class user_topics(BaseView):
         return Breadcrumb(
             self.conf.local_name, lazy_parent('index') , u'用户发布的话题', lazy_reverse('forum_user_topics', args=[user_id])
         )
+        
     @login_required   
     def handle_GET(self, request, context, user_id):
         template_name = "forum/user_topics"

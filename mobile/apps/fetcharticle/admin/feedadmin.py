@@ -5,7 +5,7 @@ Created on 2011-1-30
 @author: 李昱
 '''
 from datetime import datetime, timedelta
-from django.utils.log import logging
+import logging
 from django.forms import Media
 from django.contrib import admin
 from django.contrib.auth.models import User
@@ -29,7 +29,7 @@ from utils import htmllib
 from utils.htmllib import HTMLStripper, gbtools
 from entry.models import Entry, EntryAbstractClass
 
-
+logger = logging.getLogger('apps.fetcharticle.admin')
 
 
 class TempImagesAdmin(admin.ModelAdmin):
@@ -45,7 +45,7 @@ class TempImagesAdmin(admin.ModelAdmin):
     
     def getImages(self, request, queryset, *arg1, **arg2):
                 for image in queryset:
-                        logging.info('start to fetch images,The url is %s', image.oldurl)
+                        logger.info('start to fetch images,The url is %s', image.oldurl)
                         try:
                                 if image.stat == 1:
                                     pass
@@ -57,12 +57,12 @@ class TempImagesAdmin(admin.ModelAdmin):
                                     else:
                                             result = False
                                     if result:
-                                            logging.info('Success!')
+                                            logger.info('Success!')
                                     else:
-                                            logging.info('this one was Fail!')
+                                            logger.info('this one was Fail!')
 
                         except Exception, data:
-                                logging.info(data)
+                                logger.info(data)
     getImages.short_description = u'采集图片'
     
     def __saveImages(self, name, image):
@@ -73,7 +73,7 @@ class TempImagesAdmin(admin.ModelAdmin):
             f.close()
             return "%scache/images/%s" % (settings.MEDIA_URL, name)
         except Exception, e:
-            logging.error(e)
+            logger.error(e)
             return False
         
     def __store_images(self, content, name, model):
@@ -88,7 +88,7 @@ class TempImagesAdmin(admin.ModelAdmin):
 
                 except Exception, data:
                         model.stat = 2
-                        logging.error('the db saved error is: %s', data)
+                        logger.error('the db saved error is: %s', data)
 
 class FeedsRresultAdmin(admin.ModelAdmin):
             
@@ -103,11 +103,11 @@ class FeedsRresultAdmin(admin.ModelAdmin):
     
     def getArticle(self, request, queryset, *arg1, **arg2):
                 for feed in queryset:
-                        logging.info('start to fetch article,The title is %s', feed.title)
+                        logger.info('start to fetch article,The title is %s', feed.title)
                         try:
                                 if feed.feed.start_target != 'nohtml':
 
-                                        logging.info('fetch new article %s,at %s' % (feed.link, datetime.now()))
+                                        logger.info('fetch new article %s,at %s' % (feed.link, datetime.now()))
                                         contenthtml = ''
                                         try:
                                                 result = getpage(feed.link, 30)
@@ -123,12 +123,12 @@ class FeedsRresultAdmin(admin.ModelAdmin):
                                                     feed.fetch_stat = 2
                                                     feed.save()
                                         except Exception, data:
-                                                logging.info('DownloadError in get %s.the error is %s', feed.link, data)
+                                                logger.info('DownloadError in get %s.the error is %s', feed.link, data)
                                                 return False
                                 else:
                                     self.__store_article(feed.excerpt, feed)
                         except Exception, data:
-                                logging.error('the rpc error is %s ', data)
+                                logger.error('the rpc error is %s ', data)
 
     getArticle.short_description = u'采集正文内容'
 
@@ -143,9 +143,9 @@ class FeedsRresultAdmin(admin.ModelAdmin):
                     obj, result = TempImages.objects.get_or_create(oldurl=image, entry=entry)
         except Exception, data:
                         entry.fetch_stat = 2
-                        logging.info('the db saved error is: %s', data)
+                        logger.info('the db saved error is: %s', data)
         entry.save()
-        logging.info('adding the article,the name is %s', feed.title)
+        logger.info('adding the article,the name is %s', feed.title)
 
     def saveArticle(self, request, queryset, *arg1, **arg2):
         for entry in queryset:
@@ -154,24 +154,26 @@ class FeedsRresultAdmin(admin.ModelAdmin):
     saveArticle.short_description = u'发布采集'
     def __store_entry(self, feed):
                 try:
+
+
                     entry, result = Entry.published.get_or_create(title=feed.title)
-                    entry.excerpt = htmllib.Filter_html(feed.excerpt).strip()[:80] + '……'
+                    entry.excerpt = htmllib.Filter_html(feed.excerpt).strip()[:80] + u'……'
                     entry.status = 2
-                    entry.author_name = feed.author_name
+                    entry.author_name = htmllib.decoding(feed.author_name)
                     entry.date = feed.date
                     entry.slug = htmllib.sid() 
-                    entry.content = self.__Parse_image(feed.content)
+                    entry.content = htmllib.decoding(self.__Parse_image(feed.content))
                     entry.categories.add(feed.feed.category)
                     entry.sites = [Site.objects.get_current(), ]             
                     entry.save()
                     feed.fetch_stat = 4
                     feed.save()
                 except Exception, data:
-                        logging.error('the db saved error is: %s', data)
+                        logger.error('the db saved error is: %s', data)
                         feed.fetch_stat = 3
                         feed.save()
 
-                logging.info('adding the article,the name is %s', feed.title)
+                logger.info('adding the article,the name is %s', feed.title)
 
     def __Parse_image(self, content):
                 images = htmllib.Parse_images_url(content)
@@ -185,7 +187,7 @@ class FeedsRresultAdmin(admin.ModelAdmin):
                                         content = htmllib.decoding(content).replace(image, tmpimage.newurl)
 
                     except Exception, data:
-                        logging.info(data)
+                        logger.info(data)
                 return content
 
 '''
@@ -213,21 +215,21 @@ class FeedAdmin(admin.ModelAdmin):
     获取Feed订阅内容
     '''
     def getFeed(self, request, queryset, *arg1, **arg2):
-                logging.info(u'开始采集Feed')
+                logger.info(u'开始采集Feed')
                 feed_retrieval_deadline = datetime.now() - timedelta(minutes=1200)
                 
                 for feed in queryset:
 
                     if feed.last_retrieved > feed_retrieval_deadline:
-                            logging.info('Skipping feed %s.', feed.feedurl)
+                            logger.info('Skipping feed %s.', feed.feedurl)
                             continue
 
-                    logging.info('Getting feed %s.', feed.feedurl)
+                    logger.info('Getting feed %s.', feed.feedurl)
                     try:
 
                             result = getpage(feed.feedurl, 30)
                     except Exception:
-                            logging.warning('Could not get feed %s ,and the fetch is restart now' % feed.feedurl)
+                            logger.warning('Could not get feed %s ,and the fetch is restart now' % feed.feedurl)
                             feed.last_retrieved = datetime.now()
                             #feed.save()
                             break
@@ -238,9 +240,9 @@ class FeedAdmin(admin.ModelAdmin):
                             feed.save()
 
                     elif result.code == 500:
-                            logging.error('Feed %s returned with status code 500.' % feed.feedurl)
+                            logger.error('Feed %s returned with status code 500.' % feed.feedurl)
                     elif result.code == 404:
-                            logging.error('Error 404: Nothing found at %s.' % feed.feedurl)
+                            logger.error('Error 404: Nothing found at %s.' % feed.feedurl)
     
     getFeed.short_description = u'采集订阅'
     '''
@@ -251,7 +253,7 @@ class FeedAdmin(admin.ModelAdmin):
                 i = 0
                 dead_i = 0
                 for entry in feed.entries:
-                        logging.info('start parse feed,the dead_i is %s', dead_i)
+                        logger.info('start parse feed,the dead_i is %s', dead_i)
                         title = htmllib.decoding(entry.title)
                         categorie_keys = []
                         content = ''
@@ -262,7 +264,7 @@ class FeedAdmin(admin.ModelAdmin):
                             try:
                                     i += 1
                                     url = ''
-                                    logging.info('beging to add new article No. %s', i)
+                                    logger.info('beging to add new article No. %s', i)
                                     if(entry.has_key('feedburner_origlink')):
                                             url = entry.feedburner_origlink
                                     else:
@@ -285,21 +287,21 @@ class FeedAdmin(admin.ModelAdmin):
                                     else:
                                             date_published = datetime.now()
                             except Exception, data:
-                                    logging.warn('this like something happened,the error is %s', data)
+                                    logger.warn('this like something happened,the error is %s', data)
 
                             try:
                                     feedresult = self.__store_article(title, url, category, content, date_published, author_name, feed_url, feed)
                                     if feedresult == True:
-                                            logging.info('The No.%s  is fetched to the db', i)
+                                            logger.info('The No.%s  is fetched to the db', i)
                                     else:
-                                            logging.error('The No.%s is fetched Fail', i)
+                                            logger.error('The No.%s is fetched Fail', i)
                                             Mystat = False
                             except Exception, data:
-                                    logging.warning('the error is %s', data)
+                                    logger.warning('the error is %s', data)
                                     Mystat = False
 
                         else:
-                            logging.info('skip this article,it is aready have')
+                            logger.info('skip this article,it is aready have')
 
 
 

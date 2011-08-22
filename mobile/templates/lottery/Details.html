@@ -9,6 +9,7 @@
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
 <ul><h2>中奖会员</h2></ul>
 <ul data-role="listview"> 
+
 {% for item in blacklist %}
     <li><a href="{%url userena_profile_detail item.user%}"><h4>中奖手机号码为：{{ item.replacestr }}</h3></a></li>
 {% endfor %}

@@ -12,8 +12,8 @@
 
 <div class="ui-grid-a">
             <div class="ui-block-a">
-               <p><a href="{% url forum:forum_user_profile post.posted_by.pk %}">{% avatar post.posted_by %}</a></p>
-               <p>作者：<a href="{% url forum:forum_user_profile post.posted_by.pk %}">{{post.posted_by.username}}</a></p>
+               <p><a href="{% url userena_profile_detail post.posted_by.username %}">{% avatar post.posted_by %}</a></p>
+               <p>作者：<a href="{% url userena_profile_detail post.posted_by.username %}">{{post.posted_by.username}}</a></p>
                <p>发布时间：{{ topic.get_last_post.update|lbtimesince }}</p>
                <p>所属栏目：<a href="{{ topic.forum.get_absolute_url }}">{{ topic.forum.name }}</a></p>
                <p>关注度：{{topic.num_views}}</p>
@@ -33,8 +33,8 @@
         {% with post=topic.post %}
         <div class="ui-grid-a">
             <div class="ui-block-a">
-               <p><a href="{% url forum:forum_user_profile post.posted_by.pk %}">{% avatar post.posted_by %}</a></p>
-               <p>作者：<a href="{% url forum:forum_user_profile post.posted_by.pk %}">{{post.posted_by.username}}</a></p>
+               <p><a href="{% url userena_profile_detail post.posted_by.username %}">{% avatar post.posted_by %}</a></p>
+               <p>作者：<a href="{% url userena_profile_detail post.posted_by.username %}">{{post.posted_by.username}}</a></p>
                <p>发布时间：{{ topic.get_last_post.update|lbtimesince }}</p>
                <p>所属栏目：<a href="{{ topic.forum.get_absolute_url }}">{{ topic.forum.name }}</a></p>
                <p>关注度：{{topic.num_views}}</p>

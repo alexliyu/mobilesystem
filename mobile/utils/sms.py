@@ -8,6 +8,7 @@
        
 """
 from django.conf import settings
+
 import md5, suds
 
 black_list = [

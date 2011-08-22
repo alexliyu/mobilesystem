@@ -235,7 +235,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'djangohelper',
     'onlineuser',
     'attachments',
-    
+    'sms',
 #    'debug_toolbar',
     'tinymce',
     'compress',

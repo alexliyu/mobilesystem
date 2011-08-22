@@ -40,52 +40,52 @@
   <div class="ui-grid-a">
     <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:80px"><strong>头像</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{% avatar profile.user 80 %}</div></div>
    
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Name" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.get_user_real_name }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar "><strong>{% trans "Name" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.get_user_real_name }}</div></div>
 
     {% if profile.user.email %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Email" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.user.email }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>{% trans "Email" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.user.email }}</div></div>
     {% endif %}
     {% if profile.age %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Age" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.age }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>{% trans "Age" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.age }}</div></div>
     {% endif %}
     {% if profile.website %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Website" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a"><a href="{{ profile.website }}">{{ profile.website }}</a></div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>{% trans "Website" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar"><a href="{{ profile.website }}">{{ profile.website }}</a></div></div>
     {% endif %}
     {% if profile.location %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "Location" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.location }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>{% trans "Location" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ">{{ profile.location }}</div></div>
     {% endif %}
     {% if profile.address %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>地址：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.address }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar "><strong>地址：</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.address }}</div></div>
     {% endif %}
     {% if profile.website %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>个人网站：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.website }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar "><strong>个人网站：</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.website }}</div></div>
     {% endif %}
     {% if profile.gender %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>性别：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.get_gender }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>性别：</strong></div></div><div class="ui-block-b"><div class="ui-bar ">{{ profile.get_gender }}</div></div>
     {% endif %}
     {% if profile.QQ %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>QQ：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.QQ }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar "><strong>QQ：</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.QQ }}</div></div>
     {% endif %}
     {% if profile.staytime %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>在线时长：</strong></div></div><div class="ui-block-b">{{ profile.staytime }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar "><strong>在线时长：</strong></div></div><div class="ui-block-b">{{ profile.staytime }}</div></div>
     {% endif %}
     {% if profile.experience %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>互动经验值：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.experience }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>互动经验值：</strong></div></div><div class="ui-block-b"><div class="ui-bar ">{{ profile.experience }}</div></div>
     {% endif %}
     {% if profile.score %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>会员积分：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.score }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>会员积分：</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.score }}</div></div>
     {% endif %}
     {% if profile.grade %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>会员等级：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.grade }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar "><strong>会员等级：</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.grade }}</div></div>
     {% endif %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>注册时间：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.user.date_joined|date:"Y-m-d" }}</div></div>
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>发表话题数:</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a"><a href="{% url forum:forum_user_topics profile.user.pk %}">{{ profile.user.topic_set.all.count }}</a></div></div>
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>参与话题数:</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a"><a href="{% url forum:forum_user_posts profile.user.pk %}">{{ profile.user.post_set.all.count }}</a></div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>注册时间：</strong></div></div><div class="ui-block-b"><div class="ui-bar ">{{ profile.user.date_joined|date:"Y-m-d" }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar "><strong>发表话题数:</strong></div></div><div class="ui-block-b"><div class="ui-bar "><a href="{% url forum:forum_user_topics profile.user.pk %}">{{ profile.user.topic_set.all.count }}</a></div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>参与话题数:</strong></div></div><div class="ui-block-b"><div class="ui-bar "><a href="{% url forum:forum_user_posts profile.user.pk %}">{{ profile.user.post_set.all.count }}</a></div></div>
     {% if profile.signature %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>个人签名：</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.signature }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>个人签名：</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.signature }}</div></div>
     {% endif %}
     {% if profile.about_me %}
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a"><strong>{% trans "About me" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a">{{ profile.about_me }}</div></div>
+    <div class="ui-block-a"><div class="ui-bar"><strong>{% trans "About me" %}</strong></div></div><div class="ui-block-b"><div class="ui-bar">{{ profile.about_me }}</div></div>
     {% endif %}
   </div>
 </div>
