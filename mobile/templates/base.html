@@ -11,13 +11,19 @@
   {% compressed_css 'svg' %}
 {% endif %}
 
-{% if device|device_has_parent:"apple_generic" or device|device_has_parent:"generic_web_browser"  %}
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" rel="stylesheet" type="text/css" />
-    <script src="http://code.jquery.com/jquery-1.6.2.min.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js" type="text/javascript"></script>
+{% if device|device_has_parent:"apple_generic" or device|device_has_parent:"generic_web_browser" %}
+	{%ifequal device.devid "msie_6_subua2"%}
+		<link href="/media/css/less.css" rel="stylesheet" type="text/css" />
+		
+	{%else%}
+		<meta name="apple-mobile-web-app-capable" content="yes">
+    	<link href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" rel="stylesheet" type="text/css" />
+    	<script src="http://code.jquery.com/jquery-1.6.2.min.js" type="text/javascript"></script>
+    	<script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js" type="text/javascript"></script>
+	{%endifequal%}
+    
  {%else%}
- 	<link href="/media/css/less.css" rel="stylesheet" type="text/css" />
+ 	
 {% endif %}
     <link rel="icon" type="image/png" href="/media/site/images/favicon.png"/>
     
