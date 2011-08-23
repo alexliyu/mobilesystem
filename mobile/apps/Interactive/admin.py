@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.business.models import BusinessInfo, PromotionsInfo
+from apps.Interactive.models import Interactive_Info, Interactive_User
 
-admin.site.register(BusinessInfo)
-admin.site.register(PromotionsInfo)
+admin.site.register(Interactive_Info)
+admin.site.register(Interactive_User)

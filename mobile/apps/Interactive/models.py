@@ -10,7 +10,7 @@ from django.db import models
 from django.conf import settings
 from tinymce import models as tinymce_models
 from datetime import datetime
-
+from django.contrib.auth.models import User
 from apps.gift.models import Gift_Info
 # Create your models here.
 
@@ -35,38 +35,15 @@ class Interactive_User(models.Model):
     """
     互动参与用户表
     """
-    title = models.CharField(u'活动标题', default='', max_length=50)
-    content = tinymce_models.HTMLField(u'活动内容', default='', max_length=500)
-    beginTime = models.DateTimeField(u'开始时间', blank=True)
-    endTime = models.DateTimeField(u'结束时间', blank=True)
-    publishTime = models.DateTimeField(u'发布时间', auto_now_add=True)
-    business = models.ForeignKey(BusinessInfo, verbose_name=u'所属商家')
-    picSrc = models.FileField(u'优惠劵上传', upload_to=settings.UPLOADS_ROOT, blank=True)
-
-    objects = models.Manager()
-    
-    
-    def get_beginTime(self):
-        return "%d-%d-%d %d:%d:%d" % self.beginTime[:6]
-        
-    def get_endTime(self):
-        return "%d-%d-%d %d:%d:%d" % self.endTime[:6]
-
-    def get_content(self):
-        
-        return self.content.__str__().replace("^<[^\s]>", "")
-    
-    def get_picSrc(self):
-        try:
-            a = self.picSrc.__str__().split('/media/uploads/images/')
-            
-            return '/media/uploads/images/' + a[1]
-        except:
-            return '/media/site/images/logo.png'
+    user = models.ForeignKey(User, verbose_name=u'参与会员')
+    content = tinymce_models.HTMLField(u'提交内容', default='', blank=True)
+    create_time = models.DateTimeField(u'提交时间', auto_now_add=True)
+    interactive_info = models.ForeignKey(Interactive_Info, verbose_name=u'参与活动')
+    upload_file = models.CharField(u'上传文件', blank=True, max_length=200)
 
     def __unicode__(self):
-        return self.title
+        return self.user
     
     class Meta:
-        verbose_name = u"活动列表"
-        verbose_name_plural = u"活动列表"
+        verbose_name = u"互动参与用户列表"
+        verbose_name_plural = u"互动参与用户列表"
