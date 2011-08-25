@@ -52,7 +52,7 @@ class Gift_History(models.Model):
     gift = models.ForeignKey(Gift_Info, verbose_name=u'奖品')
     create_time = models.DateTimeField(u'发放时间', auto_now_add=True)
     user = models.ForeignKey(User, verbose_name=u'领奖人')
-    gift_active = models.TextField(u'领奖活动', auto_now_add=True)
+    gift_active = models.TextField(u'领奖活动')
     stat = models.IntegerField(u'领奖状态', choices=STAT_CHOICES)
     
     

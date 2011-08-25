@@ -20,7 +20,7 @@
 			<h3>查看商家优惠活动列表</h3>
 			<ul data-role="listview" data-inset="true" data-theme="d">
 				{%for item in business.promotions_list%}
-									<li><a href="/business/detail/{{item.id}}">{{item.title}}<span class="ui-li-count">结束时间:{{item.endTime|date:"Y-f-j"}}</span></a></li>
+									<li><a href="/business/detail/{{item.id}}">{{item.title}}<span class="ui-li-count">结束时间:{{item.endTime|date:"Y-m-j"}}</span></a></li>
 				{%endfor%}
 			</ul>
 		</div><!-- /section 4 -->
