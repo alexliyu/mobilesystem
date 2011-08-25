@@ -1,0 +1,40 @@
+{% extends "business/base.html" %}
+
+{% block content %}
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<ul><h4>{{object.title}}——简介</h4></ul>   
+    <ul>{{ object.description|safe}}</ul>
+    <ul>奖品：{{object.gift|safe}}</ul>
+    <ul>开始时间：{{object.start_time|date:"Y-m-j"}}</ul>
+    <ul>结束时间：{{object.end_time|date:"Y-m-j"}}</ul>
+    <ul>目前已参与人数：{{users_list.count}}</ul>
+
+</div>
+{%if request.user.is_authenticated%}
+	<div class="content-secondary">
+			
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>参与本互动活动</h3>
+				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+					<h4>请根据本互动活动要求填写答案，或者上传图片、视频等文件</h4>
+					<form action="{% url interactive:interactivepost object.pk %}" method="post" id="postform" accept-charset="utf-8" enctype="multipart/form-data" data-ajax="false" >
+									<input type="hidden" name="next" value="{{request.path}}"/>
+									<div data-role="fieldcontain"><label for="id_content">答案：</label><textarea name="content">填写您的回答、如只要求上传图片或视频，则可留空</textarea></div>
+									<div data-role="fieldcontain"><label for="id_attachments"> 附件：</label><input id="fileInput" name="attachments" type="file" /></div>
+									{% csrf_token %}													
+									<input type="submit" class="button" name="submit" value="提交答案">
+											
+									
+
+									
+
+					</form>
+				</div>
+			</div><!-- /section 4 -->
+		</div>
+{%else%}
+		<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+			<h4>只有娱讯互动平台会员才可参与本活动，请注册或者登录娱讯互动平台后，在参与本活动！</h4>
+		</div>	
+{%endif%}
+{% endblock %}

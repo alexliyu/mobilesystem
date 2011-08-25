@@ -1,0 +1,47 @@
+{% extends "interactive/base.html" %}
+
+{% block content %}
+<!--首页上方导航栏 -->
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<div class="center">
+		<ol class="icon-menu">
+			{% for category in interactive_categries %}
+						
+								<li id="menu-{{ category.slug }}">
+									<a  href="{{ category.get_absolute_url }}" title="{{ category.title }}">{{ category.title }}</a>
+								</li> 
+						
+			{% endfor %}
+			
+		</ol>
+	</div>
+</div>
+
+<p />
+
+
+<div class="clear"></div>
+
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+					<ul><h4>热门互动</h4></ul>
+					<ul data-role="listview"> 
+					{% for object in interactive_list %}
+							<li>
+								<a href="{{ object.get_absolute_url }}" >
+								
+								
+
+									<h5>{{object.title}}</h5>
+									<p>分类：{{object.category}}</p>
+
+									
+								</a><span class="ui-li-count">距离结束：{{object.end_time|timeuntil}}</span>
+							</li>
+					{% endfor %}
+				
+
+					
+				</ul>
+</div>
+
+{% endblock %}

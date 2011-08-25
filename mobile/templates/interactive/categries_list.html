@@ -1,0 +1,46 @@
+{% extends "interactive/base.html" %}
+{%block load%}{% load tagging_tags%}{%endblock%}
+
+
+
+
+{% block title %}最新文章{% if category %}| 分类：{{ category }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} | 页：{{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
+
+{% block content %}
+
+
+
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<ul data-role="listview" data-inset="true" data-theme="d">
+					{% for object in page_object.object_list %}
+	
+						<li><a href="{{ object.get_absolute_url }}"  rel="external">{{object.title}}</a><span class="ui-li-count">距离结束：{{object.end_time|timeuntil}}</span></li>
+	
+						
+					{% endfor %}
+					
+	</ul>
+</div>
+<div data-role="navbar" id="divPaper">
+				
+  						
+		
+	<ul>
+
+			<li><a href="{%url interactive:interactivelist_paginated category.slug 1%}" title="首页">首页</a></li>
+			{% if page_object.has_previous %}
+				<li><a href="{%url interactive:interactivelist_paginated category.slug page_object.previous_page_number%}" title="上一页">上一页</a>&nbsp;</li>
+			{% endif %}
+
+
+			{% if page_object.has_next %}
+				<li><a href="{%url interactive:interactivelist_paginated category.slug page_object.next_page_number%}" title="下一页">下一页</a>&nbsp;</li>
+			{% endif %}
+			<li><a href="{%url interactive:interactivelist_paginated category.slug page_object.paginator.num_pages%}" title="末页">末页</a></li>
+	</ul>
+</div>
+			
+			
+	
+		
+{% endblock %}
