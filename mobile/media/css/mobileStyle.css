@@ -1,0 +1,134 @@
+
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+
+li{list-style-type:none;}
+body {
+	font: 16px/24px Georgia, serif;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+
+
+
+body {
+	background: rgb(232,232,232);
+	color: rgb(60,60,60);
+	-webkit-text-size-adjust: 100%; 
+}
+
+#footer div ul{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
+#footer div ul li{display:inline;text-align:center;}
+#footer div ul li a{float:left;width:2.2em;text-decoration:none;color:white;background: rgb(51,51,51);padding:0;border-right:1px solid white;}
+
+.ui-corner-all h2{font-size:16px;}
+#divLink {list-style-type:none;}
+#divLink img{width:260px;height:230px;}
+#imgWea{
+	width:30px;
+	height:20px;
+}
+.clear{padding-top:5px;clear:both;}
+.entry-title{
+	font-size:15px;
+}
+ui-shadow ul{font-size:14px;line-height:20px;}
+ui-shadow ul li{line-height:18px;}
+#divTuan h3{
+	font-size: 14px;
+	line-height:18px;
+	height:18px;
+}
+#divTuan li{
+	list-style-type:none;font-size: 13px;}
+}
+#Main div h3{
+	font-size: 14px;
+	line-height:18px;
+	height:18px;
+}
+#divVideo h2{
+	font-size: 16px;
+	line-height:18px;
+	height:18px;
+}
+#divVideo li{
+	list-style-type:none;font-size: 14px;
+	line-height:15px;}
+}
+.clsH4{
+	font-size: 15px;
+	line-height:16px;
+}
+#divHead{
+	height:28px;
+	line-height:28px;
+	color:white;background: rgb(51,51,51);
+}
+#divMain{text-align:center;background: rgb(51,51,51);height: 28px;line-height:28px;clear:right;}
+.ui-btn-right{float:right;display:inline;color:white;}
+.clNr{font-size: 14px}
+#id_mobile{font: 12px/24px Georgia;}
+.invisible{font-size: 14px;line-height:20px;height:20px;}
+.icon-menu{
+ padding: 5px;
+ width: 100%;
+ margin-bottom: 10px;
+ float: left;
+ padding-left: 15px;
+}
+.icon-menu li{
+ width: 80px;
+ float: left;
+ font-size: 14px;
+ line-height: 18px;
+ text-align: left;
+}
+#bc-title{float:left;display:inline}
+#bc-title h1{font-size: 16px;line-height:28px;height:28px;}
+
+#lvList{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
+#lvList li{display:inline;text-align:center;}
+#lvList a{float:left;width:200px;text-decoration:none;padding:0.2em 0.2em;}
+#lvList a img{float:left;width:50px;height:50px;text-align:right;}
+#lvList a h3{float:left;}
+#lvList a span{float:left;}
+#lvList a p{float:left;}
+#divPaper ul{float:left;width:100%;padding:0;margin:0;list-style-type:none;}
+#divPaper ul li{display:inline;text-align:center;}
+#divPaper ul li a{float:left;width:3em;text-decoration:none;padding:0 0 0.2em;border-right:1px solid white;}
+h3{font-size:14px;}
