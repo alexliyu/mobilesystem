@@ -11,6 +11,7 @@ from django.conf import settings
 
 from apps.business.models import BusinessInfo
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 # Create your models here.
 
 class Gift_Info(models.Model):
@@ -63,3 +64,17 @@ class Gift_History(models.Model):
     class Meta:
         verbose_name = u"奖品发放记录"
         verbose_name_plural = u"奖品发放记录"
+
+def gift_signals(sender, instance, created, **kwargs):
+    '''当奖品已领取时，触发本操作'''
+    
+    if not created:
+        if instance.stat == 1:
+            gift_object = Gift_Info.objects.get(pk=instance.gift.pk)
+            gift_object.left_count = gift_object.left_count - 1
+            gift_object.save()
+       
+   
+      
+
+post_save.connect(gift_signals, sender=Gift_History)

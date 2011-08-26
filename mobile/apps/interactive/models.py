@@ -14,6 +14,7 @@ from django.contrib.auth.models import User
 from apps.gift.models import Gift_Info
 from django.core.urlresolvers import reverse
 from django.db.models.signals import post_save
+from apps.gift.models import Gift_History
 from mobile.utils.sms import sms
 # Create your models here.
 
@@ -78,6 +79,14 @@ class Interactive_User(models.Model):
     upload_file = models.CharField(u'上传文件', blank=True, max_length=200)
     stat = models.IntegerField(u'状态', choices=STAT_CHOICES, default=0)
     
+    def save_gift(self):
+        gift_object = Gift_History()
+        gift_object.title = self.interactive_info.title
+        gift_object.gift = self.interactive_info.gift
+        gift_object.user = self.interactive_user
+        gift_object.gift_active = self.interactive_info.title
+        gift_object.stat = 0
+        gift_object.save()
     
     def __unicode__(self):
         return self.interactive_user.username
@@ -96,6 +105,7 @@ def notify_sms(sender, instance, created, **kwargs):
             content = u'您所提交的%s的答案已入围,稍后我们会进行进一步的评奖,结果会以短信通知' % instance.interactive_info.title
         elif instance.stat == 1:
             content = u'您所提交的%s的答案已获奖，稍后我们会以电话联系您' % instance.interactive_info.title
+            instance.save_gift()
         elif instance.stat == 3:
             content = u'不好意思，您所提交的%s的答案已被淘汰，欢迎您继续参与我们其他的互动活动' % instance.interactive_info.title
     send_result = sms_object.post_sms(send_users, content)

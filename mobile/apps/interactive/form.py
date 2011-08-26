@@ -7,11 +7,12 @@ Created on 2011-8-25
 '''
 from django import forms
 from apps.interactive.models import Interactive_User, Interactive_Info
+
 from django.conf import settings
 from datetime import datetime
 from random import random
-from checkbox.properties import File
-from django.http.multipartparser import FILE
+
+
 
 class PostForm(forms.ModelForm):
     content = forms.CharField(label=u' 回答', required=False, \
@@ -36,6 +37,11 @@ class PostForm(forms.ModelForm):
             filepath.write(chunk)
         filepath.close()
         return filepath.name
+    
+
+        
+        
+    
     def save(self):
         content = self.cleaned_data['content']
         file = self.cleaned_data['attachments']
