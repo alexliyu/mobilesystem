@@ -13,6 +13,8 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from apps.gift.models import Gift_Info
 from django.core.urlresolvers import reverse
+from django.db.models.signals import post_save
+from mobile.utils.sms import sms
 # Create your models here.
 
 class Interactive_Categries(models.Model):
@@ -63,11 +65,18 @@ class Interactive_User(models.Model):
     """
     互动参与用户表
     """
+    STAT_CHOICES = (
+                    (0, u'未获奖'),
+                    (1, u'已获奖'),
+                    (2, u'已入围'),
+                    (3, u'已淘汰')
+                    )
     interactive_user = models.ForeignKey(User, verbose_name=u'参与会员')
     content = tinymce_models.HTMLField(u'提交内容', default='', blank=True)
     create_time = models.DateTimeField(u'提交时间', auto_now_add=True)
     interactive_info = models.ForeignKey(Interactive_Info, verbose_name=u'参与活动')
     upload_file = models.CharField(u'上传文件', blank=True, max_length=200)
+    stat = models.IntegerField(u'状态', choices=STAT_CHOICES, default=0)
     
     
     def __unicode__(self):
@@ -76,3 +85,20 @@ class Interactive_User(models.Model):
     class Meta:
         verbose_name = u"互动参与用户列表"
         verbose_name_plural = u"互动参与用户列表"
+
+def notify_sms(sender, instance, created, **kwargs):
+    '''当新创建一个获奖通知时进行发送短信处理'''
+    send_users = instance.interactive_user.get_profile().mobile
+    sms_object = sms()
+    content = u'感谢您参与娱讯互动活动,稍后我们会进行进一步的评奖,结果会以短信通知'
+    if not created:
+        if instance.stat == 2:
+            content = u'您所提交的%s的答案已入围,稍后我们会进行进一步的评奖,结果会以短信通知' % instance.interactive_info.title
+        elif instance.stat == 1:
+            content = u'您所提交的%s的答案已获奖，稍后我们会以电话联系您' % instance.interactive_info.title
+        elif instance.stat == 3:
+            content = u'不好意思，您所提交的%s的答案已被淘汰，欢迎您继续参与我们其他的互动活动' % instance.interactive_info.title
+    send_result = sms_object.post_sms(send_users, content)
+      
+
+post_save.connect(notify_sms, sender=Interactive_User)

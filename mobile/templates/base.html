@@ -13,7 +13,7 @@
 
 {% if device|device_has_parent:"apple_generic" or device|device_has_parent:"generic_web_browser" %}
 	{%ifequal device.devid "msie_6_subua2"%}
-		<link href="/media/css/less.css" rel="stylesheet" type="text/css" />
+		<link href="/media/css/mobileStyle.css" rel="stylesheet" type="text/css" />
 		
 	{%else%}
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,7 +23,7 @@
 	{%endifequal%}
     
  {%else%}
- 	
+		<link href="/media/css/mobileStyle.css" rel="stylesheet" type="text/css" />
 {% endif %}
     <link rel="icon" type="image/png" href="/media/site/images/favicon.png"/>
     

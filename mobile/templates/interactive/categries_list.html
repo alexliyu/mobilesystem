@@ -4,13 +4,20 @@
 
 
 
-{% block title %}最新文章{% if category %}| 分类：{{ category }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} | 页：{{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
+{% block title %}最新互动活动{% if category %}| 分类：{{ category }}{% endif %}{% if page_obj %}{% ifnotequal page_obj.number 1 %} | 页：{{ page_obj.number }}{% endifnotequal %}{% endif %}{% endblock %}
 
 {% block content %}
 
 
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<ul>
+		{{category.description|safe}}				
+	</ul>
+</div>
+<div class="smallclear"/>
 
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<ul><h4>活动列表</h4></ul>
 	<ul data-role="listview" data-inset="true" data-theme="d">
 					{% for object in page_object.object_list %}
 	
@@ -21,6 +28,9 @@
 					
 	</ul>
 </div>
+<div class="smallclear"/>
+
+
 <div data-role="navbar" id="divPaper">
 				
   						
