@@ -40,7 +40,7 @@ CACHE_ENTRIES_RELATED = {}
 def get_categories(template='entry/tags/categories.html'):
     """Return the categories"""
     return {'template': template,
-            'categories': Category.tree.all()}
+            'categories': Category.tree.all().filter(display=True)}
 
 '''
 用于生成菜单的标签

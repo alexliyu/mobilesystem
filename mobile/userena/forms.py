@@ -142,7 +142,7 @@ class SignupFormOnlyMobile(SignupForm):
         用来验证手机号码是否是合法的手机号码，如果合法则返回True，反之返回False
         """
         import re
-        mobile_re = re.compile('((13[0-9]|15[0|2|3|6|7|8|9]|18[2|8|9])\d{8})')
+        mobile_re = re.compile('((13[0-9]|15[0|1|2|3|6|7|8|9]|18[0|2|6|8|9])\d{8})')
         if mobile_re.search(mobile):
             return True
         else:

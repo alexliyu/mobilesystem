@@ -20,7 +20,10 @@ class lotteryAdmin(admin.ModelAdmin):
         sms_object = sms()
         for sms_item in queryset:
             for user_object in sms_item.UserProfile.all():
-                send_users += user_object.mobile + ','
+                try:
+                    send_users += user_object.mobile + ','
+                except:
+                    send_users += user_object.user.username + ','
             send_result = sms_object.post_sms(send_users, sms_item.sms_content)
             
             self.message_user(request, send_result)

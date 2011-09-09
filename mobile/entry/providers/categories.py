@@ -26,7 +26,7 @@ class CategoriesEntryProvider(BaseEntryProvider):
     
     def category_detail(self, request, context, path, page=None, **kwargs):
         """显示一个分类中的文章"""
-        category = self.get_category_or_404(path)
+        category = self.get_category_or_404('soujie')
         template_name = 'entry/entry_list'
         context['category'] = category
         matches = QuerySet

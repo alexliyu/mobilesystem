@@ -8,8 +8,8 @@ from .forms import CategoryAdminForm
 class CategoryAdmin(admin.ModelAdmin):
     """Admin for Category model"""
     form = CategoryAdminForm
-    fields = ('title', 'parent', 'description', 'slug')
-    list_display = ('title', 'slug', 'get_tree_path', 'description')
+    fields = ('title', 'parent', 'description', 'slug', 'display')
+    list_display = ('title', 'slug', 'get_tree_path', 'description', 'display')
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title', 'description')
     list_filter = ('parent',)

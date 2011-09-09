@@ -36,7 +36,7 @@ APPLICATIONS = [
     
     Application('apps.feeds.tuan', 'tuan', '团购'),
     
-    Application('apps.feeds.zine', 'zine', '杂志'),
+   
     
     Application('entry', 'entry', u'文章',
                 display_to_user=False,

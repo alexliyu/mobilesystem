@@ -170,7 +170,7 @@ class entry_detail(BaseView):
         context['month_format'] = '%m'
         context['make_object_list'] = True
         context['queryset'] = Entry.published.on_site()
-        if request.user.is_authenticated:
+        if request.user.is_authenticated():
             action.send(request.user, verb=u'正在浏览', target=entry)
         return self.render(request, context, template_name)
         

@@ -13,3 +13,4 @@ class BaseEntryProvider(object):
     pass
 
 from entry.providers.categories import CategoriesEntryProvider
+from entry.providers.zine import ZineEntryProvider

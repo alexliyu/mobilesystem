@@ -68,7 +68,13 @@ class Author(User):
 
 
 class Category(models.Model):
-    """Category object for Entry"""
+    """
+    内容分类模型
+    """
+    TYPE_CHOICES = (
+                    (1, u'显示'),
+                    (0, u'不显示')
+                    )
 
     title = models.CharField(_('title'), max_length=255)
     slug = models.SlugField(help_text=_('used for publication'),
@@ -78,6 +84,7 @@ class Category(models.Model):
     parent = models.ForeignKey('self', null=True, blank=True,
                                verbose_name=_('parent category'),
                                related_name='children')
+    display = models.IntegerField(u'是否显示', choices=TYPE_CHOICES)
 
     def entries_published(self):
         """Return only the entries published"""
