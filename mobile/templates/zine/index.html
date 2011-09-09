@@ -1,0 +1,37 @@
+{% extends "zine/base.html" %}{% load molly_search %}
+
+{% block content %}
+
+{# News Search #}
+{% search_form %}
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+<form method="get" action="{% url search:index %}">
+    <!-- Doing the devil's work below: couldn't get a CSS design to work with Blackberry 8900 so using Tables as a last resort. Tim F -->
+<h2 class="invisible">搜索杂志内容</h2>    
+<p>
+               
+                <label for="search">搜索杂志内容:</label>
+                 <input type="search"  name="query" id="id_query" title='搜索杂志内容'/>
+                 
+   </p>
+                <input type="hidden" name="application" value="zine" title="Search News" />
+</form>
+{# End News Search #}
+</div>
+
+<div data-role="listview" data-inset="true" data-theme="d" id="divTuan">
+<h3>本地生活杂志内容合作伙伴</h3>
+{% for zine in zine_list %}
+        <li {% if forloop.last %}class="round-bottom"{% endif %}>
+        	{%if path%}
+            	<a href="{%url zine:item-list path zine.slug%}">{{ zine.title }}</a>
+            {%else%}
+            	<a href="{%url zine:type-list zine.slug%}">{{ zine.title }}</a>
+            {%endif%}
+        </li>
+{% endfor %}
+    
+</div>
+
+
+{% endblock %}

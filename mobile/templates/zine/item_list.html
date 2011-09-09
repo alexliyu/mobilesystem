@@ -1,0 +1,38 @@
+{% extends "zine/base.html" %}{% load molly_utils %}
+
+{% block breadcrumbs %}
+{{ block.super }}
+            <li><a href="{% url events:index %}">
+                <img src="/media/images/index-icons/rss-bc.png" alt="Events"/>
+            </a></li>
+{% endblock %}
+
+{% block pagetitle %}Events feed{% endblock %}
+{% block title %}Events feed: {{ feed.title }}{% endblock %}
+
+{% block content %}
+
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+
+    <h2>{{ category.title }}</h2>
+
+    <div class="ui-body ui-body-d ui-corner-all ui-shadow">
+{% for item in page_object.object_list %}
+        <li {% if forloop.last %}class="round-bottom"{% endif %}>
+            <a href="{%url zine:item-detail path slug item.id %}">
+                {{ item.title }}
+                 <span class="ui-li-count">
+                {% if not item.last_modified_local|this_year %}
+                    {{ item.last_modified_local|date:"Y M j" }}
+                {% else %}
+                    {{ item.last_modified_local|date:"M j"}}
+                {% endif %}
+                </span>
+                
+            </a>
+        </li>
+{% endfor %}
+    </div>
+</div>
+
+{% endblock %}
