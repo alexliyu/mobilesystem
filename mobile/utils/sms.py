@@ -2498,7 +2498,7 @@ class sms(object):
         @param mobile 手机号码，字符串，可以是多个手机号码，中间才用，隔开
         @param content 短信具体内容 
         """
-        content += u'[娱讯互动平台]'
+        content += u'[娱讯119互动平台]'
         if mobile.find(',') != -1:
             mobile_list = mobile[:-1]
         else:
