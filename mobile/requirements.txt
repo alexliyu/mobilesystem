@@ -8,7 +8,7 @@ ply
 PyZ3950
 feedparser
 simplejson
-rdflib
+#rdflib
 python-dateutil
 Django
 oauth

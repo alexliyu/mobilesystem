@@ -86,7 +86,7 @@ LANGUAGES = [
 ]
 DEFAULT_LANGUAGE = 0
 # Site name is used extensively in templates to name the site
-SITE_NAME = u'娱讯互动平台'
+SITE_NAME = u'娱讯&119互动平台'
 
 # Molly can automatically generate the urlpatterns, so it's recommended by
 # default to use Molly's urls.py. This doesn't work if you have non-Molly apps
@@ -95,28 +95,27 @@ ROOT_URLCONF = 'urls'
 
 # 
 # 在公司的数据库配置
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '192.168.1.34',
-        'NAME': 'mobile',
-        'USER': 'mobile',
-        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
-    }
-}
-
-
-# 在家里的数据库配置
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'HOST': '127.0.0.1',
-#        'NAME': 'molly',
-#        'USER': 'molly',
-#        'PASSWORD': 'mobile',
-#        'PASSWORD':'6b6RyKNvOnEvbrynYK',
+#        'HOST': '192.168.1.34',
+#        'NAME': 'mobile',
+#        'USER': 'mobile',
+#        'PASSWORD': 'md5c720ea1e0f756a4a2191557aa2c038ba',
 #    }
 #}
+
+
+# 在家里的数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'HOST': '127.0.0.1',
+        'NAME': 'mobile',
+        'USER': 'mobile',
+        'PASSWORD':'md515c21decb0fae7b388bacdafd7178d28',
+    }
+}
 
 
 # API keys are used to access particular services
@@ -147,7 +146,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfResponseMiddleware',
     'pagination.middleware.PaginationMiddleware',
     'onlineuser.middleware.OnlineUserMiddleware',
-    'tracking.middleware.VisitorTrackingMiddleware',
+#    'tracking.middleware.VisitorTrackingMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
@@ -248,7 +247,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
      'sentry',
     'sentry.client',
     'sorl.thumbnail',
-    'tracking',
+#    'tracking',
 )
 
 GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
