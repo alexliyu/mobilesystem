@@ -29,7 +29,16 @@ class SmsAdmin(admin.ModelAdmin):
         sms_object = sms()
         for sms_item in queryset:
             for user_object in sms_item.sms_users.all():
-                send_users += user_object.get_profile().mobile + ','
+                try:
+                    send_users += user_object.get_profile().mobile + ','
+                except:
+                    pass
+            for group_object in sms_item.sms_groups.all():
+                for user_object in group_object.user_set.all():
+                    try:
+                        send_users += user_object.get_profile().mobile + ','
+                    except:
+                        pass
             send_result = sms_object.post_sms(send_users, sms_item.content)
             if len(send_result) > 3:
                 sms_item.sms_id = send_result

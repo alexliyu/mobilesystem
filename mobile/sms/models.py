@@ -22,7 +22,7 @@
 from django.db import models
 from django.conf import settings
 from datetime import datetime
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,Group
 # Create your models here.
 
 class sms_list(models.Model):
@@ -38,7 +38,8 @@ class sms_list(models.Model):
     sms_id = models.CharField(u'短信流水号', blank=True, max_length=20)
     stat = models.IntegerField(u'发送状态', default=0, max_length=1, choices=GENDER_CHOICES)
     errors = models.TextField(u'错误信息', blank=True)
-    sms_users = models.ManyToManyField(User, verbose_name=u'收信人列表')
+    sms_users = models.ManyToManyField(User, verbose_name=u'收信人列表',blank=True)
+    sms_groups=models.ManyToManyField(Group, verbose_name=u'收信人群组',blank=True)
     
     def __unicode__(self):
         return self.title
