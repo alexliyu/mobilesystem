@@ -66,7 +66,11 @@ def lazy_parent(view_name, *args, **kwargs):
         view = view_name
         if ':' not in view:
             view = '%s:%s' % (application_name, view)
-        view, view_args, view_kwargs = resolve(reverse(view, args=args, kwargs=kwargs))
+        
+        if kwargs.has_key('args'):
+            view, view_args, view_kwargs = resolve(reverse(view, args=kwargs['args'], kwargs=None))
+        else:    
+            view, view_args, view_kwargs = resolve(reverse(view, args=args, kwargs=kwargs))
         return view.breadcrumb.data(view, request, context, *view_args, **view_kwargs)
     return f
 

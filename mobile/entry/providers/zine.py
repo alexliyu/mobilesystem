@@ -13,7 +13,7 @@ from settings import PAGINATION
 from entry.views.decorators import template_name_for_entry_queryset_filtered
 from django.db.models.query import QuerySet
 from entry.providers import BaseEntryProvider
-from checkbox.properties import Int
+
 
 class ZineEntryProvider(BaseEntryProvider):
     def __init__(self):
@@ -31,7 +31,7 @@ class ZineEntryProvider(BaseEntryProvider):
     
     def detail(self, id):
         """返回内容对象"""
-        return Entry.published.get(pk=Int(id))
+        return Entry.published.get(pk=int(id))
     
     def category_detail(self, request, context, path, page=None, **kwargs):
         """显示一个分类中的文章"""

@@ -37,12 +37,12 @@ class TypeView(BaseView):
         }
 
     @BreadcrumbFactory
-    def breadcrumb(self, request, context, path, slug=None):
+    def breadcrumb(self, request, context, path, slug=None, page=None):
         return Breadcrumb(
             self.conf.local_name, None, '生活杂志', lazy_reverse('zine:index')
         )
 
-    def handle_GET(self, request, context, path, slug=None):
+    def handle_GET(self, request, context, path, slug=None, page=None):
         context['path'] = path
         context['zine_list'] = self.conf.provider.category_list(request, path, page)
         return self.render(request, context, 'zine/index',
@@ -60,9 +60,9 @@ class ItemListView(BaseView):
         context = self.conf.provider.category_detail(request, context, slug, page)
         return Breadcrumb(
             self.conf.local_name,
-            lazy_parent('index'),
+            lazy_parent('zine:type-list', path),
             context['category'].title,
-            lazy_reverse('item-list', args=[slug])
+            lazy_reverse('item-list', args=[path, slug])
         )
 
     def handle_GET(self, request, context, path, slug, page=None):
@@ -82,7 +82,7 @@ class ItemDetailView(BaseView):
         return Breadcrumb(
             self.conf.local_name,
             lazy_parent('zine:item-list', args=[path, slug]),
-            'Events item',
+            '杂志内容',
             lazy_reverse('item-detail', args=[path, slug, id])
         )
 
