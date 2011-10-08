@@ -3,24 +3,24 @@
 {% block scripts %}
 {% endblock %}
 
-{% block pagetitle %}Server error{% endblock %}
-{% block title %}500 Server Error{% endblock %}
+{% block pagetitle %}对不起，出错了哦！{% endblock %}
+{% block title %}对不起，出错了哦！{% endblock %}
 
 {% block content %}
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
-	<h2>500 Error</h2>
+	<h2>对不起，出错了哦！</h2>
 	<div class="note"><div class="bubble pad-10">
-  <p>Sorry; something went wrong at our end.</p>
-  <p>We've sent an e-mail to the webmaster, so it should be fixed soon.</p>
-  <p>If you have any further information, questions or feedback, you can e-mail us at
-      <a href="mailto:mobileoxford@oucs.ox.ac.uk">mobileoxford@oucs.ox.ac.uk</a>.
+  <p>Sorry，看起来可能我们的服务器系统出现了问题.</p>
+  <p>系统已经自动通知了平台管理员，应该很快就能修复这个问题，请您稍后在试.</p>
+  <p>如果您想进一步的了解详细处理情况，或者给我们提建议，请发送邮件到
+      <a href="mailto:liy@eiimedia.cn">liy@eiimedia.cn</a>.
   </p>
   <p id="alt-suggest">
-      Alternatively, you can try <a href="{% url home:index %}">returning to the home page</a>.
+      当然, 您也可以尝试 <a href="{% url home:index %}">直接返回首页</a>.
   </p>
   <script type="text/javascript">
       suggest = document.getElementById('alt-suggest');
-      suggest.innerHTML = 'Alternatively, you can try <a href="#" onclick="javascript:history.back(1); return false;">going back</a> or returning to the home page.';
+      suggest.innerHTML = '当然，您也可以尝试 <a href="#" onclick="javascript:history.back(1); return false;">返回上一页</a> 或者直接返回主页.';
   </script>
 	</div></div>
 </div>
