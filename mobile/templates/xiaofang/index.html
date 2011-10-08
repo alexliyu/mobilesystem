@@ -1,0 +1,22 @@
+{% extends "xiaofang/base.html" %}
+
+{% block content %}
+
+
+
+<div data-role="listview" data-inset="true" data-theme="d" id="divTuan">
+<h3>消防知识分类</h3>
+{% for zine in zine_list %}
+        <li {% if forloop.last %}class="round-bottom"{% endif %}>
+        	{%if path%}
+            	<a href="{%url xiaofang:item-list path zine.slug%}">{{ zine.title }}</a>
+            {%else%}
+            	<a href="{%url xiaofang:type-list zine.slug%}">{{ zine.title }}</a>
+            {%endif%}
+        </li>
+{% endfor %}
+    
+</div>
+
+
+{% endblock %}

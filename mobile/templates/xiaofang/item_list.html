@@ -1,4 +1,4 @@
-{% extends "zine/base.html" %}{% load molly_utils %}
+{% extends "xiaofang/base.html" %}{% load molly_utils %}
 
 
 
@@ -14,7 +14,7 @@
  	<ul data-role="listview" data-inset="true" data-theme="d">
 		{% for item in page_object.object_list %}
 		        <li>
-		            <a href="{%url zine:item-detail path slug item.id %}">
+		            <a href="{%url xiaofang:item-detail path slug item.id %}">
 		                {{ item.title }}
 		                
 		                

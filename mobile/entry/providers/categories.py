@@ -8,11 +8,12 @@ from django.shortcuts import get_object_or_404
 from django.views.generic.list_detail import object_list
 from django.core.paginator import  Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 
-from entry.models import Category
+from entry.models import Category, Entry
 from settings import PAGINATION
 from entry.views.decorators import template_name_for_entry_queryset_filtered
 from django.db.models.query import QuerySet
 from entry.providers import BaseEntryProvider
+
 
 class CategoriesEntryProvider(BaseEntryProvider):
     def __init__(self):
@@ -23,10 +24,18 @@ class CategoriesEntryProvider(BaseEntryProvider):
         path_bits = [p for p in path.split('/') if p]
         return get_object_or_404(Category, slug=path_bits[-1])
     
+    def category_list(self, request, path, page=None, **kwargs):
+        """显示分类"""
+        category = self.get_category_or_404(path)
+        return category.children.all()
+    
+    def detail(self, id):
+        """返回内容对象"""
+        return Entry.published.get(pk=int(id))
     
     def category_detail(self, request, context, path, page=None, **kwargs):
         """显示一个分类中的文章"""
-        category = self.get_category_or_404('soujie')
+        category = self.get_category_or_404(path)
         template_name = 'entry/entry_list'
         context['category'] = category
         matches = QuerySet

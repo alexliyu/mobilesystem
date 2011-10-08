@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-blog-blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-18 09:39+0800\n"
-"PO-Revision-Date: 2011-08-18 09:42+0800\n"
+"POT-Creation-Date: 2011-10-08 11:44+0800\n"
+"PO-Revision-Date: 2011-10-08 11:46+0800\n"
 "Last-Translator: 李昱 <alexliyu2012@gmail.com>\n"
 "Language-Team: French <fantomas42@gmail.com>\n"
 "Language: zh_CN\n"
@@ -124,9 +124,17 @@ msgstr "引用于 %s"
 msgid "The latest trackbacks for the entry %s"
 msgstr " %s 的最新pingbacks"
 
-#: settings.py:64
+#: settings.py:85
 msgid "Chinese"
 msgstr "中文"
+
+#: actstream/models.py:168
+msgid "started following"
+msgstr ""
+
+#: actstream/models.py:188
+msgid "stopped following"
+msgstr ""
 
 #: apps/business/__init__.py:15
 msgid "Business"
@@ -152,170 +160,171 @@ msgstr "订阅"
 msgid "Fetcharticle"
 msgstr "采集模块"
 
-#: apps/fetcharticle/admin/feedadmin.py:348
+#: apps/fetcharticle/admin/feedadmin.py:350
 #: entry/admin/entry.py:26
 #: templates/entry/admin/entry/widgets/quickpost.html:17
 msgid "Content"
 msgstr "内容"
 
-#: apps/fetcharticle/admin/feedadmin.py:350
+#: apps/fetcharticle/admin/feedadmin.py:352
 #: entry/admin/entry.py:28
 msgid "Options"
 msgstr "选项"
 
-#: apps/fetcharticle/admin/feedadmin.py:356
+#: apps/fetcharticle/admin/feedadmin.py:358
 #: entry/admin/entry.py:34
 msgid "Privacy"
 msgstr "隐私"
 
-#: apps/fetcharticle/admin/feedadmin.py:358
+#: apps/fetcharticle/admin/feedadmin.py:360
 #: entry/admin/entry.py:36
 msgid "Discussion"
 msgstr "评论"
 
-#: apps/fetcharticle/admin/feedadmin.py:360
+#: apps/fetcharticle/admin/feedadmin.py:362
 #: entry/admin/entry.py:38
 msgid "Publication"
 msgstr "发布"
 
-#: apps/fetcharticle/admin/feedadmin.py:388
+#: apps/fetcharticle/admin/feedadmin.py:390
 #: entry/admin/entry.py:66
 #, python-format
 msgid "%(title)s (%(word_count)i words)"
 msgstr "%(title)s (%(word_count)i 个字符)"
 
-#: apps/fetcharticle/admin/feedadmin.py:392
+#: apps/fetcharticle/admin/feedadmin.py:394
 #: entry/admin/entry.py:70
 #, python-format
 msgid "%(title)s (%(comments)i comments)"
 msgstr "%(title)s (%(comments)i 条评论)"
 
-#: apps/fetcharticle/admin/feedadmin.py:395
-#: entry/models.py:73
-#: entry/models.py:118
+#: apps/fetcharticle/admin/feedadmin.py:397
+#: entry/models.py:79
+#: entry/models.py:125
 #: entry/admin/entry.py:73
 msgid "title"
 msgstr "标题"
 
-#: apps/fetcharticle/admin/feedadmin.py:408
+#: apps/fetcharticle/admin/feedadmin.py:410
 #: entry/admin/entry.py:86
 msgid "author(s)"
 msgstr "作者"
 
-#: apps/fetcharticle/admin/feedadmin.py:421
+#: apps/fetcharticle/admin/feedadmin.py:423
 #: entry/admin/entry.py:99
 msgid "category(s)"
 msgstr "类别"
 
-#: apps/fetcharticle/admin/feedadmin.py:433
+#: apps/fetcharticle/admin/feedadmin.py:435
 #: entry/admin/entry.py:111
 msgid "tag(s)"
 msgstr "标签"
 
-#: apps/fetcharticle/admin/feedadmin.py:441
+#: apps/fetcharticle/admin/feedadmin.py:443
 #: entry/admin/entry.py:119
 msgid "site(s)"
 msgstr "网站"
 
-#: apps/fetcharticle/admin/feedadmin.py:447
-#: entry/models.py:142
+#: apps/fetcharticle/admin/feedadmin.py:449
+#: entry/models.py:149
 #: entry/admin/entry.py:125
 msgid "comment enabled"
 msgstr "允许评论"
 
-#: apps/fetcharticle/admin/feedadmin.py:453
+#: apps/fetcharticle/admin/feedadmin.py:455
 #: entry/admin/entry.py:131
 msgid "is actual"
 msgstr "发布期间"
 
-#: apps/fetcharticle/admin/feedadmin.py:459
+#: apps/fetcharticle/admin/feedadmin.py:461
 #: entry/admin/entry.py:137
 msgid "is visible"
 msgstr "是否可见"
 
-#: apps/fetcharticle/admin/feedadmin.py:464
+#: apps/fetcharticle/admin/feedadmin.py:466
 #: entry/admin/entry.py:142
 msgid "View"
 msgstr "查看"
 
-#: apps/fetcharticle/admin/feedadmin.py:466
+#: apps/fetcharticle/admin/feedadmin.py:468
 #: entry/admin/entry.py:144
 #: guardian/templates/admin/guardian/model/change_form.html:9
 msgid "View on site"
 msgstr "浏览站点"
 
-#: apps/fetcharticle/admin/feedadmin.py:472
+#: apps/fetcharticle/admin/feedadmin.py:474
 #: entry/admin/entry.py:150
 msgid "Unavailable"
 msgstr "不存在"
 
-#: apps/fetcharticle/admin/feedadmin.py:476
+#: apps/fetcharticle/admin/feedadmin.py:478
 #: entry/admin/entry.py:154
 msgid "short url"
 msgstr "缩略URL"
 
-#: apps/fetcharticle/admin/feedadmin.py:529
+#: apps/fetcharticle/admin/feedadmin.py:531
 #: entry/admin/entry.py:207
 msgid "The selected entries now belong to you."
 msgstr "所选择的文章内容现在属于您"
 
-#: apps/fetcharticle/admin/feedadmin.py:530
+#: apps/fetcharticle/admin/feedadmin.py:532
 #: entry/admin/entry.py:208
 msgid "Set the entries to the user"
 msgstr "设置自己为所选日志的作者"
 
-#: apps/fetcharticle/admin/feedadmin.py:537
+#: apps/fetcharticle/admin/feedadmin.py:539
 #: entry/admin/entry.py:215
-#, fuzzy
 msgid "The selected entries are now marked as published."
-msgstr "发布所选日志"
+msgstr "所选日志的内容被标记为发布"
 
-#: apps/fetcharticle/admin/feedadmin.py:538
+#: apps/fetcharticle/admin/feedadmin.py:540
 #: entry/admin/entry.py:216
 msgid "Set entries selected as published"
 msgstr "发布所选日志"
 
-#: apps/fetcharticle/admin/feedadmin.py:544
+#: apps/fetcharticle/admin/feedadmin.py:546
 #: entry/admin/entry.py:222
-#, fuzzy
 msgid "The selected entries are now marked as hidden."
-msgstr "隐藏所选日志"
+msgstr "所选日志的内容被标记为隐藏"
 
-#: apps/fetcharticle/admin/feedadmin.py:545
+#: apps/fetcharticle/admin/feedadmin.py:547
 #: entry/admin/entry.py:223
 msgid "Set entries selected as hidden"
 msgstr "隐藏所选日志"
 
-#: apps/fetcharticle/admin/feedadmin.py:552
+#: apps/fetcharticle/admin/feedadmin.py:554
 #: entry/admin/entry.py:230
-#, fuzzy
 msgid "Comments are now closed for selected entries."
-msgstr "关闭所选日志的评论功能"
+msgstr "所选内容的评论功能被关闭"
 
-#: apps/fetcharticle/admin/feedadmin.py:553
+#: apps/fetcharticle/admin/feedadmin.py:555
 #: entry/admin/entry.py:231
 msgid "Close the comments for selected entries"
 msgstr "关闭所选日志的评论功能"
 
-#: apps/fetcharticle/admin/feedadmin.py:560
+#: apps/fetcharticle/admin/feedadmin.py:562
 #: entry/admin/entry.py:238
 msgid "Linkbacks are now closed for selected entries."
 msgstr "选定的文章的Linkbacks现在已经关闭"
 
-#: apps/fetcharticle/admin/feedadmin.py:562
+#: apps/fetcharticle/admin/feedadmin.py:564
 #: entry/admin/entry.py:240
 msgid "Close the linkbacks for selected entries"
 msgstr "关闭所选记录的Linbacks"
 
-#: apps/fetcharticle/admin/feedadmin.py:569
+#: apps/fetcharticle/admin/feedadmin.py:571
 #: entry/admin/entry.py:247
 msgid "The selected entries are now set at the current date."
 msgstr "将选定的文章设置为当前日期"
 
-#: apps/fetcharticle/admin/feedadmin.py:571
+#: apps/fetcharticle/admin/feedadmin.py:573
 #: entry/admin/entry.py:249
 msgid "Put the selected entries on top at the current date"
 msgstr "将选定条目置顶"
+
+#: apps/gift/__init__.py:15
+msgid "Gift"
+msgstr "奖品管理"
 
 #: apps/home/__init__.py:10
 msgid "Comments"
@@ -328,6 +337,13 @@ msgstr "评论"
 #: guardian/templates/admin/guardian/model/obj_perms_manage.html:12
 #: guardian/templates/admin/guardian/model/obj_perms_manage_group.html:10
 #: guardian/templates/admin/guardian/model/obj_perms_manage_user.html:10
+#: templates/places/registration/logged_out.html:4
+#: templates/places/registration/password_change_done.html:4
+#: templates/places/registration/password_change_form.html:4
+#: templates/places/registration/password_reset_complete.html:4
+#: templates/places/registration/password_reset_confirm.html:4
+#: templates/places/registration/password_reset_done.html:4
+#: templates/places/registration/password_reset_form.html:4
 #: templates/registration/logged_out.html:4
 #: templates/registration/password_change_done.html:4
 #: templates/registration/password_change_form.html:4
@@ -337,6 +353,10 @@ msgstr "评论"
 #: templates/registration/password_reset_form.html:4
 msgid "Home"
 msgstr "主页"
+
+#: apps/interactive/__init__.py:15
+msgid "Interactive"
+msgstr "互动"
 
 #: apps/links/__init__.py:15
 msgid "Links"
@@ -394,7 +414,7 @@ msgstr "ATM取款机"
 #: templates/places/metadata/osm.html:40
 #: templates/places/metadata/osm.html:47
 #: templates/places/metadata/osm.html:54
-#: templates/userena/profile_detail.html:39
+#: templates/userena/profile_detail.html:53
 msgid "Website"
 msgstr "网站"
 
@@ -1595,6 +1615,14 @@ msgstr "天气预报"
 msgid "Webcams"
 msgstr ""
 
+#: apps/xiaofang/__init__.py:15
+msgid "Xiaofang"
+msgstr "消防知识"
+
+#: apps/zine/__init__.py:15
+msgid "Zine"
+msgstr "电子杂志"
+
 #: auth/__init__.py:14
 msgid "Auth"
 msgstr "账户"
@@ -1748,141 +1776,146 @@ msgstr ""
 msgid "The answers to these questions will appear as captions below their corresponding slides. Separate by spaces."
 msgstr ""
 
-#: entry/models.py:74
-#: entry/models.py:133
+#: entry/__init__.py:15
+msgid "Entry"
+msgstr "内容管理"
+
+#: entry/models.py:80
+#: entry/models.py:140
 msgid "used for publication"
 msgstr "用于发布"
 
-#: entry/models.py:76
+#: entry/models.py:82
 msgid "description"
 msgstr "描述"
 
-#: entry/models.py:79
+#: entry/models.py:85
 #: entry/admin/forms.py:18
 msgid "parent category"
 msgstr "上级分类"
 
-#: entry/models.py:108
+#: entry/models.py:115
 msgid "category"
 msgstr "类别"
 
-#: entry/models.py:109
-#: entry/models.py:127
+#: entry/models.py:116
+#: entry/models.py:134
 #: entry/admin/forms.py:47
 msgid "categories"
 msgstr "分类"
 
-#: entry/models.py:114
+#: entry/models.py:121
 msgid "draft"
 msgstr "草稿"
 
-#: entry/models.py:115
+#: entry/models.py:122
 msgid "hidden"
 msgstr "隐藏"
 
-#: entry/models.py:116
+#: entry/models.py:123
 msgid "published"
 msgstr "发布"
 
-#: entry/models.py:120
+#: entry/models.py:127
 msgid "image"
 msgstr "图片"
 
-#: entry/models.py:121
+#: entry/models.py:128
 #, fuzzy
 msgid "used for illustration"
 msgstr "用于发布"
 
-#: entry/models.py:122
+#: entry/models.py:129
 msgid "content"
 msgstr "内容"
 
-#: entry/models.py:123
+#: entry/models.py:130
 msgid "excerpt"
 msgstr "摘要"
 
-#: entry/models.py:124
+#: entry/models.py:131
 msgid "optional element"
 msgstr "可选项"
 
-#: entry/models.py:126
+#: entry/models.py:133
 msgid "tags"
 msgstr "标签"
 
-#: entry/models.py:130
+#: entry/models.py:137
 msgid "related entries"
 msgstr "相关日志"
 
-#: entry/models.py:137
+#: entry/models.py:144
 msgid "authors"
 msgstr "作者"
 
-#: entry/models.py:141
+#: entry/models.py:148
 msgid "featured"
 msgstr "推荐"
 
-#: entry/models.py:143
+#: entry/models.py:150
 msgid "linkback enabled"
 msgstr "已允许linkback"
 
-#: entry/models.py:145
+#: entry/models.py:152
 msgid "creation date"
 msgstr "创建时间"
 
-#: entry/models.py:147
+#: entry/models.py:154
 msgid "last update"
 msgstr "最后更新"
 
-#: entry/models.py:148
+#: entry/models.py:155
 msgid "start publication"
 msgstr "开始发布"
 
-#: entry/models.py:149
+#: entry/models.py:156
 msgid "date start publish"
 msgstr "开始发布日期"
 
-#: entry/models.py:151
+#: entry/models.py:158
 msgid "end publication"
 msgstr "结束发布"
 
-#: entry/models.py:152
+#: entry/models.py:159
 msgid "date end publish"
 msgstr "结束发布日期"
 
-#: entry/models.py:155
+#: entry/models.py:162
 msgid "sites publication"
 msgstr "发布网站"
 
-#: entry/models.py:159
+#: entry/models.py:166
+#: relationships/models.py:35
 msgid "login required"
 msgstr "需要登录"
 
-#: entry/models.py:160
+#: entry/models.py:167
 msgid "only authenticated users can view the entry"
 msgstr "只有认证的用户才能查看"
 
-#: entry/models.py:162
+#: entry/models.py:169
 msgid "password"
 msgstr "密码"
 
-#: entry/models.py:163
+#: entry/models.py:170
 msgid "protect the entry with a password"
 msgstr "增加密码保护"
 
-#: entry/models.py:166
+#: entry/models.py:173
 msgid "template"
 msgstr "模板"
 
-#: entry/models.py:168
+#: entry/models.py:175
 msgid "Default template"
 msgstr "默认模板"
 
-#: entry/models.py:170
+#: entry/models.py:177
 msgid "template used to display the entry"
 msgstr "已被使用的模板"
 
-#: entry/models.py:299
-#: entry/models.py:300
+#: entry/models.py:306
+#: entry/models.py:307
 msgid "内容"
 msgstr ""
 
@@ -2064,15 +2097,15 @@ msgstr "话题: %s"
 msgid "Re: %s"
 msgstr "回复: %s"
 
-#: forum/views.py:198
-#: forum/views.py:231
-#: forum/views.py:272
+#: forum/views.py:197
+#: forum/views.py:230
+#: forum/views.py:271
 msgid "topic"
 msgstr "话题"
 
-#: forum/views.py:203
-#: forum/views.py:236
-#: forum/views.py:269
+#: forum/views.py:202
+#: forum/views.py:235
+#: forum/views.py:268
 msgid "reply"
 msgstr "回复"
 
@@ -2325,6 +2358,142 @@ msgstr "历史记录"
 #: maps/__init__.py:14
 msgid "Maps"
 msgstr "地图库"
+
+#: relationships/models.py:27
+#, fuzzy
+msgid "name"
+msgstr "用户名"
+
+#: relationships/models.py:28
+msgid "verb"
+msgstr ""
+
+#: relationships/models.py:29
+#, fuzzy
+msgid "from slug"
+msgstr "来自用户"
+
+#: relationships/models.py:30
+msgid "Denote the relationship from the user, i.e. 'following'"
+msgstr ""
+
+#: relationships/models.py:31
+msgid "to slug"
+msgstr ""
+
+#: relationships/models.py:32
+msgid "Denote the relationship to the user, i.e. 'followers'"
+msgstr ""
+
+#: relationships/models.py:33
+msgid "symmetrical slug"
+msgstr ""
+
+#: relationships/models.py:34
+msgid "When a mutual relationship exists, i.e. 'friends'"
+msgstr ""
+
+#: relationships/models.py:36
+msgid "Users must be logged in to see these relationships"
+msgstr ""
+
+#: relationships/models.py:37
+#, fuzzy
+msgid "private"
+msgstr "隐私协议"
+
+#: relationships/models.py:38
+msgid "Only the user who owns these relationships can see them"
+msgstr ""
+
+#: relationships/models.py:44
+msgid "Relationship status"
+msgstr ""
+
+#: relationships/models.py:45
+msgid "Relationship statuses"
+msgstr ""
+
+#: relationships/models.py:53
+#: userena/contrib/umessages/models.py:17
+msgid "from user"
+msgstr "来自用户"
+
+#: relationships/models.py:55
+#: userena/contrib/umessages/models.py:20
+msgid "to user"
+msgstr "到用户"
+
+#: relationships/models.py:56
+#, fuzzy
+msgid "status"
+msgstr "状态"
+
+#: relationships/models.py:57
+#, fuzzy
+msgid "created"
+msgstr "创建日期"
+
+#: relationships/models.py:58
+#, fuzzy
+msgid "weight"
+msgstr "权限"
+
+#: relationships/models.py:60
+#, fuzzy
+msgid "site"
+msgstr "网站"
+
+#: relationships/models.py:65
+#, fuzzy
+msgid "Relationship"
+msgstr "关系"
+
+#: relationships/models.py:66
+#, fuzzy
+msgid "Relationships"
+msgstr "关系"
+
+#: relationships/models.py:69
+#, fuzzy, python-format
+msgid "Relationship from %(from_user)s to %(to_user)s"
+msgstr "%(from_user)s 到 %(to_user)s"
+
+#: relationships/templates/relationships/confirm.html:4
+#: relationships/templates/relationships/confirm.html:7
+msgid "No longer"
+msgstr ""
+
+#: relationships/templates/relationships/confirm.html:12
+msgid "Confirm"
+msgstr ""
+
+#: relationships/templates/relationships/success.html:5
+msgid "Success"
+msgstr ""
+
+#: relationships/templates/relationships/success.html:6
+#, fuzzy
+msgid "You are "
+msgstr "您可能使用"
+
+#: relationships/templates/relationships/success.html:6
+#, fuzzy
+msgid "now"
+msgstr "未知的"
+
+#: relationships/templates/relationships/success.html:6
+msgid "no longer"
+msgstr ""
+
+#: relationships/templates/relationships/success.html:7
+#, fuzzy, python-format
+msgid "%(to_user_username)s's profile"
+msgstr "%(username)s's 个人资料"
+
+#: sms/__init__.py:15
+msgid "Sms"
+msgstr "短信系统"
 
 #: templates/admin/base_site.html:7
 msgid "Django administration"
@@ -2699,7 +2868,7 @@ msgstr ""
 msgid "edit"
 msgstr "编辑"
 
-#: templates/forum/index.html:16
+#: templates/forum/index.html:17
 msgid "More"
 msgstr "更多"
 
@@ -2750,13 +2919,38 @@ msgstr "没有回复"
 msgid "Last post"
 msgstr "最新发表"
 
+#: templates/forum/user_posts.html:9
+#: templates/forum/user_topics.html:9
+#: templates/forum/account/profile.html:9
+#, python-format
+msgid "%(view_user)s's profile"
+msgstr "%(view_user)s's 个人资料"
+
+#: templates/forum/user_posts.html:24
+#: templates/forum/user_topics.html:27
+#, python-format
+msgid "Topics by %(view_user)s"
+msgstr "%(view_user)s的话题"
+
+#: templates/forum/user_topics.html:32
+msgid "replies"
+msgstr "回复"
+
+#: templates/forum/user_topics.html:33
+msgid "topics"
+msgstr "话题"
+
+#: templates/forum/user_topics.html:34
+msgid "last post"
+msgstr "最新发表"
+
 #: templates/forum/account/base.html:18
 #: templates/forum/account/base.html:21
 msgid "Introduction"
 msgstr "介绍"
 
 #: templates/forum/account/base.html:27
-#: templates/userena/profile_detail.html:22
+#: templates/userena/profile_detail.html:23
 #: templates/userena/profile_form.html:21
 #: templates/userena/avatar/change.html:19
 msgid "Avatar"
@@ -2767,13 +2961,6 @@ msgstr "头像"
 #: userena/models.py:215
 msgid "Registered"
 msgstr "注册"
-
-#: templates/forum/account/profile.html:9
-#: templates/forum/account/user_posts.html:9
-#: templates/forum/account/user_topics.html:9
-#, python-format
-msgid "%(view_user)s's profile"
-msgstr "%(view_user)s's 个人资料"
 
 #: templates/forum/account/signature.html:8
 #: templates/forum/account/signature.html:19
@@ -2807,33 +2994,13 @@ msgstr ""
 msgid "Update profile"
 msgstr "编辑个人资料"
 
-#: templates/forum/account/user_posts.html:24
-#: templates/forum/account/user_topics.html:24
-#, python-format
-msgid "Topics by %(view_user)s"
-msgstr "%(view_user)s的话题"
-
-#: templates/forum/account/user_topics.html:29
-msgid "replies"
-msgstr "回复"
-
-#: templates/forum/account/user_topics.html:30
-msgid "topics"
-msgstr "话题"
-
-#: templates/forum/account/user_topics.html:31
-msgid "last post"
-msgstr "最新发表"
-
 #: templates/forum/pagination/pagination.html:5
 #: templates/forum/pagination/pagination.html:7
-#: templates/userena/profile_list.html:25
 msgid "previous"
 msgstr "往前"
 
 #: templates/forum/pagination/pagination.html:21
 #: templates/forum/pagination/pagination.html:23
-#: templates/userena/profile_list.html:35
 msgid "next"
 msgstr "下一步"
 
@@ -3255,36 +3422,48 @@ msgstr ""
 msgid "Status"
 msgstr "状态"
 
+#: templates/places/registration/logged_out.html:8
 #: templates/registration/logged_out.html:8
 msgid "Thanks for spending some quality time with the Web site today."
 msgstr "感谢您今天花了宝贵的时间在这个网站"
 
+#: templates/places/registration/logged_out.html:10
 #: templates/registration/logged_out.html:10
 msgid "Log in again"
 msgstr "重新登录"
 
+#: templates/places/registration/password_change_done.html:3
+#: templates/places/registration/password_change_form.html:3
 #: templates/registration/password_change_done.html:3
 #: templates/registration/password_change_form.html:3
 msgid "Documentation"
 msgstr "文档"
 
+#: templates/places/registration/password_change_done.html:3
+#: templates/places/registration/password_change_form.html:3
 #: templates/registration/password_change_done.html:3
 #: templates/registration/password_change_form.html:3
+#: templates/userena/base_userena.html:11
 #: templates/userena/email_form.html:11
 #: templates/userena/password_form.html:4
-#: templates/userena/password_form.html:13
-#: templates/userena/password_form.html:21
-#: templates/userena/profile_detail.html:20
+#: templates/userena/password_form.html:19
+#: templates/userena/profile_detail.html:21
 #: templates/userena/profile_form.html:19
 #: templates/userena/avatar/change.html:17
 msgid "Change password"
 msgstr "修改密码"
 
+#: templates/places/registration/password_change_done.html:3
+#: templates/places/registration/password_change_form.html:3
 #: templates/registration/password_change_done.html:3
 #: templates/registration/password_change_form.html:3
 msgid "Log out"
 msgstr "注销"
 
+#: templates/places/registration/password_change_done.html:4
+#: templates/places/registration/password_change_form.html:4
+#: templates/places/registration/password_change_form.html:6
+#: templates/places/registration/password_change_form.html:10
 #: templates/registration/password_change_done.html:4
 #: templates/registration/password_change_form.html:4
 #: templates/registration/password_change_form.html:6
@@ -3292,38 +3471,55 @@ msgstr "注销"
 msgid "Password change"
 msgstr "修改密码"
 
+#: templates/places/registration/password_change_done.html:6
+#: templates/places/registration/password_change_done.html:10
 #: templates/registration/password_change_done.html:6
 #: templates/registration/password_change_done.html:10
 msgid "Password change successful"
 msgstr "密码已成功修改"
 
+#: templates/places/registration/password_change_done.html:12
 #: templates/registration/password_change_done.html:12
 msgid "Your password was changed."
 msgstr "您的密码已修改."
 
+#: templates/places/registration/password_change_form.html:12
 #: templates/registration/password_change_form.html:12
 msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
 msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确."
 
+#: templates/places/registration/password_change_form.html:17
 #: templates/registration/password_change_form.html:17
 msgid "Old password:"
 msgstr "旧密码："
 
+#: templates/places/registration/password_change_form.html:19
+#: templates/places/registration/password_reset_confirm.html:19
 #: templates/registration/password_change_form.html:19
 #: templates/registration/password_reset_confirm.html:19
 msgid "New password:"
 msgstr "新密码："
 
+#: templates/places/registration/password_change_form.html:21
+#: templates/places/registration/password_reset_confirm.html:21
 #: templates/registration/password_change_form.html:21
 #: templates/registration/password_reset_confirm.html:21
 msgid "Confirm password:"
 msgstr "确认密码："
 
+#: templates/places/registration/password_change_form.html:23
+#: templates/places/registration/password_reset_confirm.html:22
 #: templates/registration/password_change_form.html:23
 #: templates/registration/password_reset_confirm.html:22
 msgid "Change my password"
 msgstr "修改我的密码"
 
+#: templates/places/registration/password_reset_complete.html:4
+#: templates/places/registration/password_reset_confirm.html:6
+#: templates/places/registration/password_reset_done.html:4
+#: templates/places/registration/password_reset_form.html:4
+#: templates/places/registration/password_reset_form.html:6
+#: templates/places/registration/password_reset_form.html:10
 #: templates/registration/password_reset_complete.html:4
 #: templates/registration/password_reset_confirm.html:6
 #: templates/registration/password_reset_done.html:4
@@ -3334,82 +3530,103 @@ msgstr "修改我的密码"
 msgid "Password reset"
 msgstr "重设密码"
 
+#: templates/places/registration/password_reset_complete.html:6
+#: templates/places/registration/password_reset_complete.html:10
 #: templates/registration/password_reset_complete.html:6
 #: templates/registration/password_reset_complete.html:10
 msgid "Password reset complete"
 msgstr "密码重设完成"
 
+#: templates/places/registration/password_reset_complete.html:12
 #: templates/registration/password_reset_complete.html:12
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr "您的密码已设置，您现在可以登录了."
 
+#: templates/places/registration/password_reset_complete.html:14
 #: templates/registration/password_reset_complete.html:14
 msgid "Log in"
 msgstr "登录"
 
+#: templates/places/registration/password_reset_confirm.html:4
 #: templates/registration/password_reset_confirm.html:4
 msgid "Password reset confirmation"
 msgstr "密码重设确认"
 
+#: templates/places/registration/password_reset_confirm.html:12
 #: templates/registration/password_reset_confirm.html:12
 msgid "Enter new password"
 msgstr "输入新密码"
 
+#: templates/places/registration/password_reset_confirm.html:14
 #: templates/registration/password_reset_confirm.html:14
 msgid "Please enter your new password twice so we can verify you typed it in correctly."
 msgstr "请输入您的新密码两次,这样我们可以检验您是否输入正确。"
 
+#: templates/places/registration/password_reset_confirm.html:27
 #: templates/registration/password_reset_confirm.html:27
 msgid "Password reset unsuccessful"
 msgstr "密码重设失败"
 
+#: templates/places/registration/password_reset_confirm.html:29
 #: templates/registration/password_reset_confirm.html:29
 msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
 msgstr "密码重设地址错误，这有可能是因为此地址已被使用过，请重新申请密码重设."
 
+#: templates/places/registration/password_reset_done.html:6
+#: templates/places/registration/password_reset_done.html:10
 #: templates/registration/password_reset_done.html:6
 #: templates/registration/password_reset_done.html:10
 msgid "Password reset successful"
 msgstr "重设密码成功"
 
+#: templates/places/registration/password_reset_done.html:12
 #: templates/registration/password_reset_done.html:12
 msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
 msgstr "我们已发送一封包含新密码的邮件到您的信箱，您很快就能收到它"
 
+#: templates/places/registration/password_reset_email.html:2
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr "您将会收到一封电子邮件，因为您请求了密码重设"
 
+#: templates/places/registration/password_reset_email.html:3
 #: templates/registration/password_reset_email.html:3
 #, python-format
 msgid "for your user account at %(site_name)s"
 msgstr "您在 %(site_name)s的用户账户"
 
+#: templates/places/registration/password_reset_email.html:5
 #: templates/registration/password_reset_email.html:5
 msgid "Please go to the following page and choose a new password:"
 msgstr "请继续下个页面，然后选择一个新密码："
 
+#: templates/places/registration/password_reset_email.html:9
 #: templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
 msgstr "您的用户名："
 
+#: templates/places/registration/password_reset_email.html:11
 #: templates/registration/password_reset_email.html:11
 msgid "Thanks for using our site!"
 msgstr "感谢您使用我们的系统！"
 
+#: templates/places/registration/password_reset_email.html:13
 #: templates/registration/password_reset_email.html:13
 #, python-format
 msgid "The %(site_name)s team"
 msgstr "%(site_name)s 团队"
 
+#: templates/places/registration/password_reset_form.html:12
 #: templates/registration/password_reset_form.html:12
 msgid "Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
 msgstr "忘记您的密码了？请输入您的Email地址，我们将会重设您的密码并用邮件通知您"
 
+#: templates/places/registration/password_reset_form.html:17
 #: templates/registration/password_reset_form.html:17
 msgid "E-mail address:"
 msgstr "Email地址："
 
+#: templates/places/registration/password_reset_form.html:17
 #: templates/registration/password_reset_form.html:17
 msgid "Reset my password"
 msgstr "重设我的密码"
@@ -3429,6 +3646,28 @@ msgstr "你的账户不能被激活，可能是因为你的账户已经改变"
 #: templates/userena/activate_fail.html:9
 msgid "Please try signing up again or contact us if you think something went wrong."
 msgstr "如果你认为有些东西出问题请尝试重新注册或者联系我们"
+
+#: templates/userena/base_userena.html:9
+#: templates/userena/email_form.html:9
+#: templates/userena/profile_detail.html:19
+#: templates/userena/profile_form.html:17
+#: templates/userena/avatar/change.html:15
+msgid "View profile"
+msgstr "浏览个人资料"
+
+#: templates/userena/base_userena.html:10
+#: templates/userena/profile_detail.html:20
+msgid "Edit details"
+msgstr "编辑详细内容"
+
+#: templates/userena/base_userena.html:12
+#: templates/userena/email_form.html:12
+#: templates/userena/email_form.html:19
+#: templates/userena/profile_detail.html:22
+#: templates/userena/profile_form.html:20
+#: templates/userena/avatar/change.html:18
+msgid "Change email"
+msgstr "修改Email"
 
 #: templates/userena/disabled.html:4
 msgid "Disabled account"
@@ -3500,29 +3739,11 @@ msgstr "你可以在你的账户设置里面试着改变它"
 msgid "Account &raquo; %(username)s"
 msgstr "账户  &raquo; %(username)s"
 
-#: templates/userena/email_form.html:9
-#: templates/userena/password_form.html:11
-#: templates/userena/profile_detail.html:18
-#: templates/userena/profile_form.html:17
-#: templates/userena/avatar/change.html:15
-msgid "View profile"
-msgstr "浏览个人资料"
-
 #: templates/userena/email_form.html:10
-#: templates/userena/password_form.html:12
 #: templates/userena/profile_form.html:18
 #: templates/userena/avatar/change.html:16
 msgid "Edit profile"
 msgstr "编辑个人资料"
-
-#: templates/userena/email_form.html:12
-#: templates/userena/email_form.html:19
-#: templates/userena/password_form.html:14
-#: templates/userena/profile_detail.html:21
-#: templates/userena/profile_form.html:20
-#: templates/userena/avatar/change.html:18
-msgid "Change email"
-msgstr "修改Email"
 
 #: templates/userena/email_form.html:16
 msgid "Change email address"
@@ -3539,10 +3760,6 @@ msgstr "您的密码已修改"
 #: templates/userena/password_complete.html:8
 msgid "From now on you can use your new password to signin"
 msgstr "从现在开始你可以用你的密码登陆"
-
-#: templates/userena/password_form.html:17
-msgid "Change Password"
-msgstr "修改密码"
 
 #: templates/userena/password_reset_complete.html:5
 msgid "Your password has been reset"
@@ -3584,34 +3801,30 @@ msgstr "一封有关于如何重置你的密码的邮件已经发送给你"
 msgid "Send password"
 msgstr "发送密码"
 
-#: templates/userena/profile_detail.html:7
+#: templates/userena/profile_detail.html:8
 #, python-format
 msgid "%(username)s's profile."
 msgstr "%(username)s's 个人资料"
 
-#: templates/userena/profile_detail.html:19
-msgid "Edit details"
-msgstr "编辑详细内容"
-
-#: templates/userena/profile_detail.html:30
+#: templates/userena/profile_detail.html:44
 msgid "Name"
 msgstr "名字"
 
-#: templates/userena/profile_detail.html:33
+#: templates/userena/profile_detail.html:47
 #: userena/forms.py:41
 #: userena/forms.py:232
 msgid "Email"
 msgstr "Email"
 
-#: templates/userena/profile_detail.html:36
+#: templates/userena/profile_detail.html:50
 msgid "Age"
 msgstr "年龄"
 
-#: templates/userena/profile_detail.html:42
+#: templates/userena/profile_detail.html:56
 msgid "Location"
 msgstr "地点"
 
-#: templates/userena/profile_detail.html:75
+#: templates/userena/profile_detail.html:89
 msgid "About me"
 msgstr "关于我"
 
@@ -3627,11 +3840,11 @@ msgstr "保存修改"
 msgid "Profiles"
 msgstr "个人资料"
 
-#: templates/userena/profile_list.html:29
-#, python-format
+#: templates/userena/profile_list.html:30
+#, fuzzy, python-format
 msgid ""
 "\n"
-"      Page %(page)s of %(num_pages)s\n"
+"      <li><a href=\"\">第%(page)s页/共%(num_pages)s页</a></li>\n"
 "      "
 msgstr ""
 "\n"
@@ -3929,19 +4142,19 @@ msgstr "语言"
 msgid "a month"
 msgstr "一张嘴巴"
 
-#: userena/views.py:149
+#: userena/views.py:152
 msgid "Your account has been activated and you have been signed in."
 msgstr "你的账户已经被激活 你已经被签署"
 
-#: userena/views.py:311
+#: userena/views.py:314
 msgid "You have been signed in."
 msgstr "您已经登陆 "
 
-#: userena/views.py:523
+#: userena/views.py:526
 msgid "Your profile has been updated."
 msgstr "你的个人资料已经更新"
 
-#: userena/views.py:562
+#: userena/views.py:565
 msgid "You don't have permission to view this profile."
 msgstr "您没有权限查看这个个人资料"
 
@@ -3957,14 +4170,6 @@ msgstr "下面的用户名称是不正确的: %(users)s."
 #: userena/contrib/umessages/forms.py:10
 msgid "To"
 msgstr ""
-
-#: userena/contrib/umessages/models.py:17
-msgid "from user"
-msgstr "来自用户"
-
-#: userena/contrib/umessages/models.py:20
-msgid "to user"
-msgstr "到用户"
 
 #: userena/contrib/umessages/models.py:24
 msgid "latest message"
@@ -4045,6 +4250,9 @@ msgstr[0] "消息成功还原"
 msgid "Message is successfully removed."
 msgid_plural "Messages are successfully removed."
 msgstr[0] "消息成功清除"
+
+#~ msgid "Change Password"
+#~ msgstr "修改密码"
 
 #~ msgid "Change your password"
 #~ msgstr "修改您的密码"
@@ -4316,9 +4524,6 @@ msgstr[0] "消息成功清除"
 #~ msgid "Simplified Chinese"
 #~ msgstr "简体中文"
 
-#~ msgid "entry"
-#~ msgstr "日志"
-
 #~ msgid "entries"
 #~ msgstr "日志"
 
@@ -4564,9 +4769,6 @@ msgstr[0] "消息成功清除"
 #~ msgid "Url"
 #~ msgstr "Url"
 
-#~ msgid "Date created"
-#~ msgstr "创建日期"
-
 #~ msgid "Blog"
 #~ msgstr "博客"
 
@@ -4575,9 +4777,6 @@ msgstr[0] "消息成功清除"
 
 #~ msgid "Subtitle"
 #~ msgstr "标题"
-
-#~ msgid "Rights"
-#~ msgstr "权限"
 
 #~ msgid "Infos"
 #~ msgstr "信息"
@@ -4611,9 +4810,6 @@ msgstr[0] "消息成功清除"
 
 #~ msgid "Author email"
 #~ msgstr "作者邮件"
-
-#~ msgid "Relation"
-#~ msgstr "关系"
 
 #~ msgid "MIME type"
 #~ msgstr "MIME类型"
