@@ -20,7 +20,7 @@ from apps.weather.models import (
 
 class BBCWeatherProvider(object):
     def __init__(self):
-        self.location_id = u'厦门'
+        self.location_id = '厦门'
 
     @staticmethod
     def _find_choice_match(choices, verbose):
