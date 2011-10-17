@@ -9,37 +9,39 @@
 
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
    
-        <h2>{% block location %}{{ observation.name }}天气情况{% endblock %} <small>发布于：{{ observation.observed_date|date:"H:i" }}</small></h2>
+        <h2>{% block location %}{{ observation.name }}天气情况{% endblock %} <small>发布于：{{ observation.published_date|date:"H:i" }}</small></h2>
   
 	<div class="note">
 		<div class="weather-icon">
-	    <img id="imgWea" src="/media/weather/images/{{ observation.icon }}.png" alt="{{ observation.get_outlook_display|capfirst }}"/><br/>
+	   		 <img id="imgWea" src="/media/weather/images/{{ observation.icon }}.png" alt="{{ observation.get_outlook_display|capfirst }}"/><br/>
 	    </div>
 		<div class="weather-live-info">
-          <span style="font-size: 24pt;">{{ observation.temperature }}&deg;C</span><br/>
-          风力：{{ observation.wind_direction }}风，{{ observation.wind_speed }}英里/每小时 <br/>
-          空气：{{ observation.humidity }}% 相对湿度<br/>
-          气压：{{ observation.pressure }} mbar，比昨天{{ observation.get_pressure_state_display }}<br/>
-          能见度：{{ observation.get_visibility_display|capfirst }}
+          <span style="font-size: 24pt;">{{ observation.temperature }}</span><br/>
+           {{ observation.temperature_content }}<br/>
 		</div>
+		 
 	</div>
-
+	{{ observation.description }}
 </div>
 	
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
 
-    <h2>未来预测</h2>
+    <h2>未来两天预测</h2>
 
     <table class="weather-forecast">
         <tbody>
-{% for forecast in forecasts %}
             <tr>
-                <td style="font-size:12pt">{{ forecast.observed_date|date:"l" }}</td>
-                <td><img src="/media/weather/images/{{ forecast.icon }}_small.png" alt="{{ forecast.get_outlook_display|capfirst }}" style="height:2.5em; width:2.5em;"/></td>
-                <td style="font-size:12pt">{{ forecast.max_temperature }}&deg;C</td>
-                <td>{{ forecast.min_temperature }}&deg;C</td>
+                <td style="font-size:12pt">明天</td>
+                <td><img src="/media/weather/images/{{ observation.icon_1 }}_small.png" alt="{{ observation.get_outlook_2_display|capfirst }}" style="height:2.5em; width:2.5em;"/></td>
+                <td style="font-size:12pt">{{ observation.temperature_1 }}</td>
+     
             </tr>
-{% endfor %}
+             <tr>
+                <td style="font-size:12pt">后天</td>
+                <td><img src="/media/weather/images/{{ observation.icon_2 }}_small.png" alt="{{ observation.get_outlook_2_display|capfirst }}" style="height:2.5em; width:2.5em;"/></td>
+                <td style="font-size:12pt">{{ observation.temperature_2 }}</td>
+     
+            </tr>
         </tbody>
     </table>
 </div>

@@ -226,7 +226,7 @@ INSTALLED_APPS = extract_installed_apps(APPLICATIONS) + (
     'django.contrib.sites',
     'django.contrib.comments',
     'django.contrib.staticfiles',
-    'mobile',
+#    'mobile',
     'batch_processing',
     'django.contrib.gis',
     'actstream',

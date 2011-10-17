@@ -21,7 +21,7 @@ from django.views.generic import list_detail
 from django.http import HttpResponseForbidden, Http404
 from django.contrib.contenttypes.models import ContentType
 from userena.forms import (SignupForm, SignupFormOnlyEmail, AuthenticationForm,
-                           ChangeEmailForm, EditProfileForm,
+                           ChangeEmailForm, EditProfileForm, PasswordResetForm,
     SignupFormOnlyMobile)
 from userena.models import UserenaSignup
 from userena.decorators import secure_required
@@ -30,7 +30,61 @@ from userena.utils import signin_redirect, get_profile_model
 from userena import settings as userena_settings
 
 from guardian.decorators import permission_required_or_403
-from mobile.utils.sms import sms
+from mobile.utils.smsutils  import sms
+
+from django.contrib.auth.tokens import default_token_generator
+
+def password_reset(request, is_admin_site=False,
+                   template_name='registration/password_reset_form.html',
+                   email_template_name='registration/password_reset_email.html',
+                   password_reset_form=PasswordResetForm,
+                   token_generator=default_token_generator,
+                   post_reset_redirect=None,
+                   from_email=None,
+                   current_app=None,
+                   extra_context=None):
+    if post_reset_redirect is None:
+        post_reset_redirect = reverse('django.contrib.auth.views.password_reset_done')
+    if request.method == "POST":
+        form = password_reset_form(request.POST)
+        if form.is_valid():
+            opts = {
+                'use_https': request.is_secure(),
+                'token_generator': token_generator,
+                'from_email': from_email,
+                'email_template_name': email_template_name,
+                'request': request,
+            }
+            if is_admin_site:
+                opts = dict(opts, domain_override=request.META['HTTP_HOST'])
+            form.save(**opts)
+            return redirect(post_reset_redirect)
+    else:
+        form = password_reset_form()
+    context = {
+        'form': form,
+    }
+    context.update(extra_context or {})
+    return direct_to_template(request, template_name, context)
+
+def password_reset_done(request,
+                        template_name='registration/password_reset_done.html',
+                        current_app=None, extra_context=None):
+    context = {}
+    context.update(extra_context or {})
+    return direct_to_template(request, template_name, context)
+
+
+
+def password_reset_complete(request,
+                            template_name='registration/password_reset_complete.html',
+                            current_app=None, extra_context=None):
+    context = {
+        'login_url': settings.LOGIN_URL
+    }
+    context.update(extra_context or {})
+    return direct_to_template(request, template_name, context)
+    
 @secure_required
 def signup(request, signup_form=SignupForm,
            template_name='userena/signup_form.html', success_url=None,
@@ -95,7 +149,7 @@ def signup(request, signup_form=SignupForm,
             login(request, user)
             sms_object = sms()
             content = u'您的初始密码是%s,您可以在『个人中心』中修改您的密码。畅享吃喝玩乐就在娱讯互动平台' % user.get_profile().mac
-            sms_object.post_sms(user.get_profile().mobile, content)
+            sms_object.post_sms(u'注册发送初始密码', user.get_profile().mobile, content)
             request.session.set_expiry(userena_settings.USERENA_REMEMBER_ME_DAYS[1] * 86400)
             return redirect(redirect_to)
 

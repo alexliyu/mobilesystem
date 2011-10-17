@@ -1,6 +1,6 @@
 from django.contrib import admin
 from apps.interactive.models import Interactive_Info, Interactive_User, Interactive_Categries
-from mobile.utils.sms import sms
+
 
 
 class Interactive_User_Admin(admin.ModelAdmin):

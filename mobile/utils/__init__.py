@@ -6,6 +6,7 @@ from django.template import Context, loader
 from django.core.mail import EmailMessage
 from django.conf import settings
 
+
 def send_email(request, context, template_name, cls=None, to_email=None):
 
     if to_email is not None:
@@ -59,11 +60,11 @@ def send_email(request, context, template_name, cls=None, to_email=None):
         to_email = (e.strip() for e in headers.pop('to_email').split(';'))
 
     email = EmailMessage(
-        subject = subject,
-        body = body,
-        from_email = from_email,
-        to = to_email,
-        headers = headers,
+        subject=subject,
+        body=body,
+        from_email=from_email,
+        to=to_email,
+        headers=headers,
     )
 
     email.send()

@@ -15,4 +15,5 @@ class Mete:
     config = {
             'location_id':'1832',
             'display_to_user':True,
+            'providers':['apps.weather.providers.BBCWeatherProvider', ]
             }

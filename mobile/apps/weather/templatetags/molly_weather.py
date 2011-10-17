@@ -20,7 +20,7 @@ class WeatherNode(template.Node):
     def render(self, context):
         # Voodoo ahead! Gets the location ID from the molly settings file to use when accessing Weather object.
         try:
-            context[self.name] = Weather.objects.get(location_id=app_by_application_name('apps.weather').location_id)
+            context[self.name] = Weather.objects.latest('published_date')
         except Weather.DoesNotExist:
             context[self.name] = None
         return ''

@@ -22,6 +22,7 @@ from wurfl import device_parents
 import conf
 from models import UserMessage
 from forms import UserMessageFormSet
+from sms.models import sms_entry
 
 class IndexView(BaseView):
     """
@@ -85,6 +86,7 @@ class IndexView(BaseView):
             'hide_feedback_link': True,
             'is_christmas': datetime.now().month == 12,
             'messages': messages,
+            'xiaofang':sms_entry().get_random(),
            
         }
         return self.render(request, context, 'home/index',

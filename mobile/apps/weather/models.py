@@ -33,13 +33,13 @@ OUTLOOK_CHOICES = (
     ('hr', u'大雨'),
     ('s', u'晴'),
     ('lr', u'小雨'),
-    ('pc', u'局部多云'),
+    ('pc', u'阴转多云'),
     ('f', u'雾'),
     ('wc', u'白云'),
-    ('tst', u'暴风雨'),
+    ('tst', u'暴雨'),
     ('m', u'薄雾'),
     ('tsh', u'雷阵雨'),
-    ('lrs', u'小阵雨'),
+    ('lrs', u'阵雨'),
     ('cs', u'晴天'),
     ('d', u'毛毛雨'),
     ('h', u'冰雹'),
@@ -80,28 +80,26 @@ SCALE_CHOICES = (
 class Weather(models.Model):
     
     location_id = models.CharField(u'记号', max_length=16)
-    name = models.TextField(u'名称',null=True)
-    outlook = models.CharField(u'天气情况',null=True, max_length=3, choices=OUTLOOK_CHOICES)
-    published_date = models.DateTimeField(u'发布时间',null=True)
-    observed_date = models.DateTimeField(u'天气日期',null=True)
-    modified_date = models.DateTimeField(u'修改时间',auto_now=True)
+    name = models.TextField(u'名称', null=True)
+    outlook = models.CharField(u'天气情况', null=True, max_length=3, choices=OUTLOOK_CHOICES)
+    published_date = models.DateTimeField(u'发布时间', null=True)
+    observed_date = models.CharField(u'天气日期', null=True, max_length=20)
+    modified_date = models.DateTimeField(u'修改时间', auto_now=True)
 
-    temperature = models.IntegerField(u'气温',null=True)
-    wind_direction = models.CharField(u'风向',null=True, max_length=3)
-    wind_speed = models.IntegerField(u'风速',null=True)
-    humidity = models.IntegerField(u'温度',null=True)
-    pressure = models.PositiveIntegerField(u'气压',null=True)
-    pressure_state = models.CharField(u'气压变化',null=True, max_length=1, choices=PRESSURE_STATE_CHOICES)
-    visibility = models.CharField(u'能见度',null=True, max_length=2, choices=VISIBILITY_CHOICES)
-
-    location = GoogleMapsField(u'地理位置',)
-
-    min_temperature = models.IntegerField(u'最低温度',null=True)
-    max_temperature = models.IntegerField(u'最高温度',null=True)
-    uv_risk = models.CharField(u'紫外线强度',max_length=1, choices=SCALE_CHOICES, null=True)
-    pollution = models.CharField(u'污染指数',max_length=1, choices=SCALE_CHOICES, null=True)
-    sunset = models.TimeField(u'日落时间',null=True)
-    sunrise = models.TimeField(u'日出时间',null=True)
+    temperature = models.CharField(u'气温', null=True, max_length=20)
+    
+    temperature_content = models.TextField(u'天气实况', null=True)
+    
+    description = models.TextField(u'天气指数', null=True)
+    
+    outlook_1 = models.CharField(u'未来一天天气情况', null=True, max_length=3, choices=OUTLOOK_CHOICES)
+    
+    temperature_1 = models.CharField(u'未来一天气温', null=True, max_length=20)
+    
+    outlook_2 = models.CharField(u'未来二天天气情况', null=True, max_length=3, choices=OUTLOOK_CHOICES)
+    
+    temperature_2 = models.CharField(u'未来二天气温', null=True, max_length=20)    
+    
 
     def icon(self):
         now = datetime.now().time()
@@ -110,6 +108,22 @@ class Weather(models.Model):
         else:
             night = ''
         return OUTLOOK_TO_ICON.get(self.outlook, 'dunno') % {'night':night}
+    
+    def icon_1(self):
+        now = datetime.now().time()
+        if now > time(7) or now > time(21):
+            night = '_night'
+        else:
+            night = ''
+        return OUTLOOK_TO_ICON.get(self.outlook_1, 'dunno') % {'night':night}
+    
+    def icon_2(self):
+        now = datetime.now().time()
+        if now > time(7) or now > time(21):
+            night = '_night'
+        else:
+            night = ''
+        return OUTLOOK_TO_ICON.get(self.outlook_2, 'dunno') % {'night':night}
     
     objects = models.Manager()
     

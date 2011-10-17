@@ -1,3 +1,9 @@
+#-*- coding:utf-8 -*-
+'''
+Created on 2011-1-30
+
+@author: 李昱
+'''
 from datetime import datetime, timedelta
 
 from utils.views import BaseView
@@ -8,12 +14,12 @@ from models import Weather
 class IndexView(BaseView):
     def initial_context(self, request):
         try:
-            observation = Weather.objects.get(location_id=self.conf.location_id)
+            observation = Weather.objects.latest('published_date')
         except Weather.DoesNotExist:
             observation = None
         return {
             'observation': observation,
-            'forecasts': Weather.objects.filter(location_id=self.conf.location_id, observed_date__gte=datetime.now().date()).order_by('observed_date'),
+           
         }
 
     @BreadcrumbFactory
@@ -21,7 +27,7 @@ class IndexView(BaseView):
         return Breadcrumb(
             'weather',
             None,
-            'Weather',
+            u'天气预报',
             lazy_reverse('index'),
         )
 

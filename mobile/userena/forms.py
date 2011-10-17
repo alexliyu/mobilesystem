@@ -10,18 +10,63 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.utils.hashcompat import sha_constructor
+from django.contrib.auth.tokens import default_token_generator
 
 from userena import settings as userena_settings
 from userena.models import UserenaSignup
 from userena.utils import get_profile_model
 
+
 from userena.models import UserProfile
 import random
+
+from mobile.utils.smsutils  import sms
 
 attrs_dict = {'class': 'required'}
 
 USERNAME_RE = r'^[\.\w]+$'
 
+class PasswordResetForm(forms.Form):
+    mobile = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict,
+                                                               maxlength=11)),
+                                label=_("Mobile"))
+    def check_mobile(self, mobile):
+        """
+        用来验证手机号码是否是合法的手机号码，如果合法则返回True，反之返回False
+        """
+        import re
+        mobile_re = re.compile('((13[0-9]|15[0|1|2|3|6|7|8|9]|18[0|2|6|8|9])\d{8})')
+        if mobile_re.search(mobile):
+            return True
+        else:
+            return False
+        
+    def clean_mobile(self):
+        """验证用户输入注册的手机号码是否已经被使用以及用户手机号码是否合法 """
+        mobile = self.cleaned_data['mobile']
+        if not self.check_mobile(mobile):
+            raise forms.ValidationError(_(u'您的手机号码有可能输入错误了，请确认您输入的手机号码！'))
+        
+        self.users_cache = UserProfile.objects.filter(mobile__iexact=mobile)
+        if len(self.users_cache) == 0:
+            raise forms.ValidationError(_(u'您确认这个手机号码已经注册过了么？我们没有找到这个号码哦'))
+
+        return mobile
+    
+
+    def save(self, domain_override=None, email_template_name='registration/password_reset_email.html',
+             use_https=False, token_generator=default_token_generator, from_email=None, request=None):
+        """
+        Generates a one-use only link for resetting password and sends to the user
+        """
+        for user in self.users_cache:
+            password = int(random.random() * 100000)
+            user.user.set_password(password)
+            user.user.save(force_update=True)
+            sms_object = sms()
+            content = u'您的密码已变更为%s,现在您可以使用这个新密码登录！' % password
+            sms_object.post_sms(u'找回密码', user.mobile, content)
+            
 class SignupForm(forms.Form):
     """
     Form for creating a new user account.

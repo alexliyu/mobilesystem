@@ -15,7 +15,7 @@ from apps.gift.models import Gift_Info
 from django.core.urlresolvers import reverse
 from django.db.models.signals import post_save
 from apps.gift.models import Gift_History
-from mobile.utils.sms import sms
+from utils.smsutils import sms
 # Create your models here.
 
 class Interactive_Categries(models.Model):
@@ -108,7 +108,7 @@ def notify_sms(sender, instance, created, **kwargs):
             instance.save_gift()
         elif instance.stat == 3:
             content = u'不好意思，您所提交的%s的答案已被淘汰，欢迎您继续参与我们其他的互动活动' % instance.interactive_info.title
-    send_result = sms_object.post_sms(send_users, content)
+    send_result = sms_object.post_sms(u'互动节目获奖通知短信', send_users, content)
       
 
 post_save.connect(notify_sms, sender=Interactive_User)

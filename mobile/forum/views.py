@@ -116,8 +116,8 @@ class topic(BaseView):
         topic.num_views += 1
         topic.save()
         posts = topic.posts
-        if lbf_settings.STICKY_TOPIC_POST:#sticky topic post
-            posts = posts.filter(topic_post=False)
+        #if lbf_settings.STICKY_TOPIC_POST:#sticky topic post
+        posts = posts.filter(topic_post=False)
         posts = posts.order_by('created_on').select_related()
         context['topic'] = topic
         context['posts'] = posts

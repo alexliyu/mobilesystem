@@ -11,9 +11,9 @@ from django.contrib import admin
 
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
-from sms.models import sms_history, sms_list
+from sms.models import sms_history, sms_list, sms_entry, sms_time_list
 
-from utils.sms import sms
+from mobile.utils.smsutils import sms
 
 
 
@@ -28,36 +28,52 @@ class SmsAdmin(admin.ModelAdmin):
     def send_sms(self, request, queryset, *arg1, **arg2):
         send_users = ''
         sms_object = sms()
+        errors = ''
+        stat = 0
         for sms_item in queryset:
             for user_object in sms_item.sms_users.all():
                 try:
                     send_users += user_object.get_profile().mobile + ','
-                except:
-                    pass
+                except Exception, e:
+                    stat = 4
+                    errors += e
+                    
             for group_object in sms_item.sms_groups.all():
                 for user_object in group_object.user_set.all():
                     try:
                         send_users += user_object.get_profile().mobile + ','
-                    except:
-                        pass
-            send_result = sms_object.post_sms(send_users, sms_item.content)
+                    except Exception, e:
+                        stat = 4
+                        errors += e
+            send_result = sms_object.post_sms(u'批量群发短信', send_users, sms_item.content)
             if len(send_result) > 3:
                 sms_item.sms_id = send_result
-                sms_item.stat = 1
+                stat = 1
             else:
-                sms_item.stat = 3
-                sms_item.errors = send_result
+                stat = 3
+                errors += send_result
+            sms_item.stat = stat
+            sms_item.errors = errors
             sms_item.save()
             self.message_user(request, send_result)
     send_sms.short_description = u'发送短信'
     
 class sms_historyAdmin(admin.ModelAdmin):
+    list_display = ('title', 'sms_id', 'send_type', 'stat', 'creat_date')
+    search_fields = ['content']
+    list_per_page = 10
+    
+class sms_entryAdmin(admin.ModelAdmin):
+    list_display = ('title', 'stat', 'creat_date')
+    search_fields = ['content']
+    list_per_page = 10
+    
+class sms_time_listAdmin(admin.ModelAdmin):
     list_display = ('title', 'sms_id', 'stat', 'creat_date')
     search_fields = ['content']
     list_per_page = 10
     
-
-    
-
+admin.site.register(sms_time_list, sms_time_listAdmin)
+admin.site.register(sms_entry, sms_entryAdmin)
 admin.site.register(sms_list, SmsAdmin)
 admin.site.register(sms_history, sms_historyAdmin)

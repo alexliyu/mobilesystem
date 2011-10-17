@@ -6,7 +6,7 @@ Created on 2011-1-30
 '''
 from django.contrib import admin
 from apps.lottery.models import *
-from mobile.utils.sms import sms
+from mobile.utils.smsutils  import sms
 
 class lotteryAdmin(admin.ModelAdmin):
    
@@ -24,7 +24,7 @@ class lotteryAdmin(admin.ModelAdmin):
                     send_users += user_object.mobile + ','
                 except:
                     send_users += user_object.user.username + ','
-            send_result = sms_object.post_sms(send_users, sms_item.sms_content)
+            send_result = sms_object.post_sms(u'抽奖中奖通知短信', send_users, sms_item.sms_content)
             
             self.message_user(request, send_result)
     send_sms.short_description = u'发送短信'

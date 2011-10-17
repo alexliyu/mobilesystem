@@ -16,7 +16,8 @@ from django.utils.safestring import mark_safe
 
 from userena.models import UserenaSignup, Note, Category, Area
 from userena.utils import get_profile_model
-from mobile.utils.sms import sms
+from mobile.utils.smsutils import sms
+
 
 
 
@@ -97,7 +98,7 @@ class UserenaAdmin(UserAdmin):
             send_users = user_object.get_profile().mobile
             user_object.set_password(password)
             user_object.save()
-            send_result = sms_object.post_sms(send_users, u'您的新密码是%s' % password)
+            send_result = sms_object.post_sms(u'管理员重设密码短信', send_users, u'您的新密码是%s' % password)
             self.message_user(request, send_result)
     send_sms.short_description = u'发送用户密码'
     
