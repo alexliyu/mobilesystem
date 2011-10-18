@@ -36,7 +36,7 @@ class SmsAdmin(admin.ModelAdmin):
                     send_users += user_object.get_profile().mobile + ','
                 except Exception, e:
                     stat = 4
-                    errors += e
+                    errors += e.message
                     
             for group_object in sms_item.sms_groups.all():
                 for user_object in group_object.user_set.all():
@@ -44,8 +44,8 @@ class SmsAdmin(admin.ModelAdmin):
                         send_users += user_object.get_profile().mobile + ','
                     except Exception, e:
                         stat = 4
-                        errors += e
-            send_result = sms_object.post_sms(u'批量群发短信', send_users, sms_item.content)
+                        errors += e.message
+            send_result = str(sms_object.post_sms(u'批量群发短信', send_users, sms_item.content))
             if len(send_result) > 3:
                 sms_item.sms_id = send_result
                 stat = 1
@@ -54,7 +54,7 @@ class SmsAdmin(admin.ModelAdmin):
                 errors += send_result
             sms_item.stat = stat
             sms_item.errors = errors
-            sms_item.save()
+            sms_item.save(force_update=True)
             self.message_user(request, send_result)
     send_sms.short_description = u'发送短信'
     

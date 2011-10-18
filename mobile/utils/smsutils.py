@@ -2511,7 +2511,7 @@ class sms(object):
         else:
             stat = 3
             
-        sms_history().save_result(title, content, result, mobile_list, 0, stat, result)
+        sms_history().save_result(title, content, str(result), mobile_list, 0, stat, str(result))
         
         return result
     
