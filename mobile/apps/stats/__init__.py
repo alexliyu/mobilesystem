@@ -14,6 +14,6 @@ class Mete:
     """
     title = _('Stats')
     config = {
-        'display_to_user':True
+        'display_to_user':False
         
         }

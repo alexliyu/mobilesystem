@@ -56,7 +56,7 @@
 					{% if object.authors.count %}
 									{% for author in object.authors.all %}
 												
-												<a href="{% url entry:entry_author_detail author %}" 
+												<a href="{% url userena_profile_detail author.username %}" 
          title="{%with author as author %}显示{{ author }}的文章{% endwith%}">{{ author.last_name }}{{ author.first_name }}</a>
 									{% if not forloop.last %}, {% endif %}
 									{%endfor%}

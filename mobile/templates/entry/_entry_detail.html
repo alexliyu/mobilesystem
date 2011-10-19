@@ -11,7 +11,7 @@
     作者是
     {% for author in object.authors.all %}
     <span class="vcard author">
-      <a href="{% url entry:entry_author_detail author %}" class="fn nickname url" rel="author"
+      <a href="{% url userena_profile_detail author.username %}" class="fn nickname url" rel="author"
          title="查看{{ author.last_name }}{{ author.first_name }}发布的文章">{{ author.last_name }}{{ author.first_name }}</a>
     </span>{% if not forloop.last %}, {% endif %}
     {% endfor %}

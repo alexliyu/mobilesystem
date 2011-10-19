@@ -44,12 +44,16 @@
 							
 						
 				
-				{%else%}
-					<h3>本文章暂时没有开放评论哦！</h3>
-				{% endif %}
+					{%else%}
+										<h3>本文章暂时没有开放评论哦！</h3>
+					{% endif %}
 				
 
 			</div>
+			{%else%}
+				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+						<h4>您还没有登录，所以不能回复本话题，请您先<a href="{%url userena_signin%}">登录</a></h4>
+				</div>
 			{%endif%}
 
 

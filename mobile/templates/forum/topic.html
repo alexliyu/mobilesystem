@@ -99,6 +99,7 @@
 {% endif %}
 
 <div class="sep20"></div>
+{%if user.is_authenticated%}
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
     <form action="{% url forum:forum_new_replay topic.pk %}" accept-charset="utf-8" method="post" class="frm-form">
         <div data-role="fieldcontain">
@@ -119,6 +120,11 @@
         </span>
     </div>
 </div>
+{%else%}
+<div class="ui-body ui-body-d ui-corner-all ui-shadow">
+	<h2>您还没有登录，所以不能回复本话题，请您先<a href="{%url userena_signin%}">登录</a></h2>
+</div>
+{%endif%}
 {% endblock %}
 
 {% block footer_js %}
