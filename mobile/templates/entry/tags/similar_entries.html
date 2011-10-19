@@ -1,16 +1,18 @@
 {% load entry_tags%}
 {% load thumbnail %}
 
-{% for entry in entries %}
 <div class="ui-body ui-body-d ui-corner-all ui-shadow">
 				<ul><h3>相关文章</h3></ul>
 				<ul>
+{% for entry in entries %}
+
 			
 
 					<a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
 
 					<div class="clearer">&nbsp;</div>
-				</ul>
+				
+{% endfor %}
+</ul>
 				
 </div>
-{% endfor %}
