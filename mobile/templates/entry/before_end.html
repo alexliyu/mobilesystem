@@ -1,4 +1,4 @@
-{%block load%}{% load tagging_tags comments entry_tags%}{%endblock%}
+{%block load%}{% load tagging_tags comments entry_tags avatar_tags%}{%endblock%}
 			<div data-role="collapsible" data-collapsed="true">
 				<h3>查看评论</h3>
 				<div class="ui-body ui-body-d ui-corner-all ui-shadow">
@@ -10,9 +10,9 @@
 						{% for comment in comment_list %}
 						<li id="comment-{{ comment.pk }}">
 							<a href="{{ comment.url }}">
-							<img src="{% get_gravatar comment.email 60 "G" %}" alt="{{ comment.user_name }}" />
+							{% avatar comment.user %}
 							
-							<h3>{{ comment.user_name }}，评论于：{{ comment.submit_date|date:"Y-m-j" }}</h3>
+							<h3>{{ comment.user.last_name }}{{ comment.user.first_name }}，评论于：{{ comment.submit_date|date:"Y-m-j" }}</h3>
 							<p> {{ comment.comment }}</p>
 							</a>
 						</li>

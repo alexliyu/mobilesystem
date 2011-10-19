@@ -479,3 +479,8 @@ HTML_SAFE_ATTRS = ['allowscriptaccess', 'allowfullscreen', 'wmode']
 HTML_UNSAFE_TAGS = []
 HTML_UNSAFE_ATTRS = []
     
+
+"""
+filebrowser配置
+"""
+FILEBROWSER_MAX_UPLOAD_SIZE = 50485760

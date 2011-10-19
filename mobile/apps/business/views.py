@@ -25,7 +25,7 @@ class BusinessList(BaseView):
         except ValueError:
             page = 1    
             
-        businessList = BusinessInfo.objects.order_by('id').all()
+        businessList = BusinessInfo.objects.order_by('-id').all()
         paginator = Paginator(businessList, 10) 
         
         try:
@@ -82,7 +82,7 @@ class PromotionsView(BaseView):
         except ValueError:
             page = 1    
         
-        promotionsList = PromotionsInfo.objects.select_related().filter(business=int(slug))
+        promotionsList = PromotionsInfo.objects.select_related().filter(business=int(slug)).order_by('-id')
         paginator = Paginator(promotionsList, 10) 
         
         try:

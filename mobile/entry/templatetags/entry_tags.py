@@ -16,6 +16,7 @@ from django.contrib.comments.models import Comment
 from django.contrib.comments.models import CommentFlag
 from django.contrib.contenttypes.models import ContentType
 from django.utils.encoding import smart_unicode
+from django.conf import settings
 
 
 from ..models import Entry
@@ -358,8 +359,7 @@ def entry_breadcrumbs(context, separator='/', root_name='',
 @register.simple_tag
 def get_gravatar(email, size=80, rating='g', default=None):
     """Return url for a Gravatar"""
-    url = 'http://www.gravatar.com/avatar/%s.jpg' % \
-          md5(email.strip().lower()).hexdigest()
+    url = '%savatar/%s.jpg' % (settings.MEDIA_URL, md5(email.strip().lower()).hexdigest())
     options = {'s': size, 'r': rating}
     if default:
         options['d'] = default
