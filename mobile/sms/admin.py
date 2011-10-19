@@ -12,6 +12,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 from sms.models import sms_history, sms_list, sms_entry, sms_time_list
+from sms.forms import Sms_listAdminForm
 
 from mobile.utils.smsutils import sms
 
@@ -24,6 +25,11 @@ class SmsAdmin(admin.ModelAdmin):
     actions = ['send_sms']
     actions_on_top = True
     actions_on_bottom = True
+    form = Sms_listAdminForm
+    
+    def __init__(self, model, admin_site):
+        self.form.admin_site = admin_site
+        super(SmsAdmin, self).__init__(model, admin_site)
     
     def send_sms(self, request, queryset, *arg1, **arg2):
         send_users = ''
