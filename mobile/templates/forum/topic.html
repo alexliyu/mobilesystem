@@ -10,7 +10,7 @@
     {{ topic.subject }} - {{ FORUM_TITLE }}
 {% endblock %}
 
-<div class="ui-grid-a">
+<div class="ui-grid-c">
             <div class="ui-block-a">
                <p><a href="{% url userena_profile_detail post.posted_by.username %}">{% avatar post.posted_by %}</a></p>
                <p>作者：<a href="{% url userena_profile_detail post.posted_by.username %}">{{post.posted_by.username}}</a></p>
@@ -19,7 +19,7 @@
                <p>关注度：{{topic.num_views}}</p>
             
         	</div>
-        	<div class="ui-block-b">
+        	<div class="ui-block-bcd">
             
             	    {% include 'forum/inc_post_content.html' %}
            
@@ -31,7 +31,7 @@
     <div class="ui-body ui-body-d ui-corner-all ui-shadow">
     <h2>{{topic}}</h2>
         {% with post=topic.post %}
-        <div class="ui-grid-a">
+        <div class="ui-grid-c">
             <div class="ui-block-a">
                <p><a href="{% url userena_profile_detail post.posted_by.username %}">{% avatar post.posted_by %}</a></p>
                <p>作者：<a href="{% url userena_profile_detail post.posted_by.username %}">{{post.posted_by.username}}</a></p>
@@ -40,7 +40,7 @@
                <p>关注度：{{topic.num_views}}</p>
             
         	</div>
-        	<div class="ui-block-b">
+        	<div class="ui-block-bcd">
             
             	    {% include 'forum/inc_post_content.html' %}
            
