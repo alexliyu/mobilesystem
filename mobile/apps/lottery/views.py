@@ -20,7 +20,7 @@ class IndexView(BaseView):
             lazy_reverse('index'))
     
     def handle_GET(self, request, context):
-        lotterylist = lottery.objects.all()
+        lotterylist = lottery.objects.all().order_by('-id')
         context['lotterylist'] = lotterylist
         context.update({
            'sent': request.GET.get('sent') == 'true',
