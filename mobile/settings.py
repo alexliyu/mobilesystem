@@ -134,6 +134,7 @@ GEOIP_CITY = os.path.join(GEOIP_PATH, 'GeoLiteCity.dat')
 # handled by the view. They're useful in providing high-level global
 # functionality
 MIDDLEWARE_CLASSES = (
+#   'django.middleware.cache.UpdateCacheMiddleware',
     'wurfl.middleware.WurflMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -148,6 +149,7 @@ MIDDLEWARE_CLASSES = (
     'onlineuser.middleware.OnlineUserMiddleware',
 #    'tracking.middleware.VisitorTrackingMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
+#    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 
@@ -484,3 +486,17 @@ HTML_UNSAFE_ATTRS = []
 filebrowser配置
 """
 FILEBROWSER_MAX_UPLOAD_SIZE = 50485760
+
+
+#'''
+#使用memcached作为缓存！
+#'''
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#        'LOCATION': '127.0.0.1:11211',
+#        'TIMEOUT':60 * 300,
+#    }
+#}
+#
+#CACHE_MIDDLEWARE_SECONDS = 60 * 300
