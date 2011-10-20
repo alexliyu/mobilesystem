@@ -92,7 +92,7 @@ class SinaMsgsProvider(object):
             self.save_stat()
             return False
     
-    @batch('2 * * * *')
+    @batch('*/2 * * * *')
     def send_data(self, metadata, output):
         """推送新浪微博主调用方法"""
 
