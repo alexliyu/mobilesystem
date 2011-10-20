@@ -63,7 +63,7 @@ class SinaMsgsProvider(object):
     def save_stat(self):
         
         self.push_object.latest = self.send_id
-        #self.push_object.last_retrieved = datetime.now()
+        self.push_object.last_retrieved = datetime.now()
         self.push_object.save(force_update=True)
         
         pushresult = PushResult.objects.create(title=self.send_title)
