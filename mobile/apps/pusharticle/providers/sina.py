@@ -40,7 +40,7 @@ class SinaMsgsProvider(object):
         else:
             entry = PromotionsInfo.objects.all().filter(id__lt=self.push_object.latest).order_by('-id')[:1][0]
         
-        self.messages = u'#厦门娱讯互动#%s,%s……查看全文%s' % (entry.title, entry.content[:40], entry.get_absolute_url()) 
+        self.messages = u'#厦门娱讯互动#%s,%s……查看全文%s' % (entry.title, entry.content[:40], 'http://www.5166918.com' + entry.get_absolute_url()) 
         self.messages = self.messages.encode('utf-8')
         self.send_id = entry.id
         self.send_title = entry.title
