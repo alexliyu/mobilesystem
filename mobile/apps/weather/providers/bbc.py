@@ -33,7 +33,7 @@ class BBCWeatherProvider(object):
     _OBSERVATIONS_URL = 'http://www.webxml.com.cn/webservices/weatherwebservice.asmx/getWeatherbyCityName?theCityName=%s'
     
 
-    @batch('%d-%d/15 * * * *' % (lambda x:(x, x + 45))(random.randint(0, 14)))
+    @batch('* 4 * * *')
     def import_data(self, metadata, output):
         """存储天气信息"""
 
