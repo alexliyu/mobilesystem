@@ -35,10 +35,8 @@ class SinaMsgsProvider(object):
         """
         推送最新优惠资讯到新浪微博的方法
         """
-        if self.push_object.latest == 0:
-            entry = PromotionsInfo.objects.all().order_by('-id')[:1][0]
-        else:
-            entry = PromotionsInfo.objects.all().filter(id__lt=self.push_object.latest).order_by('-id')[:1][0]
+
+        entry = PromotionsInfo.objects.all().filter(id__gt=self.push_object.latest).order_by('id')[:1][0]
         
         self.messages = u'#厦门娱讯互动#%s,%s……查看全文%s' % (entry.title, entry.content[:40], 'http://www.5166918.com' + entry.get_absolute_url()) 
         self.messages = self.messages.encode('utf-8')
@@ -52,10 +50,7 @@ class SinaMsgsProvider(object):
         """
         推送文章内容到新浪微博的方法
         """
-        if self.push_object.latest == 0:
-            entry = Entry.published.all().order_by('-id')[:1][0]
-        else:
-            entry = Entry.published.all().filter(id__lt=self.push_object.latest).order_by('-id')[:1][0]
+        entry = Entry.published.all().filter(id__gt=self.push_object.latest).order_by('id')[:1][0]
         
         self.messages = u'#厦门#%s,%s……查看全文%s' % (entry.title, entry.excerpt[:40], entry.short_url) 
         self.messages = self.messages.encode('utf-8')
@@ -120,6 +115,7 @@ class SinaMsgsProvider(object):
                 self.cookiefile = os.path.join(self.filepath, 'sina_%s_%s' % (self.username, push_object.id))
                 self.push_object = push_object
                 result = getattr(self, push_object.category)()
+                time.sleep(30)
             else:
                 pass
                 
