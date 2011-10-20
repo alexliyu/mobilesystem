@@ -65,6 +65,13 @@ class PromotionsInfo(models.Model):
             return '/media/uploads/images/' + a[1]
         except:
             return '/media/site/images/logo.png'
+        
+    @models.permalink
+    def get_absolute_url(self):
+        
+        return ('business:promotionsDetail', (), {
+            'slug': self.id,
+            })
 
     def __unicode__(self):
         return self.title
