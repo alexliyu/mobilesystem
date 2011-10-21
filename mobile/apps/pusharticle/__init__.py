@@ -15,6 +15,7 @@ class Mete:
     title = _('Pusharticle')
     config = {
         'display_to_user':False,
-        'providers':['apps.pusharticle.providers.SinaMsgsProvider', ]
+        'providers':['apps.pusharticle.providers.SinaMsgsProvider',
+                     'apps.pusharticle.providers.QqMsgsProvider']
         
         }
