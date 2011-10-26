@@ -35,10 +35,10 @@ class SinaMsgsProvider(object):
         """
         推送最新优惠资讯到新浪微博的方法
         """
-	try:
-        	entry = PromotionsInfo.objects.all().filter(id__gt=self.push_object.latest).order_by('id')[:1][0]
+        try:
+            entry = PromotionsInfo.objects.all().filter(id__gt=self.push_object.latest).order_by('id')[:1][0]
         except:
-		return False
+            return False
 
         self.messages = u'#厦门娱讯互动#%s,%s……查看全文%s' % (entry.title, entry.content[:40], 'http://www.5166918.com' + entry.get_absolute_url()) 
         self.messages = self.messages.encode('utf-8')
@@ -52,10 +52,10 @@ class SinaMsgsProvider(object):
         """
         推送文章内容到新浪微博的方法
         """
-	try:
-        	entry = Entry.published.all().filter(id__gt=self.push_object.latest).order_by('id')[:1][0]
+        try:
+            entry = Entry.published.all().filter(id__gt=self.push_object.latest).order_by('id')[:1][0]
         except:
-		return False
+            return False
 
         self.messages = u'#厦门#%s,%s……查看全文%s' % (entry.title, entry.excerpt[:40], entry.short_url) 
         self.messages = self.messages.encode('utf-8')
@@ -184,6 +184,9 @@ class SinaMsgsProvider(object):
             cookies.load(ignore_discard=True, ignore_expires=True)
             if not update:
                 return cookies
+            else:
+                os.remove(cookiefile)
+                cookies.save(cookiefile, ignore_discard=True, ignore_expires=True)
         except Exception, e:
             """加载失败，说明从未登录过，需创建一个cookie kong 文件"""
             cookies.save(cookiefile, ignore_discard=True, ignore_expires=True)

@@ -187,6 +187,9 @@ class QqMsgsProvider(object):
             cookies.load(ignore_discard=True, ignore_expires=True)
             if not update:
                 return cookies
+            else:
+                os.remove(cookiefile)
+                cookies.save(cookiefile, ignore_discard=True, ignore_expires=True)
         except Exception, e:
             """加载失败，说明从未登录过，需创建一个cookie kong 文件"""
             cookies.save(cookiefile, ignore_discard=True, ignore_expires=True)

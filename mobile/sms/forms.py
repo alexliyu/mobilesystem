@@ -1,4 +1,4 @@
-"""Forms for Zinnia admin"""
+"""Forms for admin"""
 from django import forms
 from django.db.models import ManyToOneRel
 from django.db.models import ManyToManyRel

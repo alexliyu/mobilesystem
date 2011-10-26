@@ -6,6 +6,7 @@ Created on 2011-1-30
 '''
 from django.contrib import admin
 from apps.lottery.models import *
+from apps.lottery.forms import Lottery_listAdminForm
 from mobile.utils.smsutils  import sms
 
 class lotteryAdmin(admin.ModelAdmin):
@@ -14,6 +15,11 @@ class lotteryAdmin(admin.ModelAdmin):
     actions = ['send_sms']
     actions_on_top = True
     actions_on_bottom = True
+    form = Lottery_listAdminForm
+    
+    def __init__(self, model, admin_site):
+        self.form.admin_site = admin_site
+        super(lotteryAdmin, self).__init__(model, admin_site)
     
     def send_sms(self, request, queryset, *arg1, **arg2):
         send_users = ''
