@@ -15,5 +15,5 @@ class Mete:
     title = _('News')
     config = {
         'display_to_user':True,
-        'providers':['entry.providers.CategoriesEntryProvider']
+        'providers':['apps.entry.providers.CategoriesEntryProvider']
         }

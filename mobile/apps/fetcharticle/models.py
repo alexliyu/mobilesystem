@@ -6,7 +6,7 @@ Created on 2011-1-30
 '''
 from django.db import models
 from datetime import datetime
-from entry.models import Category
+from apps.entry.models import Category
 from tinymce import models as tinymce_models
 
         

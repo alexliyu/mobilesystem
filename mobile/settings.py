@@ -26,7 +26,7 @@ from baseutils.media import get_compress_groups
 
 from baseutils import loading
 project_root = os.path.normpath(os.path.dirname(__file__))
-molly_root = project_root
+
 
 APPLICATIONS = loading.load_apps()
 
@@ -176,7 +176,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # and you want to have the Molly defaults as a fallback
 TEMPLATE_DIRS = (
     os.path.join(project_root, 'templates'),
-    os.path.join(molly_root, 'templates'),
 )
 
 # This setting changes how Django searches for templates when rendering. The
@@ -341,7 +340,7 @@ STATIC_URL = '/static/' # The URL used to refer to media
 
 STATICFILES_DIRS = (
     os.path.join(project_root, 'site_media'), # Custom overriding
-    os.path.join(molly_root, 'media'), # Molly default media
+    os.path.join(project_root, 'media'), # Molly default media
     ('markers', MARKER_DIR), # Markers
 )
 

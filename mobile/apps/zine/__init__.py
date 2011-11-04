@@ -15,6 +15,6 @@ class Mete:
     title = _('Zine')
     config = {
         'display_to_user':True,
-        'providers':['entry.providers.ZineEntryProvider']
+        'providers':['apps.entry.providers.ZineEntryProvider']
         
         }

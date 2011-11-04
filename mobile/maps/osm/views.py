@@ -56,7 +56,7 @@ class GPXView(BaseView):
         out = []
         out.append('<?xml version="1.0"?>\n')
         out.append('<gpx version="1.0"')
-        out.append(' creator="Molly Project &lt;http://mollyproject.org/&gt;"')
+        out.append(' creator="E2-Mobile &lt;http://2go3.com/&gt;"')
         out.append(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
         out.append(' xmlns="http://www.topografix.com/GPX/1/0"')
         out.append(' xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">\n')

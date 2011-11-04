@@ -13,8 +13,8 @@ def url_func(context, node, name, *args):
 
 def transform(document, template_name, template_context=None):
 
-    ns = etree.FunctionNamespace('http://mollyproject.org/xpath#')
-    ns.prefix = 'molly'
+    ns = etree.FunctionNamespace('http://2go3.com/xpath#')
+    ns.prefix = 'e2'
     ns['url'] = url_func
     ns['safe-href'] = safe_href
 
@@ -27,4 +27,4 @@ def transform(document, template_name, template_context=None):
 
 def add_children_to_context(document, context):
     for node in document.findall('*'):
-        context[node.tag] = etree.tostring(node, method="html")[len(node.tag)+2:-len(node.tag)-3]
+        context[node.tag] = etree.tostring(node, method="html")[len(node.tag) + 2:-len(node.tag) - 3]

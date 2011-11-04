@@ -8,9 +8,9 @@ from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
 
 from django.contrib.auth.models import User, Group
 from sms.models import sms_list
-from entry.admin.widgets import TreeNodeChoiceField
-from entry.admin.widgets import MPTTFilteredSelectMultiple
-from entry.admin.widgets import MPTTModelMultipleChoiceField
+from apps.entry.admin.widgets import TreeNodeChoiceField
+from apps.entry.admin.widgets import MPTTFilteredSelectMultiple
+from apps.entry.admin.widgets import MPTTModelMultipleChoiceField
 
 
 

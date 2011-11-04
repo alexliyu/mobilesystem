@@ -6,7 +6,7 @@ Created on 2011-1-30
 '''
 from django.db import models
 from datetime import datetime
-from entry.models import Category, Entry
+from apps.entry.models import Category, Entry
 
         
 class PushList(models.Model):

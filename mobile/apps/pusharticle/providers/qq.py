@@ -20,7 +20,7 @@ from conf.settings import batch
 
 
 from apps.pusharticle.models import PushList, PushResult
-from entry.models import Entry
+from apps.entry.models import Entry
 from apps.business.models import PromotionsInfo
 
 

@@ -6,15 +6,15 @@ from django.template.loader import BaseLoader
 import django.template.loaders.app_directories
 import django.template.loaders.filesystem
 
-class MollyDefaultLoader(BaseLoader):
+class E2DefaultLoader(BaseLoader):
     """
-    Always shows the built-in templates as molly_default/...
+    Always shows the built-in templates as e2_default/...
     """
     
     is_usable = True
     def load_template_source(self, template_name, template_dirs=None):
         template_parts = template_name.split('/')
-        if template_parts[0] == 'molly_default':
+        if template_parts[0] == 'e2_default':
             template_rest = '/'.join(template_parts[1:])
             try:
                 loader = django.template.loaders.app_directories.Loader()

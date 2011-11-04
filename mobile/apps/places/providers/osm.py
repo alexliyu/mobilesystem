@@ -310,9 +310,9 @@ class OSMMapsProvider(BaseMapsProvider):
 
     def _get_source(self):
         try:
-            source = Source.objects.get(module_name="molly.providers.apps.maps.osm")
+            source = Source.objects.get(module_name="mobile.providers.apps.maps.osm")
         except Source.DoesNotExist:
-            source = Source(module_name="molly.providers.apps.maps.osm")
+            source = Source(module_name="mobile.providers.apps.maps.osm")
         
         source.name = "OpenStreetMap"
         source.save()

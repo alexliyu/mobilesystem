@@ -14,7 +14,7 @@ class EmailHandler(logging.Handler):
     )
     
     class conf:
-        from_email = settings.SERVER_EMAIL if hasattr(settings, 'SERVER_EMAIL') else 'molly@localhost'
+        from_email = settings.SERVER_EMAIL if hasattr(settings, 'SERVER_EMAIL') else 'E2-Mobile@localhost'
     
     def emit(self, record):
         if record.name == 'stats.requests':

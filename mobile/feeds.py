@@ -22,14 +22,14 @@ from django.core.exceptions import ObjectDoesNotExist
 from tagging.models import Tag
 from tagging.models import TaggedItem
 
-from entry.models import Entry
+from apps.entry.models import Entry
 from settings import COPYRIGHT
 from settings import PROTOCOL
 from settings import FEEDS_FORMAT
 from settings import FEEDS_MAX_ITEMS
-from entry.managers import entries_published
-from entry.views.categories import get_category_or_404
-from entry.templatetags.entry_tags import get_gravatar
+from apps.entry.managers import entries_published
+from apps.entry.views.categories import get_category_or_404
+from apps.entry.templatetags.entry_tags import get_gravatar
 
 class entryFeed(Feed):
     """Base Feed for entry"""

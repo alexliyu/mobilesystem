@@ -15,6 +15,6 @@ class Mete:
     title = _('Xiaofang')
     config = {
         'display_to_user':True,
-        'providers':['entry.providers.CategoriesEntryProvider']
+        'providers':['apps.entry.providers.CategoriesEntryProvider']
         
         }

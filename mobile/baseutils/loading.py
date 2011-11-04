@@ -10,13 +10,6 @@
 
 用来从APPS目录下自动加载模块，并安装
 
-
-
-
-
-/home/alex/workspace/mobile/mobile/utils/loading.py
-
-
 '''
 import os, re
 
@@ -36,17 +29,6 @@ APPLICATIONS = [
     
     Application('apps.feeds.tuan', 'tuan', '团购'),
     
-   
-    
-    Application('entry', 'entry', u'文章',
-                display_to_user=False,
-                
-    ),
-    
-    Application('forum', 'forum', '社区',
-                display_to_user=False,
-                
-    ),
     
     Application('maps', 'maps', '地图',
         display_to_user=False,

@@ -19,15 +19,15 @@ from django.contrib.sites.models import Site
 from tagging.models import Tag
 
 from django.conf import settings
-from entry.managers import HIDDEN
-from entry.managers import PUBLISHED
-from entry.admin.forms import EntryAdminForm
+from apps.entry.managers import HIDDEN
+from apps.entry.managers import PUBLISHED
+from apps.entry.admin.forms import EntryAdminForm
 from apps.fetcharticle.feedstest import getpage
 from apps.fetcharticle.models import FeedList, FeedsResult, TempImages
 import feedparser, os
 from baseutils import htmllib
 from baseutils.htmllib import HTMLStripper, gbtools
-from entry.models import Entry, EntryAbstractClass
+from apps.entry.models import Entry, EntryAbstractClass
 
 logger = logging.getLogger('apps.fetcharticle.admin')
 

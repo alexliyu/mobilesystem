@@ -363,7 +363,7 @@ class EntityUpdateView(ZoomableView):
 
     def handle_GET(self, request, context, scheme, value):
         entity = context['entity']
-        if entity.source.module_name != 'molly.providers.apps.maps.osm':
+        if entity.source.module_name != 'mobile.providers.apps.maps.osm':
             raise Http404
 
         if request.GET.get('submitted') == 'true':
@@ -378,7 +378,7 @@ class EntityUpdateView(ZoomableView):
 
     def handle_POST(self, request, context, scheme, value):
         entity = context['entity'] = get_entity(scheme, value)
-        if entity.source.module_name != 'molly.providers.apps.maps.osm':
+        if entity.source.module_name != 'mobile.providers.apps.maps.osm':
             raise Http404
 
         form = UpdateOSMForm(request.POST)

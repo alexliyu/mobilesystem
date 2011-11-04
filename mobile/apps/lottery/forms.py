@@ -8,9 +8,9 @@ from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
 
 from userena.models import UserProfile
 from apps.lottery.models import lottery
-from entry.admin.widgets import TreeNodeChoiceField
-from entry.admin.widgets import MPTTFilteredSelectMultiple
-from entry.admin.widgets import MPTTModelMultipleChoiceField
+from apps.entry.admin.widgets import TreeNodeChoiceField
+from apps.entry.admin.widgets import MPTTFilteredSelectMultiple
+from apps.entry.admin.widgets import MPTTModelMultipleChoiceField
 
 
 
