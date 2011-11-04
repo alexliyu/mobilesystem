@@ -9,8 +9,8 @@ from django.template import loader, TemplateDoesNotExist, RequestContext
 from django.shortcuts import render_to_response
 from django.core.cache import cache
 
-from utils.views import BaseView
-from utils.breadcrumbs import NullBreadcrumb
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import NullBreadcrumb
 
 logger = logging.getLogger(__name__)
 

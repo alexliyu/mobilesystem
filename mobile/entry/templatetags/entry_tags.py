@@ -27,7 +27,7 @@ from ..comparison import pearson_score
 from ..templatetags.zcalendar import entryCalendar
 from ..templatetags.zbreadcrumbs import retrieve_breadcrumbs
 
-from utils.htmllib import Parse_images_url
+from baseutils.htmllib import Parse_images_url
 
 register = Library()
 

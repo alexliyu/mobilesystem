@@ -4,9 +4,9 @@ from datetime import timedelta
 from django.conf import settings
 from django.core.urlresolvers import reverse
 
-from utils.views import BaseView
-from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
-from utils import send_email
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
+from baseutils.mail import send_email
 
 from forms import FeedbackForm
 

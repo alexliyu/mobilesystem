@@ -14,7 +14,7 @@ from django.utils.translation import ugettext as _
 from sms.models import sms_history, sms_list, sms_entry, sms_time_list
 from sms.forms import Sms_listAdminForm
 
-from mobile.utils.smsutils import sms
+from baseutils.smsutils import sms
 
 
 

@@ -2,9 +2,9 @@ from pywurfl.algorithms import DeviceNotFound
 
 from django.http import Http404
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
-from utils.http import MediaType
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
+from baseutils.http import MediaType
 
 from wurfl.vsm import vsa
 from wurfl import device_parents

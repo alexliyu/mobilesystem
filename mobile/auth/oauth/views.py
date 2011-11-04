@@ -15,7 +15,7 @@ from django.http import Http404, HttpResponseBadRequest
 from django.core.urlresolvers import reverse
 from django.core.exceptions import PermissionDenied, ImproperlyConfigured
 
-from utils.views import BaseView
+from baseutils.views import BaseView
 
 from auth import unify_users
 from auth.models import ExternalServiceToken

@@ -15,8 +15,8 @@ from django.template import loader, Context, RequestContext
 from django import forms
 from django.shortcuts import render_to_response
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 from favourites import get_favourites
 from wurfl import device_parents
 import conf

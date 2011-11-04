@@ -20,7 +20,7 @@ from userena.utils import get_profile_model
 from userena.models import UserProfile
 import random
 
-from mobile.utils.smsutils  import sms
+from baseutils.smsutils  import sms
 
 attrs_dict = {'class': 'required'}
 
@@ -205,7 +205,7 @@ class SignupFormOnlyMobile(SignupForm):
     
     def save(self, request):
         
-#        from utils.tcp import arping
+#        from baseutils.tcp import arping
 #        """ 生成一个动态的用户名 """
 #        while True:
 #            username = sha_constructor(str(random.random())).hexdigest()[:5]

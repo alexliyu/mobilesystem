@@ -19,7 +19,7 @@ from django.conf import settings
 
 from conf import all_apps, app_by_local_name, app_by_application_name
 from batch_processing.models import Batch
-from utils.misc import get_norm_sys_path
+from baseutils.misc import get_norm_sys_path
 
 def load_batches():
     batch_details = []

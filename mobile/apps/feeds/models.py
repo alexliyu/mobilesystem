@@ -9,7 +9,7 @@ from django.conf import settings
 
 from external_media import resize_external_image
 from apps.places.models import Entity
-from gmapsfield.fields import GoogleMapsField
+from baseutils.gmapsfield.fields import GoogleMapsField
 FEED_TYPE_CHOICES = (
     ('n', 'tuan'),
     ('e', 'zine'),

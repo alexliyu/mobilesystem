@@ -3,8 +3,8 @@ from datetime import timedelta
 from django.core.paginator import Paginator
 from django.http import Http404
 
-from utils.views import BaseView, ZoomableView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView, ZoomableView
+from baseutils.breadcrumbs import *
 from maps import Map
 
 from apps.library.forms import SearchForm

@@ -16,7 +16,7 @@ from django.utils.translation import ugettext as _
 
 from apps.places.providers import BaseMapsProvider
 from apps.places.models import Entity, EntityType, Source, EntityTypeCategory
-from utils.i18n import override, set_name_in_language
+from baseutils.i18n import override, set_name_in_language
 
 from conf.settings import batch
 

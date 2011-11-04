@@ -108,7 +108,7 @@ class Application(object):
 
         # Don't import at module scope as this module will be imported from a
         # settings file.
-        from utils.views import BaseView
+        from baseutils.views import BaseView
 
         if isinstance(pattern, RegexURLResolver):
             # Recurse through the patterns

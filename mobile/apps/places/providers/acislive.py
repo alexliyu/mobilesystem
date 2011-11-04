@@ -15,7 +15,7 @@ from apps.places.models import Route, StopOnRoute, Entity, Source, EntityType
 from apps.places.providers import BaseMapsProvider
 from apps.places import get_entity
 from apps.places.providers.naptan import NaptanMapsProvider
-from utils.i18n import set_name_in_language
+from baseutils.i18n import set_name_in_language
 from conf.settings import batch
 
 logger = logging.getLogger(__name__)

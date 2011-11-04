@@ -17,8 +17,8 @@ from django.db.models.query import QuerySet
 from django.core.paginator import  Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 
 from entry.models import Category, Entry
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 from settings import PAGINATION
 from .decorators import template_name_for_entry_queryset_filtered
 

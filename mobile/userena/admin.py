@@ -16,7 +16,7 @@ from django.utils.safestring import mark_safe
 
 from userena.models import UserenaSignup, Note, Category, Area
 from userena.utils import get_profile_model
-from mobile.utils.smsutils import sms
+from baseutils.smsutils import sms
 
 
 

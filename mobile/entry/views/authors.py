@@ -12,8 +12,8 @@ from settings import PAGINATION
 from .decorators import update_queryset
 from .decorators import template_name_for_entry_queryset_filtered
 from django.views.decorators.cache import cache_page
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 
 class author_list(BaseView):

@@ -7,7 +7,7 @@ Created on 2011-1-30
 from django.contrib import admin
 from apps.lottery.models import *
 from apps.lottery.forms import Lottery_listAdminForm
-from mobile.utils.smsutils  import sms
+from baseutils.smsutils  import sms
 
 class lotteryAdmin(admin.ModelAdmin):
    

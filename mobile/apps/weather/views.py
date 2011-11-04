@@ -6,8 +6,8 @@ Created on 2011-1-30
 '''
 from datetime import datetime, timedelta
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 from models import Weather
 

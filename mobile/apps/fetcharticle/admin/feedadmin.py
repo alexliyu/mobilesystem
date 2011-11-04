@@ -25,8 +25,8 @@ from entry.admin.forms import EntryAdminForm
 from apps.fetcharticle.feedstest import getpage
 from apps.fetcharticle.models import FeedList, FeedsResult, TempImages
 import feedparser, os
-from utils import htmllib
-from utils.htmllib import HTMLStripper, gbtools
+from baseutils import htmllib
+from baseutils.htmllib import HTMLStripper, gbtools
 from entry.models import Entry, EntryAbstractClass
 
 logger = logging.getLogger('apps.fetcharticle.admin')

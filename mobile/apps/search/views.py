@@ -1,7 +1,7 @@
 from datetime import timedelta
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 from forms import SearchForm
 

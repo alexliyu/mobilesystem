@@ -22,9 +22,9 @@
 from oauth.oauth import OAuthSignatureMethod_PLAINTEXT
 import os.path
 from conf.settings import  extract_installed_apps
-from utils.media import get_compress_groups
+from baseutils.media import get_compress_groups
 
-from utils import loading
+from baseutils import loading
 project_root = os.path.normpath(os.path.dirname(__file__))
 molly_root = project_root
 
@@ -138,7 +138,7 @@ MIDDLEWARE_CLASSES = (
     'wurfl.middleware.WurflMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'utils.middleware.ErrorHandlingMiddleware',
+    'baseutils.middleware.ErrorHandlingMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 #    'auth.middleware.SecureSessionMiddleware',
     'apps.stats.middleware.StatisticsMiddleware',
@@ -159,14 +159,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
-    'utils.context_processors.ssl_media',
+    'baseutils.context_processors.ssl_media',
     'django.contrib.messages.context_processors.messages',
     'wurfl.context_processors.wurfl_device',
     'wurfl.context_processors.device_specific_media',
     'geolocation.context_processors.geolocation', # This adds the current known location of the user to the context
-    'utils.context_processors.full_path',
-    'utils.context_processors.site_name',
-    #'utils.context_processors.google_analytics',
+    'baseutils.context_processors.full_path',
+    'baseutils.context_processors.site_name',
+    #'baseutils.context_processors.google_analytics',
     'django.core.context_processors.csrf',
     'djangohelper.context_processors.ctx_config',
 )
@@ -185,7 +185,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.load_template_source',
-    'utils.template_loaders.MollyDefaultLoader'
+    'baseutils.template_loaders.MollyDefaultLoader'
 )
 
 STATICFILES_FINDERS = (

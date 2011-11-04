@@ -67,7 +67,7 @@ urlpatterns += patterns('django.views.generic.simple',
 )
 
 
-handler500 = 'utils.views.handler500'
+handler500 = 'baseutils.views.handler500'
 
 urlpatterns += patterns('simpleavatar.views',
         url('^accounts/avatar/change/$', 'change', {'template_name': 'userena/avatar/change.html'}, \

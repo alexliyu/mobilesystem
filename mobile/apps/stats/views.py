@@ -1,8 +1,8 @@
 from django.http import HttpResponseForbidden
 from django.db.models import Avg, Count
 
-from utils.breadcrumbs import lazy_reverse, Breadcrumb, BreadcrumbFactory
-from utils.views import BaseView
+from baseutils.breadcrumbs import lazy_reverse, Breadcrumb, BreadcrumbFactory
+from baseutils.views import BaseView
 from apps.stats.models import Hit
 
 LIST_LIMIT = 50

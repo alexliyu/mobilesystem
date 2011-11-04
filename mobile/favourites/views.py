@@ -1,8 +1,8 @@
 from django.http import Http404
 from django.core.urlresolvers import resolve
 
-from utils.views import BaseView
-from utils.breadcrumbs import lazy_reverse, Breadcrumb, BreadcrumbFactory
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import lazy_reverse, Breadcrumb, BreadcrumbFactory
 
 from favourites import get_favourites
 from favourites.models import Favourite

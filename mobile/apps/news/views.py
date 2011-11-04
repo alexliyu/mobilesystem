@@ -5,8 +5,8 @@ Created on 2011-1-30
 @author: 李昱
 '''
 
-from utils.views import BaseView
-from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
 
 
 

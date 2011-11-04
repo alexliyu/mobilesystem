@@ -6,8 +6,8 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 
 

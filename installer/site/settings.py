@@ -265,7 +265,7 @@ ROOT_URLCONF = 'molly.urls'
 # The default is to use Molly's default templates. If you want to change this
 # view, it is instead recommended that you create a new template
 # 'csrf_failure.html' in your templates folder and customise that
-CSRF_FAILURE_VIEW = 'molly.utils.views.CSRFFailureView'
+CSRF_FAILURE_VIEW = 'molly.baseutils.views.CSRFFailureView'
 
 # This disables Django's built in logger, as Molly comes with its own logging
 # framework which can sometimes conflict with Django's

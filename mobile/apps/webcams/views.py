@@ -4,8 +4,8 @@ from xml.sax.saxutils import escape
 from django.shortcuts import get_object_or_404
 from django.http import Http404
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 from external_media import resize_external_image
 
 from apps.webcams.models import Webcam, WEBCAM_WIDTHS

@@ -6,7 +6,7 @@ from django.http import Http404
 from django.core.urlresolvers import resolve, reverse
 from django.shortcuts import get_object_or_404
 
-from utils.views import BaseView
+from baseutils.views import BaseView
 
 from url_shortener.models import ShortenedURL
 

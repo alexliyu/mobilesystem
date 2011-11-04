@@ -4,9 +4,9 @@ from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseForbidden
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
-from utils import send_email
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
+from baseutils.mail import send_email
 
 from .models import Feature
 from .forms import FeatureForm
@@ -15,9 +15,9 @@ from .forms import FeatureForm
 class IndexView(BaseView):
     # A mapping from (old, new) to (delta down, delta up)
     vote_transitions = {
-        (-1,-1) : ( 0, 0),  ( 0,-1): (+1, 0),  (+1,-1): (+1,-1),
-        (-1, 0) : (-1, 0),  ( 0, 0): ( 0, 0),  (+1, 0): ( 0,-1),
-        (-1,+1) : (-1,+1),  ( 0,+1): ( 0,+1),  (+1,+1): ( 0, 0),
+        (-1, -1) : (0, 0), (0, -1): (+1, 0), (+1, -1): (+1, -1),
+        (-1, 0) : (-1, 0), (0, 0): (0, 0), (+1, 0): (0, -1),
+        (-1, +1) : (-1, +1), (0, +1): (0, +1), (+1, +1): (0, 0),
     }
     #  ++    -
     # -      -
@@ -58,7 +58,7 @@ class IndexView(BaseView):
             return HttpResponseForbidden()
 
         if 'vote_up' in request.POST or 'vote_down' in request.POST:
-            feature = get_object_or_404(Feature, id = request.POST.get('id', 0))
+            feature = get_object_or_404(Feature, id=request.POST.get('id', 0))
             previous_vote = request.session['feature_vote:votes'].get(feature.id, 0)
             vote = previous_vote + (1 if 'vote_up' in request.POST else -1)
             vote = min(max(-1, vote), 1)

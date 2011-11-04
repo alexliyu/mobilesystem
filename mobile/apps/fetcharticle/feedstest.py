@@ -17,7 +17,7 @@
 import logging
 import urllib2
 import urlparse
-from utils import htmllib
+from baseutils import htmllib
 
 
 theresult = []

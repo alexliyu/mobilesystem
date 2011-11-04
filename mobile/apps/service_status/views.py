@@ -1,7 +1,7 @@
 import logging
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 logger = logging.getLogger("apps.service_status.views")
 

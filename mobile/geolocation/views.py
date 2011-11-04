@@ -7,9 +7,9 @@ from django.contrib.gis.geos import Point
 from django.conf import settings
 from django.utils.translation import ugettext as _
 
-from utils.views import BaseView, renderer
-from utils.breadcrumbs import *
-from utils.http import update_url
+from baseutils.views import BaseView, renderer
+from baseutils.breadcrumbs import *
+from baseutils.http import update_url
 
 from geolocation.forms import LocationUpdateForm
 from geolocation import geocode, reverse_geocode

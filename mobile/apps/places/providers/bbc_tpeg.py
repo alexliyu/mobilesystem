@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_noop
 from apps.places.providers import BaseMapsProvider
 from apps.places.models import Source, Entity, EntityType, EntityTypeCategory
 from conf.settings import batch
-from utils.i18n import override, set_name_in_language
+from baseutils.i18n import override, set_name_in_language
 
 class BBCTPEGResolver(etree.Resolver):
     """

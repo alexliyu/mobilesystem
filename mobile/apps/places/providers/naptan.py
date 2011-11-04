@@ -25,7 +25,7 @@ from django.utils.translation import ugettext, get_language
 from apps.places.providers import BaseMapsProvider
 from apps.places.models import EntityType, Entity, EntityGroup, Source, EntityTypeCategory
 from conf.settings import batch
-from utils.i18n import override, set_name_in_language
+from baseutils.i18n import override, set_name_in_language
 
 class NaptanContentHandler(ContentHandler):
 

@@ -1,8 +1,8 @@
 import unittest, sys, inspect
 from django.conf import settings
 from django.utils.importlib import import_module
-from utils.views import BaseView
-from utils.breadcrumbs import NullBreadcrumb
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import NullBreadcrumb
 
 class Argspec(tuple):
     args = property(lambda self: self[0])

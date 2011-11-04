@@ -28,7 +28,7 @@ from django.contrib.gis.gdal.datasource import OGRException
 from django.contrib.gis.geos import Point
 
 from geolocation.providers import BaseGeolocationProvider
-from utils.geopy import geocoders
+from baseutils.geopy import geocoders
 logger = logging.getLogger(__name__)
 
 class CloudmadeGeolocationProvider(BaseGeolocationProvider):

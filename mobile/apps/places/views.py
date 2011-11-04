@@ -28,8 +28,8 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import ungettext
 from django.contrib.gis.measure import D
 
-from utils.views import BaseView, ZoomableView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView, ZoomableView
+from baseutils.breadcrumbs import *
 from favourites.views import FavouritableView
 from geolocation.views import LocationRequiredView
 

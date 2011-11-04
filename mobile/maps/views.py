@@ -9,8 +9,8 @@ from datetime import timedelta
 
 from django.http import Http404
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 class IndexView(BaseView):
     @BreadcrumbFactory

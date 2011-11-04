@@ -11,8 +11,8 @@ from django.contrib.csrf.middleware import csrf_exempt
 from forum.forms import EditPostForm, NewPostForm, ForumForm
 from forum.models import Topic, Forum, Post
 import forum.settings as lbf_settings
-from utils.views import BaseView, login_required
-from utils.breadcrumbs import *
+from baseutils.views import BaseView, login_required
+from baseutils.breadcrumbs import *
 
 
 

@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
-from utils.views import BaseView
-from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse, lazy_parent
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse, lazy_parent
 from apps.business.models import BusinessInfo, PromotionsInfo
 from django.core.paginator import  Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse

@@ -7,8 +7,8 @@ from django.http import HttpResponse
 # -*- coding: utf-8 -*-
 from django.shortcuts import get_object_or_404
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 from ..models import Feed, Item
 

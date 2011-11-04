@@ -15,9 +15,9 @@ from xml.sax.saxutils import escape
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, Http404
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
-from utils.misc import AnyMethodRequest
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
+from baseutils.misc import AnyMethodRequest
 
 from apps.places.models import Entity
 
@@ -62,9 +62,9 @@ class GPXView(BaseView):
         out.append(' xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">\n')
 
         for entity in Entity.objects.filter(primary_type__slug=ptype, source__module_name='providers.apps.maps.osm'):
-          out.append('  <wpt lat="%(lat)f" lon="%(lon)f">\n' % {'lat':entity.location[1], 'lon':entity.location[0]})
-          out.append('    <name>%s</name>\n' % entity.title)
-          out.append('  </wpt>\n')
+            out.append('  <wpt lat="%(lat)f" lon="%(lon)f">\n' % {'lat':entity.location[1], 'lon':entity.location[0]})
+            out.append('    <name>%s</name>\n' % entity.title)
+            out.append('  </wpt>\n')
 
         out.append('</gpx>')
 

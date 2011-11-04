@@ -33,7 +33,7 @@ from django.contrib.gis.geos import Point
 from django.utils.translation import get_language
 from django.utils.translation import ugettext_lazy as _
 
-from utils.i18n import name_in_language
+from baseutils.i18n import name_in_language
 
 
 class Source(models.Model):

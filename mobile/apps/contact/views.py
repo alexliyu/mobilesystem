@@ -5,8 +5,8 @@ from datetime import timedelta
 
 from django.http import HttpResponse
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 from apps.contact.providers import TooManyResults
 
 from .forms import GenericContactForm

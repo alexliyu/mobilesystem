@@ -9,13 +9,13 @@ import urllib2
 import httplib
 import os.path
 
-from utils.xslt import transform
-from utils.misc import AnyMethodRequest
+from baseutils.xslt import transform
+from baseutils.misc import AnyMethodRequest
 from external_media.models import ExternalImage, ExternalImageSized
 
 def sanitise_html(dirty_html, opener=None, device=None):
     html = etree.fromstring("<div>%s</div>" % dirty_html,
-                            parser = etree.HTMLParser())
+                            parser=etree.HTMLParser())
     html = transform(html, 'external_media/html_sanitiser.xslt')
 
     # serialize and remove the div tag

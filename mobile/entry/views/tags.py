@@ -9,8 +9,8 @@ from settings import PAGINATION
 from entry.managers import tags_published
 from entry.views.decorators import update_queryset
 from entry.views.decorators import template_name_for_entry_queryset_filtered
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 from django.shortcuts import get_object_or_404
 
 

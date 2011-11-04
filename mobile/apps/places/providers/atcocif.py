@@ -16,7 +16,7 @@ from apps.places.models import (Entity, Route, StopOnRoute, Source,
                                       Journey, ScheduledStop)
 from apps.places.providers import BaseMapsProvider, NaptanMapsProvider
 from conf.settings import batch
-from utils.i18n import set_name_in_language
+from baseutils.i18n import set_name_in_language
 
 logger = getLogger(__name__)
 

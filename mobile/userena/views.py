@@ -30,7 +30,7 @@ from userena.utils import signin_redirect, get_profile_model
 from userena import settings as userena_settings
 
 from guardian.decorators import permission_required_or_403
-from mobile.utils.smsutils  import sms
+from baseutils.smsutils  import sms
 
 from django.contrib.auth.tokens import default_token_generator
 

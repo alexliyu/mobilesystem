@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 from .views import SecureView
 from .models import UserSession
-from utils.views import BaseView
+from baseutils.views import BaseView
 
 class SecureSessionMiddleware(object):
     def process_request(self, request):

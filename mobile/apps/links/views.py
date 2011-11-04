@@ -15,8 +15,8 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from models import links_class
-from utils.views import BaseView
-from utils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import BreadcrumbFactory, Breadcrumb, lazy_reverse
 
 
 class IndexView(BaseView):

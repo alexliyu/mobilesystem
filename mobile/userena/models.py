@@ -26,7 +26,7 @@ from guardian.shortcuts import assign
 
 from easy_thumbnails.fields import ThumbnailerImageField
 from django.utils import timesince, html
-from mobile.utils import formatter, function
+from baseutils.function import md5, formatter
 import PIL
 import datetime, random
 
@@ -428,7 +428,7 @@ class UserProfile(UserenaBaseProfile):
     MSN = models.CharField(max_length=50, blank=True, null=True)
     IM = models.CharField(max_length=50, blank=True, null=True)
     position = models.CharField(u'目前所在地', max_length=200, blank=True, null=True)
-    area = models.ForeignKey(Area, verbose_name=u'地区', blank=True,null=True)
+    area = models.ForeignKey(Area, verbose_name=u'地区', blank=True, null=True)
     about = models.TextField(u'关于我', max_length=1000, default='', blank=True)
     friend = models.ManyToManyField('self', verbose_name=u'朋友', related_name='friend')
     staytime = models.DecimalField(u'在线时长', default=0, decimal_places=0, max_digits=20)

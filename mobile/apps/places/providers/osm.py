@@ -19,8 +19,8 @@ from django.utils.translation import get_language
 from apps.places.models import (Entity, EntityType, Source,
                                       EntityTypeCategory, EntityName)
 from apps.places.providers import BaseMapsProvider
-from utils.misc import AnyMethodRequest
-from utils.i18n import override, set_name_in_language
+from baseutils.misc import AnyMethodRequest
+from baseutils.i18n import override, set_name_in_language
 from geolocation import reverse_geocode
 from conf.settings import batch
 

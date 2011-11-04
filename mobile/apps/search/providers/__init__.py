@@ -22,7 +22,7 @@ class BaseSearchProvider(object):
         """
         Resolves the given :data:`url` to the view that would handle it and
         returns the result of calling
-        :meth:`~utils.views.BaseView.get_metadata` on that view, passing
+        :meth:`~baseutils.views.BaseView.get_metadata` on that view, passing
         it the :data:`request`.
         
         May raise :exc:`~django.core.urlresolvers.Resolver404` or

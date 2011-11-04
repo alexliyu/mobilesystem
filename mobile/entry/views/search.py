@@ -9,8 +9,8 @@ from django.views.generic.list_detail import object_list
 
 from entry.models import Entry
 from settings import PAGINATION
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 class entry_search(BaseView):
     """Search entries matching with a pattern"""

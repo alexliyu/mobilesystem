@@ -15,7 +15,7 @@ from apps.gift.models import Gift_Info
 from django.core.urlresolvers import reverse
 from django.db.models.signals import post_save
 from apps.gift.models import Gift_History
-from utils.smsutils import sms
+from baseutils.smsutils import sms
 # Create your models here.
 
 class Interactive_Categries(models.Model):

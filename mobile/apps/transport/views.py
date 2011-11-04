@@ -2,8 +2,8 @@ from django.contrib.gis.geos import Point
 
 from conf import app_by_application_name
 
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 from favourites import get_favourites
 
 from apps.places import get_entity

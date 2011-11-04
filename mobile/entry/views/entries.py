@@ -19,8 +19,8 @@ from entry.views.decorators import update_queryset
 from settings import PAGINATION
 from settings import ALLOW_EMPTY
 from settings import ALLOW_FUTURE
-from utils.views import BaseView
-from utils.breadcrumbs import *
+from baseutils.views import BaseView
+from baseutils.breadcrumbs import *
 
 from actstream import action
 
