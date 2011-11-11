@@ -2,7 +2,7 @@
 """
 这是项目的基本配置文件.
 
-创建于 2011-1-30.
+创建于 2011-6-30.
 
 @author 李昱 Email:alexliyu2012@gmail.com QQ:939567050
 
@@ -184,7 +184,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.load_template_source',
-    'baseutils.template_loaders.MollyDefaultLoader'
+    'baseutils.template_loaders.E2DefaultLoader'
 )
 
 STATICFILES_FINDERS = (
