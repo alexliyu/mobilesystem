@@ -31,6 +31,7 @@ import PIL
 import datetime, random
 
 
+    
 PROFILE_PERMISSIONS = (
             ('view_profile', 'Can view profile'),
 )

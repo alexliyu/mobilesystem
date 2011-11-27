@@ -72,7 +72,7 @@ class QqMsgsProvider(object):
         self.push_object.save(force_update=True)
         
         pushresult = PushResult.objects.create(title=self.send_title)
-        pushresult.push_name = u'推送文章内容到新浪微博'
+        pushresult.push_name = u'推送文章内容到腾讯微博'
         pushresult.push_stat = self.send_stat
         pushresult.save()
         

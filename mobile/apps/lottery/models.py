@@ -11,6 +11,7 @@ class lottery(models.Model):
     addTime = models.DateTimeField(u"添加时间", auto_now=True)
     description = tinymce_models.HTMLField(u"活动简介", blank=True)
     sms_content = models.TextField(u'发送短信内容', blank=True)
+    random_num = models.IntegerField(u'随机抽奖名额', default=0)
     
     def __unicode__(self):
         return self.lottery_title

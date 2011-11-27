@@ -81,12 +81,20 @@ class GroupAdmin(GroupAdmin):
     
 class UserenaAdmin(UserAdmin):
     inlines = [UserenaSignupInline, UserprofileInline ]
-    list_display = ['username', 'email', 'last_name', 'first_name', 'is_active', staff, adm, roles, last]
+    list_display = ['username', 'email', 'last_name', 'first_name', 'is_active', 'department', 'job', staff, adm, roles, last]
     list_filter = ['groups', 'is_staff', 'is_superuser', 'is_active']
     actions = ['send_sms']
     actions_on_top = True
     actions_on_bottom = True
     
+    search_fields = ('username', 'first_name', 'last_name', 'email', 'department', 'job',)
+    fieldsets = (
+        (None, {'fields': ('username', 'password')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'department', 'job',)}),
+        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
+        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+        (_('Groups'), {'fields': ('groups',)}),
+    )
     def send_sms(self, request, queryset, *arg1, **arg2):
         sms_object = sms()
         for user_object in queryset:

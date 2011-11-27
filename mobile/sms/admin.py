@@ -26,7 +26,10 @@ class SmsAdmin(admin.ModelAdmin):
     actions_on_top = True
     actions_on_bottom = True
     form = Sms_listAdminForm
-    
+    raw_id_fields = ('sms_users',)
+    related_lookup_fields = {
+        'fk': ['sms_users'],
+    }
     def __init__(self, model, admin_site):
         self.form.admin_site = admin_site
         super(SmsAdmin, self).__init__(model, admin_site)
