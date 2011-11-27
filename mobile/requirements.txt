@@ -19,6 +19,7 @@ python-memcached
 South
 django-slimmer
 BeautifulSoup
+IPy
 django-ipyfield
 django-grappelli
 django-filebrowser

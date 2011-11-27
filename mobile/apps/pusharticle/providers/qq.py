@@ -185,11 +185,11 @@ class QqMsgsProvider(object):
         try:
             """加载已存在的cookie，尝试此cookie是否还有效"""
             cookies.load(ignore_discard=True, ignore_expires=True)
-            if not update:
-                return cookies
-            else:
+            if update or time.time() - os.stat(cookiefile).st_ctime > 18000:
                 os.remove(cookiefile)
                 cookies.save(cookiefile, ignore_discard=True, ignore_expires=True)
+            else:
+                return cookies
         except Exception, e:
             """加载失败，说明从未登录过，需创建一个cookie kong 文件"""
             cookies.save(cookiefile, ignore_discard=True, ignore_expires=True)

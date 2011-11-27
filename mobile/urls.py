@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
+from filebrowser.sites import site
 from conf import applications, all_apps
 from apps.business.views import PicDownload
 from feeds import LatestEntries, EntryDiscussions, EntryComments, EntryTrackbacks, EntryPingbacks, SearchEntries, TagEntries, CategoryEntries, AuthorEntries
@@ -14,7 +15,7 @@ urlpatterns = patterns('',
     (r'^messages/', include('userena.contrib.umessages.urls')),
     (r'^tinymce/', include('tinymce.urls')),
     (r'^grappelli/', include('grappelli.urls')),
-    (r'^admin/filebrowser/', include('filebrowser.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),
     (r'^sentry/', include('sentry.web.urls')),
     (r'^tracking/', include('tracking.urls')),
     

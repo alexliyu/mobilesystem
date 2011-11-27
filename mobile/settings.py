@@ -35,8 +35,6 @@ COPYRIGHT = 'e2 mobile'
 """
 短信接口帐号及密码
 """
-#SMS_SN = 'SDK-XJG-010-00137'
-#SMS_PWD = '438483'
 
 SMS_SN = 'SDK-XJG-010-00137'
 SMS_PWD = '438483'
@@ -110,7 +108,7 @@ ROOT_URLCONF = 'urls'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': '127.0.0.1',
+        'HOST': '192.168.1.5',
         'NAME': 'mobile',
         'USER': 'mobile',
         'PASSWORD':'md515c21decb0fae7b388bacdafd7178d28',
