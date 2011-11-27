@@ -56,7 +56,7 @@ def load_batches():
 def run_batch(local_name, provider_name, method_name, tee_to_stdout=True):
     # This will force the loading of the utils app, attaching its log
     # handler lest the batch logs anything that needs e-mailing.
-    app_by_application_name('utils')
+    app_by_application_name('baseutils')
     
     batch = Batch.objects.get(
         local_name=local_name,

@@ -155,8 +155,8 @@ class SinaMsgsProvider(object):
         
         urllib2.install_opener(opener)
         
-        url = 'http://weibo.com/mblog/publish.php?rnd=%s' % random.random()
-        formdata = {"content":content, "pic":'', "styleid":'1', "retcode":'', "location":'home', "token":'25c400764ea0191eaf339aee0e2f0dec'}
+        url = 'http://weibo.com/aj/mblog/add?__rnd=%s' % random.random()
+        formdata = {"text":content, "pic_id":'', "module":"stissue", "location":'home', "_t":'0'}
         post_data = urllib.urlencode(formdata)
     
         send = urllib2.Request(url, post_data)
@@ -171,7 +171,7 @@ class SinaMsgsProvider(object):
         """
         判断是否发送成功，即如果发布微博后获取到的正文内容中有A00006，则表明发布成功了，反之则不成功
         """
-        if re.findall('A00006', conn.read(), re.I):
+        if re.findall('100000', conn.read(), re.I):
             return True
         else:
             return False
