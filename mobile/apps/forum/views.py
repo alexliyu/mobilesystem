@@ -22,7 +22,7 @@ from baseutils.breadcrumbs import *
 class IndexView(BaseView):
     def get_metadata(self, request):
         return {
-            'title': u'团购',
+            'title': u'社区',
             'additional': 'View news feeds and events from across the University.',
         }
         

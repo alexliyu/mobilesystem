@@ -16,7 +16,7 @@ import os, re
 
 from conf.settings import Application, extract_installed_apps, Authentication, ExtraBase, Provider
 
-REMOVELIST = ['places', 'feature_vote', 'webcams', 'desktop', 'feeds', 'transport', 'library', 'contact']
+REMOVELIST = ['places', 'desktop', 'feeds', 'library', 'contact']
 APPLICATIONS = [
     
     Application('apps.feeds', 'feeds', 'Feeds',

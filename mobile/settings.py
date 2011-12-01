@@ -25,6 +25,7 @@ from conf.settings import  extract_installed_apps
 from baseutils.media import get_compress_groups
 
 from baseutils import loading
+
 project_root = os.path.normpath(os.path.dirname(__file__))
 
 
@@ -131,6 +132,7 @@ GEOIP_CITY = os.path.join(GEOIP_PATH, 'GeoLiteCity.dat')
 # Middleware classes alter requests and responses before/after they get
 # handled by the view. They're useful in providing high-level global
 # functionality
+
 MIDDLEWARE_CLASSES = (
 #   'django.middleware.cache.UpdateCacheMiddleware',
     'wurfl.middleware.WurflMiddleware',
@@ -145,6 +147,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfResponseMiddleware',
     'pagination.middleware.PaginationMiddleware',
     'onlineuser.middleware.OnlineUserMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
 #    'tracking.middleware.VisitorTrackingMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
 #    'django.middleware.cache.FetchFromCacheMiddleware',
@@ -189,7 +192,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    #'compressor.finders.CompressorFinder',
+    'compressor.finders.CompressorFinder',
 )
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -366,7 +369,7 @@ COMPRESS_ROOT = MEDIA_URL
 COMPRESS_URL = MEDIA_URL
 COMPRESS_MEDIA_ROOT = MEDIA_ROOT
 COMPRESS_CSS, COMPRESS_JS = get_compress_groups(MEDIA_ROOT)
-COMPRESS_CSS_FILTERS = ('utils.compress.MollyCSSFilter',) # CSS filter is custom-written since the provided one mangles it too much
+COMPRESS_CSS_FILTERS = ('baseutils.compress.MollyCSSFilter',) # CSS filter is custom-written since the provided one mangles it too much
 COMPRESS_CSSTIDY_SETTINGS = {
     'remove_bslash': True, # default True
     'compress_colors': True, # default True
@@ -386,7 +389,7 @@ COMPRESS_CSSTIDY_SETTINGS = {
 }
 COMPRESS_JS_FILTERS = ('compress.filters.jsmin.JSMinFilter',)
 #COMPRESS = DEBUG     # Only enable on production (to help debugging)
-COMPRESS = False
+COMPRESS = True
 COMPRESS_VERSION = True  # Add a version number to compressed files.
 
 

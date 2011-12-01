@@ -30,7 +30,6 @@ from django.contrib.gis.measure import D
 
 from baseutils.views import BaseView, ZoomableView
 from baseutils.breadcrumbs import *
-from favourites.views import FavouritableView
 from geolocation.views import LocationRequiredView
 
 from maps import Map
@@ -244,7 +243,7 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
         return self.render(request, context, 'places/nearby_detail')
 
 
-class EntityDetailView(ZoomableView, FavouritableView):
+class EntityDetailView(ZoomableView):
     default_zoom = 16
 
     def get_metadata(self, request, scheme, value):

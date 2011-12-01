@@ -5,7 +5,7 @@ from django.utils.importlib import import_module
 from django.core.exceptions import ImproperlyConfigured
 
 from settings import URL_SHORTENER_BACKEND
-from ..url_shortener.backends.default import backend as default_backend
+from apps.entry.url_shortener.backends.default import backend as default_backend
 
 
 def get_url_shortener():

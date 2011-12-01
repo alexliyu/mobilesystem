@@ -17,7 +17,6 @@ from django.shortcuts import render_to_response
 
 from baseutils.views import BaseView
 from baseutils.breadcrumbs import *
-from favourites import get_favourites
 from wurfl import device_parents
 import conf
 from models import UserMessage
