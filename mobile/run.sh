@@ -1,0 +1,1 @@
+uwsgi --ini wsgi.ini --plugin python -d wsgi.log
