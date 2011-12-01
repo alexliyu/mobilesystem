@@ -69,11 +69,11 @@ class LocationDisplayNode(template.Node):
         html = ''
         try:
             if context['entity'].businessinfo_set.get().get_absolute_url():
-                html = context['entity'].title + "<p><a href=%s>点击察看商家详细信息</a></p>" % context['entity'].businessinfo_set.get().get_absolute_url()
+                html = context['entity'].title + u"<p><a href=%s>点击察看商家详细信息</a></p>" % context['entity'].businessinfo_set.get().get_absolute_url()
             else:
-                html = context['entity'].title + "<p>暂无商家详细信息</p>"
+                html = context['entity'].title + u"<p>暂无商家详细信息</p>"
         except:
-                html = context['entity'].title + "<p>暂无商家详细信息</p>"
+                html = context['entity'].title + u"<p>暂无商家详细信息</p>"
         context.update({
            'map': map_from_point(template.Variable(self.place).resolve(context),
                                  context['request'].map_width,

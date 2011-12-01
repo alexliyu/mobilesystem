@@ -199,11 +199,11 @@ class NearbyDetailView(LocationRequiredView, ZoomableView):
         html = ''
         try:
             if entity.businessinfo_set.get().get_absolute_url():
-                html = entity.title + "<p><a href=%s>点击察看商家详细信息</a></p>" % entity.businessinfo_set.get().get_absolute_url()
+                html = entity.title + u"<p><a href=%s>点击察看商家详细信息</a></p>" % entity.businessinfo_set.get().get_absolute_url()
             else:
-                html = entity.title + "<p>暂无商家详细信息</p>"
+                html = entity.title + u"<p>暂无商家详细信息</p>"
         except:
-                html = entity.title + "<p>暂无商家详细信息</p>"
+                html = entity.title + u"<p>暂无商家详细信息</p>"
         return html
     
     def handle_GET(self, request, context, ptypes, entity=None):

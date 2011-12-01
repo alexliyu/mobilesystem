@@ -98,8 +98,8 @@ class Map:
         """
         用于判断HTML内容是否为空，如果为空则表示是当前位置
         """
-        if centre_point[3].encode('ascii', 'xmlcharrefreplace'):
-            html = centre_point[3].encode('ascii', 'xmlcharrefreplace') 
+        if centre_point[3].encode('utf-8', 'xmlcharrefreplace'):
+            html = centre_point[3].encode('utf-8', 'xmlcharrefreplace') 
         else:
             html = '当前您的位置'
             
@@ -118,7 +118,7 @@ class Map:
                      'latitude':str(point[0][1]),
                      'longitude':str(point[0][0]),
                      'icon':point[0][2] + '-' + str(point[1][0] + 1),
-                     'html':point[0][3].encode('ascii', 'xmlcharrefreplace'),
+                     'html':point[0][3].encode('utf-8', 'xmlcharrefreplace'),
                      'popup':True,
                      }
                 )

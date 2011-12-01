@@ -24,11 +24,14 @@ class BusinessInfo(models.Model):
         
     @property
     def get_map_url(self):
-        if self.point.get_absolute_url():
-            return """<a href = "%s" rel="external"> 点击查看 </a> """ % self.point.get_absolute_url()
-        else:
-            return "暂无地理位置标注"
-    
+        try:
+            if self.point.get_absolute_url():
+                return u"""<a href = "%s" rel="external"> 点击查看 </a> """ % self.point.get_absolute_url()
+            else:
+                return u"暂无地理位置标注"
+        except:
+                return u"暂无地理位置标注" 
+               
     def get_bidUrl(self):
         return 'pro/%s' % self.id
     
