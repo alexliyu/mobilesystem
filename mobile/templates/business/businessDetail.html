@@ -10,6 +10,7 @@
     <p>{{ business.introdution|safe  }}</p>
     <p>商家网址:<a href="{{ business.businessUrl  }}">{{ business.businessUrl  }}</a></p>
     <p>联系电话:{{ business.telephone }}</p>
+    <p>商家地图位置：{{ business.get_map_url|safe }}</p>
 </div>
 
 </div>

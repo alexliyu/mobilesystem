@@ -34,7 +34,7 @@ class IndexView(BaseView):
         
     def handle_GET(self, request, context):
         template_name = "forum/index" 
-        context['topics'] = Topic.objects.all().order_by('-num_replies')[:10]
+        context['topics'] = Topic.objects.all().order_by('-num_replies')[:5]
         return self.render(request, context, template_name)
         
 class forum(BaseView):

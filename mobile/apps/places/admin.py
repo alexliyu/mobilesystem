@@ -8,7 +8,7 @@
 """
 from django.contrib.gis import admin
 from apps.places.models import (Entity, EntityName, EntityType, EntityTypeName, EntityGroup,
-                    EntityGroupName, Route, StopOnRoute, Journey)
+                    EntityGroupName, Route, StopOnRoute, Journey, EntityTypeCategory)
 
 class EntityTypeNameInline(admin.TabularInline):
     model = EntityTypeName
@@ -61,6 +61,7 @@ class RouteAdmin(admin.ModelAdmin):
 """
 注册后台管理模块
 """
+admin.site.register(EntityTypeCategory)
 admin.site.register(Entity, EntityAdmin)
 admin.site.register(EntityType, EntityTypeAdmin)
 admin.site.register(EntityGroup, EntityGroupAdmin)

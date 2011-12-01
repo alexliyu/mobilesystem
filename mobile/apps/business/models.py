@@ -3,6 +3,7 @@
 from django.db import models
 from django.conf import settings
 from tinymce import models as tinymce_models
+from apps.places.models import Entity
 # Create your models here.
 class BusinessInfo(models.Model):
     businessName = models.CharField(u'商家名称', default='', max_length=50)
@@ -10,8 +11,23 @@ class BusinessInfo(models.Model):
     businessUrl = models.URLField(u'商家网址', blank=True)
     telephone = models.CharField(u'联系电话', default='0592-5166918', max_length=15)
     businessLogo = models.FileField(u'商家LOGO', upload_to=settings.UPLOADS_ROOT, blank=True)
-    
+    point = models.ForeignKey(Entity, verbose_name=u"地图定位")
     objects = models.Manager()
+    
+    
+    @models.permalink
+    def get_absolute_url(self):
+        
+        return ('business:businessDetail', (), {
+            'slug': self.id,
+            })
+        
+    @property
+    def get_map_url(self):
+        if self.point.get_absolute_url():
+            return """<a href = "%s" rel="external"> 点击查看 </a> """ % self.point.get_absolute_url()
+        else:
+            return "暂无地理位置标注"
     
     def get_bidUrl(self):
         return 'pro/%s' % self.id

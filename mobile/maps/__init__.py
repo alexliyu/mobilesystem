@@ -112,6 +112,7 @@ class Map:
         }] if centre_point != None else []
         
         for point in self.points:
+
             markers.append(
                     {
                      'latitude':str(point[0][1]),
