@@ -10,6 +10,7 @@
 from django.conf import settings
 from sms.models import sms_history
 from sqlalchemy import *
+from datetime import datetime
 import md5, suds
 import sms
 
@@ -33,7 +34,7 @@ class sms(object):
 #        self.md5pwd = self.get_md5pwd(self.sn, self.pwd)
 #        self.client = suds.client.Client(self.url)
         self.s_conn = 'mysql+mysqldb://%s:%s@%s/mas?charset=utf8' % (settings.SMS_USER, settings.SMS_PWD, settings.SMS_SERVER)
-        self.engine = create_engine(self.s_conn, encoding="utf-8", echo=True)
+        self.engine = create_engine(self.s_conn, echo=True)
         self.metadata = MetaData(self.engine)
         
         
@@ -49,6 +50,12 @@ class sms(object):
     def parse_content(self, content):
         return content.decode('gbk').encode('gbk')
     
+    def get_src_id(self):
+        
+        now = datetime.now()
+        src_id = now.strftime('%Y%m%d%H%M%S') + str(now.microsecond)
+        return src_id
+    
     def post_sms(self, title, mobile, content):
         """
         发送短信方法，其中
@@ -63,19 +70,22 @@ class sms(object):
             
         mt_table = Table('api_mt_db', self.metadata, autoload=True)
         mt_insert = mt_table.insert()
-        mt_insert.execute(SM_ID=0, SRC_ID=0, MOBILES=mobile_list, CONTENT=content.encode('gb18030'), IS_WAP=0, URL='', SM_TYPE=0, MSG_FMT=0, TP_PID=0, TP_UDHI=0, FEE_USER_TYPE=0)
-
+        src_id = self.get_src_id()
+        try:
+            mt_insert.execute(SM_ID=0, SRC_ID=src_id, MOBILES=mobile_list, CONTENT=content.encode('gb18030'), IS_WAP=0, URL='', SM_TYPE=0, MSG_FMT=0, TP_PID=0, TP_UDHI=0, FEE_USER_TYPE=0)
+        except:
+            pass
 #        result = self.client.service.mt(self.sn, self.md5pwd, mobile_list, content, '', '', '')
-        result = u'暂无流水号'
+#        result = u'暂无流水号'
         stat = 0
 #        if len(result) > 3:
 #            stat = 1
 #        else:
 #            stat = 3
             
-        sms_history().save_result(title, content, str(result), mobile_list, 0, stat, str(result))
+        sms_history().save_result(title, content, src_id, mobile_list, 0, stat, src_id)
         
-        return result
+        return src_id
     
     
     def reg_sms(self):
