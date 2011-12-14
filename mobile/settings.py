@@ -37,20 +37,24 @@ COPYRIGHT = 'e2 mobile'
 短信接口帐号及密码
 """
 
-SMS_SN = 'SDK-XJG-010-00137'
-SMS_PWD = '438483'
-SMS_PROVINCE = u'福建'
-SMS_CITY = u'厦门'
-SMS_TRADE = u'新媒体'
-SMS_ENTNAME = u'娱讯（厦门）文化传播有限公司'
-SMS_LINKMAN = u'李昱'
-SMS_PHONE = '05925166918'
-SMS_MOBILE = '13959260801'
-SMS_EMAIL = 'liy@eiimedia.cn'
-SMS_FAX = '05925166755'
-SMS_ADDRESS = u'厦门禾祥东路138号4楼'
-SMS_POSTCODE = 361000
-SMS_SIGN = u'娱讯互动平台'
+#SMS_SN = 'SDK-XJG-010-00137'
+#SMS_PWD = '438483'
+#SMS_PROVINCE = u'福建'
+#SMS_CITY = u'厦门'
+#SMS_TRADE = u'新媒体'
+#SMS_ENTNAME = u'娱讯（厦门）文化传播有限公司'
+#SMS_LINKMAN = u'李昱'
+#SMS_PHONE = '05925166918'
+#SMS_MOBILE = '13959260801'
+#SMS_EMAIL = 'liy@eiimedia.cn'
+#SMS_FAX = '05925166755'
+#SMS_ADDRESS = u'厦门禾祥东路138号4楼'
+#SMS_POSTCODE = 361000
+#SMS_SIGN = u'娱讯互动平台'
+SMS_USER = 'db'
+SMS_PWD = 'db'
+SMS_SERVER = '117.25.183.82'
+
 
 gettext = lambda s: s
 
