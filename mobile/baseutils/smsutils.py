@@ -77,7 +77,7 @@ class sms(object):
             pass
 #        result = self.client.service.mt(self.sn, self.md5pwd, mobile_list, content, '', '', '')
 #        result = u'暂无流水号'
-        stat = 0
+        stat = 1
 #        if len(result) > 3:
 #            stat = 1
 #        else:
@@ -109,7 +109,7 @@ class sms(object):
  IS_WAP=0, URL='', SM_TYPE=0, MSG_FMT=0, TP_PID=0, TP_UDHI=0, FEE_USER_TYPE=0)
         except:
             pass
-        stat = 0
+        stat = 1
 
         sms_history().save_result(title, content, src_id, mobile_list, 0, stat, src_id)
         
