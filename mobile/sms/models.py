@@ -76,10 +76,11 @@ class sms_list(models.Model):
 
 class sms_time_list(models.Model):
     GENDER_CHOICES = (
-                       (0, u'未发送'),
-                       (1, u'已发送'),
-                       (2, u'已回复'),
+                       (0, u'未启动'),
+                       (1, u'已启动'),
+                       (2, u'已发送'),
                        (3, u'发送错误'),
+                       (4, u'部分发送失败'),
                                     )
     title = models.CharField(u'短信标题', default='', max_length=50)
     content = models.TextField(u'短信内容', default='', max_length=200)

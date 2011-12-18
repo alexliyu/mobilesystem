@@ -72,7 +72,7 @@ class sms(object):
         mt_insert = mt_table.insert()
         src_id = self.get_src_id()
         try:
-            mt_insert.execute(SM_ID=0, SRC_ID=src_id, MOBILES=mobile_list, CONTENT=content.encode('gb18030'), IS_WAP=0, URL='', SM_TYPE=0, MSG_FMT=0, TP_PID=0, TP_UDHI=0, FEE_USER_TYPE=0)
+            mt_insert.execute(SM_ID=1, SRC_ID=0, MOBILES=mobile_list, CONTENT=content.encode('gb18030'), IS_WAP=0, URL='', SM_TYPE=0, MSG_FMT=0, TP_PID=0, TP_UDHI=0, FEE_USER_TYPE=0)
         except:
             pass
 #        result = self.client.service.mt(self.sn, self.md5pwd, mobile_list, content, '', '', '')
@@ -83,6 +83,34 @@ class sms(object):
 #        else:
 #            stat = 3
             
+        sms_history().save_result(title, content, src_id, mobile_list, 0, stat, src_id)
+        
+        return src_id
+    
+    
+    def post_time_sms(self, title, mobile, send_time, content):
+        """
+        发送短信方法，其中
+        @param mobile 手机号码，字符串，可以是多个手机号码，中间才用，隔开
+        @param content 短信具体内容 
+        """
+        if mobile.find(',') != -1:
+            mobile_list = mobile[:-1]
+        else:
+            mobile_list = mobile
+            
+        mt_table = Table('api_mt_db', self.metadata, autoload=True)
+        mt_insert = mt_table.insert()
+        src_id = self.get_src_id()
+
+        send_time = send_time.strftime('%Y-%m-%d %H:%M:%S')
+        try:
+            mt_insert.execute(SM_ID=2, SRC_ID=0, MOBILES=mobile_list, CONTENT=content.encode('gb18030'), SEND_TIME=send_time,
+ IS_WAP=0, URL='', SM_TYPE=0, MSG_FMT=0, TP_PID=0, TP_UDHI=0, FEE_USER_TYPE=0)
+        except:
+            pass
+        stat = 0
+
         sms_history().save_result(title, content, src_id, mobile_list, 0, stat, src_id)
         
         return src_id
